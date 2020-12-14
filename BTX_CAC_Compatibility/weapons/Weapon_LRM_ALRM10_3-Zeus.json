@@ -1,0 +1,34 @@
+{
+	"ImprovedBallistic": true,
+	"MissileVolleySize": 10,
+	"MissileFiringIntervalMultiplier": 1,
+	"MissileVolleyIntervalMultiplier": 1,
+	"FireDelayMultiplier": 1,
+	"HitGenerator": "Cluster",
+	"AMSHitChance": 0.0,
+	"MissileHealth": 1,
+	"AccuracyModifier": 0,
+	"DirectFireModifier": -4,
+	"Modes": [
+		{
+			"Id": "LRM_StdLoad",
+			"UIName": "STD",
+			"Name": "Standard",
+			"Description": "Fired missles arm after they leave the launcher.",
+			"isBaseMode": true
+		},
+		{
+			"Id": "LRM_HotLoad",
+			"UIName": "HL",
+			"Name": "Hot Load",
+			"Description": "Missles are armed prelaunch inside the launcher, removing minimum range but having a chance to jam.",
+			"isBaseMode": false,
+			"DamageOnJamming": true,
+			"AccuracyModifier": 1.0,
+			"FlatJammingChance": 0.50,
+			"GunneryJammingMult": 0.01,
+			"GunneryJammingBase": 0,
+			"MinRange": -180.0
+		}
+	]
+}

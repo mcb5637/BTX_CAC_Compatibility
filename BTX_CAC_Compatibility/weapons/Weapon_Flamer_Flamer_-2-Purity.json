@@ -1,0 +1,5 @@
+{
+    "FireTerrainChance": 0.75,
+	"FireTerrainStrength": 1,
+	"FireOnSuccessHit": true
+}
