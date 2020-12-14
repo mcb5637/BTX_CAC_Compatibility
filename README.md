@@ -4,6 +4,7 @@ Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
  - Download CustomBundle https://github.com/BattletechModders/CustomBundle
+ - Remove BTMLColorLOSMod and MechResizer
  - Add CustomAmmoCategories, CustomComponents and CustomLocalization to your mods folder
  - Add BTX_CAC_Compatibility, overriding the settings of CustomAmmoCategories
 
