@@ -1,12 +1,12 @@
-BTX_CAC_Compatibility
+# BTX_CAC_Compatibility
 
 Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
  - Download CustomBundle https://github.com/BattletechModders/CustomBundle
- - Remove BTMLColorLOSMod and MechResizer
- - Add CustomAmmoCategories, CustomComponents, CustomLocalization and CustomUnits to your mods folder
- - Add BTX_CAC_Compatibility, overriding the settings of CustomAmmoCategories and CustomUnits
+ - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
+ - Add CustomAmmoCategories, CustomComponents, CustomLocalization and CustomUnits to your mods folder (only add these 4 from CustomBundle, the rest is not needed)
+ - Add BTX_CAC_Compatibility, overriding the settings of CustomAmmoCategories, CustomUnits and BiggerDrops
 
 
 Weapon list:
@@ -36,4 +36,5 @@ Weapon list:
  - Flamer: added forestfires
  - MG: added double speed mode (double shots, -4acc, +heat)
  
- TODO Clan weapons
+ TODO ATM weapons
+ TODO edit texts
