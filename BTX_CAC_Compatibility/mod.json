@@ -31,6 +31,10 @@
 		  "Type": "ItemCollectionDef",
 		  "Path": "itemCollectionAppend",
 		  "ShouldAppendText": true
-		}
+		},
+		{
+            "Type": "ShipModuleUpgrade",
+            "Path": "shipUpgrades"
+        }
 	]
 }

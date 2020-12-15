@@ -1,0 +1,52 @@
+{
+    "Description" : {
+        "Cost" : 0,
+        "Rarity" : 0,
+        "Purchasable" : true,
+        "UIName" : "",
+        "Id" : "argoUpgrade_storage",
+        "Name" : "Storage 1",
+        "Details" : "There is this old Storage room near your mechbay, if we clean it up, we can store additional mechs there.",
+        "Icon" : "uixSvgIcon_shipUpgrade_mechbay1"
+    },
+    "Illustration" : "uixTxrSpot_MechBay",
+    "Location" : "SHIP",
+    "shipUpgradeCategoryID" : "STRUCTURE",
+    "AssignedCastDefId": "castDef_YangDefault",
+    "AssignedCastDescription": "There is a lot of pirate junk in that storeroom, but compared to some other stuff here, this is easy.",
+    "RequiredModules" : {
+        "items" : [
+			"argoUpgrade_mechBay3",
+			"argoUpgrade_structure2"
+        ],
+        "tagSetSourceFile" : ""
+    },
+    "Requirements" : [
+        
+    ],
+    "TechCost" : 10,
+    "PurchaseCost" : 100000,
+    "AdditionalCost" : 1000,
+    "Tags" : {
+        "items" : [
+            "argo_storage"
+        ],
+        "tagSetSourceFile" : ""
+    },
+    "Stats" : [
+		{
+			"typeString" : "System.Int32",
+			"name" : "MechBayPods",
+			"value" : 4,
+			"set" : true,
+			"valueConstant" : ""
+		},
+		{
+			"typeString" : "System.Int32",
+			"name" : "MechBayPods_Display",
+			"value" : 24,
+			"set" : true,
+			"valueConstant" : ""
+		}
+    ]
+}

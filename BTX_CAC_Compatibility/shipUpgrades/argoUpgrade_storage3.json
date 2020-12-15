@@ -1,0 +1,51 @@
+{
+    "Description" : {
+        "Cost" : 0,
+        "Rarity" : 0,
+        "Purchasable" : true,
+        "UIName" : "",
+        "Id" : "argoUpgrade_storage3",
+        "Name" : "Storage 3",
+        "Details" : "There is this old Storage room near your mechbay, if we clean it up, we can store additional mechs there.",
+        "Icon" : "uixSvgIcon_shipUpgrade_mechbay3"
+    },
+    "Illustration" : "uixTxrSpot_MechBay",
+    "Location" : "SHIP",
+    "shipUpgradeCategoryID" : "STRUCTURE",
+    "AssignedCastDefId": "castDef_YangDefault",
+    "AssignedCastDescription": "This time we have to deal with several hull breaks and a door that won't open. Oh and don't forget the toxic waste some stupid pirate left there.",
+    "RequiredModules" : {
+        "items" : [
+			"argoUpgrade_storage2"
+        ],
+        "tagSetSourceFile" : ""
+    },
+    "Requirements" : [
+        
+    ],
+    "TechCost" : 30,
+    "PurchaseCost" : 1000000,
+    "AdditionalCost" : 1000,
+    "Tags" : {
+        "items" : [
+            "argo_storage3"
+        ],
+        "tagSetSourceFile" : ""
+    },
+    "Stats" : [
+		{
+			"typeString" : "System.Int32",
+			"name" : "MechBayPods",
+			"value" : 6,
+			"set" : true,
+			"valueConstant" : ""
+		},
+		{
+			"typeString" : "System.Int32",
+			"name" : "MechBayPods_Display",
+			"value" : 36,
+			"set" : true,
+			"valueConstant" : ""
+		}
+    ]
+}
