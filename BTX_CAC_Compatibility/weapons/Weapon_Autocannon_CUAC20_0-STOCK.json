@@ -1,0 +1,25 @@
+{
+    "ProjectilesPerShot": 1,
+	"ImprovedBallistic": true,
+	"FireDelayMultiplier": 1,
+	"Modes": [
+		{
+			"Id": "UACMode_Full",
+			"UIName": "x2",
+			"Name": "UAC Mode",
+			"Description": "UAC Mode fires 2 projectiles.",
+			"isBaseMode": true
+		},
+		{
+			"Id": "UACMode_Half",
+			"UIName": "x1",
+			"Name": "AC Mode",
+			"Description": "AC Mode fires only one projectile, but at increased accuracy and lowered recoil.",
+			"isBaseMode": false,
+			"AccuracyModifier": -4,
+			"ShotsWhenFired": -1,
+			"RefireModifier": -4,
+			"HeatGenerated": -24
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"ImprovedBallistic": true,
+	"MissileVolleySize": 15,
+	"MissileFiringIntervalMultiplier": 1,
+	"MissileVolleyIntervalMultiplier": 1,
+	"FireDelayMultiplier": 1,
+	"HitGenerator": "Cluster",
+	"AMSHitChance": 0.0,
+	"MissileHealth": 1,
+	"AccuracyModifier": 0,
+	"DirectFireModifier": -4
+}

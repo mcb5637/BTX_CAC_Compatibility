@@ -6,7 +6,7 @@
 	"Author": "mcb",
 	"Website": "",
 
-	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "Custom Ammo Categories" ],
+	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "Custom Ammo Categories" ],
 	"OptionallyDependsOn": [ "BTXMinusWeapons" ],
 	
 	"DLL": "BTX_CAC_CompatibilityDll.dll",

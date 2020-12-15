@@ -1,0 +1,7 @@
+{
+    "ShotsWhenFired": 1,
+    "VolleyDivisor": 1,
+	"Damage": 60,
+	"Instability": 20,
+	"ImprovedBallistic": true
+}
