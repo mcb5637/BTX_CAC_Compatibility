@@ -8,6 +8,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+[assembly:AssemblyVersion("0.1.1.0")]
+
 namespace BTX_CAC_CompatibilityDll
 {
     class Main

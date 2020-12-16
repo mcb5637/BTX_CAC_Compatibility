@@ -36,5 +36,4 @@ Weapon list:
  - Flamer: added forestfires
  - MG: added double speed mode (double shots, -4acc, +heat)
  
- TODO ATM weapons
  TODO edit texts
