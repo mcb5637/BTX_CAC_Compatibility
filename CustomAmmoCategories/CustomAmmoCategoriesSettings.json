@@ -1,4 +1,7 @@
+
 {
+  "NullifyDestoryedLocationDamage": false,
+  "DestoryedLocationDamageTransferStructure": false,
   "debugLog": true,
   "modHTTPServer": false,
   "modHTTPListen": "http://localhost:65080/",
