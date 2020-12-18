@@ -255,5 +255,6 @@
   "ToHitVehicleFromSide":-1,
   "ToHitVehicleFromRear":-2,
   "WeaponPanelWidthScale":1,
-  "WeaponPanelHeightScale":1
+  "WeaponPanelHeightScale":1,
+  "ShowApplyHeatSinkMessage": false
 }
