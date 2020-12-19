@@ -37,3 +37,5 @@ Weapon list:
  - MG: added double speed mode (double shots, -4acc, +heat)
  
  TODO edit texts
+
+If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3

@@ -82,7 +82,7 @@
       "vehicleFiery": 15
     },
     "DecalTexture": "envTxrDecl_terrainDmgSmallBlood_alb",
-    "DrawBloodChance": 0.3
+    "DrawBloodChance": 0
   },
   "DontShowBurnedTrees": false,
   "DontShowScorchTerrain": false,
