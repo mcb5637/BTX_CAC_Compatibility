@@ -47,6 +47,10 @@
 		{
             "Type": "ShipModuleUpgrade",
             "Path": "shipUpgrades"
-        }
+        },
+		{
+		  "Type": "AdvancedJSONMerge",
+		  "Path": "advancedMerge"
+		}
 	]
 }

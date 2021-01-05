@@ -1,0 +1,24 @@
+{
+    "TargetID": "mechdef_bullshark_BSK-MAZ",
+    "Instructions": [
+		{
+            "JSONPath": "$.inventory",
+            "Action": "ArrayAdd",
+			"Value": {
+				"MountedLocation": "RightTorso",
+				"ComponentDefID": "Ammo_AmmunitionBox_Generic_Thumper",
+				"SimGameUID": null,
+				"ComponentDefType": "AmmunitionBox",
+				"HardpointSlot": -1,
+				"GUID": null,
+				"DamageLevel": "Functional",
+				"prefabName": null,
+				"hasPrefabName": false
+			}
+        },
+		{
+            "JSONPath": "$.MechTags.items[?(@ == 'BLACKLISTED')]",
+            "Action": "Remove"
+        }
+    ]
+}
