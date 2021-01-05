@@ -6,6 +6,7 @@ Installation: (requires working BTX installation)
  - Download CustomBundle https://github.com/BattletechModders/CustomBundle
  - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
  - Add CustomAmmoCategories, CustomComponents, CustomLocalization and CustomUnits to your mods folder (only add these 4 from CustomBundle, the rest is not needed)
+ - Remove the folder CustomAmmoCategories/StreamingAssets
  - Add BTX_CAC_Compatibility, overriding the settings of CustomAmmoCategories, CustomUnits, MissionControl and BiggerDrops
 
 
