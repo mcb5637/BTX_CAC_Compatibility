@@ -21,6 +21,13 @@
 		}
 	},
 	
+	"DataAddendumEntries": [ 
+        {
+			"name": "BattleTech.AmmoCategoryEnumeration",
+			"path": "enums/AmmoCategory.json"
+		}
+	],
+	
 	"Manifest": [
 		{
 		  "Type": "WeaponDef",

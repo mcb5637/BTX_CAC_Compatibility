@@ -20,7 +20,7 @@
     "DamageVariance": 0,
     "HeatDamage": 0,
     "StructureDamage": 0,
-    "AccuracyModifier": -20,
+    "AccuracyModifier": 0,
     "CriticalChanceMultiplier": 1,
     "AOECapable": true,
 	"AOERange": 60,
