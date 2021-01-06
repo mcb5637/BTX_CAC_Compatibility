@@ -9,11 +9,11 @@
         570,
         630
     ],
-	"MinRange": 90,
+	"ForbiddenRange": 90,
     "AmmoCategory": "Thumper",
     "StartingAmmoCapacity": 0,
     "HeatGenerated": 40,
-    "Damage": 75,
+    "Damage": 15,
     "OverheatedDamageMultiplier": 0,
     "EvasiveDamageMultiplier": 0,
     "EvasivePipsIgnored": 0,
@@ -34,17 +34,17 @@
     "AttackRecoil": 4,
     "Instability": 75,
 	"AoEDmgFalloffType": "Linear",
-    "WeaponEffectID": "WeaponEffect-Weapon_AC20_Ultra",
+    "WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
     "Description": {
         "Cost": 370000,
         "Rarity": 99,
         "Purchasable": true,
-        "Manufacturer": "Kali Yama",
-        "Model": "Thumper",
-        "UIName": "Thumper Artillery",
+        "Manufacturer": "Defiance",
+        "Model": "Light Artillery",
+        "UIName": "Thumper",
         "Id": "Weapon_MortarCAC_Thumper",
-        "Name": "Thumper Artillery",
-        "Details": "The Thumper Cannon is an integrated, heavy artillery piece mounted on the Bull Shark. When fired, it deals devastating damage to all units within the targeted area - often destroying lighter 'Mechs and vehicles entirely.",
+        "Name": "Thumper",
+        "Details": "The Thumper Cannon is an integrated, light artillery piece mounted on the Bull Shark. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect.",
         "Icon": "uixSvgIcon_weapon_Ballistic"
     },
     "BonusValueA": "",
@@ -71,9 +71,5 @@
     },
 	"ImprovedBallistic": true,
 	"FireDelayMultiplier": 1,
-	"AlwaysIndirectVisuals": true,
-	"AdditionalImpactVFX": "WFX_ExplosiveSmokeS",
-	"AdditionalImpactVFXScaleX": 2,
-	"AdditionalImpactVFXScaleY": 2,
-	"AdditionalImpactVFXScaleZ": 2
+	"AlwaysIndirectVisuals": true
 }
