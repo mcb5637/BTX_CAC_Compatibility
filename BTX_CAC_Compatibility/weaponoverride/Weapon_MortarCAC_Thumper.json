@@ -13,7 +13,7 @@
     "AmmoCategory": "Thumper",
     "StartingAmmoCapacity": 0,
     "HeatGenerated": 40,
-    "Damage": 15,
+    "Damage": 40,
     "OverheatedDamageMultiplier": 0,
     "EvasiveDamageMultiplier": 0,
     "EvasivePipsIgnored": 0,
@@ -71,5 +71,9 @@
     },
 	"ImprovedBallistic": true,
 	"FireDelayMultiplier": 1,
-	"AlwaysIndirectVisuals": true
+	"AlwaysIndirectVisuals": true,
+	"AdditionalImpactVFX": "WFX_BELarger",
+    "AdditionalImpactVFXScaleX": 12,
+    "AdditionalImpactVFXScaleY": 12,
+    "AdditionalImpactVFXScaleZ": 12
 }

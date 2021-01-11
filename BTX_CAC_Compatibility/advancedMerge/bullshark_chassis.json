@@ -17,7 +17,7 @@
 				"ComponentDefID" : "Weapon_MortarCAC_Thumper",
 				"SimGameUID" : "",
 				"ComponentDefType" : "Weapon",
-				"HardpointSlot" : 3,
+				"HardpointSlot" : 0,
 				"IsFixed" : true,
 				"GUID" : null,
 				"DamageLevel" : "Functional",

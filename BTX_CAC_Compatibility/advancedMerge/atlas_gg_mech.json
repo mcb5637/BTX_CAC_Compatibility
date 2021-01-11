@@ -1,0 +1,37 @@
+{
+    "TargetID": "mechdef_atlas_AS7-GG",
+    "Instructions": [
+		{
+            "JSONPath": "$.inventory[?(@.ComponentDefID == 'Weapon_Inferno_Inferno2_2-Marklin_Mini')]",
+            "Action": "Remove"
+        },
+		{
+            "JSONPath": "$.inventory",
+            "Action": "ArrayConcat",
+			"Value": [
+				{
+					"MountedLocation": "LeftTorso",
+					"ComponentDefID": "Weapon_SRM_SRM4_2-Irian",
+					"SimGameUID": null,
+					"ComponentDefType": "Weapon",
+					"HardpointSlot": 0,
+					"GUID": null,
+					"DamageLevel": "Functional",
+					"prefabName": null,
+					"hasPrefabName": false
+				},
+				{
+					"MountedLocation": "LeftTorso",
+					"ComponentDefID": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
+					"SimGameUID": null,
+					"ComponentDefType": "AmmunitionBox",
+					"HardpointSlot": -1,
+					"GUID": null,
+					"DamageLevel": "Functional",
+					"prefabName": null,
+					"hasPrefabName": false
+				},
+			]
+        }
+    ]
+}
