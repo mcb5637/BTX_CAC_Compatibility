@@ -10,7 +10,7 @@ Installation: (requires working BTX installation)
  - Add BTX_CAC_Compatibility, overriding the settings of CustomAmmoCategories, CustomUnits, MissionControl and BiggerDrops
 
 
-Weapon list:
+Component list (Clan & SLDF ones included):
  - PPC: added FI OFF mode
  - ER PPC: -
  - Snub PPC: single projectile, damage falloff over medium range
@@ -31,12 +31,20 @@ Weapon list:
  - SRM: added inferno ammo (inferno causes fires everywhere)
  - Artemis IV SRM: added inferno ammo, added clustering, +4 acc
  - Streak SRM: added inferno ammo, added streak effect+clustering
- - Infernos: Broken, use SRM inferno ammo instead (TODO change them in itemcollections)
+ - Infernos: Broken, use SRM inferno ammo instead (TODO check if something is still using them)
  - Narc: -
  
  - Flamer: added forestfires
  - MG: added double speed mode (double shots, -4acc, +heat)
+ - ATM: added 3 modes instead of 3 ammo types, trading damage for range (Clan magic lets them be loaded with exactly the correct ammo types)
  
- TODO edit texts
+ - TODO: edit texts
+ - WIP: artillery, including bullsharks thumper
+ - TODO: AMS
+ - TODO: EWS
+ - TODO: Tag & Narc to hit bonus instead of damage bonus?
 
-If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
+Optional:
+ - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
+ 
+ - TODO: Vehicles?
