@@ -22,6 +22,7 @@
    "FireTerrainStrength": 0,
    "FireOnSuccessHit": true,
    "FireTerrainCellRadius": 6,
+   "WeaponEffectID": "WeaponEffect-Weapon_SRMInferno",
    "statusEffects" : [
         {
             "durationData" : {

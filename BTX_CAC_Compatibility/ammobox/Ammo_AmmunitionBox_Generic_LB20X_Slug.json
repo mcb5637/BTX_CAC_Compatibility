@@ -14,7 +14,7 @@
         "Icon": "uixSvgIcon_ammoBox_Ballistic"
     },
     "BonusValueA": "1 Shot Slug",
-    "BonusValueB": "",
+    "BonusValueB": "- 20 Dmg",
     "ComponentType": "AmmunitionBox",
     "ComponentSubType": "Ammunition",
     "PrefabIdentifier": "",

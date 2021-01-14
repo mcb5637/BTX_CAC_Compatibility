@@ -19,7 +19,7 @@
    "HasShells": true,
    "MinShellsDistance": 120,
    "MaxShellsDistance": 150,
-   "UnseparatedDamageMult": 0.8,
+   "UnseparatedDamageMult": 0.7,
    "HitGenerator": "Cluster",
    "ProjectilesPerShot": 9,
    "AccuracyModifier": -1
