@@ -42,18 +42,18 @@
         "Manufacturer": "Defiance",
         "Model": "Light Artillery",
         "UIName": "Thumper",
-        "Id": "Weapon_MortarCAC_Thumper",
+        "Id": "Weapon_MortarCAC_ThumperFree",
         "Name": "Thumper",
-        "Details": "The Thumper Cannon is an integrated, light artillery piece mounted on the Bull Shark. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect.\nThis variant is integrated into the Bull Sharks internal structure, using less space and tonnage, but this also means removing it breaks the Bull Shark.",
+        "Details": "The Thumper Cannon is an light artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect.",
         "Icon": "uixSvgIcon_weapon_Ballistic"
     },
-    "BonusValueA": "- 3 Slots",
-    "BonusValueB": "- 6 Tonns",
+    "BonusValueA": "",
+    "BonusValueB": "",
     "ComponentType": "Weapon",
     "ComponentSubType": "Weapon",
-    "PrefabIdentifier": "chrPrfWeap_bullshark_centertorso_thumper",
-    "InventorySize": 7,
-    "Tonnage": 9,
+    "PrefabIdentifier": "AC20",
+    "InventorySize": 10,
+    "Tonnage": 15,
     "AllowedLocations": "All",
     "DisallowedLocations": "All",
     "CriticalComponent": false,
@@ -63,9 +63,7 @@
     "ComponentTags": {
         "items": [
             "component_type_stock",
-            "range_extreme",
-            "BLACKLISTED",
-			"BUILT-IN"
+            "range_extreme"
         ],
         "tagSetSourceFile": ""
     },

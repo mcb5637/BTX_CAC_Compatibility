@@ -18,7 +18,9 @@
 		"ReplaceInItemCollections": {
 			"Weapon_Inferno_Inferno2_0-STOCK": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
 			"Weapon_Inferno_Inferno2_1-Harvester": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
-			"Weapon_Inferno_Inferno2_2-Marklin_Mini": "Ammo_AmmunitionBox_Generic_SRM_Inferno"
+			"Weapon_Inferno_Inferno2_2-Marklin_Mini": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
+			"mechdef_griffin_GRF-4N_fp_greed": "mechdef_griffin_GRF-4N",
+			"Gear_Mortar_MechMortar": "Weapon_MortarCAC_ThumperFree"
 		}
 	},
 	
@@ -59,6 +61,14 @@
 		{
 		  "Type": "AdvancedJSONMerge",
 		  "Path": "advancedMerge"
+		},
+		{
+		  "Type": "ChassisDef",
+		  "Path": "chassis"
+		},
+		{
+		  "Type": "MechDef",
+		  "Path": "mech"
 		}
 	]
 }

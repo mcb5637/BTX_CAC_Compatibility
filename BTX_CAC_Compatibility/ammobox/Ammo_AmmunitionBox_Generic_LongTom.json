@@ -1,0 +1,37 @@
+{
+    "AmmoID": "Ammunition_LongTom",
+    "Capacity": 20,
+    "Description": {
+        "Cost": 20000,
+        "Rarity": 0,
+        "Purchasable": true,
+        "Manufacturer": "Generic",
+        "Model": "Long Tom",
+        "UIName": "Long Tom Artillery Ammo",
+        "Id": "Ammo_AmmunitionBox_Generic_LongTom",
+        "Name": "LongTom Artillery Ammo",
+        "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nLong Tom Ammo Bins each contain 20 rounds and may feed multiple weapons.\n\nThis is not only 4 tonns of ammo, but also the loading mechanism of the Long Tom Artillery.",
+        "Icon": "uixSvgIcon_ammoBox_Ballistic"
+    },
+    "BonusValueA": "",
+    "BonusValueB": "",
+    "ComponentType": "AmmunitionBox",
+    "ComponentSubType": "Ammunition",
+    "PrefabIdentifier": "",
+    "BattleValue": 0,
+    "InventorySize": 4,
+    "Tonnage": 4,
+	"CanExplode": true,
+    "AllowedLocations": "All",
+    "DisallowedLocations": "All",
+    "CriticalComponent": false,
+    "statusEffects": [
+        
+    ],
+    "ComponentTags": {
+        "items": [
+            "component_type_stock"
+        ],
+        "tagSetSourceFile": ""
+    }
+}
