@@ -36,7 +36,13 @@ Component list (Clan & SLDF ones included):
  
  - Flamer: added forestfires
  - MG: added double speed mode (double shots, -4acc, +heat)
+ 
  - ATM: added 3 modes instead of 3 ammo types, trading damage for range (Clan magic lets them be loaded with exactly the correct ammo types)
+ 
+ - + Thumper: light artillery (replaces HM mortar / + version for Bull Shark)
+ - + Sniper: medium artillery (found in mining shops / TODO: add Helepolis HEP-3H mech, used by ComStar)
+ - + Long Tom: heavy artillery (special, only for Bull Shark with special event)
+ - + Arrow IV: medium artillery (lostech / FP reward / TODO: check how to add to itemcollections after 3044)
  
  - TODO: edit texts
  - WIP: artillery, including bullsharks thumper

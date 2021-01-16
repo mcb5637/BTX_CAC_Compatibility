@@ -2,7 +2,7 @@
     "AmmoID": "Ammunition_LongTom",
     "Capacity": 20,
     "Description": {
-        "Cost": 20000,
+        "Cost": 40000,
         "Rarity": 0,
         "Purchasable": true,
         "Manufacturer": "Generic",
