@@ -14,7 +14,7 @@
 	"DLL": "BTX_CAC_CompatibilityDll.dll",
 	
 	"Settings": {
-		"Use4LimitOnContractIds": [ "uw1_4_destroyBase" ],
+		"Use4LimitOnContractIds": [ "uw1_4_destroyBase", "tournament_1_3wayBattle", "tournament_a1_3wayBattle" ],
 		"ReplaceInItemCollections": {
 			"Weapon_Inferno_Inferno2_0-STOCK": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
 			"Weapon_Inferno_Inferno2_1-Harvester": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
