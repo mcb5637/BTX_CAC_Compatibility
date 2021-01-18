@@ -68,6 +68,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SimGameState_OnDayPassed.cs" />
+    <Compile Include="Patch_FixCOILDamageSprinting.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
