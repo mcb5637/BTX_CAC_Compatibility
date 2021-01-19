@@ -5,7 +5,7 @@
 	"Description": "Modifies BTX (and BTXMinusWeapons) for CAC.",
 	"Author": "mcb",
 	"Website": "",
-	"Version": "0.1.4.0",
+	"Version": "0.1.5.0",
 
 	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "Custom Ammo Categories" ],
 	"OptionallyDependsOn": [ "BTXMinusWeapons" ],
@@ -16,11 +16,11 @@
 	"Settings": {
 		"Use4LimitOnContractIds": [ "uw1_4_destroyBase", "tournament_1_3wayBattle", "tournament_a1_3wayBattle" ],
 		"ReplaceInItemCollections": {
-			"Weapon_Inferno_Inferno2_0-STOCK": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
-			"Weapon_Inferno_Inferno2_1-Harvester": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
-			"Weapon_Inferno_Inferno2_2-Marklin_Mini": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
-			"mechdef_griffin_GRF-4N_fp_greed": "mechdef_griffin_GRF-4N",
-			"Gear_Mortar_MechMortar": "Weapon_MortarCAC_ThumperFree"
+			"Weapon_Inferno_Inferno2_0-STOCK": { "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno", "Type": "AmmunitionBox" },
+			"Weapon_Inferno_Inferno2_1-Harvester": { "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno", "Type": "AmmunitionBox" },
+			"Weapon_Inferno_Inferno2_2-Marklin_Mini": { "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno", "Type": "AmmunitionBox" },
+			"mechdef_griffin_GRF-4N_fp_greed": { "ID": "mechdef_griffin_GRF-4N", "Type": "" },
+			"Gear_Mortar_MechMortar": { "ID": "Weapon_MortarCAC_ThumperFree", "Type": "Weapon" }
 		}
 	},
 	

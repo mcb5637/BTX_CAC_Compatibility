@@ -15,9 +15,11 @@ namespace BTX_CAC_CompatibilityDll
         {
             foreach (ItemCollectionDef.Entry i in __instance.Entries)
             {
-                if (Main.Sett.ReplaceInItemCollections.TryGetValue(i.ID, out string ne))
+                if (Main.Sett.ReplaceInItemCollections.TryGetValue(i.ID, out ItemCollectionReplace ne))
                 {
-                    i.ID = ne;
+                    i.ID = ne.ID;
+                    if (Enum.TryParse(ne.Type, out ShopItemType t))
+                        i.Type = t;
                 }
             }
         }
