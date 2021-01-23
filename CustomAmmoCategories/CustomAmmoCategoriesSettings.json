@@ -166,9 +166,9 @@
   "AIPeerToPeerNodeEnabled": false,
   "AIPeerToPeerFirewallPierceThrough": false,
   "AIMStandalone": "AttackImprovementMod.dll",
-  "AdvancedCirtProcessing": true,
-  "DestroyedComponentsCritTrap": true,
-  "CritLocationTransfer": true,
+  "AdvancedCirtProcessing": false,
+  "DestroyedComponentsCritTrap": false,
+  "CritLocationTransfer": false,
   "APMinCritChance": 0.1,
   "PatchWeaponSlotsOverflowCultures": [
     "CULTURE_RU_RU"
