@@ -38,7 +38,7 @@ Component list (Clan & SLDF ones included):
  - Narc: -
  
  - Flamer: added forestfires
- - MG: added double speed mode (double shots, -4acc, +heat)
+ - MG: added double speed mode (double shots, -4 acc, +5 heat)
  
  - ATM: added 3 modes instead of 3 ammo types, trading damage for range (Clan magic lets them be loaded with exactly the correct ammo types)
  
@@ -49,6 +49,7 @@ Component list (Clan & SLDF ones included):
  
  - + Guardian ECM: -20% detectability, 180m aura (+4 defense, indirect immune, sensorlock immune) (friendly only)
  - + Liao Prototype ECM: -10% detectability, 90m aura (+4 defense, indirect immune, sensorlock immune) (friendly only)
+ - + Packrat ECM (only in Packrat vehicle): 90m aura (+4 defense, indirect immune) (friendly + enemy)
  
  - + Beagle Active Probe: +150m sensor range, free action sensor lock, 120m active probe ping (free action)
  - + Liao Prototype AP: +100m sensor range, 90m active probe ping
@@ -63,7 +64,7 @@ improved comms: +can spot for other mechs even in ecm?
 -beagle AP: +sensor range, active probe ping (120 range, can fire after using it)
 -guardian: -sensor detection range, +defense aura, +sensorlock defense aura (aura size 180)
 -liao EWE: +sensor range, -sensor detection range, +defense aura +sensorlock defense aura (pierced by beagle), active probe ping (90 range, uses firing action)
-packrat ecm: -sensor detection range, +defense aura (affects all units in range)
+-packrat ecm: -sensor detection range, +defense aura (affects all units in range)
 
 Optional:
  - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3

@@ -1,0 +1,23 @@
+{
+  "TargetIDs": [
+    "chassisdef_mongoose_MON-66b",
+    "chassisdef_mongoose_MON-66",
+    "chassisdef_phoenixhawk_PXH-1b"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ActiveProbe')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Gear_SensorCAC_Beagle"
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ECM')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Gear_SensorCAC_Guardian"
+      }
+    }
+  ]
+}

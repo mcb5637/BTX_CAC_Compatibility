@@ -66,6 +66,7 @@
     <Compile Include="ContractOverride_FromJSONFull.cs" />
     <Compile Include="ItemCollectionDef_FromCSV.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="SensorLockImmune.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SimGameState_OnDayPassed.cs" />
     <Compile Include="Patch_FixCOILDamageSprinting.cs" />
