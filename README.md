@@ -4,10 +4,13 @@ Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
  - Download CustomBundle https://github.com/BattletechModders/CustomBundle
+ - Download IRTweaks https://github.com/BattletechModders/IRTweaks
+ - Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils
  - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
- - Add CustomAmmoCategories, CustomComponents, CustomLocalization and CustomUnits to your mods folder (only add these 4 from CustomBundle, the rest is not needed)
+ - Add IRBTModUtils and IRTweaks to your mods folder
+ - Add CustomAmmoCategories, CustomComponents, CustomLocalization, CustomActivatableEquipment and CustomUnits to your mods folder (only add these 5 from CustomBundle, the rest is not needed)
  - Remove the folder CustomAmmoCategories/StreamingAssets
- - Add BTX_CAC_Compatibility, overriding the settings of CustomAmmoCategories, CustomUnits, MissionControl and BiggerDrops
+ - Add BTX_CAC_Compatibility, overriding the settings of CustomAmmoCategories, CustomUnits, CustomActivatableEquipment, IRTweaks, MissionControl and BiggerDrops
 
 
 Component list (Clan & SLDF ones included):
@@ -44,11 +47,23 @@ Component list (Clan & SLDF ones included):
  - + Long Tom: heavy artillery (special, only for Bull Shark with special event)
  - + Arrow IV: medium artillery (lostech / FP reward / TODO: check how to add to itemcollections after 3044)
  
+ - + Guardian ECM: -20% detectability, 180m aura (+4 defense, indirect immune, sensorlock immune) (friendly only)
+ - + Liao Prototype ECM: -10% detectability, 90m aura (+4 defense, indirect immune, sensorlock immune) (friendly only)
+ 
+ - + Beagle Active Probe: +150m sensor range, free action sensor lock, 120m active probe ping (free action)
+ - + Liao Prototype AP: +100m sensor range, 90m active probe ping
+ 
  - TODO: edit texts
- - WIP: artillery, including bullsharks thumper
  - TODO: AMS
- - TODO: EWS
+ - WIP: EWS
  - TODO: Tag & Narc to hit bonus instead of damage bonus?
+ - TODO: MASC & TSM
+improved sensor quirk: +sensor range, active probe ping (short range, uses firing action)
+improved comms: +can spot for other mechs even in ecm?
+-beagle AP: +sensor range, active probe ping (120 range, can fire after using it)
+-guardian: -sensor detection range, +defense aura, +sensorlock defense aura (aura size 180)
+-liao EWE: +sensor range, -sensor detection range, +defense aura +sensorlock defense aura (pierced by beagle), active probe ping (90 range, uses firing action)
+packrat ecm: -sensor detection range, +defense aura (affects all units in range)
 
 Optional:
  - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3

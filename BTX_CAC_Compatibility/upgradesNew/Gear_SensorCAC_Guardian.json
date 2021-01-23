@@ -1,0 +1,226 @@
+{
+  "StatName": null,
+  "RelativeModifier": 0,
+  "AbsoluteModifier": 0,
+  "Description": {
+    "Cost": 2500000,
+    "Rarity": 99,
+    "Purchasable": true,
+    "Manufacturer": "Johnston Industries",
+    "Model": "Guardian",
+    "UIName": "Guardian ECM",
+    "Id": "Gear_SensorCAC_Guardian",
+    "Name": "Guardian ECM",
+    "Details": "Star League Era electronic countermeasures system. Interferes with enemy targetings computers, sensors and comms. Decreasing accuracy against nearby allied forces and preventing most enemy comms.",
+    "Icon": "UixSvgIcon_specialEquip_Sensors"
+  },
+  "BonusValueA": "+ 180m ECM Field",
+  "BonusValueB": "- 20% Detectability",
+  "ComponentType": "Upgrade",
+  "ComponentSubType": "Prototype_ElectronicWarfare",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 2,
+  "Tonnage": 1.5,
+  "AllowedLocations": "All",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "Auras": [
+    {
+      "Id": "Gear_SensorCAC_Guardian_ECMAura",
+      "MinefieldDetector": false,
+      "LineType": "Dashes",
+      "isSpining": false,
+      "Name": "Guardian ECM",
+      "ReticleColor": "blue",
+      "Range": 180,
+      "RangeStatistic": "",
+      "RemoveOnSensorLock": true,
+      "State": "Persistent",
+      "HideOnNotSelected": false,
+      "FloatieAtEndOfMove": true,
+      "ApplySelf": true,
+      "AllyStealthAffection": "None",
+      "EnemyStealthAffection": "None",
+      "IsPositiveToAlly": true,
+      "IsNegativeToAlly": false,
+      "IsNegativeToEnemy": false,
+      "IsPositiveToEnemy": false,
+      "onlineVFX": [
+        {
+          "VFXname": "vfxPrfPrtl_ECM_loop",
+          "scale": true,
+          "scaleToRangeFactor": 100
+        }
+      ],
+      "targetVFX": [
+        "vfxPrfPrtl_ECMtargetAdd_burst"
+      ],
+      "removeTargetVFX": [
+        "vfxPrfPrtl_ECMtargetRemove_burst"
+      ],
+      "ownerSFX": [
+        "AudioEventList_ui_ui_ecm_start"
+      ],
+      "targetSFX": [
+        "AudioEventList_ecm_ecm_enter"
+      ],
+      "removeOwnerSFX": [
+        "AudioEventList_ui_ui_ecm_stop"
+      ],
+      "removeTargetSFX": [
+        "AudioEventList_ecm_ecm_exit"
+      ],
+      "statusEffects": [
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "AlliesWithinRange",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_ECMAura_Indirect",
+            "Name": "",
+            "Details": "",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "IsIndirectImmune",
+            "operation": "Set",
+            "modValue": "true",
+            "modType": "System.Boolean"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "AlliesWithinRange",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_ECMAura_ToHit",
+            "Name": "ECM Defense",
+            "Details": "Friendly units within an ECM field gain +[AMT] Difficulty to attacks against them and immunity to Indirect Fire. Being Sensor Locked removes this effect.",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "ToHitThisActor",
+            "operation": "Float_Add",
+            "modValue": "4.0",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "AlliesWithinRange",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_ECMAura_SensorLock",
+            "Name": "",
+            "Details": "",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "IsSensorLockImmune",
+            "operation": "Set",
+            "modValue": "true",
+            "modType": "System.Boolean"
+          },
+          "nature": "Buff"
+        }
+      ]
+    }
+  ],
+  "statusEffects": [
+    {
+      "durationData": {
+        "duration": -1,
+        "ticksOnActivations": false,
+        "useActivationsOfTarget": false,
+        "ticksOnEndOfRound": false,
+        "ticksOnMovements": false,
+        "stackLimit": -1,
+        "clearedWhenAttacked": false
+      },
+      "targetingData": {
+        "effectTriggerType": "Passive",
+        "triggerLimit": 0,
+        "extendDurationOnTrigger": 0,
+        "specialRules": "NotSet",
+        "effectTargetType": "Creator",
+        "range": 0,
+        "forcePathRebuild": false,
+        "forceVisRebuild": false,
+        "showInTargetPreview": false,
+        "showInStatusPanel": true
+      },
+      "effectType": "StatisticEffect",
+      "Description": {
+        "Id": "StatusEffect_ESensorDecrease",
+        "Name": "Detectability decreased",
+        "Details": "Decreases sensor detectability distance by 20%.",
+        "Icon": "uixSvgIcon_status_ECM-missileDef"
+      },
+      "nature": "Buff",
+      "statisticData": {
+        "appliesEachTick": false,
+        "effectsPersistAfterDestruction": false,
+        "statName": "SensorSignatureModifier",
+        "operation": "Float_Multiply",
+        "modValue": "-0.2",
+        "modType": "System.Single",
+        "additionalRules": "NotSet",
+        "targetCollection": "NotSet",
+        "targetWeaponCategory": "NotSet",
+        "targetWeaponType": "NotSet",
+        "targetAmmoCategory": "NotSet",
+        "targetWeaponSubType": "NotSet"
+      },
+      "tagData": null,
+      "floatieData": null,
+      "actorBurningData": null,
+      "vfxData": null,
+      "instantModData": null,
+      "poorlyMaintainedEffectData": null
+    }
+  ],
+  "ComponentTags": {
+    "items": [
+    ],
+    "tagSetSourceFile": ""
+  }
+}

@@ -7,7 +7,7 @@
 	"Website": "",
 	"Version": "0.1.5.0",
 
-	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "Custom Ammo Categories" ],
+	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "Custom Ammo Categories", "CustomActivatableEquipment", "IRTweaks" ],
 	"OptionallyDependsOn": [ "BTXMinusWeapons" ],
 	"ConflictsWith": [ "MechResizer", "BTMLColorLOSMod" ],
 	
@@ -69,6 +69,14 @@
 		{
 		  "Type": "MechDef",
 		  "Path": "mech"
+		},
+		{
+		  "Type": "UpgradeDef",
+		  "Path": "upgradesNew"
+		},
+		{
+		  "Type": "AbilityDef",
+		  "Path": "abilityNew"
 		}
 	]
 }

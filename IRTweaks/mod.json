@@ -1,0 +1,90 @@
+{
+	"Name": "IRTweaks",
+	"Enabled": true,
+	"Hidden": true,
+	"Version": "0.7.0",
+	"Description": "Miscellaneous Tweaks and Fixes",
+	"Author": "IceRaptor",
+	"Website": "https://github.com/IceRaptor/IRTweaks",
+	"Contact": "",
+	"DLL": "IRTweaks.dll",
+	"DependsOn": [
+		"IRBTModUtils",
+		"Custom Ammo Categories"
+	],
+	"Settings": {
+		"Debug": true,
+		"Trace": false,
+		"Fixes": {
+			"AlternateMechNamingStyle": false,
+			"BuildingDamageColorChange": false,
+			"BraceOnMeleeWithJuggernaut": false,
+			"BulkPurchasing": true,
+			"CalledShotTweaks": false,
+			"CombatLog": false,
+			"DisableCampaign": false,
+			"DisableCombatRestarts": false,
+			"DisableCombatSaves": false,
+			"DisableMPHashCalculation": true,
+			"ExtendedStats": false,
+			"FlexibleSensorLock": true,
+			"MechbayLayout": false,
+			"MultiTargetStat": true,
+			"PainTolerance": false,
+			"PathfinderTeamFix": true,
+			"RandomStartByDifficulty": false,
+			"ReduceSaveCompression": false,
+			"ShowAllArgoUpgrades": false,
+			"SimGameDifficultyLabelsReplacer": false,
+			"SkirmishAlwaysUnlimited": true,
+			"SkirmishReset": false,
+			"SkipDeleteSavePopup": true,
+			"SpawnProtection": false,
+			"StreamlinedMainMenu": false,
+			"UrbanExplosionsFix": false,
+			"WeaponTooltip": false
+		},
+		"Abilities": {
+			"FlexibleSensorLockId": "AbilityDefT5A_Disabled",
+			"JuggernautId": "AbilityDefGu8",
+			"MultiTargetId": "AbilityDefG5"
+		},
+		"Combat": {
+			"PilotAttributesMax": 13,
+			"CalledShot": {
+				"DisableAllLocations": true,
+				"DisableHeadshots": true,
+				"EnableTacticsModifier": true,
+				"BaseModifier": -6,
+				"PilotTags": {}
+			},
+			"FlexibleSensorLock": {
+				"FreeActionWithAbility": false,
+				"FreeActionWithStat": true,
+				"FreeActionStatName": "FreeSensorLock",
+				"AlsoAppliesToActiveProbe": true
+			},
+			"PainTolerance": {
+				"ResistPerGuts": 10,
+				"HeadDamageResistPenaltyPerArmorPoint": 5,
+				"HeadHitArmorOnlyResistPenaltyMulti": 0.5,
+				"AmmoExplosionResistPenaltyPerCapacityPercentile": 1,
+				"OverheatResistPenaltyPerHeatPercentile": 1,
+				"KnockdownResistPenalty": 6,
+				"SideLocationDestroyedResistPenalty": 10
+			},
+			"SpawnProtection": {
+				"ApplyGuard": true,
+				"EvasionPips": 6,
+				"ApplyToEnemies": true,
+				"ApplyToAllies": true,
+				"ApplyToNeutrals": true,
+				"ApplyToReinforcements": true
+			}
+		},
+		"Store": {
+			"QuantityOnShift": 5,
+			"QuantityOnControl": 20
+		}
+	}
+}
