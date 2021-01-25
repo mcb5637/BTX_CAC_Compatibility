@@ -1,0 +1,8 @@
+
+Some weapons have different firing modes/ammo types, each having its own effect.
+ECM works differently than you are used to. It now gives any affected Mech +4 defense (not only against missles), prevents indirect fire and prevents being sensorlocked.
+Having a Beagle Active Probe lets you use Sensor Lock and Active Probe Ping for free. Yes, Sensorlock that pesky light and immediately shoot it.
+Different auras have different colors: blue -> ECM   brown -> Active Probe range   green -> Improved Comms   red -> AMS
+Improved Comms Mech Quirk now allows to sensorlock mechs covered by ECM.
+You can mount an Active Probe and an ECM in any mech, if you have the space for it.
+Missing new shiny fixed equipment on your Mech? Store it, then ready it again. This refreshes fixed equipment.

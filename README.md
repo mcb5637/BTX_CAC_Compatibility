@@ -42,29 +42,26 @@ Component list (Clan & SLDF ones included):
  
  - ATM: added 3 modes instead of 3 ammo types, trading damage for range (Clan magic lets them be loaded with exactly the correct ammo types)
  
- - + Thumper: light artillery (replaces HM mortar / + version for Bull Shark)
- - + Sniper: medium artillery (found in mining shops / TODO: add Helepolis HEP-3H mech, used by ComStar)
- - + Long Tom: heavy artillery (special, only for Bull Shark with special event)
- - + Arrow IV: medium artillery (lostech / FP reward / TODO: check how to add to itemcollections after 3044)
+ - Thumper: light artillery (replaces HM mortar / + version for Bull Shark)
+ - Sniper: medium artillery (found in mining shops / TODO: add Helepolis HEP-3H mech, used by ComStar)
+ - Long Tom: heavy artillery (special, only for Bull Shark with special event)
+ - Arrow IV: medium artillery (lostech / FP reward / TODO: check how to add to itemcollections after 3044)
  
- - + Guardian ECM: -20% detectability, 180m aura (+4 defense, indirect immune, sensorlock immune) (friendly only)
- - + Liao Prototype ECM: -10% detectability, 90m aura (+4 defense, indirect immune, sensorlock immune) (friendly only)
- - + Packrat ECM (only in Packrat vehicle): 90m aura (+4 defense, indirect immune) (friendly + enemy)
+ - Guardian ECM: -20% detectability, 180m aura (+4 defense, indirect immune, sensorlock immune) (friendly only) (blue)
+ - Liao Prototype ECM: -10% detectability, 90m aura (+4 defense, indirect immune, sensorlock immune) (friendly only) (blue)
+ - Packrat ECM (only in Packrat vehicle): 90m aura (+4 defense, indirect immune) (friendly + enemy) (blue)
  
- - + Beagle Active Probe: +150m sensor range, free action sensor lock, 120m active probe ping (free action)
- - + Liao Prototype AP: +100m sensor range, 90m active probe ping
+ - Beagle Active Probe: +150m sensor range, free action sensor lock, 120m active probe ping (free action) (brown)
+ - Liao Prototype AP: +100m sensor range, 90m active probe ping (brown)
+ 
+ - Improved Sensors Quirk: +50m sensor range (stacks with AP)
+ - Improved Comms Quirk: 200m aura (removes sensorlock immune) (hostile only) (green)
  
  - TODO: edit texts
  - TODO: AMS
  - WIP: EWS
  - TODO: Tag & Narc to hit bonus instead of damage bonus?
  - TODO: MASC & TSM
-improved sensor quirk: +sensor range, active probe ping (short range, uses firing action)
-improved comms: +can spot for other mechs even in ecm?
--beagle AP: +sensor range, active probe ping (120 range, can fire after using it)
--guardian: -sensor detection range, +defense aura, +sensorlock defense aura (aura size 180)
--liao EWE: +sensor range, -sensor detection range, +defense aura +sensorlock defense aura (pierced by beagle), active probe ping (90 range, uses firing action)
--packrat ecm: -sensor detection range, +defense aura (affects all units in range)
 
 Optional:
  - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3

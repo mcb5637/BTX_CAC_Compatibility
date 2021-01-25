@@ -6,34 +6,34 @@
     "Cost": 2500000,
     "Rarity": 99,
     "Purchasable": true,
-    "Manufacturer": "-",
-    "Model": "-",
-    "UIName": "Packrat ECM",
-    "Id": "Gear_SensorCAC_PackratECM",
-    "Name": "Packrat ECM",
-    "Details": "Packrat electronic countermeasures system. Interferes with all targetings computers, sensors and comms. Decreasing accuracy against nearby allied forces and preventing most enemy comms.",
+    "Manufacturer": "Clans",
+    "Model": "ECM",
+    "UIName": "ECM Suite",
+    "Id": "Gear_SensorCAC_GuardianClan",
+    "Name": "ECM Suite",
+    "Details": "Clan Tech electronic countermeasures system. Interferes with enemy targetings computers, sensors and comms. Decreasing accuracy against nearby allied forces and preventing most enemy comms.",
     "Icon": "UixSvgIcon_specialEquip_Sensors"
   },
-  "BonusValueA": "+ 90m ECM Field",
-  "BonusValueB": "",
+  "BonusValueA": "+ 180m ECM Field",
+  "BonusValueB": "- 20% Detectability",
   "ComponentType": "Upgrade",
   "ComponentSubType": "Prototype_ElectronicWarfare",
   "PrefabIdentifier": "",
   "BattleValue": 0,
-  "InventorySize": 2,
-  "Tonnage": 6,
+  "InventorySize": 1,
+  "Tonnage": 1,
   "AllowedLocations": "All",
   "DisallowedLocations": "All",
   "CriticalComponent": false,
   "Auras": [
     {
-      "Id": "Gear_SensorCAC_Packrat_ECMAura",
+      "Id": "Gear_SensorCAC_GuardianClan_ECMAura",
       "MinefieldDetector": false,
       "LineType": "Dashes",
       "isSpining": false,
-      "Name": "Packrat ECM",
+      "Name": "ECM Suite",
       "ReticleColor": "blue",
-      "Range": 90,
+      "Range": 180,
       "RangeStatistic": "",
       "RemoveOnSensorLock": true,
       "State": "Persistent",
@@ -45,7 +45,7 @@
       "IsPositiveToAlly": true,
       "IsNegativeToAlly": false,
       "IsNegativeToEnemy": false,
-      "IsPositiveToEnemy": true,
+      "IsPositiveToEnemy": false,
       "onlineVFX": [
         {
           "VFXname": "vfxPrfPrtl_ECM_loop",
@@ -140,7 +140,7 @@
           "targetingData": {
             "effectTriggerType": "Passive",
             "specialRules": "NotSet",
-            "effectTargetType": "EnemiesWithinRange",
+            "effectTargetType": "AlliesWithinRange",
             "range": 0.0,
             "forcePathRebuild": false,
             "forceVisRebuild": false,
@@ -149,45 +149,15 @@
           },
           "effectType": "StatisticEffect",
           "Description": {
-            "Id": "Gear_SensorCAC_ECMAura_Indirect",
-            "Name": "",
-            "Details": "",
+            "Id": "Gear_SensorCAC_ECMAura_SensorLock",
+            "Name": "sens",
+            "Details": "sens",
             "Icon": "uixSvgIcon_status_ECM-missileDef"
           },
           "statisticData": {
-            "statName": "IsIndirectImmune",
-            "operation": "Set",
-            "modValue": "true",
-            "modType": "System.Boolean"
-          },
-          "nature": "Buff"
-        },
-        {
-          "durationData": {
-            "duration": -1,
-            "stackLimit": 1
-          },
-          "targetingData": {
-            "effectTriggerType": "Passive",
-            "specialRules": "NotSet",
-            "effectTargetType": "EnemiesWithinRange",
-            "range": 0.0,
-            "forcePathRebuild": false,
-            "forceVisRebuild": false,
-            "showInTargetPreview": true,
-            "showInStatusPanel": true
-          },
-          "effectType": "StatisticEffect",
-          "Description": {
-            "Id": "Gear_SensorCAC_ECMAura_ToHit",
-            "Name": "ECM Defense",
-            "Details": "Friendly units within an ECM field gain +[AMT] Difficulty to attacks against them and immunity to Indirect Fire and Sensor Locks.",
-            "Icon": "uixSvgIcon_status_ECM-missileDef"
-          },
-          "statisticData": {
-            "statName": "ToHitThisActor",
+            "statName": "SensorLockDefense",
             "operation": "Float_Add",
-            "modValue": "4.0",
+            "modValue": "1.0",
             "modType": "System.Single"
           },
           "nature": "Buff"
@@ -196,6 +166,57 @@
     }
   ],
   "statusEffects": [
+    {
+      "durationData": {
+        "duration": -1,
+        "ticksOnActivations": false,
+        "useActivationsOfTarget": false,
+        "ticksOnEndOfRound": false,
+        "ticksOnMovements": false,
+        "stackLimit": -1,
+        "clearedWhenAttacked": false
+      },
+      "targetingData": {
+        "effectTriggerType": "Passive",
+        "triggerLimit": 0,
+        "extendDurationOnTrigger": 0,
+        "specialRules": "NotSet",
+        "effectTargetType": "Creator",
+        "range": 0,
+        "forcePathRebuild": false,
+        "forceVisRebuild": false,
+        "showInTargetPreview": false,
+        "showInStatusPanel": true
+      },
+      "effectType": "StatisticEffect",
+      "Description": {
+        "Id": "StatusEffect_ESensorDecrease",
+        "Name": "Detectability decreased",
+        "Details": "Decreases sensor detectability distance by 20%.",
+        "Icon": "uixSvgIcon_status_ECM-missileDef"
+      },
+      "nature": "Buff",
+      "statisticData": {
+        "appliesEachTick": false,
+        "effectsPersistAfterDestruction": false,
+        "statName": "SensorSignatureModifier",
+        "operation": "Float_Multiply",
+        "modValue": "-0.2",
+        "modType": "System.Single",
+        "additionalRules": "NotSet",
+        "targetCollection": "NotSet",
+        "targetWeaponCategory": "NotSet",
+        "targetWeaponType": "NotSet",
+        "targetAmmoCategory": "NotSet",
+        "targetWeaponSubType": "NotSet"
+      },
+      "tagData": null,
+      "floatieData": null,
+      "actorBurningData": null,
+      "vfxData": null,
+      "instantModData": null,
+      "poorlyMaintainedEffectData": null
+    }
   ],
   "ComponentTags": {
     "items": [

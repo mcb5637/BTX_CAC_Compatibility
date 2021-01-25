@@ -1,0 +1,46 @@
+{
+  "TargetIDs": [
+    "chassisdef_mercury_MCY-97",
+    "chassisdef_raptor_RTX-OD",
+    "chassisdef_hermes_HER-3S",
+    "chassisdef_hermes_HER-3S1",
+    "chassisdef_hermes_HER-3S2",
+    "chassisdef_firestarter_FS9-S",
+    "chassisdef_firestarter_FS9-S1",
+    "chassisdef_owens_OW-1",
+    "chassisdef_owens_OW-1A",
+    "chassisdef_owens_OW-1B",
+    "chassisdef_owens_OW-1C",
+    "chassisdef_owens_OW-1D",
+    "chassisdef_cicada_CDA-3G",
+    "chassisdef_firestarter_FS9-O",
+    "chassisdef_anvil_ANV-3M",
+    "chassisdef_awesome_AWS-9Ma",
+    "chassisdef_berserker_BRZ-A3",
+    "chassisdef_berserker_BRZ-B3",
+    "chassisdef_catapult_CPLT-C4C"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ActiveProbe')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Gear_SensorCAC_BeagleHC"
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ActiveProbeImproved')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Gear_SensorCAC_BeagleHC"
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ECM')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Gear_SensorCAC_GuardianHC"
+      }
+    }
+  ]
+}

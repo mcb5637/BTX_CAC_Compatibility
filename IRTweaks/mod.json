@@ -21,7 +21,7 @@
 			"BraceOnMeleeWithJuggernaut": false,
 			"BulkPurchasing": true,
 			"CalledShotTweaks": false,
-			"CombatLog": false,
+			"CombatLog": true,
 			"DisableCampaign": false,
 			"DisableCombatRestarts": false,
 			"DisableCombatSaves": false,
@@ -41,7 +41,7 @@
 			"SkipDeleteSavePopup": true,
 			"SpawnProtection": false,
 			"StreamlinedMainMenu": false,
-			"UrbanExplosionsFix": false,
+			"UrbanExplosionsFix": true,
 			"WeaponTooltip": false
 		},
 		"Abilities": {

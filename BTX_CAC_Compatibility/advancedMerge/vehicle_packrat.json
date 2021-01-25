@@ -1,12 +1,12 @@
 {
-    "TargetIDs": [ "vehicledef_PACKRAT", "vehicledef_PACKRAT_ICE", "vehicledef_PACKRAT_ML", "vehicledef_PACKRAT_PKR-T5", "vehicledef_PACKRAT_SRM2" ],
-    "Instructions": [
-		{
-            "JSONPath": "$.inventory[?(@ComponentDefID == 'Gear_Sensor_Prototype_ECM')]",
-            "Action": "ObjectMerge",
-			"Value": {
-				"ComponentDefID": "Gear_SensorCAC_PackratECM"
-			}
-        }
-    ]
+  "TargetIDs": [ "vehicledef_PACKRAT", "vehicledef_PACKRAT_ICE", "vehicledef_PACKRAT_ML", "vehicledef_PACKRAT_PKR-T5", "vehicledef_PACKRAT_SRM2" ],
+  "Instructions": [
+    {
+      "JSONPath": "$.inventory[?(@ComponentDefID == 'Gear_Sensor_Prototype_ECM')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Gear_SensorCAC_PackratECM"
+      }
+    }
+  ]
 }

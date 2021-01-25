@@ -1,0 +1,147 @@
+{
+  "StatName": null,
+  "RelativeModifier": 0,
+  "AbsoluteModifier": 0,
+  "Description": {
+    "Cost": 8000000,
+    "Rarity": 99,
+    "Purchasable": false,
+    "Manufacturer": "Clans",
+    "Model": "AP",
+    "UIName": "Active Probe",
+    "Id": "Gear_SensorCAC_BeagleClan",
+    "Name": "Active Probe",
+    "Details": "Clan Tech Active Probe. When activated, the probe performs a Sensor Lock against all enemies within its radius before entering a cooldown state.",
+    "Icon": "UixSvgIcon_specialEquip_Sensors"
+  },
+  "BonusValueA": "+ Free Sensor Lock",
+  "BonusValueB": "+ 150m Sensor Range",
+  "ComponentType": "Upgrade",
+  "ComponentSubType": "ElectronicWarfare",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 1,
+  "Tonnage": 1,
+  "AllowedLocations": "All",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "statusEffects": [
+    {
+      "targetingData": {
+        "effectTriggerType": "OnActivation",
+        "effectTargetType": "EnemiesWithinRange",
+        "alsoTargetsCreator": true,
+        "forceVisRebuild": true
+      },
+      "effectType": "ActiveAbility",
+      "Description": {
+        "Id": "ActiveProbe_Ping",
+        "Name": "ACTIVE PROBE PING",
+        "Details": "Activated ability. Performs a Sensor Lock against all enemies within its radius, as indicated by the spinning gold ring. Will go into cooldown state after use.",
+        "Icon": "uixSvgIcon_action_sensorlock"
+      },
+      "activeAbilityEffectData": {
+        "abilityName": "AbilityDef_ActiveProbeClan_Ping"
+      }
+    },
+    {
+      "durationData": {
+        "duration": -1,
+        "ticksOnActivations": false,
+        "useActivationsOfTarget": false,
+        "ticksOnEndOfRound": false,
+        "ticksOnMovements": false,
+        "stackLimit": -1,
+        "clearedWhenAttacked": false
+      },
+      "targetingData": {
+        "effectTriggerType": "Passive",
+        "triggerLimit": 0,
+        "extendDurationOnTrigger": 0,
+        "specialRules": "NotSet",
+        "effectTargetType": "Creator",
+        "range": 0,
+        "forcePathRebuild": false,
+        "forceVisRebuild": false,
+        "showInTargetPreview": false,
+        "showInStatusPanel": true
+      },
+      "effectType": "StatisticEffect",
+      "Description": {
+        "Id": "StatusEffect_SensorIncrease",
+        "Name": "Sensor Range increased",
+        "Details": "Increases Sensor range by 150m",
+        "Icon": "uixSvgIcon_status_ECM-missileDef"
+      },
+      "nature": "Buff",
+      "statisticData": {
+        "appliesEachTick": false,
+        "effectsPersistAfterDestruction": false,
+        "statName": "SensorDistanceAbsolute",
+        "operation": "Float_Add",
+        "modValue": "150.0",
+        "modType": "System.Single",
+        "additionalRules": "NotSet",
+        "targetCollection": "NotSet",
+        "targetWeaponCategory": "NotSet",
+        "targetWeaponType": "NotSet",
+        "targetAmmoCategory": "NotSet",
+        "targetWeaponSubType": "NotSet"
+      },
+      "tagData": null,
+      "floatieData": null,
+      "actorBurningData": null,
+      "vfxData": null,
+      "instantModData": null,
+      "poorlyMaintainedEffectData": null
+    },
+    {
+      "durationData": {
+        "duration": -1,
+        "ticksOnActivations": false,
+        "useActivationsOfTarget": false,
+        "ticksOnEndOfRound": false,
+        "ticksOnMovements": false,
+        "stackLimit": -1,
+        "clearedWhenAttacked": false
+      },
+      "targetingData": {
+        "effectTriggerType": "Passive",
+        "triggerLimit": 0,
+        "extendDurationOnTrigger": 0,
+        "specialRules": "NotSet",
+        "effectTargetType": "Creator",
+        "range": 0,
+        "forcePathRebuild": false,
+        "forceVisRebuild": false,
+        "showInTargetPreview": false,
+        "showInStatusPanel": false
+      },
+      "effectType": "StatisticEffect",
+      "Description": {
+        "Id": "Gear_SensorCAC_Beagle_FreeLock",
+        "Name": "Gear_SensorCAC_Beagle_FreeLock",
+        "Details": "freelock",
+        "Icon": "uixSvgIcon_status_ECM-missileDef"
+      },
+      "statisticData": {
+        "statName": "FreeSensorLock",
+        "operation": "Set",
+        "modValue": "true",
+        "modType": "System.Boolean"
+      },
+      "nature": "Buff",
+      "tagData": null,
+      "floatieData": null,
+      "actorBurningData": null,
+      "vfxData": null,
+      "instantModData": null,
+      "poorlyMaintainedEffectData": null
+    }
+  ],
+  "ComponentTags": {
+    "items": [
+    ],
+    "tagSetSourceFile": ""
+  }
+}

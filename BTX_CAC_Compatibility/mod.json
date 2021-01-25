@@ -7,7 +7,7 @@
 	"Website": "",
 	"Version": "0.1.5.0",
 
-	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "Custom Ammo Categories", "CustomActivatableEquipment", "IRTweaks" ],
+	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks", "Custom Ammo Categories", "CustomActivatableEquipment", "IRTweaks" ],
 	"OptionallyDependsOn": [ "BTXMinusWeapons" ],
 	"ConflictsWith": [ "MechResizer", "BTMLColorLOSMod" ],
 	
@@ -20,7 +20,9 @@
 			"Weapon_Inferno_Inferno2_1-Harvester": { "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno", "Type": "AmmunitionBox" },
 			"Weapon_Inferno_Inferno2_2-Marklin_Mini": { "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno", "Type": "AmmunitionBox" },
 			"mechdef_griffin_GRF-4N_fp_greed": { "ID": "mechdef_griffin_GRF-4N", "Type": "" },
-			"Gear_Mortar_MechMortar": { "ID": "Weapon_MortarCAC_ThumperFree", "Type": "Weapon" }
+			"Gear_Mortar_MechMortar": { "ID": "Weapon_MortarCAC_ThumperFree", "Type": "Weapon" },
+      "Gear_Sensor_Prototype_ActiveProbe": { "ID": "Gear_SensorCAC_LiaoProtoAP", "Type": "" },
+      "Gear_Sensor_Prototype_ECM": { "ID": "Gear_SensorCAC_LiaoProtoECM", "Type": "" }
 		}
 	},
 	
@@ -55,9 +57,9 @@
 		  "ShouldAppendText": true
 		},
 		{
-            "Type": "ShipModuleUpgrade",
-            "Path": "shipUpgrades"
-        },
+      "Type": "ShipModuleUpgrade",
+      "Path": "shipUpgrades"
+    },
 		{
 		  "Type": "AdvancedJSONMerge",
 		  "Path": "advancedMerge"
@@ -77,6 +79,11 @@
 		{
 		  "Type": "AbilityDef",
 		  "Path": "abilityNew"
-		}
+		},
+    {
+      "Type": "GameTip",
+      "Path": "GameTips",
+      "ShouldAppendText": true
+    }
 	]
 }

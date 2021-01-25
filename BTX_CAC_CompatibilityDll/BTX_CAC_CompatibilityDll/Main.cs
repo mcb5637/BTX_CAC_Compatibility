@@ -57,6 +57,22 @@ namespace BTX_CAC_CompatibilityDll
             {
                 FileLog.Log(e.ToString());
             }
+
+            try
+            {
+                foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies())
+                {
+                    if (a.GetName().Name.Equals("MechQuirks"))
+                    {
+                        Type t = a.GetType("Quirks.Tooltips.QuirkToolTips");
+                        harmony.Patch(t.GetMethod("DetailMechQuirks", BindingFlags.Static | BindingFlags.NonPublic), null, new HarmonyMethod(typeof(QuirkToolTips_DetailMechQuirks), "Postfix"), null);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                FileLog.Log(e.ToString());
+            }
         }
 
         private static void Unpatch(HarmonyInstance harmony, MethodBase b, string id, bool pre=true, bool post=true, bool trans=true)

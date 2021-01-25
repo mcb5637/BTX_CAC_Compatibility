@@ -1,0 +1,106 @@
+{
+  "StatName": null,
+  "RelativeModifier": 0,
+  "AbsoluteModifier": 0,
+  "Description": {
+    "Cost": 470000,
+    "Rarity": 99,
+    "Purchasable": false,
+    "Manufacturer": "StarCorps",
+    "Model": "Advanced",
+    "UIName": "Advanced Comms",
+    "Id": "Gear_Quirk_Improved_Comms_Equipment",
+    "Name": "StarCorps Advanced Comms System",
+    "Details": "",
+    "Icon": "uixSvgIcon_equipment_Comms"
+  },
+  "BonusValueA": "+ Counter ECM",
+  "BonusValueB": "",
+  "ComponentType": "Upgrade",
+  "ComponentSubType": "NotSet",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 0,
+  "Tonnage": 0,
+  "AllowedLocations": "Head",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "Auras": [
+    {
+      "Id": "Gear_SensorCAC_ImprovedCommsQuirk",
+      "MinefieldDetector": false,
+      "LineType": "Dashes",
+      "isSpining": false,
+      "Name": "Improved Comms",
+      "ReticleColor": "green",
+      "Range": 200,
+      "RangeStatistic": "",
+      "RemoveOnSensorLock": true,
+      "State": "Persistent",
+      "HideOnNotSelected": false,
+      "FloatieAtEndOfMove": true,
+      "ApplySelf": false,
+      "AllyStealthAffection": "None",
+      "EnemyStealthAffection": "None",
+      "IsPositiveToAlly": false,
+      "IsNegativeToAlly": false,
+      "IsNegativeToEnemy": true,
+      "IsPositiveToEnemy": false,
+      "onlineVFX": [
+      ],
+      "targetVFX": [
+      ],
+      "removeTargetVFX": [
+      ],
+      "ownerSFX": [
+      ],
+      "targetSFX": [
+      ],
+      "removeOwnerSFX": [
+      ],
+      "removeTargetSFX": [
+      ],
+      "statusEffects": [
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "EnemiesWithinRange",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_ECMAura_SensorLockCounter",
+            "Name": "sens",
+            "Details": "sens",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "SensorLockDefense",
+            "operation": "Float_Add",
+            "modValue": "-1.0",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        }
+      ]
+    }
+  ],
+  "statusEffects": [
+  ],
+  "ComponentTags": {
+    "items": [
+      "BLACKLISTED",
+      "BUILT-IN"
+    ],
+    "tagSetSourceFile": ""
+  }
+}
