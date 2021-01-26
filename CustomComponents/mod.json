@@ -1,0 +1,82 @@
+{
+	"Name": "CustomComponents",
+	"Author": "Denadan",
+	"Website": "https://github.com/Denadan/CustomComponents",
+
+	"Enabled": true,
+	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks" ],
+	"DLL": "CustomComponents.dll",
+	"DLLEntryPoint": "CustomComponents.Control.Init",
+
+	"CustomResourceTypes": ["CCCategories", "CCDefaults", "CCTagRestrictions", "CustomSVGIcon"],
+	
+	"Settings" : {
+		"LogLevel": "Debug",
+		"DebugInfo" : "Icons",
+    "IgnoreAutofixTag":"fake_vehicle_chassis",
+		"Categories": [ ],
+		"TagRestrictions": [ ],
+		"ColorTags" : [ ],
+		
+		"TagRestrictionDropValidateRequiredTags":  false,
+		"TagRestrictionDropValidateIncompatibleTags":  true,
+		"UseDefaultFixedColor": false,
+		"DefaultFlagBackgroundColor": "UpgradeColor",
+		"InvalidFlagBackgroundColor" : "Red",
+		"PreinstalledOverlayCColor": {
+			"R": 200,
+			"G": 90,
+			"B": 30,
+			"A": 55
+		},
+		"DefaultFlagOverlayCColor": {
+			"R": 180,
+			"G": 255,
+			"B": 180,
+			"A": 40
+		},
+		
+		"CategoryDescriptionColor" : "#008000", 
+		 
+		"TestEnableAllTags": false,
+		"OmniTechFlag": "cc_omnitech",
+        "OmniTechCostBySize": false,
+        "OmniTechInstallCost": 1,
+		
+		"OverrideSalvageGeneration" : false,
+		"NoLootCTDestroyed" : false,
+
+		"OverrideRecoveryChance" : false,
+		"SalvageUnrecoveredMech" : false,
+		"BaseRecoveryChance" : 0.6,
+	    "LimbRecoveryPenalty" : 0.05,
+		"TorsoRecoveryPenalty" : 0.1,
+		"HeadRecoveryPenaly" : 0,
+		"EjectRecoveryBonus" : 0.25,
+
+		"OverrideMechPartCalculation" : false,
+		"CenterTorsoDestroyedParts" : 1,
+		"SalvageArmWeight" : 0.75,
+		"SalvageLegWeight" : 0.75,
+		"SalvageTorsoWeight" : 1,
+		"SalvageHeadWeight" : 0.5,
+	},	
+		
+	"Manifest": [
+        {
+            "Type": "CCCategories",
+            "Path": "disabled test/categories/",
+            "ShouldMergeJSON": false
+        },
+        {
+            "Type": "CCDefaults",
+            "Path": "disabled test/defaults/",
+            "ShouldMergeJSON": false
+        },
+        {
+            "Type": "CustomSVGIcon",
+            "Path": "test/icons/",
+            "ShouldMergeJSON": false
+        }
+    ]
+}

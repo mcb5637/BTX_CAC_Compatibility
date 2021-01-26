@@ -1,0 +1,25 @@
+{
+	"Name": "Custom Ammo Categories",
+	"Enabled": true,
+  "Locked": true,
+	"Version": "0.1.133",
+	"PackagedOn": "2019-05-20T00:00:00Z",
+	"DLL": "CustomAmmoCategories.dll",
+	"DLLEntryPoint": "CACMain.Core.Init",
+	"DependsOn": [ "CustomComponents", "CustomLocalization", "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks" ],
+	"ConflictsWith": [ "WeaponRealizer", "AIM: Attack Improvement Mod", "CharlesB" ],
+	"Description": "Custom Ammo Categories - weapon rework. Adding ammo/mode switching mechanics, various fire effects and much more. Special versions of WeaponRalizer and AttackImprovementMod included with permission from their authors",
+	"Author": "CustomAmmoCategories - KMiSSioN; WeaponRealizer - janxious; AttackImprovementMod - Sheepy",
+    "Website": "https://www.nexusmods.com/battletech/mods/381",
+	"Settings": {
+		"debug": true
+	},
+  "DataAddendumEntries":[
+  ],
+	"Manifest": [
+		{ "Type": "DesignMaskDef", "Path": "designmask" },
+		{ "Type": "AbilityDef", "Path": "abilities" },
+    { "Type": "SVGAsset", "Path": "icons" },
+		{ "Type": "SoundBankDef", "Path": "soundBanks" }
+  ]
+}

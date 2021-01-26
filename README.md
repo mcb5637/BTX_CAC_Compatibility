@@ -10,7 +10,7 @@ Installation: (requires working BTX installation)
  - Add IRBTModUtils and IRTweaks to your mods folder
  - Add CustomAmmoCategories, CustomComponents, CustomLocalization, CustomActivatableEquipment and CustomUnits to your mods folder (only add these 5 from CustomBundle, the rest is not needed)
  - Remove the folder CustomAmmoCategories/StreamingAssets
- - Add BTX_CAC_Compatibility, overriding the settings of CustomAmmoCategories, CustomUnits, CustomActivatableEquipment, IRTweaks, MissionControl and BiggerDrops
+ - Add BTX_CAC_Compatibility, overriding files from anything previously mentioned and MissionControl and BiggerDrops
 
 
 Component list (Clan & SLDF ones included):

@@ -1,0 +1,92 @@
+{
+	"Name": "CustomActivatableEquipment",
+	"Enabled": true,
+	"Hidden": true,
+
+	"Version": "0.0.44",
+	"PackagedOn": "2019-01-31T00:00:00Z",
+	"DLL": "CustomActivatableEquipment.dll",
+	"DLLEntryPoint": "CustomActivatableEquipment.Core.Init",
+	"DependsOn": [ "CustomComponents", "Custom Ammo Categories", "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks" ],
+	"ConflictsWith": [ ],
+
+	"Description": "Activatable equipment",
+	"Author": "KMiSSioN",
+  "Website": "https://www.nexusmods.com/battletech/mods/381",
+  "Settings": {
+    "debug": true,
+    "ToolTipWarningFailChance": 0.2,
+    "ToolTipAlertFailChance": 0.4,
+    "AIComponentUsefullModifyer": 0.3,
+    "AIComponentExtreamlyUsefulModifyer": 0.6,
+    "AIOffenceUsefullCoeff": 0.1,
+    "AIDefenceUsefullCoeff": 0.2,
+    "AIHeatCoeffCoeff": 0.8,
+    "AIOverheatCoeffCoeff": 0.6,
+    "StartupByHeatControl": false,
+    "StartupMinHeatRatio": 0.4,
+    "StoodUpPilotingRoll": false,
+    "StoodUpPilotingRollCoeff": 0.1,
+    "DefaultArmsAbsenceStoodUpMod": -0.1,
+    "LegAbsenceStoodUpMod": -0.1,
+    "auraUpdateFix": "Never",
+    "auraUpdateMinTimeDelta": 2,
+    "auraUpdateMinPosDelta": 20,
+    "unaffectedByHeadHitStatName": "NoHeadDamage",
+    "equipmentFlashFailChance": 0.25,
+    "sensorsAura": {
+      "ReticleColor": "white",
+      "LineType": "Dots",
+      "isSpining": false,
+      "Id": "Sensors",
+      "Name": "Sensors",
+      "Range": 90,
+      "RangeStatistic": "CAE_SENSORS_RANGE",
+      "ApplySelf": false,
+      "HideOnNotSelected": true,
+      "EnemyStealthAffection": "None",
+      "IsNegativeToEnemy": false,
+      "ownerVFX": [],
+      "targetVFX": [],
+      "removeOwnerVFX": [],
+      "removeTargetVFX": [],
+      "ownerSFX": [],
+      "targetSFX": [],
+      "removeOwnerSFX": [],
+      "removeTargetSFX": [],
+      "statusEffects": [
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "EnemiesWithinRange",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": true,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "ECMStealth_SensorsEffect",
+            "Name": "ECM CARRIER",
+            "Details": "",
+            "Icon": ""
+          },
+          "statisticData": {
+            "statName": "GhostEffectStacks",
+            "operation": "Int_Add",
+            "modValue": "-1",
+            "modType": "System.Int32"
+          },
+          "nature": "Buff"
+        }
+      ]
+    }
+  },
+	"Manifest": []
+}
