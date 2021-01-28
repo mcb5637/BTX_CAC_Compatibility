@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-[assembly:AssemblyVersion("0.1.6.0")]
+[assembly:AssemblyVersion("0.1.7.0")]
 
 namespace BTX_CAC_CompatibilityDll
 {
