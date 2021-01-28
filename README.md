@@ -3,7 +3,7 @@
 Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
- - Download CustomBundle https://github.com/BattletechModders/CustomBundle
+ - Download CustomBundle https://github.com/BattletechModders/CustomBundle version > 0.2.96
  - Download IRTweaks https://github.com/BattletechModders/IRTweaks
  - Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils
  - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)

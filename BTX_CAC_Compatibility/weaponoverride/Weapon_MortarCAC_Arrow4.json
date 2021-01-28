@@ -3,11 +3,11 @@
   "Type": "LRM",
   "WeaponSubType": "LRM5",
   "MinRange": 180,
-  "MaxRange": 630,
+  "MaxRange": 1000,
   "RangeSplit": [
-    420,
-    420,
-    630
+    750,
+    750,
+    1000
   ],
   "ForbiddenRange": 90,
   "ammoCategoryID": "Arrow4",

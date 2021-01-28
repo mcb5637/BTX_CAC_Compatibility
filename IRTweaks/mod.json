@@ -21,7 +21,7 @@
 			"BraceOnMeleeWithJuggernaut": false,
 			"BulkPurchasing": true,
 			"CalledShotTweaks": false,
-			"CombatLog": true,
+			"CombatLog": false,
 			"DisableCampaign": false,
 			"DisableCombatRestarts": false,
 			"DisableCombatSaves": false,

@@ -41,6 +41,7 @@
     "HidePassiveAbilitiesIcon": "ram",
     "overallDeploySize": 4,
     "ConvoyMaxDistFromRoute": 90,
+    "DeployManual": true,
     "Lances": [
       {
         "size": 6,
