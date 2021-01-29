@@ -22,7 +22,10 @@
 			"mechdef_griffin_GRF-4N_fp_greed": { "ID": "mechdef_griffin_GRF-4N", "Type": "" },
 			"Gear_Mortar_MechMortar": { "ID": "Weapon_MortarCAC_ThumperFree", "Type": "Weapon" },
       "Gear_Sensor_Prototype_ActiveProbe": { "ID": "Gear_SensorCAC_LiaoProtoAP", "Type": "" },
-      "Gear_Sensor_Prototype_ECM": { "ID": "Gear_SensorCAC_LiaoProtoECM", "Type": "" }
+      "Gear_Sensor_Prototype_ECM": { "ID": "Gear_SensorCAC_LiaoProtoECM", "Type": "" },
+			"Gear_AMS_Cal-Boeing": { "ID": "Weapon_AMSCAC_0", "Type": "Weapon" },
+			"Gear_AMS_Blankenburg": { "ID": "Weapon_AMSCAC_1", "Type": "Weapon" },
+			"Gear_AMS_Pinard": { "ID": "Weapon_AMSCAC_2", "Type": "Weapon" }
 		}
 	},
 	

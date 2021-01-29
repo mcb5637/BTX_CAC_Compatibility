@@ -1,0 +1,17 @@
+{
+  "TargetIDs": [
+    "chassisdef_dragonfly_viper-PRIME",
+    "chassisdef_nobori-nin_huntsman-PRIME",
+    "chassisdef_bushwacker_BSW-S2"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.Locations[?(@Location == 'LeftTorso')].Hardpoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "AntiPersonnel",
+        "Omni": false
+      }
+    }
+  ]
+}

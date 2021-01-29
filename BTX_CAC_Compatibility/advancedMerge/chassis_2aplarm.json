@@ -1,0 +1,23 @@
+{
+  "TargetIDs": [
+    "chassisdef_koshi_mist_lynx-A"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].Hardpoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "AntiPersonnel",
+        "Omni": false
+      }
+    },
+    {
+      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].Hardpoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "AntiPersonnel",
+        "Omni": false
+      }
+    }
+  ]
+}

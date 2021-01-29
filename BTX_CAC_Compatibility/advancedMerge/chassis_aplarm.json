@@ -1,0 +1,18 @@
+{
+  "TargetIDs": [
+    "chassisdef_dasher_fire_moth-A",
+    "chassisdef_firefly_FFL-4B",
+    "chassisdef_koshi_mist_lynx-C",
+    "chassisdef_phoenixhawk_PXH-3M"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].Hardpoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "AntiPersonnel",
+        "Omni": false
+      }
+    }
+  ]
+}

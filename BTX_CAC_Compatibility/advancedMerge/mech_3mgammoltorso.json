@@ -1,0 +1,52 @@
+{
+  "TargetIDs": [
+    "mechdef_uller_kit_fox-C"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.inventory",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_MG",
+        "SimGameUID": "",
+        "ComponentDefType": "AmmunitionBox",
+        "HardpointSlot": -1,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    }
+    {
+      "JSONPath": "$.inventory",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_MG",
+        "SimGameUID": "",
+        "ComponentDefType": "AmmunitionBox",
+        "HardpointSlot": -1,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    }
+    {
+      "JSONPath": "$.inventory",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_MG",
+        "SimGameUID": "",
+        "ComponentDefType": "AmmunitionBox",
+        "HardpointSlot": -1,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    }
+  ]
+}

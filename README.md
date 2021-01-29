@@ -60,6 +60,8 @@ Component list (Clan & SLDF ones included):
  - TODO: AMS
  - TODO: Tag & Narc to hit bonus instead of damage bonus?
  - TODO: MASC & TSM
+ - TODO: NullSignature & Chamaeleon
+ - TODO: clan ews
 
 Optional:
  - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3

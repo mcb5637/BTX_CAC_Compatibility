@@ -1,0 +1,33 @@
+{
+  "TargetIDs": [
+    "mechdef_dasher_fire_moth-A",
+    "mechdef_dasher_fire_moth-C",
+    "mechdef_koshi_mist_lynx-A",
+    "mechdef_koshi_mist_lynx-C",
+    "mechdef_uller_kit_fox-C",
+    "mechdef_dragonfly_viper-PRIME",
+    "mechdef_fenris_ice_ferret-A",
+    "mechdef_fenris_ice_ferret-D",
+    "mechdef_black_hawk_nova-A",
+    "mechdef_black_hawk_nova-S",
+    "mechdef_nobori-nin_huntsman-PRIME",
+    "mechdef_loki_hellbringer-PRIME",
+    "mechdef_thor_summoner-B",
+    "mechdef_thor_summoner-D",
+    "mechdef_mad_cat_timber_wolf-C",
+    "mechdef_kingfisher-B",
+    "mechdef_gladiator_executioner-B",
+    "mechdef_daishi_dire_wolf-A"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.inventory[?(@ComponentDefID == 'Gear_AMS_Clan')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Weapon_AMSCAC_Clan",
+        "ComponentDefType": "Weapon",
+        "HardpointSlot": 0
+      }
+    }
+  ]
+}

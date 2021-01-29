@@ -1,0 +1,17 @@
+{
+  "TargetIDs": [
+    "chassisdef_dasher_fire_moth-C",
+    "chassisdef_raptor_RTX-OC",
+    "chassisdef_exterminator_EXT-4D"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.Locations[?(@Location == 'RightTorso')].Hardpoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "AntiPersonnel",
+        "Omni": false
+      }
+    }
+  ]
+}

@@ -1,33 +1,33 @@
 {
-    "TargetID": "chassisdef_bullshark_BSK-MAZ",
-    "Instructions": [
-        {
-            "JSONPath": "$.Locations[?(@Location == 'RightTorso')].Hardpoints",
-            "Action": "ArrayAdd",
-			"Value": {
-				"WeaponMount": "Ballistic",
-				"Omni": false
-			}
-        },
-        {
-            "JSONPath": "$.FixedEquipment",
-            "Action": "ArrayAdd",
-			"Value": {
-				"MountedLocation" : "RightTorso",
-				"ComponentDefID" : "Weapon_MortarCAC_Thumper",
-				"SimGameUID" : "",
-				"ComponentDefType" : "Weapon",
-				"HardpointSlot" : 0,
-				"IsFixed" : true,
-				"GUID" : null,
-				"DamageLevel" : "Functional",
-				"prefabName" : null,
-				"hasPrefabName" : false
-			}
-        },
-		{
-            "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Mortar_Thumper')]",
-            "Action": "Remove"
-        }
-    ]
+  "TargetID": "chassisdef_bullshark_BSK-MAZ",
+  "Instructions": [
+    {
+      "JSONPath": "$.Locations[?(@Location == 'RightTorso')].Hardpoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "Ballistic",
+        "Omni": false
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "RightTorso",
+        "ComponentDefID": "Weapon_MortarCAC_Thumper",
+        "SimGameUID": "",
+        "ComponentDefType": "Weapon",
+        "HardpointSlot": 0,
+        "IsFixed": true,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Mortar_Thumper')]",
+      "Action": "Remove"
+    }
+  ]
 }

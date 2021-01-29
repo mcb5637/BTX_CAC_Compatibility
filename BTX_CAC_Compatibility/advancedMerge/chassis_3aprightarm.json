@@ -1,0 +1,31 @@
+{
+  "TargetIDs": [
+    "chassisdef_uller_kit_fox-C"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].Hardpoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "AntiPersonnel",
+        "Omni": false
+      }
+    },
+    {
+      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].Hardpoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "AntiPersonnel",
+        "Omni": false
+      }
+    },
+    {
+      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].Hardpoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "AntiPersonnel",
+        "Omni": false
+      }
+    }
+  ]
+}
