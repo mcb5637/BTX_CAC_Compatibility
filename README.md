@@ -30,6 +30,7 @@ Component list (Clan & SLDF ones included):
         - UAC: fixed firing speed, only one visual projectile, added AC mode (1 shot, but +4 acc)
         - Gauss: -
         - MG: added double speed mode (double shots, -4 acc, +5 heat)
+		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance / can be used as MG)
     - Missle
         - LRM: added hotload mode
         - Artemis IV LRM: added hotload mode, changed acc to +4 in direct fire (+0 indirect), added clustering
@@ -57,11 +58,9 @@ Component list (Clan & SLDF ones included):
         - Improved Comms Quirk: 200m aura (removes sensorlock immune) (hostile only) (green)
  
  - TODO: edit texts
- - TODO: AMS
  - TODO: Tag & Narc to hit bonus instead of damage bonus?
  - TODO: MASC & TSM
  - TODO: NullSignature & Chamaeleon
- - TODO: clan ews
 
 Optional:
  - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3

@@ -1,0 +1,47 @@
+{
+  "TargetIDs": [
+    "chassisdef_koshi_mist_lynx-C"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.FixedEquipment",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftArm",
+        "ComponentDefID": "Gear_SensorCAC_BeagleClan",
+        "SimGameUID": "",
+        "ComponentDefType": "Upgrade",
+        "HardpointSlot": -1,
+        "IsFixed": true,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftArm",
+        "ComponentDefID": "Gear_SensorCAC_GuardianClan",
+        "SimGameUID": "",
+        "ComponentDefType": "Upgrade",
+        "HardpointSlot": -1,
+        "IsFixed": true,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_EWE_Clan')]",
+      "Action": "Remove"
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_EWEImproved_Clan')]",
+      "Action": "Remove"
+    }
+  ]
+}

@@ -55,7 +55,9 @@
   "ComponentTags": {
     "items": [
       "component_type_stock",
-      "range_close"
+      "range_close",
+      "component_type_lostech",
+      "BLACKLISTED"
     ],
     "tagSetSourceFile": ""
   },

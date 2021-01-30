@@ -96,6 +96,12 @@
       "poorlyMaintainedEffectData": null
     }
   ],
+  "RequiredToSpawnCompanyTags" : {
+    "items" : [
+      "flashpoint_uw1_complete"
+    ],
+    "tagSetSourceFile" : ""
+  },
   "ComponentTags": {
     "items": [
     ],

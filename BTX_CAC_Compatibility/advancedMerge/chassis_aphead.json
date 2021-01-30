@@ -15,6 +15,14 @@
         "WeaponMount": "AntiPersonnel",
         "Omni": false
       }
+    },
+    {
+      "JSONPath": "$.Locations[?(@Location == 'Head')].HardPoints",
+      "Action": "ArrayAdd",
+      "Value": {
+        "WeaponMount": "AntiPersonnel",
+        "Omni": false
+      }
     }
   ]
 }

@@ -34,9 +34,9 @@
     "Purchasable": true,
     "Manufacturer": "Clans",
     "Model": "Anti Missle System",
-    "UIName": "AMS",
+    "UIName": "Clan AMS",
     "Id": "Weapon_AMSCAC_Clan",
-    "Name": "AMS",
+    "Name": "Clan AMS",
     "Details": "An Anti Missle System is basically a faster firing MG linked to an advanced targeting computer that targets incoming missles, even if the pilot is occupied with something else. Uses MG Ammo",
     "Icon": "uixSvgIcon_weapon_Support"
   },
@@ -47,7 +47,7 @@
   "PrefabIdentifier": "MachineGun",
   "BattleValue": 0,
   "InventorySize": 1,
-  "Tonnage": 0.25,
+  "Tonnage": 0.5,
   "AllowedLocations": "All",
   "DisallowedLocations": "All",
   "CriticalComponent": false,
@@ -55,7 +55,9 @@
   "ComponentTags": {
     "items": [
       "component_type_stock",
-      "range_close"
+      "range_close",
+      "component_type_clan",
+      "component_type_lostech"
     ],
     "tagSetSourceFile": ""
   },

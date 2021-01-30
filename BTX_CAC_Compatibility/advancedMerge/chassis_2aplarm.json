@@ -4,7 +4,7 @@
   ],
   "Instructions": [
     {
-      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].Hardpoints",
+      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].HardPoints",
       "Action": "ArrayAdd",
       "Value": {
         "WeaponMount": "AntiPersonnel",
@@ -12,7 +12,7 @@
       }
     },
     {
-      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].Hardpoints",
+      "JSONPath": "$.Locations[?(@Location == 'LeftArm')].HardPoints",
       "Action": "ArrayAdd",
       "Value": {
         "WeaponMount": "AntiPersonnel",

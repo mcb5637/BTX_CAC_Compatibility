@@ -17,7 +17,7 @@
         "prefabName": null,
         "hasPrefabName": false
       }
-    }
+    },
     {
       "JSONPath": "$.inventory",
       "Action": "ArrayAdd",
@@ -32,7 +32,7 @@
         "prefabName": null,
         "hasPrefabName": false
       }
-    }
+    },
     {
       "JSONPath": "$.inventory",
       "Action": "ArrayAdd",

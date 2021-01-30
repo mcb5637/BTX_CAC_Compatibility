@@ -1,0 +1,50 @@
+{
+  "TargetIDs": [
+    "chassisdef_hankyu_arctic_cheetah-PRIME",
+    "chassisdef_shadow_cat-B",
+    "chassisdef_loki_hellbringer-PRIME",
+    "chassisdef_mad_cat_timber_wolf-BH"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.FixedEquipment",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Gear_SensorCAC_BeagleClan",
+        "SimGameUID": "",
+        "ComponentDefType": "Upgrade",
+        "HardpointSlot": -1,
+        "IsFixed": true,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Gear_SensorCAC_GuardianClan",
+        "SimGameUID": "",
+        "ComponentDefType": "Upgrade",
+        "HardpointSlot": -1,
+        "IsFixed": true,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_EWE_Clan')]",
+      "Action": "Remove"
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_EWEImproved_Clan')]",
+      "Action": "Remove"
+    }
+  ]
+}

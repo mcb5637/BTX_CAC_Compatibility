@@ -1,0 +1,47 @@
+{
+  "TargetIDs": [
+    "chassisdef_raven_RVN-3L"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.FixedEquipment",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Gear_SensorCAC_BeagleHC",
+        "SimGameUID": "",
+        "ComponentDefType": "Upgrade",
+        "HardpointSlot": -1,
+        "IsFixed": true,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Gear_SensorCAC_GuardianHC",
+        "SimGameUID": "",
+        "ComponentDefType": "Upgrade",
+        "HardpointSlot": -1,
+        "IsFixed": true,
+        "GUID": null,
+        "DamageLevel": "Functional",
+        "prefabName": null,
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_EWE')]",
+      "Action": "Remove"
+    },
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_EWEImproved')]",
+      "Action": "Remove"
+    }
+  ]
+}
