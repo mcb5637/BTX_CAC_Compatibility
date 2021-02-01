@@ -24,7 +24,7 @@ Component list (Clan & SLDF ones included):
         - Pulse Laser: fixed animation
         - Tag: -
         - Flamer: added forestfires
-    - Balistic
+    - Ballistic
         - AC: fixed firing speed, only one visual projectile
         - LBX: added cluster/slug ammo, cluster ammo uses CAC shells instead of multiple projectiles
         - UAC: fixed firing speed, only one visual projectile, added AC mode (1 shot, but +4 acc)
@@ -56,6 +56,8 @@ Component list (Clan & SLDF ones included):
     - Mech Quiks
         - Improved Sensors Quirk: +50m sensor range (stacks with AP)
         - Improved Comms Quirk: 200m aura (removes sensorlock immune) (hostile only) (green)
+- Upgrades
+	- AMS: Broken, use Ballistic Weapon AMS instead
  
  - TODO: edit texts
  - TODO: Tag & Narc to hit bonus instead of damage bonus?

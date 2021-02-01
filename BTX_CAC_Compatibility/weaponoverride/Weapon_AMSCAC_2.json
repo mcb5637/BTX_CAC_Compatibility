@@ -70,7 +70,7 @@
       "isBaseMode": true,
       "IsAMS": true,
       "AMSDamage": 1,
-      "ShotsWhenFired": 25,
+      "ShotsWhenFired": 20,
       "AMSHitChance": 0.5,
       "AMSShootsEveryAttack": false,
       "DamagePerShot": -3
@@ -83,7 +83,7 @@
       "isBaseMode": false,
       "IsAMS": true,
       "AMSDamage": 1,
-      "ShotsWhenFired": 35,
+      "ShotsWhenFired": 30,
       "MaxRange": 90.0,
       "AMSHitChance": 0.5,
       "FlatJammingChance": 0.50,
