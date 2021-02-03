@@ -72,6 +72,11 @@
 		  "Path": "chassis"
 		},
 		{
+		  "Type": "ChassisDef",
+		  "Path": "chassismerge",
+		  "ShouldMergeJSON": true
+		},
+		{
 		  "Type": "MechDef",
 		  "Path": "mech"
 		},
