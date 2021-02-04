@@ -63,6 +63,11 @@ Component list (Clan & SLDF ones included):
  - TODO: Tag & Narc to hit bonus instead of damage bonus?
  - TODO: MASC & TSM
  - TODO: NullSignature & Chamaeleon
+ - TODO: LBX UAC range
+ - TODO: targeting patch for indirect fire
+ - TODO: price changes for ecm/ap, ams
+ - TODO: Flamers & Inferno ammo balance
+ - Known bugs: CustomLoc patchig strings, inferno/flamer floaties
 
 Optional:
  - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3

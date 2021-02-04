@@ -85,6 +85,11 @@
 		  "Path": "upgradesNew"
 		},
 		{
+		  "Type": "UpgradeDef",
+		  "Path": "upgradesMerge",
+		  "ShouldMergeJSON": true
+		},
+		{
 		  "Type": "AbilityDef",
 		  "Path": "abilityNew"
 		},

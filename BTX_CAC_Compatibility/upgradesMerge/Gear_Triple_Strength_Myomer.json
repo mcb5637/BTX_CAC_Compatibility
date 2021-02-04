@@ -1,0 +1,162 @@
+{
+  "statusEffects": [],
+  "BonusValueA": "* 2 Melee Damage / + 60 m Movement",
+  "BonusValueB": "at 27+ heat",
+  "Custom": {
+    "ActivatableComponent": {
+      "ButtonName": "TSM",
+      "AutoActivateOnHeat": 27,
+      "AutoDeactivateOnHeat": 24,
+      "CanNotBeActivatedManualy": true,
+      "NoUniqueCheck": true,
+      "statusEffects": [
+        {
+          "durationData": {
+            "duration": -1,
+            "ticksOnActivations": false,
+            "useActivationsOfTarget": false,
+            "ticksOnEndOfRound": false,
+            "ticksOnMovements": false,
+            "stackLimit": 1,
+            "clearedWhenAttacked": false
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "triggerLimit": 0,
+            "extendDurationOnTrigger": 0,
+            "specialRules": "NotSet",
+            "effectTargetType": "Creator",
+            "range": 0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "StatusEffect-Attack_DamageMelee-T4",
+            "Name": "MELEE DAMAGE INCREASED",
+            "Details": "Melee attacks deal double the damage.",
+            "Icon": "uixSvgIcon_equipment_ActuatorArm"
+          },
+          "nature": "Buff",
+          "statisticData": {
+            "appliesEachTick": false,
+            "effectsPersistAfterDestruction": false,
+            "statName": "DamagePerShot",
+            "operation": "Float_Multiply",
+            "modValue": "2",
+            "modType": "System.Single",
+            "additionalRules": "NotSet",
+            "targetCollection": "Weapon",
+            "targetWeaponCategory": "NotSet",
+            "targetWeaponType": "NotSet",
+            "targetAmmoCategory": "NotSet",
+            "targetWeaponSubType": "Melee"
+          },
+          "tagData": null,
+          "floatieData": null,
+          "actorBurningData": null,
+          "vfxData": null,
+          "instantModData": null,
+          "poorlyMaintainedEffectData": null
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "ticksOnActivations": false,
+            "useActivationsOfTarget": false,
+            "ticksOnEndOfRound": false,
+            "ticksOnMovements": false,
+            "stackLimit": 1,
+            "clearedWhenAttacked": false
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "triggerLimit": 0,
+            "extendDurationOnTrigger": 0,
+            "specialRules": "NotSet",
+            "effectTargetType": "Creator",
+            "range": 0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "TSMWalk",
+            "Name": "TSM Active",
+            "Details": "Increased Speed and Melee damage.",
+            "Icon": "uixSvgIcon_action_evasivemove"
+          },
+          "statisticData": {
+            "statName": "WalkSpeed",
+            "operation": "Float_Add",
+            "modValue": "60",
+            "modType": "System.Single"
+          },
+          "nature": "Buff",
+          "tagData": null,
+          "floatieData": null,
+          "actorBurningData": null,
+          "vfxData": null,
+          "instantModData": null,
+          "poorlyMaintainedEffectData": null
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "ticksOnActivations": false,
+            "useActivationsOfTarget": false,
+            "ticksOnEndOfRound": false,
+            "ticksOnMovements": false,
+            "stackLimit": 2,
+            "clearedWhenAttacked": false
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "triggerLimit": 0,
+            "extendDurationOnTrigger": 0,
+            "specialRules": "NotSet",
+            "effectTargetType": "Creator",
+            "range": 0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "TSMRun",
+            "Name": "T.S.M. Run",
+            "Details": "Increased Run Speed",
+            "Icon": "uixSvgIcon_action_evasivemove"
+          },
+          "statisticData": {
+            "statName": "RunSpeed",
+            "operation": "Float_Add",
+            "modValue": "90",
+            "modType": "System.Single"
+          },
+          "nature": "Buff",
+          "tagData": null,
+          "floatieData": null,
+          "actorBurningData": null,
+          "vfxData": null,
+          "instantModData": null,
+          "poorlyMaintainedEffectData": null
+        }
+      ]
+    }
+  },
+  "ComponentTags": {
+    "items": [
+      "BUILT-IN",
+      "BLACKLISTED",
+      "cae_ai_offence",
+      "cae_ai_speed"
+    ],
+    "tagSetSourceFile": ""
+  }
+}
