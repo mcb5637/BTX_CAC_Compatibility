@@ -1,0 +1,15 @@
+{
+  "TargetIDs": [
+    "chassisdef_raven_RVN-3X",
+    "chassisdef_locust_LCT-1L"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_TSM_Prototype_Bergan' && @MountedLocation =='RightTorso')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Gear_TSM_Prototype_Bergan_Idle"
+      }
+    }
+  ]
+}
