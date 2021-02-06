@@ -3,7 +3,7 @@
 Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
- - Download CustomBundle https://github.com/BattletechModders/CustomBundle version > 0.2.96
+ - Download CustomBundle https://github.com/BattletechModders/CustomBundle version >= 0.2.96
  - Download IRTweaks https://github.com/BattletechModders/IRTweaks
  - Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils
  - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
@@ -58,10 +58,12 @@ Component list (Clan & SLDF ones included):
         - Improved Comms Quirk: 200m aura (removes sensorlock immune) (hostile only) (green)
 - Upgrades
 	- AMS: Broken, use Ballistic Weapon AMS instead
+	- TSM: Auto activates at >27 heat (\*2 melee damage, + 60m movement)
+	- Prototype TSM: Auto activates at >27 heat (\*1.5 melee damage, +30m movement)
+	- MASC: Activatable (\*2 speed) (fail chance 15%, add up per turn in use)
  
  - TODO: edit texts
  - TODO: Tag & Narc to hit bonus instead of damage bonus?
- - TODO: MASC & TSM
  - TODO: NullSignature & Chamaeleon
  - TODO: LBX UAC range
  - TODO: targeting patch for indirect fire
@@ -71,5 +73,11 @@ Component list (Clan & SLDF ones included):
 
 Optional:
  - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
+ - manual deployment can be enabled via CU, set "DeployManual": to true to do so (warning: laggy)
  
  - TODO: Vehicles?
+
+Credits:
+- CMiSSioN for CustomBundle
+- everyone involved in RougeTech (also Crackfox for Vanilla CAC) for examples and inspiration on how to use CB
+- Haree for BTX

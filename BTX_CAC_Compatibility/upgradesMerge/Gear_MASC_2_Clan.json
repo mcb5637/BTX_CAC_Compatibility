@@ -1,0 +1,91 @@
+{
+  "BonusValueA": "* 2 Speed",
+  "BonusValueB": "Fail chance",
+  "statusEffects": [],
+  "Custom": {
+    "ActivatableComponent": {
+      "ButtonName": "MASC",
+      "CanActivateAfterMove": false,
+      "CanActivateAfterFire": true,
+      "FailFlatChance": 0.15,
+      "FailRoundsStart": 2,
+      "FailChancePerTurn": 0.15,
+      "FailISDamage": 5,
+      "FailCrit": true,
+      "FailDamageLocations": [
+        "LeftLeg",
+        "RightLeg"
+      ],
+      "FailPilotingBase": 3,
+      "FailPilotingMult": 0.1,
+      "CanNotBeActivatedManualy": false,
+      "NoUniqueCheck": false,
+      "statusEffects": [
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": -1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "effectTargetType": "Creator",
+            "forcePathRebuild": true,
+            "forceVisRebuild": false,
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "MASCWalk",
+            "Name": "MASC",
+            "Details": "Myomer Accelerator Signal Circuitry doubles movement speed",
+            "Icon": "uixSvgIcon_action_evasivemove"
+          },
+          "nature": "Buff",
+          "statisticData": {
+            "statName": "WalkSpeed",
+            "operation": "Float_Multiply",
+            "modValue": "2",
+            "modType": "System.Single"
+          }
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": -1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "effectTargetType": "Creator",
+            "forcePathRebuild": true,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "MASCWalk",
+            "Name": "MASC",
+            "Details": "Myomer Accelerator Signal Circuitry doubles movement speed",
+            "Icon": "uixSvgIcon_action_evasivemove"
+          },
+          "nature": "Buff",
+          "statisticData": {
+            "statName": "RunSpeed",
+            "operation": "Float_Multiply",
+            "modValue": "2",
+            "modType": "System.Single"
+          }
+        }
+      ]
+    }
+  },
+  "ComponentTags" : {
+    "items" : [
+      "BUILT-IN",
+      "cae_ai_explode",
+      "cae_ai_speed"
+    ],
+    "tagSetSourceFile" : ""
+  }
+}

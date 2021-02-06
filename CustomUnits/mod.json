@@ -41,7 +41,9 @@
     "HidePassiveAbilitiesIcon": "ram",
     "overallDeploySize": 4,
     "ConvoyMaxDistFromRoute": 90,
-    "DeployManual": true,
+    "DeployManual": false,
+    "DeployMaxDistanceFromOriginal": 30,
+    "DeployMinDistanceFromEnemy": 300,
     "Lances": [
       {
         "size": 6,
