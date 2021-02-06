@@ -3,11 +3,11 @@
     "Type": "Autocannon",
     "WeaponSubType": "LB5X",
     "MinRange": 90,
-    "MaxRange": 540,
+    "MaxRange": 630,
     "RangeSplit": [
-        360,
-        360,
-        540
+        420,
+        420,
+        630
     ],
     "ammoCategoryID": "LB5X",
     "StartingAmmoCapacity": 0,

@@ -1,5 +1,5 @@
 {
-    "ProjectilesPerShot": 1,
+	"ProjectilesPerShot": 1,
 	"ImprovedBallistic": true,
 	"FireDelayMultiplier": 1,
 	"Modes": [
@@ -21,5 +21,12 @@
 			"RefireModifier": -4,
 			"HeatGenerated": -24
 		}
+	],
+	"MinRange": 0,
+	"MaxRange": 360,
+	"RangeSplit": [
+		240,
+		240,
+		360
 	]
 }

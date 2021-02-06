@@ -1,8 +1,15 @@
 {
-    "ShotsWhenFired": 1,
-    "VolleyDivisor": 1,
-	"Damage": 88,
-	"Instability": 32,
-	"ImprovedBallistic": true,
-    "BonusValueA" : "+ 16 Dmg."
+  "ShotsWhenFired": 1,
+  "VolleyDivisor": 1,
+  "Damage": 88,
+  "Instability": 32,
+  "ImprovedBallistic": true,
+  "BonusValueA": "+ 16 Dmg.",
+  "MinRange": 0,
+  "MaxRange": 540,
+  "RangeSplit": [
+    360,
+    360,
+    540
+  ]
 }
