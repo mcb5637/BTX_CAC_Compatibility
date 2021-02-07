@@ -65,9 +65,7 @@ Component list (Clan & SLDF ones included):
  - TODO: edit texts
  - TODO: Tag & Narc to hit bonus instead of damage bonus?
  - TODO: NullSignature & Chamaeleon
- - TODO: LBX UAC range
  - TODO: targeting patch for indirect fire
- - TODO: price changes for ecm/ap, ams
  - TODO: Flamers & Inferno ammo balance
  - Known bugs: CustomLoc patchig strings, inferno/flamer floaties
 
