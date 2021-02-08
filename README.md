@@ -22,7 +22,7 @@ Component list (Clan & SLDF ones included):
         - Laser: -
         - ER Laser: -
         - Pulse Laser: fixed animation
-        - Tag: -
+        - Tag: attacking a tagged unit has an accuracy boost, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
         - Flamer: added forestfires
     - Ballistic
         - AC: fixed firing speed, only one visual projectile

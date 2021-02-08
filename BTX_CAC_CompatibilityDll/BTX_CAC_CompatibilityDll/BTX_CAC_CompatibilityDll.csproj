@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="ChassisDef_FromJson.cs" />
     <Compile Include="ContractOverride_FromJSONFull.cs" />
+    <Compile Include="Effect_Ctor.cs" />
     <Compile Include="ItemCollectionDef_FromCSV.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="SensorLockImmune.cs" />
