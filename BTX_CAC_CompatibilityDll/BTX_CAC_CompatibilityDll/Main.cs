@@ -35,6 +35,9 @@ namespace BTX_CAC_CompatibilityDll
                 HBS.Logging.Logger.SetLoggerLevel("BTX_CAC_Compatibility", LogLevel.Log);
             HarmonyInstance harmony = HarmonyInstance.Create("com.github.mcb5637.BTX_CAC_Compatibility");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+            //harmony.Patch(
+            //    AccessTools.Method(typeof(EffectManager), "CreateEffect", new Type[] { typeof(EffectData), typeof(string), typeof(int), typeof(ICombatant), typeof(ICombatant), typeof(WeaponHitInfo), typeof(int), typeof(bool) }),
+            //    null, new HarmonyMethod(AccessTools.Method(typeof(MarkEffects_Patch), "Postfix")), null);
             //harmony.Patch(AccessTools.DeclaredMethod(typeof(Mech), "DamageLocation"), new HarmonyMethod(AccessTools.Method(typeof(Main), "LogDamageLoc")), null, null);
             try
             {
