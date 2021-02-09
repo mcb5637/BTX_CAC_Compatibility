@@ -9,3 +9,4 @@ Missing new shiny fixed equipment on your Mech? Store it, then ready it again. T
 AMS shoots at enemy missles in range (Red aura). This in turn means that it tries to shoot down an indirect LRM a lot more often than a SRM fired one hex away.
 Need to keep your mech hot to activate TSM? With Ctrl+klick on brace you can change how many heatsinks you use.
 The effect of a TAG gets removed when the tagged unit moves.
+NARC Pods get blocked as long as they are inside of an ECM field.

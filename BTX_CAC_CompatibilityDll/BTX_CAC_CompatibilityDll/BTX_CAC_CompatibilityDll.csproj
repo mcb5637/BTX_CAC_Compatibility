@@ -47,6 +47,9 @@
       <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="CustomAmmoCategories">
+      <HintPath>C:\goggames\BATTLETECH\Mods\CustomAmmoCategories\CustomAmmoCategories.dll</HintPath>
+    </Reference>
     <Reference Include="InControl">
       <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\InControl.dll</HintPath>
     </Reference>

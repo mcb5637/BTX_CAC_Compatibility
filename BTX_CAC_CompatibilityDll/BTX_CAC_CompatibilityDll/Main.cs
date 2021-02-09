@@ -1,4 +1,5 @@
 ﻿using BattleTech;
+using CustAmmoCategories;
 using Harmony;
 using HBS.Logging;
 using Newtonsoft.Json;
@@ -10,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-[assembly:AssemblyVersion("0.1.9.0")]
+[assembly:AssemblyVersion("0.1.10.0")]
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -78,6 +79,18 @@ namespace BTX_CAC_CompatibilityDll
             {
                 FileLog.Log(e.ToString());
             }
+
+            ToHitModifiersHelper.registerModifier("BTX_CAC_Compatibility_CounterNarc", "Counter NARC", true, true, CounterNarc, null);
+        }
+
+        private static float CounterNarc(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
+        {
+            AbstractActor at = target as AbstractActor;
+            if (at != null && at.HasIndirectFireImmunity && at.Combat.EffectManager.GetAllEffectsTargetingWithBaseID(at, "StatusEffect-NARC-IncomingAttBonus").Count > 0)
+            {
+                return 3;
+            }
+            return 0;
         }
 
         private static void Unpatch(HarmonyInstance harmony, MethodBase b, string id, bool pre=true, bool post=true, bool trans=true)

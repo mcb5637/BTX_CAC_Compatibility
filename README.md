@@ -22,7 +22,7 @@ Component list (Clan & SLDF ones included):
         - Laser: -
         - ER Laser: -
         - Pulse Laser: fixed animation
-        - Tag: attacking a tagged unit has an accuracy boost, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
+        - Tag: attacking a tagged unit has an +3 accuracy boost, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
         - Flamer: added forestfires
     - Ballistic
         - AC: fixed firing speed, only one visual projectile
@@ -37,7 +37,7 @@ Component list (Clan & SLDF ones included):
         - SRM: added inferno ammo (inferno causes fires everywhere)
         - Artemis IV SRM: added inferno ammo, added clustering, +4 acc
         - Streak SRM: added inferno ammo, added streak effect+clustering
-        - Narc: -
+        - NARC: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 2 to 4 rounds (depends on launcher), ecm blocks narc acc bonus
         - ATM: added 3 modes instead of 3 ammo types, trading damage for range (Clan magic lets them be loaded with exactly the correct ammo types)
         - Infernos: Broken, use SRM inferno ammo instead (TODO check if something is still using them)
     - Artillery
@@ -63,7 +63,7 @@ Component list (Clan & SLDF ones included):
 	- MASC: Activatable (\*2 speed) (fail chance 15%, add up per turn in use)
  
  - TODO: edit texts
- - TODO: Tag & Narc to hit bonus instead of damage bonus?
+ - TODO: NARC reveals target?
  - TODO: NullSignature & Chamaeleon
  - TODO: targeting patch for indirect fire
  - TODO: Flamers & Inferno ammo balance
