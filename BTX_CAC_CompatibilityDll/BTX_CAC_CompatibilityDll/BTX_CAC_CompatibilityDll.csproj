@@ -69,6 +69,7 @@
     <Compile Include="ChassisDef_FromJson.cs" />
     <Compile Include="ContractOverride_FromJSONFull.cs" />
     <Compile Include="Effect_Ctor.cs" />
+    <Compile Include="LineOfSight_GetLineOfFireUncached.cs" />
     <Compile Include="ItemCollectionDef_FromCSV.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MarkEffects_Patch.cs" />

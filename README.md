@@ -61,11 +61,16 @@ Component list (Clan & SLDF ones included):
 	- TSM: Auto activates at >27 heat (\*2 melee damage, + 60m movement)
 	- Prototype TSM: Auto activates at >27 heat (\*1.5 melee damage, +30m movement)
 	- MASC: Activatable (\*2 speed) (fail chance 15%, add up per turn in use)
+- Argo Upgrades
+	- Storage: added 3 additional storage upgrades, each giving a new mechbay to use
+	- Engine Repairs: The storage upgrades do fix BiggerDrops tonnage increase upgrades, by giving you a way to fullfill their requirements
+- Indirect Fire changes:
+	- Shooting at something you cannot see (but your ally can) is considered Indirect Fire, and in turn will be blocked if the target is covered by ECM
+	- You only get an accuracy penalty for Indirect Fire if you have to shoot over obstacles to hit your target (if it was considered Indirect Fire by the old rules)
  
  - TODO: edit texts
  - TODO: NARC reveals target?
  - TODO: NullSignature & Chamaeleon
- - TODO: targeting patch for indirect fire
  - TODO: Flamers & Inferno ammo balance
  - Known bugs: CustomLoc patchig strings, inferno/flamer floaties
 
