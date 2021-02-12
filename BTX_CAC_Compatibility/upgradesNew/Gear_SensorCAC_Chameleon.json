@@ -15,7 +15,7 @@
     "Icon": "UixSvgIcon_specialEquip_Sensors"
   },
   "BonusValueA": "+ 2 Defense, -50% Visiblity",
-  "BonusValueB": "+ 10 Heat, + 1 Stealth",
+  "BonusValueB": "+ 6 Heat, + 1 Stealth",
   "ComponentType": "Upgrade",
   "ComponentSubType": "NotSet",
   "PrefabIdentifier": "",
