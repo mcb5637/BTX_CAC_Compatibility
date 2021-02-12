@@ -1,0 +1,169 @@
+{
+  "StatName": null,
+  "RelativeModifier": 0,
+  "AbsoluteModifier": 0,
+  "Description": {
+    "Cost": 8000000,
+    "Rarity": 99,
+    "Purchasable": false,
+    "Manufacturer": "Terran Hegemony",
+    "Model": "CLPS",
+    "UIName": "Chameleon Light Polarization Shield",
+    "Id": "Gear_SensorCAC_Chameleon",
+    "Name": "Chameleon Light Polarization Shield",
+    "Details": "Star League era Chameleon Light Polarization Shield. When active, masks the Mechs visual signature, making it almost undetectable by eyes and sensors working in the visible spectrum.",
+    "Icon": "UixSvgIcon_specialEquip_Sensors"
+  },
+  "BonusValueA": "+ 2 Defense, -50% Visiblity",
+  "BonusValueB": "+ 10 Heat, + 1 Stealth",
+  "ComponentType": "Upgrade",
+  "ComponentSubType": "NotSet",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 4,
+  "Tonnage": 0,
+  "AllowedLocations": "All",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "Custom": {
+    "ActivatableComponent": {
+      "ButtonName": "Chameleon LPS",
+      "CanActivateAfterMove": true,
+      "CanActivateAfterFire": false,
+      "CanNotBeActivatedManualy": false,
+      "NoUniqueCheck": false,
+      "statusEffects": [
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "Creator",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_Chameleon_ToHit",
+            "Name": "Chameleon Light Polarization Shield",
+            "Details": "Units with an active Chameleon Light Polarization Shield gain +[AMT] Difficulty to attacks against them, halved visibility, but at the cost of 6 heat per round.",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "ToHitThisActor",
+            "operation": "Float_Add",
+            "modValue": "2.0",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "Creator",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_Chameleon_ESensorDecrease",
+            "Name": "sens",
+            "Details": "sens",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "SpottingVisibilityMultiplier",
+            "operation": "Float_Multiply",
+            "modValue": "-0.5",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "Creator",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_Chameleon_Heat",
+            "Name": "sens",
+            "Details": "sens",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "HeatSinkCapacity",
+            "operation": "Int_Add",
+            "modValue": "-6",
+            "modType": "System.Int32"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "Creator",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_Chameleon_Ghost",
+            "Name": "sens",
+            "Details": "sens",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "GhostEffectStacks",
+            "operation": "Int_Add",
+            "modValue": "1",
+            "modType": "System.Int32"
+          },
+          "nature": "Buff"
+        }
+      ]
+    }
+  },
+  "ComponentTags": {
+    "items": [
+      "component_type_stock",
+      "component_type_lostech",
+      "BLACKLISTED",
+      "cae_ai_defence",
+      "cae_ai_heat"
+    ],
+    "tagSetSourceFile": ""
+  }
+}
