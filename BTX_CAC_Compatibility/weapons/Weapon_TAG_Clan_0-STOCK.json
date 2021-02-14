@@ -76,7 +76,7 @@
       "effectType": "VFXEffect",
       "Description": {
         "Id": "StatusEffect-TAG-IndicatorVFX",
-        "Name": "TAG MARKED",
+        "Name": "Inferno VFX",
         "Details": "Visual indicator of the TAG effect",
         "Icon": "uixSvgIcon_status_sensorsImpaired"
       },
