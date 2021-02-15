@@ -55,7 +55,7 @@ Component list (Clan & SLDF ones included):
         - Liao Prototype AP: +100m sensor range, 90m active probe ping (brown)
     - Mech Quiks
         - Improved Sensors Quirk: +50m sensor range (stacks with AP)
-        - Improved Comms Quirk: 200m aura (removes sensorlock immune) (hostile only) (green)
+        - Improved Comms Quirk: 200m aura (removes indirect immune) (hostile only) (green)
 	Stealth:
 		- Null Signature System: Activatable (+2 defense, -50% detectability, +1 stealth, sensorlock immune, +10 heat)
 		- Chameleon Light Polarization Shield: Activatable (+2 defense, -50% visibility, +1 stealth, +6 heat)

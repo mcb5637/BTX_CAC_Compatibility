@@ -25,7 +25,7 @@ namespace BTX_CAC_CompatibilityDll
     {
         public static void Postfix(ref string __result)
         {
-            __result = __result.Replace("Can see through a single ECM Ghost Effect", "Can Sensorlock targets affected by ECM")
+            __result = __result.Replace("Can see through a single ECM Ghost Effect", "Can spot targets covered by ECM for indirect fire")
                 .Replace("Perform a Sensor Lock on all short range enemies, longer cooldown and shorter range than an Active Probe", "Increased sensor range");
         }
     }

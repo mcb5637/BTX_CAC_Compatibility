@@ -66,6 +66,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractActor_IndirectImmune.cs" />
+    <Compile Include="AbstractActor_InitStats.cs" />
     <Compile Include="AdvWeaponHitInfo_ApplyHitEffects.cs" />
     <Compile Include="ChassisDef_FromJson.cs" />
     <Compile Include="ContractOverride_FromJSONFull.cs" />

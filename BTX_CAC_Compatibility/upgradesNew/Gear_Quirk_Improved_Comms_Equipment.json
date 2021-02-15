@@ -78,13 +78,13 @@
           },
           "effectType": "StatisticEffect",
           "Description": {
-            "Id": "Gear_SensorCAC_ECMAura_SensorLockCounter",
+            "Id": "Gear_SensorCAC_ImCom_IndirectImmuneCounter",
             "Name": "sens",
             "Details": "sens",
             "Icon": "uixSvgIcon_status_ECM-missileDef"
           },
           "statisticData": {
-            "statName": "SensorLockDefense",
+            "statName": "IndirectImmuneFloat",
             "operation": "Float_Add",
             "modValue": "-1.0",
             "modType": "System.Single"
