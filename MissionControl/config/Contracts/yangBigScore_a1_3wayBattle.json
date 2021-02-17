@@ -24,6 +24,6 @@
 		"Enable": false
 	},
 	"AdditionalPlayerMechs": {
-		"Enable": true
+		"Enable": false
 	}
 }
