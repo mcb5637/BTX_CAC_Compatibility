@@ -75,6 +75,7 @@
   "HitGenerator": "Individual",
   "AMSHitChance": 0.0,
   "MissileHealth": 5,
+  "AMSImmune": true,
   "ProjectileScale": {"x":5,"y":5,"z":5},
   "AdditionalImpactVFX": "WFX_BELarger",
   "AdditionalImpactVFXScaleX": 12,
