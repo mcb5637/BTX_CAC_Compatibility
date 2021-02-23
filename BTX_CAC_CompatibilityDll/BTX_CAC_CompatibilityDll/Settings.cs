@@ -11,6 +11,7 @@ namespace BTX_CAC_CompatibilityDll
         public bool LogLevelLog = true;
         public string[] Use4LimitOnContractIds = new string[] { };
         public Dictionary<string, ItemCollectionReplace> ReplaceInItemCollections = new Dictionary<string, ItemCollectionReplace>();
+        public bool MECompat = false;
     }
 
     class ItemCollectionReplace
