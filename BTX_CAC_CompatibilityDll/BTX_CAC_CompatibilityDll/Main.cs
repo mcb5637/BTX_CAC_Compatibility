@@ -43,6 +43,9 @@ namespace BTX_CAC_CompatibilityDll
             //    null, new HarmonyMethod(AccessTools.Method(typeof(MarkEffects_Patch), "Postfix")), null);
             //harmony.Patch(AccessTools.DeclaredMethod(typeof(Mech), "DamageLocation"), new HarmonyMethod(AccessTools.Method(typeof(Main), "LogDamageLoc")), null, null);
 
+
+            InfernoExplode.Patch(harmony);
+
             if (Sett.MECompat)
                 return;
             try

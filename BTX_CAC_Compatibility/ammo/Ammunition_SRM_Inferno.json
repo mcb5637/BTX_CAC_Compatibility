@@ -16,12 +16,12 @@
   "ISDamageModifier": 1,
   "CriticalDamageModifier": 1,
   "DamagePerShot": -7,
-  "HeatDamagePerShot": 4,
+  "HeatDamagePerShot": 8,
   "FireTerrainChance": 0.8,
   "FireDurationWithoutForest": 1,
   "FireTerrainStrength": 0,
   "FireOnSuccessHit": true,
-  "FireTerrainCellRadius": 6,
+  "FireTerrainCellRadius": 1,
   "WeaponEffectID": "WeaponEffect-Weapon_SRMInferno",
   "statusEffects": [
     {
@@ -43,23 +43,23 @@
         "range": 0,
         "forcePathRebuild": false,
         "forceVisRebuild": false,
-        "showInTargetPreview": true,
-        "showInStatusPanel": true
+        "showInTargetPreview": false,
+        "showInStatusPanel": false
       },
       "effectType": "StatisticEffect",
       "Description": {
-        "Id": "StatusEffect-Inferno-Burn5",
-        "Name": "BURNING GEL",
-        "Details": "This unit gains [AMT] Heat on its next activation (this effect stacks).",
+        "Id": "StatusEffectHeatDamageReduction",
+        "Name": "Inferno VFX",
+        "Details": "reduce inc heat by 0.02, stacks",
         "Icon": "uixSvgIcon_statusOnFire"
       },
-      "nature": "Debuff",
+      "nature": "Buff",
       "statisticData": {
         "appliesEachTick": false,
-        "statName": "EndMoveHeat",
-        "operation": "Int_Add",
-        "modValue": "5",
-        "modType": "System.Int32"
+        "statName": "CACIncomingHeatMult",
+        "operation": "Float_Multiply",
+        "modValue": "0.98",
+        "modType": "System.Single"
       },
       "tagData": null,
       "floatieData": null,

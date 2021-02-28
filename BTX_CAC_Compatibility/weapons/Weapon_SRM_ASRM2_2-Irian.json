@@ -7,6 +7,5 @@
 	"FireDelayMultiplier": 1,
 	"HitGenerator": "Cluster",
 	"AMSHitChance": 0.0,
-	"MissileHealth": 1,
-	"StatusEffectsPerHit": true
+	"MissileHealth": 1
 }

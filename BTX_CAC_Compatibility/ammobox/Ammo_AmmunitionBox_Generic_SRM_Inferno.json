@@ -14,7 +14,7 @@
         "Icon" : "uixSvgIcon_ammoBox_Missile"
     },
     "BonusValueA" : "- 7 Dmg",
-    "BonusValueB" : "+ 4 Dmg (H)",
+    "BonusValueB" : "+ 8 Dmg (H)",
     "ComponentType" : "AmmunitionBox",
     "ComponentSubType" : "Ammunition",
     "PrefabIdentifier" : "",
@@ -30,7 +30,8 @@
     ],
     "ComponentTags" : {
         "items" : [
-            "component_type_stock"
+            "component_type_stock",
+            "component_infernoExplosion"
         ],
         "tagSetSourceFile" : ""
     }
