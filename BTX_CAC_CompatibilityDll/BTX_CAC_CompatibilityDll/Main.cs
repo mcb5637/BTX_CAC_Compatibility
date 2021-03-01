@@ -44,10 +44,11 @@ namespace BTX_CAC_CompatibilityDll
             //harmony.Patch(AccessTools.DeclaredMethod(typeof(Mech), "DamageLocation"), new HarmonyMethod(AccessTools.Method(typeof(Main), "LogDamageLoc")), null, null);
 
 
-            InfernoExplode.Patch(harmony);
-
             if (Sett.MECompat)
                 return;
+
+            InfernoExplode.Patch(harmony);
+
             try
             {
                 // artemis
