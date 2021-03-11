@@ -56,7 +56,7 @@ Component list (Clan & SLDF ones included):
     - Mech Quiks
         - Improved Sensors Quirk: +50m sensor range (stacks with AP)
         - Improved Comms Quirk: 200m aura (removes indirect immune) (hostile only) (green)
-	Stealth:
+	- Stealth:
 		- Null Signature System: Activatable (+2 defense, -50% detectability, +1 stealth, sensorlock immune, +10 heat)
 		- Chameleon Light Polarization Shield: Activatable (+2 defense, -50% visibility, +1 stealth, +6 heat)
 - Upgrades
@@ -74,6 +74,8 @@ Component list (Clan & SLDF ones included):
  - TODO: edit texts
  - TODO: NARC reveals target?
  - TODO: Flamers & Inferno ammo balance
+ - TODO: campagn missions MC
+ - TODO: ac projectiles per shot, if possible
  - Known bugs: CustomLoc patchig strings / sometimes fp missions dont spawn your 2nd lance, just restart to fix it (bug in VXI, gets fixed there)
 
 Optional:
