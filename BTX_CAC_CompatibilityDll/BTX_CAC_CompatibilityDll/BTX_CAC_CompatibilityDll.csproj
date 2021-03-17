@@ -88,6 +88,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetPath)" "$(SolutionDir)..\BTX_CAC_Compatibility\$(TargetName).dll"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetPath)" "$(SolutionDir)..\BTX_CAC_Compatibility\$(TargetName).dll"
+copy /Y "$(TargetPath)" "C:\goggames\BATTLETECH\Mods\BTX_CAC_Compatibility\$(TargetName).dll"</PostBuildEvent>
   </PropertyGroup>
 </Project>

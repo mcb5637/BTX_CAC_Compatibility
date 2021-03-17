@@ -1,6 +1,7 @@
 ﻿using Harmony;
 using MissionControl.Rules;
 using System.Reflection;
+using UnityEngine;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -27,6 +28,25 @@ namespace BTX_CAC_CompatibilityDll
                 __result = "PlayerLanceSpawner_Attack";
             else if (type == "Smithon_Attack")
                 __result = "PlayerLanceSpawner";
+        }
+    }
+
+    [HarmonyPatch(typeof(EncounterRules), "GetPlayerLanceChunkName")]
+    class EncounterRules_GetPlayerLanceChunkName
+    {
+        public static void Postfix(ref string __result)
+        {
+            //foreach (Transform ch in MissionControl.MissionControl.Instance.EncounterLayerGameObject.transform)
+            //{
+            //    FileLog.Log(ch.name);
+            //    foreach (Transform chch in ch.transform)
+            //    {
+            //        FileLog.Log("\t" + chch.name);
+            //    }
+            //}
+            string type = MissionControl.MissionControl.Instance.CurrentContract.ContractTypeValue.Name;
+            if (type == "Story_5_ServedCold")
+                __result = "01_InitialSetup/Chunk_PlayerLance";
         }
     }
 }

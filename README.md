@@ -39,12 +39,12 @@ Component list (Clan & SLDF ones included):
         - Streak SRM: added inferno ammo, added streak effect+clustering
         - NARC: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 2 to 4 rounds (depends on launcher), ecm blocks narc acc bonus
         - ATM: added 3 modes instead of 3 ammo types, trading damage for range (Clan magic lets them be loaded with exactly the correct ammo types)
-        - Infernos: Broken, use SRM inferno ammo instead (TODO check if something is still using them)
+        - Infernos: Broken, use SRM inferno ammo instead
     - Artillery
         - Thumper: light artillery (replaces HM mortar / + version for Bull Shark)
-        - Sniper: medium artillery (found in mining shops / TODO: add Helepolis HEP-3H mech, used by ComStar)
+        - Sniper: medium artillery (found in mining shops)
         - Long Tom: heavy artillery (special, only for Bull Shark with special event)
-        - Arrow IV: medium artillery (lostech / FP reward / TODO: check how to add to itemcollections after 3044)
+        - Arrow IV: medium artillery (lostech / FP reward)
 - Electronics
     - ECM
         - Guardian ECM: -20% detectability, 180m aura (+4 defense, indirect immune, sensorlock immune) (friendly only) (blue)
@@ -72,18 +72,21 @@ Component list (Clan & SLDF ones included):
 	- You only get an accuracy penalty for Indirect Fire if you have to shoot over obstacles to hit your target (if it was considered Indirect Fire by the old rules)
  
  - TODO: edit texts
+ - TODO: vehicle updates (inferno, maybe artillery, ams)
+ - TODO: ATM ammo types (edit lots of mechs)
  - TODO: NARC reveals target?
  - TODO: Flamers & Inferno ammo balance
+ - TODO: ECM tohit balance
  - TODO: campagn missions MC
  - TODO: ac projectiles per shot, if possible
+ - TODO: itemcollection edits: arrow4
+ - TODO: new mechs: Helepolis HEP-3H, quads
  - Known bugs: CustomLoc patchig strings / sometimes fp missions dont spawn your 2nd lance, just restart to fix it (bug in VXI, gets fixed there)
 
 Optional:
  - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
  - manual deployment can be enabled via CU, set "DeployManual": to true to do so (warning: laggy)
  
- - TODO: Vehicles?
-
 Credits:
 - CMiSSioN for CustomBundle
 - everyone involved in RougeTech (also Crackfox for Vanilla CAC) for examples and inspiration on how to use CB
