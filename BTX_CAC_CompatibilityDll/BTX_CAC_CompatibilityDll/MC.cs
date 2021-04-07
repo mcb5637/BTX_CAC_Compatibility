@@ -28,7 +28,7 @@ namespace BTX_CAC_CompatibilityDll
             string type = MissionControl.MissionControl.Instance.CurrentContract.ContractTypeValue.Name;
             if (type == "Panzyr_Attack")
                 __result = "PlayerLanceSpawner_Attack";
-            else if (type=="Smithon_Attack" || type=="Story_6A_TreasureTrove")
+            else if (type=="Smithon_Attack" || type=="Story_6A_TreasureTrove" || type=="Smithon_Defense")
                 __result = "PlayerLanceSpawner";
         }
     }
