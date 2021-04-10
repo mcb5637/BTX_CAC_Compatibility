@@ -26,7 +26,7 @@ namespace BTX_CAC_CompatibilityDll
         public static void Postfix(ref string __result)
         {
             string type = MissionControl.MissionControl.Instance.CurrentContract.ContractTypeValue.Name;
-            if (type == "Panzyr_Attack")
+            if (type=="Panzyr_Attack" || type=="Itrom_Attack")
                 __result = "PlayerLanceSpawner_Attack";
             else if (type=="Smithon_Attack" || type=="Story_6A_TreasureTrove" || type=="Smithon_Defense")
                 __result = "PlayerLanceSpawner";
@@ -55,6 +55,8 @@ namespace BTX_CAC_CompatibilityDll
                 __result = "01_InitialSetup/Chunk_PlayerLance";
             else if (type == "Story_6A_TreasureTrove")
                 __result = "Gen_PlayerLance";
+            else if (type == "Itrom_Attack")
+                __result = "Chunk_PlayerLance_Attack";
         }
     }
 
