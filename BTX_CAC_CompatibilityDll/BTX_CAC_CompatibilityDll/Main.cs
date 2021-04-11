@@ -1,4 +1,5 @@
-﻿using BattleTech;
+﻿using AccessExtension;
+using BattleTech;
 using CustAmmoCategories;
 using Harmony;
 using HBS.Logging;
@@ -36,6 +37,7 @@ namespace BTX_CAC_CompatibilityDll
                 HBS.Logging.Logger.SetLoggerLevel("BTX_CAC_Compatibility", LogLevel.Log);
             HarmonyInstance harmony = HarmonyInstance.Create("com.github.mcb5637.BTX_CAC_Compatibility");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+            AccessExtensionPatcher.PatchAll(harmony, Assembly.GetExecutingAssembly());
             AbstractActor_InitStats.Patch(harmony);
             AbstractActor_IndirectImmune.Patch(harmony);
             //harmony.Patch(

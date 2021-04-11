@@ -17,8 +17,7 @@ namespace BTX_CAC_CompatibilityDll
             if (Target.StatCollection.GetValue<float>("SensorLockDefense") > 0) {
                 __instance.SetCamera(CameraControl.Instance.ShowSensorLockCam(Target, 2f), __instance.MessageIndex);
                 CameraControl.Instance.ClearTargets();
-                CombatGameState Combat = Traverse.Create(__instance).Property("Combat").GetValue<CombatGameState>();
-                Combat.MessageCenter.PublishMessage(new FloatieMessage(__instance.owningActor.GUID, Target.GUID, "Sensor Lock blocked by ECM", FloatieMessage.MessageNature.Buff));
+                __instance.GetCombat().MessageCenter.PublishMessage(new FloatieMessage(__instance.owningActor.GUID, Target.GUID, "Sensor Lock blocked by ECM", FloatieMessage.MessageNature.Buff));
                 ___numWavesFired++;
                 ___timeSinceLastWave = 0;
                 return false;
@@ -34,8 +33,7 @@ namespace BTX_CAC_CompatibilityDll
         {
             if (__instance.Target.StatCollection.GetValue<float>("SensorLockDefense") > 0)
             {
-                CombatGameState Combat = Traverse.Create(__instance).Property("Combat").GetValue<CombatGameState>();
-                Combat.MessageCenter.PublishMessage(new FloatieMessage(__instance.owningActor.GUID, __instance.Target.GUID, "Sensor Lock blocked by ECM", FloatieMessage.MessageNature.Buff));
+                __instance.GetCombat().MessageCenter.PublishMessage(new FloatieMessage(__instance.owningActor.GUID, __instance.Target.GUID, "Sensor Lock blocked by ECM", FloatieMessage.MessageNature.Buff));
                 ___numWavesFired++;
                 ___timeSinceLastWave = 0;
                 return false;

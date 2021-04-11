@@ -72,7 +72,9 @@
   <ItemGroup>
     <Compile Include="AbstractActor_IndirectImmune.cs" />
     <Compile Include="AbstractActor_InitStats.cs" />
+    <Compile Include="AccessExtensionPatcher\AccessExtensionPatcher.cs" />
     <Compile Include="AdvWeaponHitInfo_ApplyHitEffects.cs" />
+    <Compile Include="AEPStatic.cs" />
     <Compile Include="ChassisDef_FromJson.cs" />
     <Compile Include="ContractOverride_FromJSONFull.cs" />
     <Compile Include="Effect_Ctor.cs" />
