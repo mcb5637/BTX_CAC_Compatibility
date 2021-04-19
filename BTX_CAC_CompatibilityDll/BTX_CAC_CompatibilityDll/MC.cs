@@ -28,7 +28,7 @@ namespace BTX_CAC_CompatibilityDll
             string type = MissionControl.MissionControl.Instance.CurrentContract.ContractTypeValue.Name;
             if (type=="Panzyr_Attack" || type=="Itrom_Attack")
                 __result = "PlayerLanceSpawner_Attack";
-            else if (type=="Smithon_Attack" || type=="Story_6A_TreasureTrove" || type=="Smithon_Defense" || type=="Panzyr_Defense" || type=="Story_7_GunboatDiplomacy" || type=="Tyrlon_Attack")
+            else if (type=="Smithon_Attack" || type=="Story_6A_TreasureTrove" || type=="Smithon_Defense" || type=="Panzyr_Defense" || type=="Story_7_GunboatDiplomacy" || type=="Tyrlon_Attack" || type=="Story_8_Locura")
                 __result = "PlayerLanceSpawner";
         }
     }
@@ -53,7 +53,7 @@ namespace BTX_CAC_CompatibilityDll
             string type = MissionControl.MissionControl.Instance.CurrentContract.ContractTypeValue.Name;
             if (type == "Story_5_ServedCold")
                 __result = "01_InitialSetup/Chunk_PlayerLance";
-            else if (type=="Story_6A_TreasureTrove" || type== "Story_7_GunboatDiplomacy")
+            else if (type=="Story_6A_TreasureTrove" || type== "Story_7_GunboatDiplomacy" || type == "Story_8_Locura")
                 __result = "Gen_PlayerLance";
             else if (type == "Itrom_Attack")
                 __result = "Chunk_PlayerLance_Attack";
