@@ -1,0 +1,36 @@
+{
+  "TargetIDs": [
+    "vehicledef_MARKSMAN",
+    "vehicledef_LONGTOM-LT-MOB-25"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.inventory[?(@ComponentDefID == 'Ammo_AmmunitionBox_Generic_S')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_Sniper"
+      }
+    },
+    {
+      "JSONPath": "$.inventory[?(@ComponentDefID == 'Weapon_SniperArtillery')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Weapon_MortarCAC_Sniper"
+      }
+    },
+    {
+      "JSONPath": "$.inventory[?(@ComponentDefID == 'Ammo_AmmunitionBox_Generic_LT')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_LongTom"
+      }
+    },
+    {
+      "JSONPath": "$.inventory[?(@ComponentDefID == 'Weapon_LongTomArtillery')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Weapon_MortarCAC_LongTom"
+      }
+    }
+  ]
+}

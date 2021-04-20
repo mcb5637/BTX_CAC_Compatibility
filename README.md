@@ -52,7 +52,7 @@ Component list (Clan & SLDF ones included):
         - Packrat ECM (only in Packrat vehicle): 90m aura (+4 defense, indirect immune) (friendly + enemy) (blue)
     - AP
         - Beagle Active Probe: +150m sensor range, free action sensor lock, 120m active probe ping (free action) (brown)
-        - Liao Prototype AP: +100m sensor range, 90m active probe ping (brown)
+        - Liao Prototype AP: +100m sensor range, free action sensor lock, 90m active probe ping (brown)
     - Mech Quiks
         - Improved Sensors Quirk: +50m sensor range (stacks with AP)
         - Improved Comms Quirk: 200m aura (removes indirect immune) (hostile only) (green)
@@ -72,12 +72,11 @@ Component list (Clan & SLDF ones included):
 	- You only get an accuracy penalty for Indirect Fire if you have to shoot over obstacles to hit your target (if it was considered Indirect Fire by the old rules)
  
  - TODO: edit texts
- - TODO: vehicle updates (inferno, maybe artillery, ams)
+ - TODO: vehicle updates (inferno?)
  - TODO: ATM ammo types (edit lots of mechs)
  - TODO: NARC reveals target?
  - TODO: Flamers & Inferno ammo balance
  - TODO: ECM tohit balance
- - TODO: campagn missions MC
  - TODO: ac projectiles per shot, if possible
  - TODO: itemcollection edits: arrow4
  - TODO: new mechs: Helepolis HEP-3H, quads
