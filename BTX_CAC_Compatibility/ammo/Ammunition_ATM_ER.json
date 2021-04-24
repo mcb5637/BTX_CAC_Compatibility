@@ -1,0 +1,26 @@
+{
+  "Description": {
+    "Id": "Ammunition_ATM_ER",
+    "Name": "ATM ER",
+    "Details": "ATM missiles, capable of dealing significant damage at various ranges.",
+    "Icon": null,
+    "Cost": 0,
+    "Rarity": 0,
+    "Purchasable": false
+  },
+  "ammunitionTypeID": "Normal",
+  "Category": "NotSet",
+  "ammoCategoryID": "ATM",
+  "HeatGenerated": 0,
+  "HeatGeneratedModifier": 1,
+  "ArmorDamageModifier": 1,
+  "ISDamageModifier": 1,
+  "CriticalDamageModifier": 1,
+  "DamagePerShot": 0,
+  "Instability": 0,
+  "MinRange": 120,
+  "MaxRange": 540,
+  "ShortRange": 120,
+  "MiddleRange": 360,
+  "LongRange": 540
+}

@@ -1,0 +1,90 @@
+{
+  "TargetIDs": [
+    "mechdef_vulture_mad_dog-D",
+    "mechdef_mad_cat_timber_wolf-E"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.inventory[?(@ComponentDefID == 'Ammo_AmmunitionBox_Generic_ATM')]",
+      "Action": "Remove"
+    },
+    {
+      "JSONPath": "$.inventory",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_ATM",
+        "ComponentDefType": "AmmunitionBox",
+        "HardpointSlot": -1,
+        "IsFixed": false,
+        "DamageLevel": "Functional",
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.inventory",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_ATM_HE",
+        "ComponentDefType": "AmmunitionBox",
+        "HardpointSlot": -1,
+        "IsFixed": false,
+        "DamageLevel": "Functional",
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.inventory",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "LeftTorso",
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_ATM_ER",
+        "ComponentDefType": "AmmunitionBox",
+        "HardpointSlot": -1,
+        "IsFixed": false,
+        "DamageLevel": "Functional",
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.inventory",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "RightTorso",
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_ATM",
+        "ComponentDefType": "AmmunitionBox",
+        "HardpointSlot": -1,
+        "IsFixed": false,
+        "DamageLevel": "Functional",
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.inventory",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "RightTorso",
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_ATM_HE",
+        "ComponentDefType": "AmmunitionBox",
+        "HardpointSlot": -1,
+        "IsFixed": false,
+        "DamageLevel": "Functional",
+        "hasPrefabName": false
+      }
+    },
+    {
+      "JSONPath": "$.inventory",
+      "Action": "ArrayAdd",
+      "Value": {
+        "MountedLocation": "RightTorso",
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_ATM_ER",
+        "ComponentDefType": "AmmunitionBox",
+        "HardpointSlot": -1,
+        "IsFixed": false,
+        "DamageLevel": "Functional",
+        "hasPrefabName": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "Description": {
+    "Id": "Ammunition_ATM_HE",
+    "Name": "ATM HE",
+    "Details": "ATM missiles, capable of dealing significant damage at various ranges.",
+    "Icon": null,
+    "Cost": 0,
+    "Rarity": 0,
+    "Purchasable": false
+  },
+  "ammunitionTypeID": "Normal",
+  "Category": "NotSet",
+  "ammoCategoryID": "ATM",
+  "HeatGenerated": 0,
+  "HeatGeneratedModifier": 1,
+  "ArmorDamageModifier": 1,
+  "ISDamageModifier": 1,
+  "CriticalDamageModifier": 1,
+  "DamagePerShot": 8,
+  "Instability": 4,
+  "MinRange": 0,
+  "MaxRange": 0,
+  "ShortRange": 0,
+  "MiddleRange": 0,
+  "LongRange": 0
+}
