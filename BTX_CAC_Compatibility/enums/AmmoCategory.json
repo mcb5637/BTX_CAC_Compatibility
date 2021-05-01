@@ -1,60 +1,60 @@
 {
-    "enumerationValueList" : [
-		{
-			"ID" : 50,
-			"Name" : "Thumper",
-			"FriendlyName" : "Thumper",
-			"IsBallistic" : true,
-			"IsMissile" : false,
-			"IsEnergy" : false,
-			"IsSupport" : false,
-			"UsesInternalAmmo" : false,
-			"UIColorRef" : "Ballistic",
-			"FallbackUIColor" : null,
-			"Icon" : "BallisticHardpointIcon",
-			"OutOfAmmoAudioVOEvent" : "AmmoDepleted_Gauss"
-		},
-		{
-			"ID" : 51,
-			"Name" : "SniperArti",
-			"FriendlyName" : "Sniper",
-			"IsBallistic" : true,
-			"IsMissile" : false,
-			"IsEnergy" : false,
-			"IsSupport" : false,
-			"UsesInternalAmmo" : false,
-			"UIColorRef" : "Ballistic",
-			"FallbackUIColor" : null,
-			"Icon" : "BallisticHardpointIcon",
-			"OutOfAmmoAudioVOEvent" : "AmmoDepleted_Gauss"
-		},
-		{
-			"ID" : 52,
-			"Name" : "LongTom",
-			"FriendlyName" : "Long Tom",
-			"IsBallistic" : true,
-			"IsMissile" : false,
-			"IsEnergy" : false,
-			"IsSupport" : false,
-			"UsesInternalAmmo" : false,
-			"UIColorRef" : "Ballistic",
-			"FallbackUIColor" : null,
-			"Icon" : "BallisticHardpointIcon",
-			"OutOfAmmoAudioVOEvent" : "AmmoDepleted_Gauss"
-		},
-		{
-			"ID" : 53,
-			"Name" : "Arrow4",
-			"FriendlyName" : "Arrow IV",
-			"IsBallistic" : false,
-			"IsMissile" : true,
-			"IsEnergy" : false,
-			"IsSupport" : false,
-			"UsesInternalAmmo" : false,
-			"UIColorRef" : "Missile",
-			"FallbackUIColor" : null,
-			"Icon" : "MissileHardpointIcon",
-			"OutOfAmmoAudioVOEvent" : "AmmoDepleted_LRM"
-		}
-	]
+  "enumerationValueList": [
+    {
+      "ID": 50,
+      "Name": "Thumper",
+      "FriendlyName": "Thumper",
+      "IsBallistic": true,
+      "IsMissile": false,
+      "IsEnergy": false,
+      "IsSupport": false,
+      "UsesInternalAmmo": false,
+      "UIColorRef": "Ballistic",
+      "FallbackUIColor": null,
+      "Icon": "BallisticHardpointIcon",
+      "OutOfAmmoAudioVOEvent": "AmmoDepleted_Gauss"
+    },
+    {
+      "ID": 51,
+      "Name": "SniperArti",
+      "FriendlyName": "Sniper",
+      "IsBallistic": true,
+      "IsMissile": false,
+      "IsEnergy": false,
+      "IsSupport": false,
+      "UsesInternalAmmo": false,
+      "UIColorRef": "Ballistic",
+      "FallbackUIColor": null,
+      "Icon": "BallisticHardpointIcon",
+      "OutOfAmmoAudioVOEvent": "AmmoDepleted_Gauss"
+    },
+    {
+      "ID": 52,
+      "Name": "LongTom",
+      "FriendlyName": "Long Tom",
+      "IsBallistic": true,
+      "IsMissile": false,
+      "IsEnergy": false,
+      "IsSupport": false,
+      "UsesInternalAmmo": false,
+      "UIColorRef": "Ballistic",
+      "FallbackUIColor": null,
+      "Icon": "BallisticHardpointIcon",
+      "OutOfAmmoAudioVOEvent": "AmmoDepleted_Gauss"
+    },
+    {
+      "ID": 53,
+      "Name": "Arrow4",
+      "FriendlyName": "Arrow IV",
+      "IsBallistic": false,
+      "IsMissile": true,
+      "IsEnergy": false,
+      "IsSupport": false,
+      "UsesInternalAmmo": false,
+      "UIColorRef": "Missile",
+      "FallbackUIColor": null,
+      "Icon": "MissileHardpointIcon",
+      "OutOfAmmoAudioVOEvent": "AmmoDepleted_LRM"
+    }
+  ]
 }
