@@ -73,7 +73,6 @@ Component list (Clan & SLDF ones included):
  
  - TODO: edit texts
  - TODO: vehicle updates (inferno?)
- - TODO: ATM ammo types (edit lots of mechs)
  - TODO: NARC reveals target?
  - TODO: Flamers & Inferno ammo balance
  - TODO: ECM tohit balance
