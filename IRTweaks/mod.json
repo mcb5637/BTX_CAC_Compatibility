@@ -2,7 +2,7 @@
 	"Name": "IRTweaks",
 	"Enabled": true,
 	"Hidden": true,
-	"Version": "0.9.1.2",
+	"Version": "0.9.2.1",
 	"Description": "Miscellaneous Tweaks and Fixes",
 	"Author": "IceRaptor",
 	"Website": "https://github.com/IceRaptor/IRTweaks",
@@ -18,10 +18,11 @@
 		"Fixes": {
 			"AlternateMechNamingStyle": false,
 			"BuildingDamageColorChange": false,
-			"BraceOnMeleeWithJuggernaut": false,
+			"BraceOnMeleeWithJuggernaut": true,
 			"BulkPurchasing": true,
-			"BulkScrapping": true,
+			"BulkScrapping": false,
 			"CombatLog": false,
+			"CTDestructInjuryFix": true,
 			"DisableCampaign": false,
 			"DisableCombatSaves": false,
 			"DisableCombatRestarts": false,
@@ -34,7 +35,7 @@
 			"MechbayLayout": false,
 			"MechbayLayoutDisableStore": false,
 			"MultiTargetStat": true,
-			"PainTolerance": false,
+			"PainTolerance": true,
 			"PathfinderTeamFix": true,
 			"PreventHeadShots": false,
 			"RandomStartByDifficulty": false,
@@ -47,8 +48,10 @@
 			"SkipDeleteSavePopup": true,
 			"SpawnProtection": false,
 			"StreamlinedMainMenu": false,
+			"TurnDirectorStartFirstRoundFix": true,
 			"UrbanExplosionsFix": true,
 			"WeaponTooltip": false,
+			"WeakAgainstMeleeFix": true,
       "CalledShotTweaks": false
 		},
 		"Abilities": {
@@ -64,6 +67,12 @@
 				"EnableTacticsModifier": true,
 				"BaseModifier": -4,
 				"PilotTags": {}
+      },
+			"DamageModsBySkill": {
+				"StabilityMods": [],
+				"HeatMods": [],
+				"APDmgMods": [],
+				"StdDmgMods": []
 			},
 			"FlexibleSensorLock": {
 				"FreeActionWithAbility": false,
@@ -78,7 +87,8 @@
 				"AmmoExplosionResistPenaltyPerCapacityPercentile": 1,
 				"OverheatResistPenaltyPerHeatPercentile": 1,
 				"KnockdownResistPenalty": 6,
-				"SideLocationDestroyedResistPenalty": 10
+				"SideLocationDestroyedResistPenalty": 10,
+				"CTLocationDestroyedResistPenalty": 10
 			},
 			"ObstructionTweaks": {
 				"DRMechLocs": [
