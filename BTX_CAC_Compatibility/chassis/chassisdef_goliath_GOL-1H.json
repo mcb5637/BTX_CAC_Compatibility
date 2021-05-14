@@ -1,0 +1,415 @@
+{
+  "Description": {
+    "Cost": 6803400,
+    "Rarity": 4,
+    "Purchasable": true,
+    "Manufacturer": null,
+    "Model": null,
+    "UIName": "Goliath",
+    "Id": "chassisdef_goliath_GOL-1H",
+    "Name": "Goliath",
+    "Details": "The Goliath is armed with what would be considered a paltry armament for a 'Mech of its size. The primary weapon is a Rand PPC. This is backed up by two Holly LRM-10 launchers. The Goliath has respectable firepower at long ranges. When an enemy closes though the 'Mech only has two Ramsey-65 Machine Guns to rely on for defense.",
+    "Icon": "uixTxrIcon_goliath"
+  },
+  "VariantName": "GOL-1H",
+  "ChassisTags": {
+    "items": [
+      "mech_quirk_multitrac",
+      "mech_quirk_exposedactuators"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "CustomParts": {
+    "quadVisualInfo": {
+      "UseQuadVisuals": true,
+      "FLegsPrefab": "chrPrfMech_atlasBase-001",
+      "BodyLength": 5.2,
+      "FLegsPrefabBase": "atlas",
+      "RLegsPrefabBase": "atlas",
+      "NotSuppressRenderers": [ "_left_leg_", "_right_leg_" ]
+    },
+    "FiringArc": 360,
+    "ArmsCountedAsLegs": true,
+    "CustomParts": [
+      {
+        "prefab": "jgoliathbody",
+        "MaterialInfo": {
+          "jgoliathbody": {
+            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
+            "shaderKeyWords": [
+              "_DETAIL_OVERLAY",
+              "_EMISSION",
+              "_METALLICGLOSSMAP",
+              "_NORMALMAP"
+            ]
+          },
+          "jgoliathbody_damaged": {
+            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
+            "shaderKeyWords": [
+              "_DETAIL_OVERLAY",
+              "_EMISSION",
+              "_METALLICGLOSSMAP",
+              "_NORMALMAP"
+            ]
+          },
+          "ModularSci-FiWeapons_Blue": {
+            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
+            "shaderKeyWords": [
+              "_DETAIL_OVERLAY",
+              "_EMISSION",
+              "_METALLICGLOSSMAP",
+              "_NORMALMAP"
+            ]
+          },
+          "ModularSci-FiWeapons_White": {
+            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
+            "shaderKeyWords": [
+              "_DETAIL_OVERLAY",
+              "_EMISSION",
+              "_METALLICGLOSSMAP",
+              "_NORMALMAP"
+            ]
+          }
+        },
+        "prefabTransform": {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "rotate": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        "MechChassisLocation": "CenterTorso",
+        "RequiredUpgrades": [],
+        "RequiredComponents": [],
+        "AnimationType": "QuadBody",
+        "AnimationData": {
+          "VerticalRotate": "rotate",
+          "TurretAttach": "turret_attach",
+          "FrontLegsAttach": "front_legs_attach",
+          "ShowFrontLegsAxis": false,
+          "DamageAnimator": "CT_LT_RT_plus_damage_models",
+          "RTVFXTransform": "RT_vfx_transform",
+          "LTVFXTransform": "LT_vfx_transform",
+          "CTVFXTransform": "CT_vfx_transform",
+          "HEADVFXTransform": "HEAD_vfx_transform",
+          "JumpJetsSpawnPoints": [ "jumpjet_rear", "jumpjet_front", "jumpjet_left", "jumpjet_right" ],
+          "HeadLightSpawnPoints": [ "headlight_left", "headlight_right" ]
+        }
+      },
+      {
+        "prefab": "jgoliath_turret",
+        "MaterialInfo": {
+          "jgoliathbody": {
+            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
+            "shaderKeyWords": [
+              "_DETAIL_OVERLAY",
+              "_EMISSION",
+              "_METALLICGLOSSMAP",
+              "_NORMALMAP"
+            ]
+          },
+          "bargest_turret_material": {
+            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
+            "shaderKeyWords": [
+              "_DETAIL_OVERLAY",
+              "_EMISSION",
+              "_METALLICGLOSSMAP",
+              "_NORMALMAP"
+            ]
+          },
+          "ModularSci-FiWeapons_Blue": {
+            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
+            "shaderKeyWords": [
+              "_DETAIL_OVERLAY",
+              "_EMISSION",
+              "_METALLICGLOSSMAP",
+              "_NORMALMAP"
+            ]
+          },
+          "ModularSci-FiWeapons_White": {
+            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
+            "shaderKeyWords": [
+              "_DETAIL_OVERLAY",
+              "_EMISSION",
+              "_METALLICGLOSSMAP",
+              "_NORMALMAP"
+            ]
+          }
+        },
+        "prefabTransform": {
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "rotate": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        "MechChassisLocation": "CenterTorso",
+        "RequiredUpgrades": [],
+        "RequiredComponents": [],
+        "AnimationType": "MechTurret",
+        "AnimationData": {
+          "TurnAnimator": "base",
+          "AttachPoints": [
+            {
+              "Name": "TAPMainLeft",
+              "Location": "LeftTorso",
+              "AttachTo": "WeaponAttachL",
+              "Animator": "WeaponMountL"
+            },
+            {
+              "Name": "TAPMainRight",
+              "Location": "RightTorso",
+              "AttachTo": "WeaponAttachR",
+              "Animator": "WeaponMountR"
+            },
+            {
+              "Name": "TAPMainCenter",
+              "Location": "CenterTorso",
+              "AttachTo": "WeaponAttachC",
+              "Animator": "WeaponMountC"
+            },
+            {
+              "Name": "TAPLeftCenter",
+              "Location": "CenterTorso",
+              "AttachTo": "WeaponAttachCL",
+              "Animator": "WeaponMountCL"
+            },
+            {
+              "Name": "TAPRightCenter",
+              "Location": "CenterTorso",
+              "AttachTo": "WeaponAttachCR",
+              "Animator": "WeaponMountCR"
+            },
+            {
+              "Name": "TAPTurretHead",
+              "Location": "Head",
+              "AttachTo": "WeaponAttachH",
+              "Animator": "WeaponMountH"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "StockRole": "Heavy Cavalry",
+  "YangsThoughts": "The Goliath suffers from low damage output compared to other assault mechs, but thanks to its 4 legs it is a lot more stable.",
+  "MovementCapDefID": "movedef_zeus_ZEU-6S",
+  "PathingCapDefID": "pathingdef_assault",
+  "HardpointDataDefID": "hardpointdatadef_jgoliath",
+  "PrefabIdentifier": "chrPrfMech_atlasBase-001",
+  "PrefabBase": "jgoliath",
+  "Tonnage": 80,
+  "InitialTonnage": 37.5,
+  "weightClass": "ASSAULT",
+  "BattleValue": 6778200,
+  "Heatsinks": 0,
+  "TopSpeed": 105,
+  "TurnRadius": 90,
+  "MaxJumpjets": 0,
+  "Stability": 300,
+  "StabilityDefenses": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpotterDistanceMultiplier": 1,
+  "VisibilityMultiplier": 1,
+  "SensorRangeMultiplier": 1,
+  "Signature": 0,
+  "Radius": 8,
+  "PunchesWithLeftArm": true,
+  "MeleeDamage": 40,
+  "MeleeInstability": 20,
+  "MeleeToHitModifier": 0,
+  "DFADamage": 80,
+  "DFAToHitModifier": 0,
+  "DFASelfDamage": 80,
+  "DFAInstability": 40,
+  "MechPartMax": 0,
+  "MechPartCount": 0,
+  "EngageRangeModifier": 0,
+  "AlwaysPunchIfPossible": false,
+  "Locations": [
+    {
+      "Location": "Head",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 1,
+      "MaxArmor": 45,
+      "MaxRearArmor": -1,
+      "InternalStructure": 16
+    },
+    {
+      "Location": "LeftArm",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 170,
+      "MaxRearArmor": -1,
+      "InternalStructure": 85
+    },
+    {
+      "Location": "LeftTorso",
+      "Hardpoints": [
+        {
+          "Omni": false,
+          "WeaponMountID": "Missile"
+        },
+        {
+          "Omni": false,
+          "WeaponMountID": "Missile"
+        },
+        {
+          "Omni": false,
+          "WeaponMountID": "AntiPersonnel"
+        },
+        {
+          "Omni": false,
+          "WeaponMountID": "AntiPersonnel"
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 170,
+      "MaxRearArmor": 85,
+      "InternalStructure": 85
+    },
+    {
+      "Location": "CenterTorso",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 250,
+      "MaxRearArmor": 125,
+      "InternalStructure": 125
+    },
+    {
+      "Location": "RightTorso",
+      "Hardpoints": [
+        {
+          "Omni": false,
+          "WeaponMountID": "Energy"
+        },
+        {
+          "Omni": false,
+          "WeaponMountID": "Energy"
+        },
+        {
+          "Omni": false,
+          "WeaponMountID": "Missile"
+        },
+        {
+          "Omni": false,
+          "WeaponMountID": "Missile"
+        },
+        {
+          "Omni": false,
+          "WeaponMountID": "AntiPersonnel"
+        },
+        {
+          "Omni": false,
+          "WeaponMountID": "AntiPersonnel"
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 170,
+      "MaxRearArmor": 85,
+      "InternalStructure": 85
+    },
+    {
+      "Location": "RightArm",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 170,
+      "MaxRearArmor": -1,
+      "InternalStructure": 85
+    },
+    {
+      "Location": "LeftLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 170,
+      "MaxRearArmor": -1,
+      "InternalStructure": 85
+    },
+    {
+      "Location": "RightLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 170,
+      "MaxRearArmor": -1,
+      "InternalStructure": 85
+    }
+  ],
+  "LOSSourcePositions": [
+    {
+      "x": 0,
+      "y": 14,
+      "z": 0
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": -1
+    },
+    {
+      "x": -4,
+      "y": 15,
+      "z": -1
+    }
+  ],
+  "LOSTargetPositions": [
+    {
+      "x": 0,
+      "y": 14,
+      "z": 0
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": -1
+    },
+    {
+      "x": -4,
+      "y": 15,
+      "z": -1
+    },
+    {
+      "x": 3.5,
+      "y": 5.5,
+      "z": 1
+    },
+    {
+      "x": -3.5,
+      "y": 5.5,
+      "z": 1
+    }
+  ]
+}
