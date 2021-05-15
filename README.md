@@ -70,6 +70,9 @@ Component list (Clan & SLDF ones included):
 - Indirect Fire changes:
 	- Shooting at something you cannot see (but your ally can) is considered Indirect Fire, and in turn will be blocked if the target is covered by ECM
 	- You only get an accuracy penalty for Indirect Fire if you have to shoot over obstacles to hit your target (if it was considered Indirect Fire by the old rules)
+- Mechs:
+	- Goliath GOL-1H (quad, SL, no advanced tech) (TODO store on Stewart) (TODO icon)
+	- Goliath GOL-3M (quad, helmcore) (TODO store Stewart after 3040) (TODO icon)
  
  - TODO: edit texts
  - TODO: vehicle updates (inferno?)

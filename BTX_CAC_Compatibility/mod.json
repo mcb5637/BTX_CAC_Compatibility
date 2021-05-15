@@ -97,6 +97,10 @@
       "Type": "GameTip",
       "Path": "GameTips",
       "ShouldAppendText": true
-    }
+    },
+		{
+		  "Type": "Sprite",
+		  "Path": "sprites"
+		}
 	]
 }
