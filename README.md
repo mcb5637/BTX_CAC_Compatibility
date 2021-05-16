@@ -71,8 +71,9 @@ Component list (Clan & SLDF ones included):
 	- Shooting at something you cannot see (but your ally can) is considered Indirect Fire, and in turn will be blocked if the target is covered by ECM
 	- You only get an accuracy penalty for Indirect Fire if you have to shoot over obstacles to hit your target (if it was considered Indirect Fire by the old rules)
 - Mechs:
-	- Goliath GOL-1H (quad, SL, no advanced tech) (TODO store on Stewart) (TODO icon)
-	- Goliath GOL-3M (quad, helmcore) (TODO store Stewart after 3040) (TODO icon)
+	- Goliath GOL-1H (quad, SL, no advanced tech) (low chance everywhere, TODO store on Stewart)
+	- Goliath GOL-3M (quad, helmcore) (marik after 3047, TODO store Stewart after 3047)
+	- Helepolis HEP-3H (sniper arty, SLDF) (comstar/snords) (TODO icon, heat?)
  
  - TODO: edit texts
  - TODO: vehicle updates (inferno?)
@@ -92,3 +93,4 @@ Credits:
 - CMiSSioN for CustomBundle
 - everyone involved in RougeTech (also Crackfox for Vanilla CAC) for examples and inspiration on how to use CB
 - Haree for BTX
+- Hounfor for the Goliath icon
