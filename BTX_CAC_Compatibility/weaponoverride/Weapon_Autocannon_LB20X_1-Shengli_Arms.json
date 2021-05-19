@@ -23,7 +23,7 @@
   "AOECapable": false,
   "IndirectFireCapable": false,
   "RefireModifier": 2,
-  "ShotsWhenFired": 6,
+  "ShotsWhenFired": 1,
   "ProjectilesPerShot": 1,
   "AttackRecoil": 4,
   "Instability": 72,

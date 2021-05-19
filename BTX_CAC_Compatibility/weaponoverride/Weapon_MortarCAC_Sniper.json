@@ -51,8 +51,8 @@
     "BonusValueB": "",
     "ComponentType": "Weapon",
     "ComponentSubType": "Weapon",
-    "PrefabIdentifier": "AC20",
-    "InventorySize": 10,
+    "PrefabIdentifier": "AC20", /** maybe artillery? **/
+    "InventorySize": 8,
     "Tonnage": 20,
     "AllowedLocations": "All",
     "DisallowedLocations": "All",

@@ -83,7 +83,7 @@ Component list (Clan & SLDF ones included):
  - TODO: ac projectiles per shot, if possible
  - TODO: itemcollection edits: arrow4
  - TODO: new mechs: Helepolis HEP-3H, quads
- - Known bugs: CustomLoc patchig strings / sometimes fp missions dont spawn your 2nd lance, just restart to fix it (bug in VXI, gets fixed there)
+ - Known bugs: CustomLoc patchig strings
 
 Optional:
  - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
