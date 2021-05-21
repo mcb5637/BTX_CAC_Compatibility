@@ -1,0 +1,38 @@
+{
+  "StatName": null,
+  "RelativeModifier": 0,
+  "AbsoluteModifier": 0,
+  "Description": {
+    "Cost": 8000000,
+    "Rarity": 99,
+    "Purchasable": false,
+    "Manufacturer": "Varied",
+    "Model": "Quad Leg Actuators",
+    "UIName": "Leg Actuators",
+    "Id": "Gear_Quad_Actuators",
+    "Name": "Leg Actuators",
+    "Details": "Quad mech technology allows for a more stable weapon platform, but you miss out on arms.",
+    "Icon": "uixSvgIcon_special_Equipment"
+  },
+  "BonusValueA": "",
+  "BonusValueB": "",
+  "ComponentType": "Upgrade",
+  "ComponentSubType": "",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 4,
+  "Tonnage": 0,
+  "AllowedLocations": "All",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "statusEffects": [
+  ],
+  "ComponentTags": {
+    "items": [
+      "component_type_stock",
+      "component_type_lostech",
+      "BLACKLISTED"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

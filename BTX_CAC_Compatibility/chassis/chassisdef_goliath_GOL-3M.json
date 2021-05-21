@@ -1,6 +1,6 @@
 {
   "Description": {
-    "Cost": 16093200,
+    "Cost": 26000000,
     "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": null,
@@ -267,7 +267,7 @@
       "Location": "LeftArm",
       "Hardpoints": [],
       "Tonnage": 0,
-      "InventorySlots": 4,
+      "InventorySlots": 8,
       "MaxArmor": 170,
       "MaxRearArmor": -1,
       "InternalStructure": 85
@@ -342,7 +342,7 @@
       "Location": "RightArm",
       "Hardpoints": [],
       "Tonnage": 0,
-      "InventorySlots": 4,
+      "InventorySlots": 8,
       "MaxArmor": 170,
       "MaxRearArmor": -1,
       "InternalStructure": 85
@@ -426,6 +426,30 @@
     {
       "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_XL_Engine",
+      "SimGameUID": "",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "GUID": null,
+      "DamageLevel": "Functional",
+      "prefabName": null,
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightArm",
+      "ComponentDefID": "Gear_Quad_Actuators",
+      "SimGameUID": "",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "GUID": null,
+      "DamageLevel": "Functional",
+      "prefabName": null,
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Gear_Quad_Actuators",
       "SimGameUID": "",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,

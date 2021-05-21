@@ -44,7 +44,7 @@ Component list (Clan & SLDF ones included):
         - Thumper: light artillery (replaces HM mortar / + version for Bull Shark)
         - Sniper: medium artillery (found in mining shops)
         - Long Tom: heavy artillery (special, only for Bull Shark with special event)
-        - Arrow IV: medium artillery (lostech / FP reward)
+        - Arrow IV: medium artillery (lostech / FP reward / Liao shops after 3049)
 - Electronics
     - ECM
         - Guardian ECM: -20% detectability, 180m aura (+4 defense, indirect immune, sensorlock immune) (friendly only) (blue)
@@ -71,8 +71,8 @@ Component list (Clan & SLDF ones included):
 	- Shooting at something you cannot see (but your ally can) is considered Indirect Fire, and in turn will be blocked if the target is covered by ECM
 	- You only get an accuracy penalty for Indirect Fire if you have to shoot over obstacles to hit your target (if it was considered Indirect Fire by the old rules)
 - Mechs:
-	- Goliath GOL-1H (quad, SL, no advanced tech) (low chance everywhere, TODO store on Stewart)
-	- Goliath GOL-3M (quad, helmcore) (marik after 3047, TODO store Stewart after 3047)
+	- Goliath GOL-1H (quad, SLDF/SW) (low chance everywhere, factory Stewart)
+	- Goliath GOL-3M (quad, HC) (marik after 3047, factory Stewart after 3048)
 	- Helepolis HEP-3H (sniper arty, SLDF) (comstar/snords) (TODO icon, heat?)
  
  - TODO: edit texts
@@ -81,8 +81,7 @@ Component list (Clan & SLDF ones included):
  - TODO: Flamers & Inferno ammo balance
  - TODO: ECM tohit balance
  - TODO: ac projectiles per shot, if possible
- - TODO: itemcollection edits: arrow4
- - TODO: new mechs: Helepolis HEP-3H, quads
+ - TODO: new mechs: LAMs
  - Known bugs: CustomLoc patchig strings
 
 Optional:
@@ -94,3 +93,5 @@ Credits:
 - everyone involved in RougeTech (also Crackfox for Vanilla CAC) for examples and inspiration on how to use CB
 - Haree for BTX
 - Hounfor for the Goliath icon
+- lordruthermore for half working Goliath jsons
+- Pode/bhtrail for looking up mech loadouts

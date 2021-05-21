@@ -16,7 +16,7 @@
   "ChassisID": "chassisdef_helepolis_HEP-3H",
   "HeraldryID": null,
   "Description": {
-    "Cost": 8880000,
+    "Cost": 85000000,
     "Rarity": 3,
     "Purchasable": true,
     "Manufacturer": null,
@@ -27,7 +27,7 @@
     "Details": "First unleashed by the Terran Hegemony in 2460, the Helepolis is a ponderous BattleMech designed to deliver artillery fire.",
     "Icon": "uixTxrIcon_orion"
   },
-  "simGameMechPartCost": 890000,
+  "simGameMechPartCost": 8500000,
   "Version": 1,
   "Locations": [
     {

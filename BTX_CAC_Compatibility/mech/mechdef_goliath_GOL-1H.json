@@ -14,7 +14,7 @@
   },
   "ChassisID": "chassisdef_goliath_GOL-1H",
   "Description": {
-    "Cost": 7651200,
+    "Cost": 10000000,
     "Rarity": 4,
     "Purchasable": false,
     "Manufacturer": null,
@@ -25,7 +25,7 @@
     "Details": "The Goliath is armed with what would be considered a paltry armament for a 'Mech of its size. The primary weapon is a Rand PPC. This is backed up by two Holly LRM-10 launchers. The Goliath has respectable firepower at long ranges. When an enemy closes though the 'Mech only has two Ramsey-65 Machine Guns to rely on for defense.",
     "Icon": "uixTxrIcon_goliath"
   },
-  "simGameMechPartCost": 2624294,
+  "simGameMechPartCost": 1000000,
   "Locations": [
     {
       "DamageLevel": "Functional",
