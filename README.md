@@ -92,6 +92,6 @@ Credits:
 - CMiSSioN for CustomBundle
 - everyone involved in RougeTech (also Crackfox for Vanilla CAC) for examples and inspiration on how to use CB
 - Haree for BTX
-- Hounfor for the Goliath icon
+- Hounfor for the Goliath amd Helepolis icon
 - lordruthermore for half working Goliath jsons
 - Pode/bhtrail for looking up mech loadouts

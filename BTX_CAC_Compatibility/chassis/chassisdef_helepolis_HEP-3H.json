@@ -9,7 +9,7 @@
     "Id": "chassisdef_helepolis_HEP-3H",
     "Name": "Helepolis",
     "Details": "First unleashed by the Terran Hegemony in 2460, the Helepolis is a ponderous BattleMech designed to deliver artillery fire.",
-    "Icon": "uixTxrIcon_orion"
+    "Icon": "uixTxrIcon_helepolis"
   },
   "MovementCapDefID": "movedef_awesome_AWS-8Q",
   "PathingCapDefID": "pathingdef_heavy",
