@@ -1,0 +1,181 @@
+{
+  "Custom": {
+    "ActivatableComponent": {
+      "HideInUI": true,
+      "CanActivateAfterMove": false,
+      "CanActivateAfterFire": false,
+      "SafeActivation": true,
+      "ButtonName": "LAM Jet",
+      "CanNotBeActivatedManualy": true,
+      "NoUniqueCheck": true,
+      "ActiveByDefault": false,
+      "ActivationMessage": "On",
+      "DeactivationMessage": "Off",
+      "Linkage": {
+        "OnActivate": {
+          "Activate": [],
+          "Deactivate": []
+        },
+        "OnDeactivate": {
+          "Activate": [],
+          "Deactivate": []
+        }
+      },
+      "statusEffects": [
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": -1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "effectTargetType": "Creator",
+            "showInTargetPreview": false,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_JumpJet_LAMJet_Speed",
+            "Name": "LAM Jet",
+            "Details": "",
+            "Icon": "uixSvgIcon_equipment_ActuatorArm"
+          },
+          "statisticData": {
+            "statName": "WalkSpeed",
+            "operation": "Float_Add",
+            "modValue": "25",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "ticksOnActivations": false,
+            "useActivationsOfTarget": false,
+            "ticksOnEndOfRound": false,
+            "ticksOnMovements": false,
+            "stackLimit": -1,
+            "clearedWhenAttacked": false
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "triggerLimit": 0,
+            "extendDurationOnTrigger": 0,
+            "specialRules": "NotSet",
+            "effectTargetType": "Creator",
+            "range": 0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_JumpJet_LAMJet_DamageBoost",
+            "Name": "LAM Jet",
+            "Details": "Increases damage dealt after jumping by 20%.",
+            "Icon": "uixSvgIcon_action_jump"
+          },
+          "nature": "Buff",
+          "statisticData": {
+            "appliesEachTick": false,
+            "effectsPersistAfterDestruction": false,
+            "statName": "JumpingWeaponDamageModifier",
+            "operation": "Float_Add",
+            "modValue": "0.1",
+            "modType": "System.Single",
+            "additionalRules": "NotSet",
+            "targetCollection": "Weapon",
+            "targetWeaponCategory": "NotSet",
+            "targetWeaponType": "NotSet",
+            "targetAmmoCategory": "NotSet",
+            "targetWeaponSubType": "NotSet"
+          }
+        }
+      ],
+      "offlineStatusEffects": [
+        {
+          "durationData": {
+            "duration": -1,
+            "ticksOnActivations": false,
+            "useActivationsOfTarget": false,
+            "ticksOnEndOfRound": false,
+            "ticksOnMovements": false,
+            "stackLimit": -1,
+            "clearedWhenAttacked": false
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "triggerLimit": 0,
+            "extendDurationOnTrigger": 0,
+            "specialRules": "NotSet",
+            "effectTargetType": "Creator",
+            "range": 0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_JumpJet_LAMJet_DamageBoost",
+            "Name": "LAM Jet",
+            "Details": "Increases damage dealt after jumping by 20%.",
+            "Icon": "uixSvgIcon_action_jump"
+          },
+          "nature": "Buff",
+          "statisticData": {
+            "appliesEachTick": false,
+            "effectsPersistAfterDestruction": false,
+            "statName": "JumpingWeaponDamageModifier",
+            "operation": "Float_Add",
+            "modValue": "0.1",
+            "modType": "System.Single",
+            "additionalRules": "NotSet",
+            "targetCollection": "Weapon",
+            "targetWeaponCategory": "NotSet",
+            "targetWeaponType": "NotSet",
+            "targetAmmoCategory": "NotSet",
+            "targetWeaponSubType": "NotSet"
+          }
+        }
+      ]
+    }
+  },
+  "JumpCapacity": 1,
+  "MinTonnage": 10,
+  "MaxTonnage": 55,
+  "Description": {
+    "Cost": 0,
+    "Rarity": 99,
+    "Purchasable": true,
+    "Manufacturer": "Generic",
+    "Model": "Standard",
+    "UIName": "LAM Jet",
+    "Id": "Gear_JumpJet_LAMJet",
+    "Name": "LAM Jet",
+    "Details": "Specialized jet engines for use in a LandAirMech. Work as jump jets in Mech mode and as main propulsion jets otherwise.",
+    "Icon": "uixSvgIcon_action_jump"
+  },
+  "BonusValueA": "+ 25m AirMech speed",
+  "BonusValueB": "+ 10% Dmg. After Jump",
+  "ComponentType": "JumpJet",
+  "ComponentSubType": "Functionality",
+  "PrefabIdentifier": "JumpJet",
+  "InventorySize": 1,
+  "Tonnage": 1.5,
+  "AllowedLocations": "Torso, Legs",
+  "DisallowedLocations": "Head, Arms",
+  "CriticalComponent": false,
+  "statusEffects": [
+  ],
+  "ComponentTags": {
+    "items": [
+      "component_type_stock",
+      "component_type_lostech",
+      "BLACKLISTED"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

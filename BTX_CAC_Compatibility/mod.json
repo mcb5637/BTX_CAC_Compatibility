@@ -81,6 +81,10 @@
 		  "Path": "mech"
 		},
 		{
+		  "Type": "JumpJetDef",
+		  "Path": "jumpjets"
+		},
+		{
 		  "Type": "UpgradeDef",
 		  "Path": "upgradesNew"
 		},
