@@ -73,7 +73,10 @@ Component list (Clan & SLDF ones included):
 - Mechs:
 	- Goliath GOL-1H (quad, SLDF/SW) (low chance everywhere, factory Stewart)
 	- Goliath GOL-3M (quad, HC) (marik after 3047, factory Stewart after 3048)
-	- Helepolis HEP-3H (sniper arty, SLDF) (comstar/snords) (TODO icon, heat?)
+	- Helepolis HEP-3H (sniper arty, SLDF) (comstar/snords) (TODO heat?)
+	- Phoenix Hawk LAM PXH-HK2 (SLDF LAM) (comstar) (HK1(R)?)
+	- Stinger LAM STG-A5 (SLDF LAM) (comstar/kurita) (factory Irece?) (A1?)
+	- Wasp LAM WSP-105 (SLDF LAM) (comstar) (100b?)
  
  - TODO: edit texts
  - TODO: vehicle updates (inferno?)
@@ -94,4 +97,5 @@ Credits:
 - Haree for BTX
 - Hounfor for the Goliath amd Helepolis icon
 - lordruthermore for half working Goliath jsons
+- Pode for half working LAM jsons
 - Pode/bhtrail for looking up mech loadouts
