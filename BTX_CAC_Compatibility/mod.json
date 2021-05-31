@@ -60,6 +60,10 @@
 		  "ShouldAppendText": true
 		},
 		{
+		  "Type": "ItemCollectionDef",
+		  "Path": "itemCollectionAdd"
+		},
+		{
       "Type": "ShipModuleUpgrade",
       "Path": "shipUpgrades"
     },
@@ -69,7 +73,8 @@
 		},
 		{
 		  "Type": "ChassisDef",
-		  "Path": "chassis"
+		  "Path": "chassis",
+      "AddToDB": true
 		},
 		{
 		  "Type": "ChassisDef",
@@ -78,7 +83,8 @@
 		},
 		{
 		  "Type": "MechDef",
-		  "Path": "mech"
+		  "Path": "mech",
+      "AddToDB": true
 		},
 		{
 		  "Type": "JumpJetDef",
@@ -105,6 +111,11 @@
 		{
 		  "Type": "Sprite",
 		  "Path": "sprites"
+		},
+		{
+		  "Type": "StarSystemDef",
+		  "Path": "starsystems",
+		  "ShouldMergeJSON": true
 		}
 	]
 }

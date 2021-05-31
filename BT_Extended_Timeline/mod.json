@@ -1,0 +1,360 @@
+{
+    "Name": "BT_Extended_Timeline",
+    "Enabled": true,
+	
+    "Version": "1.9.2.2",
+
+    "Description": "(Optional) A Lore based timeline that will change planet ownership and factions on the map as time in game goes by.",
+    "Author": "Haree78, Ablomis, NickAragua",
+    "Website": "https://www.nexusmods.com/battletech/mods/387",
+    "Contact": "https://discord.gg/KSmamMz",
+	
+    "DependsOn": [ "Timeline", "Mission Control", "BT_Extended_3050", "BT_Extended_Clans" ],
+    "ConflictsWith": [ "Galaxy at War" ],
+	
+    "OptionallyDependsOn": [],
+	
+	"DLL": "BEXTimeline.dll",
+	
+	
+    "Settings": 
+	{
+		"ForceUpdateMap": false,
+		
+		"AbandonedNeigbours":
+		{
+			"Balsta" : "Tovetin (Tovetine)",
+			"Black Earth" : "Renren",
+			"Vantaa" : "Kreller",
+			"Nox" : "Shardayne",
+			"Satalice" : "Lamar",
+			"Soverzene" : "Corfu",
+			"Yamarovka" : "Tuat",
+			"Itabaiana" : "Bilma",
+			"Constance" : "Glabach",
+			"Richmond" : "Isfahan",
+			"Rockland" : "New Ceylon",
+			"Nykvarn" : "Kiruna",
+			"Garstedt" : "Ferranil",
+			"Bjarred" : "New Sarum",
+			"Virentofta" : "Ouagadougou",
+			"Schwartz" : "Jeju",
+			"Labrea" : "Wolcott",
+			"Halesowen" : "Oyevaina",
+			"Gunzburg" : "Muswell",
+			"Camlann (LC)" : "Glenlivet",
+			"Trolloc Prime" : "Dove",
+			"Shionoha" : "Juniper",
+			"Sabik" : "Lone Star",
+			"Yorii" : "Rocky",
+			"Ferleiten" : "Christiania",
+			"Kandis" : "Bushmill",
+			"Colia" : "Saumur",
+			"Tybalt" : "New Florence",
+			"Buchlau" : "Conwy",
+			"Second Try" : "Sichuan",
+			"Palos" : "New Athens",
+			"Carver" : "Brownsville",
+			"Talitha" : "Tyrfing",
+			"Van Diemen IV" : "Hechnar",
+			"Nanking" : "Bex",
+			"Wasat" : "Mandal",
+			"Bryant" : "New Stevens",
+			"Lurgatan" : "Aomen",
+			"Conquista" : "Dì-fang",
+			"Cursa" : "Rosendal",
+			"Xanthe" : "Katla",
+			"Ingonish" : "Pernik",
+			"Ryerson" : "Borka",
+			"Andurien" : "Ullieri",
+			"Denbar" : "Bhykov",
+			"Maladar" : "Zindao",
+			"Ambergrist" : "Patan",
+			"Antares" : "Stonarboi",
+			"Graus" : "Deweidewd",
+			"Hyner" : "Duxfort"
+		},
+		"FactionTags": {
+			"Davion" : "planet_faction_davion",
+			"Marik" : "planet_faction_marik",
+			"Liao" : "planet_faction_liao",
+			"Kurita" : "planet_faction_kurita",
+			"Steiner" : "planet_faction_steiner",
+			"TaurianConcordat" : "planet_faction_taurian",
+			"MagistracyOfCanopus" : "planet_faction_magistracy",
+			"AuriganRestoration" : "planet_faction_restoration",
+			"ComStar" : "planet_faction_comstar",
+			"Locals" : "planet_faction_independent",
+			"NoFaction" : "planet_faction_nofaction",
+			"AuriganDirectorate" : "planet_faction_directorate",
+			"AuriganPirates" : "planet_faction_auriganpirates",
+			"Rasalhague" : "planet_faction_rasalhague",
+			"Wolf" : "planet_faction_wolf",
+			"SteelViper" : "planet_faction_steelviper",
+			"JadeFalcon" : "planet_faction_jadefalcon",
+			"GhostBear" : "planet_faction_ghostbear",
+			"SmokeJaguar" : "planet_faction_smokejaguar",
+			"NovaCat" : "planet_faction_novacat",
+			"DiamondShark" : "planet_faction_diamondshark",
+			"Outworld" : "planet_faction_outworld",
+			"Ives" : "planet_faction_ives",
+			"Andurien" : "planet_faction_andurien"
+		},
+		
+		"StandardShopCreation":
+		{
+			"3030-01-01T00:00:00":
+			{
+				"starsystemdef_NewValencia": "itemCollection_factory_MarauderII"
+			},
+			"3055-01-01T00:00:00":
+			{
+				"starsystemdef_Outreach": "itemCollection_special_GAL"
+			}
+		},
+		
+		"FactionShopCreation":
+		{
+			"3032-01-01T00:00:00":
+			{
+				"starsystemdef_Betelgeuse": "Liao"
+			},
+			"3036-01-01T00:00:00":
+			{
+				"starsystemdef_Augusta": "Davion"
+			},
+			"3038-01-01T00:00:00":
+			{
+				"starsystemdef_NewSamarkand": "Kurita"
+			},
+			"3045-01-01T00:00:00":
+			{
+				"starsystemdef_Grumium": "Rasalhague"
+			},
+			"3047-01-01T00:00:00":
+			{
+				"starsystemdef_AbiyAdi": "Kurita",
+				"starsystemdef_Panpour": "Davion"
+			},
+			"3048-01-01T00:00:00":
+			{
+				"starsystemdef_Loxley": "Steiner"
+			},
+			"3049-01-01T00:00:00":
+			{
+				"starsystemdef_Shimonita": "Kurita",
+				"starsystemdef_Styk": "Davion",
+				"starsystemdef_Victoria": "Liao"
+			},
+			"3050-01-01T00:00:00":
+			{
+				"starsystemdef_Benjamin": "Kurita",
+				"starsystemdef_Nykvarn": "Kurita"
+			},
+			"3051-01-01T00:00:00":
+			{
+				"starsystemdef_Capella": "Liao",
+				"starsystemdef_TokDo": "Kurita"
+			},
+			"3052-01-01T00:00:00":
+			{
+				"starsystemdef_Kendall": "Marik",
+				"starsystemdef_NewValencia": "Davion"
+			},
+			"3054-01-01T00:00:00":
+			{
+				"starsystemdef_Talcott": "Davion"
+			},
+			"3055-01-01T00:00:00":
+			{
+				"starsystemdef_Corey": "Liao",
+				"starsystemdef_Inarcs": "Steiner",
+				"starsystemdef_Paradise": "Marik"
+			},
+			"3056-01-01T00:00:00":
+			{
+				"starsystemdef_Solaris": "Steiner"
+			}
+		},
+		
+		"FactionShopDeletion":
+		{
+			"3030-11-23T00:00:00":
+			[
+				"starsystemdef_Corey"
+			],
+      "3051-12-22T00:00:00":
+      [
+        "starsystemdef_Irece"
+      ]
+		},
+		
+		"ShopSwitch":
+		{
+			"itemCollection_Weapons_Ceres_Arms_common": ["3037"],
+			"itemCollection_Weapons_Ceres_Arms_uncommon": ["3035", "3037", "3044"],
+			"itemCollection_Weapons_Ceres_Arms_rare": ["3037", "3044"],
+			"itemCollection_Weapons_Defiance_common": ["3035"],
+			"itemCollection_Weapons_Defiance_uncommon": ["3035"],
+			"itemCollection_Weapons_Defiance_rare": ["3035"],
+			"itemCollection_Weapons_Delta_common": ["3035"],
+			"itemCollection_Weapons_Delta_uncommon": ["3035"],
+			"itemCollection_Weapons_Delta_rare": ["3035"],
+			"itemCollection_Weapons_Diverse_Optics_common": ["3037", "3058"],
+			"itemCollection_Weapons_Diverse_Optics_uncommon": ["3037", "3058"],
+			"itemCollection_Weapons_Diverse_Optics_rare": ["3037", "3058"],
+			"itemCollection_Weapons_ExoStar_common": ["3037", "3058"],
+			"itemCollection_Weapons_ExoStar_uncommon": ["3037", "3058"],
+			"itemCollection_Weapons_ExoStar_rare": ["3037"],
+			"itemCollection_Weapons_Federated_uncommon": ["3035"],
+			"itemCollection_Weapons_Federated_rare": ["3035"],
+			"itemCollection_Weapons_Fusigon_common": ["3037"],
+			"itemCollection_Weapons_Fusigon_uncommon": ["3037"],
+			"itemCollection_Weapons_Fusigon_rare": ["3037"],
+			"itemCollection_Weapons_Grizzard_common": ["3040"],
+			"itemCollection_Weapons_Grizzard_uncommon": ["3040"],
+			"itemCollection_Weapons_Grizzard_rare": ["3040"],
+			"itemCollection_Weapons_Holly_common": ["3035"],
+			"itemCollection_Weapons_Holly_uncommon": ["3035"],
+			"itemCollection_Weapons_Holly_rare": ["3035"],
+			"itemCollection_Weapons_Imperator_uncommon": ["3035", "3040"],
+			"itemCollection_Weapons_Imperator_rare": ["3035", "3040"],
+			"itemCollection_Weapons_Intek_common": ["3037"],
+			"itemCollection_Weapons_Intek_uncommon": ["3037", "3058"],
+			"itemCollection_Weapons_Intek_rare": ["3058"],
+			"itemCollection_Weapons_Irian_common": ["3035"],
+			"itemCollection_Weapons_Irian_uncommon": ["3035"],
+			"itemCollection_Weapons_Irian_rare": ["3035"],
+			"itemCollection_Weapons_Kali_Yama_uncommon": ["3035", "3040"],
+			"itemCollection_Weapons_Kali_Yama_rare": ["3035", "3040"],
+			"itemCollection_Weapons_LongFire_common": ["3035"],
+			"itemCollection_Weapons_LongFire_uncommon": ["3035"],
+			"itemCollection_Weapons_LongFire_rare": ["3035"],
+			"itemCollection_Weapons_Magna_common": ["3037", "3058"],
+			"itemCollection_Weapons_Magna_uncommon": ["3037", "3058"],
+			"itemCollection_Weapons_Magna_rare": ["3037"],
+			"itemCollection_Weapons_Maxell_common": ["3037"],
+			"itemCollection_Weapons_Maxell_uncommon": ["3037"],
+			"itemCollection_Weapons_Maxell_rare": ["3037"],
+			"itemCollection_Weapons_Mydron_uncommon": ["3035"],
+			"itemCollection_Weapons_Mydron_rare": ["3035"],
+			"itemCollection_Weapons_Oriente_uncommon": ["3035"],
+			"itemCollection_Weapons_Oriente_rare": ["3035"],
+			"itemCollection_Weapons_RAMTech_common": ["3058"],
+			"itemCollection_Weapons_RAMTech_uncommon": ["3037", "3058"],
+			"itemCollection_Weapons_RAMTech_rare": ["3037", "3058"],
+			"itemCollection_Weapons_Sunglow_uncommon": ["3037"],
+			"itemCollection_Weapons_Sunglow_rare": ["3037"],
+			"itemCollection_Weapons_Sutel_common": ["3037"],
+			"itemCollection_Weapons_Sutel_uncommon": ["3037"],
+			"itemCollection_Weapons_Sutel_rare": ["3037"],
+			"itemCollection_Weapons_Telos_common": ["3035"],
+			"itemCollection_Weapons_Telos_uncommon": ["3035"],
+			"itemCollection_Weapons_Telos_rare": ["3035"],
+			"itemCollection_Weapons_Tiegart_common": ["3037"],
+			"itemCollection_Weapons_Tiegart_uncommon": ["3037"],
+			"itemCollection_Weapons_Tiegart_rare": ["3037"],
+			"itemCollection_Weapons_Valiant_common": ["3035"],
+			"itemCollection_Weapons_Valiant_uncommon": ["3035"],
+			"itemCollection_Weapons_Valiant_rare": ["3035"],
+			"itemCollection_Weapons_Zeus_common": ["3035"],
+			"itemCollection_Weapons_Zeus_uncommon": ["3035"],
+			"itemCollection_Weapons_Zeus_rare": ["3035"],
+			"itemCollection_shopItems_blackmarket": ["3052"],
+			"itemCollection_systemStores_Mechs_Davion": ["3052"],
+			"itemCollection_systemStores_MechParts_Davion": ["3052"],
+			"itemCollection_systemStores_Mechs_Kurita": ["3052"],
+			"itemCollection_systemStores_MechParts_Kurita": ["3052"],
+			"itemCollection_systemStores_Mechs_Marik": ["3052"],
+			"itemCollection_systemStores_MechParts_Marik": ["3052"],
+			"itemCollection_systemStores_Mechs_Liao": ["3048"],
+			"itemCollection_systemStores_MechParts_Liao": ["3048"],
+			"itemCollection_shopItems_weapons": ["3050"],
+			"itemCollection_shopItems_weapons_davion": ["3049", "3051"],
+			"itemCollection_shopItems_weapons_kurita": ["3049"],
+			"itemCollection_shopItems_weapons_liao": ["3049"],
+			"itemCollection_shopItems_weapons_marik": ["3049", "3056"],
+			"itemCollection_shopItems_weapons_steiner": ["3049", "3051"],
+			"itemCollection_factory_AlNair": ["3033", "3042", "3044", "3049"],
+			"itemCollection_factory_Alpheratz": ["3053", "3055"],
+			"itemCollection_factory_Asuncion": ["3031", "3049"],
+			"itemCollection_factory_Augusta": ["3048"],
+			"itemCollection_factory_Bernardo": ["3031", "3049"],
+			"itemCollection_factory_Calloway": ["3048", "3049", "3050"],
+			"itemCollection_factory_Capella": ["3053", "3055", "3056"],
+			"itemCollection_factory_Carlisle": ["3051"],
+			"itemCollection_factory_Corey": ["3055", "3056"],
+			"itemCollection_factory_Coventry": ["3042", "3049", "3050", "3054", "3055", "3056"],
+			"itemCollection_factory_Crofton": ["3055", "3056"],
+			"itemCollection_factory_Emris": ["3056"],
+			"itemCollection_factory_Errai": ["3039", "3042", "3047", "3048", "3050"],
+			"itemCollection_factory_Furillo": ["3048", "3049", "3055"],
+			"itemCollection_factory_Gibson": ["3050", "3051", "3052", "3055", "3056"],
+			"itemCollection_factory_GrandBase": ["3050"],
+			"itemCollection_factory_Grumium": ["3050"],
+			"itemCollection_factory_Hesperus": ["3048", "3049", "3050", "3051", "3053", "3055", "3056"],
+			"itemCollection_factory_Inarcs": ["3056"],
+			"itemCollection_factory_Irian": ["3047", "3048", "3049", "3050", "3056"],
+			"itemCollection_factory_Kalidasa": ["3046", "3048", "3049", "3051", "3052", "3054"],
+			"itemCollection_factory_Kathil": ["3047", "3055", "3056"],
+			"itemCollection_factory_Keystone": ["3048", "3049", "3050", "3052", "3054"],
+			"itemCollection_factory_Lapida": ["3050", "3051"],
+			"itemCollection_factory_Loburg": ["3055", "3056"],
+			"itemCollection_factory_Loxley": ["3056"],
+			"itemCollection_factory_Luthien": ["3038", "3039", "3047", "3048", "3049", "3050", "3052", "3055", "3056"],
+			"itemCollection_factory_Marduk": ["3049", "3050", "3055", "3056"],
+			"itemCollection_factory_Nanking": ["3050"],
+			"itemCollection_factory_NewAvalon": ["3047", "3048", "3049", "3050", "3053", "3054", "3055"],
+			"itemCollection_factory_NewSamarkand": ["3048", "3051"],
+			"itemCollection_factory_NewSyrtis": ["3048", "3049", "3050"],
+			"itemCollection_factory_NewValencia": ["3053", "3056"],
+			"itemCollection_factory_Oliver": ["3049"],
+			"itemCollection_factory_Pandora": ["3050"],
+			"itemCollection_factory_Panpour": ["3049", "3055"],
+			"itemCollection_factory_Pinard": ["3049"],
+			"itemCollection_factory_Quentin": ["3047", "3049", "3050", "3055"],
+			"itemCollection_factory_Satalice": ["3050", "3051"],
+			"itemCollection_factory_Savannah": ["3049"],
+			"itemCollection_factory_Sian": ["3048", "3050", "3053", "3055"],
+			"itemCollection_factory_Shiro": ["3050", "3051"],
+			"itemCollection_factory_Stewart": ["3048", "3050"],
+			"itemCollection_factory_St.Ives": ["3042", "3049", "3055", "3056"],
+			"itemCollection_factory_Sudeten": ["3050"],
+			"itemCollection_factory_Talon": ["3049", "3050", "3051", "3053", "3056"],
+			"itemCollection_factory_Tematagi": ["3047", "3050", "3051", "3056"],
+			"itemCollection_factory_Tharkad": ["3049", "3052", "3053", "3054", "3056"],
+			"itemCollection_factory_Thermopolis": ["3049", "3050"],
+			"itemCollection_factory_Tikonov": ["3030", "3050"],
+			"itemCollection_factory_Twycross": ["3050"],
+			"itemCollection_factory_Wallis": ["3047", "3051"]
+		}
+	},
+
+	"DataAddendumEntries":[
+        { "name":"BattleTech.AmmoCategoryEnumeration", "path":"enums/AmmoCategory.json" },
+        { "name":"BattleTech.FactionEnumeration", "path":"enums/Faction.json" },
+        { "name":"BattleTech.WeaponCategoryEnumeration", "path":"enums/WeaponCategory.json" }
+	],
+    "Manifest": [
+		{ "Type": "AmmunitionDef", "Path": "ammunition", "AddToDB": true },
+		{ "Type": "AmmunitionBoxDef", "Path": "ammunitionBox", "AddToDB": true },
+        { "Type": "CastDef", "Path": "cast" },
+        { "Type": "ContractOverride", "Path": "contracts", "ShouldMergeJSON": true, "AddToDB": false },
+        { "Type": "ContractOverride", "Path": "contracts_new", "AddToDB": true },
+		{ "Path": "contractsMerge", "Type": "AdvancedJSONMerge" },
+        { "Type": "FactionDef", "Path": "factions" },
+		{ "Type": "FlashpointDef", "Path": "flashpoints", "AddToDB": true },
+        { "Type": "ForcedTimelineEvent", "Path": "ForcedEvents" },
+        { "Type": "HeraldryDef", "Path": "heraldry" },
+        { "Type": "Sprite", "Path": "illustrations" },
+		{ "Type": "ItemCollectionDef", "Path": "itemCollections" },
+        { "Type": "LanceDef", "Path": "lance_new", "AddToDB": true },
+		{ "Type": "PilotDef", "Path": "pilot" },
+        { "Type": "Sprite", "Path": "sprites" },
+        { "Type": "StarSystemDef", "Path": "starsystem" },
+        { "Path": "starsystem_merge", "Type": "AdvancedJSONMerge" },
+        { "Type": "Texture2D", "Path": "sprites" },
+        { "Type": "SimGameEventDef", "Path": "timelineEvents" },
+		{ "Type": "WeaponDef", "Path": "weapon", "AddToDB": true }
+    ]
+}
