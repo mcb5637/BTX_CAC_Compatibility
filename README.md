@@ -3,14 +3,15 @@
 Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
- - Download CustomBundle https://github.com/BattletechModders/CustomBundle		(i use 0.2.96, newer versions seem to have some ai crashes)
- - Download IRTweaks https://github.com/BattletechModders/IRTweaks				(i use REL_0.9.2.2)
- - Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils		(i use REL_1.10.0)
- - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
- - Add IRBTModUtils and IRTweaks to your mods folder
- - Add CustomAmmoCategories, CustomComponents, CustomLocalization, CustomActivatableEquipment and CustomUnits to your mods folder (only add these 5 from CustomBundle, the rest is not needed)
- - Remove the folder CustomAmmoCategories/StreamingAssets
- - Add BTX_CAC_Compatibility, overriding files from anything previously mentioned and MissionControl and BiggerDrops
+- Download CustomBundle https://github.com/BattletechModders/CustomBundle		(i use 0.2.96)
+- Download IRTweaks https://github.com/BattletechModders/IRTweaks				(i use REL_0.9.2.2)
+- Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils		(i use REL_1.10.0)
+- Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
+- Remove FewerHeadInjuries from your BTX install (IRTweaks is configured to to the same, just better)
+- Add IRBTModUtils and IRTweaks to your mods folder
+- Add CustomAmmoCategories, CustomComponents, CustomLocalization, CustomActivatableEquipment and CustomUnits to your mods folder (only add these 5 from CustomBundle, the rest is not needed)
+- Remove the folder CustomAmmoCategories/StreamingAssets
+- Add BTX_CAC_Compatibility, overriding files from anything previously mentioned and MissionControl and BiggerDrops
 
 
 Component list (Clan & SLDF ones included):
@@ -75,21 +76,25 @@ Component list (Clan & SLDF ones included):
 	- Goliath GOL-3M (quad, HC) (marik after 3047, factory Stewart after 3048)
 	- Helepolis HEP-3H (sniper arty, SLDF) (comstar/snords) (TODO heat?)
 	- Phoenix Hawk LAM PXH-HK2 (SLDF LAM) (comstar) (HK1(R)?)
-	- Stinger LAM STG-A5 (SLDF LAM) (comstar/kurita) (factory Irece?) (A1?)
+	- Stinger LAM STG-A5 (SLDF LAM) (comstar/kurita, factory Irece) (A1?)
 	- Wasp LAM WSP-105 (SLDF LAM) (comstar) (100b?)
- 
- - TODO: edit texts
- - TODO: vehicle updates (inferno?)
- - TODO: NARC reveals target?
- - TODO: Flamers & Inferno ammo balance
- - TODO: ECM tohit balance
- - TODO: ac projectiles per shot, if possible
- - TODO: new mechs: LAMs
- - Known bugs: CustomLoc patchig strings
+
+TODO List:
+- edit texts
+- vehicle updates (inferno?)
+- NARC reveals target?
+- Flamers & Inferno ammo balance
+- ECM tohit balance
+- ac projectiles per shot, if possible
+- new mechs: LAMs
+
+Known bugs:
+- CustomLoc patchig strings
+- sometimes CU AI pathfinding throws a nullref, sending ai into endless wait
 
 Optional:
- - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
- - manual deployment can be enabled via CU, set "DeployManual": to true to do so (warning: laggy)
+- If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
+- manual deployment can be enabled via CU, set "DeployManual": to true to do so (warning: laggy)
  
 Credits:
 - CMiSSioN for CustomBundle
