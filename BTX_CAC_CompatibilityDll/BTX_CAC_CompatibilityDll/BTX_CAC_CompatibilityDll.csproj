@@ -50,6 +50,9 @@
     <Reference Include="CustomAmmoCategories">
       <HintPath>C:\goggames\BATTLETECH\Mods\CustomAmmoCategories\CustomAmmoCategories.dll</HintPath>
     </Reference>
+    <Reference Include="CustomUnits">
+      <HintPath>C:\goggames\BATTLETECH\Mods\CustomUnits\CustomUnits.dll</HintPath>
+    </Reference>
     <Reference Include="InControl">
       <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\InControl.dll</HintPath>
     </Reference>
@@ -77,6 +80,7 @@
     <Compile Include="AEPStatic.cs" />
     <Compile Include="ChassisDef_FromJson.cs" />
     <Compile Include="ContractOverride_FromJSONFull.cs" />
+    <Compile Include="CUNullrefFix.cs" />
     <Compile Include="Effect_Ctor.cs" />
     <Compile Include="InfernoExplode.cs" />
     <Compile Include="LineOfSight_GetLineOfFireUncached.cs" />

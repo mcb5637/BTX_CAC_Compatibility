@@ -67,7 +67,7 @@
     "Id": "mechdef_stinger_STG-A5",
     "Name": "Stinger LAM",
     "Details": "The STG-A5 Stinger was the first mass-produced Land-Air 'Mech, a combination of light Mech and light aerospace fighter introduced by LexaTech in 2688 and still produced on the Combine world of Irece. Between crashes and damage to the delicate LostTech conversion equipment, production can't keep pace with demand, so many of the surviving LAMs, like this one, are damaged and can not enter Figher mode. They still have tremendous jumping ability and make superb scouts.",
-    "Icon": "uixTxrIcon_stinger"
+    "Icon": "uixTxrIcon_stingerlam"
   },
   "simGameMechPartCost": 200000,
   "Version": 1,

@@ -9,7 +9,7 @@
     "Id": "chassisdef_phoenixhawk_PXH-HK2",
     "Name": "Phoenix Hawk LAM",
     "Details": "The PXH-HK2 is the largest Land-Air Mech ever successfully fielded, merging a slightly heavier and slower Phoenix Hawk Mech and a capable medium aerospace fighter into one enormously versatile unit. The sophisticated conversion technology was lost in the First Succession War, and battle damage prevents this Mech from entering Figher mode.",
-    "Icon": "uixTxrIcon_phoenixhawk"
+    "Icon": "uixTxrIcon_phoenixhawklam"
   },
   "MovementCapDefID": "movedef_crab_CRB-27",
   "PathingCapDefID": "pathingdef_medium",
@@ -54,7 +54,7 @@
         "additionalEncounterTags": [
           "unit_vtol"
         ],
-        "FlyHeight": 15.0,
+        "FlyHeight": 25.0,
         "NoJumpjetsBlock": true,
         "AirMechVerticalJets": [
           {

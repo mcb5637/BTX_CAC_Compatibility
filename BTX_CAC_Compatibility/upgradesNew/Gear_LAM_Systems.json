@@ -13,12 +13,12 @@
       "DeactivationMessage": "Mech",
       "Linkage": {
         "OnActivate": {
-          "Activate": [ "LAM Jet" ],
+          "Activate": [],
           "Deactivate": []
         },
         "OnDeactivate": {
           "Activate": [],
-          "Deactivate": [ "LAM Jet" ]
+          "Deactivate": []
         }
       },
       "statusEffects": [
@@ -31,13 +31,14 @@
             "effectTriggerType": "Passive",
             "effectTargetType": "Creator",
             "forcePathRebuild": true,
+            "showInTargetPreview": true,
             "showInStatusPanel": true
           },
           "effectType": "StatisticEffect",
           "Description": {
             "Id": "Gear_LAM_Systems_Rep",
             "Name": "AirMech Mode",
-            "Details": "TODO",
+            "Details": "Flying low over the ground lets a LAM ignore any terrain it moves over, but it decreases stability.",
             "Icon": "uixSvgIcon_equipment_Gyro"
           },
           "nature": "Buff",
@@ -211,32 +212,7 @@
             "modType": "System.Single"
           }
         },
-        {
-          "durationData": {
-            "duration": -1,
-            "stackLimit": -1
-          },
-          "targetingData": {
-            "effectTriggerType": "Passive",
-            "effectTargetType": "Creator",
-            "showInTargetPreview": false,
-            "showInStatusPanel": false
-          },
-          "effectType": "StatisticEffect",
-          "Description": {
-            "Id": "Gear_LAM_Systems_Jump",
-            "Name": "",
-            "Details": "",
-            "Icon": "uixSvgIcon_equipment_Gyro"
-          },
-          "statisticData": {
-            "statName": "JumpDistanceMultiplier",
-            "operation": "Float_Multiply",
-            "modValue": "1.7",
-            "modType": "System.Single"
-          },
-          "nature": "Buff"
-        },
+        
         {
           "durationData": {
             "duration": -1,
@@ -316,6 +292,88 @@
             "modType": "System.Single"
           },
           "nature": "Buff"
+        },
+        
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": -1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "effectTargetType": "Creator",
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_LAM_Systems_Jump",
+            "Name": "",
+            "Details": "",
+            "Icon": "uixSvgIcon_equipment_Gyro"
+          },
+          "statisticData": {
+            "statName": "JumpDistanceMultiplier",
+            "operation": "Float_Multiply",
+            "modValue": "1.7",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": -1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "effectTargetType": "Creator",
+            "forcePathRebuild": true,
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_LAM_Systems_Speed",
+            "Name": "LAM Jet",
+            "Details": "",
+            "Icon": "uixSvgIcon_action_evasivemove"
+          },
+          "statisticData": {
+            "statName": "WalkSpeed",
+            "operation": "Float_Multiply",
+            "modValue": "1.25",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": -1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "effectTargetType": "Creator",
+            "forcePathRebuild": true,
+            "showInTargetPreview": false,
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_LAM_Systems_SpeedR",
+            "Name": "LAM Jet",
+            "Details": "",
+            "Icon": "uixSvgIcon_action_evasivemove"
+          },
+          "statisticData": {
+            "statName": "RunSpeed",
+            "operation": "Float_Multiply",
+            "modValue": "1.25",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
         }
       ],
       "offlineStatusEffects": [
@@ -354,7 +412,8 @@
     "items": [
       "component_type_stock",
       "component_type_lostech",
-      "BLACKLISTED"
+      "BLACKLISTED",
+      "cae_ai_speed"
     ],
     "tagSetSourceFile": ""
   }

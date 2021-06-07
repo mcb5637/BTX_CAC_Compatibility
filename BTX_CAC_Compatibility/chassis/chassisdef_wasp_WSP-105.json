@@ -9,7 +9,7 @@
     "Id": "chassisdef_wasp_WSP-105",
     "Name": "Wasp LAM",
     "Details": "The WSP-105 Wasp was the 2nd Lan-Air 'Mech to be mass-produced for the Terran military, and it is well suited for its scouting role. Earlier vesions with an integral bomb bay made it widely beloved by Star League ground troops. Naturally the lone factory was a priority target in the first Successsion War and few WASP LAMs survive, many of which depend on Stinger LAM parts to rmeain even partly functional as pure Mechs.",
-    "Icon": "uixTxrIcon_wasp"
+    "Icon": "uixTxrIcon_wasplam"
   },
   "MovementCapDefID": "movedef_wasp_WSP-1A",
   "PathingCapDefID": "pathingdef_light",
@@ -57,7 +57,7 @@
         "additionalEncounterTags": [
           "unit_vtol"
         ],
-        "FlyHeight": 15.0,
+        "FlyHeight": 25.0,
         "NoJumpjetsBlock": true,
         "AirMechVerticalJets": [
           {
@@ -233,7 +233,7 @@
     "tagSetSourceFile": ""
   },
   "StockRole": "Scout & Skirmisher",
-  "YangsThoughts": "The Wasp design has always been used for general scouting and reconnaissance duty. The LAM version built on these strengths, but don't let it get caught standing still."
+  "YangsThoughts": "The Wasp design has always been used for general scouting and reconnaissance duty. The LAM version built on these strengths, but don't let it get caught standing still.",
   "FixedEquipment": [
     {
       "MountedLocation": "CenterTorso",
