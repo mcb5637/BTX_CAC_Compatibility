@@ -3,8 +3,8 @@
 Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
-- Download CustomBundle https://github.com/BattletechModders/CustomBundle		(i use 0.2.96)
-- Download IRTweaks https://github.com/BattletechModders/IRTweaks				(i use REL_0.9.2.2)
+- Download CustomBundle https://github.com/BattletechModders/CustomBundle		(i use 0.3.12)
+- Download IRTweaks https://github.com/BattletechModders/IRTweaks				(i use REL_0.9.2.6)
 - Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils		(i use REL_1.10.0)
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
 - Remove FewerHeadInjuries from your BTX install (IRTweaks is configured to to the same, just better)
@@ -90,7 +90,6 @@ TODO List:
 
 Known bugs:
 - CustomLoc patchig strings
-- sometimes CU AI pathfinding throws a nullref, sending ai into endless wait
 
 Optional:
 - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
@@ -100,7 +99,7 @@ Credits:
 - CMiSSioN for CustomBundle
 - everyone involved in RougeTech (also Crackfox for Vanilla CAC) for examples and inspiration on how to use CB
 - Haree for BTX
-- Hounfor for the Goliath amd Helepolis icon
+- Hounfor for the Goliath, LAM and Helepolis icons
 - lordruthermore for half working Goliath jsons
 - Pode for half working LAM jsons
 - Pode/bhtrail for looking up mech loadouts

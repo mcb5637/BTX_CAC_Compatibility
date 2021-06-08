@@ -49,12 +49,15 @@
     </Reference>
     <Reference Include="CustomAmmoCategories">
       <HintPath>C:\goggames\BATTLETECH\Mods\CustomAmmoCategories\CustomAmmoCategories.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="CustomUnits">
       <HintPath>C:\goggames\BATTLETECH\Mods\CustomUnits\CustomUnits.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="InControl">
       <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\InControl.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="MissionControl">
       <HintPath>C:\goggames\BATTLETECH\Mods\MissionControl\MissionControl.dll</HintPath>
@@ -67,9 +70,11 @@
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>

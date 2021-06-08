@@ -5,7 +5,7 @@ using MissionControl.Rules;
 using System.Reflection;
 using UnityEngine;
 
-namespace BTX_CAC_CompatibilityDll
+namespace BTX_CAC_CompatibilityDll // TODO remove for next MC version 1.2.0, as it will be included
 {
     [HarmonyPatch(typeof(MissionControl.MissionControl), "AllowMissionControl")]
     class MissionControl_AllowMissionControl

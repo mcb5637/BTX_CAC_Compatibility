@@ -2,7 +2,7 @@
 	"Name": "IRTweaks",
 	"Enabled": true,
 	"Hidden": true,
-	"Version": "0.9.2.1",
+	"Version": "0.9.2.6",
 	"Description": "Miscellaneous Tweaks and Fixes",
 	"Author": "IceRaptor",
 	"Website": "https://github.com/IceRaptor/IRTweaks",
@@ -29,6 +29,7 @@
 			"DisableLowFundsNotification": false,
 			"DisableMPHashCalculation": true,
 			"ExtendedStats": false,
+			"FactionValueFix": true,
 			"FlexibleSensorLock": true,
 			"MaxArmorMaxesArmor": false,
 			"MechbayAdvancedStripping": true,
@@ -58,6 +59,11 @@
 			"FlexibleSensorLockId": "AbilityDefT5A",
 			"JuggernautId": "AbilityDefGu8",
 			"MultiTargetId": "AbilityDefG5"
+    },
+		"CheatDetection": {
+			"CheatDetection": false,
+			"CheatDetectionNotify": false,
+			"CheatDetectionStat": "CheatFoundS2"
 		},
 		"Combat": {
 			"PilotAttributesMax": 13,
