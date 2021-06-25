@@ -92,7 +92,6 @@
     <Compile Include="ItemCollectionDef_FromCSV.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MarkEffects_Patch.cs" />
-    <Compile Include="MC.cs" />
     <Compile Include="SensorLockImmune.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SimGameState_OnDayPassed.cs" />

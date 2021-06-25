@@ -6,6 +6,11 @@ Installation: (requires working BTX installation)
 - Download CustomBundle https://github.com/BattletechModders/CustomBundle		(i use 0.3.12)
 - Download IRTweaks https://github.com/BattletechModders/IRTweaks				(i use REL_0.9.2.6)
 - Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils		(i use REL_1.10.0)
+- Download MissionControl https://github.com/CWolfs/MissionControl				(version v1.2.1)
+- updade MissionControl by
+	- replace MissionControl/MissionControl.dll, MissionControl/mod.json and MissionControl/contractTypeBuilds/Blackout/common.jsonc
+	- delete everything in MissionControl/MissionControl/config/Contracts except My_Contract_ID_Example.json and My_FP_Contract_ID_Example.json
+	- (the settings json will be updated below, when you copy over BTX_CAC_Compatibility) 
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
 - Remove FewerHeadInjuries from your BTX install (IRTweaks is configured to to the same, just better)
 - Add IRBTModUtils and IRTweaks to your mods folder

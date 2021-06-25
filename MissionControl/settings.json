@@ -1,17 +1,23 @@
 {
   "DebugMode": false,
   "VersionCheck": false,
+  "EnableSkirmishMode": true,
   "DebugSkirmishMode": false,
   "EnableFlashpointOverrides": true,
   "EnableAdditionalPlayerMechsForFlashpoints": true,
+  "NeverFailSimGameInFlashpoints": true,
+  "EnableStoryOverrides": true,
+  "EnableAdditionalPlayerMechsForStory": true,
   "RandomSpawns": {
     "Enable": true,
     "EnableForFlashpoints": true,
+    "EnableForStory": false,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"]
   },
   "HotDropProtection": {
     "Enable": true,
     "EnableForFlashpoints": true,
+    "EnableForStory": true,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "GuardOnHotDrop": false,
     "EvasionPipsOnHotDrop": 6,
@@ -22,6 +28,7 @@
   "AdditionalLances": {
     "Enable": true,
     "EnableForFlashpoints": true,
+    "EnableForStory": false,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "IsPrimaryObjectiveIn": ["SimpleBattle", "CaptureBase"],
     "ExcludeFromAutocomplete": ["DefendBase", "FireMission"],
@@ -52,6 +59,7 @@
   "ExtendedLances": {
     "Enable": true,
     "EnableForFlashpoints": true,
+    "EnableForStory": true,
     "Autofill": true,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "SkipWhenTaggedWithAny": ["lance_type_solo"],
@@ -99,6 +107,7 @@
   "ExtendedBoundaries": {
     "Enable": true,
     "EnableForFlashpoints": true,
+    "EnableForStory": false,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "IncreaseBoundarySizeByPercentage": 0.3,
     "Overrides": [
@@ -131,6 +140,7 @@
   "DynamicWithdraw": {
     "Enable": true,
     "EnableForFlashpoints": true,
+    "EnableForStory": false,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "MinDistanceForZone": 50,
     "MaxDistanceForZone": 288,
@@ -151,6 +161,12 @@
     "SpawnLanceAtEdgeBoundary": {
       "MinBuffer": 100,
       "MaxBuffer": 200
+    }
+  },
+  "Misc": {
+    "LanceSelectionDivergenceOverride": {
+      "Enable": true,
+      "Divergence": 20
     }
   }
 }
