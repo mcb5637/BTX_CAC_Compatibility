@@ -57,7 +57,7 @@
         "additionalEncounterTags": [
           "unit_vtol"
         ],
-        "FlyHeight": 25.0,
+        "FlyHeight": 15.0,
         "NoJumpjetsBlock": true,
         "AirMechVerticalJets": [
           {
