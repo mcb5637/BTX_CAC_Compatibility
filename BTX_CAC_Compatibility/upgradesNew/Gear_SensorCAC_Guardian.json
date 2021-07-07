@@ -36,7 +36,7 @@
       "Range": 180,
       "RangeStatistic": "",
       "RemoveOnSensorLock": true,
-      "State": "Persistent",
+      "State": "Online",
       "HideOnNotSelected": false,
       "FloatieAtEndOfMove": true,
       "ApplySelf": true,
@@ -47,29 +47,18 @@
       "IsNegativeToEnemy": false,
       "IsPositiveToEnemy": false,
       "onlineVFX": [
-        {
-          "VFXname": "vfxPrfPrtl_ECM_loop",
-          "scale": true,
-          "scaleToRangeFactor": 100
-        }
       ],
       "targetVFX": [
-        "vfxPrfPrtl_ECMtargetAdd_burst"
       ],
       "removeTargetVFX": [
-        "vfxPrfPrtl_ECMtargetRemove_burst"
       ],
       "ownerSFX": [
-        "AudioEventList_ui_ui_ecm_start"
       ],
       "targetSFX": [
-        "AudioEventList_ecm_ecm_enter"
       ],
       "removeOwnerSFX": [
-        "AudioEventList_ui_ui_ecm_stop"
       ],
       "removeTargetSFX": [
-        "AudioEventList_ecm_ecm_exit"
       ],
       "statusEffects": [
         {
@@ -222,8 +211,21 @@
     "items": [
       "component_type_stock",
       "component_type_lostech",
-      "BLACKLISTED"
+      "BLACKLISTED",
+      "cae_ai_defence"
     ],
     "tagSetSourceFile": ""
+  },
+  "Custom": {
+    "ActivatableComponent": {
+      "ButtonName": "ECM",
+      "CanActivateAfterMove": true,
+      "CanActivateAfterFire": true,
+      "CanNotBeActivatedManualy": false,
+      "NoUniqueCheck": false,
+      "ActiveByDefault": true,
+      "statusEffects": [
+      ]
+    }
   }
 }
