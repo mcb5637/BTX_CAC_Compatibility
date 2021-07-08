@@ -18,7 +18,7 @@
    "CriticalDamageModifier": 1,
    "HasShells": true,
    "MinShellsDistance": 120,
-   "MaxShellsDistance": 150,
+   "MaxShellsDistance": 100,
    "UnseparatedDamageMult": 0.7,
    "HitGenerator": "Cluster",
    "ProjectilesPerShot": 9,
