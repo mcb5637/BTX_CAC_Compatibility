@@ -35,6 +35,7 @@ Component list (Clan & SLDF ones included):
         - LBX: added cluster/slug ammo, cluster ammo uses CAC shells instead of multiple projectiles, small range increase (to TT values)
         - UAC: fixed firing speed, only one visual projectile, added AC mode (1 shot, but +4 acc), minimal range increase (to TT values)
         - Gauss: -
+		- Silver Bullet Gauss: fixed multiple projectiles
         - MG: added double speed mode (double shots, -4 acc, +5 heat)
 		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance / can be used as MG)
     - Missle
