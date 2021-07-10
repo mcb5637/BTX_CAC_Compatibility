@@ -24,7 +24,7 @@ Component list (Clan & SLDF ones included):
     - Energy
         - PPC: added FI OFF mode
         - ER PPC: -
-        - Snub PPC: single projectile, damage falloff over medium range
+        - Snub PPC: 5 projectiles, damage falloff over medium range, upgraded version have extra mode with 1 projectile
         - Laser: -
         - ER Laser: -
         - Pulse Laser: fixed animation
