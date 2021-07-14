@@ -27,7 +27,7 @@
   },
   "AdditionalLances": {
     "Enable": true,
-    "EnableForFlashpoints": true,
+    "EnableForFlashpoints": false,
     "EnableForStory": false,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "IsPrimaryObjectiveIn": ["SimpleBattle", "CaptureBase"],
