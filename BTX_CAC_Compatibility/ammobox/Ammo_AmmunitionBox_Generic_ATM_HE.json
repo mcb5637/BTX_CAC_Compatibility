@@ -8,7 +8,7 @@
     "Manufacturer": "Clans",
     "Model": "ATM HE",
     "UIName": "ATM HE Ammo",
-    "Id": "Ammo_AmmunitionBox_Generic_ATM",
+    "Id": "Ammo_AmmunitionBox_Generic_ATM_HE",
     "Name": "ATM Ammo",
     "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nATM Ammo Bins each contain 60 rounds and may feed multiple weapons.",
     "Icon": "uixSvgIcon_ammoBox_Missile"
