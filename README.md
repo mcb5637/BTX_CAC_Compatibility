@@ -9,8 +9,8 @@ Installation: (requires working BTX installation)
 - Download MissionControl https://github.com/CWolfs/MissionControl				(version v1.2.1)
 - updade MissionControl by
 	- replace MissionControl/MissionControl.dll, MissionControl/mod.json and MissionControl/contractTypeBuilds/Blackout/common.jsonc
-	- delete everything in MissionControl/MissionControl/config/Contracts except My_Contract_ID_Example.json and My_FP_Contract_ID_Example.json
-	- (the settings json will be updated below, when you copy over BTX_CAC_Compatibility) 
+	- if you are updating your installation: delete everything in MissionControl/MissionControl/config/Contracts except My_Contract_ID_Example.json and My_FP_Contract_ID_Example.json
+	- (the settings json will be updated below, when you copy over BTX_CAC_Compatibility)
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
 - Remove FewerHeadInjuries from your BTX install (IRTweaks is configured to to the same, just better)
 - Add IRBTModUtils and IRTweaks to your mods folder
@@ -84,6 +84,21 @@ Component list (Clan & SLDF ones included):
 	- Phoenix Hawk LAM PXH-HK2 (SLDF LAM) (comstar) (HK1(R)?)
 	- Stinger LAM STG-A5 (SLDF LAM) (comstar/kurita, factory Irece) (A1?)
 	- Wasp LAM WSP-105 (SLDF LAM) (comstar) (100b?)
+
+What to do when adding CAC-C into an existing savegame:
+- Store and ready every mech that has any of the following fixed equipment:
+	- any ECM (you are fine if the component has - X% Detectability as bonus)
+	- any ActiveProbe (you are fine if the component has +Xm Sensor Range as bonus)
+	- any TSM (you are fine if the in mission GUI shows only one active component for it)
+	- MASC (you are fine if the in mission GUI shows only one active component for it)
+	- Bull Shark BSK-MAZ (you are fine if it has a fixed Thumper ballistic weapon)
+	- Exterminator EXT-4D (you are fine if it has Null Signature and Chameleon)
+- Remove any equipment and use its new replacements (use the savegame editor to change the parts in your inventory if you want):
+	- Liao ECM (Gear_Sensor_Prototype_ECM -> Gear_SensorCAC_LiaoProtoECM)
+	- Liao AP (Gear_Sensor_Prototype_ActiveProbe -> Gear_SensorCAC_LiaoProtoAP)
+	- AMS upgrade components (Gear_AMS_XXX -> Weapon_AMSCAC_XXX) to AMS weapons & MG ammo
+	- Infernos Launcher (Weapon_Inferno_Inferno2_XXX -> Ammo_AmmunitionBox_Generic_SRM_Inferno) to standard SRMs with Inferno ammo
+	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
 
 TODO List:
 - edit texts

@@ -59,7 +59,7 @@
   "ExtendedLances": {
     "Enable": true,
     "EnableForFlashpoints": true,
-    "EnableForStory": true,
+    "EnableForStory": false,
     "Autofill": true,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "SkipWhenTaggedWithAny": ["lance_type_solo"],
