@@ -13,13 +13,13 @@
 	"heatDamageModifier": false,
 
 	"heatDamageAppliesToVehicleAsNormalDamage": true,
-	"heatDamagePercentApplicationToVehicle": 0.5,
+	"heatDamagePercentApplicationToVehicle": 50,
 
 	"heatDamageAppliesToTurretAsNormalDamage": true,
-	"heatDamagePercentApplicationToTurret": 0.75,
+	"heatDamagePercentApplicationToTurret": 75,
 
 	"heatDamageAppliesToBuildingAsNormalDamage": true,
-	"heatDamagePercentApplicationToBuilding": 1.5,
+	"heatDamagePercentApplicationToBuilding": 150,
 
 	"ballisticNumberOfShots": true,
 	"clusteredBallistics": true,

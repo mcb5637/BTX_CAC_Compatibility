@@ -1,0 +1,80 @@
+
+name		size		sort/sldf/clan
+
+tag			1			123/---/122
+laserm		1			121
+lasermer	1			117/116/115
+lasermp		1			120/119/118
+laserl		2			113
+laserler	2			109/108/107
+laserlp		2			112/111/110
+laserb		4			106
+ppc			3			104
+ppcer		3			102/101/100
+ppcs		2			103
+coill		8			105
+coilm		6			114
+
+lasers		1			156
+laserser	1			152/151/151
+lasersp		1			155/154/153
+coils		4			150
+mg			1			160
+ams			1			159/158/157
+flamer		1			162/---/161
+
+ac2			1			41
+ac5			2			35
+ac10		3			29
+ac20		4			24
+lbx2		1			39/--/40
+lbx5		2			34/--/33
+lbx10		4			28/27/26
+lbx20		6			23/--/22
+uac2		1			37/--/36
+uac5		2			32/31/30
+uac10		3			26/--/25
+uac20		4			21/--/20
+gauss		5			13/12/11
+l gauss		3			15
+sb gauss	5			13
+arti		8			10 (cannot fit more than 1 anyway, fixed 0)
+
+rl10		1			86
+rl15		2			85
+rl20		3			84
+narc		2			79//78
+srm2		1			77//76
+srm2a		2			75//74
+srm4		1			73//72
+srm4a		2			71//70
+arm6		2			69//68
+srm6a		3			67//66
+lrm5		1			65//64
+lrm5a		2			63//62
+lrm10		2			61//60
+lrm10a		3			59//58
+lrm15		3			57//56
+lrm15a		4			55//54
+lrm20		4			53//52
+lrm20a		5			51//50
+atm3		1			83
+atm6		2			82
+atm9		2			81
+atm12		3			80
+
+any fixed				0
+armmoddmg	2-6			200
+armmodstab	2-6			201
+leg			3			202+203
+apod		1			211
+cockpitmod	1			0
+gyro		3			199
+hs			1			224
+hsd			3			223/---/222
+heatbank	2-6			221
+exchang		1			220
+jj			1			230
+ecm			2			206/205/204
+ap			2			209/208/207
+tts			2			210

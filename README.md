@@ -9,7 +9,7 @@ Installation: (requires working BTX installation)
 - Download MissionControl https://github.com/CWolfs/MissionControl				(version v1.2.1)
 - updade MissionControl by
 	- replace MissionControl/MissionControl.dll, MissionControl/mod.json and MissionControl/contractTypeBuilds/Blackout/common.jsonc
-	- if you are updating your installation: delete everything in MissionControl/MissionControl/config/Contracts except My_Contract_ID_Example.json and My_FP_Contract_ID_Example.json
+	- if you are updating your installation: delete everything in MissionControl/config/Contracts except My_Contract_ID_Example.json and My_FP_Contract_ID_Example.json
 	- (the settings json will be updated below, when you copy over BTX_CAC_Compatibility)
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
 - Remove FewerHeadInjuries from your BTX install (IRTweaks is configured to to the same, just better)
@@ -17,6 +17,10 @@ Installation: (requires working BTX installation)
 - Add CustomAmmoCategories, CustomComponents, CustomLocalization, CustomActivatableEquipment and CustomUnits to your mods folder (only add these 5 from CustomBundle, the rest is not needed)
 - Remove the folder CustomAmmoCategories/StreamingAssets
 - Add BTX_CAC_Compatibility, overriding files from anything previously mentioned and MissionControl and BiggerDrops
+- If you updated CAB recently (first reported 2.9.21, might be there for a few days before that), you have to reset the CAB-CU and CAB-Misc (in both cases, remove the current folder, then copy in the old one):
+	- replace it with these ones: CU https://github.com/BattletechModders/Community-Asset-Bundle-CustomUnits/archive/cef38ffefa137ac7557a211194e9c5e14de8e4ae.zip,
+		Misc https://github.com/BattletechModders/Community-Asset-Bundle-Miscellaneous/archive/5a00631b8ba3a3d2bf6dd8e4662eff694ebfc520.zip
+	- or (if you know your way around git) reset the CAB-CU in your CAB cache to commit cef38ffefa137ac7557a211194e9c5e14de8e4ae, and CAB-Misc to 5a00631b8ba3a3d2bf6dd8e4662eff694ebfc520 and copy them over
 
 
 Component list (Clan & SLDF ones included):
