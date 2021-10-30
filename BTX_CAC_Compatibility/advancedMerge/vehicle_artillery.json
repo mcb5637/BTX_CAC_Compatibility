@@ -29,7 +29,7 @@
       "JSONPath": "$.inventory[?(@ComponentDefID == 'Weapon_LongTomArtillery')]",
       "Action": "ObjectMerge",
       "Value": {
-        "ComponentDefID": "Weapon_MortarCAC_LongTom"
+        "ComponentDefID": "Weapon_MortarCAC_MobileLongTom"
       }
     }
   ]
