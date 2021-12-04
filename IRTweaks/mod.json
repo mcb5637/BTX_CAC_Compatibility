@@ -2,7 +2,7 @@
 	"Name": "IRTweaks",
 	"Enabled": true,
 	"Hidden": true,
-	"Version": "0.9.2.6",
+	"Version": "0.9.4.7",
 	"Description": "Miscellaneous Tweaks and Fixes",
 	"Author": "IceRaptor",
 	"Website": "https://github.com/IceRaptor/IRTweaks",
@@ -23,7 +23,9 @@
 			"BulkScrapping": false,
 			"CombatLog": false,
 			"CTDestructInjuryFix": true,
+			"DifficultyModsFromStats": false,
 			"DisableCampaign": false,
+			"DisableDebug": true,
 			"DisableCombatSaves": false,
 			"DisableCombatRestarts": false,
 			"DisableLowFundsNotification": false,
@@ -36,6 +38,7 @@
 			"MechbayLayout": false,
 			"MechbayLayoutDisableStore": false,
 			"MultiTargetStat": true,
+			"OnWeaponFireFix": true,
 			"PainTolerance": true,
 			"PathfinderTeamFix": true,
 			"PreventHeadShots": false,
@@ -49,6 +52,7 @@
 			"SkipDeleteSavePopup": true,
 			"SpawnProtection": false,
 			"StreamlinedMainMenu": false,
+			"TgtComputerTonnageDisplay": false,
 			"TurnDirectorStartFirstRoundFix": true,
 			"UrbanExplosionsFix": true,
 			"WeaponTooltip": false,
@@ -67,14 +71,43 @@
 		},
 		"Combat": {
 			"PilotAttributesMax": 13,
+			"DisableCTMaxInjureTags": [
+				"ProtoMech"
+			],
+			"TorsoMountStatName": "isTorsoMount",
 			"CalledShot": {
 				"DisableAllLocations": true,
 				"DisableHeadshots": true,
 				"EnableTacticsModifier": true,
 				"BaseModifier": -4,
 				"PilotTags": {}
-      },
+			},
+			"ToHitStatMods": {
+				"WeaponToHitMods": [
+					{
+						"SourceStatName": "WeaponIgnoreEVASIVE_AeroUnit",
+						"TargetStatName": "AeroUnit",
+						"Multi": false,
+						"Type": "EVASIVE"
+					}
+				],
+				"ActorToHitMods": [
+					{
+						"SourceStatName": "ActorIgnoreDEFENSE_AeroUnit",
+						"TargetStatName": "AeroUnit",
+						"Multi": true,
+						"Type": "DEFENSE"
+					},
+					{
+						"SourceStatName": "ActorABSOLUTE_AeroUnit",
+						"TargetStatName": "AeroUnit",
+						"Multi": false,
+						"Type": "ABSOLUTE"
+					}
+				]
+			},
 			"DamageModsBySkill": {
+				"DisplayFloatiesOnTrigger": false,
 				"StabilityMods": [],
 				"HeatMods": [],
 				"APDmgMods": [],
@@ -178,9 +211,28 @@
 				"ArmorMultiplierTurret": 0
 			}
 		},
+		"Misc": {
+			"DifficultyUIScaling": {
+				"StartOnlyScalar": 40,
+				"StartOnlyPositionY": 40,
+				"RegularPositionY": 40
+			},
+			"MechLabRefitReqs": {
+				"MechLabRefitReqs": {
+					"requires_refitHarness": "argoUpgrade_mechBay_refitHarness"
+				}
+			}
+		},
 		"Store": {
 			"QuantityOnShift": 5,
 			"QuantityOnControl": 20
+    }
+	},
+	"Manifest": [
+		{
+			"Type": "SimGameStatDescDef",
+			"Path": "simGameStatDesc",
+			"AddToDB": true
 		}
-	}
+	]
 }

@@ -3,16 +3,25 @@
 Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
-- Download CustomBundle https://github.com/BattletechModders/CustomBundle		(i use 0.3.12)
+- Download CustomBundle https://github.com/BattletechModders/CustomBundle		(0.3.12)
 	- Direct download link: https://github.com/BattletechModders/CustomBundle/archive/refs/tags/0.3.12.zip
-- Download IRTweaks https://github.com/BattletechModders/IRTweaks				(i use REL_0.9.2.6)
-	- Direct download link: https://github.com/BattletechModders/IRTweaks/releases/download/REL_0.9.2.6/IRTweaks-0.9.2.6.zip
-- Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils		(i use REL_1.10.0)
-	- Direct download link: https://github.com/BattletechModders/IRBTModUtils/releases/download/REL_1.10.0/IRBTModUtils-1.10.0.zip
-- Download MissionControl https://github.com/CWolfs/MissionControl				(version v1.2.1)
-	- Direct download link: https://github.com/CWolfs/MissionControl/releases/download/v1.2.1/MissionControl-v1.2.1.zip
+- Download IRTweaks https://github.com/BattletechModders/IRTweaks				(REL_0.9.4.7)
+	- Direct download link: https://github.com/BattletechModders/IRTweaks/releases/download/REL_0.9.4.7/IRTweaks-0.9.4.7.zip
+- Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils		(REL_1.12.0)
+	- Direct download link: https://github.com/BattletechModders/IRBTModUtils/releases/download/REL_1.12.0/IRBTModUtils-1.12.0.zip
+- Download MissionControl https://github.com/CWolfs/MissionControl				(version v1.3.0)
+	- Direct download link: https://github.com/CWolfs/MissionControl/releases/download/v1.3.0/MissionControl-v1.3.0.zip
 - updade MissionControl by
-	- replace MissionControl/MissionControl.dll, MissionControl/mod.json and MissionControl/contractTypeBuilds/Blackout/common.jsonc
+	- replace files from the MissionControl zip to your current BEX Installation
+		- MissionControl/MissionControl.dll
+		- MissionControl/mod.json
+		- MissionControl/config/Contracts/My_FP_Contract_ID_Example.json
+		- MissionControl/contractTypeBuilds/Blackout/common.jsonc
+		- MissionControl/contractTypeBuilds/Blackout/mountainhold_lunar.jsonc
+		- MissionControl/contractTypeBuilds/DuoDuel/common.jsonc
+		- MissionControl/contractTypeBuilds/SoloDuel/common.jsonc
+		- MissionControl/overrides/contracts/duoduel/DuoDuel_FestiveCouple.json
+		- MissionControl/overrides/contracts/duoduel/DuoDuel_YearlyTussle.json
 	- if you are updating your installation: delete everything in MissionControl/config/Contracts except My_Contract_ID_Example.json and My_FP_Contract_ID_Example.json
 	- (the settings json will be updated below, when you copy over BTX_CAC_Compatibility)
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)

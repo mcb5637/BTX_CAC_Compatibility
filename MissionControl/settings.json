@@ -51,7 +51,9 @@
       "EnemySpawnInfluencePerHalfSkullAbove": 0.1,
       "AllySpawnInfluencePerHalfSkullAbove": -0.1,
       "EnemySpawnInfluencePerHalfSkullBelow": 0.0,
-      "AllySpawnInfluencePerHalfSkullBelow": 0.0
+      "AllySpawnInfluencePerHalfSkullBelow": 0.0,
+      "EnemySpawnInfluenceMax": 0.9,
+      "AllySpawnInfluenceMax": 0.9
     },
     "DisableAllies": false,
     "DisableEnemies": false
