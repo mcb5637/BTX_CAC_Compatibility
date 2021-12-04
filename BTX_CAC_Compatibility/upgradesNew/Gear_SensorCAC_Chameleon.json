@@ -88,7 +88,7 @@
           "statisticData": {
             "statName": "SpottingVisibilityMultiplier",
             "operation": "Float_Multiply",
-            "modValue": "-0.5",
+            "modValue": "0.5",
             "modType": "System.Single"
           },
           "nature": "Buff"
@@ -133,8 +133,8 @@
             "specialRules": "NotSet",
             "effectTargetType": "Creator",
             "range": 0.0,
-            "forcePathRebuild": false,
-            "forceVisRebuild": false,
+            "forcePathRebuild": true,
+            "forceVisRebuild": true,
             "showInTargetPreview": false,
             "showInStatusPanel": false
           },
