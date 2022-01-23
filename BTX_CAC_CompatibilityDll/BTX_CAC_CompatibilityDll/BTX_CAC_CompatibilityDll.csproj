@@ -40,36 +40,36 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\0Harmony.dll</HintPath>
+      <HintPath>D:\goggames\BATTLETECH\BattleTech_Data\Managed\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>D:\goggames\BATTLETECH\BattleTech_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="CustomAmmoCategories">
-      <HintPath>C:\goggames\BATTLETECH\Mods\CustomAmmoCategories\CustomAmmoCategories.dll</HintPath>
+      <HintPath>D:\goggames\BATTLETECH\Mods\CustomAmmoCategories\CustomAmmoCategories.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="CustomUnits">
-      <HintPath>C:\goggames\BATTLETECH\Mods\CustomUnits\CustomUnits.dll</HintPath>
+      <HintPath>D:\goggames\BATTLETECH\Mods\CustomUnits\CustomUnits.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="InControl">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\InControl.dll</HintPath>
+      <HintPath>D:\goggames\BATTLETECH\BattleTech_Data\Managed\InControl.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <HintPath>D:\goggames\BATTLETECH\BattleTech_Data\Managed\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>D:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>D:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -95,6 +95,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(TargetPath)" "$(SolutionDir)..\BTX_CAC_Compatibility\$(TargetName).dll"
-copy /Y "$(TargetPath)" "C:\goggames\BATTLETECH\Mods\BTX_CAC_Compatibility\$(TargetName).dll"</PostBuildEvent>
+copy /Y "$(TargetPath)" "D:\goggames\BATTLETECH\Mods\BTX_CAC_Compatibility\$(TargetName).dll"</PostBuildEvent>
   </PropertyGroup>
 </Project>

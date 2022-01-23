@@ -1,5 +1,6 @@
 ﻿using AccessExtension;
 using BattleTech;
+using BattleTech.UI;
 using CustAmmoCategories;
 using Harmony;
 using HBS.Logging;
@@ -54,11 +55,11 @@ namespace BTX_CAC_CompatibilityDll
             try
             {
                 // artemis
-                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AttackDirector.AttackSequence), "GetClusteredHits"), "BEX.BattleTech.Extended_CE");
-                Type[] ptypes = new Type[] { typeof(Vector3), typeof(Mech), typeof(float), typeof(ArmorLocation), typeof(float), typeof(float), typeof(ArmorLocation), typeof(float) };
-                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(HitLocation), "GetAdjacentHitLocation", ptypes), "BEX.BattleTech.Extended_CE");
-                ptypes = new Type[] { typeof(Vector3), typeof(Vehicle), typeof(float), typeof(VehicleChassisLocations), typeof(float), typeof(float), typeof(VehicleChassisLocations), typeof(float) };
-                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(HitLocation), "GetAdjacentHitLocation", ptypes), "BEX.BattleTech.Extended_CE");
+                //Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AttackDirector.AttackSequence), "GetClusteredHits"), "BEX.BattleTech.Extended_CE");
+                //Type[] ptypes = new Type[] { typeof(Vector3), typeof(Mech), typeof(float), typeof(ArmorLocation), typeof(float), typeof(float), typeof(ArmorLocation), typeof(float) };
+                //Unpatch(harmony, AccessTools.DeclaredMethod(typeof(HitLocation), "GetAdjacentHitLocation", ptypes), "BEX.BattleTech.Extended_CE");
+                //ptypes = new Type[] { typeof(Vector3), typeof(Vehicle), typeof(float), typeof(VehicleChassisLocations), typeof(float), typeof(float), typeof(VehicleChassisLocations), typeof(float) };
+                //Unpatch(harmony, AccessTools.DeclaredMethod(typeof(HitLocation), "GetAdjacentHitLocation", ptypes), "BEX.BattleTech.Extended_CE");
                 // streak
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MissileLauncherEffect), "AllMissilesComplete"), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MissileLauncherEffect), "LaunchMissile"), "BEX.BattleTech.Extended_CE");
@@ -68,7 +69,17 @@ namespace BTX_CAC_CompatibilityDll
                 // called shot nerf
                 //Unpatch(harmony, AccessTools.DeclaredMethod(typeof(Pilot), "InitAbilities"), "BEX.BattleTech.Extended_CE", false, true, false);
                 // TSM
-                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(Mech), "OnActivationEnd"), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(Mech), "OnActivationEnd"), "BEX.BattleTech.Extended_CE", false, true, false); // prefix is heat shutdown
+                // lbx/uac
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(Contract), "CompleteContract"), "BEX.BattleTech.Extended_CE", true, true, true,
+                    "System.Void Extended_CE.WeaponModes+Contract_CompleteContract.Prefix(BattleTech.Contract __instance)");
+
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AttackEvaluator), "MakeAttackOrder"), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AITeam), "TurnActorProcessActivation"), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(CombatHUDWeaponSlot), "OnPointerUp"), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(Weapon), "get_AmmoCategoryValue"), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(CombatHUDWeaponSlot), "RefreshDisplayedWeapon"), "BEX.BattleTech.Extended_CE", true, false, false); // transpiler is coil fix
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechValidationRules), "ValidateMechHasAppropriateAmmo"), "BEX.BattleTech.Extended_CE");
             }
             catch (Exception e)
             {
@@ -104,27 +115,32 @@ namespace BTX_CAC_CompatibilityDll
             return 0;
         }
 
-        private static void Unpatch(HarmonyInstance harmony, MethodBase b, string id, bool pre=true, bool post=true, bool trans=true)
+        private static void Unpatch(HarmonyInstance harmony, MethodBase b, string id, bool pre=true, bool post=true, bool trans=true, string onlyUnpatch=null)
         {
-            //FileLog.Log($"checking to unpatch: {b.DeclaringType.FullName}+{b.Name}");
+            //FileLog.Log($"checking to unpatch: {b.FullName()}");
             Patches pa = harmony.GetPatchInfo(b);
+            if (pa==null)
+            {
+                //FileLog.Log("no patch attached");
+                return;
+            }
             if (pre)
-                UnpatchCheckList(harmony, b, id, pa.Prefixes);
+                UnpatchCheckList(harmony, b, id, pa.Prefixes, onlyUnpatch);
             if (post)
-                UnpatchCheckList(harmony, b, id, pa.Postfixes);
+                UnpatchCheckList(harmony, b, id, pa.Postfixes, onlyUnpatch);
             if (trans)
-                UnpatchCheckList(harmony, b, id, pa.Transpilers);
+                UnpatchCheckList(harmony, b, id, pa.Transpilers, onlyUnpatch);
         }
 
-        private static void UnpatchCheckList(HarmonyInstance harmony, MethodBase b, string id, IEnumerable<Patch> pa)
+        private static void UnpatchCheckList(HarmonyInstance harmony, MethodBase b, string id, IEnumerable<Patch> pa, string onlyUnpatch)
         {
             foreach (Patch p in pa)
             {
-                if (p.owner.Equals(id))
+                MethodInfo patch = p.patch;
+                if (p.owner.Equals(id) && (onlyUnpatch==null || onlyUnpatch.Equals(patch.FullName())))
                 {
-                    MethodInfo patch = p.patch;
                     harmony.Unpatch(b, patch);
-                    //FileLog.Log($"found: {patch.DeclaringType.FullName}+{patch.Name}");
+                    //FileLog.Log($"found: {patch.FullName()}");
                 }
             }
         }
