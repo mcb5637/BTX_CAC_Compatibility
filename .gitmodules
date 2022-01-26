@@ -1,3 +1,6 @@
 [submodule "BTX_CAC_CompatibilityDll/BTX_CAC_CompatibilityDll/AccessExtensionPatcher"]
 	path = BTX_CAC_CompatibilityDll/BTX_CAC_CompatibilityDll/AccessExtensionPatcher
 	url = https://github.com/mcb5637/AccessExtensionPatcher.git
+[submodule "CB"]
+	path = CB
+	url = https://github.com/BattletechModders/CustomBundle.git
