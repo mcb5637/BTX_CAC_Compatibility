@@ -17,7 +17,7 @@
   "HotDropProtection": {
     "Enable": true,
     "EnableForFlashpoints": true,
-    "EnableForStory": true,
+    "EnableForStory": false,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "GuardOnHotDrop": false,
     "EvasionPipsOnHotDrop": 6,
@@ -27,7 +27,7 @@
   },
   "AdditionalLances": {
     "Enable": true,
-    "EnableForFlashpoints": false,
+    "EnableForFlashpoints": true,
     "EnableForStory": false,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "IsPrimaryObjectiveIn": ["SimpleBattle", "CaptureBase"],
@@ -48,12 +48,12 @@
     "MatchAllyLanceCountToEnemy": false,
     "DropWeightInfluence": {
       "Enable": true,
+      "EnemySpawnInfluenceMax": 0.9,
+      "AllySpawnInfluenceMax": 0.9,
       "EnemySpawnInfluencePerHalfSkullAbove": 0.1,
       "AllySpawnInfluencePerHalfSkullAbove": -0.1,
       "EnemySpawnInfluencePerHalfSkullBelow": 0.0,
-      "AllySpawnInfluencePerHalfSkullBelow": 0.0,
-      "EnemySpawnInfluenceMax": 0.9,
-      "AllySpawnInfluenceMax": 0.9
+      "AllySpawnInfluencePerHalfSkullBelow": 0.0
     },
     "DisableAllies": false,
     "DisableEnemies": false
@@ -96,14 +96,26 @@
 		  {
 			"Faction": "DiamondShark",
 			"DifficultyMod": 0
+		  },
+		  {
+			"Faction": "WolfInExile",
+			"DifficultyMod": 0
+		  },
+		  {
+			"Faction": "WolfsDragoons",
+			"DifficultyMod": 0
 		  }
 		],
       "6": [
 		  {
 			"Faction": "ComStar",
 			"DifficultyMod": 0
+		  },
+		  {
+			"Faction": "WordOfBlake",
+			"DifficultyMod": 0
 		  }
-	  ]
+		]
     }
   },
   "ExtendedBoundaries": {

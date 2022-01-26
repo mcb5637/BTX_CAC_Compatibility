@@ -2,28 +2,27 @@
 	"Name": "IRTweaks",
 	"Enabled": true,
 	"Hidden": true,
-	"Version": "0.9.4.7",
+	"Version": "0.9.4.2",
 	"Description": "Miscellaneous Tweaks and Fixes",
 	"Author": "IceRaptor",
 	"Website": "https://github.com/IceRaptor/IRTweaks",
 	"Contact": "",
 	"DLL": "IRTweaks.dll",
 	"DependsOn": [
-		"IRBTModUtils",
-		"Custom Ammo Categories", "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks"
+		"IRBTModUtils", "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks"
 	],
 	"Settings": {
 		"Debug": false,
 		"Trace": false,
 		"Fixes": {
+			"AbilityResourceFix": true,
 			"AlternateMechNamingStyle": false,
 			"BuildingDamageColorChange": false,
-			"BraceOnMeleeWithJuggernaut": true,
+			"BraceOnMeleeWithJuggernaut": false,
 			"BulkPurchasing": true,
 			"BulkScrapping": false,
 			"CombatLog": false,
 			"CTDestructInjuryFix": true,
-			"DifficultyModsFromStats": false,
 			"DisableCampaign": false,
 			"DisableDebug": true,
 			"DisableCombatSaves": false,
@@ -39,7 +38,7 @@
 			"MechbayLayoutDisableStore": false,
 			"MultiTargetStat": true,
 			"OnWeaponFireFix": true,
-			"PainTolerance": true,
+			"PainTolerance": false,
 			"PathfinderTeamFix": true,
 			"PreventHeadShots": false,
 			"RandomStartByDifficulty": false,
@@ -52,9 +51,8 @@
 			"SkipDeleteSavePopup": true,
 			"SpawnProtection": false,
 			"StreamlinedMainMenu": false,
-			"TgtComputerTonnageDisplay": false,
 			"TurnDirectorStartFirstRoundFix": true,
-			"UrbanExplosionsFix": true,
+			"UrbanExplosionsFix": false,
 			"WeaponTooltip": false,
 			"WeakAgainstMeleeFix": true,
       "CalledShotTweaks": false
@@ -71,43 +69,14 @@
 		},
 		"Combat": {
 			"PilotAttributesMax": 13,
-			"DisableCTMaxInjureTags": [
-				"ProtoMech"
-			],
-			"TorsoMountStatName": "isTorsoMount",
 			"CalledShot": {
 				"DisableAllLocations": true,
 				"DisableHeadshots": true,
 				"EnableTacticsModifier": true,
 				"BaseModifier": -4,
 				"PilotTags": {}
-			},
-			"ToHitStatMods": {
-				"WeaponToHitMods": [
-					{
-						"SourceStatName": "WeaponIgnoreEVASIVE_AeroUnit",
-						"TargetStatName": "AeroUnit",
-						"Multi": false,
-						"Type": "EVASIVE"
-					}
-				],
-				"ActorToHitMods": [
-					{
-						"SourceStatName": "ActorIgnoreDEFENSE_AeroUnit",
-						"TargetStatName": "AeroUnit",
-						"Multi": true,
-						"Type": "DEFENSE"
-					},
-					{
-						"SourceStatName": "ActorABSOLUTE_AeroUnit",
-						"TargetStatName": "AeroUnit",
-						"Multi": false,
-						"Type": "ABSOLUTE"
-					}
-				]
-			},
+      },
 			"DamageModsBySkill": {
-				"DisplayFloatiesOnTrigger": false,
 				"StabilityMods": [],
 				"HeatMods": [],
 				"APDmgMods": [],
@@ -149,58 +118,66 @@
 				},
 				"DifficultyScaling": {
 					"1": {
-						"Mod": 5,
+						"Mod": 0,
 						"Multi": 1.0
 					},
 					"2": {
-						"Mod": 10,
-						"Multi": 1.25
+						"Mod": 0,
+						"Multi": 1.1
 					},
 					"3": {
-						"Mod": 15,
-						"Multi": 1.5
+						"Mod": 0,
+						"Multi": 1.2
 					},
 					"4": {
-						"Mod": 20,
-						"Multi": 2.0
+						"Mod": 0,
+						"Multi": 1.3
 					},
 					"5": {
-						"Mod": 25,
-						"Multi": 2.5
+						"Mod": 0,
+						"Multi": 1.4
 					},
 					"6": {
-						"Mod": 30,
-						"Multi": 3.0
+						"Mod": 0,
+						"Multi": 1.5
 					},
 					"7": {
-						"Mod": 35,
-						"Multi": 3.5
+						"Mod": 0,
+						"Multi": 1.6
 					},
 					"8": {
-						"Mod": 40,
-						"Multi": 4.0
+						"Mod": 0,
+						"Multi": 1.7
 					},
 					"9": {
-						"Mod": 45,
-						"Multi": 4.5
+						"Mod": 0,
+						"Multi": 1.8
 					},
 					"10": {
-						"Mod": 50,
-						"Multi": 5.0
+						"Mod": 0,
+						"Multi": 1.9
 					},
 					"11": {
-						"Mod": 55,
-						"Multi": 5.5
+						"Mod": 0,
+						"Multi": 2.0
 					},
 					"12": {
-						"Mod": 60,
-						"Multi": 6.0
+						"Mod": 0,
+						"Multi": 2.1
+					},
+					"13": {
+						"Mod": 0,
+						"Multi": 2.2
+					},
+					"14": {
+						"Mod": 0,
+						"Multi": 2.3
 					}
 				}
 			},
 			"SpawnProtection": {
-				"ApplyGuard": true,
-				"EvasionPips": 6,
+				"ApplyGuard": false,
+				"EvasionPips": 2,
 				"ApplyToEnemies": true,
 				"ApplyToAllies": true,
 				"ApplyToNeutrals": true,
@@ -211,28 +188,9 @@
 				"ArmorMultiplierTurret": 0
 			}
 		},
-		"Misc": {
-			"DifficultyUIScaling": {
-				"StartOnlyScalar": 40,
-				"StartOnlyPositionY": 40,
-				"RegularPositionY": 40
-			},
-			"MechLabRefitReqs": {
-				"MechLabRefitReqs": {
-					"requires_refitHarness": "argoUpgrade_mechBay_refitHarness"
-				}
-			}
-		},
 		"Store": {
 			"QuantityOnShift": 5,
 			"QuantityOnControl": 20
-    }
-	},
-	"Manifest": [
-		{
-			"Type": "SimGameStatDescDef",
-			"Path": "simGameStatDesc",
-			"AddToDB": true
 		}
-	]
+	}
 }

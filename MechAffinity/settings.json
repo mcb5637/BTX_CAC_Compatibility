@@ -5,7 +5,7 @@
   "lowestPossibleDecay": 0,
   "maxAffinityPoints": 1000,
   "decayByModulo": false,
-  "defaultDaysBeforeSimDecay": 62,
+  "defaultDaysBeforeSimDecay": 93,
   "topAffinitiesInTooltipCount": 3,
   "showQuirks": true,
   "showDescriptionsOnChassis": true,
@@ -243,7 +243,7 @@
             "triggerLimit": 0,
             "extendDurationOnTrigger": 0,
             "specialRules": "NotSet",
-            "effectTargetType": "AllLanceMates",
+            "effectTargetType": "Creator",
             "range": 0,
             "forcePathRebuild": false,
             "forceVisRebuild": false,
@@ -366,7 +366,7 @@
             "triggerLimit": 0,
             "extendDurationOnTrigger": 0,
             "specialRules": "NotSet",
-            "effectTargetType": "AllLanceMates",
+            "effectTargetType": "Creator",
             "range": 0,
             "forcePathRebuild": false,
             "forceVisRebuild": false,
@@ -382,7 +382,7 @@
           },
           "nature": "Buff",
           "statisticData": {
-            "statName": "MoraleBonusGain",
+            "statName": "MoraleBonusGainStackable",
             "operation": "Int_Add",
             "modValue": "-1",
             "modType": "System.Int32"
@@ -624,7 +624,7 @@
     {
       "tag": "pilot_merchant",
       "quirkName": "Merchant",
-      "description": "Getting the best prices on parts reduces Argo Upgrade prices by 2%, 1% Chance for 5000Cbills/Day",
+      "description": "Getting the best prices on parts reduces Argo Upgrade prices by 1%, 1% Chance for 5000Cbills/Day",
       "effectData": [],
       "quirkEffects": [
         {
@@ -635,7 +635,7 @@
         },
         {
           "type": "ArgoUpgradeFactor",
-          "modifier": 0.98,
+          "modifier": 0.99,
           "secondaryModifier": 0,
           "affectedIds": [
             "PqAllArgoUpgrades"
@@ -735,12 +735,12 @@
     {
       "tag": "pilot_noble",
       "quirkName": "Noble",
-      "description": "Reduces Cost and Upkeep for Argo Morale and Med Upgrades by 2%",
+      "description": "Reduces Cost and Upkeep for Argo Morale and Med Upgrades by 1%",
       "effectData": [],
       "quirkEffects": [
         {
           "type": "ArgoUpgradeFactor",
-          "modifier": 0.98,
+          "modifier": 0.99,
           "secondaryModifier": 0,
           "affectedIds": [
             "argoUpgrade_rec_pool",
@@ -764,7 +764,7 @@
         },
         {
           "type": "ArgoUpkeepFactor",
-          "modifier": 0.98,
+          "modifier": 0.99,
           "secondaryModifier": 0,
           "affectedIds": [
             "argoUpgrade_rec_pool",
@@ -888,7 +888,7 @@
             "triggerLimit": 0,
             "extendDurationOnTrigger": 0,
             "specialRules": "NotSet",
-            "effectTargetType": "AllLanceMates",
+            "effectTargetType": "Creator",
             "range": 0,
             "forcePathRebuild": false,
             "forceVisRebuild": false,
@@ -904,7 +904,7 @@
           },
           "nature": "Buff",
           "statisticData": {
-            "statName": "MoraleBonusGain",
+            "statName": "MoraleBonusGainStackable",
             "operation": "Int_Add",
             "modValue": "-1",
             "modType": "System.Int32"
@@ -983,12 +983,12 @@
     {
       "tag": "pilot_spacer",
       "quirkName": "Spacer",
-      "description": "Reduces Argo Upkeep by 2%",
+      "description": "Reduces Argo Upkeep by 1%",
       "effectData": [],
       "quirkEffects": [
         {
           "type": "ArgoUpkeepFactor",
-          "modifier": 0.98,
+          "modifier": 0.99,
           "secondaryModifier": 0,
           "affectedIds": [
             "PqAllArgoUpgrades"
@@ -1268,7 +1268,7 @@
     {
       "chassisNames": [
         "chrPrfMech_annihilatorBase-001_100",
-        "chrPrfMech_atlasBase-001_80"
+        "chrprfmech_ionbanebase-001_100"
       ],
       "affinityLevels": [
         {
@@ -1517,7 +1517,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -1525,11 +1525,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -1882,7 +1887,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -1890,11 +1895,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -1940,7 +1950,9 @@
       "chassisNames": [
         "chrPrfMech_assassinBase-001_40",
         "chrPrfMech_blackjackBase-001_45",
+        "chrPrfMech_blackjackBase-001_50",
         "chrprfmech_gladiatorbase-001_55",
+        "chrprfmech_grendelbase-001_45",
         "chrprfmech_icarusiibase-001_40",
         "chrprfmech_rtcorsair1base-001_55",
         "chrPrfMech_shadowhawkBase-001_55",
@@ -2099,7 +2111,8 @@
         "chrprfmech_marauderiicbase-001_75",
         "chrprfmech_nightgyrbase-001_75",
         "chrPrfMech_quickdrawBase-001_60",
-        "chrprfmech_summonerbase-001_70"
+        "chrprfmech_summonerbase-001_70",
+        "chrprfmech_heliosbase-001_60"
       ],
       "affinityLevels": [
         {
@@ -2249,6 +2262,155 @@
     },
     {
       "chassisNames": [
+        "chrprfmech_turkinabase-001_95"
+      ],
+      "affinityLevels": [
+        {
+          "missionsRequired": 10,
+          "levelName": "Comfortable+",
+          "decription": "Proficiency with the balance of the chassis (+1 Piloting)",
+          "effectData": [
+            {
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "Description": {
+                "Id": "MechAffinityPiloting",
+                "Name": "Piloting Buff",
+                "Details": "Piloting Skill",
+                "Icon": "uixSvgIcon_equipment_Cockpit"
+              },
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "Piloting",
+                "operation": "Int_Add",
+                "modValue": "1",
+                "modType": "System.Int32",
+                "targetCollection": "Pilot"
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 50,
+          "levelName": "Second Nature+",
+          "decription": "Connection to the battle systems of this chassis (+1 Gunnery)",
+          "effectData": [
+            {
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "Description": {
+                "Id": "MechAffinityGunnery",
+                "Name": "Gunnery Buff",
+                "Details": "Gunnery Skill",
+                "Icon": "uixSvgIcon_equipment_Cockpit"
+              },
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "Gunnery",
+                "operation": "Int_Add",
+                "modValue": "1",
+                "modType": "System.Int32",
+                "targetCollection": "Pilot"
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 20,
+          "levelName": "Assault Mech+",
+          "decription": "Familiarity with this 'Mech's role on the battlefield improves stability (+5% Stab Dmg Reduction)",
+          "effectData": [
+            {
+              "Description": {
+                "Details": "Assault 'Mech familiarity (+5% Stab Dmg Reduction)",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-AssaultMechBoost",
+                "Name": "Assault Mech Affinity Defence Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "ReceivedInstabilityMultiplier",
+                "operation": "Float_Multiply",
+                "modValue": "0.95",
+                "modType": "System.Single",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": false,
+                "showInTargetPreview": false
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 30,
+          "levelName": "Mobile Striker+",
+          "decription": "Familiarity with the mobile strike nature of the 'Mech design allows for more effective jump jet strikes (+10% damage after jump)",
+          "effectData": [
+            {
+              "Description": {
+                "Details": "Familiarity with the mobile strike nature of the 'Mech design (+10% damage after jump)",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "Affinity_MobileStriker_Damage",
+                "Name": "BattleMechAffinity"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "JumpingWeaponDamageModifier",
+                "operation": "Float_Add",
+                "modValue": "0.1",
+                "modType": "System.Single",
+                "targetCollection": "Weapon"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": false,
+                "showInTargetPreview": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chassisNames": [
         "chrprfmech_mongoosebase-001_25"
       ],
       "affinityLevels": [
@@ -2343,7 +2505,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -2351,11 +2513,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -2391,11 +2558,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": true,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -2545,11 +2717,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": true,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -2561,7 +2738,8 @@
         "chrPrfMech_archerBase-001_70",
         "chrPrfMech_blackknightBase-001_75",
         "chrPrfMech_marauderBase-001_75",
-        "chrprfmech_redreaperbase-001_75"
+        "chrprfmech_redreaperbase-001_75",
+        "chrprfmech_shootistbase-001_70"
       ],
       "affinityLevels": [
         {
@@ -2703,11 +2881,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": true,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -2867,11 +3050,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": true,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -3191,7 +3379,7 @@
     },
     {
       "chassisNames": [
-        "chrprfmech_dragonfirebase-001_55"
+        "chrprfmech_lynxbase-001_55"
       ],
       "affinityLevels": [
         {
@@ -3502,7 +3690,8 @@
     },
     {
       "chassisNames": [
-        "chrprfmech_grandtitanbase-001_100"
+        "chrprfmech_grandtitanbase-001_100",
+        "chrprfmech_masonvikingbase-001_90"
       ],
       "affinityLevels": [
         {
@@ -3658,7 +3847,8 @@
     {
       "chassisNames": [
         "chrprfmech_urbiebase-001_30",
-        "chrPrfMech_urbanmechBase-001_30"
+        "chrPrfMech_urbanmechBase-001_30",
+        "chrprfmech_urbanmech50base-001_30"
       ],
       "affinityLevels": [
         {
@@ -3752,7 +3942,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -3760,11 +3950,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -4695,7 +4890,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -4703,11 +4898,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -4855,7 +5055,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -4863,11 +5063,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -4948,7 +5153,8 @@
     },
     {
       "chassisNames": [
-        "chrprfmech_hermesbase-001_40"
+        "chrprfmech_hermesbase-001_40",
+        "chrPrfMech_hellhoundBase-001_50"
       ],
       "affinityLevels": [
         {
@@ -5509,7 +5715,7 @@
     {
       "chassisNames": [
         "chrprfmech_fireballbase-001_20",
-        "chrprfmech_firebeebase-001_30",
+        "chrprfmech_falconbase-001_30",
         "chrprfmech_firebeebase-001_35",
         "chrPrfMech_firestarterBase-001_35"
       ],
@@ -5605,7 +5811,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -5613,11 +5819,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -6127,7 +6338,7 @@
     },
     {
       "chassisNames": [
-        "chrPrfMech_hunchbackiicHotD-001_35",
+        "chrprfmech_vossieostscoutbase-001_35",
         "chrprfmech_mistlynxbase-001_25",
         "chrprfmech_owensbase-001_35"
       ],
@@ -6223,7 +6434,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -6231,11 +6442,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -6519,7 +6735,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -6527,11 +6743,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -6774,7 +6995,8 @@
     },
     {
       "chassisNames": [
-        "chrprfmech_hellbringerbase-001_65"
+        "chrprfmech_hellbringerbase-001_65",
+        "chrprfmech_dragonfirebase-001_75"
       ],
       "affinityLevels": [
         {
@@ -6948,6 +7170,7 @@
     },
     {
       "chassisNames": [
+        "chrprfmech_gunslingerbase-001_85",
         "chrPrfMech_cyclopsBase-001_90"
       ],
       "affinityLevels": [
@@ -7680,7 +7903,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -7688,11 +7911,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -8874,7 +9102,8 @@
     },
     {
       "chassisNames": [
-        "chrPrfMech_centurionBase-001_50"
+        "chrPrfMech_centurionBase-001_50",
+        "chrPrfMech_centurionBase-001_55"
       ],
       "affinityLevels": [
         {
@@ -9021,10 +9250,166 @@
     },
     {
       "chassisNames": [
+        "chrprfmech_hoplitebase-001_55"
+      ],
+      "affinityLevels": [
+        {
+          "missionsRequired": 10,
+          "levelName": "Comfortable+",
+          "decription": "Proficiency with the balance of the chassis (+1 Piloting)",
+          "effectData": [
+            {
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "Description": {
+                "Id": "MechAffinityPiloting",
+                "Name": "Piloting Buff",
+                "Details": "Piloting Skill",
+                "Icon": "uixSvgIcon_equipment_Cockpit"
+              },
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "Piloting",
+                "operation": "Int_Add",
+                "modValue": "1",
+                "modType": "System.Int32",
+                "targetCollection": "Pilot"
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 50,
+          "levelName": "Second Nature+",
+          "decription": "Connection to the battle systems of this chassis (+1 Gunnery)",
+          "effectData": [
+            {
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "Description": {
+                "Id": "MechAffinityGunnery",
+                "Name": "Gunnery Buff",
+                "Details": "Gunnery Skill",
+                "Icon": "uixSvgIcon_equipment_Cockpit"
+              },
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "Gunnery",
+                "operation": "Int_Add",
+                "modValue": "1",
+                "modType": "System.Int32",
+                "targetCollection": "Pilot"
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 20,
+          "levelName": "Medium Mech+",
+          "decription": "Familiarity with this 'Mech's role on the battlefield improves survivability (+1 Hit Defence)",
+          "effectData": [
+            {
+              "Description": {
+                "Details": "Medium 'Mech familiarity (+1 Hit Defence)",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-MediumMechBoost",
+                "Name": "Medium Mech Affinity Defence Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "ToHitThisActor",
+                "operation": "Float_Add",
+                "modValue": "1",
+                "modType": "System.Single",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": false,
+                "showInTargetPreview": false
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 30,
+          "levelName": "Resilient+",
+          "decription": "Familiarity with this 'Mech's resilient design improves survivability (+25% Critical Hit Resistance)",
+          "effectData": [
+            {
+              "Description": {
+                "Details": "The Pilot knows where to avoid hits on this mech (+25% Critical Hit Resistance)",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-CritResist",
+                "Name": "Mech Affinity Critical Hit Resistance Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "additionalRules": "NotSet",
+                "modType": "System.Single",
+                "modValue": "0.75",
+                "operation": "Float_Multiply",
+                "statName": "CriticalHitChanceReceivedMultiplier",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": false,
+                "showInTargetPreview": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chassisNames": [
+        "chrprfmech_visionquestbase-001_60",
         "chrprfmech_avatarbase-001_70",
         "chrPrfMech_cataphractBase-001_70",
         "chrprfmech_madcatbase-001_75",
-        "chrprfmech_sunspiderbase-001_70"
+        "chrprfmech_sunspiderbase-001_70",
+        "chrprfmech_rakshasabase-001_75"
       ],
       "affinityLevels": [
         {
@@ -9180,7 +9565,8 @@
     {
       "chassisNames": [
         "chrprfmech_direwolfbase-001_100",
-        "chrprfmech_ionsunderbase-001_90"
+        "chrprfmech_ionsunderbase-001_90",
+        "chrPrfMech_hauptmannbase-001_95"
       ],
       "affinityLevels": [
         {
@@ -9335,11 +9721,14 @@
     {
       "chassisNames": [
         "chrPrfMech_adderbase-001_35",
+        "chrprfmech_baboonbase-001_20",
+        "chrprfmech_cougarbase-001_35",
         "chrprfmech_fireflybase-001_30",
         "chrprfmech_kitfoxbase-001_30",
         "chrprfmech_hussarbase-001_30",
         "chrprfmech_thornbase-001_20",
-        "chrprfmech_torobase-001_35"
+        "chrprfmech_torobase-001_35",
+        "chrprfmech_wightbase-001_35"
       ],
       "affinityLevels": [
         {
@@ -9433,7 +9822,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -9441,11 +9830,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -9684,9 +10078,12 @@
     },
     {
       "chassisNames": [
+        "chrPrfMech_catapultBase-001_65",
         "chrPrfMech_jagermechBase-001_65",
+        "chrPrfMech_jagermechBase-001_70",
         "chrprfmech_linebackerbase-001_65",
-        "chrprfmech_maddogbase-001_60"
+        "chrprfmech_maddogbase-001_60",
+        "chrPrfMech_novacatbase-001_70"
       ],
       "affinityLevels": [
         {
@@ -10278,7 +10675,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -10286,11 +10683,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -10496,7 +10898,8 @@
     },
     {
       "chassisNames": [
-        "chrprfmech_bombardierbase-001_65"
+        "chrprfmech_bombardierbase-001_65",
+        "chrprfmech_yeomanbase-001_60"
       ],
       "affinityLevels": [
         {
@@ -10903,7 +11306,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -10911,11 +11314,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -11059,162 +11467,6 @@
                 "operation": "Float_Add",
                 "modValue": "1",
                 "modType": "System.Single",
-                "targetAmmoCategory": "NotSet",
-                "targetCollection": "NotSet",
-                "targetWeaponCategory": "NotSet",
-                "targetWeaponSubType": "NotSet",
-                "targetWeaponType": "NotSet"
-              },
-              "targetingData": {
-                "effectTargetType": "Creator",
-                "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
-              }
-            }
-          ]
-        },
-        {
-          "missionsRequired": 30,
-          "levelName": "Missiles+",
-          "decription": "Familiarity with this 'Mech's missile capabilities improves hitting moving targets (+1 Missile EVASIVE ignore)",
-          "effectData": [
-            {
-              "Description": {
-                "Details": "Missile Platform familiarity (+1 EVASIVE Ignore)",
-                "Icon": "UixSvgIcon_specialEquip_System",
-                "Id": "Affinity_Missile_EvasionIgnore",
-                "Name": "Multi-Trac Computer Affinity Evasion Ignore"
-              },
-              "durationData": {
-                "duration": -1,
-                "stackLimit": 1
-              },
-              "targetingData": {
-                "effectTriggerType": "Passive",
-                "effectTargetType": "Creator",
-                "showInTargetPreview": false,
-                "showInStatusPanel": false
-              },
-              "effectType": "StatisticEffect",
-              "statisticData": {
-                "appliesEachTick": false,
-                "effectsPersistAfterDestruction": false,
-                "statName": "EvasivePipsIgnored",
-                "operation": "Float_Add",
-                "modValue": "1",
-                "modType": "System.Single",
-                "additionalRules": "NotSet",
-                "targetCollection": "Weapon",
-                "targetWeaponCategory": "Missile",
-                "targetWeaponType": "NotSet",
-                "targetAmmoCategory": "NotSet",
-                "targetWeaponSubType": "NotSet"
-              },
-              "nature": "Buff"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "chassisNames": [
-        "chrPrfMech_catapultBase-001_65"
-      ],
-      "affinityLevels": [
-        {
-          "missionsRequired": 10,
-          "levelName": "Comfortable+",
-          "decription": "Proficiency with the balance of the chassis (+1 Piloting)",
-          "effectData": [
-            {
-              "durationData": {
-                "duration": -1,
-                "stackLimit": -1
-              },
-              "targetingData": {
-                "effectTriggerType": "Passive",
-                "effectTargetType": "Creator",
-                "showInTargetPreview": false,
-                "showInStatusPanel": false
-              },
-              "effectType": "StatisticEffect",
-              "Description": {
-                "Id": "MechAffinityPiloting",
-                "Name": "Piloting Buff",
-                "Details": "Piloting Skill",
-                "Icon": "uixSvgIcon_equipment_Cockpit"
-              },
-              "nature": "Buff",
-              "statisticData": {
-                "statName": "Piloting",
-                "operation": "Int_Add",
-                "modValue": "1",
-                "modType": "System.Int32",
-                "targetCollection": "Pilot"
-              }
-            }
-          ]
-        },
-        {
-          "missionsRequired": 50,
-          "levelName": "Second Nature+",
-          "decription": "Connection to the battle systems of this chassis (+1 Gunnery)",
-          "effectData": [
-            {
-              "durationData": {
-                "duration": -1,
-                "stackLimit": -1
-              },
-              "targetingData": {
-                "effectTriggerType": "Passive",
-                "effectTargetType": "Creator",
-                "showInTargetPreview": false,
-                "showInStatusPanel": false
-              },
-              "effectType": "StatisticEffect",
-              "Description": {
-                "Id": "MechAffinityGunnery",
-                "Name": "Gunnery Buff",
-                "Details": "Gunnery Skill",
-                "Icon": "uixSvgIcon_equipment_Cockpit"
-              },
-              "nature": "Buff",
-              "statisticData": {
-                "statName": "Gunnery",
-                "operation": "Int_Add",
-                "modValue": "1",
-                "modType": "System.Int32",
-                "targetCollection": "Pilot"
-              }
-            }
-          ]
-        },
-        {
-          "missionsRequired": 20,
-          "levelName": "Heavy Mech+",
-          "decription": "Familiarity with this 'Mech's role on the battlefield improves heat management (+3 Heat Sinking)",
-          "effectData": [
-            {
-              "Description": {
-                "Details": "Heavy 'Mech familiarity (+3 Heat Sinking)",
-                "Icon": "UixSvgIcon_specialEquip_System",
-                "Id": "StatusEffect-Affinity-HeavyMechBoost",
-                "Name": "Heavy Mech Affinity Defence Boost"
-              },
-              "durationData": {
-                "duration": -1,
-                "stackLimit": -1
-              },
-              "effectType": "StatisticEffect",
-              "nature": "Buff",
-              "statisticData": {
-                "additionalRules": "NotSet",
-                "modType": "System.Int32",
-                "modValue": "3",
-                "operation": "Int_Add",
-                "statName": "HeatSinkCapacity",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -11742,7 +11994,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -11750,11 +12002,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -11898,7 +12155,167 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 30,
+          "levelName": "Ballistic Platform+",
+          "decription": "Familiarity with this 'Mech's energy capabilities improves damage output (+5% Ballistic Weapon Damage)",
+          "effectData": [
+            {
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "Description": {
+                "Id": "Affinity_Ballistic_BallisticDamage",
+                "Name": "BattleMechAffinity",
+                "Details": "Ballistic weapons on this unit deal [AMT] more damage.",
+                "Icon": "UixSvgIcon_specialEquip_System"
+              },
+              "nature": "Buff",
+              "statisticData": {
+                "appliesEachTick": false,
+                "effectsPersistAfterDestruction": false,
+                "statName": "DamagePerShot",
+                "operation": "Float_Multiply",
+                "modValue": "1.05",
+                "modType": "System.Single",
+                "additionalRules": "NotSet",
+                "targetCollection": "Weapon",
+                "targetWeaponCategory": "Ballistic",
+                "targetWeaponType": "NotSet",
+                "targetAmmoCategory": "NotSet",
+                "targetWeaponSubType": "NotSet"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chassisNames": [
+        "chrprfmech_hollanderbase-001_45"
+      ],
+      "affinityLevels": [
+        {
+          "missionsRequired": 10,
+          "levelName": "Comfortable+",
+          "decription": "Proficiency with the balance of the chassis (+1 Piloting)",
+          "effectData": [
+            {
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "Description": {
+                "Id": "MechAffinityPiloting",
+                "Name": "Piloting Buff",
+                "Details": "Piloting Skill",
+                "Icon": "uixSvgIcon_equipment_Cockpit"
+              },
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "Piloting",
+                "operation": "Int_Add",
+                "modValue": "1",
+                "modType": "System.Int32",
+                "targetCollection": "Pilot"
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 50,
+          "levelName": "Second Nature+",
+          "decription": "Connection to the battle systems of this chassis (+1 Gunnery)",
+          "effectData": [
+            {
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "Description": {
+                "Id": "MechAffinityGunnery",
+                "Name": "Gunnery Buff",
+                "Details": "Gunnery Skill",
+                "Icon": "uixSvgIcon_equipment_Cockpit"
+              },
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "Gunnery",
+                "operation": "Int_Add",
+                "modValue": "1",
+                "modType": "System.Int32",
+                "targetCollection": "Pilot"
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 20,
+          "levelName": "Medium Mech+",
+          "decription": "Familiarity with this 'Mech's role on the battlefield improves survivability (+1 Hit Defence)",
+          "effectData": [
+            {
+              "Description": {
+                "Details": "Medium 'Mech familiarity (+1 Hit Defence)",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-MediumMechBoost",
+                "Name": "Medium Mech Affinity Defence Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "ToHitThisActor",
+                "operation": "Float_Add",
+                "modValue": "1",
+                "modType": "System.Single",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -12680,7 +13097,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -12688,11 +13105,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -12897,6 +13319,166 @@
     },
     {
       "chassisNames": [
+        "chrprfmech_brigandbase-001_25"
+      ],
+      "affinityLevels": [
+        {
+          "missionsRequired": 10,
+          "levelName": "Comfortable+",
+          "decription": "Proficiency with the balance of the chassis (+1 Piloting)",
+          "effectData": [
+            {
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "Description": {
+                "Id": "MechAffinityPiloting",
+                "Name": "Piloting Buff",
+                "Details": "Piloting Skill",
+                "Icon": "uixSvgIcon_equipment_Cockpit"
+              },
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "Piloting",
+                "operation": "Int_Add",
+                "modValue": "1",
+                "modType": "System.Int32",
+                "targetCollection": "Pilot"
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 50,
+          "levelName": "Second Nature+",
+          "decription": "Connection to the battle systems of this chassis (+1 Gunnery)",
+          "effectData": [
+            {
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "Description": {
+                "Id": "MechAffinityGunnery",
+                "Name": "Gunnery Buff",
+                "Details": "Gunnery Skill",
+                "Icon": "uixSvgIcon_equipment_Cockpit"
+              },
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "Gunnery",
+                "operation": "Int_Add",
+                "modValue": "1",
+                "modType": "System.Int32",
+                "targetCollection": "Pilot"
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 20,
+          "levelName": "Light Mech+",
+          "decription": "Familiarity with this 'Mech's role on the battlefield improves team coordination (+1 Resolve generation)",
+          "effectData": [
+            {
+              "Description": {
+                "Details": "Light 'Mech familiarity (+1 Resolve Gain)",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-LightMechBoost",
+                "Name": "Light Mech Affinity Morale Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "additionalRules": "NotSet",
+                "modType": "System.Int32",
+                "modValue": "1",
+                "operation": "Int_Add",
+                "statName": "MoraleBonusGainStackable",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 30,
+          "levelName": "Multi Range+",
+          "decription": "Familiarity with this 'Mech's multi combat role reduces weapon minimum range (-30m Minimum Range)",
+          "effectData": [
+            {
+              "Description": {
+                "Id": "Affinity_Energy_MinimumRangeReduce",
+                "Name": "BattleMechAffinity",
+                "Details": "Minimum weapon ranges reduced by 30m",
+                "Icon": "UixSvgIcon_specialEquip_System"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": 1
+              },
+              "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "Creator",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "effectsPersistAfterDestruction": false,
+                "statName": "MinRange",
+                "operation": "Float_Add",
+                "modValue": "-30.0",
+                "modType": "System.Single",
+                "additionalRules": "NotSet",
+                "targetCollection": "Weapon",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponType": "NotSet",
+                "targetAmmoCategory": "NotSet",
+                "targetWeaponSubType": "NotSet"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chassisNames": [
         "chrprfmech_bushwackerbase-001_55",
         "chrprfmech_swdbase-001_40"
       ],
@@ -13053,6 +13635,7 @@
     {
       "chassisNames": [
         "chrprfmech_orioniicbase-001_75",
+        "chrprfmech_toyamabase-001_75",
         "chrprfmech_valkyrieiibase-001_70"
       ],
       "affinityLevels": [
@@ -13366,7 +13949,8 @@
       "chassisNames": [
         "chrprfmech_chameleonbase-001_50",
         "chrprfmech_talosbase-001_50",
-        "chrprfmech_carronadebase-001_40"
+        "chrprfmech_carronadebase-001_40",
+        "chrprfmech_striderbase-001_40"
       ],
       "affinityLevels": [
         {
@@ -13768,7 +14352,7 @@
                 "modType": "System.Int32",
                 "modValue": "1",
                 "operation": "Int_Add",
-                "statName": "MoraleBonusGain",
+                "statName": "MoraleBonusGainStackable",
                 "targetAmmoCategory": "NotSet",
                 "targetCollection": "NotSet",
                 "targetWeaponCategory": "NotSet",
@@ -13776,11 +14360,16 @@
                 "targetWeaponType": "NotSet"
               },
               "targetingData": {
-                "effectTargetType": "Creator",
                 "effectTriggerType": "Passive",
-                "hideApplicationFloatie": true,
-                "showInStatusPanel": false,
-                "showInTargetPreview": false
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
               }
             }
           ]
@@ -14237,7 +14826,7 @@
     },
     {
       "chassisNames": [
-        "chrPrfMech_assassinBase-001_65",
+        "chrprfmech_ghostbase-001_65"
       ],
       "affinityLevels": [
         {
