@@ -1,7 +1,7 @@
 mechaffinity:
 added helepolis to dragon
 added lams
-goliath counts as atlas?
+added goliath to anni (atlas 80)
 
 xotl:
 added lams to comstar

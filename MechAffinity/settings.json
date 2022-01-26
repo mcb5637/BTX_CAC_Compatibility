@@ -1268,7 +1268,8 @@
     {
       "chassisNames": [
         "chrPrfMech_annihilatorBase-001_100",
-        "chrprfmech_ionbanebase-001_100"
+        "chrprfmech_ionbanebase-001_100",
+        "chrPrfMech_atlasBase-001_80"
       ],
       "affinityLevels": [
         {
