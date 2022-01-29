@@ -18,7 +18,7 @@
 			"isBaseMode": false,
 			"AccuracyModifier": -4,
 			"ShotsWhenFired": -1,
-			"RefireModifier": -4,
+			"RefireModifier": -6,
 			"HeatGenerated": -24
 		}
 	],

@@ -18,15 +18,15 @@
 			"isBaseMode": false,
 			"AccuracyModifier": -4,
 			"ShotsWhenFired": -1,
-			"RefireModifier": -4,
-			"HeatGenerated": -18
+			"RefireModifier": -2,
+			"HeatGenerated": -6
 		}
 	],
-	"MinRange": 0,
-	"MaxRange": 540,
+	"MinRange": 90,
+	"MaxRange": 600,
 	"RangeSplit": [
-		360,
-		360,
-		540
+		390,
+		390,
+		600
 	]
 }

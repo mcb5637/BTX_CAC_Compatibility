@@ -19,7 +19,7 @@
 			"AccuracyModifier": -4,
 			"ShotsWhenFired": -1,
 			"RefireModifier": -2,
-			"HeatGenerated": -8
+			"HeatGenerated": -12
 		}
 	],
 	"MinRange": 90,

@@ -18,8 +18,8 @@
 			"isBaseMode": false,
 			"AccuracyModifier": -4,
 			"ShotsWhenFired": -1,
-			"RefireModifier": -2,
-			"HeatGenerated": -8
+			"RefireModifier": -3,
+			"HeatGenerated": -18
 		}
 	],
 	"MinRange": 90,
