@@ -52,7 +52,7 @@
     "ComponentType": "Weapon",
     "ComponentSubType": "Weapon",
     "PrefabIdentifier": "AC20",
-    "InventorySize": 10,
+    "InventorySize": 8,
     "Tonnage": 15,
     "AllowedLocations": "All",
     "DisallowedLocations": "All",
