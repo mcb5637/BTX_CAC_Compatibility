@@ -12,7 +12,7 @@
   "ammoCategoryID": "LB20X",
   "StartingAmmoCapacity": 0,
   "HeatGenerated": 20,
-  "Damage": 120,
+  "Damage": 0,
   "OverheatedDamageMultiplier": 0,
   "EvasiveDamageMultiplier": 0,
   "EvasivePipsIgnored": 0,
@@ -26,7 +26,7 @@
   "ShotsWhenFired": 1,
   "ProjectilesPerShot": 1,
   "AttackRecoil": 4,
-  "Instability": 72,
+  "Instability": 0,
   "ImprovedBallistic": true,
   "WeaponEffectID": "WeaponEffect-Weapon_LB20X",
   "Description": {
@@ -41,7 +41,7 @@
     "Details": "Delivering massive cluster rounds of stability damage with each volley, the LB 20-X smashes its opponents into the ground at short range and strips armor away in hunks. Like all LB-X Autocannons, the LB 20-X fires cluster munitions and suffers recoil from continuous fire.",
     "Icon": "uixSvgIcon_weapon_Ballistic"
   },
-  "BonusValueA": "+ 12 Stb.Dmg.",
+  "BonusValueA": "+ 12/10 Stb.Dmg.",
   "BonusValueB": "- 1 Ton",
   "ComponentType": "Weapon",
   "ComponentSubType": "Weapon",
@@ -64,5 +64,34 @@
       "BLACKLISTED"
     ],
     "tagSetSourceFile": ""
-  }
+  },
+  "Modes": [
+    {
+      "Id": "LBXMode_Cluster",
+      "UIName": "LB-X",
+      "Name": "LB-X Mode",
+      "Description": "LB-X Mode fires LBX Cluster ammunition.",
+      "isBaseMode": true,
+      "DamagePerShot": 120,
+      "Instability": 72,
+      "HasShells": true,
+      "MinShellsDistance": 30,
+      "MaxShellsDistance": 100,
+      "UnseparatedDamageMult": 0.8,
+      "HitGenerator": "Cluster",
+      "ProjectilesPerShot": 5
+    },
+    {
+      "Id": "LBXMode_Slug",
+      "UIName": "AC",
+      "Name": "AC Mode",
+      "Description": "AC Mode fires AC Slug ammunition.",
+      "isBaseMode": false,
+      "DamagePerShot": 100,
+      "Instability": 30,
+      "WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
+      "HasShells": false,
+      "AmmoCategory": "AC20"
+    }
+  ]
 }

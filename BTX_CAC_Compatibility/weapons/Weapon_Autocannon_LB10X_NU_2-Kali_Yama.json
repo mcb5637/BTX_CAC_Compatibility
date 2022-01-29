@@ -1,15 +1,44 @@
 {
   "ShotsWhenFired": 1,
   "VolleyDivisor": 1,
-  "Damage": 88,
-  "Instability": 32,
+  "Damage": 0,
+  "Instability": 0,
   "ImprovedBallistic": true,
-  "BonusValueA": "+ 16 Dmg.",
+  "BonusValueA": "+ 16/10 Dmg.",
   "MinRange": 0,
   "MaxRange": 540,
   "RangeSplit": [
     360,
     360,
     540
+  ],
+  "Modes": [
+    {
+      "Id": "LBXMode_Cluster",
+      "UIName": "LB-X",
+      "Name": "LB-X Mode",
+      "Description": "LB-X Mode fires LBX Cluster ammunition.",
+      "isBaseMode": true,
+      "DamagePerShot": 88,
+      "Instability": 32,
+      "HasShells": true,
+      "MinShellsDistance": 40,
+      "MaxShellsDistance": 100,
+      "UnseparatedDamageMult": 0.8,
+      "HitGenerator": "Cluster",
+      "ProjectilesPerShot": 7
+    },
+    {
+      "Id": "LBXMode_Slug",
+      "UIName": "AC",
+      "Name": "AC Mode",
+      "Description": "AC Mode fires AC Slug ammunition.",
+      "isBaseMode": false,
+      "DamagePerShot": 70,
+      "Instability": 10,
+      "WeaponEffectID": "WeaponEffect-Weapon_AC10_Single",
+      "HasShells": false,
+      "AmmoCategory": "AC10"
+    }
   ]
 }
