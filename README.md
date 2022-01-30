@@ -3,37 +3,15 @@
 Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
-- Download CustomBundle https://github.com/BattletechModders/CustomBundle		(0.3.12)
-	- Direct download link: https://github.com/BattletechModders/CustomBundle/archive/refs/tags/0.3.12.zip
-- Download IRTweaks https://github.com/BattletechModders/IRTweaks				(REL_0.9.4.7)
-	- Direct download link: https://github.com/BattletechModders/IRTweaks/releases/download/REL_0.9.4.7/IRTweaks-0.9.4.7.zip
-- Download IRBTModUtils https://github.com/BattletechModders/IRBTModUtils		(REL_1.12.0)
-	- Direct download link: https://github.com/BattletechModders/IRBTModUtils/releases/download/REL_1.12.0/IRBTModUtils-1.12.0.zip
-- Download MissionControl https://github.com/CWolfs/MissionControl				(version v1.3.0)
-	- Direct download link: https://github.com/CWolfs/MissionControl/releases/download/v1.3.0/MissionControl-v1.3.0.zip
-- updade MissionControl by
-	- replace files from the MissionControl zip to your current BEX Installation
-		- MissionControl/MissionControl.dll
-		- MissionControl/mod.json
-		- MissionControl/config/Contracts/My_FP_Contract_ID_Example.json
-		- MissionControl/contractTypeBuilds/Blackout/common.jsonc
-		- MissionControl/contractTypeBuilds/Blackout/mountainhold_lunar.jsonc
-		- MissionControl/contractTypeBuilds/DuoDuel/common.jsonc
-		- MissionControl/contractTypeBuilds/SoloDuel/common.jsonc
-		- MissionControl/overrides/contracts/duoduel/DuoDuel_FestiveCouple.json
-		- MissionControl/overrides/contracts/duoduel/DuoDuel_YearlyTussle.json
-	- if you are updating your installation: delete everything in MissionControl/config/Contracts except My_Contract_ID_Example.json and My_FP_Contract_ID_Example.json
-	- (the settings json will be updated below, when you copy over BTX_CAC_Compatibility)
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
-- Remove FewerHeadInjuries from your BTX install (IRTweaks is configured to to the same, just better)
-- Add IRBTModUtils and IRTweaks to your mods folder
-- Add CustomAmmoCategories, CustomComponents, CustomLocalization, CustomActivatableEquipment and CustomUnits to your mods folder (only add these 5 from CustomBundle, the rest is not needed)
-- Remove the folder CustomAmmoCategories/StreamingAssets
-- Add BTX_CAC_Compatibility, overriding files from anything previously mentioned and MissionControl and BiggerDrops
-- If you updated CAB recently (first reported 2.9.21, might be there for a few days before that), you have to reset the CAB-CU and CAB-Misc (in both cases, remove the current folder, then copy in the old one):
-	- replace it with these ones: CU https://github.com/BattletechModders/Community-Asset-Bundle-CustomUnits/archive/cef38ffefa137ac7557a211194e9c5e14de8e4ae.zip,
-		Misc https://github.com/BattletechModders/Community-Asset-Bundle-Miscellaneous/archive/5a00631b8ba3a3d2bf6dd8e4662eff694ebfc520.zip
-	- or (if you know your way around git) reset the CAB-CU in your CAB cache to commit cef38ffefa137ac7557a211194e9c5e14de8e4ae, and CAB-Misc to 5a00631b8ba3a3d2bf6dd8e4662eff694ebfc520 and copy them over
+- Add BTX_CAC_Compatibility, overriding files
+- Reset CAB-CU and CAB-Misc (in both cases, remove the current folder, then copy in the old one):
+	- CAB-CU:
+		- https://github.com/BattletechModders/Community-Asset-Bundle-CustomUnits/archive/cef38ffefa137ac7557a211194e9c5e14de8e4ae.zip
+		- or (if you know your way around git) checkout commit cef38ffefa137ac7557a211194e9c5e14de8e4ae
+	- CAB-Misc:
+		- https://github.com/BattletechModders/Community-Asset-Bundle-Miscellaneous/archive/5a00631b8ba3a3d2bf6dd8e4662eff694ebfc520.zip
+		- or (if you know your way around git) checkout commit 5a00631b8ba3a3d2bf6dd8e4662eff694ebfc520
 
 
 Component list (Clan & SLDF ones included):
@@ -44,15 +22,18 @@ Component list (Clan & SLDF ones included):
         - Snub PPC: 5 projectiles, damage falloff over medium range, upgraded version have extra mode with 1 projectile
         - Laser: -
         - ER Laser: -
+		- Heavy Laser: -
         - Pulse Laser: fixed animation
         - Tag: attacking a tagged unit has an +3 accuracy boost, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
         - Flamer: added forestfires
     - Ballistic
         - AC: fixed firing speed, only one visual projectile
-        - LBX: added cluster/slug ammo, cluster ammo uses CAC shells instead of multiple projectiles, small range increase (to TT values)
-        - UAC: fixed firing speed, only one visual projectile, added AC mode (1 shot, but +4 acc), minimal range increase (to TT values)
+        - LBX: AC mode to fire AC ammo (slugs), cluster ammo uses CAC shells instead of multiple projectiles, small range increase (to TT values)
+        - UAC: fixed firing speed, only one visual projectile, added AC mode (1 shot, but +4 acc, lowered recoil, quartered (halved for 20s) heat, minimal range increase (to TT values)
         - Gauss: -
 		- Silver Bullet Gauss: fixed multiple projectiles
+		- Heavy Gauss: -
+		- Light Gauss: -
         - MG: added double speed mode (double shots, -4 acc, +5 heat)
 		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance / can be used as MG)
     - Missle
@@ -132,6 +113,15 @@ Known bugs:
 Optional:
 - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
 - manual deployment can be enabled via CU, set "DeployManual": to true to do so (warning: laggy)
+
+Manual setup:
+- clone git repo, including submodules
+- correct paths in dll
+- compile
+Package for release:
+- update version info in mod.json and dll
+- compile as release
+- use pack.bat
  
 Credits:
 - CMiSSioN for CustomBundle
@@ -141,3 +131,4 @@ Credits:
 - lordruthermore for half working Goliath jsons
 - Pode for half working LAM jsons
 - Pode/bhtrail for looking up mech loadouts
+- Hounfor + Graywolfe for helping updating to BTX 1.9.3
