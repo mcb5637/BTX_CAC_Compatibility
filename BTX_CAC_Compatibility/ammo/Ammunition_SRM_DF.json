@@ -1,0 +1,31 @@
+{
+  "Description": {
+    "Id": "Ammunition_SRM_DF",
+    "Name": "SRM DF Ammo",
+    "Details": "Short range missiles, capable of dealing heavy damage at close range via shaped charge warheads.",
+    "Icon": null,
+    "Cost": 0,
+    "Rarity": 0,
+    "Purchasable": false
+  },
+  "ammunitionTypeID": "Normal",
+  "Category": "SRM",
+  "HeatGenerated": 0,
+  "HeatGeneratedModifier": 1,
+  "ArmorDamageModifier": 1,
+  "ISDamageModifier": 1,
+  "CriticalDamageModifier": 1,
+  "HitGenerator": "Individual",
+  "AccuracyModifier": 2,
+  "DamagePerShot": 4,
+  "Instability": 1,
+  "MinRange": 30,
+  "MaxRange": -90,
+  "ShortRange": 30,
+  "MediumRange": -60,
+  "LongRange": -90,
+  "IndirectFireCapable": false,
+  "Unguided": true,
+  "AMSHitChance": 0.5,
+  "MissileHealth": 1
+}

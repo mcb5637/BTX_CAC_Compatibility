@@ -1,0 +1,31 @@
+{
+  "Description": {
+    "Id": "Ammunition_LRM_DF",
+    "Name": "LRM DF Ammo",
+    "Details": "Long range missiles, capable of dealing moderate damage at long range. Each missile lacks punch, but in a group they can deal significant damage.",
+    "Icon": null,
+    "Cost": 0,
+    "Rarity": 0,
+    "Purchasable": false
+  },
+  "ammunitionTypeID": "Normal",
+  "Category": "LRM",
+  "HeatGenerated": 0,
+  "HeatGeneratedModifier": 1,
+  "ArmorDamageModifier": 1,
+  "ISDamageModifier": 1,
+  "CriticalDamageModifier": 1,
+  "HitGenerator": "Individual",
+  "AccuracyModifier": 3,
+  "DamagePerShot": 4,
+  "Instability": 1,
+  "MinRange": -60,
+  "MaxRange": -180,
+  "ShortRange": -60,
+  "MediumRange": -120,
+  "LongRange": -180,
+  "IndirectFireCapable": false,
+  "Unguided": true,
+  "AMSHitChance": 0.5,
+  "MissileHealth": 1
+}

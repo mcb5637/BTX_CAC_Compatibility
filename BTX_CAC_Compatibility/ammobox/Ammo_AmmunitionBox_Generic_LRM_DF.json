@@ -1,0 +1,37 @@
+{
+  "AmmoID": "Ammunition_LRM_DF",
+  "Capacity": 120,
+  "Description": {
+    "Cost": 20000,
+    "Rarity": 0,
+    "Purchasable": true,
+    "Manufacturer": "Generic",
+    "Model": "LRM",
+    "UIName": "LRM Deadfire Ammo",
+    "Id": "Ammo_AmmunitionBox_Generic_LRM_DF",
+    "Name": "LRM Deadfire Ammo",
+    "Details": "Dead-Fire Missiles are one of the most effective weapons to emerge from a search to find cheaper alternatives to the spiraling costs of conventional military hardware in the wake of the Clan Invasion. The Dead-Fire missile lacks any internal guidance system because they are generally the most expensive component, and their removal made the new missile substantially cheaper to produce but at the expense of accuracy and clustering. Weight savings enabled manufacturers to pack the warheads with more explosives, giving the DF missile nearly twice the punch of its standard cousins although range is compromised. Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nLRM Ammo Bins each contain 120 rounds and may feed multiple weapons.",
+    "Icon": "uixSvgIcon_ammoBox_Missile"
+  },
+  "BonusValueA": "+ 4 Dmg., +1 Stab. Dmg.",
+  "BonusValueB": "- 3 Acc., - 60/180 Range",
+  "ComponentType": "AmmunitionBox",
+  "ComponentSubType": "Ammunition",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 1,
+  "Tonnage": 1,
+  "CanExplode": true,
+  "AllowedLocations": "All",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "statusEffects": [
+
+  ],
+  "ComponentTags": {
+    "items": [
+      "component_type_stock"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

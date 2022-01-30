@@ -1,121 +1,179 @@
 ﻿{
-	"Name": "BTX_CAC_Compatibility",
-	"Enabled": true,
+  "Name": "BTX_CAC_Compatibility",
+  "Enabled": true,
 
-	"Description": "Modifies BTX (and BTXMinusWeapons) for CAC.",
-	"Author": "mcb",
-	"Website": "",
-	"Version": "0.1.18.4",
+  "Description": "Modifies BTX (and BTXMinusWeapons) for CAC.",
+  "Author": "mcb",
+  "Website": "",
+  "Version": "0.1.18.4",
 
-	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks", "Custom Ammo Categories", "CustomActivatableEquipment", "CustomUnits", "IRTweaks" ],
-	"OptionallyDependsOn": [ "BTXMinusWeapons" ],
-	"ConflictsWith": [ "MechResizer", "BTMLColorLOSMod" ],
-	
-	"DLL": "BTX_CAC_CompatibilityDll.dll",
-	
-	"Settings": {
-		"Use4LimitOnContractIds": [ "uw1_4_destroyBase", "tournament_1_3wayBattle", "tournament_a1_3wayBattle", "Story_6B_TreasureTrove_Default", "Story_9_Downfall_Default" ],
-		"ReplaceInItemCollections": {
-			"Weapon_Inferno_Inferno2_0-STOCK": { "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno", "Type": "AmmunitionBox" },
-			"Weapon_Inferno_Inferno2_1-Harvester": { "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno", "Type": "AmmunitionBox" },
-			"Weapon_Inferno_Inferno2_2-Marklin_Mini": { "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno", "Type": "AmmunitionBox" },
-			"mechdef_griffin_GRF-4N_fp_greed": { "ID": "mechdef_griffin_GRF-4N", "Type": "" },
-			"Gear_Mortar_MechMortar": { "ID": "Weapon_MortarCAC_ThumperFree", "Type": "Weapon" },
-      "Gear_Sensor_Prototype_ActiveProbe": { "ID": "Gear_SensorCAC_LiaoProtoAP", "Type": "" },
-      "Gear_Sensor_Prototype_ECM": { "ID": "Gear_SensorCAC_LiaoProtoECM", "Type": "" },
-			"Gear_AMS_Cal-Boeing": { "ID": "Weapon_AMSCAC_0", "Type": "Weapon" },
-			"Gear_AMS_Blankenburg": { "ID": "Weapon_AMSCAC_1", "Type": "Weapon" },
-			"Gear_AMS_Pinard": { "ID": "Weapon_AMSCAC_2", "Type": "Weapon" }
-		}
-	},
-	
-	"DataAddendumEntries": [ 
-        {
-			"name": "BattleTech.AmmoCategoryEnumeration",
-			"path": "enums/AmmoCategory.json"
-		}
-	],
-	
-	"Manifest": [
-		{
-		  "Type": "WeaponDef",
-		  "Path": "weapons",
-		  "ShouldMergeJSON": true
-		},
-		{
-		  "Type": "WeaponDef",
-		  "Path": "weaponoverride"
-		},
-		{
-		  "Type": "AmmunitionDef",
-		  "Path": "ammo"
-		},
-		{
-		  "Type": "AmmunitionBoxDef",
-		  "Path": "ammobox"
-		},
-		{
-		  "Type": "ItemCollectionDef",
-		  "Path": "itemCollectionAppend",
-		  "ShouldAppendText": true
-		},
-		{
-		  "Type": "ItemCollectionDef",
-		  "Path": "itemCollectionAdd"
-		},
-		{
+  "DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks", "Custom Ammo Categories", "CustomActivatableEquipment", "CustomUnits", "IRTweaks" ],
+  "OptionallyDependsOn": [ "BTXMinusWeapons" ],
+  "ConflictsWith": [ "MechResizer", "BTMLColorLOSMod" ],
+
+  "DLL": "BTX_CAC_CompatibilityDll.dll",
+
+  "Settings": {
+    "Use4LimitOnContractIds": [ "uw1_4_destroyBase", "tournament_1_3wayBattle", "tournament_a1_3wayBattle", "Story_6B_TreasureTrove_Default", "Story_9_Downfall_Default" ],
+    "ReplaceInItemCollections": {
+      "Weapon_Inferno_Inferno2_0-STOCK": {
+        "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
+        "Type": "AmmunitionBox"
+      },
+      "Weapon_Inferno_Inferno2_1-Harvester": {
+        "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
+        "Type": "AmmunitionBox"
+      },
+      "Weapon_Inferno_Inferno2_2-Marklin_Mini": {
+        "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
+        "Type": "AmmunitionBox"
+      },
+      "mechdef_griffin_GRF-4N_fp_greed": {
+        "ID": "mechdef_griffin_GRF-4N",
+        "Type": ""
+      },
+      "Gear_Mortar_MechMortar": {
+        "ID": "Weapon_MortarCAC_ThumperFree",
+        "Type": "Weapon"
+      },
+      "Gear_Sensor_Prototype_ActiveProbe": {
+        "ID": "Gear_SensorCAC_LiaoProtoAP",
+        "Type": ""
+      },
+      "Gear_Sensor_Prototype_ECM": {
+        "ID": "Gear_SensorCAC_LiaoProtoECM",
+        "Type": ""
+      },
+      "Gear_AMS_Cal-Boeing": {
+        "ID": "Weapon_AMSCAC_0",
+        "Type": "Weapon"
+      },
+      "Gear_AMS_Blankenburg": {
+        "ID": "Weapon_AMSCAC_1",
+        "Type": "Weapon"
+      },
+      "Gear_AMS_Pinard": {
+        "ID": "Weapon_AMSCAC_2",
+        "Type": "Weapon"
+      },
+      "Weapon_LRM_DFLRM5_0-STOCK": {
+        "ID": "Ammo_AmmunitionBox_Generic_LRM_DF",
+        "Type": "AmmunitionBox"
+      },
+      "Weapon_LRM_DFLRM10_0-STOCK": {
+        "ID": "Ammo_AmmunitionBox_Generic_LRM_DF",
+        "Type": "AmmunitionBox"
+      },
+      "Weapon_LRM_DFLRM15_0-STOCK": {
+        "ID": "Ammo_AmmunitionBox_Generic_LRM_DF",
+        "Type": "AmmunitionBox"
+      },
+      "Weapon_LRM_DFLRM20_0-STOCK": {
+        "ID": "Ammo_AmmunitionBox_Generic_LRM_DF",
+        "Type": "AmmunitionBox"
+      },
+      "Weapon_SRM_DFSRM2_0-STOCK": {
+        "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
+        "Type": "AmmunitionBox"
+      },
+      "Weapon_SRM_DFSRM4_0-STOCK": {
+        "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
+        "Type": "AmmunitionBox"
+      },
+      "Weapon_SRM_DFSRM6_0-STOCK": {
+        "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
+        "Type": "AmmunitionBox"
+      }
+    }
+  },
+
+  "DataAddendumEntries": [
+    {
+      "name": "BattleTech.AmmoCategoryEnumeration",
+      "path": "enums/AmmoCategory.json"
+    }
+  ],
+
+  "Manifest": [
+    {
+      "Type": "WeaponDef",
+      "Path": "weapons",
+      "ShouldMergeJSON": true
+    },
+    {
+      "Type": "WeaponDef",
+      "Path": "weaponoverride"
+    },
+    {
+      "Type": "AmmunitionDef",
+      "Path": "ammo"
+    },
+    {
+      "Type": "AmmunitionBoxDef",
+      "Path": "ammobox"
+    },
+    {
+      "Type": "ItemCollectionDef",
+      "Path": "itemCollectionAppend",
+      "ShouldAppendText": true
+    },
+    {
+      "Type": "ItemCollectionDef",
+      "Path": "itemCollectionAdd"
+    },
+    {
       "Type": "ShipModuleUpgrade",
       "Path": "shipUpgrades"
     },
-		{
-		  "Type": "AdvancedJSONMerge",
-		  "Path": "advancedMerge"
-		},
-		{
-		  "Type": "ChassisDef",
-		  "Path": "chassis",
+    {
+      "Type": "AdvancedJSONMerge",
+      "Path": "advancedMerge"
+    },
+    {
+      "Type": "ChassisDef",
+      "Path": "chassis",
       "AddToDB": true
-		},
-		{
-		  "Type": "ChassisDef",
-		  "Path": "chassismerge",
-		  "ShouldMergeJSON": true
-		},
-		{
-		  "Type": "MechDef",
-		  "Path": "mech",
+    },
+    {
+      "Type": "ChassisDef",
+      "Path": "chassismerge",
+      "ShouldMergeJSON": true
+    },
+    {
+      "Type": "MechDef",
+      "Path": "mech",
       "AddToDB": true
-		},
-		{
-		  "Type": "JumpJetDef",
-		  "Path": "jumpjets"
-		},
-		{
-		  "Type": "UpgradeDef",
-		  "Path": "upgradesNew"
-		},
-		{
-		  "Type": "UpgradeDef",
-		  "Path": "upgradesMerge",
-		  "ShouldMergeJSON": true
-		},
-		{
-		  "Type": "AbilityDef",
-		  "Path": "abilityNew"
-		},
+    },
+    {
+      "Type": "JumpJetDef",
+      "Path": "jumpjets"
+    },
+    {
+      "Type": "UpgradeDef",
+      "Path": "upgradesNew"
+    },
+    {
+      "Type": "UpgradeDef",
+      "Path": "upgradesMerge",
+      "ShouldMergeJSON": true
+    },
+    {
+      "Type": "AbilityDef",
+      "Path": "abilityNew"
+    },
     {
       "Type": "GameTip",
       "Path": "GameTips",
       "ShouldAppendText": true
     },
-		{
-		  "Type": "Sprite",
-		  "Path": "sprites"
-		},
-		{
-		  "Type": "StarSystemDef",
-		  "Path": "starsystems",
-		  "ShouldMergeJSON": true
-		}
-	]
+    {
+      "Type": "Sprite",
+      "Path": "sprites"
+    },
+    {
+      "Type": "StarSystemDef",
+      "Path": "starsystems",
+      "ShouldMergeJSON": true
+    }
+  ]
 }
