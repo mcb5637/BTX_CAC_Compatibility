@@ -1,6 +1,6 @@
 {
 	"ImprovedBallistic": true,
-	"MissileVolleySize": 2,
+	"MissileVolleySize": 4,
 	"MissileFiringIntervalMultiplier": 1,
 	"MissileVolleyIntervalMultiplier": 1,
 	"FireDelayMultiplier": 1,
