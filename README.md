@@ -37,11 +37,11 @@ Component list (Clan & SLDF ones included):
         - MG: added double speed mode (double shots, -4 acc, +5 heat)
 		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance / can be used as MG)
     - Missle
-        - LRM: added hotload mode
-        - Artemis IV LRM: added hotload mode, changed acc to +4 in direct fire (+0 indirect), added clustering
-        - SRM: added inferno ammo (inferno causes fires everywhere)
-        - Artemis IV SRM: added inferno ammo, added clustering, +4 acc
-        - Streak SRM: added inferno ammo, added streak effect+clustering
+        - LRM: added hotload mode, added Deadfire ammo
+        - Artemis IV LRM: added hotload mode, changed acc to +4 in direct fire (+0 indirect), added Deadfire ammo
+        - SRM: added inferno ammo (inferno causes fires everywhere), added Deadfire ammo
+        - Artemis IV SRM: added inferno ammo, +4 acc, added Deadfire ammo
+        - Streak SRM: added inferno ammo, added streak effect, added Deadfire ammo
         - NARC: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 2 to 4 rounds (depends on launcher), ecm blocks narc acc bonus
         - ATM: added 3 ammo types, trading damage for range, added clustering
         - Infernos: Broken, use SRM inferno ammo instead
