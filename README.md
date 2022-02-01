@@ -46,6 +46,7 @@ Component list (Clan & SLDF ones included):
         - ATM: added 3 ammo types, trading damage for range, added clustering
         - Infernos: Broken, use SRM inferno ammo instead
 		- MRM: individual hit generator, unguided flag
+		- RL: individual hit generator, unguided flag
     - Artillery
         - Thumper: light artillery (replaces HM mortar / + version for Bull Shark)
         - Sniper: medium artillery (found in mining shops)
