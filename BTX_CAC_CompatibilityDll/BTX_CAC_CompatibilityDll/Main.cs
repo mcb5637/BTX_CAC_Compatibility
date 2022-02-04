@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-[assembly: AssemblyVersion("0.1.18.4")]
+[assembly: AssemblyVersion("0.1.19.0")]
 
 namespace BTX_CAC_CompatibilityDll
 {
