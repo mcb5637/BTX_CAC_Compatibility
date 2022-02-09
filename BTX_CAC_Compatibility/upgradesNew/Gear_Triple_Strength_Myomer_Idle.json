@@ -15,7 +15,7 @@
     "Icon": "uixSvgIcon_special_Equipment"
   },
   "BonusValueA": "* 2 Melee Damage / + 60 m Movement",
-  "BonusValueB": "at 27+ heat",
+  "BonusValueB": "at 27+ Heat",
   "ComponentType": "Upgrade",
   "ComponentSubType": "NotSet",
   "PrefabIdentifier": "",

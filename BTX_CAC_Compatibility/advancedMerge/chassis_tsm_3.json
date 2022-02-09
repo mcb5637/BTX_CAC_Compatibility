@@ -1,0 +1,14 @@
+{
+  "TargetIDs": [
+    "chassisdef_vindicator_VND-5L"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Triple_Strength_Myomer_3' && @MountedLocation != 'LeftTorso')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Gear_Triple_Strength_Myomer_3_Idle"
+      }
+    }
+  ]
+}

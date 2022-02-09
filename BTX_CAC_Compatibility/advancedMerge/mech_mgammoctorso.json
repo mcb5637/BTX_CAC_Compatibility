@@ -2,7 +2,8 @@
   "TargetIDs": [
     "mechdef_cerberus_MR-V2",
     "mechdef_berserker_BRZ-A3",
-    "mechdef_berserker_BRZ-B3"
+    "mechdef_berserker_BRZ-B3",
+	"mechdef_penetrator_PTR-6S"
   ],
   "Instructions": [
     {

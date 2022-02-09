@@ -2,7 +2,8 @@
   "TargetIDs": [
     "mechdef_dasher_fire_moth-A",
     "mechdef_phoenixhawk_PXH-3D",
-    "mechdef_grandtitan_T-IT-N10M"
+    "mechdef_grandtitan_T-IT-N10M",
+	"mechdef_firefly_FFL-4C"
   ],
   "Instructions": [
     {

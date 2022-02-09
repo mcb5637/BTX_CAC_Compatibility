@@ -1,14 +1,13 @@
 {
   "TargetIDs": [
-    "chassisdef_raven_RVN-3L",
-	"chassisdef_nighthawk_NTK-2S"
+    "chassisdef_perseus_P1D"
   ],
   "Instructions": [
     {
       "JSONPath": "$.FixedEquipment",
       "Action": "ArrayAdd",
       "Value": {
-        "MountedLocation": "LeftTorso",
+        "MountedLocation": "LeftLeg",
         "ComponentDefID": "Gear_SensorCAC_BeagleHC",
         "SimGameUID": "",
         "ComponentDefType": "Upgrade",
@@ -24,7 +23,7 @@
       "JSONPath": "$.FixedEquipment",
       "Action": "ArrayAdd",
       "Value": {
-        "MountedLocation": "LeftTorso",
+        "MountedLocation": "LeftLeg",
         "ComponentDefID": "Gear_SensorCAC_GuardianHC",
         "SimGameUID": "",
         "ComponentDefType": "Upgrade",

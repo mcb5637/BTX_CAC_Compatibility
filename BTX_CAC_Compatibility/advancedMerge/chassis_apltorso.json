@@ -2,7 +2,8 @@
   "TargetIDs": [
     "chassisdef_dragonfly_viper-PRIME",
     "chassisdef_nobori-nin_huntsman-PRIME",
-    "chassisdef_bushwacker_BSW-S2"
+    "chassisdef_bushwacker_BSW-S2",
+	"chassisdef_falcon_FLC-4P"
   ],
   "Instructions": [
     {
