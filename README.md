@@ -48,6 +48,7 @@ Component list (Clan & SLDF ones included):
         - Infernos: Broken, use SRM inferno ammo instead
 		- MRM: individual hit generator, unguided flag
 		- RL: individual hit generator, unguided flag
+		- iNarc: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 2 to 4 rounds (depends on launcher), ecm blocks narc acc bonus
     - Artillery
         - Thumper: light artillery (replaces HM mortar / + version for Bull Shark)
         - Sniper: medium artillery (found in mining shops)
