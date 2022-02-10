@@ -1,6 +1,7 @@
 {
   "TargetIDs": [
-    "mechdef_uller_kit_fox-E"
+    "mechdef_uller_kit_fox-E",
+	"mechdef_daishi_dire_wolf-X"
   ],
   "Instructions": [
     {

@@ -28,7 +28,10 @@
     "mechdef_atlas_AS7-CM",
     "mechdef_atlas_AS7-K",
 	"mechdef_falcon_FLC-4P",
-	"mechdef_penetrator_PTR-6M"
+	"mechdef_penetrator_PTR-6M",
+	"mechdef_grendel_mongrel-C",
+	"mechdef_loki_hellbringer-J",
+	"mechdef_thor_summoner-H"
   ],
   "Instructions": [
     {

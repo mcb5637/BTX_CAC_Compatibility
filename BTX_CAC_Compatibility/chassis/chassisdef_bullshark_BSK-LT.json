@@ -211,12 +211,34 @@
     ],
     "VariantName": "BSK-LT",
     "ChassisTags": {
-        "items": [],
+        "items": [
+			"chassis_DHS",
+			"chassis_endo",
+			"chassis_clan"
+		],
         "tagSetSourceFile": ""
     },
     "StockRole": "Heavy Artillery",
     "YangsThoughts": "Well my experiment worked. We have a mech with a mounted Long Tom Artillery piece.",
     "FixedEquipment": [
+		{
+			"MountedLocation": "LeftTorso",
+			"ComponentDefID": "Gear_XL_Engine_Clan",
+			"ComponentDefType": "HeatSink",
+			"HardpointSlot": -1,
+			"IsFixed": true,
+			"DamageLevel": "Functional",
+			"hasPrefabName": false
+		},
+		{
+			"MountedLocation": "RightTorso",
+			"ComponentDefID": "Gear_XL_Engine_Clan",
+			"ComponentDefType": "HeatSink",
+			"HardpointSlot": -1,
+			"IsFixed": true,
+			"DamageLevel": "Functional",
+			"hasPrefabName": false
+		},
         {
             "MountedLocation": "RightTorso",
             "ComponentDefID": "Weapon_MortarCAC_LongTom",

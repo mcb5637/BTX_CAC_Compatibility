@@ -17,7 +17,11 @@
     "mechdef_mad_cat_timber_wolf-C",
     "mechdef_kingfisher-B",
     "mechdef_gladiator_executioner-B",
-    "mechdef_daishi_dire_wolf-A"
+    "mechdef_daishi_dire_wolf-A",
+	"mechdef_grendel_mongrel-C",
+	"mechdef_koshi_mist_lynx-H",
+	"mechdef_loki_hellbringer-J",
+	"mechdef_thor_summoner-H"
   ],
   "Instructions": [
     {
