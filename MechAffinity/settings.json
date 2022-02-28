@@ -10257,7 +10257,8 @@
     },
     {
       "chassisNames": [
-        "chrprfmech_maulerbase-001_90"
+        "chrprfmech_maulerbase-001_90",
+		"chrprfmech_stonerhinobase-001_100"
       ],
       "affinityLevels": [
         {

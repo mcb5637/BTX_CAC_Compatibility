@@ -103,18 +103,33 @@ What to do when adding CAC-C into an existing savegame:
 	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
 
 TODO List:
+- modtek upgrade
+	- check if it works
+	- compupgrader remove
+- cb upgrade
+	- switch submodule
+	- check if it works
+- ECCM
+- quad critable arm actuators to leg actuators
+- coolant pods CAE
+- narc/inarc ammo types
+- imp sensor unlocks sensorlock without skill (add to irtweaks, add hospitalfix as well)
+- multitarget quirk unlocks without skill? (irtweaks stat)
+- ac projectiles per shot, if possible
+- a-pods CAE?
+- artillery mounting rework
 - edit texts
 - vehicle updates (inferno?)
 - NARC reveals target?
 - Flamers & Inferno ammo balance
 - ECM tohit balance
-- ac projectiles per shot, if possible
 - new mechs: LAMs
 
 Known bugs:
 - CustomLoc patchig strings
 
 Optional:
+- i recommend having a look at BT_Extended_CE/mod.json settings and enable some of these in all modes
 - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
 - manual deployment can be enabled via CU, set "DeployManual": to true to do so (warning: laggy)
 
