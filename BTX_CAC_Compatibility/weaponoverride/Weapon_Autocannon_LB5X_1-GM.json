@@ -12,7 +12,7 @@
   "ammoCategoryID": "LB5X",
   "StartingAmmoCapacity": 0,
   "HeatGenerated": 6,
-  "Damage": 0,
+  "Damage": 60,
   "OverheatedDamageMultiplier": 0,
   "EvasiveDamageMultiplier": 0,
   "EvasivePipsIgnored": 0,
@@ -26,7 +26,7 @@
   "ShotsWhenFired": 1,
   "ProjectilesPerShot": 1,
   "AttackRecoil": 2,
-  "Instability": 0,
+  "Instability": 40,
   "ImprovedBallistic": true,
   "WeaponEffectID": "WeaponEffect-Weapon_LB5X",
   "Description": {
@@ -65,6 +65,7 @@
     ],
     "tagSetSourceFile": ""
   },
+  "FireDelayMultiplier": 1,
   "Modes": [
     {
       "Id": "LBXMode_Cluster",
@@ -87,8 +88,8 @@
       "Name": "AC Mode",
       "Description": "AC Mode fires AC Slug ammunition.",
       "isBaseMode": false,
-      "DamagePerShot": 45,
-      "Instability": 15,
+      "DamagePerShot": -15,
+      "Instability": -25,
       "WeaponEffectID": "WeaponEffect-Weapon_AC5_Single",
       "HasShells": false,
       "AmmoCategory": "AC5"

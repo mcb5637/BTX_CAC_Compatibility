@@ -12,7 +12,7 @@
   "ammoCategoryID": "LB20X",
   "StartingAmmoCapacity": 0,
   "HeatGenerated": 20,
-  "Damage": 0,
+  "Damage": 120,
   "OverheatedDamageMultiplier": 0,
   "EvasiveDamageMultiplier": 0,
   "EvasivePipsIgnored": 0,
@@ -26,7 +26,7 @@
   "ShotsWhenFired": 1,
   "ProjectilesPerShot": 1,
   "AttackRecoil": 4,
-  "Instability": 0,
+  "Instability": 72,
   "ImprovedBallistic": true,
   "WeaponEffectID": "WeaponEffect-Weapon_LB20X",
   "Description": {
@@ -65,6 +65,7 @@
     ],
     "tagSetSourceFile": ""
   },
+  "FireDelayMultiplier": 1,
   "Modes": [
     {
       "Id": "LBXMode_Cluster",
@@ -72,8 +73,8 @@
       "Name": "LB-X Mode",
       "Description": "LB-X Mode fires LBX Cluster ammunition.",
       "isBaseMode": true,
-      "DamagePerShot": 120,
-      "Instability": 72,
+      "DamagePerShot": 0,
+      "Instability": 0,
       "HasShells": true,
       "MinShellsDistance": 30,
       "MaxShellsDistance": 100,
@@ -87,8 +88,8 @@
       "Name": "AC Mode",
       "Description": "AC Mode fires AC Slug ammunition.",
       "isBaseMode": false,
-      "DamagePerShot": 100,
-      "Instability": 30,
+      "DamagePerShot": -20,
+      "Instability": -42,
       "WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
       "HasShells": false,
       "AmmoCategory": "AC20"
