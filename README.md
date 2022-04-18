@@ -151,3 +151,4 @@ Credits:
 - Pode for half working LAM jsons
 - Pode/bhtrail for looking up mech loadouts
 - Hounfor + Graywolfe for helping updating to BTX 1.9.3
+- Hounfor for Flying High Again contracts
