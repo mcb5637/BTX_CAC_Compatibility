@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using AccessExtension;
+using System.Reflection;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -16,6 +17,13 @@ namespace BTX_CAC_CompatibilityDll
         public static CombatGameState GetCombat(this SequenceBase s)
         {
             return null;
+        }
+
+        [FieldGet("Extended_CE", "Extended_CE.BTComponents", "CheckingForCrit")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static bool GetExtendedCE_BtComponents_CheckingForCrit()
+        {
+            return false;
         }
     }
 }

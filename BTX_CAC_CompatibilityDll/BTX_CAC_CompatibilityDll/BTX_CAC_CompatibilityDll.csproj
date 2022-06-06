@@ -77,6 +77,13 @@
     <Compile Include="AbstractActor_IndirectImmune.cs" />
     <Compile Include="AbstractActor_InitStats.cs" />
     <Compile Include="AccessExtensionPatcher\AccessExtensionPatcher.cs" />
+    <Compile Include="AccessExtensionPatcher\AEPData.cs" />
+    <Compile Include="AccessExtensionPatcher\ConstructorCall.cs" />
+    <Compile Include="AccessExtensionPatcher\FieldGet.cs" />
+    <Compile Include="AccessExtensionPatcher\FieldSet.cs" />
+    <Compile Include="AccessExtensionPatcher\MethodCall.cs" />
+    <Compile Include="AccessExtensionPatcher\PropertyGet.cs" />
+    <Compile Include="AccessExtensionPatcher\PropertySet.cs" />
     <Compile Include="AdvWeaponHitInfo_ApplyHitEffects.cs" />
     <Compile Include="AEPStatic.cs" />
     <Compile Include="ChassisDef_FromJson.cs" />
