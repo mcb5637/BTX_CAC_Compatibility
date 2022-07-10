@@ -26,7 +26,7 @@
     "Id": "mechdef_urbanmech_UM-LAM-X",
     "Name": "UrbanMech LAM",
     "Details": "The experimental UrbanMech LAM was the brainchild of an aging Liao mechwarrior (who shall not be named here). Using spare parts from Ireces Stinger LAM factory and his ancestral UrbanMech, he created the first version of it. It was later proposed to both Kurita and Liao, who both initially showed interest. But poor combat performance son let the project die. It did not really help either, that the Fighter mode never really worked.",
-    "Icon": "uixTxrIcon_urbanmech"
+    "Icon": "uixTxrIcon_urbanmech_lam"
   },
   "simGameMechPartCost": 2000000,
   "Version": 1,

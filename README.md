@@ -24,7 +24,7 @@ Component list (Clan & SLDF ones included):
         - ER Laser: -
 		- Heavy Laser: -
         - Pulse Laser: fixed animation
-		- X-Pulse Laser: changed to single projectile, changed aeffect to pulse laser
+		- X-Pulse Laser: changed to single projectile, changed effect to pulse laser
         - Tag: attacking a tagged unit has an +3 accuracy boost, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
         - Flamer: added forestfires
     - Ballistic
@@ -86,6 +86,7 @@ Component list (Clan & SLDF ones included):
 	- Phoenix Hawk LAM PXH-HK2 (SLDF LAM) (comstar) (HK1(R)?)
 	- Stinger LAM STG-A5 (SLDF LAM) (comstar/kurita, factory Irece) (A1?)
 	- Wasp LAM WSP-105 (SLDF LAM) (comstar) (100b?)
+	- UrbanMech LAM UM-LAM-X (Experimental LAM) (Kurita/Liao Flying High Again mission)
 
 What to do when adding CAC-C into an existing savegame:
 - Store and ready every mech that has any of the following fixed equipment:
@@ -100,6 +101,7 @@ What to do when adding CAC-C into an existing savegame:
 	- Liao AP (Gear_Sensor_Prototype_ActiveProbe -> Gear_SensorCAC_LiaoProtoAP)
 	- AMS upgrade components (Gear_AMS_XXX -> Weapon_AMSCAC_XXX) to AMS weapons & MG ammo
 	- Infernos Launcher (Weapon_Inferno_Inferno2_XXX -> Ammo_AmmunitionBox_Generic_SRM_Inferno) to standard SRMs with Inferno ammo
+	- Deadfire LRMs/SRMs (Weapon_SRM_DFSRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_SRM_DF)(Weapon_LRM_DFLRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_LRM_DF) to standard LRMs/SRMs with deadfire ammo.
 	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
 
 TODO List:
