@@ -29,25 +29,133 @@
         "tagSetSourceFile": ""
       },
       "RequirementComparisons": [
-        {
-          "obj": "Target.Kurita",
-          "op": "Equal",
-          "val": 1,
-          "valueConstant": null
-        },
-        {
-          "obj": "Employer.Kurita",
-          "op": "Equal",
-          "val": 0,
-          "valueConstant": null
-        },
-        {
-          "obj": "Target.IsOwner",
-          "op": "Equal",
-          "val": 1,
-          "valueConstant": null
-        }
-      ]
+                {
+                    "obj" : "Target.Locals",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+                {
+                    "obj" : "Target.AuriganPirates",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+                {
+                    "obj" : "Target.AuriganRestoration",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+                {
+                    "obj" : "Target.AuriganDirectorate",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+                {
+                    "obj" : "Target.Steiner",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+                {
+                    "obj" : "Target.Davion",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+                {
+                    "obj" : "Target.Liao",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+                {
+                    "obj" : "Target.Marik",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+                {
+                    "obj" : "Target.MagistracyOfCanopus",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+                {
+                    "obj" : "Target.TaurianConcordat",
+                    "op" : "Equal",
+                    "val" : 0,
+                    "valueConstant" : null
+                },
+				{
+					"obj" : "Target.Rasalhague",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.Outworld",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.Andurien",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.Ives",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.JadeFalcon",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.SteelViper",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.Wolf",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.GhostBear",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.SmokeJaguar",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.NovaCat",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				},
+				{
+					"obj" : "Target.DiamondShark",
+					"op" : "Equal",
+					"val" : 0,
+					"valueConstant" : null
+				}
+            ]
     }
   ],
   "OnContractSuccessResults": [],
