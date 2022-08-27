@@ -4,3 +4,6 @@
 [submodule "CB"]
 	path = CB
 	url = https://github.com/BattletechModders/CustomBundle.git
+[submodule "CBD"]
+	path = CBD
+	url = https://github.com/CMiSSioN/CBDebugEnvironment.git
