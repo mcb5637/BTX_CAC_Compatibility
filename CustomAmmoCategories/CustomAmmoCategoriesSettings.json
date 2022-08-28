@@ -1,7 +1,4 @@
-
 {
-  "NullifyDestoryedLocationDamage": false,
-  "DestoryedLocationDamageTransferStructure": false,
   "debugLog": true,
   "modHTTPServer": false,
   "modHTTPListen": "http://localhost:65080/",
@@ -256,5 +253,10 @@
   "ToHitVehicleFromRear":-2,
   "WeaponPanelWidthScale":1,
   "WeaponPanelHeightScale":1,
-  "ShowApplyHeatSinkMessage": false
+  "DefaultMoveCosts": {
+    "Naval": {
+      "moveCost": 9999.9,
+      "SprintMultiplier": 9999.9
+    }
+  }
 }

@@ -7,6 +7,7 @@ using HBS.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -96,6 +97,7 @@ namespace BTX_CAC_CompatibilityDll
                         harmony.Patch(t.GetMethod("DetailMechQuirks", BindingFlags.Static | BindingFlags.NonPublic), null, new HarmonyMethod(typeof(QuirkToolTips_DetailMechQuirks), "Postfix"), null);
                     }
                 }
+                //harmony.Patch(AccessTools.GetDeclaredConstructors(typeof(IndexOutOfRangeException)).Single((x)=>x.GetParameters().Length==0), null, new HarmonyMethod(typeof(Main), "ExCtorLog"));
             }
             catch (Exception e)
             {
@@ -143,6 +145,12 @@ namespace BTX_CAC_CompatibilityDll
                     //FileLog.Log($"found: {patch.FullName()}");
                 }
             }
+        }
+
+        public static void ExCtorLog(Exception __instance)
+        {
+            string t = new StackTrace().ToString();
+            Log.Log(t);
         }
 
         //public static void LogDamageLoc(int originalHitLoc, ArmorLocation aLoc)

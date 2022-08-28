@@ -20,204 +20,23 @@
     "tagSetSourceFile": ""
   },
   "CustomParts": {
-    "quadVisualInfo": {
-      "UseQuadVisuals": true,
-      "FLegsPrefab": "chrPrfMech_atlasBase-001",
-      "BodyLength": 5.2,
-      "FLegsPrefabBase": "atlas",
-      "RLegsPrefabBase": "atlas",
-      "NotSuppressRenderers": [ "_left_leg_", "_right_leg_" ]
-    },
     "FiringArc": 360,
+    "Unaffected": {
+      "DesignMasks": "false",
+      "Pathing": "false",
+      "Fire": "false",
+      "Landmines": "false"
+    },
     "ArmsCountedAsLegs": true,
-    "CustomParts": [
-      {
-        "prefab": "jgoliathbody",
-        "MaterialInfo": {
-          "jgoliathbody": {
-            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
-            "shaderKeyWords": [
-              "_DETAIL_OVERLAY",
-              "_EMISSION",
-              "_METALLICGLOSSMAP",
-              "_NORMALMAP"
-            ]
-          },
-          "jgoliathbody_damaged": {
-            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
-            "shaderKeyWords": [
-              "_DETAIL_OVERLAY",
-              "_EMISSION",
-              "_METALLICGLOSSMAP",
-              "_NORMALMAP"
-            ]
-          },
-          "ModularSci-FiWeapons_Blue": {
-            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
-            "shaderKeyWords": [
-              "_DETAIL_OVERLAY",
-              "_EMISSION",
-              "_METALLICGLOSSMAP",
-              "_NORMALMAP"
-            ]
-          },
-          "ModularSci-FiWeapons_White": {
-            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
-            "shaderKeyWords": [
-              "_DETAIL_OVERLAY",
-              "_EMISSION",
-              "_METALLICGLOSSMAP",
-              "_NORMALMAP"
-            ]
-          }
-        },
-        "prefabTransform": {
-          "offset": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "rotate": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
-        },
-        "MechChassisLocation": "CenterTorso",
-        "RequiredUpgrades": [],
-        "RequiredComponents": [],
-        "AnimationType": "QuadBody",
-        "AnimationData": {
-          "VerticalRotate": "rotate",
-          "TurretAttach": "turret_attach",
-          "FrontLegsAttach": "front_legs_attach",
-          "ShowFrontLegsAxis": false,
-          "DamageAnimator": "CT_LT_RT_plus_damage_models",
-          "RTVFXTransform": "RT_vfx_transform",
-          "LTVFXTransform": "LT_vfx_transform",
-          "CTVFXTransform": "CT_vfx_transform",
-          "HEADVFXTransform": "HEAD_vfx_transform",
-          "JumpJetsSpawnPoints": [ "jumpjet_rear", "jumpjet_front", "jumpjet_left", "jumpjet_right" ],
-          "HeadLightSpawnPoints": [ "headlight_left", "headlight_right" ]
-        }
-      },
-      {
-        "prefab": "jgoliath_turret",
-        "MaterialInfo": {
-          "jgoliathbody": {
-            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
-            "shaderKeyWords": [
-              "_DETAIL_OVERLAY",
-              "_EMISSION",
-              "_METALLICGLOSSMAP",
-              "_NORMALMAP"
-            ]
-          },
-          "bargest_turret_material": {
-            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
-            "shaderKeyWords": [
-              "_DETAIL_OVERLAY",
-              "_EMISSION",
-              "_METALLICGLOSSMAP",
-              "_NORMALMAP"
-            ]
-          },
-          "ModularSci-FiWeapons_Blue": {
-            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
-            "shaderKeyWords": [
-              "_DETAIL_OVERLAY",
-              "_EMISSION",
-              "_METALLICGLOSSMAP",
-              "_NORMALMAP"
-            ]
-          },
-          "ModularSci-FiWeapons_White": {
-            "shader": "chrPrfWeap_atlas_centertorso_laser_eh1",
-            "shaderKeyWords": [
-              "_DETAIL_OVERLAY",
-              "_EMISSION",
-              "_METALLICGLOSSMAP",
-              "_NORMALMAP"
-            ]
-          }
-        },
-        "prefabTransform": {
-          "offset": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          },
-          "scale": {
-            "x": 1,
-            "y": 1,
-            "z": 1
-          },
-          "rotate": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-          }
-        },
-        "MechChassisLocation": "CenterTorso",
-        "RequiredUpgrades": [],
-        "RequiredComponents": [],
-        "AnimationType": "MechTurret",
-        "AnimationData": {
-          "TurnAnimator": "base",
-          "AttachPoints": [
-            {
-              "Name": "TAPMainLeft",
-              "Location": "LeftTorso",
-              "AttachTo": "WeaponAttachL",
-              "Animator": "WeaponMountL"
-            },
-            {
-              "Name": "TAPMainRight",
-              "Location": "RightTorso",
-              "AttachTo": "WeaponAttachR",
-              "Animator": "WeaponMountR"
-            },
-            {
-              "Name": "TAPMainCenter",
-              "Location": "CenterTorso",
-              "AttachTo": "WeaponAttachC",
-              "Animator": "WeaponMountC"
-            },
-            {
-              "Name": "TAPLeftCenter",
-              "Location": "CenterTorso",
-              "AttachTo": "WeaponAttachCL",
-              "Animator": "WeaponMountCL"
-            },
-            {
-              "Name": "TAPRightCenter",
-              "Location": "CenterTorso",
-              "AttachTo": "WeaponAttachCR",
-              "Animator": "WeaponMountCR"
-            },
-            {
-              "Name": "TAPTurretHead",
-              "Location": "Head",
-              "AttachTo": "WeaponAttachH",
-              "Animator": "WeaponMountH"
-            }
-          ]
-        }
-      }
-    ]
+    "CustomParts": []
   },
   "StockRole": "Heavy Cavalry",
   "YangsThoughts": "The Goliath suffers from low damage output compared to other assault mechs, but thanks to its 4 legs it is a lot more stable.",
   "MovementCapDefID": "movedef_zeus_ZEU-6S",
   "PathingCapDefID": "pathingdef_assault",
-  "HardpointDataDefID": "hardpointdatadef_jgoliath",
-  "PrefabIdentifier": "chrPrfMech_atlasBase-001",
-  "PrefabBase": "jgoliath",
+  "HardpointDataDefID": "hardpointdatadef_cugoliath",
+  "PrefabIdentifier": "chrprfmech_goliath",
+  "PrefabBase": "cugoliath",
   "Tonnage": 80,
   "InitialTonnage": 37.5,
   "weightClass": "ASSAULT",
