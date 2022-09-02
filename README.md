@@ -4,14 +4,8 @@ Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
+- Update ModTek, IRBModUtils and BiggerDrops (currently you need the dll from RT, BD has no release yet)
 - Add BTX_CAC_Compatibility, overriding files
-- Reset CAB-CU and CAB-Misc (in both cases, remove the current folder, then copy in the old one):
-	- CAB-CU:
-		- https://github.com/BattletechModders/Community-Asset-Bundle-CustomUnits/archive/cef38ffefa137ac7557a211194e9c5e14de8e4ae.zip
-		- or (if you know your way around git) checkout commit cef38ffefa137ac7557a211194e9c5e14de8e4ae
-	- CAB-Misc:
-		- https://github.com/BattletechModders/Community-Asset-Bundle-Miscellaneous/archive/5a00631b8ba3a3d2bf6dd8e4662eff694ebfc520.zip
-		- or (if you know your way around git) checkout commit 5a00631b8ba3a3d2bf6dd8e4662eff694ebfc520
 
 
 Component list (Clan & SLDF ones included):
