@@ -42,6 +42,7 @@ namespace BTX_CAC_CompatibilityDll
             AccessExtensionPatcher.PatchAll(harmony, Assembly.GetExecutingAssembly());
             AbstractActor_InitStats.Patch(harmony);
             AbstractActor_IndirectImmune.Patch(harmony);
+            CU2ComponentFix.Patch(harmony);
             //harmony.Patch(
             //    AccessTools.Method(typeof(EffectManager), "CreateEffect", new Type[] { typeof(EffectData), typeof(string), typeof(int), typeof(ICombatant), typeof(ICombatant), typeof(WeaponHitInfo), typeof(int), typeof(bool) }),
             //    null, new HarmonyMethod(AccessTools.Method(typeof(MarkEffects_Patch), "Postfix")), null);

@@ -55,6 +55,9 @@
       <HintPath>C:\goggames\BATTLETECH\Mods\CustomUnits\CustomUnits.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Extended_CE">
+      <HintPath>C:\goggames\BATTLETECH\mods\BT_Extended_CE\Extended_CE.dll</HintPath>
+    </Reference>
     <Reference Include="InControl">
       <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\InControl.dll</HintPath>
       <Private>False</Private>
@@ -64,6 +67,7 @@
       <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System" />
     <Reference Include="UnityEngine">
       <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
@@ -88,6 +92,7 @@
     <Compile Include="AEPStatic.cs" />
     <Compile Include="ChassisDef_FromJson.cs" />
     <Compile Include="ContractOverride_FromJSONFull.cs" />
+    <Compile Include="CU2ComponentFix.cs" />
     <Compile Include="CUNullrefFix.cs" />
     <Compile Include="DoubleCritFix.cs" />
     <Compile Include="Effect_Ctor.cs" />
