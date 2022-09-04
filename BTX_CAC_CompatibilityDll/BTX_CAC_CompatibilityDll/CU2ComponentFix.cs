@@ -47,7 +47,7 @@ namespace BTX_CAC_CompatibilityDll
             }
         }
 
-        public static IEnumerable<CodeInstruction> Transpiler_MechInitStats(IEnumerable<CodeInstruction> code, ILGenerator gen)
+        public static IEnumerable<CodeInstruction> Transpiler_MechInitStats(IEnumerable<CodeInstruction> code)
         {
             return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
             {
