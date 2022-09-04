@@ -16,7 +16,7 @@ namespace BTX_CAC_CompatibilityDll
     {
         public static bool UsingComponents(Mech m)
         {
-            if (m is CustomMech cm)
+            if (m != null && m is CustomMech cm)
             {
                 if (cm.isSquad || cm.isVehicle)
                     return false;
@@ -26,40 +26,79 @@ namespace BTX_CAC_CompatibilityDll
 
         public static void Patch(HarmonyInstance h)
         {
-            Assembly a = AccessExtensionPatcher.GetLoadedAssemblyByName("Extended_CE");
-            if (a == null)
+            try
             {
-                FileLog.Log("a null");
-                return;
+                Assembly a = AccessExtensionPatcher.GetLoadedAssemblyByName("Extended_CE");
+                // contract completecontract not needed to patch?
+                Type mechcomp_dmg = a.GetType("Extended_CE.BTComponents+MechComponent_DamageComponent");
+                h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "Transpiler_DamageComponent")));
+                h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "Transpiler_DamageComponentPre")));
+                // mech checkforcrit not needed to patch?
+                // mech getcomponentinslot not needed to patch?
+                Type Mech_initstats = a.GetType("Extended_CE.BTComponents+Mech_InitStats");
+                h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "Transpiler_MechInitStats")));
+                h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "Transpiler_MechInitStats")));
+                // mech update min stability not needed to patch?
+                // weapon init stats only melee, so vehicles should be safe
             }
-            Type t = a.GetType("Extended_CE.BTComponents+Mech_InitStats");
-            if (t == null)
+            catch (Exception e)
             {
-                FileLog.Log("t null");
-                foreach (var tt in a.GetTypes())
-                    FileLog.Log(tt.FullName);
-                return;
+                FileLog.Log(e.ToString());
             }
-            var m = AccessTools.DeclaredMethod(t, "Prefix");
-            if (m == null)
-            {
-                FileLog.Log("m null");
-                return;
-            }
-            h.Patch(m, null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "Transpiler_MechInitStatsPre")));
         }
 
-        public static IEnumerable<CodeInstruction> Transpiler_MechInitStatsPre(IEnumerable<CodeInstruction> code)
+        public static IEnumerable<CodeInstruction> Transpiler_MechInitStats(IEnumerable<CodeInstruction> code, ILGenerator gen)
         {
             return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
             {
                 new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), "UsingComponents")),
             }, (prev) =>
             {
+                CodeInstruction ins = prev.First.Value;
+                ins.operand = null;
+                ins.opcode = OpCodes.Ldarg_0;
                 prev.Clear();
                 return new CodeInstruction[]
                 {
-                    new CodeInstruction(OpCodes.Ldarg_0),
+                    ins,
+                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "UsingComponents")),
+                };
+            });
+        }
+        public static IEnumerable<CodeInstruction> Transpiler_DamageComponent(IEnumerable<CodeInstruction> code)
+        {
+            return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
+            {
+                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), "UsingComponents")),
+            }, (prev) =>
+            {
+                CodeInstruction ins = prev.First.Value;
+                ins.operand = null;
+                ins.opcode = OpCodes.Ldloc_0;
+                prev.Clear();
+                return new CodeInstruction[]
+                {
+                    ins,
+                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "UsingComponents")),
+                };
+            });
+        }
+        public static IEnumerable<CodeInstruction> Transpiler_DamageComponentPre(IEnumerable<CodeInstruction> code)
+        {
+            return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
+            {
+                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), "UsingComponents")),
+            }, (prev) =>
+            {
+                CodeInstruction ins = prev.First.Value;
+                ins.operand = null;
+                ins.opcode = OpCodes.Ldarg_0;
+                prev.Clear();
+                return new CodeInstruction[]
+                {
+                    ins,
+                    new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(MechComponent), "parent")),
+                    new CodeInstruction(OpCodes.Isinst, typeof(Mech)),
                     new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "UsingComponents")),
                 };
             });
