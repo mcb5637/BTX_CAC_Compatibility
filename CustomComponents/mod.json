@@ -6,7 +6,7 @@
 	],
 	"Enabled": true,
 	"Hidden": true,
-	"DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks" ],
+	"DependsOn": [ ],
 	"DLL": "CustomComponents.dll",
 	"DLLEntryPoint": "CustomComponents.Control.Init",
 	"CustomResourceTypes": ["CCCategories", "CCDefaults", "CCTagRestrictions", "CustomSVGIcon"],

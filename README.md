@@ -4,7 +4,8 @@ Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 
 Installation: (requires working BTX installation)
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
-- Update ModTek, IRBModUtils and BiggerDrops (currently you need the dll from RT, BD has no release yet)
+- update CAB
+- Update ModTek, SimpleMechAssembly, IRBModUtils and BiggerDrops (currently you need the dll from RT, BD has no release yet)
 - Add BTX_CAC_Compatibility, overriding files
 
 
@@ -99,12 +100,6 @@ What to do when adding CAC-C into an existing savegame:
 	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
 
 TODO List:
-- modtek upgrade
-	- check if it works
-	- compupgrader remove
-- cb upgrade
-	- switch submodule
-	- check if it works
 - ECCM
 - quad critable arm actuators to leg actuators
 - coolant pods CAE
