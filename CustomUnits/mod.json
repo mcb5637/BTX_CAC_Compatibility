@@ -60,8 +60,9 @@
       }
     ],
     "ArgoBaysFix": 1,
-    "ShowVehicleBays": true,
+    "ShowVehicleBays": false,
     "BaysCountExternalControl": true,
+    "baysWidgetsCount": 6,
     "AllowVehiclesEdit": false,
     "ConvoyRouteBeaconVFXScale": {
       "x": 1,

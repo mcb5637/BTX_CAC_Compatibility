@@ -104,7 +104,7 @@ TODO List:
 - quad critable arm actuators to leg actuators
 - coolant pods CAE
 - narc/inarc ammo types
-- imp sensor unlocks sensorlock without skill (add to irtweaks, add hospitalfix as well)
+- imp sensor unlocks sensorlock without skill (add to irtweaks)
 - multitarget quirk unlocks without skill? (irtweaks stat)
 - ac projectiles per shot, if possible
 - a-pods CAE?
