@@ -5,7 +5,7 @@ Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 Installation: (requires working BTX installation)
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
 - update CAB
-- Update ModTek, SimpleMechAssembly, IRBModUtils and BiggerDrops (currently you need the dll from RT, BD has no release yet)
+- Update ModTek (to 2.0.6), SimpleMechAssembly, IRBModUtils and BiggerDrops (currently you need the dll from RT, BD has no release yet)
 - Add BTX_CAC_Compatibility, overriding files
 
 
@@ -68,6 +68,7 @@ Component list (Clan & SLDF ones included):
 	- TSM: Auto activates at >27 heat (\*2 melee damage, + 60m movement)
 	- Prototype TSM: Auto activates at >27 heat (\*1.5 melee damage, +30m movement)
 	- MASC: Activatable (\*2 speed) (fail chance 15%, add up per turn in use)
+	- Coolant Pod: doubles heatsinking for 1 turn, 1 activation per pod (does not stack)
 - Argo Upgrades
 	- Storage: added 3 additional storage upgrades, each giving a new mechbay to use
 	- Engine Repairs: The storage upgrades do fix BiggerDrops tonnage increase upgrades, by giving you a way to fullfill their requirements
