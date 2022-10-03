@@ -102,6 +102,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="MarkEffects_Patch.cs" />
     <Compile Include="MechBayDragDropSlot_OnAddItem.cs" />
+    <Compile Include="Mech_HeatSinkCapacity.cs" />
     <Compile Include="SensorLockImmune.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SimGameState_OnDayPassed.cs" />

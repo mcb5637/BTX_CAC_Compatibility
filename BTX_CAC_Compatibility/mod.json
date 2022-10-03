@@ -5,7 +5,7 @@
   "Description": "Modifies BTX (and BTXMinusWeapons) for CAC.",
   "Author": "mcb",
   "Website": "",
-  "Version": "0.1.20.0b",
+  "Version": "0.1.20.1",
 
   "DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks", "Custom Ammo Categories", "CustomActivatableEquipment", "CustomUnits", "IRTweaks" ],
   "OptionallyDependsOn": [ "BTXMinusWeapons" ],
@@ -14,7 +14,7 @@
   "DLL": "BTX_CAC_CompatibilityDll.dll",
 
   "Settings": {
-    "Use4LimitOnContractIds": [ "uw1_4_destroyBase", "tournament_1_3wayBattle", "tournament_a1_3wayBattle", "Story_6B_TreasureTrove_Default", "Story_9_Downfall_Default", "c_fp_scoundrel_1_captureEscort", "c_fp_scoundrel_2_defendBase", "c_fp_scoundrel_a1_target", "c_fp_scoundrel_b1_captureEscort", "c_fp_mechsMercsRnR_1_capture_base", "c_fp_mechsMercsRnR_2_simpleBattle", "c_fp_mechsMercsRnR_3a_defendBase", "c_fp_mechsMercsRnR_3b_destroyBase", "c_fp_mechsMercsRnR_4a_simpleBattle", "c_fp_wildWedding_1A_AmbushConvoy", "c_fp_wildWedding_1B_SimpleBattle", "c_fp_wildWedding_2A_SimpleBattle", "c_fp_wildWedding_2B_CaptureEscort", "c_fp_wildWedding_3A_DefendBase", "c_fp_blackSabbath_1_DestroyBase", "c_fp_blackSabbath_2_DestroyBase", "c_fp_blackSabbath_3A_SimpleBattle", "c_fp_blackSabbath_3B_Assasinate", "c_fp_blackSabbath_4A_Assasinate", "c_fp_blackSabbath_4B_3wayBattle", "c_fp_rTTJ_1_SimpleBattle", "c_fp_rTTJ_2_captureEscort", "c_fp_rTTJ_3_fireMission", "c_fp_rTTJ_4_Assasinate", "c_fp_theBigDeal_1_DestroyBase", "c_fp_theBigDeal_2_Assasinate", "c_fp_theBigDeal_3A_CaptureBase", "c_fp_theBigDeal_3B_DefendBase", "c_fp_theBigDeal_4A_3wayBattle", "c_fp_theBigDeal_4B_CaptureEscort", "c_fp_theBigDeal_5A_CaptureEscort" ],
+    "Use4LimitOnContractIds": [ "uw1_4_destroyBase", "tournament_1_3wayBattle", "tournament_a1_3wayBattle", "Story_6B_TreasureTrove_Default", "Story_9_Downfall_Default" ],
     "ReplaceInItemCollections": {
       "Weapon_Inferno_Inferno2_0-STOCK": {
         "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
@@ -179,6 +179,11 @@
       "Type": "ContractOverride",
       "Path": "contract",
       "AddToDB": true
+    },
+    {
+      "Type": "HeatSinkDef",
+      "Path": "heatsinks",
+      "ShouldMergeJSON": true
     }
   ]
 }

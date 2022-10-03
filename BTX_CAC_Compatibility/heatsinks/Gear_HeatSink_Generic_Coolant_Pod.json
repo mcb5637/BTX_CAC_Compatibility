@@ -1,0 +1,55 @@
+{
+  "BonusValueA": "Double Heatsink Capacity",
+  "BonusValueB": "1 Activation",
+  "statusEffects": [],
+  "ComponentTags": {
+    "items": [
+      "component_type_variant",
+      "component_type_variant1",
+      "cae_ai_cool"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "Custom": {
+    "ActivatableComponent": {
+      "CanActivateAfterFire": true,
+      "CanActivateAfterMove": true,
+      "SafeActivation": true,
+      "ButtonName": "Coolant Pod",
+      "DeactivationMessage": "",
+      "ActivationMessage": "Flushed",
+      "ChargesCount": 1,
+      "NoUniqueCheck": true,
+      "CanNotBeActivatedManualy": false,
+      "statusEffects": [
+        {
+          "durationData": {
+            "duration": 1,
+            "ticksOnActivations": true,
+            "stackLimit": 1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "effectTargetType": "Creator",
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "CoolantPod",
+            "Name": "Coolant Pod",
+            "Details": "Heatsinks work at double the capacity.",
+            "Icon": "uixSvgIcon_ability_coolantVent"
+          },
+          "statisticData": {
+            "statName": "HeatSinkCapacity",
+            "operation": "Int_Multiply",
+            "modValue": "2",
+            "modType": "System.Int32"
+          },
+          "nature": "Buff"
+        }
+      ]
+    }
+  }
+}
