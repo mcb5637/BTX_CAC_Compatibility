@@ -166,6 +166,8 @@
   "AdvancedCirtProcessing": false,
   "DestroyedComponentsCritTrap": false,
   "CritLocationTransfer": false,
+  "NullifyDestoryedLocationDamage": false,
+  "DestoryedLocationDamageTransferStructure": false,
   "APMinCritChance": 0.1,
   "PatchWeaponSlotsOverflowCultures": [
     "CULTURE_RU_RU"
