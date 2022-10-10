@@ -1,5 +1,6 @@
 ﻿using AccessExtension;
 using BattleTech;
+using BattleTech.Save;
 using BattleTech.UI;
 using CustAmmoCategories;
 using Harmony;
@@ -105,17 +106,19 @@ namespace BTX_CAC_CompatibilityDll
                 FileLog.Log(e.ToString());
             }
 
-            ToHitModifiersHelper.registerModifier("BTX_CAC_Compatibility_CounterNarc", "Counter NARC", true, true, CounterNarc, null);
+            ToHitModifiersHelper.registerModifier("BTX_CAC_Compatibility_ECM", "ECM", true, true, ECM_Effect, null);
         }
 
-        private static float CounterNarc(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
+        private static float ECM_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
-            AbstractActor at = target as AbstractActor;
-            if (at != null && at.HasIndirectFireImmunity && at.Combat.EffectManager.GetAllEffectsTargetingWithBaseID(at, "StatusEffect-NARC-IncomingAttBonus").Count > 0)
+            float mod = 0;
+            if (target is AbstractActor at && at.StatCollection.GetValue<float>("DefendedByECM") > 0)
             {
-                return 3;
+                mod += 4;
+                if (at.Combat.EffectManager.GetAllEffectsTargetingWithBaseID(at, "StatusEffect-NARC-IncomingAttBonus").Count > 0)
+                    mod += 3;
             }
-            return 0;
+            return mod;
         }
 
         private static void Unpatch(HarmonyInstance harmony, MethodBase b, string id, bool pre=true, bool post=true, bool trans=true, string onlyUnpatch=null)

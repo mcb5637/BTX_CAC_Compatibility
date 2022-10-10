@@ -13,9 +13,9 @@
   "limitFlashpointDrop" : false,
   "CuV2FormationSize": 4,
   "CuV2InitialSlots": [
-    "default_omni_slot",
-    "default_omni_slot",
-    "default_omni_slot",
-    "default_omni_slot"
+    "simgame_omni_slot",
+    "simgame_omni_slot",
+    "simgame_omni_slot",
+    "simgame_omni_slot"
   ]
 }

@@ -36,7 +36,7 @@
       "Range": 180,
       "RangeStatistic": "",
       "RemoveOnSensorLock": true,
-      "State": "Online",
+      "State": "Offline",
       "HideOnNotSelected": false,
       "FloatieAtEndOfMove": true,
       "ApplySelf": true,
@@ -64,7 +64,7 @@
         {
           "durationData": {
             "duration": -1,
-            "stackLimit": 1
+            "stackLimit": -1
           },
           "targetingData": {
             "effectTriggerType": "Passive",
@@ -94,7 +94,7 @@
         {
           "durationData": {
             "duration": -1,
-            "stackLimit": 1
+            "stackLimit": -1
           },
           "targetingData": {
             "effectTriggerType": "Passive",
@@ -109,14 +109,14 @@
           "effectType": "StatisticEffect",
           "Description": {
             "Id": "Gear_SensorCAC_ECMAura_ToHit",
-            "Name": "ECM Defense",
-            "Details": "Friendly units within an ECM field gain +[AMT] Difficulty to attacks against them and immunity to Indirect Fire and Sensor Locks.",
+            "Name": "ECM Affected",
+            "Details": "Friendly units within an ECM field gain +4 Difficulty to attacks against them and immunity to Indirect Fire and Sensor Locks.",
             "Icon": "uixSvgIcon_status_ECM-missileDef"
           },
           "statisticData": {
-            "statName": "ToHitThisActor",
+            "statName": "DefendedByECM",
             "operation": "Float_Add",
-            "modValue": "4.0",
+            "modValue": "1.0",
             "modType": "System.Single"
           },
           "nature": "Buff"
@@ -124,7 +124,7 @@
         {
           "durationData": {
             "duration": -1,
-            "stackLimit": 1
+            "stackLimit": -1
           },
           "targetingData": {
             "effectTriggerType": "Passive",
@@ -152,6 +152,186 @@
           "nature": "Buff"
         }
       ]
+    },
+    {
+      "Id": "Gear_SensorCAC_GuardianHC_ECCMAura",
+      "MinefieldDetector": false,
+      "LineType": "Dashes",
+      "isSpining": false,
+      "Name": "Guardian ECCM",
+      "ReticleColor": "cyan",
+      "Range": 180,
+      "RangeStatistic": "",
+      "RemoveOnSensorLock": true,
+      "State": "Online",
+      "HideOnNotSelected": false,
+      "FloatieAtEndOfMove": true,
+      "ApplySelf": false,
+      "AllyStealthAffection": "None",
+      "EnemyStealthAffection": "None",
+      "IsPositiveToAlly": false,
+      "IsNegativeToAlly": false,
+      "IsNegativeToEnemy": true,
+      "IsPositiveToEnemy": false,
+      "onlineVFX": [
+      ],
+      "targetVFX": [
+      ],
+      "removeTargetVFX": [
+      ],
+      "ownerSFX": [
+      ],
+      "targetSFX": [
+      ],
+      "removeOwnerSFX": [
+      ],
+      "removeTargetSFX": [
+      ],
+      "statusEffects": [
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": -1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "EnemiesWithinRange",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_ECCMAura_Indirect",
+            "Name": "",
+            "Details": "",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "IndirectImmuneFloat",
+            "operation": "Float_Add",
+            "modValue": "-1.0",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": -1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "EnemiesWithinRange",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": true,
+            "showInStatusPanel": true
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_ECCMAura_ToHit",
+            "Name": "ECCM Affected",
+            "Details": "Enemy units within an ECCM field have their boni from ECM negated.",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "DefendedByECM",
+            "operation": "Float_Add",
+            "modValue": "-1.0",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        },
+        {
+          "durationData": {
+            "duration": -1,
+            "stackLimit": -1
+          },
+          "targetingData": {
+            "effectTriggerType": "Passive",
+            "specialRules": "NotSet",
+            "effectTargetType": "EnemiesWithinRange",
+            "range": 0.0,
+            "forcePathRebuild": false,
+            "forceVisRebuild": false,
+            "showInTargetPreview": false,
+            "showInStatusPanel": false
+          },
+          "effectType": "StatisticEffect",
+          "Description": {
+            "Id": "Gear_SensorCAC_ECCMAura_SensorLock",
+            "Name": "sens",
+            "Details": "sens",
+            "Icon": "uixSvgIcon_status_ECM-missileDef"
+          },
+          "statisticData": {
+            "statName": "SensorLockDefense",
+            "operation": "Float_Add",
+            "modValue": "-1.0",
+            "modType": "System.Single"
+          },
+          "nature": "Buff"
+        }
+      ]
+    }
+  ],
+  "statusEffects": [
+    {
+      "durationData": {
+        "duration": -1,
+        "ticksOnActivations": false,
+        "useActivationsOfTarget": false,
+        "ticksOnEndOfRound": false,
+        "ticksOnMovements": false,
+        "stackLimit": -1,
+        "clearedWhenAttacked": false
+      },
+      "targetingData": {
+        "effectTriggerType": "Passive",
+        "triggerLimit": 0,
+        "extendDurationOnTrigger": 0,
+        "specialRules": "NotSet",
+        "effectTargetType": "Creator",
+        "range": 0,
+        "forcePathRebuild": false,
+        "forceVisRebuild": false,
+        "showInTargetPreview": false,
+        "showInStatusPanel": true
+      },
+      "effectType": "StatisticEffect",
+      "Description": {
+        "Id": "StatusEffect_ESensorDecrease",
+        "Name": "Detectability decreased",
+        "Details": "Decreases sensor detectability distance by 20%.",
+        "Icon": "uixSvgIcon_status_ECM-missileDef"
+      },
+      "nature": "Buff",
+      "statisticData": {
+        "appliesEachTick": false,
+        "effectsPersistAfterDestruction": false,
+        "statName": "SensorSignatureModifier",
+        "operation": "Float_Multiply",
+        "modValue": "-0.2",
+        "modType": "System.Single",
+        "additionalRules": "NotSet",
+        "targetCollection": "NotSet",
+        "targetWeaponCategory": "NotSet",
+        "targetWeaponType": "NotSet",
+        "targetAmmoCategory": "NotSet",
+        "targetWeaponSubType": "NotSet"
+      },
+      "tagData": null,
+      "floatieData": null,
+      "actorBurningData": null,
+      "vfxData": null,
+      "instantModData": null,
+      "poorlyMaintainedEffectData": null
     }
   ],
   "statusEffects": [
@@ -219,10 +399,12 @@
     "ActivatableComponent": {
       "ButtonName": "ECM",
       "CanActivateAfterMove": true,
-      "CanActivateAfterFire": true,
+      "CanActivateAfterFire": false,
       "CanNotBeActivatedManualy": false,
       "NoUniqueCheck": false,
-      "ActiveByDefault": true,
+      "ActiveByDefault": false,
+			"ActivationMessage": "ECCM Mode",
+			"DeactivationMessage": "ECM Mode",
       "statusEffects": [
       ]
     }

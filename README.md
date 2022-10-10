@@ -25,7 +25,7 @@ Component list (Clan & SLDF ones included):
     - Ballistic
         - AC: fixed firing speed, only one visual projectile
         - LBX: AC mode to fire AC ammo (slugs), cluster ammo uses CAC shells instead of multiple projectiles, small range increase (to TT values)
-        - UAC: fixed firing speed, only one visual projectile, added AC mode (1 shot, but +4 acc, lowered recoil, quartered (halved for 20s) heat, minimal range increase (to TT values)
+        - UAC: fixed firing speed, only one visual projectile, added AC mode (1 shot, but +4 acc, lowered recoil, quartered (halved for 20s)) heat, minimal range increase (to TT values)
         - Gauss: -
 		- Silver Bullet Gauss: fixed multiple projectiles
 		- Heavy Gauss: -
@@ -51,17 +51,17 @@ Component list (Clan & SLDF ones included):
         - Arrow IV: medium artillery (lostech / FP reward / Liao shops after 3049)
 - Electronics
     - ECM
-        - Guardian ECM: -20% detectability, 180m aura (+4 defense, indirect immune, sensorlock immune) (friendly only) (blue)
-        - Liao Prototype ECM: -10% detectability, 90m aura (+4 defense, indirect immune, sensorlock immune) (friendly only) (blue)
-        - Packrat ECM (only in Packrat vehicle): 90m aura (+4 defense, indirect immune) (friendly + enemy) (blue)
+        - Guardian ECM: -20% detectability, 180m aura (ECM: +4 defense, indirect immune, sensorlock immune, friendly only, blue or ECCM: negates 1 ECM, cyan)
+        - Liao Prototype ECM: -10% detectability, 90m aura (ECM: +4 defense, indirect immune, sensorlock immune, friendly only, blue or ECCM: negates 1 ECM, cyan)
+        - Packrat ECM (only in Packrat vehicle): 90m aura (+4 defense, indirect immune, friendly + enemy, blue)
     - AP
         - Beagle Active Probe: +150m sensor range, free action sensor lock, 120m active probe ping (free action) (brown)
-        - Liao Prototype AP: +100m sensor range, free action sensor lock, 90m active probe ping (brown)
+        - Liao Prototype AP: +100m sensor range, free action sensor lock, 90m active probe ping (free action) (brown)
     - Mech Quiks
         - Improved Sensors Quirk: +50m sensor range (stacks with AP)
         - Improved Comms Quirk: 200m aura (removes indirect immune) (hostile only) (green)
 	- Stealth:
-		- Null Signature System: Activatable (+2 defense, -50% detectability, +1 stealth, sensorlock immune, +10 heat)
+		- Null Signature System: Activatable (+2 defense, -50% detectability, +1 stealth, sensorlock immune (counts as 10 Guardians), +10 heat)
 		- Chameleon Light Polarization Shield: Activatable (+2 defense, -50% visibility, +1 stealth, +6 heat)
 - Upgrades
 	- AMS: Broken, use Ballistic Weapon AMS instead

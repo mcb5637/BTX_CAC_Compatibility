@@ -88,7 +88,7 @@
           "statisticData": {
             "statName": "SensorLockDefense",
             "operation": "Float_Add",
-            "modValue": "1.0",
+            "modValue": "10.0",
             "modType": "System.Single"
           },
           "nature": "Buff"

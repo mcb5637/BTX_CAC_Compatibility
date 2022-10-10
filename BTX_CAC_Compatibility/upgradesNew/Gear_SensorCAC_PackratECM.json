@@ -110,13 +110,13 @@
           "Description": {
             "Id": "Gear_SensorCAC_ECMAura_ToHit",
             "Name": "ECM Defense",
-            "Details": "Friendly units within an ECM field gain +[AMT] Difficulty to attacks against them and immunity to Indirect Fire and Sensor Locks.",
+            "Details": "Friendly units within an ECM field gain +4 Difficulty to attacks against them and immunity to Indirect Fire and Sensor Locks.",
             "Icon": "uixSvgIcon_status_ECM-missileDef"
           },
           "statisticData": {
-            "statName": "ToHitThisActor",
+            "statName": "DefendedByECM",
             "operation": "Float_Add",
-            "modValue": "4.0",
+            "modValue": "1.0",
             "modType": "System.Single"
           },
           "nature": "Buff"
