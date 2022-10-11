@@ -104,9 +104,7 @@ What to do when adding CAC-C into an existing savegame:
 
 TODO List:
 - ModTek 3.0?
-- ECCM
 - quad critable arm actuators to leg actuators
-- coolant pods CAE
 - narc/inarc ammo types
 - imp sensor unlocks sensorlock without skill (add to irtweaks)
 - multitarget quirk unlocks without skill? (irtweaks stat)
