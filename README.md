@@ -5,8 +5,10 @@ Modifies BTX (and BTXMinusWeapons, if present) for CAC.
 Installation: (requires working BTX installation)
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
 - update CAB
-- Update ModTek (to 2.0.6), SimpleMechAssembly, IRBModUtils and BiggerDrops (currently you need the dll from RT, BD has no release yet)
+- remove ModTek and IRBModUtils (CAC-C for now contains their own versions of them)
+- remove any previous version of CAC-C, CAE, CAC, CC, CLoc, CPrewarm, CU, CVoices, if they exist
 - Add BTX_CAC_Compatibility, overriding files
+- reinject ModTek
 
 
 Component list (Clan & SLDF ones included):
@@ -101,6 +103,7 @@ What to do when adding CAC-C into an existing savegame:
 	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
 
 TODO List:
+- ModTek 3.0?
 - ECCM
 - quad critable arm actuators to leg actuators
 - coolant pods CAE
@@ -131,6 +134,11 @@ Manual setup:
 - compile
 Package for release:
 - update version info in mod.json and dll
+- setup additionalDependencies
+	- ModTek 2.0
+	- SimpleMechAssembly
+	- IRBModUtils
+	- BiggerDrops (currently you need the dll from RT, BD has no release yet)
 - compile as release
 - use pack.bat
  
