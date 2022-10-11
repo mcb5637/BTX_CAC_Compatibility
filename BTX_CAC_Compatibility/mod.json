@@ -5,7 +5,7 @@
   "Description": "Modifies BTX (and BTXMinusWeapons) for CAC.",
   "Author": "mcb",
   "Website": "",
-  "Version": "0.1.19.4",
+  "Version": "0.1.20.2",
 
   "DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks", "Custom Ammo Categories", "CustomActivatableEquipment", "CustomUnits", "IRTweaks" ],
   "OptionallyDependsOn": [ "BTXMinusWeapons" ],
