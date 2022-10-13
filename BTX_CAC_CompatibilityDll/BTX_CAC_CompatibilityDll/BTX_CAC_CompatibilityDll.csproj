@@ -101,7 +101,6 @@
     <Compile Include="ItemCollectionDef_ReplaceEntries.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MarkEffects_Patch.cs" />
-    <Compile Include="CUMechBayUIFix.cs" />
     <Compile Include="Mech_HeatSinkCapacity.cs" />
     <Compile Include="SensorLockImmune.cs" />
     <Compile Include="Settings.cs" />
