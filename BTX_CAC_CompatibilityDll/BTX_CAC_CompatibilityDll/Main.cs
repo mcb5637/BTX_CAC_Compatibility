@@ -44,6 +44,7 @@ namespace BTX_CAC_CompatibilityDll
             AbstractActor_InitStats.Patch(harmony);
             AbstractActor_IndirectImmune.Patch(harmony);
             CU2ComponentFix.Patch(harmony);
+            SimGameState_InitStats.Patch(harmony);
             //harmony.Patch(
             //    AccessTools.Method(typeof(EffectManager), "CreateEffect", new Type[] { typeof(EffectData), typeof(string), typeof(int), typeof(ICombatant), typeof(ICombatant), typeof(WeaponHitInfo), typeof(int), typeof(bool) }),
             //    null, new HarmonyMethod(AccessTools.Method(typeof(MarkEffects_Patch), "Postfix")), null);

@@ -1,14 +1,14 @@
 {
   "Description": {
-    "Id": "simgame_omni_slot",
+    "Id": "simgame_omni_slot_add",
     "Name": "UNIVERSAL SLOT",
     "Details": "This type of drop slots can be used for all chassis",
     "Icon": ""
   },
 	"Tags": [ "can_drop_generic_mech", "can_drop_generic_vehicle" ],
-	"Decorations": [ "decoration_slot_mech","decoration_slot_vehicle" ],
-  "Order": 100,
-  "StatName": "BiggerDrops_BaseMechSlots",
+	"Decorations": [ "decoration_slot_mech","decoration_slot_vehicle", "decoration_slot_hotdrop" ],
+  "Order": 101,
+  "StatName": "BiggerDrops_AdditionalMechSlots",
 	"HotDrop": false,
 	"UseMaxUnits": true
 }
