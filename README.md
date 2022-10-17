@@ -135,8 +135,8 @@ Package for release:
 - setup additionalDependencies
 	- ModTek 2.0
 	- SimpleMechAssembly
-	- IRBModUtils
-	- BiggerDrops (currently you need the dll from RT, BD has no release yet)
+	- IRBModUtils (currently you need the dll from RT, has no release yet)
+	- BiggerDrops (currently you need the dll from RT, has no release yet)
 - compile as release
 - use pack.bat
  

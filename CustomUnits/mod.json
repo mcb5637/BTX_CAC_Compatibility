@@ -42,6 +42,11 @@
     "CountContractMaxUnits4AsUnlimited": false,
     "ConvoyMaxDistFromRoute": 90,
     "DeployManual": false,
+    "IntelShowMiniMap": true,
+    "IntelShowMood": true,
+    "DeployManualSpawnProtection": false,
+    "DeployAutoSpawnProtection": false,
+    "AskForDeployManual": false,
     "Lances": [
       {
         "size": 4,
