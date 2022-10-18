@@ -42,7 +42,7 @@
             "Icon": "uixSvgIcon_ability_coolantVent"
           },
           "statisticData": {
-            "statName": "HeatSinkCapacity",
+            "statName": "HeatSinkCapacityMult",
             "operation": "Int_Multiply",
             "modValue": "2",
             "modType": "System.Int32"

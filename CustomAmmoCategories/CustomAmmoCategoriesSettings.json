@@ -260,5 +260,6 @@
       "moveCost": 9999.9,
       "SprintMultiplier": 9999.9
     }
-  }
+  },
+  "ShowApplyHeatSinkMessage": false
 }
