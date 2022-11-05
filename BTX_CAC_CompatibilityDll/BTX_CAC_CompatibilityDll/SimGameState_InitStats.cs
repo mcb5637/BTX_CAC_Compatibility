@@ -21,6 +21,7 @@ namespace BTX_CAC_CompatibilityDll
                     __instance.CompanyStats.Int_Add(__instance.CompanyStats.GetStatistic("BiggerDrops_AdditionalMechSlots"), -4);
                 DropManager.UpdateCULances();
             }
+            Main.Log.Log($"dropslot stats: BiggerDrops_BaseMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots")}, BiggerDrops_AdditionalMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots")}");
         }
 
         public static void Patch(HarmonyInstance h)
