@@ -185,9 +185,13 @@
       "Path": "heatsinks",
       "ShouldMergeJSON": true
     },
-		{
+    {
       "Type": "DropSlotDef",
       "Path": "dropslots"
+    },
+    {
+      "Type": "PilotingClassDef",
+      "Path": "piloting_classes"
     }
   ]
 }
