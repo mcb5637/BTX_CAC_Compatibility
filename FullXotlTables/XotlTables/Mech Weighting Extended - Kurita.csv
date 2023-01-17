@@ -26,10 +26,12 @@ mechdef_falcon_FLC-4N,4,,7,,7,,7,,7
 mechdef_spider_SDR-5V,43,,41,,40,,40,,40
 mechdef_hussar_HSR-200-D,0,,0,3039-01-01T00:00:00Z,7,,7,,7
 mechdef_hermes_HER-1B,4,,4,,4,,4,,4
+mechdef_stinger_STG-A5,6,,6,,6,,6,,5
 mechdef_firestarter_FS9-H,68,,66,,64,,64,,64
 mechdef_hermes_HER-1S,0,,0,3039-01-01T00:00:00Z,4,,4,,4
 mechdef_hussar_HSR-350-D,0,3038-01-01T00:00:00Z,4,,4,,4,,4
 mechdef_mongoose_MON-68,0,3039-01-01T00:00:00Z,4,,4,,4,,4
+mechdef_jenner_JR7-A,4,,4,,4,,4,,4
 mechdef_mongoose_MON-67,8,,11,,20,,20,,20
 mechdef_mongoose_MON-66,0,,0,3039-01-01T00:00:00Z,4,,4,,4
 mechdef_firestarter_FS9-K,4,,4,,4,,4,,4
@@ -39,8 +41,6 @@ mechdef_javelin_JVN-10F,4,,4,,4,,4,,4
 mechdef_jenner_JR7-D,82,,78,,60,,60,,60
 mechdef_jenner_JR7-K,0,,0,3047-01-01T00:00:00Z,11,,11,,11
 mechdef_jenner_JR7-F,5,,4,,4,,4,,4
-mechdef_jenner_JR7-A,4,,4,,4,,4,,4
-mechdef_stinger_STG-A5,29,,29,,29,,29
 Mediums,,,,,,,,,
 mechdef_vulcan_VL-2T,42,,38,,36,,36,,36
 mechdef_cicada_CDA-2A,30,,27,,26,,26,,26
@@ -145,6 +145,7 @@ mechdef_hatamotoku_HTM-27W,0,,0,3039-12-01T00:00:00Z,6,,6,,6
 mechdef_cyclops_CP-10-Q,16,,12,,10,,10,,10
 mechdef_awesome_AWS-8T,9,,7,,6,,6,,6
 mechdef_hatamotokaze_HTM-27V,0,,0,3039-12-01T00:00:00Z,6,,6,,6
+mechdef_charger_CGR-SB,0,3025-07-01T00:00:00Z,12,,6,,6,,6
 mechdef_awesome_AWS-8Q,92,,68,,58,,58,,58
 mechdef_hatamotochi_HTM-27T,0,,0,3042-01-01T00:00:00Z,41,,41,,41
 mechdef_longbow_LGB-7Q,26,,19,,16,,16,,16
@@ -158,11 +159,10 @@ mechdef_charger_CGR-3K,0,,0,3039-12-01T00:00:00Z,10,,10,,10
 mechdef_atlas_AS7-A,16,,12,,10,,10,,10
 mechdef_highlander_HGN-733,0,3025-01-01T00:00:00Z,19,,16,,16,,16
 mechdef_kingcrab_KGC-0000,16,,12,,10,,10,,10
+mechdef_cyclops_CP-10-HQ,9,,7,,6,,6,,6
 mechdef_atlas_AS7-D,46,,34,,29,,29,,29
+mechdef_atlas_AS7-D-K,3,,3,,3,,3,,3
 mechdef_kingcrab_KGC-000,0,,0,3049-12-01T00:00:00Z,6,,6,,6
 mechdef_atlas_AS7-K,0,,0,3049-01-01T00:00:00Z,6,,6,,6
 mechdef_highlander_HGN-732,0,,0,3039-12-01T00:00:00Z,6,,6,,6
-mechdef_cyclops_CP-10-HQ,9,,7,,6,,6,,6
-mechdef_atlas_AS7-D-K,3,,3,,3,,3,,3
-mechdef_charger_CGR-SB,0,3025-07-01T00:00:00Z,12,,6,,6,,6
 mechdef_marauderII_MAD-4A,0,Jump:3028-05-25T00:00:00Z,3,,3,,3,,3
