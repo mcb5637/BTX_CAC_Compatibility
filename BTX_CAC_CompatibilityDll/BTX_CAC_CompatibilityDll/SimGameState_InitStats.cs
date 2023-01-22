@@ -11,17 +11,44 @@ namespace BTX_CAC_CompatibilityDll
 {
     internal class SimGameState_InitStats
     {
+        public static int GetUpgradeStat(SimGameState s, string stat)
+        {
+            int r = 0;
+            foreach (var u in s.ShipUpgrades)
+            {
+                if (s.HasShipUpgrade(u.Description.Id))
+                {
+                    foreach (var st in u.Stats)
+                    {
+                        if (st.name == stat)
+                        {
+                            r += st.ToInt();
+                        }
+                    }
+                }
+            }
+            return r;
+        }
+
         public static void Postfix(SimGameState __instance)
         {
-            if (!__instance.CompanyStats.ContainsStatistic("BiggerDrops_BaseMechSlots") || __instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots") == 0)
+            bool update = false;
+            if (__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots") != 4)
             {
                 __instance.CompanyStats.RemoveStatistic("BiggerDrops_BaseMechSlots");
                 __instance.CompanyStats.AddStatistic("BiggerDrops_BaseMechSlots", 4);
-                if (__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots") > 4)
-                    __instance.CompanyStats.Int_Add(__instance.CompanyStats.GetStatistic("BiggerDrops_AdditionalMechSlots"), -4);
-                DropManager.UpdateCULances();
+                update = true;
             }
-            Main.Log.Log($"dropslot stats: BiggerDrops_BaseMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots")}, BiggerDrops_AdditionalMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots")}");
+            int u = GetUpgradeStat(__instance, "BiggerDrops_AdditionalMechSlots");
+            if (__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots") != u)
+            {
+                __instance.CompanyStats.RemoveStatistic("BiggerDrops_AdditionalMechSlots");
+                __instance.CompanyStats.AddStatistic("BiggerDrops_AdditionalMechSlots", u);
+                update = true;
+            }
+            if (update)
+                DropManager.UpdateCULances();
+            Main.Log.Log($"dropslot stats: BiggerDrops_BaseMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots")}, BiggerDrops_AdditionalMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots")}, Upgrades: {u}");
         }
 
         public static void Patch(HarmonyInstance h)
