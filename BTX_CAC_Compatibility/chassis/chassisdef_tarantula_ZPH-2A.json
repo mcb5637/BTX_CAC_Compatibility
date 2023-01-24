@@ -1,0 +1,261 @@
+{
+  "Description": {
+    "Cost": 4140000,
+    "Rarity": 1,
+    "Purchasable": true,
+    "Manufacturer": "",
+    "Model": "",
+    "UIName": "Tarantula",
+    "Id": "chassisdef_tarantula_ZPH-2A",
+    "Name": "Tarantula",
+    "Details": "The Tarantula was designed specifically for a reconnaissance role. Built around a massive Nissan 200 extralight engine, the 'Mech is also equipped with eight jump jets allowing the Tarantula to easily navigate any terrain. The 2A variant is a simple upgrade, replacing the two medium lasers with a pair of ER medium lasers.",
+    "Icon": "uixTxrIcon_commando"
+  },
+  "MovementCapDefID": "movedef_tarantula_ZPH-1",
+  "PathingCapDefID": "pathingdef_light",
+  "HardpointDataDefID": "hardpointdatadef_cutarantula",
+  "PrefabIdentifier": "chrprfmech_cutarantulabase-001",
+  "PrefabBase": "cutarantula",
+  "Tonnage": 25,
+  "InitialTonnage": 12,
+  "weightClass": "LIGHT",
+  "BattleValue": 2061000,
+  "Heatsinks": 10,
+  "TopSpeed": 85,
+  "TurnRadius": 90,
+  "MaxJumpjets": 8,
+  "Stability": 100,
+  "StabilityDefenses": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpotterDistanceMultiplier": 1,
+  "VisibilityMultiplier": 1,
+  "SensorRangeMultiplier": 1,
+  "Signature": 0,
+  "Radius": 4,
+  "PunchesWithLeftArm": false,
+  "MeleeDamage": 15,
+  "MeleeInstability": 5,
+  "MeleeToHitModifier": 0,
+  "DFADamage": 25,
+  "DFAToHitModifier": 0,
+  "DFASelfDamage": 25,
+  "DFAInstability": 15,
+  "Locations": [
+    {
+      "Location": "Head",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 1,
+      "MaxArmor": 45,
+      "MaxRearArmor": -1,
+      "InternalStructure": 16
+    },
+    {
+      "Location": "LeftArm",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 60,
+      "MaxRearArmor": -1,
+      "InternalStructure": 30
+    },
+    {
+      "Location": "LeftTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 60,
+      "MaxRearArmor": 30,
+      "InternalStructure": 30
+    },
+    {
+      "Location": "CenterTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 80,
+      "MaxRearArmor": 40,
+      "InternalStructure": 40
+    },
+    {
+      "Location": "RightTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 60,
+      "MaxRearArmor": 30,
+      "InternalStructure": 30
+    },
+    {
+      "Location": "RightArm",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 60,
+      "MaxRearArmor": -1,
+      "InternalStructure": 30
+    },
+    {
+      "Location": "LeftLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 60,
+      "MaxRearArmor": -1,
+      "InternalStructure": 30
+    },
+    {
+      "Location": "RightLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 60,
+      "MaxRearArmor": -1,
+      "InternalStructure": 30
+    }
+  ],
+  "LOSSourcePositions": [
+    {
+      "x": 0,
+      "y": 9.5,
+      "z": 0.5
+    },
+    {
+      "x": -2.5,
+      "y": 8.5,
+      "z": -0.5
+    },
+    {
+      "x": 2.5,
+      "y": 8.5,
+      "z": -0.5
+    }
+  ],
+  "LOSTargetPositions": [
+    {
+      "x": 0,
+      "y": 9.5,
+      "z": 0.5
+    },
+    {
+      "x": -2.5,
+      "y": 8.5,
+      "z": -0.5
+    },
+    {
+      "x": 2.5,
+      "y": 8.5,
+      "z": -0.5
+    },
+    {
+      "x": -1.5,
+      "y": 3,
+      "z": 0.5
+    },
+    {
+      "x": 1.5,
+      "y": 3,
+      "z": 0.5
+    }
+  ],
+  "VariantName": "ZPH-2A",
+  "ChassisTags": {
+    "items": [
+      "mech_quirk_easytopilot",
+      "mech_quirk_extendedtorsotwistquad",
+      "mech_quirk_exposedactuators"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "CustomParts": {
+    "Unaffected": {
+      "DesignMasks": "false",
+      "Pathing": "false",
+      "Fire": "false",
+      "Landmines": "false"
+    },
+    "ArmsCountedAsLegs": true,
+    "CustomParts": []
+  },
+  "StockRole": "Light Scout",
+  "YangsThoughts": "The Tarantula is lightly armed but incredibly nimble.  Our pilots won't be taking down Clan 'Mechs in this thing, but they can help spot them cheaply and with so much speed that it will probably keep them alive.",
+  "FixedEquipment": [
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_XL_Engine",
+      "SimGameUID": "",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "GUID": null,
+      "DamageLevel": "Functional",
+      "prefabName": null,
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_XL_Engine",
+      "SimGameUID": "",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "GUID": null,
+      "DamageLevel": "Functional",
+      "prefabName": null,
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightArm",
+      "ComponentDefID": "Gear_Quad_Actuators",
+      "SimGameUID": "",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "GUID": null,
+      "DamageLevel": "Functional",
+      "prefabName": null,
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Gear_Quad_Actuators",
+      "SimGameUID": "",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "GUID": null,
+      "DamageLevel": "Functional",
+      "prefabName": null,
+      "hasPrefabName": false
+    }
+  ]
+}
