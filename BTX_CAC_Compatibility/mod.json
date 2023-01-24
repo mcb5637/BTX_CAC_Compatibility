@@ -192,6 +192,10 @@
     {
       "Type": "PilotingClassDef",
       "Path": "piloting_classes"
+    },
+    {
+      "Type": "MovementCapabilitiesDef",
+      "Path": "movementdef"
     }
   ]
 }
