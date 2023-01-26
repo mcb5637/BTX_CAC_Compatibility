@@ -16,12 +16,12 @@
     "items": [
       "mech_case_left",
       "mech_quirk_multitrac",
+      "mech_quirk_notorsotwist",
       "mech_quirk_exposedactuators"
     ],
     "tagSetSourceFile": ""
   },
   "CustomParts": {
-    "FiringArc": 360,
     "Unaffected": {
       "DesignMasks": "false",
       "Pathing": "false",
