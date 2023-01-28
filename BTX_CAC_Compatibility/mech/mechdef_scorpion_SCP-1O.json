@@ -25,7 +25,7 @@
     "Id": "mechdef_scorpion_SCP-1O",
     "Name": "Scorpion",
     "Details": "The SCP-1O, introduced in 3049, is a very basic upgrade of the design which replaces the PPC with an ER PPC. While this gives the Scorpion greater range, it also increases the heat from the ER PPC, greatly overtaxing the 10 single heat sinks.",
-    "Icon": "uixTxrIcon_griffin"
+    "Icon": "uixTxrIcon_scorpion"
   },
   "simGameMechPartCost": 620000,
   "Version": 1,

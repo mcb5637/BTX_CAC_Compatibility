@@ -25,7 +25,7 @@
     "Id": "mechdef_scorpion_SCP-1N",
     "Name": "Scorpion",
     "Details": "Introduced and built by the Terran Hegemony in 2570, the Scorpion is an example of an idea that was ahead of its time. The design itself was shunned by most MechWarriors due to the rough ride of the four-legged gait, but if the design is looked at through an objective standpoint the Scorpion is a very capable 'Mech for its intended role.",
-    "Icon": "uixTxrIcon_griffin"
+    "Icon": "uixTxrIcon_scorpion"
   },
   "simGameMechPartCost": 590000,
   "Version": 1,

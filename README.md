@@ -144,7 +144,7 @@ Credits:
 - CMiSSioN for CustomBundle
 - everyone involved in RougeTech (also Crackfox for Vanilla CAC) for examples and inspiration on how to use CB
 - Haree for BTX, Tarantula and Scorpion jsons
-- Hounfor for the Goliath, LAM and Helepolis icons
+- Hounfor for the Quad, LAM and Helepolis icons
 - lordruthermore for half working Goliath jsons
 - Pode for half working LAM jsons
 - Pode/bhtrail for looking up mech loadouts

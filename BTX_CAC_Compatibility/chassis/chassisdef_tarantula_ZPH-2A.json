@@ -9,7 +9,7 @@
     "Id": "chassisdef_tarantula_ZPH-2A",
     "Name": "Tarantula",
     "Details": "The Tarantula was designed specifically for a reconnaissance role. Built around a massive Nissan 200 extralight engine, the 'Mech is also equipped with eight jump jets allowing the Tarantula to easily navigate any terrain. The 2A variant is a simple upgrade, replacing the two medium lasers with a pair of ER medium lasers.",
-    "Icon": "uixTxrIcon_commando"
+    "Icon": "uixTxrIcon_tarantula"
   },
   "MovementCapDefID": "movedef_tarantula_ZPH-1",
   "PathingCapDefID": "pathingdef_light",
