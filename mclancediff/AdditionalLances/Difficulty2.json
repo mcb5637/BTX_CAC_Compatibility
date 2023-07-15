@@ -1,0 +1,21 @@
+{
+  "LancePool": {
+    "ALL": ["Generic_Light_Battle_Lance", "Damaged_Light_Battle_Lance"]
+  },
+  "Allies": {
+    "Max": 1,
+    "ChanceToSpawn": 0.1,
+    "EliteLances": {
+      "Conditions": ["IsAlly"],
+      "Overrides": {
+        "Max": 2,
+        "ChanceToSpawn": 0.6
+      }
+    },
+    "LancePool": {
+      "ALL": [
+        "Generic_Light_Battle_Lance"
+      ]
+    }
+  }
+}
