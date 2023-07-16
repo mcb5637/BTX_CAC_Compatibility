@@ -91,6 +91,7 @@
     <Compile Include="AccessExtensionPatcher\MethodCall.cs" />
     <Compile Include="AccessExtensionPatcher\PropertyGet.cs" />
     <Compile Include="AccessExtensionPatcher\PropertySet.cs" />
+    <Compile Include="Briefing_InitializeContractComplete.cs" />
     <Compile Include="SimGameState_InitStats.cs" />
     <Compile Include="WeaponHit_RemoveInfernoFloatie.cs" />
     <Compile Include="AEPStatic.cs" />
