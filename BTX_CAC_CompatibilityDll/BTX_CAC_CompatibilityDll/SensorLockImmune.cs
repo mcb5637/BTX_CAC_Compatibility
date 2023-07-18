@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BattleTech;
 using BattleTech.UI;
-using Harmony;
+using HarmonyLib;
 
 namespace BTX_CAC_CompatibilityDll
 {

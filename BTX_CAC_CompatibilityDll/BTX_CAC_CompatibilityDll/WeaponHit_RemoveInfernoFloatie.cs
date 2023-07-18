@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CustAmmoCategories;
-using Harmony;
+using HarmonyLib;
 
 namespace BTX_CAC_CompatibilityDll
 {

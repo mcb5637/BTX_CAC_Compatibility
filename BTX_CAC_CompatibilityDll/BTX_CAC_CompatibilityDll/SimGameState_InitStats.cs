@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Harmony;
+using HarmonyLib;
 using BiggerDrops.Features;
 
 namespace BTX_CAC_CompatibilityDll
@@ -51,7 +51,7 @@ namespace BTX_CAC_CompatibilityDll
             Main.Log.Log($"dropslot stats: BiggerDrops_BaseMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots")}, BiggerDrops_AdditionalMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots")}, Upgrades: {u}");
         }
 
-        public static void Patch(HarmonyInstance h)
+        public static void Patch(Harmony h)
         {
             HarmonyMethod m = new HarmonyMethod(AccessTools.DeclaredMethod(typeof(SimGameState_InitStats), "Postfix"))
             {

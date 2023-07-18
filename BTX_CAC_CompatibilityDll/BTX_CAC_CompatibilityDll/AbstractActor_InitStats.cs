@@ -1,5 +1,5 @@
 ﻿using BattleTech;
-using Harmony;
+using HarmonyLib;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -17,7 +17,7 @@ namespace BTX_CAC_CompatibilityDll
             }
         }
 
-        public static void Patch(HarmonyInstance h)
+        public static void Patch(Harmony h)
         {
             HarmonyMethod p = new HarmonyMethod(AccessTools.Method(typeof(AbstractActor_InitStats), "Prefix"));
             h.Patch(AccessTools.DeclaredMethod(typeof(Mech), "InitStats"), p, null, null);

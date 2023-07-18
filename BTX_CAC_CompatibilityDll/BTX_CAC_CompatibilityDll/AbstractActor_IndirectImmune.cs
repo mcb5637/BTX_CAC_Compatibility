@@ -1,5 +1,5 @@
 ﻿using BattleTech;
-using Harmony;
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace BTX_CAC_CompatibilityDll
                 __result = true;
         }
 
-        public static void Patch(HarmonyInstance h)
+        public static void Patch(Harmony h)
         {
             HarmonyMethod p = new HarmonyMethod(AccessTools.Method(typeof(AbstractActor_IndirectImmune), "Postfix"));
             h.Patch(AccessTools.Property(typeof(Mech), "HasIndirectFireImmunity").GetMethod, null, p, null);

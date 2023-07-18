@@ -1,7 +1,7 @@
 ﻿using AccessExtension;
 using BattleTech;
 using CustomUnits;
-using Harmony;
+using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +24,7 @@ namespace BTX_CAC_CompatibilityDll
             return Extended_CE.Core.UsingComponents();
         }
 
-        public static void Patch(HarmonyInstance h)
+        public static void Patch(Harmony h)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace BTX_CAC_CompatibilityDll
             }
             catch (Exception e)
             {
-                FileLog.Log(e.ToString());
+                Main.Log.LogError(e.ToString());
             }
         }
 

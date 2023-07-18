@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BattleTech;
-using Harmony;
+using HarmonyLib;
 using CustAmmoCategories;
 
 namespace BTX_CAC_CompatibilityDll
 {
     class InfernoExplode
     {
-        public static void Patch(HarmonyInstance harmony)
+        public static void Patch(Harmony harmony)
         {
             harmony.Patch(AccessTools.DeclaredMethod(typeof(AmmunitionBox), "DamageComponent"), new HarmonyMethod(AccessTools.Method(typeof(InfernoExplode), "Prefix"))
             {

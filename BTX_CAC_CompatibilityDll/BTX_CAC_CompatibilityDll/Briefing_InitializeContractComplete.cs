@@ -1,6 +1,6 @@
 ﻿using BattleTech;
 using BattleTech.UI;
-using Harmony;
+using HarmonyLib;
 
 namespace BTX_CAC_CompatibilityDll
 {

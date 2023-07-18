@@ -3,7 +3,7 @@ using BattleTech;
 using BattleTech.Save;
 using BattleTech.UI;
 using CustAmmoCategories;
-using Harmony;
+using HarmonyLib;
 using HBS.Logging;
 using Newtonsoft.Json;
 using System;
@@ -38,7 +38,7 @@ namespace BTX_CAC_CompatibilityDll
             }
             if (Sett.LogLevelLog)
                 HBS.Logging.Logger.SetLoggerLevel("BTX_CAC_Compatibility", LogLevel.Log);
-            HarmonyInstance harmony = HarmonyInstance.Create("com.github.mcb5637.BTX_CAC_Compatibility");
+            Harmony harmony = new Harmony("com.github.mcb5637.BTX_CAC_Compatibility");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             AccessExtensionPatcher.PatchAll(harmony, Assembly.GetExecutingAssembly());
             AbstractActor_InitStats.Patch(harmony);
@@ -87,7 +87,7 @@ namespace BTX_CAC_CompatibilityDll
             }
             catch (Exception e)
             {
-                FileLog.Log(e.ToString());
+                Log.LogError(e.ToString());
             }
 
             try
@@ -104,7 +104,7 @@ namespace BTX_CAC_CompatibilityDll
             }
             catch (Exception e)
             {
-                FileLog.Log(e.ToString());
+                Log.LogError(e.ToString());
             }
 
             ToHitModifiersHelper.registerModifier("BTX_CAC_Compatibility_ECM", "ECM", true, true, ECM_Effect, null);
@@ -122,10 +122,10 @@ namespace BTX_CAC_CompatibilityDll
             return mod;
         }
 
-        private static void Unpatch(HarmonyInstance harmony, MethodBase b, string id, bool pre=true, bool post=true, bool trans=true, string onlyUnpatch=null)
+        private static void Unpatch(Harmony harmony, MethodBase b, string id, bool pre=true, bool post=true, bool trans=true, string onlyUnpatch=null)
         {
-            //FileLog.Log($"checking to unpatch: {b.FullName()}");
-            Patches pa = harmony.GetPatchInfo(b);
+            //FileLog.Log($"checking to unpatch: {b.FullName()} {pre} {post} {trans}");
+            Patches pa = Harmony.GetPatchInfo(b);
             if (pa==null)
             {
                 //FileLog.Log("no patch attached");
@@ -139,15 +139,19 @@ namespace BTX_CAC_CompatibilityDll
                 UnpatchCheckList(harmony, b, id, pa.Transpilers, onlyUnpatch);
         }
 
-        private static void UnpatchCheckList(HarmonyInstance harmony, MethodBase b, string id, IEnumerable<Patch> pa, string onlyUnpatch)
+        private static void UnpatchCheckList(Harmony harmony, MethodBase b, string id, IEnumerable<Patch> pa, string onlyUnpatch)
         {
             foreach (Patch p in pa)
             {
-                MethodInfo patch = p.patch;
+                MethodInfo patch = p.PatchMethod;
                 if (p.owner.Equals(id) && (onlyUnpatch==null || onlyUnpatch.Equals(patch.FullName())))
                 {
                     harmony.Unpatch(b, patch);
                     //FileLog.Log($"found: {patch.FullName()}");
+                }
+                else
+                {
+                    //FileLog.Log($"no match: {patch.FullName()} {p.owner}");
                 }
             }
         }
