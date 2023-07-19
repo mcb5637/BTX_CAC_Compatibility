@@ -1,14 +1,19 @@
 # BTX_CAC_Compatibility
 
-Modifies BTX (and BTXMinusWeapons, if present) for CAC.
+Modifies BEX (and BTXMinusWeapons, if present) for CAC.
 
-Installation: (requires working BTX installation)
+Installation/Update: (requires working BEX installation)
+- Add BEX BiggerDrops addon (if not already present)
+- install a new ModTek (4.1+) (if not already present)
+	- remove the old ModTek and .modtek folders
+	- verify files (Steam/GOG) / reinstall Battletech (anything else) (to remove ModTek <3.0, if present)
+	- download and unzip ModTek to the correct folder: https://github.com/BattletechModders/ModTek/blob/master/INSTALL.md
+	- direct download link: https://github.com/BattletechModders/ModTek/releases/download/v4.1.0/ModTek.zip
 - Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
 - update CAB
-- remove ModTek and IRBModUtils (CAC-C for now contains their own versions of them)
+- remove IRBModUtils (CAC-C for now contains their own versions of them)
 - remove any previous version of CAC-C, CAE, CAC, CC, CLoc, CPrewarm, CU, CVoices, if they exist
 - Add BTX_CAC_Compatibility, overriding files
-- reinject ModTek
 
 
 Component list (Clan & SLDF ones included):
@@ -125,6 +130,7 @@ Optional:
 - i recommend having a look at BT_Extended_CE/mod.json settings and enable some of these in all modes
 - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
 - manual deployment can be enabled via CU, set "DeployManual": to true to do so (warning: laggy)
+- if you do not want to drop more than 4 mechs, i recommend turning off MissionControls AdditionalLances
 
 Manual setup:
 - clone git repo, including submodules
