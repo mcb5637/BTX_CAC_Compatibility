@@ -1,0 +1,24 @@
+{
+  "Name": "Flashpoint_The_Raid_ModTek2Fix",
+  "Enabled": true,
+  "Version": "1",
+  "Description": "",
+  "Author": "Kierk+mcb",
+  "Website": "",
+  "DependsOn": [],
+  "OptionallyDependsOn": [
+    "Flashpoint_The_Raid"
+  ],
+  "Manifest": [
+    {
+      "Type": "ChassisDef",
+      "Path": "chassis",
+      "ShouldMergeJSON": true
+    },
+    {
+      "Type": "MechDef",
+      "Path": "mech",
+      "ShouldMergeJSON": true
+    }
+  ]
+}
