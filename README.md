@@ -25,6 +25,7 @@ Component list (Clan & SLDF ones included):
         - Laser: -
         - ER Laser: -
 		- Heavy Laser: -
+		- Binary Laser: fixed animation
         - Pulse Laser: fixed animation
 		- X-Pulse Laser: changed to single projectile, changed effect to pulse laser
         - Tag: attacking a tagged unit has an +3 accuracy boost, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
