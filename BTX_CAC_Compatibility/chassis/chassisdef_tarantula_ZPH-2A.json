@@ -12,7 +12,7 @@
     "Icon": "uixTxrIcon_tarantula"
   },
   "MovementCapDefID": "movedef_tarantula_ZPH-1",
-  "PathingCapDefID": "pathingdef_light",
+  "PathingCapDefID": "pathingdef_light_quad",
   "HardpointDataDefID": "hardpointdatadef_cutarantula",
   "PrefabIdentifier": "chrprfmech_cutarantulabase-001",
   "PrefabBase": "cutarantulabase",

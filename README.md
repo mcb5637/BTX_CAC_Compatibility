@@ -157,3 +157,4 @@ Credits:
 - Pode/bhtrail for looking up mech loadouts
 - Hounfor + Graywolfe for helping updating to BTX 1.9.3
 - Hounfor for Flying High Again contracts
+- Kierk for Scorpion/Tarantula pathing

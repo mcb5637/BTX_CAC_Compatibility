@@ -1,21 +1,40 @@
 ﻿{
   "Name": "BTX_CAC_Compatibility",
   "Enabled": true,
-
   "Description": "Modifies BTX (and BTXMinusWeapons) for CAC.",
   "Author": "mcb",
   "Website": "",
   "Version": "0.1.21.0b",
-
-  "DependsOn": [ "BT_Extended", "BT_Extended_Timeline", "BT_Extended_CE", "BT_Extended_3050", "BT_Extended_Clans", "BT_Extended_Quirks", "Custom Ammo Categories", "CustomActivatableEquipment", "CustomUnits", "CustomVoices", "IRTweaks" ],
-  "OptionallyDependsOn": [ "BTXMinusWeapons" ],
-  "ConflictsWith": [ "MechResizer", "BTMLColorLOSMod" ],
-
+  "DependsOn": [
+    "BT_Extended",
+    "BT_Extended_Timeline",
+    "BT_Extended_CE",
+    "BT_Extended_3050",
+    "BT_Extended_Clans",
+    "BT_Extended_Quirks",
+    "Custom Ammo Categories",
+    "CustomActivatableEquipment",
+    "CustomUnits",
+    "CustomVoices",
+    "IRTweaks"
+  ],
+  "OptionallyDependsOn": [
+    "BTXMinusWeapons"
+  ],
+  "ConflictsWith": [
+    "MechResizer",
+    "BTMLColorLOSMod"
+  ],
   "DLL": "BTX_CAC_CompatibilityDll.dll",
-
   "Settings": {
     "FixDropslotsInOldSaves": true,
-    "Use4LimitOnContractIds": [ "uw1_4_destroyBase", "tournament_1_3wayBattle", "tournament_a1_3wayBattle", "Story_6B_TreasureTrove_Default", "Story_9_Downfall_Default" ],
+    "Use4LimitOnContractIds": [
+      "uw1_4_destroyBase",
+      "tournament_1_3wayBattle",
+      "tournament_a1_3wayBattle",
+      "Story_6B_TreasureTrove_Default",
+      "Story_9_Downfall_Default"
+    ],
     "ReplaceInItemCollections": {
       "Weapon_Inferno_Inferno2_0-STOCK": {
         "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
@@ -87,14 +106,12 @@
       }
     }
   },
-
   "DataAddendumEntries": [
     {
       "name": "BattleTech.AmmoCategoryEnumeration",
       "path": "enums/AmmoCategory.json"
     }
   ],
-
   "Manifest": [
     {
       "Type": "WeaponDef",
@@ -201,6 +218,10 @@
     {
       "Type": "WeaponAddonDef",
       "Path": "weaponaddon"
+    },
+    {
+      "Type": "PathingCapabilitiesDef",
+      "Path": "pathing"
     }
   ]
 }

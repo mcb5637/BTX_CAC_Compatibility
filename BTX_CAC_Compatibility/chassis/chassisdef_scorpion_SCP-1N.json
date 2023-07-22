@@ -12,7 +12,7 @@
     "Icon": "uixTxrIcon_scorpion"
   },
   "MovementCapDefID": "movedef_scorpion_SCP-1N",
-  "PathingCapDefID": "pathingdef_medium",
+  "PathingCapDefID": "pathingdef_medium_quad",
   "HardpointDataDefID": "hardpointdatadef_scorpionmech",
   "PrefabIdentifier": "chrprfmech_scorpionmechbase-001",
   "PrefabBase": "scorpionmech",
