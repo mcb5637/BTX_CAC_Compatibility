@@ -9,10 +9,12 @@
     {
       "Id": "PPCMode_CAP_on",
       "UIName": "CAP",
-      "Description": "PPC Capacitor active.",
+      "Name": "PPC Capacitor ON",
+      "Description": "An active PPC Capacitor increases Damage and Heat at the cost of decreased fire rate.",
       "isBaseMode": false,
-      "DamagePerShot": 10,
-      "HeatGenerated": 10,
+      "DamagePerShot": 25,
+      "HeatGenerated": 15,
+      "Cooldown": 1,
       "ProjectileScale": {
         "x": 2,
         "y": 2,

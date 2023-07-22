@@ -1,0 +1,11 @@
+{
+  "Modes": [
+    {
+      "Id": "ERPPCMode_ST",
+      "UIName": "ST",
+      "Name": "Standard",
+      "Description": "PPC operates normally.",
+      "isBaseMode": true
+    }
+  ]
+}
