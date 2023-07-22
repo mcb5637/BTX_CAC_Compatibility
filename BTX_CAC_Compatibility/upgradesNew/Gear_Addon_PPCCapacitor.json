@@ -1,0 +1,42 @@
+{
+	"Custom": {
+		"AddonReference": {
+			"installedLocationOnly": true,
+			"autoTarget": true,
+			"WeaponAddonIds": [
+				"ppc_capacitor"
+			]
+		}
+	},
+	"StatName": null,
+	"RelativeModifier": 0,
+	"AbsoluteModifier": 0,
+	"Description": {
+		"Cost": 2000000,
+		"Rarity": 99,
+		"Purchasable": false,
+		"Manufacturer": "Varied",
+		"Model": "PPC CAP",
+		"UIName": "PPC Capacitor",
+		"Id": "Gear_Addon_PPCCapacitor",
+		"Name": "PPC Capacitor",
+		"Details": "Extra Capacitor banks to be attached to one PPC. If switched on before firing, they increase the heat and damage the connected PPC inflicts. Incompatible with Snub PPCs, but ER PPCs may be connected.",
+		"Icon": "uixSvgIcon_special_Equipment"
+	},
+	"BonusValueA": "+10 Dmg/Heat",
+	"BonusValueB": "Attached PPC",
+	"ComponentType": "Upgrade",
+	"ComponentSubType": "NotSet",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 1,
+	"Tonnage": 1,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"ComponentTags": {
+		"items": [
+		],
+		"tagSetSourceFile": ""
+	}
+}

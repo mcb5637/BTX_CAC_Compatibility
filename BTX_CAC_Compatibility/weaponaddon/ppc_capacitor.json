@@ -1,0 +1,23 @@
+{
+  "Id": "ppc_capacitor",
+  "autoTarget": true,
+  "installedLocationOnly": true,
+  "targetComponentTags": [
+    "ppc_capacitor_attachable"
+  ],
+  "modes": [
+    {
+      "Id": "PPCMode_CAP_on",
+      "UIName": "CAP",
+      "Description": "PPC Capacitor active.",
+      "isBaseMode": false,
+      "DamagePerShot": 10,
+      "HeatGenerated": 10,
+      "ProjectileScale": {
+        "x": 2,
+        "y": 2,
+        "z": 2
+      }
+    }
+  ]
+}

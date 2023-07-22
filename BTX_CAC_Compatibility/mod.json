@@ -197,6 +197,10 @@
     {
       "Type": "MovementCapabilitiesDef",
       "Path": "movementdef"
+    },
+    {
+      "Type": "WeaponAddonDef",
+      "Path": "weaponaddon"
     }
   ]
 }
