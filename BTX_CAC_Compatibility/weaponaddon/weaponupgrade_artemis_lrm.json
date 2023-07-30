@@ -1,0 +1,20 @@
+{
+  "Id": "weaponupgrade_artemis_lrm",
+  "autoTarget": true,
+  "installedLocationOnly": true,
+  "targetComponentTags": [
+    "artemis_lrm_attachable"
+  ],
+  "modes": [
+    {
+      "Id": "LRM_StdLoad",
+      "ClusteringModifier": 10,
+      "DirectFireModifier": -4
+    },
+    {
+      "Id": "LRM_HotLoad",
+      "ClusteringModifier": 10,
+      "DirectFireModifier": -4
+    }
+  ]
+}

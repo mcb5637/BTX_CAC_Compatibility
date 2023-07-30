@@ -9,7 +9,7 @@
   "forbiddenRangeEnable": true,
   "ClusterAIMult": 0.2,
   "PenetrateAIMult": 0.4,
-  "JamAIAvoid": 1.0,
+  "JamAIAvoid": 1.5,
   "DamageJamAIAvoid": 2.0,
   "BurningForestDesignMask": "DesignMaskBurningForest",
   "BurnedForestDesignMask": "DesignMaskBurnedForest",

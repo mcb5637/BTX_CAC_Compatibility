@@ -1,5 +1,5 @@
 {
-  "Id": "ppc_capacitor",
+  "Id": "weaponupgrade_ppc_capacitor",
   "autoTarget": true,
   "installedLocationOnly": true,
   "targetComponentTags": [

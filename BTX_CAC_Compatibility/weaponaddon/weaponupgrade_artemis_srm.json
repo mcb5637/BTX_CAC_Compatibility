@@ -1,0 +1,16 @@
+{
+  "Id": "weaponupgrade_artemis_srm",
+  "autoTarget": true,
+  "installedLocationOnly": true,
+  "targetComponentTags": [
+    "artemis_srm_attachable"
+  ],
+  "modes": [
+    {
+      "Id": "SRM_Base",
+      "HitGenerator": "Cluster",
+      "ClusteringModifier": 10,
+      "AccuracyModifier": -4
+    }
+  ]
+}
