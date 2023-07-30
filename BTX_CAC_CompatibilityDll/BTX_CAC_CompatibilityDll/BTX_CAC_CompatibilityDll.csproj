@@ -43,8 +43,7 @@
       <HintPath>C:\goggames\BATTLETECH\mods\ModTek\Harmony12X\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>C:\goggames\BATTLETECH\mods\.modtek\AssembliesInjected\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BiggerDrops">
       <HintPath>C:\goggames\BATTLETECH\mods\BiggerDrops\BiggerDrops.dll</HintPath>
@@ -91,6 +90,7 @@
     <Compile Include="AccessExtensionPatcher\PropertyGet.cs" />
     <Compile Include="AccessExtensionPatcher\PropertySet.cs" />
     <Compile Include="Briefing_InitializeContractComplete.cs" />
+    <Compile Include="MechDef_FromJson.cs" />
     <Compile Include="SimGameState_InitStats.cs" />
     <Compile Include="WeaponHit_RemoveInfernoFloatie.cs" />
     <Compile Include="AEPStatic.cs" />
@@ -111,7 +111,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetPath)" "$(SolutionDir)..\BTX_CAC_Compatibility\$(TargetName).dll"
-copy /Y "$(TargetPath)" "C:\goggames\BATTLETECH\Mods\BTX_CAC_Compatibility\$(TargetName).dll"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetPath)" "$(SolutionDir)..\BTX_CAC_Compatibility\$(TargetName).dll"</PostBuildEvent>
   </PropertyGroup>
 </Project>

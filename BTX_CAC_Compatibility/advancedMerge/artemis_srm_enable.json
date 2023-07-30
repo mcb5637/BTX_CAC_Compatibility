@@ -32,7 +32,14 @@
 		"Weapon_SRM_SRM6_2-Valiant",
 		"Weapon_SRM_SRM6_-2-Holly",
 		"Weapon_SRM_SRM6_3-Valiant",
-		"Weapon_SRM_SRM6_-3-Valiant"
+		"Weapon_SRM_SRM6_-3-Valiant",
+		"Weapon_SRM_CSRM2_0-STOCK",
+		"Weapon_SRM_CSRM4_0-STOCK",
+		"Weapon_SRM_CSRM6_0-STOCK",
+		"Weapon_LRM_CLRM5_0-STOCK",
+		"Weapon_LRM_CLRM10_0-STOCK",
+		"Weapon_LRM_CLRM15_0-STOCK",
+		"Weapon_LRM_CLRM20_0-STOCK"
 	],
 	"Instructions": [
 		{
