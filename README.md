@@ -42,9 +42,9 @@ Component list (Clan & SLDF ones included):
 		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance / can be used as MG)
     - Missle
         - LRM: added hotload mode, added Deadfire ammo
-        - Artemis IV LRM: added hotload mode, changed acc to +4 in direct fire (+0 indirect), added Deadfire ammo
+        - Artemis IV LRM: turned into a Weapon Addon for LRMs (deprecated, but still working)
         - SRM: added inferno ammo (inferno causes fires everywhere), added Deadfire ammo
-        - Artemis IV SRM: added inferno ammo, +4 acc, added Deadfire ammo
+        - Artemis IV SRM: turned into a Weapon Addon for SRMs (deprecated, but still working)
         - Streak SRM: added inferno ammo, added streak effect, added Deadfire ammo
         - NARC: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 2 to 4 rounds (depends on launcher), ecm blocks narc acc bonus
         - ATM: added 3 ammo types, trading damage for range, added clustering
@@ -77,6 +77,8 @@ Component list (Clan & SLDF ones included):
 	- Prototype TSM: Auto activates at >27 heat (\*1.5 melee damage, +30m movement)
 	- MASC: Activatable (\*2 speed) (fail chance 15%, add up per turn in use)
 	- Coolant Pod: doubles heatsinking for 1 turn, 1 activation per pod (does not stack)
+	- Artemis IV FCS: attaches to one SRM or LRM launcher and gives it: +4 direct fire acc, better clustering
+	- PPC Capacitor: attaches to one PPC or ERPPC and gives it: CAP Mode (+25 DMG, +15 Heat, 1 turn Weapon Cooldown)
 - Argo Upgrades
 	- Storage: added 3 additional storage upgrades, each giving a new mechbay to use
 	- Engine Repairs: The storage upgrades do fix BiggerDrops tonnage increase upgrades, by giving you a way to fullfill their requirements
@@ -105,11 +107,11 @@ What to do when adding CAC-C into an existing savegame:
 	- Liao AP (Gear_Sensor_Prototype_ActiveProbe -> Gear_SensorCAC_LiaoProtoAP)
 	- AMS upgrade components (Gear_AMS_XXX -> Weapon_AMSCAC_XXX) to AMS weapons & MG ammo
 	- Infernos Launcher (Weapon_Inferno_Inferno2_XXX -> Ammo_AmmunitionBox_Generic_SRM_Inferno) to standard SRMs with Inferno ammo
-	- Deadfire LRMs/SRMs (Weapon_SRM_DFSRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_SRM_DF)(Weapon_LRM_DFLRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_LRM_DF) to standard LRMs/SRMs with deadfire ammo.
+	- Deadfire LRMs/SRMs (Weapon_SRM_DFSRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_SRM_DF)(Weapon_LRM_DFLRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_LRM_DF) to standard LRMs/SRMs with deadfire ammo
 	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
+	- Artemis SRM/LRM (Weapon_SRM_ASRMXXX/Weapon_LRM_ALRMXXX ->  Gear_Addon_Artemis4) to a matching standard SRM/LRM launcher with Artemis IV FCS attachment
 
 TODO List:
-- ModTek 3.0?
 - quad critable arm actuators to leg actuators
 - narc/inarc ammo types
 - imp sensor unlocks sensorlock without skill (add to irtweaks)
