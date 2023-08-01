@@ -1,12 +1,10 @@
 {
   "TargetIDs": [
-    "chassisdef_bushwacker_BSW-S2",
-    "chassisdef_falcon_FLC-4P",
-    "chassisdef_grendel_mongrel-C"
+    "chassisdef_black_hawk_nova-S"
   ],
   "Instructions": [
     {
-      "JSONPath": "$.Locations[?(@Location == 'LeftTorso')].Hardpoints",
+      "JSONPath": "$.Locations[?(@Location == 'CenterTorso')].HardPoints",
       "Action": "ArrayAdd",
       "Value": {
         "WeaponMount": "AntiPersonnel",

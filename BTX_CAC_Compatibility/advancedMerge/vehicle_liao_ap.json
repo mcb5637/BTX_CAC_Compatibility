@@ -1,7 +1,5 @@
 {
   "TargetIDs": [
-    "vehicledef_SWIFTWIND",
-    "vehicledef_SWIFTWIND_ICE",
     "vehicledef_ROTUNDA",
     "vehicledef_HETZER_SCOUT"
   ],
@@ -11,13 +9,6 @@
       "Action": "ObjectMerge",
       "Value": {
         "ComponentDefID": "Gear_SensorCAC_LiaoProtoAP"
-      }
-    },
-    {
-      "JSONPath": "$.inventory[?(@ComponentDefID == 'Gear_Sensor_Prototype_ECM')]",
-      "Action": "ObjectMerge",
-      "Value": {
-        "ComponentDefID": "Gear_SensorCAC_LiaoProtoECM"
       }
     }
   ]

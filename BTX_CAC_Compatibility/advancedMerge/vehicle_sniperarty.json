@@ -1,0 +1,21 @@
+{
+  "TargetIDs": [
+    "vehicledef_MARKSMAN"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.inventory[?(@ComponentDefID == 'Ammo_AmmunitionBox_Generic_S')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Ammo_AmmunitionBox_Generic_Sniper"
+      }
+    },
+    {
+      "JSONPath": "$.inventory[?(@ComponentDefID == 'Weapon_SniperArtillery')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Weapon_MortarCAC_Sniper"
+      }
+    }
+  ]
+}

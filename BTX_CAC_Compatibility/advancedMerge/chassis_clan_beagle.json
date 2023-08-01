@@ -1,14 +1,12 @@
 {
   "TargetIDs": [
     "chassisdef_dasher_fire_moth-A",
-    "chassisdef_dasher_fire_moth-B",
     "chassisdef_koshi_mist_lynx-A",
     "chassisdef_koshi_mist_lynx-B",
     "chassisdef_koshi_mist_lynx-D",
     "chassisdef_koshi_mist_lynx-E",
     "chassisdef_koshi_mist_lynx-PRIME",
     "chassisdef_hankyu_arctic_cheetah-C",
-    "chassisdef_uller_kit_fox-G",
     "chassisdef_dragonfly_viper-C",
     "chassisdef_fenris_ice_ferret-PRIME",
     "chassisdef_shadow_cat-A",
@@ -16,14 +14,10 @@
     "chassisdef_black_hawk_nova-S",
     "chassisdef_nobori-nin_huntsman-PRIME",
     "chassisdef_black_lanner-D",
-    "chassisdef_black_lanner-PRIME",
     "chassisdef_ryoken_stormcrow-E",
     "chassisdef_cauldron_born_ebon_jaguar-B",
     "chassisdef_loki_hellbringer-A",
     "chassisdef_rifleman_IIC",
-    "chassisdef_viper_black_python-2",
-    "chassisdef_daishi_dire_wolf-C",
-    "chassisdef_wolfhound_iic",
     "chassisdef_koshi_mist_lynx-H",
     "chassisdef_loki_hellbringer-H",
     "chassisdef_loki_hellbringer-J",
@@ -32,24 +26,10 @@
   ],
   "Instructions": [
     {
-      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ActiveProbe_Clan')]",
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ActiveProbe_Clan' || @ComponentDefID == 'Gear_Sensor_ActiveProbeImproved_Clan')]",
       "Action": "ObjectMerge",
       "Value": {
         "ComponentDefID": "Gear_SensorCAC_BeagleClan"
-      }
-    },
-    {
-      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ActiveProbeImproved_Clan')]",
-      "Action": "ObjectMerge",
-      "Value": {
-        "ComponentDefID": "Gear_SensorCAC_BeagleClan"
-      }
-    },
-    {
-      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ECM_Clan')]",
-      "Action": "ObjectMerge",
-      "Value": {
-        "ComponentDefID": "Gear_SensorCAC_GuardianClan"
       }
     }
   ]

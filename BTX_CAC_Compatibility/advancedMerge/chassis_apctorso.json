@@ -1,25 +1,16 @@
 {
   "TargetIDs": [
-    "chassisdef_black_hawk_nova-S",
     "chassisdef_kingfisher-B",
     "chassisdef_berserker_BRZ-A3",
     "chassisdef_berserker_BRZ-B3",
-	"chassisdef_penetrator_PTR-4D",
-	"chassisdef_penetrator_PTR-4F",
-	"chassisdef_penetrator_PTR-6M",
-	"chassisdef_penetrator_PTR-6S"
+    "chassisdef_penetrator_PTR-4D",
+    "chassisdef_penetrator_PTR-4F",
+    "chassisdef_penetrator_PTR-6M",
+    "chassisdef_penetrator_PTR-6S"
   ],
   "Instructions": [
     {
       "JSONPath": "$.Locations[?(@Location == 'CenterTorso')].Hardpoints",
-      "Action": "ArrayAdd",
-      "Value": {
-        "WeaponMount": "AntiPersonnel",
-        "Omni": false
-      }
-    },
-    {
-      "JSONPath": "$.Locations[?(@Location == 'CenterTorso')].HardPoints",
       "Action": "ArrayAdd",
       "Value": {
         "WeaponMount": "AntiPersonnel",

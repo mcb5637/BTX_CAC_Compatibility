@@ -36,11 +36,7 @@
       }
     },
     {
-      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_EWE_Clan')]",
-      "Action": "Remove"
-    },
-    {
-      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_EWEImproved_Clan')]",
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_EWE_Clan' || @ComponentDefID == 'Gear_Sensor_EWEImproved_Clan')]",
       "Action": "Remove"
     }
   ]

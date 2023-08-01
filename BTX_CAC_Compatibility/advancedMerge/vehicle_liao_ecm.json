@@ -1,13 +1,14 @@
 {
   "TargetIDs": [
-    "vehicledef_PACKRAT"
+    "vehicledef_SWIFTWIND",
+    "vehicledef_SWIFTWIND_ICE"
   ],
   "Instructions": [
     {
       "JSONPath": "$.inventory[?(@ComponentDefID == 'Gear_Sensor_Prototype_ECM')]",
       "Action": "ObjectMerge",
       "Value": {
-        "ComponentDefID": "Gear_SensorCAC_PackratECM"
+        "ComponentDefID": "Gear_SensorCAC_LiaoProtoECM"
       }
     }
   ]

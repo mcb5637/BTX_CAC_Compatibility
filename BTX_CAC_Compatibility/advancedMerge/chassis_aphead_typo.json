@@ -1,12 +1,11 @@
 {
   "TargetIDs": [
-    "chassisdef_bushwacker_BSW-S2",
-    "chassisdef_falcon_FLC-4P",
-    "chassisdef_grendel_mongrel-C"
+    "chassisdef_loki_hellbringer-PRIME",
+    "chassisdef_loki_hellbringer-J"
   ],
   "Instructions": [
     {
-      "JSONPath": "$.Locations[?(@Location == 'LeftTorso')].Hardpoints",
+      "JSONPath": "$.Locations[?(@Location == 'Head')].HardPoints",
       "Action": "ArrayAdd",
       "Value": {
         "WeaponMount": "AntiPersonnel",

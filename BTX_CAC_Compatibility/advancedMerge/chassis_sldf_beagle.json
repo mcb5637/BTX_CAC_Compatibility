@@ -1,0 +1,22 @@
+{
+  "TargetIDs": [
+    "chassisdef_mongoose_MON-66b",
+    "chassisdef_mongoose_MON-66",
+    "chassisdef_hermes_HER-1Sb",
+    "chassisdef_ostscout_OTT-7Jb",
+    "chassisdef_blackknight_BL-6b-KNT",
+    "chassisdef_blackknight_BL-6-KNT",
+    "chassisdef_riflemanII_RFL-3N-2",
+    "chassisdef_battlemaster_BLR-2C",
+    "chassisdef_mackie_MSK-9H"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.FixedEquipment[?(@ComponentDefID == 'Gear_Sensor_ActiveProbe' || @ComponentDefID == 'Gear_Sensor_ActiveProbeImproved')]",
+      "Action": "ObjectMerge",
+      "Value": {
+        "ComponentDefID": "Gear_SensorCAC_Beagle"
+      }
+    }
+  ]
+}
