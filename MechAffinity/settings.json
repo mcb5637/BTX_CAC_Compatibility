@@ -1269,7 +1269,7 @@
       "chassisNames": [
         "chrPrfMech_annihilatorBase-001_100",
         "chrprfmech_ionbanebase-001_100",
-        "chrPrfMech_atlasBase-001_80"
+        "chrprfmech_goliath_80"
       ],
       "affinityLevels": [
         {
@@ -1794,7 +1794,8 @@
     },
     {
       "chassisNames": [
-        "chrprfmech_arcticcheetahbase-001_30"
+        "chrprfmech_arcticcheetahbase-001_30",
+        "chrprfmech_cutarantulabase-001_25"
       ],
       "affinityLevels": [
         {
@@ -10258,7 +10259,7 @@
     {
       "chassisNames": [
         "chrprfmech_maulerbase-001_90",
-		"chrprfmech_stonerhinobase-001_100"
+        "chrprfmech_stonerhinobase-001_100"
       ],
       "affinityLevels": [
         {
@@ -10430,7 +10431,8 @@
     },
     {
       "chassisNames": [
-        "chrprfmech_napesospreybase-001_55"
+        "chrprfmech_napesospreybase-001_55",
+        "chrprfmech_scorpionmechbase-001_55"
       ],
       "affinityLevels": [
         {
