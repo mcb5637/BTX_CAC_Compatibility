@@ -1,7 +1,7 @@
 {
   "debugLog": true,
 	"PlayerAlwaysCalledShot": false,
-	"PlayerAlwaysCalledShotDirection": "FromFront",
+	"PlayerAlwaysCalledShotDirection": "None",
   "modHTTPServer": false,
   "modHTTPListen": "http://localhost:65080/",
   "WeaponRealizerStandalone": "WeaponRealizer.dll",
