@@ -1,0 +1,15 @@
+{
+  "id": "pilotQuirkDef_pilot_gladiator",
+  "tag": "pilot_gladiator",
+  "quirkName": "Gladiator",
+  "description": "Less resolve lost when fatigued and does not get Low Spirits from fatigue",
+  "effectData": [],
+  "quirkEffects": [
+    {
+      "type": "PilotCostFactor",
+      "modifier": 0.05,
+      "secondaryModifier": 0.0,
+      "affectedIds": []
+    }
+  ]
+}

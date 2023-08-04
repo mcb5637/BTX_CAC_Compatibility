@@ -1,0 +1,96 @@
+{
+  "id": "AffinityDef_chassis_GaussPlatform_Heavy",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrPrfMech_novacatbase-001_60"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Heavy Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves heat management (+3 Heat Sinking)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Heavy 'Mech familiarity (+3 Heat Sinking)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-HeavyMechBoost",
+              "Name": "Heavy Mech Affinity Defence Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Int32",
+              "modValue": "3",
+              "operation": "Int_Add",
+              "statName": "HeatSinkCapacity",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Gauss Platform+",
+        "decription": "Familiarity with this 'Mech's Gauss capabilities improves damage output (+5% Damage)",
+        "affinities": [],
+        "effectData": [
+          {
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "targetingData": {
+              "effectTriggerType": "Passive",
+              "effectTargetType": "Creator",
+              "showInTargetPreview": false,
+              "showInStatusPanel": false
+            },
+            "effectType": "StatisticEffect",
+            "Description": {
+              "Id": "Affinity_Gauss_Damage",
+              "Name": "BattleMechAffinity",
+              "Details": "Gauss weapons on this unit deal [AMT] more damage.",
+              "Icon": "UixSvgIcon_specialEquip_System"
+            },
+            "nature": "Buff",
+            "statisticData": {
+              "appliesEachTick": false,
+              "effectsPersistAfterDestruction": false,
+              "statName": "DamagePerShot",
+              "operation": "Float_Multiply",
+              "modValue": "1.05",
+              "modType": "System.Single",
+              "additionalRules": "NotSet",
+              "targetCollection": "Weapon",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponType": "Gauss",
+              "targetAmmoCategory": "NotSet",
+              "targetWeaponSubType": "NotSet"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

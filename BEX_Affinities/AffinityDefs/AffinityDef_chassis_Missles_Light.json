@@ -1,0 +1,102 @@
+{
+  "id": "AffinityDef_chassis_Missles_Light",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrPrfMech_commandoBase-001_25",
+      "chrPrfMech_javelinBase-001_30"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Light Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves team coordination (+1 Resolve generation)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Light 'Mech familiarity (+1 Resolve Gain)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-LightMechBoost",
+              "Name": "Light Mech Affinity Morale Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Int32",
+              "modValue": "1",
+              "operation": "Int_Add",
+              "statName": "MoraleBonusGainStackable",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTriggerType": "Passive",
+              "triggerLimit": 0,
+              "extendDurationOnTrigger": 0,
+              "specialRules": "NotSet",
+              "effectTargetType": "Creator",
+              "range": 0,
+              "forcePathRebuild": false,
+              "forceVisRebuild": false,
+              "showInTargetPreview": false,
+              "showInStatusPanel": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Missiles+",
+        "decription": "Familiarity with this 'Mech's missile capabilities improves hitting moving targets (+1 Missile EVASIVE ignore)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Missile Platform familiarity (+1 EVASIVE Ignore)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_Missile_EvasionIgnore",
+              "Name": "Multi-Trac Computer Affinity Evasion Ignore"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": 1
+            },
+            "targetingData": {
+              "effectTriggerType": "Passive",
+              "effectTargetType": "Creator",
+              "showInTargetPreview": false,
+              "showInStatusPanel": false
+            },
+            "effectType": "StatisticEffect",
+            "statisticData": {
+              "appliesEachTick": false,
+              "effectsPersistAfterDestruction": false,
+              "statName": "EvasivePipsIgnored",
+              "operation": "Float_Add",
+              "modValue": "1",
+              "modType": "System.Single",
+              "additionalRules": "NotSet",
+              "targetCollection": "Weapon",
+              "targetWeaponCategory": "Missile",
+              "targetWeaponType": "NotSet",
+              "targetAmmoCategory": "NotSet",
+              "targetWeaponSubType": "NotSet"
+            },
+            "nature": "Buff"
+          }
+        ]
+      }
+    ]
+  }
+}

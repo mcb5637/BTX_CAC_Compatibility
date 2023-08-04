@@ -1,0 +1,127 @@
+{
+  "id": "AffinityDef_chassis_MASC_Assault",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrprfmech_executionerbase-001_95"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Assault Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves stability (+5% Stab Dmg Reduction)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Assault 'Mech familiarity (+5% Stab Dmg Reduction)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-AssaultMechBoost",
+              "Name": "Assault Mech Affinity Defence Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "ReceivedInstabilityMultiplier",
+              "operation": "Float_Multiply",
+              "modValue": "0.95",
+              "modType": "System.Single",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "MASC+",
+        "decription": "Familiarity with using the MASC system increases the speed that can be achieved (+5% walk & sprint speed)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "The pilot can push actuators harder with experience (+5% walk & sprint speed)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_MASC_SpeedWalk",
+              "Name": "Mech Affinity Walk Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Single",
+              "modValue": "1.05",
+              "operation": "Float_Multiply",
+              "statName": "WalkSpeed",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          },
+          {
+            "Description": {
+              "Details": "The pilot can push actuators harder with experience (+5% walk & sprint speed)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_MASC_SpeedRun",
+              "Name": "Mech Affinity Sprint Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Single",
+              "modValue": "1.05",
+              "operation": "Float_Multiply",
+              "statName": "RunSpeed",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

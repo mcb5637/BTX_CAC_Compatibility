@@ -9,7 +9,7 @@ Installation/Update: (requires working BEX installation)
 	- verify files (Steam/GOG) / reinstall Battletech (anything else) (to remove ModTek <3.0, if present)
 	- download and unzip ModTek to the correct folder: https://github.com/BattletechModders/ModTek/blob/master/INSTALL.md
 	- direct download link: https://github.com/BattletechModders/ModTek/releases/download/v4.1.0/ModTek.zip
-- Remove BTMLColorLOSMod and MechResizer from your BTX installation (as CAC and CU basically do the same)
+- Remove BTMLColorLOSMod, MechResizer and StablePiloting from your BTX installation (as CAC, CU and MechAffinity basically do the same)
 - update CAB
 - remove IRBModUtils (CAC-C for now contains their own versions of them)
 - remove any previous version of CAC-C, CAE, CAC, CC, CLoc, CPrewarm, CU, CVoices, if they exist
@@ -142,10 +142,11 @@ Manual setup:
 Package for release:
 - update version info in mod.json and dll
 - setup additionalDependencies
-	- ModTek 2.0
+	- ModTek 4.1
 	- SimpleMechAssembly
-	- IRBModUtils (currently you need the dll from RT, has no release yet)
-	- BiggerDrops (currently you need the dll from RT, has no release yet)
+	- IRBModUtils
+	- BiggerDrops
+	- MechAffinity 1.4 (dll only)
 - compile as release
 - use pack.bat
  

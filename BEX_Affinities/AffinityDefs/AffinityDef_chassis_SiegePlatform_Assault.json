@@ -1,0 +1,94 @@
+{
+    "id": "AffinityDef_chassis_SiegePlatform_Assault",
+    "affinityType": "Chassis",
+    "affinityData": {
+      "chassisNames": [
+        "chrPrfMech_annihilatorBase-001_100",
+        "chrprfmech_ionbanebase-001_100"
+      ],
+      "idType": "AssemblyVariant",
+      "altMaps": [],
+      "affinityLevels": [
+        {
+          "missionsRequired": 20,
+          "levelName": "Assault Mech+",
+          "decription": "Familiarity with this 'Mech's role on the battlefield improves stability (+5% Stab Dmg Reduction)",
+          "affinities": [],
+          "effectData": [
+            {
+              "Description": {
+                "Details": "Assault 'Mech familiarity (+5% Stab Dmg Reduction)",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "StatusEffect-Affinity-AssaultMechBoost",
+                "Name": "Assault Mech Affinity Defence Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "ReceivedInstabilityMultiplier",
+                "operation": "Float_Multiply",
+                "modValue": "0.95",
+                "modType": "System.Single",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": false,
+                "showInTargetPreview": false
+              }
+            }
+          ]
+        },
+        {
+          "missionsRequired": 30,
+          "levelName": "Siege Platform+",
+          "decription": "Familiarity with this 'Mech's siege platform design improves stability (+15% Stab Dmg Reduction)",
+          "affinities": [],
+          "effectData": [
+            {
+              "Description": {
+                "Details": "Siege Platform familiarity (+15% Stab Dmg Reduction)",
+                "Icon": "UixSvgIcon_specialEquip_System",
+                "Id": "Affinity_Siege_StabReduce",
+                "Name": "Assault Mech Affinity Defence Boost"
+              },
+              "durationData": {
+                "duration": -1,
+                "stackLimit": -1
+              },
+              "effectType": "StatisticEffect",
+              "nature": "Buff",
+              "statisticData": {
+                "statName": "ReceivedInstabilityMultiplier",
+                "operation": "Float_Multiply",
+                "modValue": "0.85",
+                "modType": "System.Single",
+                "targetAmmoCategory": "NotSet",
+                "targetCollection": "NotSet",
+                "targetWeaponCategory": "NotSet",
+                "targetWeaponSubType": "NotSet",
+                "targetWeaponType": "NotSet"
+              },
+              "targetingData": {
+                "effectTargetType": "Creator",
+                "effectTriggerType": "Passive",
+                "hideApplicationFloatie": true,
+                "showInStatusPanel": false,
+                "showInTargetPreview": false
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }

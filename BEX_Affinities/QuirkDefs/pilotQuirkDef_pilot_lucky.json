@@ -1,0 +1,41 @@
+{
+  "id": "pilotQuirkDef_pilot_lucky",
+  "tag": "pilot_lucky",
+  "quirkName": "Lucky",
+  "description": "+2 LRM Clustering",
+  "effectData": [
+    {
+      "durationData": {
+        "duration": -1,
+        "stackLimit": -1
+      },
+      "targetingData": {
+        "effectTriggerType": "Passive",
+        "effectTargetType": "Creator"
+      },
+      "effectType": "StatisticEffect",
+      "Description": {
+        "Id": "StatusEffect_BCCluster",
+        "Name": "Cluster Chance Improved",
+        "Details": "Increases the clustering of this unit's LRM weapons.",
+        "Icon": "AdvancedTC"
+      },
+      "nature": "Buff",
+      "statisticData": {
+        "statName": "ClusteringModifier",
+        "operation": "Float_Add",
+        "modValue": "2",
+        "modType": "System.Single",
+        "targetCollection": "Weapon"
+      }
+    }
+  ],
+  "quirkEffects": [
+    {
+      "type": "PilotCostFactor",
+      "modifier": 0.05,
+      "secondaryModifier": 0.0,
+      "affectedIds": []
+    }
+  ]
+}

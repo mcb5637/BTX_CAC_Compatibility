@@ -1,0 +1,130 @@
+{
+  "id": "AffinityDef_chassis_NimbleJumper_Light",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrPrfMech_pantherBase-001_35",
+      "chrPrfMech_spiderBase-001_30",
+      "chrPrfMech_spiderBase-001_35"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Light Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves team coordination (+1 Resolve generation)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Light 'Mech familiarity (+1 Resolve Gain)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-LightMechBoost",
+              "Name": "Light Mech Affinity Morale Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Int32",
+              "modValue": "1",
+              "operation": "Int_Add",
+              "statName": "MoraleBonusGainStackable",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTriggerType": "Passive",
+              "triggerLimit": 0,
+              "extendDurationOnTrigger": 0,
+              "specialRules": "NotSet",
+              "effectTargetType": "Creator",
+              "range": 0,
+              "forcePathRebuild": false,
+              "forceVisRebuild": false,
+              "showInTargetPreview": false,
+              "showInStatusPanel": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Nimble Jumper+",
+        "decription": "Familiarity with the increased jump jet ability of the 'Mech design allows for more effective mobile strikes (+10% jump distance, +10% damage after jump)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Familiarity with the increased jump jet ability of the 'Mech design (+10% jump distance, +10% damage after jump)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_NimbleJumper_Damage",
+              "Name": "BattleMechAffinity"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "JumpingWeaponDamageModifier",
+              "operation": "Float_Add",
+              "modValue": "0.1",
+              "modType": "System.Single",
+              "targetCollection": "Weapon"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          },
+          {
+            "Description": {
+              "Details": "Familiarity with the increased jump jet ability of the 'Mech design (+10% jump distance, +10% damage after jump)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_NimbleJumper_Distance",
+              "Name": "Mech Affinity Jumping Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Single",
+              "modValue": "1.10",
+              "operation": "Float_Multiply",
+              "statName": "JumpDistanceMultiplier",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": true,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "Name": "BEX Affinities updated",
+  "Enabled": true,
+  "Version": "1",
+  "Description": "",
+  "Author": "mcb+Haree",
+  "Website": "",
+  "DependsOn": [
+    "BT_Extended",
+    "MechAffinity"
+  ],
+  "OptionallyDependsOn": [],
+  "CustomResourceTypes": [
+    "AffinitiesDef",
+    "QuirkDef"
+  ],
+  "Manifest": [
+    {
+      "Type": "AffinitiesDef",
+      "Path": "AffinityDefs"
+    },
+    {
+      "Type": "QuirkDef",
+      "Path": "QuirkDefs"
+    }
+  ]
+}

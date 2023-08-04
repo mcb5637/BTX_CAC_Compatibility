@@ -1,0 +1,122 @@
+{
+  "id": "AffinityDef_chassis_NimbleJumper_Medium",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrPrfMech_vaporeagleBase-001_55"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Medium Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves survivability (+1 Hit Defence)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Medium 'Mech familiarity (+1 Hit Defence)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-MediumMechBoost",
+              "Name": "Medium Mech Affinity Defence Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "ToHitThisActor",
+              "operation": "Float_Add",
+              "modValue": "1",
+              "modType": "System.Single",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Nimble Jumper+",
+        "decription": "Familiarity with the increased jump jet ability of the 'Mech design allows for more effective mobile strikes (+10% jump distance, +10% damage after jump)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Familiarity with the increased jump jet ability of the 'Mech design (+10% jump distance, +10% damage after jump)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_NimbleJumper_Damage",
+              "Name": "BattleMechAffinity"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "JumpingWeaponDamageModifier",
+              "operation": "Float_Add",
+              "modValue": "0.1",
+              "modType": "System.Single",
+              "targetCollection": "Weapon"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          },
+          {
+            "Description": {
+              "Details": "Familiarity with the increased jump jet ability of the 'Mech design (+10% jump distance, +10% damage after jump)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_NimbleJumper_Distance",
+              "Name": "Mech Affinity Jumping Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Single",
+              "modValue": "1.10",
+              "operation": "Float_Multiply",
+              "statName": "JumpDistanceMultiplier",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": true,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "pilotQuirkDef_pilot_spacer",
+  "tag": "pilot_spacer",
+  "quirkName": "Spacer",
+  "description": "Reduces Argo Upkeep by 1%",
+  "effectData": [],
+  "quirkEffects": [
+    {
+      "type": "ArgoUpkeepFactor",
+      "modifier": 0.99,
+      "secondaryModifier": 0.0,
+      "affectedIds": [
+        "PqAllArgoUpgrades"
+      ]
+    },
+    {
+      "type": "PilotCostFactor",
+      "modifier": 0.1,
+      "secondaryModifier": 0.0,
+      "affectedIds": []
+    }
+  ]
+}

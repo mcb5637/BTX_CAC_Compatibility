@@ -1,0 +1,138 @@
+{
+  "id": "AffinityDef_chassis_Striker_Light",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrprfmech_hellfirebase-001_20",
+      "chrprfmech_hermesbase-001_30",
+      "chrprfmech_incubusbase-001_30",
+      "chrPrfMech_jennerBase-001_35",
+      "chrprfmech_jenneriicbase-001_35",
+      "chrprfmech_piranhabase-001_20",
+      "chrprfmech_raptorbase-001_25"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Light Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves team coordination (+1 Resolve generation)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Light 'Mech familiarity (+1 Resolve Gain)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-LightMechBoost",
+              "Name": "Light Mech Affinity Morale Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Int32",
+              "modValue": "1",
+              "operation": "Int_Add",
+              "statName": "MoraleBonusGainStackable",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTriggerType": "Passive",
+              "triggerLimit": 0,
+              "extendDurationOnTrigger": 0,
+              "specialRules": "NotSet",
+              "effectTargetType": "Creator",
+              "range": 0,
+              "forcePathRebuild": false,
+              "forceVisRebuild": false,
+              "showInTargetPreview": false,
+              "showInStatusPanel": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Striker+",
+        "decription": "Familiarity with this 'Mech's fast striker design increases movement and defence (+1 Hit Defence, +10% Movement)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Pilot has Mastered the Chassis.",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_Striker_Defense",
+              "Name": "BattleMechAffinity"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "ToHitThisActor",
+              "operation": "Float_Add",
+              "modValue": "1",
+              "modType": "System.Single",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          },
+          {
+            "Description": {
+              "Details": "The pilot can push actuators harder with experience (+10% walk speed)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_Striker_SpeedWalk",
+              "Name": "Mech Affinity Walk Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Single",
+              "modValue": "1.1",
+              "operation": "Float_Multiply",
+              "statName": "WalkSpeed",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

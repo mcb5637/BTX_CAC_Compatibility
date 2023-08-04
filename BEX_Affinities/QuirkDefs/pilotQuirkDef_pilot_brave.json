@@ -1,0 +1,15 @@
+{
+  "id": "pilotQuirkDef_pilot_brave",
+  "tag": "pilot_brave",
+  "quirkName": "Brave",
+  "description": "Improved panic resistance",
+  "effectData": [],
+  "quirkEffects": [
+    {
+      "type": "PilotCostFactor",
+      "modifier": 0.05,
+      "secondaryModifier": 0.0,
+      "affectedIds": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+    "id": "AffinityDef_Global_Comfortable",
+    "affinityType": "Global",
+    "affinityData": {
+        "missionsRequired": 10,
+        "levelName": "Comfortable+",
+        "decription": "Proficiency with the balance of the chassis (+1 Piloting)",
+        "affinities": [
+            {
+                "type": "Piloting",
+                "bonus": 1
+            }
+        ],
+        "effectData": []
+    }
+}

@@ -16,7 +16,8 @@
     "CustomActivatableEquipment",
     "CustomUnits",
     "CustomVoices",
-    "IRTweaks"
+    "IRTweaks",
+    "MechAffinity"
   ],
   "OptionallyDependsOn": [
     "BTXMinusWeapons"
@@ -540,6 +541,10 @@
     {
       "Type": "PathingCapabilitiesDef",
       "Path": "pathing"
+    },
+    {
+      "Type": "AffinitiesDef",
+      "Path": "affinities"
     }
   ]
 }

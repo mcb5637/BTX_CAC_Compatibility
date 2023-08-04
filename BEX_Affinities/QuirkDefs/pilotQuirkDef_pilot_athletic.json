@@ -1,0 +1,15 @@
+{
+  "id": "pilotQuirkDef_pilot_athletic",
+  "tag": "pilot_athletic",
+  "quirkName": "Athletic",
+  "description": "The pilot suffers less fatigue after a mission",
+  "effectData": [],
+  "quirkEffects": [
+    {
+      "type": "PilotCostFactor",
+      "modifier": 0.05,
+      "secondaryModifier": 0.0,
+      "affectedIds": []
+    }
+  ]
+}

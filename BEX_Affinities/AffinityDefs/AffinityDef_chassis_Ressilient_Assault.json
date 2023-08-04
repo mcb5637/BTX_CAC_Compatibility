@@ -1,0 +1,96 @@
+{
+  "id": "AffinityDef_chassis_Ressilient_Assault",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrprfmech_direwolfbase-001_100",
+      "chrprfmech_ionsunderbase-001_90",
+      "chrPrfMech_hauptmannbase-001_95"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Assault Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves stability (+5% Stab Dmg Reduction)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Assault 'Mech familiarity (+5% Stab Dmg Reduction)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-AssaultMechBoost",
+              "Name": "Assault Mech Affinity Defence Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "ReceivedInstabilityMultiplier",
+              "operation": "Float_Multiply",
+              "modValue": "0.95",
+              "modType": "System.Single",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Resilient+",
+        "decription": "Familiarity with this 'Mech's resilient design improves survivability (+25% Critical Hit Resistance)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "The Pilot knows where to avoid hits on this mech (+25% Critical Hit Resistance)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-CritResist",
+              "Name": "Mech Affinity Critical Hit Resistance Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Single",
+              "modValue": "0.75",
+              "operation": "Float_Multiply",
+              "statName": "CriticalHitChanceReceivedMultiplier",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

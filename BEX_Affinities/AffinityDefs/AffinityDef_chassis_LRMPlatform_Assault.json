@@ -1,0 +1,96 @@
+{
+  "id": "AffinityDef_chassis_LRMPlatform_Assault",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrprfmech_ionlongbowbase-001_85",
+      "chrprfmech_salamanderbase-001_80"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Assault Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves stability (+5% Stab Dmg Reduction)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Assault 'Mech familiarity (+5% Stab Dmg Reduction)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-AssaultMechBoost",
+              "Name": "Assault Mech Affinity Defence Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "ReceivedInstabilityMultiplier",
+              "operation": "Float_Multiply",
+              "modValue": "0.95",
+              "modType": "System.Single",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "LRM Platform+",
+        "decription": "Familiarity with this 'Mech's LRM capabilities improves missile clustering (+LRM Clustering)",
+        "affinities": [],
+        "effectData": [
+          {
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "targetingData": {
+              "effectTriggerType": "Passive",
+              "effectTargetType": "Creator",
+              "showInTargetPreview": false,
+              "showInStatusPanel": false
+            },
+            "effectType": "StatisticEffect",
+            "Description": {
+              "Id": "Affinity_LRM_LRMClustering",
+              "Name": "BattleMechAffinity",
+              "Details": "Increases the clustering of this unit's LRM weapons.",
+              "Icon": "UixSvgIcon_specialEquip_System"
+            },
+            "nature": "Buff",
+            "statisticData": {
+              "appliesEachTick": false,
+              "effectsPersistAfterDestruction": false,
+              "statName": "ClusteringModifier",
+              "operation": "Float_Add",
+              "modValue": "8",
+              "modType": "System.Single",
+              "additionalRules": "NotSet",
+              "targetCollection": "Weapon",
+              "targetWeaponCategory": "Missile",
+              "targetWeaponType": "LRM",
+              "targetAmmoCategory": "NotSet",
+              "targetWeaponSubType": "NotSet"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

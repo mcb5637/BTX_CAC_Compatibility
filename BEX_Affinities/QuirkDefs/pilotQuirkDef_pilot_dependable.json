@@ -1,0 +1,15 @@
+{
+  "id": "pilotQuirkDef_pilot_dependable",
+  "tag": "pilot_dependable",
+  "quirkName": "Dependable",
+  "description": "Improved Panic Resist.",
+  "effectData": [],
+  "quirkEffects": [
+    {
+      "type": "PilotCostFactor",
+      "modifier": 0.05,
+      "secondaryModifier": 0.0,
+      "affectedIds": []
+    }
+  ]
+}

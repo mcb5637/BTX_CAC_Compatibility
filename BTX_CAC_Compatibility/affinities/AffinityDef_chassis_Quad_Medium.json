@@ -1,0 +1,93 @@
+{
+  "id": "AffinityDef_chassis_Quad_Medium",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrprfmech_scorpionmechbase-001_55"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Medium Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves survivability (+1 Hit Defence)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Medium 'Mech familiarity (+1 Hit Defence)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-MediumMechBoost",
+              "Name": "Medium Mech Affinity Defence Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "ToHitThisActor",
+              "operation": "Float_Add",
+              "modValue": "1",
+              "modType": "System.Single",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Quad+",
+        "decription": "Familiarity with this 'Mech's 4 legged platform design improves stability (+15% Stab Dmg Reduction)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Quad familiarity (+15% Stab Dmg Reduction)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_Quad_StabReduce",
+              "Name": "Assault Mech Affinity Defence Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "ReceivedInstabilityMultiplier",
+              "operation": "Float_Multiply",
+              "modValue": "0.85",
+              "modType": "System.Single",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
