@@ -17,7 +17,7 @@
     "showDescriptionsOnChassis": true,
     "trackSimDecayByStat": true,
     "trackLowestDecayByStat": true,
-    "showAllPilotAffinities": false,
+    "showAllPilotAffinities": true,
     "topAffinitiesInTooltipCount": 3,
     "showQuirks": true,
     "affinityGroups": [

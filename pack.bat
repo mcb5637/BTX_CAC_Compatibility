@@ -1,6 +1,6 @@
 del ".\BTX_CAC_Compatibility.zip"
 "C:\Program Files\7-Zip\7z.exe" a ".\BTX_CAC_Compatibility.zip" ".\additionalDependencies\*"
-"C:\Program Files\7-Zip\7z.exe" a ".\BTX_CAC_Compatibility.zip" ".\BTX_CAC_Compatibility\" ".\BiggerDrops\" ".\BT_Extended_Timeline\" ".\BT_Extended\" ".\FullXotlTables\" ".\IRTweaks\" ".\MechAffinity\" ".\MissionControl\" ".\LICENSE" ".\README.md"
+"C:\Program Files\7-Zip\7z.exe" a ".\BTX_CAC_Compatibility.zip" ".\BTX_CAC_Compatibility\" ".\BiggerDrops\" ".\BT_Extended_Timeline\" ".\BT_Extended\" ".\FullXotlTables\" ".\IRTweaks\" ".\MechAffinity\" ".\MissionControl\" ".\BEX_Affinities\" ".\LICENSE" ".\README.md"
 cd .\CBD\Core
 "C:\Program Files\7-Zip\7z.exe" a "..\..\BTX_CAC_Compatibility.zip" ".\CustomActivatableEquipment\" ".\CustomAmmoCategories\" ".\CustomComponents\" ".\CustomLocalization\" ".\CustomUnits\" ".\CustomVoices\" ".\CustomLocalSettings\" ".\CustomPrewarm\"
 cd ..\..\
