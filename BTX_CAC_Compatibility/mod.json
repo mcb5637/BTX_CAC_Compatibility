@@ -38,7 +38,7 @@
     ],
     "ReplaceInItemCollections": {
       "Weapon_Inferno_Inferno2_0-STOCK": {
-        "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
+        "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno_Half",
         "Type": "AmmunitionBox"
       },
       "Weapon_Inferno_Inferno2_1-Harvester": {
