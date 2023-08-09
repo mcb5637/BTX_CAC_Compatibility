@@ -1,17 +1,21 @@
 {
-	"Name": "CustomActivatableEquipment",
-	"Enabled": true,
-	"Hidden": true,
-
-	"Version": "0.0.44",
-	"PackagedOn": "2019-01-31T00:00:00Z",
-	"DLL": "CustomActivatableEquipment.dll",
-	"DLLEntryPoint": "CustomActivatableEquipment.Core.Init",
-	"DependsOn": [ "CustomComponents", "Custom Ammo Categories" ],
-	"ConflictsWith": [ ],
-	"CustomResourceTypes": [ "WeaponAddonDef" ],
-	"Description": "Activatable equipment",
-	"Author": "KMiSSioN",
+  "Name": "CustomActivatableEquipment",
+  "Enabled": true,
+  "Hidden": true,
+  "Version": "0.0.44",
+  "PackagedOn": "2019-01-31T00:00:00Z",
+  "DLL": "CustomActivatableEquipment.dll",
+  "DLLEntryPoint": "CustomActivatableEquipment.Core.Init",
+  "DependsOn": [
+    "CustomComponents",
+    "Custom Ammo Categories"
+  ],
+  "ConflictsWith": [],
+  "CustomResourceTypes": [
+    "WeaponAddonDef"
+  ],
+  "Description": "Activatable equipment",
+  "Author": "KMiSSioN",
   "Website": "https://www.nexusmods.com/battletech/mods/381",
   "Settings": {
     "debug": true,
@@ -34,6 +38,10 @@
     "auraUpdateMinPosDelta": 20,
     "unaffectedByHeadHitStatName": "NoHeadDamage",
     "equipmentFlashFailChance": 0.25,
+    "AdditionalInjuryReasonsTable": {
+      "10": "Component Fail",
+      "20": "Neural Overload"
+    },
     "sensorsAura": {
       "ReticleColor": "white",
       "LineType": "Dots",
@@ -88,5 +96,14 @@
       ]
     }
   },
-	"Manifest": [ { "Type": "SVGAsset", "Path": "icons" }, { "Type": "Texture2D", "Path": "textures" } ]
+  "Manifest": [
+    {
+      "Type": "SVGAsset",
+      "Path": "icons"
+    },
+    {
+      "Type": "Texture2D",
+      "Path": "textures"
+    }
+  ]
 }
