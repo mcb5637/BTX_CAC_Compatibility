@@ -147,6 +147,7 @@ Package for release:
 	- IRBModUtils
 	- BiggerDrops
 	- MechAffinity 1.4 (dll only)
+	- MissionControl
 - compile as release
 - use pack.bat
  

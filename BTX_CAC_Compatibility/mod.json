@@ -78,11 +78,11 @@
         "Type": "Weapon"
       },
       "Weapon_LRM_DFLRM5_0-STOCK": {
-        "ID": "Ammo_AmmunitionBox_Generic_LRM_DF",
+        "ID": "Ammo_AmmunitionBox_Generic_LRM_DF_Half",
         "Type": "AmmunitionBox"
       },
       "Weapon_LRM_DFLRM10_0-STOCK": {
-        "ID": "Ammo_AmmunitionBox_Generic_LRM_DF",
+        "ID": "Ammo_AmmunitionBox_Generic_LRM_DF_Half",
         "Type": "AmmunitionBox"
       },
       "Weapon_LRM_DFLRM15_0-STOCK": {
@@ -94,7 +94,7 @@
         "Type": "AmmunitionBox"
       },
       "Weapon_SRM_DFSRM2_0-STOCK": {
-        "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
+        "ID": "Ammo_AmmunitionBox_Generic_SRM_DF_Half",
         "Type": "AmmunitionBox"
       },
       "Weapon_SRM_DFSRM4_0-STOCK": {

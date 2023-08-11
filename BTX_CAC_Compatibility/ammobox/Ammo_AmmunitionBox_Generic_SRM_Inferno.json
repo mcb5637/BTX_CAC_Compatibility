@@ -10,7 +10,7 @@
         "UIName": "SRM Inferno Ammo",
         "Id": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
         "Name": "SRM Inferno Ammo",
-        "Details": "Inferno SRMs are missiles containing a napalm-like substance that coats their target in a gel which burns for a short period, applying Heat. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nSRM Ammo Bins each contain 100 rounds and may feed multiple weapons.",
+        "Details": "Inferno SRMs are missiles containing a napalm-like substance that coats their target in a gel which burns for a short period, applying Heat. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nSRM Inferno Ammo Bins each contain 100 rounds and may feed multiple weapons.",
         "Icon": "uixSvgIcon_ammoBox_Missile"
     },
     "BonusValueA": "- 7 Dmg",
