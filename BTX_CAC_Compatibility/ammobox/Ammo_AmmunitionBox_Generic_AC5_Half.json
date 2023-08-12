@@ -1,17 +1,17 @@
 {
-    "AmmoID": "Ammunition_LRM",
-    "Capacity": 60,
+    "AmmoID": "Ammunition_AC5",
+    "Capacity": 7,
     "Description": {
         "Cost": 12000,
         "Rarity": 0,
         "Purchasable": true,
         "Manufacturer": "Generic",
-        "Model": "LRM",
-        "UIName": "LRM Ammo (Half)",
-        "Id": "Ammo_AmmunitionBox_Generic_LRM_Half",
-        "Name": "LRM Ammo",
-        "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nLRM (Half) Ammo Bins each contain 120 rounds and may feed multiple weapons.",
-        "Icon": "uixSvgIcon_ammoBox_Missile"
+        "Model": "AC5",
+        "UIName": "AC/5 Ammo (Half)",
+        "Id": "Ammo_AmmunitionBox_Generic_AC5_Half",
+        "Name": "AC/5 Ammo",
+        "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nAC/5 (Half) Ammo Bins each contain 7 rounds and may feed multiple weapons.",
+        "Icon": "uixSvgIcon_ammoBox_Ballistic"
     },
     "BonusValueA": "",
     "BonusValueB": "",
