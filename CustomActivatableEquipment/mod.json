@@ -38,6 +38,7 @@
     "auraUpdateMinPosDelta": 20,
     "unaffectedByHeadHitStatName": "NoHeadDamage",
     "equipmentFlashFailChance": 0.25,
+    "C3NetworkEncounterTags": [ "C3_network", "C3i_network" ],
     "AdditionalInjuryReasonsTable": {
       "10": "Component Fail",
       "20": "Neural Overload"

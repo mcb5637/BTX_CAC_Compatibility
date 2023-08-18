@@ -1,0 +1,52 @@
+{
+    "Description": {
+        "Details": "The C3 Slave Unit is the second part of a C3 Network. Weighing a single ton and carried by the members of a lance or company, C3 Slave enabled units gain an increase to the distance a weapon is considered in optimal range."
+    },
+    "BonusValueA": "C3 Network",
+    "BonusValueB": "",
+    "statusEffects": [
+        {
+            "durationData": {
+                "duration": -1,
+                "ticksOnActivations": false,
+                "useActivationsOfTarget": false,
+                "ticksOnEndOfRound": false,
+                "ticksOnMovements": false,
+                "stackLimit": 1,
+                "clearedWhenAttacked": false
+            },
+            "targetingData": {
+                "effectTriggerType": "Passive",
+                "triggerLimit": 0,
+                "extendDurationOnTrigger": 0,
+                "specialRules": "NotSet",
+                "effectTargetType": "Creator",
+                "range": 0,
+                "forcePathRebuild": false,
+                "forceVisRebuild": false,
+                "showInTargetPreview": true,
+                "showInStatusPanel": true
+            },
+            "effectType": "StatisticEffect",
+            "Description": {
+                "Id": "C3Slave_MediumRangeBuff",
+                "Name": "C3 SLAVE",
+                "Details": "A C3 Slave unit gains [AMT] increase in optimal weapon range.",
+                "Icon": "uixSvgIcon_statusMarked"
+            },
+            "statisticData": {
+                "statName": "ADD_ENCOUNTER_TAG_C3_network",
+                "operation": "Float_Add",
+                "modValue": "1.0",
+                "modType": "System.Single"
+            },
+            "nature": "Buff"
+        }
+    ],
+    "ComponentTags": {
+        "items": [
+            "BUILT-IN"
+        ],
+        "tagSetSourceFile": ""
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "Description": {
+        "Details": "Based on the C3 system, the Improved C3 Computer (or C3i) reproduces the functions of a C3 Master Computer into a smaller and lighter system. By sharing targeting data lance mates gain an increase to the distance a weapon is considered in optimal range. The C3i optimal range increase is 2/3 the increase the original C3 versions gave."
+    },
+    "BonusValueA": "C3i Network",
+    "BonusValueB": "(Lance)",
+    "statusEffects": [
+        {
+            "durationData": {
+                "duration": -1,
+                "stackLimit": 1
+            },
+            "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "AllLanceMates",
+                "showInTargetPreview": true,
+                "showInStatusPanel": true
+            },
+            "effectType": "StatisticEffect",
+            "Description": {
+                "Id": "C3Network_ShortRangeBuff",
+                "Name": "C3I NETWORK RANGE BUFF",
+                "Details": "Friendly units within a C3 Network gain [AMT] increase in optimal weapon range.",
+                "Icon": "uixSvgIcon_statusMarked"
+            },
+            "statisticData": {
+                "statName": "ADD_ENCOUNTER_TAG_C3i_network",
+                "operation": "Float_Add",
+                "modValue": "1.0",
+                "modType": "System.Single"
+            },
+            "nature": "Buff"
+        }
+    ],
+    "ComponentTags": {
+        "items": [
+            "BUILT-IN"
+        ],
+        "tagSetSourceFile": ""
+    }
+}

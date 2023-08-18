@@ -1,0 +1,41 @@
+{
+    "Description": {
+        "Details": "Intended for reconnaissance 'Mechs or vehicles, the C3 Command Unit, also known as C3 Master Computer, is the central hub of a C3 Network and allows linked units to share radar and targeting data on the lance or company levels. By sharing targeting data lance mates gain an increase to the distance a weapon is considered in optimal range."
+    },
+    "BonusValueA": "C3 Network",
+    "BonusValueB": "(Lance)",
+    "statusEffects": [
+        {
+            "durationData": {
+                "duration": -1,
+                "stackLimit": 1
+            },
+            "targetingData": {
+                "effectTriggerType": "Passive",
+                "effectTargetType": "AllLanceMates",
+                "showInTargetPreview": false,
+                "showInStatusPanel": false
+            },
+            "effectType": "StatisticEffect",
+            "Description": {
+                "Id": "C3Network_MediumRangeBuff",
+                "Name": "C3 NETWORK RANGE BUFF",
+                "Details": "Friendly units within a C3 Network gain [AMT] increase in optimal weapon range.",
+                "Icon": "uixSvgIcon_statusMarked"
+            },
+            "statisticData": {
+                "statName": "ADD_ENCOUNTER_TAG_C3_network",
+                "operation": "Float_Add",
+                "modValue": "1.0",
+                "modType": "System.Single"
+            },
+            "nature": "Buff"
+        }
+    ],
+    "ComponentTags": {
+        "items": [
+            "BUILT-IN"
+        ],
+        "tagSetSourceFile": ""
+    }
+}
