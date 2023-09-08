@@ -3,6 +3,7 @@ using BattleTech;
 using BattleTech.Save;
 using BattleTech.UI;
 using CustAmmoCategories;
+using CustomActivatableEquipment;
 using HarmonyLib;
 using HBS.Logging;
 using Newtonsoft.Json;
@@ -10,8 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using UIWidgets;
 using UnityEngine;
 
 [assembly: AssemblyVersion("0.1.21.7")]
@@ -169,5 +172,22 @@ namespace BTX_CAC_CompatibilityDll
         //{
         //    FileLog.Log($"{originalHitLoc} -> {aLoc}");
         //}
+    }
+
+    [HarmonyPatch(typeof(AuraPreviewRecord), "RecalculateStealthPips")]
+    public class AuraPreviewRecord_RecalculateStealthPips
+    {
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            MethodInfo re = AccessTools.PropertyGetter(typeof(AbstractActor), nameof(AbstractActor.StealthPipsCurrent));
+            foreach (CodeInstruction c in instructions)
+            {
+                if ((c.opcode == OpCodes.Callvirt || c.opcode == OpCodes.Call) && (MethodInfo)c.operand == re)
+                {
+                    c.operand = AccessTools.PropertyGetter(typeof(AbstractActor), nameof(AbstractActor.StealthPipsTotal));
+                }
+                yield return c;
+            }
+        }
     }
 }

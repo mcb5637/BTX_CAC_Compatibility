@@ -48,6 +48,9 @@
     <Reference Include="BiggerDrops">
       <HintPath>C:\goggames\BATTLETECH\mods\BiggerDrops\BiggerDrops.dll</HintPath>
     </Reference>
+    <Reference Include="CustomActivatableEquipment">
+      <HintPath>C:\goggames\BATTLETECH\mods\CustomActivatableEquipment\CustomActivatableEquipment.dll</HintPath>
+    </Reference>
     <Reference Include="CustomAmmoCategories">
       <HintPath>C:\goggames\BATTLETECH\Mods\CustomAmmoCategories\CustomAmmoCategories.dll</HintPath>
       <Private>False</Private>
