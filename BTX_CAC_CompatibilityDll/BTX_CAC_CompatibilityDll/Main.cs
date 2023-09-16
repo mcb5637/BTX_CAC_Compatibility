@@ -180,11 +180,17 @@ namespace BTX_CAC_CompatibilityDll
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             MethodInfo re = AccessTools.PropertyGetter(typeof(AbstractActor), nameof(AbstractActor.StealthPipsCurrent));
+            MethodInfo add = AccessTools.Method(typeof(Dictionary<AbstractActor, int>), nameof(Dictionary<AbstractActor, int>.Add));
             foreach (CodeInstruction c in instructions)
             {
                 if ((c.opcode == OpCodes.Callvirt || c.opcode == OpCodes.Call) && (MethodInfo)c.operand == re)
                 {
                     c.operand = AccessTools.PropertyGetter(typeof(AbstractActor), nameof(AbstractActor.StealthPipsTotal));
+                }
+                if ((c.opcode == OpCodes.Callvirt || c.opcode == OpCodes.Call) && (MethodInfo)c.operand == add)
+                {
+                    yield return new CodeInstruction(OpCodes.Ldc_I4_0);
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Math), nameof(Math.Max), new Type[] {typeof(int), typeof(int)}));
                 }
                 yield return c;
             }
