@@ -4,7 +4,7 @@ Modifies BEX (and BTXMinusWeapons, if present) for CAC.
 
 Installation/Update: (requires working BEX installation)
 - Add BEX BiggerDrops addon (if not already present)
-- install a new ModTek (4.1+) (if not already present)
+- install a new ModTek (4.1+) (if not already present) (BEX by default uses ModTek 0.8)
 	- remove the old ModTek and .modtek folders
 	- verify files (Steam/GOG) / reinstall Battletech (anything else) (to remove ModTek <3.0, if present)
 	- download and unzip ModTek to the correct folder: https://github.com/BattletechModders/ModTek/blob/master/INSTALL.md
