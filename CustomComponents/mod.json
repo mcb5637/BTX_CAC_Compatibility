@@ -137,7 +137,7 @@
             "A": 25
         },
 		"TestEnableAllTags": false,
-		"OmniTechFlag": "OmniMech",
+		"OmniTechFlag": "chassis_omni",
 		"OmniTechCostBySize": false,
 		"OmniTechInstallCost": 1,
 		"TaggedDefaults": [
