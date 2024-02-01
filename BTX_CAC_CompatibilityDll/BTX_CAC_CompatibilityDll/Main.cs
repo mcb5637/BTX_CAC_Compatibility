@@ -6,6 +6,7 @@ using CustAmmoCategories;
 using CustomActivatableEquipment;
 using HarmonyLib;
 using HBS.Logging;
+using InControl;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -194,6 +195,16 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 yield return c;
             }
+        }
+    }
+    [HarmonyPatch(typeof(Mech), "NukeStructureLocation")]
+    [HarmonyAfter("io.mission.customunits")]
+    public class Mech_NukeStructureLocation
+    {
+        public static void Prefix(ref bool __runOriginal, Mech __instance)
+        {
+            if (__instance is CustomUnits.CustomMech)
+                __runOriginal = false;
         }
     }
 }
