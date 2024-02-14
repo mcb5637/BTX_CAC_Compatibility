@@ -12,7 +12,6 @@ namespace BTX_CAC_CompatibilityDll
             {
                 __instance.StatCollection.AddStatistic("SensorLockDefense", 0f);
                 __instance.StatCollection.AddStatistic("IndirectImmuneFloat", 0f);
-                __instance.StatCollection.AddStatistic("HeatSinkCapacityMult", 1f);
                 __instance.StatCollection.AddStatistic("DefendedByECM", 0f);
             }
         }

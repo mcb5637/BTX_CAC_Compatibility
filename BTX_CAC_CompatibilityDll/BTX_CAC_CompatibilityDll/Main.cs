@@ -207,4 +207,34 @@ namespace BTX_CAC_CompatibilityDll
                 __runOriginal = false;
         }
     }
+
+    [HarmonyPatch(typeof(CustAmmoCategoriesPatches.Mech_ApplyHeatSinks), "Prefix")]
+    public class Mech_ApplyHeatSinks_Prefix
+    {
+        private static float Get(Mech m)
+        {
+            return m.StatCollection.GetStatistic("HeatSinkCapacityMult").Value<float>();
+        }
+
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            FieldInfo re = AccessTools.Field(typeof(HeatConstantsDef), nameof(HeatConstantsDef.GlobalHeatSinkMultiplier));
+            MethodInfo add = AccessTools.Method(typeof(Mech_ApplyHeatSinks_Prefix), nameof(Mech_ApplyHeatSinks_Prefix.Get));
+            foreach (CodeInstruction c in instructions)
+            {
+                if (c.opcode == OpCodes.Ldfld && (FieldInfo)c.operand == re)
+                {
+                    yield return c;
+
+                    yield return new CodeInstruction(OpCodes.Ldarg_1);
+                    yield return new CodeInstruction(OpCodes.Call, add);
+                    yield return new CodeInstruction(OpCodes.Mul);
+
+                    continue;
+                }
+                
+                yield return c;
+            }
+        }
+    }
 }

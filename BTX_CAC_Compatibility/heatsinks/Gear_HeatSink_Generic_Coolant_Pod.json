@@ -43,9 +43,9 @@
           },
           "statisticData": {
             "statName": "HeatSinkCapacityMult",
-            "operation": "Int_Multiply",
+            "operation": "Float_Multiply",
             "modValue": "2",
-            "modType": "System.Int32"
+            "modType": "System.Single"
           },
           "nature": "Buff"
         }
