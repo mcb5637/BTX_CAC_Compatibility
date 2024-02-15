@@ -31,9 +31,9 @@ Component list (Clan & SLDF ones included):
         - Tag: attacking a tagged unit has an +3 accuracy boost, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
         - Flamer: added forestfires
     - Ballistic
-        - AC: fixed firing speed, only one visual projectile
+        - AC: fixed firing speed
         - LBX: AC mode to fire AC ammo (slugs), cluster ammo uses CAC shells instead of multiple projectiles, small range increase (to TT values)
-        - UAC: fixed firing speed, only one visual projectile, added AC mode (1 shot, but +4 acc, lowered recoil, quartered (halved for 20s)) heat, minimal range increase (to TT values)
+        - UAC: fixed firing speed, added AC mode (1 shot, but +4 acc, lowered recoil, quartered (halved for 20s)) heat, minimal range increase (to TT values)
         - Gauss: -
 		- Silver Bullet Gauss: fixed multiple projectiles
 		- Heavy Gauss: -

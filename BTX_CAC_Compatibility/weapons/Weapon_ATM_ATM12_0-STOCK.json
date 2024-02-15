@@ -1,13 +1,13 @@
 {
 	"MinRange": 0,
-    "MaxRange": 270,
-    "RangeSplit": [
-        180,
-        180,
-        270
-    ],
-	"Damage" : 4,
-	"Instability" : 2,
+	"MaxRange": 270,
+	"RangeSplit": [
+		180,
+		180,
+		270
+	],
+	"Damage": 4,
+	"Instability": 2,
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 12,
 	"MissileFiringIntervalMultiplier": 1,

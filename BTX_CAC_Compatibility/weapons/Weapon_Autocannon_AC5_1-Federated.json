@@ -1,5 +1,7 @@
 {
-  "ImprovedBallistic": true,
-  "ProjectilesPerShot": 1,
-  "FireDelayMultiplier": 1
+	"ImprovedBallistic": true,
+	"BallisticDamagePerPallet": false,
+	"HasShells": false,
+	"DisableClustering": true,
+	"FireDelayMultiplier": 1
 }

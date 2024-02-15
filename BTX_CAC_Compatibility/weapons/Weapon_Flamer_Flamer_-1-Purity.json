@@ -1,7 +1,7 @@
 {
   "FireTerrainChance": 0.75,
-	"FireTerrainStrength": 1,
-	"FireOnSuccessHit": true,
+  "FireTerrainStrength": 1,
+  "FireOnSuccessHit": true,
   "HeatDamage": 10,
   "statusEffects": [
     {
