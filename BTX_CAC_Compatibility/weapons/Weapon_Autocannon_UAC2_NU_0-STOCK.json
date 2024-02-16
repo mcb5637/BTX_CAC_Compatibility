@@ -1,5 +1,5 @@
 {
-	"ImprovedBallistic": true,
+	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
 	"HasShells": false,
 	"DisableClustering": true,
