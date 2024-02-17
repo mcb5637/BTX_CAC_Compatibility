@@ -8,7 +8,7 @@
 	"reverseDistanceBasedVariance": true,
 	"reverseDistanceBasedVarianceMaxRangeDamagePercent": 10,
 
-	"overheatModifier": true,
+	"overheatModifier": false,
 
 	"heatDamageModifier": false,
 
@@ -21,15 +21,15 @@
 	"heatDamageAppliesToBuildingAsNormalDamage": true,
 	"heatDamagePercentApplicationToBuilding": 150,
 
-	"ballisticNumberOfShots": true,
-	"clusteredBallistics": true,
+	"ballisticNumberOfShots": false,
+	"clusteredBallistics": false,
 
-	"laserNumberOfShots": true,
+	"laserNumberOfShots": false,
 
 	"damageAltersWeaponRefireModifier": true,
 	"damagedWeaponRefireModifierMultiplier": 1.5,
 
-	"jamming": true,
+	"jamming": false,
 	"jamChanceMultiplier": 1.0,
 
 	"debug": false

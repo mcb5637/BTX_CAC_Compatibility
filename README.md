@@ -89,8 +89,10 @@ Component list (Clan & SLDF ones included):
 	- Goliath GOL-1H (quad, SLDF/SW) (low chance everywhere, factory Stewart)
 	- Goliath GOL-3M (quad, HC) (marik after 3047, factory Stewart after 3048)
 	- Helepolis HEP-3H (sniper arty, SLDF) (comstar/snords) (TODO heat?)
-	- Phoenix Hawk LAM PXH-HK2 (SLDF LAM) (comstar) (HK1(R)?)
-	- Stinger LAM STG-A5 (SLDF LAM) (comstar/kurita, factory Irece) (A1?)
+	- Phoenix Hawk LAM PXH-HK2 (SLDF LAM) (comstar)
+	- Phoenix Hawk LAM PXH-HK1 (SLDF Royal LAM) (comstar) (HK1R?)
+	- Stinger LAM STG-A5 (SLDF LAM) (comstar/kurita, factory Irece)
+	- Stinger LAM STG-A1 (SLDF Royal LAM) (comstar LAM)
 	- Wasp LAM WSP-105 (SLDF LAM) (comstar) (100b?)
 	- UrbanMech LAM UM-LAM-X (Experimental LAM) (Kurita/Liao Flying High Again mission)
 
@@ -116,7 +118,6 @@ TODO List:
 - narc/inarc ammo types
 - imp sensor unlocks sensorlock without skill (add to irtweaks)
 - multitarget quirk unlocks without skill? (irtweaks stat)
-- ac projectiles per shot, if possible
 - a-pods CAE?
 - artillery mounting rework
 - edit texts
