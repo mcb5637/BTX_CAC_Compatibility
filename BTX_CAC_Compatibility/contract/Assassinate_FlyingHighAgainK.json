@@ -11,7 +11,7 @@
   "missionSuccessStatementOverride": null,
   "badFaithStatementOverride": null,
   "goodFaithStatementOverride": null,
-  "shortDescription": "Commander, our intelligrnce network reports that {TEAM_TAR.FactionDef.Demonym} forces are testing some unknown aircraft on this planet. The agents couldn't determine what it is, so we're hiring you to find and destroy it – we don't want {TEAM_TAR.FactionDef.Demonym} to have a powerful new weapon, whatever it is.",
+  "shortDescription": "Commander, our intelligence network reports that {TEAM_TAR.FactionDef.Demonym} forces are testing some unknown aircraft on this planet. The agents couldn't determine what it is, so we're hiring you to find and destroy it - we don't want {TEAM_TAR.FactionDef.Demonym} to have a powerful new weapon, whatever it is.",
   "longDescription": "Well, I still don't understand <i>how</i> we're supposed to shoot down an aircraft, but at least we're not being asked to chase this thing in the air.",
   "salvagePotential": 16,
   "requirementList": [

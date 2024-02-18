@@ -391,7 +391,7 @@
     "UIName": "LAM Conversion",
     "Id": "Gear_LAM_Systems",
     "Name": "LAM Conversion",
-    "Details": "Partially damaged LAM Conversion Equipment. Usually allows conversion between Mech, AerospaceFighter and an intermediate AirMech Mode, but the Fighter Mode is unavailable. Even without Fighter Mode this conversion is a powerful ability that trades stability for immense mobility.",
+    "Details": "Partially damaged LAM Conversion Equipment. Usually allows conversion between Mech, AerospaceFighter and an intermediate AirMech Mode, but the AerospaceFighter Mode is unavailable. Even without AerospaceFighter Mode this conversion is a powerful ability that trades stability for immense mobility.",
     "Icon": "uixSvgIcon_special_Equipment"
   },
   "BonusValueA": "",
