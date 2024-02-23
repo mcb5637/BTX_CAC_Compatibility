@@ -450,6 +450,11 @@
       "Path": "ammobox"
     },
     {
+      "Type": "AmmunitionBoxDef",
+      "Path": "ammoboxmerge",
+      "ShouldMergeJSON": true
+    },
+    {
       "Type": "ItemCollectionDef",
       "Path": "itemCollectionAppend",
       "ShouldAppendText": true

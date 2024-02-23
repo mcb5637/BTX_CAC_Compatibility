@@ -99,7 +99,8 @@
       "UIName": "MG",
       "Name": "MG Mode",
       "Description": "Fires the AMS as MG at a Mech or other standard target. Cannot shoot at missles until next Activation.",
-      "isBaseMode": false
+      "isBaseMode": false,
+      "ShotsPerAmmo": 0.2
     }
   ],
   "Auras": [

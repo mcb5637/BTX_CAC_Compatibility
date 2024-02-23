@@ -17,5 +17,7 @@
 			"ShotsWhenFired": 4,
 			"HeatGenerated": 5
 		}
-	]
+	],
+	"ShotsPerAmmo": 0.2,
+	"VolleyDivisor": 5
 }
