@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 using UIWidgets;
 using UnityEngine;
 
-[assembly: AssemblyVersion("0.1.21.10")]
+[assembly: AssemblyVersion("0.1.21.11")]
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -233,6 +233,41 @@ namespace BTX_CAC_CompatibilityDll
                     continue;
                 }
                 
+                yield return c;
+            }
+        }
+    }
+    [HarmonyPatch(typeof(CustomUnits.LanceConfiguratorPanel_LoadLanceConfiguration), "Prefix")]
+    public class LanceConfiguratorPanel_LoadLanceConfiguration_Prefix
+    {
+        private static SpawnableUnit[] GetLanceUnits(LanceConfiguration cfg, string teamdef, LanceConfiguratorPanel inst)
+        {
+            SpawnableUnit[] r = cfg.GetLanceUnits(teamdef);
+            var slots = Traverse.Create(inst).Field("loadoutSlots").GetValue<LanceLoadoutSlot[]>();
+            int len = Math.Min(r.Length, slots.Length);
+            int newlen = Math.Min(len, inst.activeContract.Override.maxNumberOfPlayerUnits);
+            for (int i = newlen; i < slots.Length; ++i)
+            {
+                slots[i].SetLockState(LanceLoadoutSlot.LockState.Full); // set locked, cu does not do it anymore
+            }
+            Array.Resize(ref r, newlen); // remove any more mechs/pilots
+            return r;
+        }
+
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            MethodInfo re = AccessTools.Method(typeof(LanceConfiguration), nameof(LanceConfiguration.GetLanceUnits));
+            MethodInfo getunits = AccessTools.Method(typeof(LanceConfiguratorPanel_LoadLanceConfiguration_Prefix), nameof(GetLanceUnits));
+            foreach (CodeInstruction c in instructions)
+            {
+                if ((c.opcode == OpCodes.Call || c.opcode == OpCodes.Callvirt) && (MethodInfo)c.operand == re)
+                {
+                    yield return new CodeInstruction(OpCodes.Ldarg_1);
+                    yield return new CodeInstruction(OpCodes.Call, getunits);
+
+                    continue;
+                }
+
                 yield return c;
             }
         }
