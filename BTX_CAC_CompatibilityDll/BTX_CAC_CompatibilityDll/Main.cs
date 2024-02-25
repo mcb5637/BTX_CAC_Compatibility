@@ -245,12 +245,12 @@ namespace BTX_CAC_CompatibilityDll
             SpawnableUnit[] r = cfg.GetLanceUnits(teamdef);
             var slots = Traverse.Create(inst).Field("loadoutSlots").GetValue<LanceLoadoutSlot[]>();
             int len = Math.Min(r.Length, slots.Length);
-            int newlen = Math.Min(len, inst.activeContract.Override.maxNumberOfPlayerUnits);
-            for (int i = newlen; i < slots.Length; ++i)
+            int maxunits = inst.activeContract.Override.maxNumberOfPlayerUnits;
+            for (int i = maxunits; i < slots.Length; ++i)
             {
                 slots[i].SetLockState(LanceLoadoutSlot.LockState.Full); // set locked, cu does not do it anymore
             }
-            Array.Resize(ref r, newlen); // remove any more mechs/pilots
+            Array.Resize(ref r, Math.Min(len, maxunits)); // remove any more mechs/pilots
             return r;
         }
 
