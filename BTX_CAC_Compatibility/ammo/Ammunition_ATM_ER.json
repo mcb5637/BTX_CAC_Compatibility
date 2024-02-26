@@ -1,12 +1,13 @@
 {
   "Description": {
     "Id": "Ammunition_ATM_ER",
-    "Name": "ATM ER",
+    "Name": "ATM ER Ammo",
     "Details": "ATM missiles, capable of dealing significant damage at various ranges.",
     "Icon": null,
     "Cost": 0,
     "Rarity": 0,
-    "Purchasable": false
+    "Purchasable": false,
+	"UIName": "ER"
   },
   "ammunitionTypeID": "Normal",
   "Category": "NotSet",

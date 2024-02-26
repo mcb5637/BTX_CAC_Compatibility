@@ -1,0 +1,13 @@
+{
+	"Description": {
+		"Name": "ATM ST Ammo",
+		"UIName": "ST"
+	},
+	"DamagePerShot": 4,
+	"Instability": 2,
+	"MinRange": 120,
+	"MaxRange": 180,
+	"ShortRange": 120,
+	"MiddleRange": 120,
+	"LongRange": 180
+}

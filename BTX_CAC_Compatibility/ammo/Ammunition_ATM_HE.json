@@ -1,12 +1,13 @@
 {
   "Description": {
     "Id": "Ammunition_ATM_HE",
-    "Name": "ATM HE",
+    "Name": "ATM HE Ammo",
     "Details": "ATM missiles, capable of dealing significant damage at various ranges.",
     "Icon": null,
     "Cost": 0,
     "Rarity": 0,
-    "Purchasable": false
+    "Purchasable": false,
+	"UIName": "HE"
   },
   "ammunitionTypeID": "Normal",
   "Category": "NotSet",

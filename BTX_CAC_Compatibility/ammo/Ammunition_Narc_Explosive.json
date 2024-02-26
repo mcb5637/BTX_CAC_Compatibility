@@ -1,0 +1,23 @@
+{
+	"Description": {
+		"Id": "Ammunition_Narc_Explosive",
+		"Name": "Narc Explosive Pod",
+		"UIName": "EP",
+		"Details": "Short range missiles that deploy a targeting beacon that increases damage from subsequent missile attacks.",
+		"Icon": null,
+		"Cost": 0,
+		"Rarity": 0,
+		"Purchasable": false
+	},
+	"ammunitionTypeID": "Normal",
+	"Category": "NotSet",
+	"ammoCategoryID": "Narc",
+	"HeatGenerated": 0,
+	"HeatGeneratedModifier": 1,
+	"ArmorDamageModifier": 1,
+	"ISDamageModifier": 1,
+	"CriticalDamageModifier": 1,
+	"DamagePerShot": 16,
+	"Instability": 8,
+	"statusEffects": []
+}

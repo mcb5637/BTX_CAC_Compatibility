@@ -446,6 +446,11 @@
       "Path": "ammo"
     },
     {
+      "Type": "AmmunitionDef",
+      "Path": "ammomerge",
+      "ShouldMergeJSON": true
+    },
+    {
       "Type": "AmmunitionBoxDef",
       "Path": "ammobox"
     },
