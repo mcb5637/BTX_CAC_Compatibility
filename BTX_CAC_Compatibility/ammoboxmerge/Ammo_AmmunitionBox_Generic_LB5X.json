@@ -1,0 +1,9 @@
+{
+	"Capacity": 15,
+	"Description": {
+		"UIName": "LB 5-X Cluster Ammo",
+		"Name": "LB 5-X Cluster Ammo"
+	},
+	"BonusValueA": "10 Cluster",
+	"BonusValueB": ""
+}

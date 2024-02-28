@@ -1,0 +1,37 @@
+{
+	"AmmoID": "Ammunition_iNarc_Explosive",
+	"Capacity": 4,
+	"Description": {
+		"Cost": 38000,
+		"Rarity": 0,
+		"Purchasable": true,
+		"Manufacturer": "Generic",
+		"Model": "Narc",
+		"UIName": "iNarc Explosive Pod Ammo",
+		"Id": "Ammo_AmmunitionBox_Generic_iNarc_Explosive",
+		"Name": "iNarc Explosive Pod Ammo",
+		"Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nImproved Narc Beacon Ammo Bins each contain 4 rounds and may feed multiple weapons.",
+		"Icon": "uixSvgIcon_ammoBox_Missile"
+	},
+	"BonusValueA": "+ 24 Dmg.",
+	"BonusValueB": "+ 12 Stb.Dmg.",
+	"ComponentType": "AmmunitionBox",
+	"ComponentSubType": "Ammunition",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 1,
+	"Tonnage": 1,
+	"CanExplode": true,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"statusEffects": [],
+	"ComponentTags": {
+		"items": [
+			"component_type_stock",
+			"component_type_lostech",
+			"component_inarc"
+		],
+		"tagSetSourceFile": ""
+	}
+}

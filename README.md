@@ -115,7 +115,6 @@ What to do when adding CAC-C into an existing savegame:
 
 TODO List:
 - quad critable arm actuators to leg actuators
-- inarc ammo types
 - imp sensor unlocks sensorlock without skill (add to irtweaks)
 - multitarget quirk unlocks without skill? (irtweaks stat)
 - a-pods CAE?
@@ -126,7 +125,6 @@ TODO List:
 - Flamers & Inferno ammo balance
 - ECM tohit balance
 - new mechs: LAMs
-- ammobox/weapon replace->merge
 
 Known bugs:
 - CustomLoc patchig strings

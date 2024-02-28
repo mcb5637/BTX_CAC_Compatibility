@@ -1,0 +1,8 @@
+{
+	"Description": {
+		"Model": "ATM ST",
+		"UIName": "ATM ST Ammo"
+	},
+	"BonusValueA": "+ 4 Dmg",
+	"BonusValueB": "+ 180/120m Range"
+}

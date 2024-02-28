@@ -1,0 +1,18 @@
+{
+	"Damage": 60,
+	"AccuracyModifier": -1,
+	"ShotsWhenFired": 1,
+	"ProjectilesPerShot": 5,
+	"Instability": 40,
+	"BonusValueA": "+ 20 Stb.Dmg.",
+	"ImprovedBallistic": true,
+	"HitGenerator": "Cluster",
+	"BallisticDamagePerPallet": true,
+	"DistantVariance": 0.5,
+	"DamageFalloffStartDistance": 270,
+	"DamageFalloffEndDistance": 360,
+	"DistantVarianceReversed": false,
+	"RangedDmgFalloffType": "Linear",
+	"isDamageVariation": true,
+	"isStabilityVariation": true
+}

@@ -24,7 +24,7 @@
 			"HeatGenerated": -18
 		}
 	],
-	"MinRange": 90,
+	"MinRange": 0,
 	"MaxRange": 630,
 	"RangeSplit": [
 		420,

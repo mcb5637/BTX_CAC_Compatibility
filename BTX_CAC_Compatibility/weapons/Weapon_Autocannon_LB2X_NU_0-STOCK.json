@@ -4,7 +4,7 @@
   "Damage": 36,
   "Instability": 12,
   "ImprovedBallistic": true,
-  "MinRange": 90,
+  "MinRange": 120,
   "MaxRange": 810,
   "FireDelayMultiplier": 1,
   "RangeSplit": [

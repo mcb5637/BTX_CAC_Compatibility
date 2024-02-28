@@ -5,7 +5,7 @@
   "Instability": 12,
   "ImprovedBallistic": true,
   "BonusValueA": "+ 12/5 Dmg.",
-  "MinRange": 90,
+  "MinRange": 120,
   "MaxRange": 810,
   "FireDelayMultiplier": 1,
   "RangeSplit": [

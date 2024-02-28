@@ -1,0 +1,108 @@
+{
+	"Description": {
+		"Id": "Ammunition_iNarc_Haywire",
+		"Name": "iNarc Haywire Pod",
+		"UIName": "HWP",
+		"Details": "Short range missiles that deploy a targeting beacon that increases damage from subsequent missile attacks.",
+		"Icon": null,
+		"Cost": 0,
+		"Rarity": 0,
+		"Purchasable": false
+	},
+	"ammunitionTypeID": "Normal",
+	"Category": "NotSet",
+	"ammoCategoryID": "iNarc",
+	"HeatGenerated": 0,
+	"HeatGeneratedModifier": 1,
+	"ArmorDamageModifier": 1,
+	"ISDamageModifier": 1,
+	"CriticalDamageModifier": 1,
+	"DamagePerShot": 1,
+	"statusEffects": [
+		{
+			"durationData": {
+				"duration": 3,
+				"ticksOnActivations": false,
+				"useActivationsOfTarget": false,
+				"ticksOnEndOfRound": true,
+				"ticksOnMovements": false,
+				"stackLimit": 1,
+				"clearedWhenAttacked": false
+			},
+			"targetingData": {
+				"effectTriggerType": "OnHit",
+				"triggerLimit": 0,
+				"extendDurationOnTrigger": 0,
+				"specialRules": "NotSet",
+				"effectTargetType": "NotSet",
+				"range": 0,
+				"forcePathRebuild": false,
+				"forceVisRebuild": false,
+				"showInTargetPreview": true,
+				"showInStatusPanel": true
+			},
+			"effectType": "StatisticEffect",
+			"Description": {
+				"Id": "StatusEffect-NARC-IncomingAttBonus",
+				"Name": "HAYWIRE ATTACHED",
+				"Details": "Decreased accuracy for attacks by [AMT]",
+				"Icon": "uixSvgIcon_statusMarked"
+			},
+			"nature": "Debuff",
+			"statisticData": {
+				"appliesEachTick": false,
+				"statName": "AccuracyModifier",
+				"operation": "Float_Add",
+				"modValue": "3.0",
+				"modType": "System.Single"
+			},
+			"tagData": null,
+			"floatieData": null,
+			"actorBurningData": null,
+			"vfxData": null,
+			"instantModData": null,
+			"poorlyMaintainedEffectData": null
+		},
+		{
+			"durationData": {
+				"duration": 3,
+				"ticksOnActivations": false,
+				"useActivationsOfTarget": false,
+				"ticksOnEndOfRound": true,
+				"ticksOnMovements": false,
+				"stackLimit": 1,
+				"clearedWhenAttacked": false
+			},
+			"targetingData": {
+				"effectTriggerType": "OnHit",
+				"triggerLimit": 0,
+				"extendDurationOnTrigger": 0,
+				"specialRules": "NotSet",
+				"effectTargetType": "NotSet",
+				"range": 0,
+				"forcePathRebuild": false,
+				"forceVisRebuild": false,
+				"showInTargetPreview": false,
+				"showInStatusPanel": false,
+				"hideApplicationFloatie": true
+			},
+			"effectType": "VFXEffect",
+			"Description": {
+				"Id": "StatusEffect-NARC-IndicatorVFX",
+				"Name": "Inferno VFX",
+				"Details": "Visual indicator of the NARC effect",
+				"Icon": "uixSvgIcon_statusMarked"
+			},
+			"nature": "Debuff",
+			"vfxData": {
+				"vfxName": "vfxPrfPrtl_narcMarker_loop",
+				"attachToImpactPoint": true,
+				"location": -1,
+				"isAttached": true,
+				"facesAttacker": false,
+				"isOneShot": false,
+				"duration": -1.0
+			}
+		}
+	]
+}

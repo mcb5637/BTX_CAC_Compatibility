@@ -25,10 +25,10 @@
 		}
 	],
 	"MinRange": 90,
-	"MaxRange": 600,
+	"MaxRange": 750,
 	"RangeSplit": [
-		390,
-		390,
-		600
+		510,
+		510,
+		750
 	]
 }

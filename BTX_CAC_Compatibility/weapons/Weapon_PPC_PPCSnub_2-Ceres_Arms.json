@@ -1,0 +1,39 @@
+{
+	"Damage": 60,
+	"AccuracyModifier": -1,
+	"ShotsWhenFired": 1,
+	"ProjectilesPerShot": 5,
+	"Instability": 60,
+	"BonusValueA": "+ 40 Stb.Dmg.",
+	"BonusValueB": "Focusing Lens",
+	"ImprovedBallistic": true,
+	"HitGenerator": "Cluster",
+	"BallisticDamagePerPallet": true,
+	"DistantVariance": 0.5,
+	"DamageFalloffStartDistance": 270,
+	"DamageFalloffEndDistance": 360,
+	"DistantVarianceReversed": false,
+	"RangedDmgFalloffType": "Linear",
+	"isDamageVariation": true,
+	"isStabilityVariation": true,
+	"Modes": [
+		{
+			"Id": "SPPC_FLOFF",
+			"UIName": "FL OFF",
+			"Name": "Focusing Lens Off",
+			"Description": "Without the additional magnetic Focusing Lens, projectiles split up int multiple smaller ones upon leaving the weapon.",
+			"isBaseMode": true
+		},
+		{
+			"Id": "SPPC_FLON",
+			"UIName": "FL ON",
+			"Name": "Focusing Lens On",
+			"Description": "The additional magnetic Focusing Lens allows to focus all particles into one projectile, concentrating the infliced damage to one location, at the cost of slighly increased heat generation.",
+			"isBaseMode": false,
+			"ProjectilesPerShot": -4,
+			"HeatGenerated": 5,
+			"AccuracyModifier": 1,
+			"WeaponEffectID": "WeaponEffect-Weapon_PPC"
+		}
+	]
+}

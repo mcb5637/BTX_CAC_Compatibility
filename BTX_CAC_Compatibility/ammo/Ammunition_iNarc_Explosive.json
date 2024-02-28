@@ -1,0 +1,23 @@
+{
+	"Description": {
+		"Id": "Ammunition_iNarc_Explosive",
+		"Name": "iNarc Explosive Pod",
+		"UIName": "EP",
+		"Details": "Short range missiles that deploy a targeting beacon that increases damage from subsequent missile attacks.",
+		"Icon": null,
+		"Cost": 0,
+		"Rarity": 0,
+		"Purchasable": false
+	},
+	"ammunitionTypeID": "Normal",
+	"Category": "NotSet",
+	"ammoCategoryID": "iNarc",
+	"HeatGenerated": 0,
+	"HeatGeneratedModifier": 1,
+	"ArmorDamageModifier": 1,
+	"ISDamageModifier": 1,
+	"CriticalDamageModifier": 1,
+	"DamagePerShot": 24,
+	"Instability": 12,
+	"statusEffects": []
+}
