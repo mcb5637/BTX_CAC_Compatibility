@@ -39,7 +39,7 @@ Component list (Clan & SLDF ones included):
 		- Heavy Gauss: -
 		- Light Gauss: -
         - MG: added double speed mode (double shots, -4 acc, +5 heat)
-		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance / can be used as MG)
+		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance (fires at all nearby missles) / can be used as MG)
     - Missle
         - LRM: added hotload mode, added Deadfire ammo
         - Artemis IV LRM: turned into a Weapon Addon for LRMs (deprecated, but still working)
