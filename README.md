@@ -46,12 +46,17 @@ Component list (Clan & SLDF ones included):
         - SRM: added inferno ammo (inferno causes fires everywhere), added Deadfire ammo
         - Artemis IV SRM: turned into a Weapon Addon for SRMs (deprecated, but still working)
         - Streak SRM: added inferno ammo, added streak effect, added Deadfire ammo
-        - NARC: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 2 to 4 rounds (depends on launcher), ecm blocks narc acc bonus
+        - NARC: multiple pods
+			- Homing Pod: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 3 rounds (depends on launcher), ecm blocks narc acc bonus
+			- Explosive Pod: damge (kurita shops after 3059)
         - ATM: added 3 ammo types, trading damage for range, added clustering
         - Infernos: Broken, use SRM inferno ammo instead
 		- MRM: individual hit generator, unguided flag
 		- RL: individual hit generator, unguided flag
-		- iNarc: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 2 to 4 rounds (depends on launcher), ecm blocks narc acc bonus
+		- iNarc: multiple pods
+			- Homing Pod: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 3 rounds (depends on launcher), ecm blocks narc acc bonus
+			- Explosive Pod: damge
+			- Haywire Pod: -3 accuracy for 3 rounds
     - Artillery
         - Thumper: light artillery (replaces HM mortar / + version for Bull Shark)
         - Sniper: medium artillery (found in mining shops)
@@ -120,7 +125,6 @@ TODO List:
 - a-pods CAE?
 - artillery mounting rework
 - edit texts
-- vehicle updates (inferno?)
 - NARC reveals target?
 - Flamers & Inferno ammo balance
 - ECM tohit balance
