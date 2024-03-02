@@ -84,7 +84,6 @@
       "IsAMS": true,
       "AMSDamage": 1,
       "ShotsWhenFired": 30,
-      "MaxRange": 90.0,
       "AMSHitChance": 0.5,
 	  "IsAAMS": true,
       "FlatJammingChance": 0.12,
