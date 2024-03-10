@@ -14,9 +14,9 @@
       "Description": "Disabled Field Inhibitor removes minimum range, but at the chance to misfire.",
       "isBaseMode": false,
       "DamageOnJamming": true,
-      "FlatJammingChance": 0.5,
-      "GunneryJammingMult": 0.01,
-      "GunneryJammingBase": 1,
+	  "FlatJammingChance": 0.1,
+	  "GunneryJammingBase": 10,
+	  "GunneryJammingMult": 0.04,
       "MinRange": -90.0,
       "AccuracyModifier": 1.0
     }
