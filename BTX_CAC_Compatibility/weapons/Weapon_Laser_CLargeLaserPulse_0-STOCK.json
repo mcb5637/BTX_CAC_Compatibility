@@ -1,4 +1,4 @@
 {
-    "ImprovedBallistic": true,
-    "ProjectilesPerShot": 1
+	"ImprovedBallistic": false,
+	"ProjectilesPerShot": 1
 }

@@ -1,3 +1,7 @@
 {
-  "ProjectilesPerShot": 1
+	"ImprovedBallistic": true,
+	"BallisticDamagePerPallet": false,
+	"HasShells": false,
+	"DisableClustering": true,
+	"ProjectilesPerShot": 2
 }

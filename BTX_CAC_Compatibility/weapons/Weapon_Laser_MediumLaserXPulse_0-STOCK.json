@@ -1,5 +1,5 @@
 {
-    "ImprovedBallistic": true,
+    "ImprovedBallistic": false,
     "ProjectilesPerShot": 1,
     "Damage": 30,
     "ShotsWhenFired": 1,
