@@ -1,77 +1,93 @@
 {
-    "Category": "Ballistic",
-    "Type": "Autocannon",
-    "WeaponSubType": "AC20",
-    "MinRange": 0,
-    "MaxRange": 1000,
-    "RangeSplit": [
-        750,
-        750,
-        1000
-    ],
+	"Custom": {
+		"RequiresLoader": {
+			"LoaderType": "CAC_C_ArtilleryLoader"
+		}
+	},
+	"Category": "Ballistic",
+	"Type": "Autocannon",
+	"WeaponSubType": "AC20",
+	"MinRange": 0,
+	"MaxRange": 1000,
+	"RangeSplit": [
+		750,
+		750,
+		1000
+	],
 	"ForbiddenRange": 90,
-    "AmmoCategory": "Thumper",
-    "StartingAmmoCapacity": 0,
-    "HeatGenerated": 40,
-    "Damage": 40,
-    "OverheatedDamageMultiplier": 0,
-    "EvasiveDamageMultiplier": 0,
-    "EvasivePipsIgnored": 0,
-    "DamageVariance": 0,
-    "HeatDamage": 0,
-    "StructureDamage": 0,
-    "AccuracyModifier": 0,
-    "CriticalChanceMultiplier": 1,
-    "AOECapable": true,
+	"AmmoCategory": "Thumper",
+	"StartingAmmoCapacity": 0,
+	"HeatGenerated": 40,
+	"Damage": 40,
+	"OverheatedDamageMultiplier": 0,
+	"EvasiveDamageMultiplier": 0,
+	"EvasivePipsIgnored": 0,
+	"DamageVariance": 0,
+	"HeatDamage": 0,
+	"StructureDamage": 0,
+	"AccuracyModifier": 0,
+	"CriticalChanceMultiplier": 1,
+	"AOECapable": true,
 	"AOERange": 60,
 	"AOEDamage": 75,
 	"AOEHeatDamage": 0,
 	"AOEInstability": 75,
-    "IndirectFireCapable": true,
-    "RefireModifier": 4,
-    "ShotsWhenFired": 1,
-    "ProjectilesPerShot": 1,
-    "AttackRecoil": 4,
-    "Instability": 75,
+	"IndirectFireCapable": true,
+	"RefireModifier": 4,
+	"ShotsWhenFired": 1,
+	"ProjectilesPerShot": 1,
+	"AttackRecoil": 4,
+	"Instability": 75,
 	"AoEDmgFalloffType": "Linear",
-    "WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
-    "Description": {
-        "Cost": 187500,
-        "Rarity": 99,
-        "Purchasable": true,
-        "Manufacturer": "Defiance",
-        "Model": "Light Artillery",
-        "UIName": "Thumper",
-        "Id": "Weapon_MortarCAC_ThumperFree",
-        "Name": "Thumper",
-        "Details": "The Thumper Cannon is an light artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect.",
-        "Icon": "uixSvgIcon_weapon_Ballistic"
-    },
-    "BonusValueA": "",
-    "BonusValueB": "",
-    "ComponentType": "Weapon",
-    "ComponentSubType": "Weapon",
-    "PrefabIdentifier": "AC20",
-    "InventorySize": 8,
-    "Tonnage": 15,
-    "AllowedLocations": "All",
-    "DisallowedLocations": "All",
-    "CriticalComponent": false,
-    "statusEffects": [
-        
-    ],
-    "ComponentTags": {
-        "items": [
-            "component_type_stock",
-            "range_extreme"
-        ],
-        "tagSetSourceFile": ""
-    },
+	"WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
+	"Description": {
+		"Cost": 187500,
+		"Rarity": 99,
+		"Purchasable": true,
+		"Manufacturer": "Defiance",
+		"Model": "Light Artillery",
+		"UIName": "Thumper",
+		"Id": "Weapon_MortarCAC_ThumperFree",
+		"Name": "Thumper",
+		"Details": "The Thumper Cannon is an light artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect. Requires mounting an external Artillery Loader in the same or adjacent location.",
+		"Icon": "uixSvgIcon_weapon_Ballistic"
+	},
+	"BonusValueA": "",
+	"BonusValueB": "",
+	"ComponentType": "Weapon",
+	"ComponentSubType": "Weapon",
+	"PrefabIdentifier": "AC20",
+	"InventorySize": 3,
+	"Tonnage": 9,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"statusEffects": [],
+	"Modes": [
+		{
+			"Id": "ART",
+			"UIName": "--",
+			"Name": "Base",
+			"Description": "",
+			"isBaseMode": true,
+			"ShotsWhenFired": -1
+		}
+	],
+	"ComponentTags": {
+		"items": [
+			"component_type_stock",
+			"range_extreme",
+			"ballistic_artillery",
+			"artillery_loader_attachable",
+			"artillery_loader_attachable_BS"
+		],
+		"tagSetSourceFile": ""
+	},
 	"ImprovedBallistic": true,
 	"FireDelayMultiplier": 1,
 	"AlwaysIndirectVisuals": true,
 	"AdditionalImpactVFX": "WFX_BELarger",
-    "AdditionalImpactVFXScaleX": 12,
-    "AdditionalImpactVFXScaleY": 12,
-    "AdditionalImpactVFXScaleZ": 12
+	"AdditionalImpactVFXScaleX": 12,
+	"AdditionalImpactVFXScaleY": 12,
+	"AdditionalImpactVFXScaleZ": 12
 }

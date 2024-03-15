@@ -1,0 +1,14 @@
+{
+	"Id": "weaponupgrade_artillery_loader",
+	"autoTarget": true,
+	"installedLocationOnly": false,
+	"targetComponentTags": [
+		"artillery_loader_attachable"
+	],
+	"modes": [
+		{
+			"Id": "ART",
+			"ShotsWhenFired": 1
+		}
+	]
+}

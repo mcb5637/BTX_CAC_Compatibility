@@ -1,0 +1,43 @@
+{
+	"Custom": {
+		"AddonReference": {
+			"installedLocationOnly": false,
+			"autoTarget": true,
+			"WeaponAddonIds": [
+				"weaponupgrade_artillery_loader"
+			]
+		}
+	},
+	"StatName": null,
+	"RelativeModifier": 0,
+	"AbsoluteModifier": 0,
+	"Description": {
+		"Cost": 2000000,
+		"Rarity": 99,
+		"Purchasable": false,
+		"Manufacturer": "Armstrong",
+		"Model": "Artillery Loader",
+		"UIName": "Artillery Loader",
+		"Id": "Gear_Addon_Artillery_Loader",
+		"Name": "Artillery Loader",
+		"Details": "A Loader is required for any Artillery piece to fire. This one can handle one Thumper, Sniper or Arrow IV Artillery piece.",
+		"Icon": "uixSvgIcon_special_Equipment"
+	},
+	"BonusValueA": "",
+	"BonusValueB": "",
+	"ComponentType": "Upgrade",
+	"ComponentSubType": "NotSet",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 5,
+	"Tonnage": 6,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"ComponentTags": {
+		"items": [
+			"CAC_C_ArtilleryLoader"
+		],
+		"tagSetSourceFile": ""
+	}
+}

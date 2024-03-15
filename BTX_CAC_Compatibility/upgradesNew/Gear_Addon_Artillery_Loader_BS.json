@@ -1,0 +1,46 @@
+{
+	"Custom": {
+		"AddonReference": {
+			"installedLocationOnly": true,
+			"autoTarget": true,
+			"WeaponAddonIds": [
+				"weaponupgrade_artillery_loader_BS"
+			]
+		},
+		"BallisticArtilleryOnly": {
+			"ArtilleryTag": "ballistic_artillery"
+		}
+	},
+	"StatName": null,
+	"RelativeModifier": 0,
+	"AbsoluteModifier": 0,
+	"Description": {
+		"Cost": 2000000,
+		"Rarity": 99,
+		"Purchasable": false,
+		"Manufacturer": "Unknown",
+		"Model": "Bull Shark",
+		"UIName": "Integrated Artillery Mount",
+		"Id": "Gear_Addon_Artillery_Loader_BS",
+		"Name": "Integrated Artillery Mount",
+		"Details": "This Mechs structure is modified to fit a ballistic artillery piece into its torso. The Loader is fitted directly into the chassis, with its components doubling as structural elements. It is big enough to handle even a Long Tom.",
+		"Icon": "uixSvgIcon_special_Equipment"
+	},
+	"BonusValueA": "",
+	"BonusValueB": "",
+	"ComponentType": "Upgrade",
+	"ComponentSubType": "NotSet",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 1,
+	"Tonnage": 0,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"ComponentTags": {
+		"items": [
+			"CAC_C_ArtilleryLoader"
+		],
+		"tagSetSourceFile": ""
+	}
+}

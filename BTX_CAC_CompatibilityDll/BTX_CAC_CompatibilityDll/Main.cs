@@ -115,6 +115,7 @@ namespace BTX_CAC_CompatibilityDll
             }
 
             ToHitModifiersHelper.registerModifier("BTX_CAC_Compatibility_ECM", "ECM", true, true, ECM_Effect, null);
+            CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());
         }
 
         private static float ECM_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)

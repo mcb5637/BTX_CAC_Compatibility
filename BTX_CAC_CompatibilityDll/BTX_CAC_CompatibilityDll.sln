@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTX_CAC_CompatibilityDll", "BTX_CAC_CompatibilityDll\BTX_CAC_CompatibilityDll.csproj", "{6818B4C4-6F41-4C9E-AAE5-9A38BEC2E2B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAC_Calc", "CAC_Calc\CAC_Calc.csproj", "{A6341A47-EE91-4618-8794-A844A34765F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CAC_Calc", "CAC_Calc\CAC_Calc.csproj", "{A6341A47-EE91-4618-8794-A844A34765F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

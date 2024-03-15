@@ -1,77 +1,93 @@
 {
-    "Category": "Ballistic",
-    "Type": "Autocannon",
-    "WeaponSubType": "AC20",
-    "MinRange": 0,
-    "MaxRange": 1000,
-    "RangeSplit": [
-        750,
-        750,
-        1000
-    ],
+	"Custom": {
+		"RequiresLoader": {
+			"LoaderType": "CAC_C_ArtilleryLoader"
+		}
+	},
+	"Category": "Ballistic",
+	"Type": "Autocannon",
+	"WeaponSubType": "AC20",
+	"MinRange": 0,
+	"MaxRange": 1000,
+	"RangeSplit": [
+		750,
+		750,
+		1000
+	],
 	"ForbiddenRange": 90,
-    "AmmoCategory": "SniperArti",
-    "StartingAmmoCapacity": 0,
-    "HeatGenerated": 50,
-    "Damage": 60,
-    "OverheatedDamageMultiplier": 0,
-    "EvasiveDamageMultiplier": 0,
-    "EvasivePipsIgnored": 0,
-    "DamageVariance": 0,
-    "HeatDamage": 0,
-    "StructureDamage": 0,
-    "AccuracyModifier": 0,
-    "CriticalChanceMultiplier": 1,
-    "AOECapable": true,
+	"AmmoCategory": "SniperArti",
+	"StartingAmmoCapacity": 0,
+	"HeatGenerated": 50,
+	"Damage": 60,
+	"OverheatedDamageMultiplier": 0,
+	"EvasiveDamageMultiplier": 0,
+	"EvasivePipsIgnored": 0,
+	"DamageVariance": 0,
+	"HeatDamage": 0,
+	"StructureDamage": 0,
+	"AccuracyModifier": 0,
+	"CriticalChanceMultiplier": 1,
+	"AOECapable": true,
 	"AOERange": 75,
 	"AOEDamage": 100,
 	"AOEHeatDamage": 0,
 	"AOEInstability": 100,
-    "IndirectFireCapable": true,
-    "RefireModifier": 4,
-    "ShotsWhenFired": 1,
-    "ProjectilesPerShot": 1,
-    "AttackRecoil": 4,
-    "Instability": 100,
+	"IndirectFireCapable": true,
+	"RefireModifier": 4,
+	"ShotsWhenFired": 1,
+	"ProjectilesPerShot": 1,
+	"AttackRecoil": 4,
+	"Instability": 100,
 	"AoEDmgFalloffType": "Linear",
-    "WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
-    "Description": {
-        "Cost": 300000,
-        "Rarity": 99,
-        "Purchasable": true,
-        "Manufacturer": "Armstrong",
-        "Model": "Medium Artillery",
-        "UIName": "Sniper",
-        "Id": "Weapon_MortarCAC_Sniper",
-        "Name": "Sniper",
-        "Details": "The Sniper Cannon is an medium artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect.",
-        "Icon": "uixSvgIcon_weapon_Ballistic"
-    },
-    "BonusValueA": "",
-    "BonusValueB": "",
-    "ComponentType": "Weapon",
-    "ComponentSubType": "Weapon",
-    "PrefabIdentifier": "AC20", /** maybe artillery? **/
-    "InventorySize": 8,
-    "Tonnage": 20,
-    "AllowedLocations": "All",
-    "DisallowedLocations": "All",
-    "CriticalComponent": false,
-    "statusEffects": [
-        
-    ],
-    "ComponentTags": {
-        "items": [
-            "component_type_stock",
-            "range_extreme"
-        ],
-        "tagSetSourceFile": ""
-    },
+	"WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
+	"Description": {
+		"Cost": 300000,
+		"Rarity": 99,
+		"Purchasable": true,
+		"Manufacturer": "Armstrong",
+		"Model": "Medium Artillery",
+		"UIName": "Sniper",
+		"Id": "Weapon_MortarCAC_Sniper",
+		"Name": "Sniper",
+		"Details": "The Sniper Cannon is an medium artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect. Requires mounting an external Artillery Loader in the same or adjacent location.",
+		"Icon": "uixSvgIcon_weapon_Ballistic"
+	},
+	"BonusValueA": "",
+	"BonusValueB": "",
+	"ComponentType": "Weapon",
+	"ComponentSubType": "Weapon",
+	"PrefabIdentifier": "AC20",
+	"InventorySize": 6,
+	"Tonnage": 14,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"Modes": [
+		{
+			"Id": "ART",
+			"UIName": "--",
+			"Name": "Base",
+			"Description": "",
+			"isBaseMode": true,
+			"ShotsWhenFired": -1
+		}
+	],
+	"statusEffects": [],
+	"ComponentTags": {
+		"items": [
+			"component_type_stock",
+			"range_extreme",
+			"ballistic_artillery",
+			"artillery_loader_attachable",
+			"artillery_loader_attachable_BS"
+		],
+		"tagSetSourceFile": ""
+	},
 	"ImprovedBallistic": true,
 	"FireDelayMultiplier": 1,
 	"AlwaysIndirectVisuals": true,
 	"AdditionalImpactVFX": "WFX_BELarger",
-    "AdditionalImpactVFXScaleX": 12,
-    "AdditionalImpactVFXScaleY": 12,
-    "AdditionalImpactVFXScaleZ": 12
+	"AdditionalImpactVFXScaleX": 12,
+	"AdditionalImpactVFXScaleY": 12,
+	"AdditionalImpactVFXScaleZ": 12
 }

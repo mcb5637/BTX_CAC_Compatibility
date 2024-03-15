@@ -1,0 +1,10 @@
+{
+	"CustomHardpoints": {
+		"aliases": {
+			"chrPrfWeap_bullshark_righttorso_ac20_bh1": {
+				"location": "righttorso",
+				"prefab": "chrPrfWeap_bullshark_centertorso_thumper"
+			}
+		}
+	}
+}

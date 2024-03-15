@@ -123,7 +123,6 @@ TODO List:
 - imp sensor unlocks sensorlock without skill (add to irtweaks)
 - multitarget quirk unlocks without skill? (irtweaks stat)
 - a-pods CAE?
-- artillery mounting rework
 - edit texts
 - NARC reveals target?
 - Flamers & Inferno ammo balance
