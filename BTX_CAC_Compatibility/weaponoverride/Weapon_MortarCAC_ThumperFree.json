@@ -41,7 +41,7 @@
 	"AoEDmgFalloffType": "Linear",
 	"WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
 	"Description": {
-		"Cost": 187500,
+		"Cost": 177500,
 		"Rarity": 99,
 		"Purchasable": true,
 		"Manufacturer": "Defiance",

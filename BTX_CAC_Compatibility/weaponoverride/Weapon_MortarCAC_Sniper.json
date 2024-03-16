@@ -41,7 +41,7 @@
 	"AoEDmgFalloffType": "Linear",
 	"WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
 	"Description": {
-		"Cost": 300000,
+		"Cost": 290000,
 		"Rarity": 99,
 		"Purchasable": true,
 		"Manufacturer": "Armstrong",

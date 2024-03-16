@@ -12,7 +12,7 @@
 	"RelativeModifier": 0,
 	"AbsoluteModifier": 0,
 	"Description": {
-		"Cost": 2000000,
+		"Cost": 10000,
 		"Rarity": 99,
 		"Purchasable": false,
 		"Manufacturer": "Armstrong",
@@ -36,6 +36,7 @@
 	"CriticalComponent": false,
 	"ComponentTags": {
 		"items": [
+			"component_type_stock",
 			"CAC_C_ArtilleryLoader"
 		],
 		"tagSetSourceFile": ""

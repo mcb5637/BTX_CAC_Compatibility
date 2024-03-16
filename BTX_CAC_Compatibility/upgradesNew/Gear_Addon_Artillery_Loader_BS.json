@@ -39,6 +39,7 @@
 	"CriticalComponent": false,
 	"ComponentTags": {
 		"items": [
+			"BLACKLISTED",
 			"CAC_C_ArtilleryLoader"
 		],
 		"tagSetSourceFile": ""
