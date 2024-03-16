@@ -1,5 +1,4 @@
 ﻿using BattleTech;
-using BattleTech.UI;
 using CustomActivatableEquipment;
 using CustomComponents;
 using CustomUnits;
@@ -33,23 +32,41 @@ namespace BTX_CAC_CompatibilityDll
 
         private static IEnumerable<MechComponentRef> Attachments(MechDef m, MechComponentRef r)
         {
-            if (r.LocalGUID == "")
+            if (r.LocalGUID() == "")
                 return Array.Empty<MechComponentRef>();
-            return m.Inventory.Where((i) => i.Def.Is<AddonReference>() && i.TargetComponentGUID == r.LocalGUID);
+            return m.Inventory.Where((i) => i.Def.Is<AddonReference>() && i.TargetComponentGUID() == r.LocalGUID());
         }
 
         public string LoaderType;
 
-        public void ValidateMech(Dictionary<MechValidationType, List<Text>> errors, MechValidationLevel validationLevel, MechDef mechDef, MechComponentRef componentRef)
+        public void AddErr(Dictionary<MechValidationType, List<Text>> errors, string e)
         {
-            if (ValidateMechCanBeFielded(mechDef, componentRef))
-                return;
             if (!errors.TryGetValue(MechValidationType.WeaponsMissing, out List<Text> err))
             {
                 err = new List<Text>();
                 errors[MechValidationType.WeaponsMissing] = err;
             }
-            err.Add(new Text("Weapon missing Loader"));
+            err.Add(new Text(e));
+        }
+
+        public void ValidateMech(Dictionary<MechValidationType, List<Text>> errors, MechValidationLevel validationLevel, MechDef mechDef, MechComponentRef componentRef)
+        {
+            IEnumerable<MechComponentRef> loaders = Attachments(mechDef, componentRef).Where((r) => r.Def.ComponentTags.Contains(LoaderType));
+            if (loaders.Count() != 1)
+            {
+                AddErr(errors, $"{componentRef.Def.Description.Name} in {componentRef.MountedLocation} is missing its loader");
+                return;
+            }
+            MechComponentRef l = loaders.First();
+            if (l == null)
+            {
+                AddErr(errors, $"{componentRef.Def.Description.Name} in {componentRef.MountedLocation} is missing its loader");
+                return;
+            }
+            if (!CheckLocs(componentRef.MountedLocation, l.MountedLocation))
+            {
+                AddErr(errors, $"{componentRef.Def.Description.Name} in {componentRef.MountedLocation} has its loader in {l.MountedLocation}");
+            }
         }
 
         public bool ValidateMechCanBeFielded(MechDef mechDef, MechComponentRef componentRef)
@@ -74,22 +91,35 @@ namespace BTX_CAC_CompatibilityDll
 
         public void ValidateMech(Dictionary<MechValidationType, List<Text>> errors, MechValidationLevel validationLevel, MechDef mechDef, MechComponentRef componentRef)
         {
-            if (ValidateMechCanBeFielded(mechDef, componentRef))
+            MechComponentRef w = FindWeap(mechDef, componentRef);
+            if (w == null)
                 return;
             if (!errors.TryGetValue(MechValidationType.WeaponsMissing, out List<Text> err))
             {
                 err = new List<Text>();
                 errors[MechValidationType.WeaponsMissing] = err;
             }
-            err.Add(new Text("Weapon can only be loader"));
+            err.Add(new Text($"ballistic weapon in {componentRef.MountedLocation} can only be artillery (is {w.Def.Description.Name})"));
         }
 
         public bool ValidateMechCanBeFielded(MechDef mechDef, MechComponentRef componentRef)
         {
-            return !mechDef.Inventory.Any((i) =>
+            var w = FindWeap(mechDef, componentRef);
+            if (w != null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private MechComponentRef FindWeap(MechDef mechDef, MechComponentRef componentRef)
+        {
+            return mechDef.Inventory.FirstOrDefault((i) =>
             {
                 if (i.MountedLocation != componentRef.MountedLocation)
                     return false;
+                if (i.Def == null)
+                    i.RefreshComponentDef();
                 if (i.Def.ComponentTags.Contains(ArtilleryTag))
                     return false;
                 return i.Def is WeaponDef w && w.Type == WeaponType.Autocannon;
@@ -100,7 +130,7 @@ namespace BTX_CAC_CompatibilityDll
     [HarmonyPatch(typeof(CustomHardpointsDef), nameof(CustomHardpointsDef.Apply))]
     public class CustomHardpointsDef_Apply
     {
-        public static void Postfix(CustomHardpointsDef __instance, HardpointDataDef parent)
+        public static void Postfix(HardpointDataDef parent)
         {
             if (parent.ID == "hardpointdatadef_bullshark")
             {
