@@ -58,10 +58,11 @@ Component list (Clan & SLDF ones included):
 			- Explosive Pod: damge
 			- Haywire Pod: -3 accuracy for 3 rounds
     - Artillery
-        - Thumper: light artillery (replaces HM mortar / + version for Bull Shark)
+        - Thumper: light artillery (replaces HM mortar / Bull Shark)
         - Sniper: medium artillery (found in mining shops)
-        - Long Tom: heavy artillery (special, only for Bull Shark with special event)
+        - Long Tom: heavy artillery (found in mining shops, only mountable in Bull Shark)
         - Arrow IV: medium artillery (lostech / FP reward / Liao shops after 3049)
+		- Artillery Loader: every artillery needs a Loader attached in the same or adjacent location (found in mining shops)
 - Electronics
     - ECM
         - Guardian ECM: -20% detectability, 180m aura (ECM: +4 defense, indirect immune, sensorlock immune, friendly only, blue or ECCM: negates 1 ECM, cyan)
