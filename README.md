@@ -108,8 +108,7 @@ What to do when adding CAC-C into an existing savegame:
 	- any ActiveProbe (you are fine if the component has +Xm Sensor Range as bonus)
 	- any TSM (you are fine if the in mission GUI shows only one active component for it)
 	- MASC (you are fine if the in mission GUI shows only one active component for it)
-	- Bull Shark BSK-MAZ (you are fine if it has a fixed Thumper ballistic weapon)
-	- Exterminator EXT-4D (you are fine if it has Null Signature and Chameleon)
+	- Bull Shark BSK-MAZ (you are fine if it has a fixed Integrated Artillery Mount)
 - Remove any equipment and use its new replacements (use the savegame editor to change the parts in your inventory if you want):
 	- Liao ECM (Gear_Sensor_Prototype_ECM -> Gear_SensorCAC_LiaoProtoECM)
 	- Liao AP (Gear_Sensor_Prototype_ActiveProbe -> Gear_SensorCAC_LiaoProtoAP)

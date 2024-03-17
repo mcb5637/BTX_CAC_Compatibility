@@ -1,0 +1,39 @@
+{
+	"TargetIDs": [
+		"Gear_Sensor_ActiveProbe",
+		"Gear_Sensor_ActiveProbe_Clan",
+		"Gear_Sensor_ActiveProbeImproved",
+		"Gear_Sensor_ActiveProbeImproved_Clan",
+		"Gear_Sensor_Beagle_ActiveProbe",
+		"Gear_Sensor_ECM",
+		"Gear_Sensor_ECM_Clan",
+		"Gear_Sensor_EWE",
+		"Gear_Sensor_EWE_Clan",
+		"Gear_Sensor_EWEImproved_Clan",
+		"Gear_Sensor_Prototype_ActiveProbe",
+		"Gear_Sensor_Prototype_ECM",
+		"Gear_Sensor_Prototype_EWE",
+		"Gear_AMS_Blankenburg",
+		"Gear_AMS_Cal-Boeing",
+		"Gear_AMS_Clan",
+		"Gear_AMS_Pinard",
+		"Weapon_Inferno_Inferno2_0-STOCK",
+		"Weapon_Inferno_Inferno2_1-Harvester",
+		"Weapon_Inferno_Inferno2_2-Marklin_Mini"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Flags": {
+						"flags": [
+							"invalid"
+						]
+					}
+				}
+			}
+		}
+	]
+}

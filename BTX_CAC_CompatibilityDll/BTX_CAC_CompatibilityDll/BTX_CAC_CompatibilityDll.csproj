@@ -102,6 +102,7 @@
     <Compile Include="AccessExtensionPatcher\PropertyGet.cs" />
     <Compile Include="AccessExtensionPatcher\PropertySet.cs" />
     <Compile Include="Briefing_InitializeContractComplete.cs" />
+    <Compile Include="Decay.cs" />
     <Compile Include="MechDef_FromJson.cs" />
     <Compile Include="CCLoader.cs" />
     <Compile Include="SimGameState_InitStats.cs" />
