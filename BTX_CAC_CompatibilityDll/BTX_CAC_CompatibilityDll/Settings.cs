@@ -20,6 +20,7 @@ namespace BTX_CAC_CompatibilityDll
     {
         public string ID = null;
         public string Type = null;
+        public int Amount = -1;
     }
 
     class WeaponAddonSplit

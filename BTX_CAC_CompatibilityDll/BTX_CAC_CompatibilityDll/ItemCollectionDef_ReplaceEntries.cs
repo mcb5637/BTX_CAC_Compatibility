@@ -20,6 +20,8 @@ namespace BTX_CAC_CompatibilityDll
                     i.ID = ne.ID;
                     if (Enum.TryParse(ne.Type, out ShopItemType t))
                         i.Type = t;
+                    if (ne.Amount >= 0)
+                        i.Count = ne.Amount;
                 }
             }
         }
