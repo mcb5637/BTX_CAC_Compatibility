@@ -1,0 +1,9 @@
+{
+	"Settings": [
+		{
+			"Name": "BombBay",
+			"MaxEquiped": 5,
+			"AutoReplace": true
+		}
+	]
+}

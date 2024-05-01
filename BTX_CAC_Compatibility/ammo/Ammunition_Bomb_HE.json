@@ -1,0 +1,25 @@
+{
+	"Description": {
+		"Id": "Ammunition_Bomb_HE",
+		"Name": "HE Bombs",
+		"Details": "High calibre artillery missle.",
+		"Icon": null,
+		"Cost": 0,
+		"Rarity": 0,
+		"Purchasable": false,
+		"UIName": "HE"
+	},
+	"HideIfOnlyVariant": true,
+	"ammunitionTypeID": "Normal",
+	"Category": "BombBay",
+	"HeatGenerated": 0,
+	"HeatGeneratedModifier": 1,
+	"ArmorDamageModifier": 1,
+	"ISDamageModifier": 1,
+	"CriticalDamageModifier": 1,
+	"HitGenerator" : "Individual",
+	"AOECapable": true,
+	"AOEDamage": 75,
+	"AOERange": 60,
+	"AoEDmgFalloffType": "Linear"
+}

@@ -1,0 +1,87 @@
+{
+	"Category": "Missile",
+	"Type": "SRM",
+	"WeaponSubType": "SRM2",
+	"MinRange": 0,
+	"MaxRange": 90,
+	"RangeSplit": [
+		90,
+		90,
+		90
+	],
+	"ForbiddenRange": 0,
+	"AmmoCategory": "BombBay",
+	"StartingAmmoCapacity": 0,
+	"HeatGenerated": 0,
+	"Damage": 0,
+	"OverheatedDamageMultiplier": 0,
+	"EvasiveDamageMultiplier": 0,
+	"EvasivePipsIgnored": 0,
+	"DamageVariance": 0,
+	"HeatDamage": 0,
+	"StructureDamage": 0,
+	"AccuracyModifier": 0,
+	"CriticalChanceMultiplier": 1,
+	"AOECapable": false,
+	"AOERange": 0,
+	"AOEDamage": 0,
+	"AOEHeatDamage": 0,
+	"AOEInstability": 0,
+	"IndirectFireCapable": false,
+	"RefireModifier": 0,
+	"ShotsWhenFired": 1,
+	"ProjectilesPerShot": 1,
+	"AttackRecoil": 0,
+	"Instability": 0,
+	"AMSImmune": true,
+	"WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
+	"Description": {
+		"Cost": 290000,
+		"Rarity": 99,
+		"Purchasable": true,
+		"Manufacturer": "LexaTech",
+		"Model": "Bomb Bay",
+		"UIName": "Bomb Bay",
+		"Id": "Weapon_BombBay",
+		"Name": "Bomb Bay",
+		"Details": "A internal bomb bay allows this LAM to carry a loadout of different bombs into mission.",
+		"Icon": "uixSvgIcon_weapon_Missile"
+	},
+	"BonusValueA": "",
+	"BonusValueB": "",
+	"ComponentType": "Weapon",
+	"ComponentSubType": "Weapon",
+	"PrefabIdentifier": "AC20",
+	"InventorySize": 1,
+	"Tonnage": 0,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"statusEffects": [],
+	"Modes": [
+		{
+			"Id": "BombBay1",
+			"UIName": "x1",
+			"Name": "Single",
+			"Description": "Drops one bomb at a time",
+			"isBaseMode": true
+		},
+		{
+			"Id": "BombBay2",
+			"UIName": "x2",
+			"Name": "Double",
+			"Description": "Drops two bombs at at time.",
+			"ShotsWhenFired": 1
+		}
+	],
+	"ComponentTags": {
+		"items": [
+			"component_type_stock",
+			"component_type_lostech",
+			"range_close",
+			"BLACKLISTED",
+			"BombBayWeapon"
+		],
+		"tagSetSourceFile": ""
+	}
+}

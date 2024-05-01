@@ -1,0 +1,49 @@
+{
+	"Custom": {
+		"Category": {
+			"CategoryID": "BombBay"
+		},
+		"Flags": [
+			"default"
+		],
+		"Sorter": {
+			"Order": 500
+		}
+	},
+	"StatName": null,
+	"RelativeModifier": 0,
+	"AbsoluteModifier": 0,
+	"Description": {
+		"Cost": 0,
+		"Rarity": 99,
+		"Purchasable": true,
+		"Manufacturer": "General",
+		"Model": "Standard",
+		"UIName": "Bomb Rack (Empty)",
+		"Id": "Gear_LAM_BombBay_Empty",
+		"Name": "Bomb Rack (Empty)",
+		"Details": "A empty bomb rack inside the bomb bay. Accepts 1 tonn of any bomb type.",
+		"Icon": "uixSvgIcon_special_Equipment"
+	},
+	"BonusValueA": "",
+	"BonusValueB": "",
+	"ComponentType": "Upgrade",
+	"ComponentSubType": "NotSet",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 1,
+	"Tonnage": 0,
+	"AllowedLocations": "RightTorso",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"statusEffects": [],
+	"ComponentTags": {
+		"items": [
+			"component_type_stock",
+			"component_type_lostech",
+			"BLACKLISTED",
+			"BombBayAmmo"
+		],
+		"tagSetSourceFile": ""
+	}
+}
