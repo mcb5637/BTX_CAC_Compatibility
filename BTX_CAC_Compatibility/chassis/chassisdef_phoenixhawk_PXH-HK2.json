@@ -13,9 +13,9 @@
   },
   "MovementCapDefID": "movedef_crab_CRB-27",
   "PathingCapDefID": "pathingdef_medium",
-  "HardpointDataDefID": "hardpointdatadef_phawklam",
-  "PrefabIdentifier": "chrprfmech_phawklambase-001",
-  "PrefabBase": "phawklam",
+  "HardpointDataDefID": "hardpointdatadef_phawklammech",
+  "PrefabIdentifier": "chrprfmech_phawklammechbase-001",
+  "PrefabBase": "phawklammech",
   "Tonnage": 50,
   "InitialTonnage": 23.5,
   "weightClass": "MEDIUM",
@@ -46,10 +46,10 @@
   "CustomParts": {
     "AlternateRepresentations": [
       {
-        "PrefabIdentifier": "chrprfmech_phawklambase-001",
+        "PrefabIdentifier": "chrprfmech_phawklammechbase-001",
         "AdditionalPrefabs": [],
-        "PrefabBase": "phawklam",
-        "HardpointDataDef": "hardpointdatadef_phawklam",
+        "PrefabBase": "phawklammech",
+        "HardpointDataDef": "hardpointdatadef_phawklammech",
         "Type": "AirMech",
         "additionalEncounterTags": [
           "unit_vtol"
@@ -225,7 +225,7 @@
   "VariantName": "PXH-HK2",
   "ChassisTags": {
     "items": [
-      "mr-resize-1.06",
+      "mr-resize-0.92",
       "mech_quirk_nonstandardparts",
       "mech_quirk_nimblejumper",
       "LandAirMech"
