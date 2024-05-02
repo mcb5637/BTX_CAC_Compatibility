@@ -2,7 +2,7 @@
 	"Description": {
 		"Id": "Ammunition_Bomb_AP",
 		"Name": "AP Bombs",
-		"Details": "High calibre artillery missle.",
+		"Details": "High calibre artillery missile.",
 		"Icon": null,
 		"Cost": 0,
 		"Rarity": 0,
