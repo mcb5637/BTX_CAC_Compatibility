@@ -22,7 +22,7 @@
 	"HeatDamagePerShot": 40,
 	"FireTerrainChance": 1,
 	"FireDurationWithoutForest": 2,
-	"FireTerrainStrength": 0,
+	"FireTerrainStrength": 30,
 	"FireOnSuccessHit": true,
 	"FireTerrainCellRadius": 2,
 	"statusEffects": [

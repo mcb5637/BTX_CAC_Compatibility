@@ -3,9 +3,11 @@
 		"Category": {
 			"CategoryID": "BombBay"
 		},
-		"Flags": [
-			"default"
-		],
+		"Flags": {
+			"flags": [
+				"default"
+			]
+		},
 		"Sorter": {
 			"Order": 500
 		}
@@ -22,7 +24,7 @@
 		"UIName": "Bomb Rack (Empty)",
 		"Id": "Gear_LAM_BombBay_Empty",
 		"Name": "Bomb Rack (Empty)",
-		"Details": "A empty bomb rack inside the bomb bay. Accepts 1 tonn of any bomb type.",
+		"Details": "A empty bomb rack inside the bomb bay. Accepts 1 ton of any bomb type.",
 		"Icon": "uixSvgIcon_special_Equipment"
 	},
 	"BonusValueA": "",

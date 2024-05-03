@@ -52,8 +52,8 @@
 		"Details": "The Thumper Cannon is an light artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect. Requires mounting an external Artillery Loader in the same or adjacent location.",
 		"Icon": "uixSvgIcon_weapon_Ballistic"
 	},
-	"BonusValueA": "",
-	"BonusValueB": "",
+	"BonusValueA": "75 AoE Dmg.",
+	"BonusValueB": "60m AoE Range",
 	"ComponentType": "Weapon",
 	"ComponentSubType": "Weapon",
 	"PrefabIdentifier": "AC20",

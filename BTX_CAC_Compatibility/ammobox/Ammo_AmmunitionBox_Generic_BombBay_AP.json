@@ -5,40 +5,46 @@
 		},
 		"Sorter": {
 			"Order": 501
+		},
+		"WorkOrderCosts": {
+			"Default": {
+				"TechCost": 1,
+				"CBillCost": 500
+			}
 		}
 	},
-    "AmmoID": "Ammunition_Bomb_AP",
-    "Capacity": 5,
-    "Description": {
-        "Cost": 12000,
-        "Rarity": 0,
-        "Purchasable": true,
+	"AmmoID": "Ammunition_Bomb_AP",
+	"Capacity": 5,
+	"Description": {
+		"Cost": 12000,
+		"Rarity": 0,
+		"Purchasable": true,
 		"Manufacturer": "General",
 		"Model": "Standard",
 		"UIName": "Bomb Rack (AP)",
-        "Id": "Ammo_AmmunitionBox_Generic_BombBay_AP",
-        "Name": "Bomb Rack (AP)",
-        "Details": "5 AP Bombs carried inside the bomb bay. AP bombs deal 75 damage to the targeted unit.",
-        "Icon": "uixSvgIcon_ammoBox_Missile"
-    },
-    "BonusValueA": "",
-    "BonusValueB": "",
-    "ComponentType": "AmmunitionBox",
-    "ComponentSubType": "Ammunition",
-    "PrefabIdentifier": "",
-    "BattleValue": 0,
-    "InventorySize": 1,
-    "Tonnage": 1,
-    "CanExplode": true,
-    "AllowedLocations": "RightTorso",
-    "DisallowedLocations": "All",
-    "CriticalComponent": false,
-    "statusEffects": [],
-    "ComponentTags": {
-        "items": [
-            "component_type_stock",
+		"Id": "Ammo_AmmunitionBox_Generic_BombBay_AP",
+		"Name": "Bomb Rack (AP)",
+		"Details": "5 AP Bombs carried inside the bomb bay. AP bombs deal significant damage to the targeted unit.",
+		"Icon": "uixSvgIcon_ammoBox_Missile"
+	},
+	"BonusValueA": "75 Dmg.",
+	"BonusValueB": "",
+	"ComponentType": "AmmunitionBox",
+	"ComponentSubType": "Ammunition",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 1,
+	"Tonnage": 1,
+	"CanExplode": true,
+	"AllowedLocations": "RightTorso",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"statusEffects": [],
+	"ComponentTags": {
+		"items": [
+			"component_type_stock",
 			"BombBayAmmo"
-        ],
-        "tagSetSourceFile": ""
-    }
+		],
+		"tagSetSourceFile": ""
+	}
 }

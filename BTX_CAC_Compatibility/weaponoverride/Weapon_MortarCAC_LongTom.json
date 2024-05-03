@@ -52,8 +52,8 @@
 		"Details": "The Long Tom Cannon is a heavy artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect.\nThere is no known Mech mountable Artillery Loader that can handle a Long Tom.",
 		"Icon": "uixSvgIcon_weapon_Ballistic"
 	},
-	"BonusValueA": "",
-	"BonusValueB": "",
+	"BonusValueA": "150 AoE Dmg.",
+	"BonusValueB": "90m AoE Range",
 	"ComponentType": "Weapon",
 	"ComponentSubType": "Weapon",
 	"PrefabIdentifier": "AC20",
