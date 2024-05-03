@@ -14,14 +14,14 @@
 			"Id": "LRM_StdLoad",
 			"UIName": "STD",
 			"Name": "Standard",
-			"Description": "Fired missles arm after they leave the launcher.",
+			"Description": "Fired missiles arm after they leave the launcher.",
 			"isBaseMode": true
 		},
 		{
 			"Id": "LRM_HotLoad",
 			"UIName": "HL",
 			"Name": "Hot Load",
-			"Description": "Missles are armed prelaunch inside the launcher, removing minimum range but having a chance to jam.",
+			"Description": "Missiles are armed prelaunch inside the launcher, removing minimum range but having a chance to jam.",
 			"isBaseMode": false,
 			"DamageOnJamming": true,
 			"AccuracyModifier": 1.0,
