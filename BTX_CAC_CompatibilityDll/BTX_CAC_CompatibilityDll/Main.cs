@@ -91,6 +91,8 @@ namespace BTX_CAC_CompatibilityDll
 
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechStatisticsRules), "CalculateTonnage"), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechLabMechInfoWidget), "CalculateTonnage"), "BEX.BattleTech.Extended_CE");
+
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(InventoryItemElement_NotListView), "OnDestroy"), "com.github.m22spencer.BattletechPerformanceFix");
             }
             catch (Exception e)
             {
