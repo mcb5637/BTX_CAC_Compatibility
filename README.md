@@ -151,6 +151,7 @@ Package for release:
 	- BiggerDrops
 	- MechAffinity 1.4 (dll only)
 	- MissionControl
+	- CustomComponents (latest, Dec 28, 2023)
 - compile as release
 - use pack.bat
  

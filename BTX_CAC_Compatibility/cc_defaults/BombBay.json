@@ -1,0 +1,19 @@
+{
+	"Settings": [
+		{
+			"CategoryID": "BombBay",
+			"Defaults": [
+				{
+					"Location": "RightTorso",
+					"DefID": "Gear_LAM_BombBay_Empty",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "LeftTorso",
+					"DefID": "Gear_LAM_BombBay_Empty",
+					"Type": "Upgrade"
+				}
+			]
+		}
+	]
+}

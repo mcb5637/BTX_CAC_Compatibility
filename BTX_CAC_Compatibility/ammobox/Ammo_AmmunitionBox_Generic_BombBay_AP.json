@@ -3,9 +3,6 @@
 		"Category": {
 			"CategoryID": "BombBay"
 		},
-		"Sorter": {
-			"Order": 501
-		},
 		"WorkOrderCosts": {
 			"Default": {
 				"TechCost": 1,
@@ -36,7 +33,7 @@
 	"InventorySize": 1,
 	"Tonnage": 1,
 	"CanExplode": true,
-	"AllowedLocations": "RightTorso",
+	"AllowedLocations": "RightTorso,LeftTorso",
 	"DisallowedLocations": "All",
 	"CriticalComponent": false,
 	"statusEffects": [],

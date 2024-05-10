@@ -604,8 +604,8 @@
 			"Path": "cc_category"
 		},
 		{
-			"Type": "CCTagRestrictions",
-			"Path": "cc_tagrestrict"
+			"Type": "CCDefaults",
+			"Path": "cc_defaults"
 		},
 		{
 			"Type": "CombatGameConstants",

@@ -3,14 +3,9 @@
 		"Category": {
 			"CategoryID": "BombBay"
 		},
-		"Flags": {
-			"flags": [
-				"default"
-			]
-		},
-		"Sorter": {
-			"Order": 500
-		}
+		"Flags": [
+			"default"
+		]
 	},
 	"StatName": null,
 	"RelativeModifier": 0,
@@ -35,7 +30,7 @@
 	"BattleValue": 0,
 	"InventorySize": 1,
 	"Tonnage": 0,
-	"AllowedLocations": "RightTorso",
+	"AllowedLocations": "RightTorso,LeftTorso",
 	"DisallowedLocations": "All",
 	"CriticalComponent": false,
 	"statusEffects": [],

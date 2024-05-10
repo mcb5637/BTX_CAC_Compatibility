@@ -1,14 +1,50 @@
 {
 	"Custom": {
-		"ChassisDefaults": [
-			{
-				"CategoryID": "BombBay",
-				"Location": "RightTorso",
-				"DefID": "Gear_LAM_BombBay_Empty",
-				"Type": "Upgrade",
-				"AnyLocation": false
-			}
-		]
+		"ChassisCategory": {
+			"CategoryID": "BombBay",
+			"Limits": [
+				{
+					"Location": "RightTorso",
+					"Min": 5,
+					"Max": 5
+				},
+				{
+					"Location": "LeftTorso",
+					"Min": 0,
+					"Max": 0
+				}
+			]
+		},
+		"ChassisDefaults": {
+			"CategoryID": "BombBay",
+			"Defaults": [
+				{
+					"Location": "RightTorso",
+					"DefID": "Gear_LAM_BombBay_Empty",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "RightTorso",
+					"DefID": "Gear_LAM_BombBay_Empty",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "RightTorso",
+					"DefID": "Gear_LAM_BombBay_Empty",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "RightTorso",
+					"DefID": "Gear_LAM_BombBay_Empty",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "RightTorso",
+					"DefID": "Gear_LAM_BombBay_Empty",
+					"Type": "Upgrade"
+				}
+			]
+		}
 	},
 	"Description": {
 		"Cost": 1600000,
