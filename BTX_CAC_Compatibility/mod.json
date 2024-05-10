@@ -606,6 +606,11 @@
 		{
 			"Type": "CCTagRestrictions",
 			"Path": "cc_tagrestrict"
+		},
+		{
+			"Type": "CombatGameConstants",
+			"Path": "combatgameconstants",
+			"ShouldMergeJSON": true
 		}
 	]
 }

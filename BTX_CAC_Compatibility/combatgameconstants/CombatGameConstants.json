@@ -1,0 +1,6 @@
+{
+	"MoveConstants": {
+		"NumMeleeDestinationChoices": 10,
+		"NumDFADestinationChoices": 10
+	}
+}

@@ -130,11 +130,11 @@ namespace BTX_CAC_CompatibilityDll
             return mod;
         }
 
-        private static void Unpatch(Harmony harmony, MethodBase b, string id, bool pre=true, bool post=true, bool trans=true, string onlyUnpatch=null)
+        private static void Unpatch(Harmony harmony, MethodBase b, string id, bool pre = true, bool post = true, bool trans = true, string onlyUnpatch = null)
         {
             //FileLog.Log($"checking to unpatch: {b.FullName()} {pre} {post} {trans}");
             Patches pa = Harmony.GetPatchInfo(b);
-            if (pa==null)
+            if (pa == null)
             {
                 //FileLog.Log("no patch attached");
                 return;
@@ -152,7 +152,7 @@ namespace BTX_CAC_CompatibilityDll
             foreach (Patch p in pa)
             {
                 MethodInfo patch = p.PatchMethod;
-                if (p.owner.Equals(id) && (onlyUnpatch==null || onlyUnpatch.Equals(patch.FullName())))
+                if (p.owner.Equals(id) && (onlyUnpatch == null || onlyUnpatch.Equals(patch.FullName())))
                 {
                     harmony.Unpatch(b, patch);
                     //FileLog.Log($"found: {patch.FullName()}");
@@ -192,7 +192,7 @@ namespace BTX_CAC_CompatibilityDll
                 if ((c.opcode == OpCodes.Callvirt || c.opcode == OpCodes.Call) && (MethodInfo)c.operand == add)
                 {
                     yield return new CodeInstruction(OpCodes.Ldc_I4_0);
-                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Math), nameof(Math.Max), new Type[] {typeof(int), typeof(int)}));
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Math), nameof(Math.Max), new Type[] { typeof(int), typeof(int) }));
                 }
                 yield return c;
             }
@@ -233,7 +233,7 @@ namespace BTX_CAC_CompatibilityDll
 
                     continue;
                 }
-                
+
                 yield return c;
             }
         }
@@ -269,6 +269,39 @@ namespace BTX_CAC_CompatibilityDll
                     continue;
                 }
 
+                yield return c;
+            }
+        }
+    }
+    [HarmonyPatch(typeof(Mech), nameof(Mech.MaxMeleeEngageRangeDistance), MethodType.Getter)]
+    public static class Mech_MaxMeleeEngageRangeDistance
+    {
+        public static void Postfix(Mech __instance, ref float __result)
+        {
+            if (__instance.CanShootAfterSprinting)
+                __result = __instance.MaxSprintDistance;
+        }
+    }
+    [HarmonyPatch]
+    public class Pathing_MeleeGrid
+    {
+        private static PathNodeGrid GetMeleeGrid(Pathing __instance)
+        {
+            return __instance.OwningActor.CanShootAfterSprinting ? __instance.SprintingGrid() : __instance.WalkingGrid();
+        }
+
+        [HarmonyPatch(typeof(Pathing), nameof(Pathing.getGrid))]
+        [HarmonyPatch(typeof(Pathing), nameof(Pathing.GetMeleeDestsForTarget))]
+        [HarmonyPatch(typeof(Pathing), nameof(Pathing.SetMeleeTarget))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            var prev = AccessTools.PropertyGetter(typeof(Pathing), "MeleeGrid");
+            var rep = AccessTools.Method(typeof(Pathing_MeleeGrid), nameof(GetMeleeGrid));
+            foreach (var c in instructions)
+            {
+                if (c.operand as MethodInfo == prev)
+                    c.operand = rep;
                 yield return c;
             }
         }

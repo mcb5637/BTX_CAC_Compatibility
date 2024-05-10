@@ -25,5 +25,19 @@ namespace BTX_CAC_CompatibilityDll
         {
             return false;
         }
+
+        [PropertyGet(typeof(Pathing), "SprintingGrid")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static PathNodeGrid SprintingGrid(this Pathing s)
+        {
+            return null;
+        }
+
+        [PropertyGet(typeof(Pathing), "WalkingGrid")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static PathNodeGrid WalkingGrid(this Pathing s)
+        {
+            return null;
+        }
     }
 }
