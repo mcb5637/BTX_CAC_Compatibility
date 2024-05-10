@@ -71,7 +71,8 @@
 			"UIName": "x2",
 			"Name": "Double",
 			"Description": "Drops two bombs at at time.",
-			"ShotsWhenFired": 1
+			"ShotsWhenFired": 1,
+			"AccuracyModifier": 3
 		}
 	],
 	"ComponentTags": {
