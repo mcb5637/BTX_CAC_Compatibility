@@ -11,7 +11,7 @@
   "argoUpgradeCategory2Name" : "Mech Control",
   "argoUpgradeCategory3Name" : "Drop Tonnage",
   "limitFlashpointDrop" : false,
-  "CuV2FormationSize": 4,
+  "CuV2FormationSize": 8,
   "CuV2InitialSlots": [
     "simgame_omni_slot",
     "simgame_omni_slot",
