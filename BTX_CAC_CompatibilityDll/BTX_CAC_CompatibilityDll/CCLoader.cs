@@ -27,6 +27,14 @@ namespace BTX_CAC_CompatibilityDll
                 return true;
             if (c == ChassisLocations.RightTorso && l == ChassisLocations.RightArm)
                 return true;
+            if (c == ChassisLocations.RightTorso && l == ChassisLocations.CenterTorso)
+                return true;
+            if (c == ChassisLocations.CenterTorso && l == ChassisLocations.RightTorso)
+                return true;
+            if (c == ChassisLocations.LeftTorso && l == ChassisLocations.CenterTorso)
+                return true;
+            if (c == ChassisLocations.CenterTorso && l == ChassisLocations.LeftTorso)
+                return true;
             return false;
         }
 
