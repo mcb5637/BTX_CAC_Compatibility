@@ -1,44 +1,45 @@
 {
-	"ShotsWhenFired": 1,
-	"VolleyDivisor": 1,
-	"Damage": 60,
-	"Instability": 20,
-	"ImprovedBallistic": true,
-	"MinRange": 90,
-	"MaxRange": 630,
-	"RangeSplit": [
-		420,
-		420,
-		630
-	],
-	"FireDelayMultiplier": 1,
-	"Modes": [
-		{
-			"Id": "LBXMode_Cluster",
-			"UIName": "LB-X",
-			"Name": "LB-X Mode",
-			"Description": "LB-X Mode fires LBX Cluster ammunition.",
-			"isBaseMode": true,
-			"DamagePerShot": 0,
-			"Instability": 0,
-			"HasShells": true,
-			"MinShellsDistance": 120,
-			"MaxShellsDistance": 100,
-			"UnseparatedDamageMult": 0.7,
-			"HitGenerator": "Cluster",
-			"ProjectilesPerShot": 9
-		},
-		{
-			"Id": "LBXMode_Slug",
-			"UIName": "AC",
-			"Name": "AC Mode",
-			"Description": "AC Mode fires AC Slug ammunition.",
-			"isBaseMode": false,
-			"DamagePerShot": -15,
-			"Instability": -15,
-			"WeaponEffectID": "WeaponEffect-Weapon_AC5_Single",
-			"HasShells": false,
-			"AmmoCategory": "AC5"
-		}
-	]
+  "MinRange": 90,
+  "MaxRange": 630,
+  "RangeSplit": [
+    420,
+    420,
+    630
+  ],
+  "Damage": 60,
+  "ShotsWhenFired": 1,
+  "Instability": 20,
+  "PrefabIdentifier": "LBX5",
+  "VolleyDivisor": 1,
+  "ImprovedBallistic": true,
+  "FireDelayMultiplier": 1,
+  "Modes": [
+    {
+      "Id": "LBXMode_Cluster",
+      "UIName": "LB-X",
+      "Name": "LB-X Mode",
+      "Description": "LB-X Mode fires LBX Cluster ammunition.",
+      "isBaseMode": true,
+      "DamagePerShot": 0,
+      "Instability": 0,
+      "HasShells": true,
+      "MinShellsDistance": 120,
+      "MaxShellsDistance": 100,
+      "UnseparatedDamageMult": 0.7,
+      "HitGenerator": "Cluster",
+      "ProjectilesPerShot": 9
+    },
+    {
+      "Id": "LBXMode_Slug",
+      "UIName": "AC",
+      "Name": "AC Mode",
+      "Description": "AC Mode fires AC Slug ammunition.",
+      "isBaseMode": false,
+      "DamagePerShot": -15,
+      "Instability": -15,
+      "WeaponEffectID": "WeaponEffect-Weapon_AC5_Single",
+      "HasShells": false,
+      "AmmoCategory": "AC5"
+    }
+  ]
 }

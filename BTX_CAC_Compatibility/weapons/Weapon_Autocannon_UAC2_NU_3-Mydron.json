@@ -1,34 +1,35 @@
 {
-	"ImprovedBallistic": false,
-	"BallisticDamagePerPallet": false,
-	"HasShells": false,
-	"DisableClustering": true,
-	"FireDelayMultiplier": 1,
-	"Modes": [
-		{
-			"Id": "UACMode_Full",
-			"UIName": "x2",
-			"Name": "UAC Mode",
-			"Description": "UAC Mode fires 2 projectiles.",
-			"isBaseMode": true
-		},
-		{
-			"Id": "UACMode_Half",
-			"UIName": "x1",
-			"Name": "AC Mode",
-			"Description": "AC Mode fires only one projectile, but at increased accuracy and lowered recoil.",
-			"isBaseMode": false,
-			"AccuracyModifier": -4,
-			"ShotsWhenFired": -1,
-			"RefireModifier": -2,
-			"HeatGenerated": -6
-		}
-	],
-	"MinRange": 90,
-	"MaxRange": 750,
-	"RangeSplit": [
-		510,
-		510,
-		750
-	]
+  "MinRange": 90,
+  "MaxRange": 750,
+  "RangeSplit": [
+    510,
+    510,
+    750
+  ],
+  "PrefabIdentifier": "UAC2",
+  "ImprovedBallistic": false,
+  "BallisticDamagePerPallet": false,
+  "HasShells": false,
+  "DisableClustering": true,
+  "FireDelayMultiplier": 1,
+  "Modes": [
+    {
+      "Id": "UACMode_Full",
+      "UIName": "x2",
+      "Name": "UAC Mode",
+      "Description": "UAC Mode fires 2 projectiles.",
+      "isBaseMode": true
+    },
+    {
+      "Id": "UACMode_Half",
+      "UIName": "x1",
+      "Name": "AC Mode",
+      "Description": "AC Mode fires only one projectile, but at increased accuracy and lowered recoil.",
+      "isBaseMode": false,
+      "AccuracyModifier": -4,
+      "ShotsWhenFired": -1,
+      "RefireModifier": -2,
+      "HeatGenerated": -6
+    }
+  ]
 }
