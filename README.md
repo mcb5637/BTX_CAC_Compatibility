@@ -152,6 +152,8 @@ Package for release:
 	- MechAffinity 1.4 (dll only)
 	- MissionControl
 	- CustomComponents (latest, Dec 28, 2023)
+	- CAC & CAE repos
+- compile CAC & CAE
 - compile as release
 - use pack.bat
  
