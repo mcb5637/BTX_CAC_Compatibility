@@ -1,0 +1,12 @@
+{
+	"Name": "BTX_CAC_C_NewCAB",
+	"Enabled": true,
+	"Description": "CAC-C new CAB updates",
+	"Author": "mcb",
+	"Website": "",
+	"DependsOn": [
+		"CAB-Clan-GoldenCentury",
+		"BTX_CAC_Compatibility"
+	],
+	"IgnoreLoadFailure": true
+}
