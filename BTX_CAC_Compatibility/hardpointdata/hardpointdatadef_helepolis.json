@@ -1,0 +1,14 @@
+{
+	"CustomHardpoints": {
+		"aliases": {
+			"chrprfweap_helepolis_lefttorso_artillery_bh1": {
+				"location": "lefttorso",
+				"prefab": "chrprfweap_helepolis_leftarm_artillery_bh1"
+			},
+			"chrprfweap_helepolis_righttorso_artillery_bh1": {
+				"location": "righttorso",
+				"prefab": "chrprfweap_helepolis_rightarm_artillery_bh1"
+			}
+		}
+	}
+}
