@@ -215,25 +215,19 @@
     {
       "MountedLocation": "RightArm",
       "ComponentDefID": "Gear_Quad_Actuators",
-      "SimGameUID": "",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "LeftArm",
       "ComponentDefID": "Gear_Quad_Actuators",
-      "SimGameUID": "",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     }
   ]

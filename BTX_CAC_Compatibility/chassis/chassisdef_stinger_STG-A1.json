@@ -49,10 +49,10 @@
   "CustomParts": {
     "AlternateRepresentations": [
       {
-        "PrefabIdentifier": "chrprfmech_stingerlambase-001",
-        "AdditionalPrefabs": [],
-        "PrefabBase": "stingerlam",
         "HardpointDataDef": "hardpointdatadef_stingerlam",
+        "PrefabIdentifier": "chrprfmech_stingerlambase-001",
+        "PrefabBase": "stingerlam",
+        "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
           "unit_vtol"
@@ -88,8 +88,7 @@
   "Locations": [
     {
       "Location": "Head",
-      "Hardpoints": [
-      ],
+      "Hardpoints": [],
       "Tonnage": 0,
       "InventorySlots": 1,
       "MaxArmor": 45,
@@ -251,85 +250,64 @@
     {
       "MountedLocation": "CenterTorso",
       "ComponentDefID": "Gear_LAM_Systems",
-      "SimGameUID": "",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet",
-      "SimGameUID": "",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet",
-      "SimGameUID": "",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "SimGameUID": "",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "SimGameUID": "",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "SimGameUID": "",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "SimGameUID": "",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     }
   ]

@@ -95,16 +95,16 @@
       "Location": "LeftTorso",
       "Hardpoints": [
         {
-          "Omni": false,
-          "WeaponMountID": "Missile"
+          "WeaponMount": "Missile",
+          "Omni": false
         },
         {
-          "Omni": false,
-          "WeaponMountID": "Missile"
+          "WeaponMount": "Missile",
+          "Omni": false
         },
         {
-          "Omni": false,
-          "WeaponMountID": "AntiPersonnel"
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
         }
       ],
       "Tonnage": 0,
@@ -117,8 +117,8 @@
       "Location": "CenterTorso",
       "Hardpoints": [
         {
-          "Omni": false,
-          "WeaponMountID": "AntiPersonnel"
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
         }
       ],
       "Tonnage": 0,
@@ -131,24 +131,24 @@
       "Location": "RightTorso",
       "Hardpoints": [
         {
-          "Omni": false,
-          "WeaponMountID": "Ballistic"
+          "WeaponMount": "Ballistic",
+          "Omni": false
         },
         {
-          "Omni": false,
-          "WeaponMountID": "Ballistic"
+          "WeaponMount": "Ballistic",
+          "Omni": false
         },
         {
-          "Omni": false,
-          "WeaponMountID": "Missile"
+          "WeaponMount": "Missile",
+          "Omni": false
         },
         {
-          "Omni": false,
-          "WeaponMountID": "Missile"
+          "WeaponMount": "Missile",
+          "Omni": false
         },
         {
-          "Omni": false,
-          "WeaponMountID": "Energy"
+          "WeaponMount": "Energy",
+          "Omni": false
         }
       ],
       "Tonnage": 0,
@@ -233,49 +233,37 @@
     {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_XL_Engine",
-      "SimGameUID": "",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_XL_Engine",
-      "SimGameUID": "",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "RightArm",
       "ComponentDefID": "Gear_Quad_Actuators",
-      "SimGameUID": "",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "LeftArm",
       "ComponentDefID": "Gear_Quad_Actuators",
-      "SimGameUID": "",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
       "IsFixed": true,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     }
   ]

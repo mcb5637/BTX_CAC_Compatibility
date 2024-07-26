@@ -106,58 +106,43 @@
     {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Ammo_AmmunitionBox_Generic_BombBay_AP",
-      "SimGameUID": null,
       "ComponentDefType": "AmmunitionBox",
       "HardpointSlot": -1,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Ammo_AmmunitionBox_Generic_BombBay_HE",
-      "SimGameUID": null,
       "ComponentDefType": "AmmunitionBox",
       "HardpointSlot": -1,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "RightTorso",
       "ComponentDefID": "Ammo_AmmunitionBox_Generic_BombBay_AP",
-      "SimGameUID": null,
       "ComponentDefType": "AmmunitionBox",
       "HardpointSlot": -1,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "RightTorso",
       "ComponentDefID": "Ammo_AmmunitionBox_Generic_BombBay_HE",
-      "SimGameUID": null,
       "ComponentDefType": "AmmunitionBox",
       "HardpointSlot": -1,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     },
     {
       "MountedLocation": "RightArm",
       "ComponentDefID": "Weapon_PPC_PPCER_0-STOCK",
-      "SimGameUID": null,
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     }
   ],
-	"MinAppearanceDate": "2774-01-01T00:00:00Z"
+  "MinAppearanceDate": "2774-01-01T00:00:00Z"
 }
