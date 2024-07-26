@@ -45,15 +45,13 @@
   "BonusValueB": "- 3 Tons",
   "ComponentType": "Weapon",
   "ComponentSubType": "Weapon",
-  "PrefabIdentifier": "uac5",
+  "PrefabIdentifier": "UAC20",
   "InventorySize": 4,
   "Tonnage": 12,
   "AllowedLocations": "All",
   "DisallowedLocations": "All",
   "CriticalComponent": false,
-  "statusEffects": [
-
-  ],
+  "statusEffects": [],
   "ComponentTags": {
     "items": [
       "component_type_variant",

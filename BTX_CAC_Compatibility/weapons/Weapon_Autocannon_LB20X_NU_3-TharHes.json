@@ -1,18 +1,19 @@
 {
-  "ShotsWhenFired": 1,
-  "VolleyDivisor": 1,
-  "Damage": 144,
-  "Instability": 60,
-  "ImprovedBallistic": true,
   "MinRange": 0,
   "MaxRange": 360,
-  "FireDelayMultiplier": 1,
   "RangeSplit": [
     240,
     240,
     360
   ],
+  "Damage": 144,
+  "ShotsWhenFired": 1,
+  "Instability": 60,
   "BonusValueA": "+ 24/20 Dmg.",
+  "PrefabIdentifier": "LBX20",
+  "VolleyDivisor": 1,
+  "ImprovedBallistic": true,
+  "FireDelayMultiplier": 1,
   "Modes": [
     {
       "Id": "LBXMode_Cluster",
