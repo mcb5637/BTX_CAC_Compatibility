@@ -14,6 +14,7 @@ mechdef_talon_TLN-5V,249
 mechdef_hermes_HER-1Sb,20
 mechdef_spector_SPR-4F,35
 mechdef_stinger_STG-A1,1
+mechdef_wasp_WSP-100,1
 Mediums,
 mechdef_wyvern_WVE-5Nb,91
 mechdef_phoenixhawk_PXH-2,92
@@ -42,6 +43,7 @@ mechdef_marauder_MAD-2R,152
 mechdef_champion_CHP-1Nb,36
 mechdef_galahad_GLH-2D,102
 mechdef_exterminator_EXT-4Db,20
+mechdef_exterminator_EXT-4C,1
 mechdef_excalibur_EXC-B2b,51
 mechdef_flashman_FLS-8K,10
 mechdef_blackknight_BL-6b-KNT,6
