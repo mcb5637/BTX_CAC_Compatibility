@@ -15,8 +15,8 @@
   "ChassisID": "chassisdef_wasp_WSP-105",
   "HeraldryID": null,
   "Description": {
-    "Cost": 2000000,
-    "Rarity": 1,
+    "Cost": 2710000,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
@@ -26,7 +26,7 @@
     "Details": "The WSP-105 Wasp was the 2nd Lan-Air 'Mech to be mass-produced for the Terran military, and it is well suited for its scouting role. Earlier vesions with an integral bomb bay made it widely beloved by Star League ground troops. Naturally the lone factory was a priority target in the first Successsion War and few WASP LAMs survive, many of which depend on Stinger LAM parts to rmeain even partly functional as pure Mechs.",
     "Icon": "uixTxrIcon_wasplam"
   },
-  "simGameMechPartCost": 200000,
+  "simGameMechPartCost": 270000,
   "Version": 1,
   "Locations": [
     {
@@ -105,17 +105,9 @@
   "inventory": [
     {
       "MountedLocation": "CenterTorso",
-      "ComponentDefID": "Ammo_AmmunitionBox_Generic_SRM",
-      "ComponentDefType": "AmmunitionBox",
+      "ComponentDefID": "Gear_HeatSink_Generic_Standard",
+      "ComponentDefType": "HeatSink",
       "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "Head",
-      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
       "DamageLevel": "Functional",
       "hasPrefabName": false
     },
@@ -129,12 +121,20 @@
     },
     {
       "MountedLocation": "CenterTorso",
-      "ComponentDefID": "Gear_HeatSink_Generic_Standard",
-      "ComponentDefType": "HeatSink",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_SRM",
+      "ComponentDefType": "AmmunitionBox",
       "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightArm",
+      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
       "DamageLevel": "Functional",
       "hasPrefabName": false
     }
   ],
-  "MinAppearanceDate": "2690-01-01T00:00:00Z"
+  "MinAppearanceDate": "2701-01-01T00:00:00Z"
 }

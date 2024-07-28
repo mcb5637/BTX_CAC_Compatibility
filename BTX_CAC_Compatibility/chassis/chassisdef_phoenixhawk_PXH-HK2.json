@@ -1,14 +1,14 @@
 {
   "Description": {
-    "Cost": 4100000,
-    "Rarity": 1,
+    "Cost": 5310000,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
     "UIName": "Phoenix Hawk LAM",
     "Id": "chassisdef_phoenixhawk_PXH-HK2",
     "Name": "Phoenix Hawk LAM",
-    "Details": "The PXH-HK2 is the largest Land-Air Mech ever successfully fielded, merging a slightly heavier and slower Phoenix Hawk Mech and a capable medium aerospace fighter into one enormously versatile unit. The sophisticated conversion technology was lost in the First Succession War, and battle damage prevents this Mech from entering Figher mode.",
+    "Details": "The PHX-HK2 is the largest Land-Air 'Mech ever successfully fielded, merging a slightly heavier and slower Phoenix Hawk 'Mech and a capable medium aerospace fighter into one enormously versatile unit. The sophisticated conversion technology was lost in the First Succession War, and battle damage prevents this 'Mech from entering Figher mode.",
     "Icon": "uixTxrIcon_phoenixhawklam"
   },
   "MovementCapDefID": "movedef_crab_CRB-27",
@@ -35,8 +35,8 @@
   "SensorRangeMultiplier": 1,
   "Signature": 0,
   "Radius": 5,
-  "PunchesWithLeftArm": true,
-  "MeleeDamage": 65,
+  "PunchesWithLeftArm": false,
+  "MeleeDamage": 70,
   "MeleeInstability": 50,
   "MeleeToHitModifier": 0,
   "DFADamage": 65,
@@ -52,7 +52,7 @@
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
-          "unit_vtol"
+          "unit_lam"
         ],
         "FlyHeight": 15.0,
         "NoJumpjetsBlock": true,
@@ -130,7 +130,16 @@
     },
     {
       "Location": "RightTorso",
-      "Hardpoints": [],
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        }
+      ],
       "Tonnage": 0,
       "InventorySlots": 10,
       "MaxArmor": 120,
@@ -140,10 +149,6 @@
     {
       "Location": "RightArm",
       "Hardpoints": [
-        {
-          "WeaponMount": "Energy",
-          "Omni": false
-        },
         {
           "WeaponMount": "Energy",
           "Omni": false
@@ -222,13 +227,12 @@
       "z": 1
     }
   ],
-  "VariantName": "PXH-HK2",
+  "VariantName": "PHX-HK2",
   "ChassisTags": {
     "items": [
       "mr-resize-0.92",
       "mech_quirk_nonstandardparts",
-      "mech_quirk_nimblejumper",
-      "LandAirMech"
+      "mech_quirk_nimblejumper"
     ],
     "tagSetSourceFile": ""
   },
@@ -245,15 +249,6 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightTorso",
-      "ComponentDefID": "Gear_JumpJet_LAMJet",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet",
       "ComponentDefType": "JumpJet",
@@ -263,7 +258,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightLeg",
+      "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet_Idle",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
@@ -272,7 +267,16 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftLeg",
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet_Idle",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,

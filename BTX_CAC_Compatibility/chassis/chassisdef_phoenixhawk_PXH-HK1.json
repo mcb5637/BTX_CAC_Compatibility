@@ -1,14 +1,14 @@
 {
   "Description": {
-    "Cost": 4100000,
-    "Rarity": 1,
+    "Cost": 5970000,
+    "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
     "UIName": "Phoenix Hawk LAM",
     "Id": "chassisdef_phoenixhawk_PXH-HK1",
     "Name": "Phoenix Hawk LAM",
-    "Details": "The PXH-HK1 is the largest Land-Air Mech ever successfully fielded, merging a slightly heavier and slower Phoenix Hawk Mech and a capable medium aerospace fighter into one enormously versatile unit. The sophisticated conversion technology was lost in the First Succession War, and battle damage prevents this Mech from entering Figher mode.",
+    "Details": "Developed for the Star League Defense Force Royal Divisions in 2692, this variant of the Phoenix Hawk LAM used four Medium Lasers and a single ER Large Laser as its main firepower. Twelve double heat sinks kept the heat curve low, but the limited fuel, armor, and maneuverability made the Phoenix Hawk LAM easy prey for aerospace fighters of the same weight. It could maneuver fast enough to evade heavier foes however.",
     "Icon": "uixTxrIcon_phoenixhawklam"
   },
   "MovementCapDefID": "movedef_crab_CRB-27",
@@ -35,8 +35,8 @@
   "SensorRangeMultiplier": 1,
   "Signature": 0,
   "Radius": 5,
-  "PunchesWithLeftArm": true,
-  "MeleeDamage": 65,
+  "PunchesWithLeftArm": false,
+  "MeleeDamage": 70,
   "MeleeInstability": 50,
   "MeleeToHitModifier": 0,
   "DFADamage": 65,
@@ -52,7 +52,7 @@
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
-          "unit_vtol"
+          "unit_lam"
         ],
         "FlyHeight": 15.0,
         "NoJumpjetsBlock": true,
@@ -236,14 +236,13 @@
       "z": 1
     }
   ],
-  "VariantName": "PXH-HK1",
+  "VariantName": "PHX-HK1",
   "ChassisTags": {
     "items": [
-      "mr-resize-1.06",
-      "mech_quirk_nonstandardparts",
-      "mech_quirk_nimblejumper",
+      "mr-resize-0.92",
       "chassis_DHS",
-      "LandAirMech"
+      "mech_quirk_nonstandardparts",
+      "mech_quirk_nimblejumper"
     ],
     "tagSetSourceFile": ""
   },
@@ -260,15 +259,6 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightTorso",
-      "ComponentDefID": "Gear_JumpJet_LAMJet",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet",
       "ComponentDefType": "JumpJet",
@@ -278,7 +268,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightLeg",
+      "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet_Idle",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
@@ -287,7 +277,16 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftLeg",
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet_Idle",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,

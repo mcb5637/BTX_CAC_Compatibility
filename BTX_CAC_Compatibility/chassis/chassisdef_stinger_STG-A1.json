@@ -1,14 +1,14 @@
 {
   "Description": {
-    "Cost": 1500000,
-    "Rarity": 1,
+    "Cost": 2830000,
+    "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
     "UIName": "Stinger LAM",
     "Id": "chassisdef_stinger_STG-A1",
     "Name": "Stinger LAM",
-    "Details": "The STG-A1 Stinger was the first mass-produced Land-Air 'Mech, a combination of light Mech and light aerospace fighter introduced by LexaTech in 2688 and still produced on the Combine world of Irece. Between crashes and damage to the delicate LostTech conversion equipment, production can't keep pace with demand, so many of the surviving LAMs, like this one, are damaged and can not enter Figher mode. They still have tremendous jumping ability and make superb scouts.",
+    "Details": "The original Stinger LAM used by the Star League Defense Force Royal Divisions, this version carries a Medium Pulse Laser and replaces the Machine Guns with Small Pulse Lasers. Double heat sinks kept the temperature manageable, and it was also more heavily armored than its forerunner, carrying five tons of protection.",
     "Icon": "uixTxrIcon_stingerlam"
   },
   "MovementCapDefID": "movedef_stinger_STG-3R",
@@ -55,7 +55,7 @@
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
-          "unit_vtol"
+          "unit_lam"
         ],
         "FlyHeight": 15.0,
         "NoJumpjetsBlock": true,
@@ -237,15 +237,14 @@
   "VariantName": "STG-A1",
   "ChassisTags": {
     "items": [
-      "mech_quirk_nonstandardparts",
-      "mech_quirk_nimblejumper",
       "chassis_DHS",
-      "LandAirMech"
+      "mech_quirk_nonstandardparts",
+      "mech_quirk_nimblejumper"
     ],
     "tagSetSourceFile": ""
   },
   "StockRole": "Scout & Skirmisher",
-  "YangsThoughts": "The Stinger LAM is lightly armored and mounts limited weapons. However, even in Mech mode, its speed and maneuverability are unmatched.",
+  "YangsThoughts": "The Stinger LAM is lightly armored and mounts limited weapons. However, even in 'Mech mode, its speed and maneuverability are unmatched.",
   "FixedEquipment": [
     {
       "MountedLocation": "CenterTorso",
@@ -257,15 +256,6 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightTorso",
-      "ComponentDefID": "Gear_JumpJet_LAMJet",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet",
       "ComponentDefType": "JumpJet",
@@ -276,6 +266,15 @@
     },
     {
       "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_Generic_Standard",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
@@ -293,7 +292,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftTorso",
+      "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_JumpJet_Generic_Standard",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,

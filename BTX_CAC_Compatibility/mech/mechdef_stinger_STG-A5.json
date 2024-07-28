@@ -15,18 +15,18 @@
   "ChassisID": "chassisdef_stinger_STG-A5",
   "HeraldryID": null,
   "Description": {
-    "Cost": 2000000,
-    "Rarity": 0,
+    "Cost": 2820000,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
     "UIName": "Stinger LAM STG-A5",
     "Id": "mechdef_stinger_STG-A5",
     "Name": "Stinger LAM",
-    "Details": "The STG-A5 Stinger was the first mass-produced Land-Air 'Mech, a combination of light Mech and light aerospace fighter introduced by LexaTech in 2688 and still produced on the Combine world of Irece. Between crashes and damage to the delicate LostTech conversion equipment, production can't keep pace with demand, so many of the surviving LAMs, like this one, are damaged and can not enter Figher mode. They still have tremendous jumping ability and make superb scouts.",
+    "Details": "The STG-A5 Stinger was the first mass-produced Land-Air 'Mech, a combination of light 'Mech and light aerospace fighter introduced by LexaTech in 2688 and still produced on the Combine world of Irece. Between crashes and damage to the delicate LostTech conversion equipment, production can't keep pace with demand, so many of the surviving LAMs, like this one, are damaged and can not enter Figher mode. They still have tremendous jumping ability and make superb scouts.",
     "Icon": "uixTxrIcon_stingerlam"
   },
-  "simGameMechPartCost": 200000,
+  "simGameMechPartCost": 280000,
   "Version": 1,
   "Locations": [
     {
@@ -112,7 +112,15 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "Head",
+      "MountedLocation": "CenterTorso",
+      "ComponentDefID": "Gear_HeatSink_Generic_Standard",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
       "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
@@ -126,15 +134,7 @@
       "HardpointSlot": 0,
       "DamageLevel": "Functional",
       "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "CenterTorso",
-      "ComponentDefID": "Gear_HeatSink_Generic_Standard",
-      "ComponentDefType": "HeatSink",
-      "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
     }
   ],
-  "MinAppearanceDate": "2688-01-01T00:00:00Z"
+  "MinAppearanceDate": "2701-01-01T00:00:00Z"
 }

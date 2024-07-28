@@ -6,10 +6,8 @@
       "unit_jumpOK",
       "unit_range_medium",
       "unit_speed_high",
-      "unit_armor_high",
-      "unit_hot",
-      "unit_lance_support",
-      "unit_role_sniper",
+      "unit_lance_vanguard",
+      "unit_role_brawler",
       "unit_release"
     ],
     "tagSetSourceFile": ""
@@ -17,18 +15,18 @@
   "ChassisID": "chassisdef_phoenixhawk_PXH-HK2",
   "HeraldryID": null,
   "Description": {
-    "Cost": 4910000,
-    "Rarity": 0,
+    "Cost": 6500000,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
-    "UIName": "Phoenix Hawk LAM PXH-HK2",
+    "UIName": "Phoenix Hawk LAM PHX-HK2",
     "Id": "mechdef_phoenixhawk_PXH-HK2",
     "Name": "Phoenix Hawk LAM",
-    "Details": "The PXH-HK2 is the largest Land-Air Mech ever successfully fielded, merging a slightly heavier and slower Phoenix Hawk Mech and a capable medium aerospace fighter into one enormously versatile unit. The sophisticated conversion technology was lost in the First Succession War, and battle damage prevents this Mech from entering Figher mode.",
+    "Details": "The PHX-HK2 is the largest Land-Air 'Mech ever successfully fielded, merging a slightly heavier and slower Phoenix Hawk 'Mech and a capable medium aerospace fighter into one enormously versatile unit. The sophisticated conversion technology was lost in the First Succession War, and battle damage prevents this 'Mech from entering Figher mode.",
     "Icon": "uixTxrIcon_phoenixhawklam"
   },
-  "simGameMechPartCost": 490000,
+  "simGameMechPartCost": 650000,
   "Version": 1,
   "Locations": [
     {
@@ -106,7 +104,47 @@
   ],
   "inventory": [
     {
-      "MountedLocation": "RightArm",
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Weapon_MachineGun_MachineGun_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_HeatSink_Generic_Standard",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_MG",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_HeatSink_Generic_Standard",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
       "ComponentDefID": "Weapon_Laser_LargeLaser_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
@@ -126,46 +164,6 @@
       "ComponentDefID": "Weapon_MachineGun_MachineGun_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftArm",
-      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftArm",
-      "ComponentDefID": "Weapon_MachineGun_MachineGun_0-STOCK",
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "CenterTorso",
-      "ComponentDefID": "Ammo_AmmunitionBox_Generic_MG",
-      "ComponentDefType": "AmmunitionBox",
-      "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "CenterTorso",
-      "ComponentDefID": "Gear_HeatSink_Generic_Standard",
-      "ComponentDefType": "HeatSink",
-      "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "Head",
-      "ComponentDefID": "Gear_HeatSink_Generic_Standard",
-      "ComponentDefType": "HeatSink",
-      "HardpointSlot": -1,
       "DamageLevel": "Functional",
       "hasPrefabName": false
     }

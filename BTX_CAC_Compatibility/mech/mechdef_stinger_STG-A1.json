@@ -4,7 +4,7 @@
       "unit_mech",
       "unit_light",
       "unit_jumpOK",
-      "unit_range_medium",
+      "unit_range_short",
       "unit_speed_high",
       "unit_lance_vanguard",
       "unit_role_scout",
@@ -15,18 +15,18 @@
   "ChassisID": "chassisdef_stinger_STG-A1",
   "HeraldryID": null,
   "Description": {
-    "Cost": 2000000,
-    "Rarity": 0,
+    "Cost": 3410000,
+    "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
     "UIName": "Stinger LAM STG-A1",
     "Id": "mechdef_stinger_STG-A1",
     "Name": "Stinger LAM",
-    "Details": "The STG-A1 Stinger was the first mass-produced Land-Air 'Mech, a combination of light Mech and light aerospace fighter introduced by LexaTech in 2688 and still produced on the Combine world of Irece. Between crashes and damage to the delicate LostTech conversion equipment, production can't keep pace with demand, so many of the surviving LAMs, like this one, are damaged and can not enter Figher mode. They still have tremendous jumping ability and make superb scouts.",
+    "Details": "The original Stinger LAM used by the Star League Defense Force Royal Divisions, this version carries a Medium Pulse Laser and replaces the Machine Guns with Small Pulse Lasers. Double heat sinks kept the temperature manageable, and it was also more heavily armored than its forerunner, carrying five tons of protection.",
     "Icon": "uixTxrIcon_stingerlam"
   },
-  "simGameMechPartCost": 200000,
+  "simGameMechPartCost": 340000,
   "Version": 1,
   "Locations": [
     {
@@ -104,6 +104,14 @@
   ],
   "inventory": [
     {
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Weapon_Laser_SmallLaserPulse_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
       "MountedLocation": "RightTorso",
       "ComponentDefID": "Weapon_Laser_MediumLaserPulse_0-STOCK",
       "ComponentDefType": "Weapon",
@@ -113,14 +121,6 @@
     },
     {
       "MountedLocation": "RightArm",
-      "ComponentDefID": "Weapon_Laser_SmallLaserPulse_0-STOCK",
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftArm",
       "ComponentDefID": "Weapon_Laser_SmallLaserPulse_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,

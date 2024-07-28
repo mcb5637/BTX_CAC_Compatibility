@@ -9,44 +9,30 @@
     }
   },
   "Description": {
-    "Cost": 30000000,
-    "Rarity": 2,
+    "Cost": 2140000,
+    "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
     "UIName": "UrbanMech LAM",
     "Id": "chassisdef_urbanmech_UM-LAM-X",
     "Name": "UrbanMech LAM",
-    "Details": "The experimental UrbanMech LAM was the brainchild of an aging Liao Mechwarrior (who shall not be named here). Using spare parts from Ireces Stinger LAM factory and his ancestral UrbanMech, he created the first version of it. It was later proposed to both Kurita and Liao, who both initially showed interest. But poor combat performance soon let the project die. It did not really help either, that the AerospaceFighter mode never really worked.",
+    "Details": "The experimental UrbanMech LAM was the brainchild of an aging Liao Mechwarrior (who shall not be named here). Using spare parts from Ireces Stinger LAM factory and his ancestral UrbanMech, he created the first version of it. It was later proposed to Kurita and Liao, who both initially showed interest. But poor combat performance soon let the project die. It did not really help either, that the AerospaceFighter mode never really worked.",
     "Icon": "uixTxrIcon_urbanmech_lam"
   },
-  "VariantName": "UM-LAM-X",
-  "ChassisTags": {
-    "items": [
-      "mech_quirk_nonstandardparts",
-      "mech_quirk_prototype",
-      "mech_quirk_nimblejumper",
-      "LandAirMech",
-      "mech_quirk_narrowlowprofile",
-      "mech_quirk_nominimalarms"
-    ],
-    "tagSetSourceFile": ""
-  },
-  "StockRole": "Failed? Experiment",
-  "YangsThoughts": "Well, what a strange mech we have here. This is supposed to combine the damage absorption and firepower of the Urbie with the speed and agility of LAMs. And it fails miserably in both categories.",
   "MovementCapDefID": "movedef_urbanmech_UM-R60",
   "PathingCapDefID": "pathingdef_light",
   "HardpointDataDefID": "hardpointdatadef_urbielord",
   "PrefabIdentifier": "chrprfmech_urbielordbase-001",
   "PrefabBase": "urbielord",
   "Tonnage": 30,
-  "InitialTonnage": 8.5,
+  "InitialTonnage": 10,
   "weightClass": "LIGHT",
   "BattleValue": 1892000,
   "Heatsinks": 0,
   "TopSpeed": 85,
   "TurnRadius": 90,
-  "MaxJumpjets": 4,
+  "MaxJumpjets": 3,
   "Stability": 100,
   "StabilityDefenses": [
     0,
@@ -62,19 +48,58 @@
   "Signature": 0,
   "Radius": 4,
   "PunchesWithLeftArm": false,
-  "MeleeDamage": 40,
+  "MeleeDamage": 25,
   "MeleeInstability": 30,
   "MeleeToHitModifier": 0,
   "DFADamage": 40,
   "DFAToHitModifier": 0,
   "DFASelfDamage": 40,
   "DFAInstability": 40,
+  "CustomParts": {
+    "AlternateRepresentations": [
+      {
+        "HardpointDataDef": "hardpointdatadef_urbielord",
+        "PrefabIdentifier": "chrprfmech_urbielordbase-001",
+        "PrefabBase": "urbielord",
+        "AdditionalPrefabs": [],
+        "Type": "AirMech",
+        "additionalEncounterTags": [
+          "unit_lam"
+        ],
+        "FlyHeight": 15.0,
+        "NoJumpjetsBlock": true,
+        "AirMechVerticalJets": [
+          {
+            "Prefab": "vf11lam_vjets_left_leg",
+            "Attach": "j_LHeel",
+            "JetsAttachPoints": [
+              "jetAttachPoint"
+            ]
+          },
+          {
+            "Prefab": "vf11lam_vjets_right_leg",
+            "Attach": "j_RHeel",
+            "JetsAttachPoints": [
+              "jetAttachPoint"
+            ]
+          },
+          {
+            "Prefab": "vf11lam_vjets_torso",
+            "Attach": "j_Spine2",
+            "JetsAttachPoints": [
+              "jetAttachPoint"
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "Locations": [
     {
       "Location": "Head",
       "Hardpoints": [],
       "Tonnage": 0,
-      "InventorySlots": 6,
+      "InventorySlots": 1,
       "MaxArmor": 45,
       "MaxRearArmor": -1,
       "InternalStructure": 16
@@ -88,7 +113,7 @@
         }
       ],
       "Tonnage": 0,
-      "InventorySlots": 12,
+      "InventorySlots": 8,
       "MaxArmor": 50,
       "MaxRearArmor": -1,
       "InternalStructure": 25
@@ -106,7 +131,7 @@
         }
       ],
       "Tonnage": 0,
-      "InventorySlots": 12,
+      "InventorySlots": 10,
       "MaxArmor": 70,
       "MaxRearArmor": 35,
       "InternalStructure": 35
@@ -120,7 +145,7 @@
         }
       ],
       "Tonnage": 0,
-      "InventorySlots": 15,
+      "InventorySlots": 4,
       "MaxArmor": 100,
       "MaxRearArmor": 50,
       "InternalStructure": 50
@@ -134,7 +159,7 @@
         }
       ],
       "Tonnage": 0,
-      "InventorySlots": 12,
+      "InventorySlots": 10,
       "MaxArmor": 70,
       "MaxRearArmor": 35,
       "InternalStructure": 35
@@ -152,7 +177,7 @@
         }
       ],
       "Tonnage": 0,
-      "InventorySlots": 12,
+      "InventorySlots": 8,
       "MaxArmor": 50,
       "MaxRearArmor": -1,
       "InternalStructure": 25
@@ -161,7 +186,7 @@
       "Location": "LeftLeg",
       "Hardpoints": [],
       "Tonnage": 0,
-      "InventorySlots": 6,
+      "InventorySlots": 4,
       "MaxArmor": 70,
       "MaxRearArmor": -1,
       "InternalStructure": 35
@@ -170,7 +195,7 @@
       "Location": "RightLeg",
       "Hardpoints": [],
       "Tonnage": 0,
-      "InventorySlots": 6,
+      "InventorySlots": 4,
       "MaxArmor": 70,
       "MaxRearArmor": -1,
       "InternalStructure": 35
@@ -220,45 +245,19 @@
       "z": 0.5
     }
   ],
-  "CustomParts": {
-    "AlternateRepresentations": [
-      {
-        "HardpointDataDef": "hardpointdatadef_urbielord",
-        "PrefabIdentifier": "chrprfmech_urbielordbase-001",
-        "PrefabBase": "urbielord",
-        "AdditionalPrefabs": [],
-        "Type": "AirMech",
-        "additionalEncounterTags": [
-          "unit_vtol"
-        ],
-        "FlyHeight": 15.0,
-        "NoJumpjetsBlock": true,
-        "AirMechVerticalJets": [
-          {
-            "Prefab": "vf11lam_vjets_left_leg",
-            "Attach": "j_LHeel",
-            "JetsAttachPoints": [
-              "jetAttachPoint"
-            ]
-          },
-          {
-            "Prefab": "vf11lam_vjets_right_leg",
-            "Attach": "j_RHeel",
-            "JetsAttachPoints": [
-              "jetAttachPoint"
-            ]
-          },
-          {
-            "Prefab": "vf11lam_vjets_torso",
-            "Attach": "j_Spine2",
-            "JetsAttachPoints": [
-              "jetAttachPoint"
-            ]
-          }
-        ]
-      }
-    ]
+  "VariantName": "UM-LAM-X",
+  "ChassisTags": {
+    "items": [
+      "mech_quirk_nonstandardparts",
+      "mech_quirk_prototype",
+      "mech_quirk_nimblejumper",
+      "mech_quirk_narrowlowprofile",
+      "mech_quirk_nominimalarms"
+    ],
+    "tagSetSourceFile": ""
   },
+  "StockRole": "Failed? Experiment",
+  "YangsThoughts": "Well, what a strange 'Mech we have here. This is supposed to combine the damage absorption and firepower of the Urbie with the speed and agility of LAMs. And it fails miserably in both categories.",
   "FixedEquipment": [
     {
       "MountedLocation": "CenterTorso",
@@ -288,16 +287,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightLeg",
-      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftLeg",
+      "MountedLocation": "CenterTorso",
       "ComponentDefID": "Gear_JumpJet_Generic_Standard",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,

@@ -4,12 +4,12 @@
       "CategoryID": "BombBay",
       "Limits": [
         {
-          "Location": "RightTorso",
+          "Location": "LeftTorso",
           "Min": 2,
           "Max": 2
         },
         {
-          "Location": "LeftTorso",
+          "Location": "RightTorso",
           "Min": 2,
           "Max": 2
         }
@@ -19,22 +19,22 @@
       "CategoryID": "BombBay",
       "Defaults": [
         {
-          "Location": "RightTorso",
-          "DefID": "Gear_LAM_BombBay_Empty",
-          "Type": "Upgrade"
-        },
-        {
-          "Location": "RightTorso",
-          "DefID": "Gear_LAM_BombBay_Empty",
-          "Type": "Upgrade"
-        },
-        {
           "Location": "LeftTorso",
           "DefID": "Gear_LAM_BombBay_Empty",
           "Type": "Upgrade"
         },
         {
           "Location": "LeftTorso",
+          "DefID": "Gear_LAM_BombBay_Empty",
+          "Type": "Upgrade"
+        },
+        {
+          "Location": "RightTorso",
+          "DefID": "Gear_LAM_BombBay_Empty",
+          "Type": "Upgrade"
+        },
+        {
+          "Location": "RightTorso",
           "DefID": "Gear_LAM_BombBay_Empty",
           "Type": "Upgrade"
         }
@@ -42,7 +42,7 @@
     }
   },
   "Description": {
-    "Cost": 5220000,
+    "Cost": 6280000,
     "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": "",
@@ -50,7 +50,7 @@
     "UIName": "Screamer LAM",
     "Id": "chassisdef_screamerlam_SCR-1X-LAM",
     "Name": "Screamer LAM",
-    "Details": "The Screamer LAM is a prototype Land-Air 'Mech which was produced during the reign of Emperor Stefan Amaris when his forces were occupying the Terran Hegemony in the late Star League Era.\n\nBuilt as a harasser and quick strike machine, the Screamer LAM is equipped with a 275-rated fusion engine and four jump jets, which gives it the same performance as the older WSP-100 Wasp LAM. The Screamer's only fixed weapon is its right arm-mounted ER PP, though its firepower is enhanced with four internal bomb bays able to deliver bombs while in fight mode. Ten double heat sinks handle the heat signature of the 'Mech while it's engaged in fighting and in flight.",
+    "Details": "The Screamer LAM is a prototype Land-Air 'Mech which was produced during the reign of Emperor Stefan Amaris when his forces were occupying the Terran Hegemony in the late Star League Era.\n\nBuilt as a harasser and quick strike machine, the Screamer LAM is equipped with a 275-rated fusion engine and four jump jets, which gives it the same performance as the older WSP-100 Wasp LAM. The Screamer's only fixed weapon is its right arm-mounted ER PPC, though its firepower is enhanced with four internal bomb bays able to deliver bombs while in fight mode. Ten double heat sinks handle the heat signature of the 'Mech while it's engaged in fighting and in flight.",
     "Icon": "uixTxrIcon_screamerlam"
   },
   "MovementCapDefID": "movedef_shadowhawk_SHD-2H",
@@ -80,7 +80,7 @@
   "SensorRangeMultiplier": 1,
   "Signature": 0,
   "Radius": 5,
-  "PunchesWithLeftArm": false,
+  "PunchesWithLeftArm": true,
   "MeleeDamage": 75,
   "MeleeInstability": 55,
   "MeleeToHitModifier": 0,
@@ -97,7 +97,7 @@
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
-          "unit_vtol"
+          "unit_lam"
         ],
         "FlyHeight": 15.0,
         "NoJumpjetsBlock": true,
@@ -274,14 +274,24 @@
     "items": [
       "mr-resize-1.00-0.85-1.00",
       "chassis_DHS",
+      "mech_quirk_nonstandardparts",
       "mech_quirk_prototype",
-      "LandAirMech"
+      "mech_quirk_nimblejumper"
     ],
     "tagSetSourceFile": ""
   },
   "StockRole": "Fast Striker & Harasser",
   "YangsThoughts": "This here's a Screamer, a relic from the Star League era. Imagine a Land-Air 'Mech with four Bomb Bays stuffed with enough high explosives to level a city block, and an ER PPC that snipes enemies from afar. Rumor says the plans were lost with Kerensky's Exodus, but it looks like someone dug them up and decided to resurrect it.",
   "FixedEquipment": [
+    {
+      "MountedLocation": "CenterTorso",
+      "ComponentDefID": "Gear_LAM_Systems",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
     {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet",
@@ -293,6 +303,24 @@
     },
     {
       "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet_Idle",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_JumpJet_LAMJet_Idle",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
@@ -305,33 +333,6 @@
       "ComponentDefID": "Weapon_BombBay",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
-      "IsFixed": true,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "CenterTorso",
-      "ComponentDefID": "Gear_LAM_Systems",
-      "ComponentDefType": "Upgrade",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightTorso",
-      "ComponentDefID": "Gear_JumpJet_LAMJet",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightTorso",
-      "ComponentDefID": "Gear_JumpJet_LAMJet_Idle",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
       "IsFixed": true,
       "DamageLevel": "Functional",
       "hasPrefabName": false
