@@ -1,7 +1,7 @@
 {
   "Description": {
-    "Id": "pathingdef_light_quad",
-    "Name": "Light Quad Mech PathingCapabilities Definition",
+    "Id": "pathingdef_heavy_quad",
+    "Name": "Heavy Quad Mech PathingCapabilities Definition",
     "Details": "",
     "Icon": ""
   },

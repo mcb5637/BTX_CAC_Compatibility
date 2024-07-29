@@ -33,7 +33,7 @@
   "StockRole": "Heavy Cavalry",
   "YangsThoughts": "The Goliath suffers from low damage output compared to other assault mechs, but thanks to its 4 legs it is a lot more stable.",
   "MovementCapDefID": "movedef_zeus_ZEU-6S",
-  "PathingCapDefID": "pathingdef_assault",
+  "PathingCapDefID": "pathingdef_assault_quad",
   "HardpointDataDefID": "hardpointdatadef_cugoliath",
   "PrefabIdentifier": "chrprfmech_goliath",
   "PrefabBase": "cugoliath",
