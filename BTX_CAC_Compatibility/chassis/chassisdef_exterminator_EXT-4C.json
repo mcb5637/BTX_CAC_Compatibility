@@ -13,9 +13,9 @@
 	},
 	"MovementCapDefID": "movedef_exterminator_EXT-4D",
 	"PathingCapDefID": "pathingdef_heavy",
-	"HardpointDataDefID": "hardpointdatadef_ghost",
-	"PrefabIdentifier": "chrprfmech_ghostbase-001",
-	"PrefabBase": "ghost",
+	"HardpointDataDefID": "hardpointdatadef_exterminator",
+	"PrefabIdentifier": "chrprfmech_exterminatorbase-001",
+	"PrefabBase": "exterminator",
 	"Tonnage": 65,
 	"InitialTonnage": 36.5,
 	"weightClass": "HEAVY",
@@ -200,7 +200,6 @@
 	"VariantName": "EXT-4C",
 	"ChassisTags": {
 		"items": [
-			"mr-resize-1.06-1.03-1.06",
 			"chassis_DHS"
 		],
 		"tagSetSourceFile": ""
