@@ -178,68 +178,6 @@ namespace BTX_CAC_CompatibilityDll
         //}
     }
 
-    [HarmonyPatch(typeof(AuraPreviewRecord), "RecalculateStealthPips")]
-    public class AuraPreviewRecord_RecalculateStealthPips
-    {
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            MethodInfo re = AccessTools.PropertyGetter(typeof(AbstractActor), nameof(AbstractActor.StealthPipsCurrent));
-            MethodInfo add = AccessTools.Method(typeof(Dictionary<AbstractActor, int>), nameof(Dictionary<AbstractActor, int>.Add));
-            foreach (CodeInstruction c in instructions)
-            {
-                if ((c.opcode == OpCodes.Callvirt || c.opcode == OpCodes.Call) && (MethodInfo)c.operand == re)
-                {
-                    c.operand = AccessTools.PropertyGetter(typeof(AbstractActor), nameof(AbstractActor.StealthPipsTotal));
-                }
-                if ((c.opcode == OpCodes.Callvirt || c.opcode == OpCodes.Call) && (MethodInfo)c.operand == add)
-                {
-                    yield return new CodeInstruction(OpCodes.Ldc_I4_0);
-                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Math), nameof(Math.Max), new Type[] { typeof(int), typeof(int) }));
-                }
-                yield return c;
-            }
-        }
-    }
-    [HarmonyPatch(typeof(Mech), "NukeStructureLocation")]
-    [HarmonyAfter("io.mission.customunits")]
-    public class Mech_NukeStructureLocation
-    {
-        public static void Prefix(ref bool __runOriginal, Mech __instance)
-        {
-            if (__instance is CustomUnits.CustomMech)
-                __runOriginal = false;
-        }
-    }
-
-    [HarmonyPatch(typeof(CustAmmoCategoriesPatches.Mech_ApplyHeatSinks), "Prefix")]
-    public class Mech_ApplyHeatSinks_Prefix
-    {
-        private static float Get(Mech m)
-        {
-            return m.StatCollection.GetStatistic("HeatSinkCapacityMult").Value<float>();
-        }
-
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            FieldInfo re = AccessTools.Field(typeof(HeatConstantsDef), nameof(HeatConstantsDef.GlobalHeatSinkMultiplier));
-            MethodInfo add = AccessTools.Method(typeof(Mech_ApplyHeatSinks_Prefix), nameof(Mech_ApplyHeatSinks_Prefix.Get));
-            foreach (CodeInstruction c in instructions)
-            {
-                if (c.opcode == OpCodes.Ldfld && (FieldInfo)c.operand == re)
-                {
-                    yield return c;
-
-                    yield return new CodeInstruction(OpCodes.Ldarg_1);
-                    yield return new CodeInstruction(OpCodes.Call, add);
-                    yield return new CodeInstruction(OpCodes.Mul);
-
-                    continue;
-                }
-
-                yield return c;
-            }
-        }
-    }
     [HarmonyPatch(typeof(CustomUnits.LanceConfiguratorPanel_LoadLanceConfiguration), "Prefix")]
     public class LanceConfiguratorPanel_LoadLanceConfiguration_Prefix
     {
@@ -271,39 +209,6 @@ namespace BTX_CAC_CompatibilityDll
                     continue;
                 }
 
-                yield return c;
-            }
-        }
-    }
-    [HarmonyPatch(typeof(Mech), nameof(Mech.MaxMeleeEngageRangeDistance), MethodType.Getter)]
-    public static class Mech_MaxMeleeEngageRangeDistance
-    {
-        public static void Postfix(Mech __instance, ref float __result)
-        {
-            if (__instance.CanShootAfterSprinting)
-                __result = __instance.MaxSprintDistance;
-        }
-    }
-    [HarmonyPatch]
-    public class Pathing_MeleeGrid
-    {
-        private static PathNodeGrid GetMeleeGrid(Pathing __instance)
-        {
-            return __instance.OwningActor.CanShootAfterSprinting ? __instance.SprintingGrid() : __instance.WalkingGrid();
-        }
-
-        [HarmonyPatch(typeof(Pathing), nameof(Pathing.getGrid))]
-        [HarmonyPatch(typeof(Pathing), nameof(Pathing.GetMeleeDestsForTarget))]
-        [HarmonyPatch(typeof(Pathing), nameof(Pathing.SetMeleeTarget))]
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            var prev = AccessTools.PropertyGetter(typeof(Pathing), "MeleeGrid");
-            var rep = AccessTools.Method(typeof(Pathing_MeleeGrid), nameof(GetMeleeGrid));
-            foreach (var c in instructions)
-            {
-                if (c.operand as MethodInfo == prev)
-                    c.operand = rep;
                 yield return c;
             }
         }

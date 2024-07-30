@@ -105,6 +105,7 @@
     <Compile Include="Decay.cs" />
     <Compile Include="MechDef_FromJson.cs" />
     <Compile Include="CCLoader.cs" />
+    <Compile Include="MeleeSprint.cs" />
     <Compile Include="SimGameState_InitStats.cs" />
     <Compile Include="TonnageCalculation.cs" />
     <Compile Include="WeaponHit_RemoveInfernoFloatie.cs" />
