@@ -1,0 +1,20 @@
+{
+  "HardpointDataDefID": "hardpointdatadef_mwostonerhino",
+  "PrefabIdentifier": "chrprfmech_mwostonerhinobase-001",
+  "PrefabBase": "mwostonerhino",
+  "VariantName": "BHN-1",
+  "ChassisTags": {
+    "items": [
+      "mr-resize-1.1",
+      "chassis_DHS",
+      "chassis_clan",
+      "mech_quirk_barrelfist_la",
+      "mech_quirk_barrelfist_ra",
+      "mech_quirk_protectedactuators",
+      "mech_quirk_oversized",
+      "mech_quirk_poorperformance",
+      "mech_quirk_weakheadarmor1"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

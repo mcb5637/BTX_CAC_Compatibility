@@ -1,0 +1,23 @@
+{
+  "HardpointDataDefID": "hardpointdatadef_stingerlamv2",
+  "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
+  "PrefabBase": "stingerlamv2",
+  "CustomParts": {
+    "AlternateRepresentations": [
+      {
+        "HardpointDataDef": "hardpointdatadef_stingerlamv2",
+        "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
+        "PrefabBase": "stingerlamv2"
+      }
+    ]
+  },
+  "ChassisTags": {
+    "items": [
+      "mr-resize-0.75",
+      "chassis_DHS",
+      "mech_quirk_nonstandardparts",
+      "mech_quirk_nimblejumper"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

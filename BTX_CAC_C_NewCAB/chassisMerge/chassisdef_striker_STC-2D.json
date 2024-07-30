@@ -1,0 +1,12 @@
+{
+  "HardpointDataDefID": "hardpointdatadef_strikermech",
+  "PrefabIdentifier": "chrprfmech_strikermechbase-001",
+  "PrefabBase": "strikermech",
+  "ChassisTags": {
+    "items": [
+      "chassis_DHS",
+      "mech_quirk_easytomaintain"
+    ],
+    "tagSetSourceFile": ""
+  }
+}
