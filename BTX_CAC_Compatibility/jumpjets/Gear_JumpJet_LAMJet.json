@@ -11,7 +11,7 @@
     "UIName": "LAM Jet",
     "Id": "Gear_JumpJet_LAMJet",
     "Name": "LAM Jet",
-    "Details": "Specialized jet engines for use in a LandAirMech. Work as jump jets in Mech mode and as main propulsion jets otherwise.",
+    "Details": "Specialized jet engines for use in a Land-Air 'Mech. Work as jump jets in 'Mech mode and as main propulsion jets otherwise.",
     "Icon": "uixSvgIcon_action_jump"
   },
   "BonusValueA": "+ 10% Dmg. After Jump",

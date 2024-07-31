@@ -54,12 +54,12 @@
       {
         "missionsRequired": 30,
         "levelName": "LAM+",
-        "decription": "Familiarity with this 'Mech's LAM systems improves speed (+10% speed&jump range)",
+        "decription": "Familiarity with this 'Mech's LAM systems improves mobility (+10% Speed & Jump Range)",
         "affinities": [],
         "effectData": [
           {
             "Description": {
-              "Details": "Rugged (+5% Damage Reduction)",
+              "Details": "LAM (+10% Speed & Jump Range)",
               "Icon": "UixSvgIcon_specialEquip_System",
               "Id": "Affinity_LAM_Speed",
               "Name": "BattleMechAffinity"
@@ -86,7 +86,7 @@
           },
           {
             "Description": {
-              "Details": "Rugged (+5% Damage Reduction)",
+              "Details": "LAM (+10% Speed & Jump Range)",
               "Icon": "UixSvgIcon_specialEquip_System",
               "Id": "Affinity_LAM_SpeedR",
               "Name": "BattleMechAffinity"
@@ -113,7 +113,7 @@
           },
           {
             "Description": {
-              "Details": "Rugged (+5% Damage Reduction)",
+              "Details": "LAM (+10% Speed & Jump Range)",
               "Icon": "UixSvgIcon_specialEquip_System",
               "Id": "Affinity_LAM_Jump",
               "Name": "BattleMechAffinity"
