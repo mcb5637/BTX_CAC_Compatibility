@@ -26,7 +26,7 @@
     "Details": "The Screamer LAM is a prototype Land-Air 'Mech which was produced during the reign of Emperor Stefan Amaris when his forces were occupying the Terran Hegemony in the late Star League Era.\n\nBuilt as a harasser and quick strike machine, the Screamer LAM is equipped with a 275-rated fusion engine and four jump jets, which gives it the same performance as the older WSP-100 Wasp LAM. The Screamer's only fixed weapon is its right arm-mounted ER PPC, though its firepower is enhanced with four internal bomb bays able to deliver bombs while in fight mode. Ten double heat sinks handle the heat signature of the 'Mech while it's engaged in fighting and in flight.",
     "Icon": "uixTxrIcon_screamerlam"
   },
-  "simGameMechPartCost": 520000,
+  "simGameMechPartCost": 770000,
   "Version": 1,
   "Locations": [
     {

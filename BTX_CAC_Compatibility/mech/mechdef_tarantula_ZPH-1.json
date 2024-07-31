@@ -1,21 +1,24 @@
 {
   "MechTags": {
     "items": [
-      "unit_release",
+      "unit_quad",
       "unit_mech",
       "unit_light",
+      "unit_jumpOK",
+      "unit_range_short",
+      "unit_speed_high",
       "unit_lance_assassin",
       "unit_role_scout",
-      "unit_range_short",
-      "unit_speed_high"
+      "unit_release",
+      "unit_LosTech"
     ],
     "tagSetSourceFile": ""
   },
   "ChassisID": "chassisdef_tarantula_ZPH-1",
   "HeraldryID": null,
   "Description": {
-    "Cost": 4760000,
-    "Rarity": 1,
+    "Cost": 4850000,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
@@ -25,7 +28,7 @@
     "Details": "The Tarantula was designed specifically for a reconnaissance role. Built around a massive Nissan 200 extralight engine, the 'Mech is also equipped with eight jump jets allowing the Tarantula to easily navigate any terrain. While it only carries about three quarters of the theoretical maximum armor, the 'Mech's amazing speed makes the Tarantula capable of avoiding most damage.",
     "Icon": "uixTxrIcon_tarantula"
   },
-  "simGameMechPartCost": 480000,
+  "simGameMechPartCost": 490000,
   "Version": 1,
   "Locations": [
     {

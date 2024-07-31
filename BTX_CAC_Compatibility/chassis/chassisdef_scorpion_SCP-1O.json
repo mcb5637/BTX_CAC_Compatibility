@@ -1,7 +1,7 @@
 {
   "Description": {
-    "Cost": 5140000,
-    "Rarity": 1,
+    "Cost": 5920000,
+    "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
@@ -16,21 +16,11 @@
   "HardpointDataDefID": "hardpointdatadef_scorpionmech",
   "PrefabIdentifier": "chrprfmech_scorpionmechbase-001",
   "PrefabBase": "scorpionmech",
-  "CustomParts": {
-    "Unaffected": {
-      "DesignMasks": "false",
-      "Pathing": "false",
-      "Fire": "false",
-      "Landmines": "false"
-    },
-    "ArmsCountedAsLegs": true,
-    "CustomParts": []
-  },
   "Tonnage": 55,
   "InitialTonnage": 37,
   "weightClass": "MEDIUM",
   "BattleValue": 6088000,
-  "Heatsinks": 0,
+  "Heatsinks": 10,
   "TopSpeed": 80,
   "TurnRadius": 90,
   "MaxJumpjets": 0,
@@ -49,13 +39,23 @@
   "Signature": 0,
   "Radius": 5,
   "PunchesWithLeftArm": false,
-  "MeleeDamage": 30,
-  "MeleeInstability": 15,
+  "MeleeDamage": 50,
+  "MeleeInstability": 55,
   "MeleeToHitModifier": 0,
-  "DFADamage": 55,
+  "DFADamage": 70,
   "DFAToHitModifier": 0,
-  "DFASelfDamage": 55,
-  "DFAInstability": 30,
+  "DFASelfDamage": 70,
+  "DFAInstability": 70,
+  "CustomParts": {
+    "Unaffected": {
+      "DesignMasks": "false",
+      "Pathing": "false",
+      "Fire": "false",
+      "Landmines": "false"
+    },
+    "ArmsCountedAsLegs": true,
+    "CustomParts": []
+  },
   "Locations": [
     {
       "Location": "Head",
@@ -202,6 +202,7 @@
   "VariantName": "SCP-1O",
   "ChassisTags": {
     "items": [
+      "chassis_DHS",
       "mech_quirk_badreputation",
       "mech_quirk_hardtopilot",
       "mech_quirk_notorsotwist",
@@ -210,10 +211,10 @@
     "tagSetSourceFile": ""
   },
   "StockRole": "Fire Support",
-  "YangsThoughts": "The Scorpion carries a very basic, though dangerous, weapons payload which makes the 'Mech ideal for fire support.  It comes in reasonably fast for a 55 ton 'Mech.  The down sides?  It's hard to pilot, low armored and the engine is taking up a lot of it's capacity.",
+  "YangsThoughts": "The Scorpion carries a very basic, though dangerous, weapons payload, which makes the 'Mech ideal for close support. It comes in reasonably fast for a 55-ton 'Mech. The downsides? It's hard to pilot, low armored, and the engine is taking up a lot of its capacity.",
   "FixedEquipment": [
     {
-      "MountedLocation": "RightArm",
+      "MountedLocation": "LeftArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
@@ -222,7 +223,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftArm",
+      "MountedLocation": "RightArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,

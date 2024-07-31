@@ -1,37 +1,16 @@
 {
   "Description": {
-    "Cost": 10000000,
+    "Cost": 9040000,
     "Rarity": 4,
     "Purchasable": true,
-    "Manufacturer": null,
-    "Model": null,
+    "Manufacturer": "",
+    "Model": "",
     "UIName": "Goliath",
     "Id": "chassisdef_goliath_GOL-1H",
     "Name": "Goliath",
-    "Details": "The Goliath is armed with what would be considered a paltry armament for a 'Mech of its size. The primary weapon is a Rand PPC. This is backed up by two Holly LRM-10 launchers. The Goliath has respectable firepower at long ranges. When an enemy closes though the 'Mech only has two Ramsey-65 Machine Guns to rely on for defense.",
+    "Details": "The Goliath is armed with what would be considered a paltry armament for a 'Mech of its size. Its primary weapon is a PPC backed up by two LRM-10 launchers. The Goliath has respectable firepower at long ranges. When an enemy closes though the 'Mech only has two Machine Guns to rely on for defense.",
     "Icon": "uixTxrIcon_goliath"
   },
-  "VariantName": "GOL-1H",
-  "ChassisTags": {
-    "items": [
-      "mech_quirk_multitrac",
-      "mech_quirk_notorsotwist",
-      "mech_quirk_exposedactuators"
-    ],
-    "tagSetSourceFile": ""
-  },
-  "CustomParts": {
-    "Unaffected": {
-      "DesignMasks": "false",
-      "Pathing": "false",
-      "Fire": "false",
-      "Landmines": "false"
-    },
-    "ArmsCountedAsLegs": true,
-    "CustomParts": []
-  },
-  "StockRole": "Heavy Cavalry",
-  "YangsThoughts": "The Goliath suffers from low damage output compared to other assault mechs, but thanks to its 4 legs it is a lot more stable.",
   "MovementCapDefID": "movedef_zeus_ZEU-6S",
   "PathingCapDefID": "pathingdef_assault_quad",
   "HardpointDataDefID": "hardpointdatadef_cugoliath",
@@ -60,17 +39,23 @@
   "Signature": 0,
   "Radius": 8,
   "PunchesWithLeftArm": true,
-  "MeleeDamage": 40,
-  "MeleeInstability": 20,
+  "MeleeDamage": 70,
+  "MeleeInstability": 80,
   "MeleeToHitModifier": 0,
-  "DFADamage": 80,
+  "DFADamage": 100,
   "DFAToHitModifier": 0,
-  "DFASelfDamage": 80,
-  "DFAInstability": 40,
-  "MechPartMax": 0,
-  "MechPartCount": 0,
-  "EngageRangeModifier": 0,
-  "AlwaysPunchIfPossible": false,
+  "DFASelfDamage": 100,
+  "DFAInstability": 100,
+  "CustomParts": {
+    "Unaffected": {
+      "DesignMasks": "false",
+      "Pathing": "false",
+      "Fire": "false",
+      "Landmines": "false"
+    },
+    "ArmsCountedAsLegs": true,
+    "CustomParts": []
+  },
   "Locations": [
     {
       "Location": "Head",
@@ -231,9 +216,21 @@
       "z": 1
     }
   ],
+  "VariantName": "GOL-1H",
+  "ChassisTags": {
+    "items": [
+      "mr-resize-0.9",
+      "mech_quirk_multitrac",
+      "mech_quirk_notorsotwist",
+      "mech_quirk_exposedactuators"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "StockRole": "Heavy Weapons Platform",
+  "YangsThoughts": "The Goliath suffers from low damage output compared to other Assault 'Mechs, but thanks to its four legs it is a lot more stable.",
   "FixedEquipment": [
     {
-      "MountedLocation": "RightArm",
+      "MountedLocation": "LeftArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
@@ -242,7 +239,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftArm",
+      "MountedLocation": "RightArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,

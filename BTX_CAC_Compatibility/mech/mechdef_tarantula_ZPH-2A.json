@@ -1,13 +1,16 @@
 {
   "MechTags": {
     "items": [
-      "unit_release",
+      "unit_quad",
       "unit_mech",
       "unit_light",
+      "unit_jumpOK",
+      "unit_range_medium",
+      "unit_speed_high",
       "unit_lance_assassin",
       "unit_role_scout",
-      "unit_range_medium",
-      "unit_speed_high"
+      "unit_release",
+      "unit_LosTech"
     ],
     "tagSetSourceFile": ""
   },
@@ -15,14 +18,14 @@
   "HeraldryID": null,
   "Description": {
     "Cost": 4980000,
-    "Rarity": 1,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
     "UIName": "Tarantula ZPH-2A",
     "Id": "mechdef_tarantula_ZPH-2A",
     "Name": "Tarantula",
-    "Details": "The Tarantula was designed specifically for a reconnaissance role. Built around a massive Nissan 200 extralight engine, the 'Mech is also equipped with eight jump jets allowing the Tarantula to easily navigate any terrain. The 2A variant is a simple upgrade, replacing the two medium lasers with a pair of ER medium lasers.",
+    "Details": "The Tarantula was designed specifically for a reconnaissance role. Built around a massive Nissan 200 extralight engine, the 'Mech is also equipped with eight jump jets allowing the Tarantula to easily navigate any terrain. The 2A variant is a simple upgrade, replacing the two Medium Lasers with a pair of ER Medium Lasers.",
     "Icon": "uixTxrIcon_tarantula"
   },
   "simGameMechPartCost": 500000,

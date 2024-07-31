@@ -1,14 +1,14 @@
 {
   "Description": {
     "Cost": 4140000,
-    "Rarity": 1,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
     "UIName": "Tarantula",
     "Id": "chassisdef_tarantula_ZPH-2A",
     "Name": "Tarantula",
-    "Details": "The Tarantula was designed specifically for a reconnaissance role. Built around a massive Nissan 200 extralight engine, the 'Mech is also equipped with eight jump jets allowing the Tarantula to easily navigate any terrain. The 2A variant is a simple upgrade, replacing the two medium lasers with a pair of ER medium lasers.",
+    "Details": "The Tarantula was designed specifically for a reconnaissance role. Built around a massive Nissan 200 extralight engine, the 'Mech is also equipped with eight jump jets allowing the Tarantula to easily navigate any terrain. The 2A variant is a simple upgrade, replacing the two Medium Lasers with a pair of ER Medium Lasers.",
     "Icon": "uixTxrIcon_tarantula"
   },
   "MovementCapDefID": "movedef_tarantula_ZPH-1",
@@ -39,13 +39,13 @@
   "Signature": 0,
   "Radius": 4,
   "PunchesWithLeftArm": false,
-  "MeleeDamage": 15,
-  "MeleeInstability": 5,
+  "MeleeDamage": 25,
+  "MeleeInstability": 25,
   "MeleeToHitModifier": 0,
-  "DFADamage": 25,
+  "DFADamage": 30,
   "DFAToHitModifier": 0,
-  "DFASelfDamage": 25,
-  "DFAInstability": 15,
+  "DFASelfDamage": 30,
+  "DFAInstability": 30,
   "Locations": [
     {
       "Location": "Head",
@@ -190,6 +190,7 @@
   "VariantName": "ZPH-2A",
   "ChassisTags": {
     "items": [
+      "chassis_DHS",
       "mech_quirk_easytopilot",
       "mech_quirk_extendedtorsotwistquad",
       "mech_quirk_exposedactuators"
@@ -228,7 +229,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightArm",
+      "MountedLocation": "LeftArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
@@ -237,7 +238,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftArm",
+      "MountedLocation": "RightArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,

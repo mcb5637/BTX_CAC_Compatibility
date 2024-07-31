@@ -1,7 +1,7 @@
 {
   "Description": {
-    "Cost": 3950000,
-    "Rarity": 1,
+    "Cost": 4030000,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
@@ -39,13 +39,13 @@
   "Signature": 0,
   "Radius": 4,
   "PunchesWithLeftArm": false,
-  "MeleeDamage": 15,
-  "MeleeInstability": 5,
+  "MeleeDamage": 25,
+  "MeleeInstability": 25,
   "MeleeToHitModifier": 0,
-  "DFADamage": 25,
+  "DFADamage": 30,
   "DFAToHitModifier": 0,
-  "DFASelfDamage": 25,
-  "DFAInstability": 15,
+  "DFASelfDamage": 30,
+  "DFAInstability": 30,
   "Locations": [
     {
       "Location": "Head",
@@ -190,6 +190,7 @@
   "VariantName": "ZPH-1",
   "ChassisTags": {
     "items": [
+      "chassis_DHS",
       "mech_quirk_easytopilot",
       "mech_quirk_extendedtorsotwistquad",
       "mech_quirk_exposedactuators"
@@ -228,7 +229,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightArm",
+      "MountedLocation": "LeftArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
@@ -237,7 +238,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftArm",
+      "MountedLocation": "RightArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,

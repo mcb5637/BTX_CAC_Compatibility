@@ -3,31 +3,33 @@
     "items": [
       "unit_heavy",
       "unit_mech",
+      "unit_indirectFire",
       "unit_range_long",
       "unit_speed_low",
+      "unit_armor_high",
       "unit_hot",
       "unit_lance_support",
       "unit_role_sniper",
-      "unit_indirectFire",
-      "unit_release"
+      "unit_release",
+      "unit_LosTech"
     ],
     "tagSetSourceFile": ""
   },
   "ChassisID": "chassisdef_helepolis_HEP-3H",
   "HeraldryID": null,
   "Description": {
-    "Cost": 85000000,
-    "Rarity": 3,
+    "Cost": 8510000,
+    "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
     "UIName": "Helepolis HEP-3H",
     "Id": "mechdef_helepolis_HEP-3H",
     "Name": "Helepolis",
-    "Details": "First unleashed by the Terran Hegemony in 2460, the Helepolis is a ponderous BattleMech designed to deliver artillery fire.",
+    "Details": "The 3H model enhances the Helepolis' long-range capabilities by swapping the standard Large Laser for an ER Large Laser, which pairs well with the LRM-10 launcher.",
     "Icon": "uixTxrIcon_helepolis"
   },
-  "simGameMechPartCost": 8500000,
+  "simGameMechPartCost": 850000,
   "Version": 1,
   "Locations": [
     {
@@ -105,13 +107,12 @@
   ],
   "inventory": [
     {
-      "MountedLocation": "RightArm",
-      "ComponentDefID": "Weapon_MortarCAC_Sniper",
+      "MountedLocation": "Head",
+      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
       "DamageLevel": "Functional",
-      "hasPrefabName": false,
-      "LocalGUID": "arty"
+      "hasPrefabName": false
     },
     {
       "MountedLocation": "LeftArm",
@@ -130,10 +131,34 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "Head",
-      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_Sniper",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_Sniper",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_SRM",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_LRM",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
       "DamageLevel": "Functional",
       "hasPrefabName": false
     },
@@ -147,22 +172,6 @@
     },
     {
       "MountedLocation": "RightTorso",
-      "ComponentDefID": "Ammo_AmmunitionBox_Generic_Sniper",
-      "ComponentDefType": "AmmunitionBox",
-      "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightTorso",
-      "ComponentDefID": "Ammo_AmmunitionBox_Generic_Sniper",
-      "ComponentDefType": "AmmunitionBox",
-      "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightTorso",
       "ComponentDefID": "Gear_Addon_Artillery_Loader",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
@@ -171,20 +180,13 @@
       "TargetComponentGUID": "arty"
     },
     {
-      "MountedLocation": "LeftTorso",
-      "ComponentDefID": "Ammo_AmmunitionBox_Generic_LRM",
-      "ComponentDefType": "AmmunitionBox",
-      "HardpointSlot": -1,
+      "MountedLocation": "RightArm",
+      "ComponentDefID": "Weapon_MortarCAC_Sniper",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
       "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftTorso",
-      "ComponentDefID": "Ammo_AmmunitionBox_Generic_SRM",
-      "ComponentDefType": "AmmunitionBox",
-      "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
+      "hasPrefabName": false,
+      "LocalGUID": "arty"
     }
   ]
 }

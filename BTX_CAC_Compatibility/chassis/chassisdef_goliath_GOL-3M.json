@@ -1,38 +1,16 @@
 {
   "Description": {
-    "Cost": 26000000,
-    "Rarity": 4,
+    "Cost": 20310000,
+    "Rarity": 5,
     "Purchasable": true,
-    "Manufacturer": null,
-    "Model": null,
+    "Manufacturer": "",
+    "Model": "",
     "UIName": "Goliath",
     "Id": "chassisdef_goliath_GOL-3M",
     "Name": "Goliath",
     "Details": "The 3M is a 3047 upgrade of the Goliath that uses Star League technology. The 'Mech has had an Hermes 320 XL Engine installed to reduce the engine's weight by half. The 'Mech retains the LRM launchers and Machine Guns of the 1H model. The 'Mech replaces the PPC with a Zeus Slingshot Gauss Rifle which gives the Goliath devastating long-range firepower. The 'Mech still suffers from its close combat deficiencies but with its updated arsenal most 'Mechs are hard pressed to close to short range.",
     "Icon": "uixTxrIcon_goliath"
   },
-  "VariantName": "GOL-3M",
-  "ChassisTags": {
-    "items": [
-      "mech_case_left",
-      "mech_quirk_multitrac",
-      "mech_quirk_notorsotwist",
-      "mech_quirk_exposedactuators"
-    ],
-    "tagSetSourceFile": ""
-  },
-  "CustomParts": {
-    "Unaffected": {
-      "DesignMasks": "false",
-      "Pathing": "false",
-      "Fire": "false",
-      "Landmines": "false"
-    },
-    "ArmsCountedAsLegs": true,
-    "CustomParts": []
-  },
-  "StockRole": "Heavy Cavalry",
-  "YangsThoughts": "The Goliath suffers from low damage output compared to other assault mechs, but thanks to its 4 legs it is a lot more stable.",
   "MovementCapDefID": "movedef_zeus_ZEU-6S",
   "PathingCapDefID": "pathingdef_assault_quad",
   "HardpointDataDefID": "hardpointdatadef_cugoliath",
@@ -61,17 +39,23 @@
   "Signature": 0,
   "Radius": 8,
   "PunchesWithLeftArm": true,
-  "MeleeDamage": 40,
-  "MeleeInstability": 20,
+  "MeleeDamage": 70,
+  "MeleeInstability": 80,
   "MeleeToHitModifier": 0,
-  "DFADamage": 80,
+  "DFADamage": 100,
   "DFAToHitModifier": 0,
-  "DFASelfDamage": 80,
-  "DFAInstability": 40,
-  "MechPartMax": 0,
-  "MechPartCount": 0,
-  "EngageRangeModifier": 0,
-  "AlwaysPunchIfPossible": false,
+  "DFASelfDamage": 100,
+  "DFAInstability": 100,
+  "CustomParts": {
+    "Unaffected": {
+      "DesignMasks": "false",
+      "Pathing": "false",
+      "Fire": "false",
+      "Landmines": "false"
+    },
+    "ArmsCountedAsLegs": true,
+    "CustomParts": []
+  },
   "Locations": [
     {
       "Location": "Head",
@@ -147,7 +131,7 @@
           "Omni": false
         },
         {
-          "WeaponMount": "Energy",
+          "WeaponMount": "AntiPersonnel",
           "Omni": false
         }
       ],
@@ -229,6 +213,19 @@
       "z": 1
     }
   ],
+  "VariantName": "GOL-3M",
+  "ChassisTags": {
+    "items": [
+      "mr-resize-0.9",
+      "mech_case_left",
+      "mech_quirk_multitrac",
+      "mech_quirk_notorsotwist",
+      "mech_quirk_exposedactuators"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "StockRole": "Heavy Weapons Platform",
+  "YangsThoughts": "The Goliath suffers from low damage output compared to other Assault 'Mechs, but thanks to its four legs it is a lot more stable.",
   "FixedEquipment": [
     {
       "MountedLocation": "LeftTorso",
@@ -249,7 +246,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightArm",
+      "MountedLocation": "LeftArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
@@ -258,7 +255,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftArm",
+      "MountedLocation": "RightArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
