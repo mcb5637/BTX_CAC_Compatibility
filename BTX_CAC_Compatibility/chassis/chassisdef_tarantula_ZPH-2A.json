@@ -238,9 +238,45 @@
       "hasPrefabName": false
     },
     {
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Gear_Quad_JumpJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Gear_Quad_JumpJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
       "MountedLocation": "RightArm",
       "ComponentDefID": "Gear_Quad_Actuators",
       "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightArm",
+      "ComponentDefID": "Gear_Quad_JumpJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightArm",
+      "ComponentDefID": "Gear_Quad_JumpJet",
+      "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
       "IsFixed": true,
       "DamageLevel": "Functional",

@@ -106,22 +106,6 @@
   ],
   "inventory": [
     {
-      "MountedLocation": "LeftArm",
-      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftArm",
-      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Weapon_Laser_MediumLaserER_NU_0-STOCK",
       "ComponentDefType": "Weapon",
@@ -150,22 +134,6 @@
       "ComponentDefID": "Weapon_Laser_MediumLaserER_NU_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightArm",
-      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightArm",
-      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
       "DamageLevel": "Functional",
       "hasPrefabName": false
     },
