@@ -16,13 +16,14 @@ mechdef_ostscout_OTT-7J,10,,10,,19
 mechdef_hermes_HER-1A,0,,0,3057-01-01T00:00:00Z,8
 mechdef_spider_SDR-7M,0,3051-01-01T00:00:00Z,10,,10
 mechdef_spider_SDR-5V,15,,15,,40
-mechdef_stinger_STG-A5,6,,5,,4
 mechdef_firestarter_FS9-H,27,,27,,40
 mechdef_firestarter_FS9-K,0,,0,3057-01-01T00:00:00Z,4
 mechdef_panther_PNT-9R,179,,179,,179
 mechdef_panther_PNT-10K,0,3051-01-01T00:00:00Z,87,,87
 mechdef_jenner_JR7-D,108,,108,,108
+mechdef_stinger_STG-A10,4,,0,,0
 mechdef_jenner_JR7-K,54,,54,,86
+mechdef_stinger_STG-A5,4,,0,,0
 Mediums,,,,,
 mechdef_vulcan_VL-2T,41,,41,,44
 mechdef_cicada_CDA-2A,29,,29,,32

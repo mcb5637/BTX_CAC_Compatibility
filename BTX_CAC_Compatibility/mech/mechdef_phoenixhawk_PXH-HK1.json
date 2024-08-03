@@ -1,19 +1,33 @@
 {
+  "MechTags": {
+    "items": [
+      "unit_mech",
+      "unit_medium",
+      "unit_jumpOK",
+      "unit_range_medium",
+      "unit_speed_high",
+      "unit_lance_vanguard",
+      "unit_role_brawler",
+      "unit_release",
+      "unit_LosTech"
+    ],
+    "tagSetSourceFile": ""
+  },
   "ChassisID": "chassisdef_phoenixhawk_PXH-HK1",
   "HeraldryID": null,
   "Description": {
-    "Cost": 4910000,
-    "Rarity": 0,
+    "Cost": 7300000,
+    "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
-    "UIName": "Phoenix Hawk LAM PXH-HK1",
+    "UIName": "Phoenix Hawk LAM PHX-HK1",
     "Id": "mechdef_phoenixhawk_PXH-HK1",
     "Name": "Phoenix Hawk LAM",
-    "Details": "The PXH-HK1 is the largest Land-Air Mech ever successfully fielded, merging a slightly heavier and slower Phoenix Hawk Mech and a capable medium aerospace fighter into one enormously versatile unit. The sophisticated conversion technology was lost in the First Succession War, and battle damage prevents this Mech from entering Figher mode.",
+    "Details": "Developed for the Star League Defense Force Royal Divisions in 2692, this variant of the Phoenix Hawk LAM used four Medium Lasers and a single ER Large Laser as its main firepower. Twelve double heat sinks kept the heat curve low, but the limited fuel, armor, and maneuverability made the Phoenix Hawk LAM easy prey for aerospace fighters of the same weight. It could maneuver fast enough to evade heavier foes however.",
     "Icon": "uixTxrIcon_phoenixhawklam"
   },
-  "simGameMechPartCost": 490000,
+  "simGameMechPartCost": 730000,
   "Version": 1,
   "Locations": [
     {
@@ -91,141 +105,61 @@
   ],
   "inventory": [
     {
-      "MountedLocation": "RightTorso",
-      "ComponentDefID": "Weapon_Laser_LargeLaserER_0-STOCK",
-      "SimGameUID": null,
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_HeatSink_Generic_Double",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_HeatSink_Generic_Double",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Weapon_Laser_LargeLaserER_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
       "hasPrefabName": false
     },
     {
       "MountedLocation": "RightArm",
       "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
-      "SimGameUID": null,
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
-      "GUID": null,
       "DamageLevel": "Functional",
-      "prefabName": null,
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftArm",
-      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
-      "SimGameUID": null,
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
-      "GUID": null,
-      "DamageLevel": "Functional",
-      "prefabName": null,
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftTorso",
-      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
-      "SimGameUID": null,
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
-      "GUID": null,
-      "DamageLevel": "Functional",
-      "prefabName": null,
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftTorso",
-      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
-      "SimGameUID": null,
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
-      "GUID": null,
-      "DamageLevel": "Functional",
-      "prefabName": null,
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftTorso",
-      "ComponentDefID": "Gear_HeatSink_Generic_Double",
-      "SimGameUID": null,
-      "ComponentDefType": "HeatSink",
-      "HardpointSlot": -1,
-      "GUID": null,
-      "DamageLevel": "Functional",
-      "prefabName": null,
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightTorso",
-      "ComponentDefID": "Gear_HeatSink_Generic_Double",
-      "SimGameUID": null,
-      "ComponentDefType": "HeatSink",
-      "HardpointSlot": -1,
-      "GUID": null,
-      "DamageLevel": "Functional",
-      "prefabName": null,
       "hasPrefabName": false
     }
   ],
-  "MechTags": {
-    "items": [
-      "unit_mech",
-      "unit_medium",
-      "unit_jumpOK",
-      "unit_range_medium",
-      "unit_speed_high",
-      "unit_armor_high",
-      "unit_hot",
-      "unit_lance_support",
-      "unit_role_sniper",
-      "unit_release",
-      "Davion",
-      "Liao",
-      "Marik",
-      "Steiner",
-      "Kurita",
-      "MagistracyOfCanopus",
-      "TaurianConcordat",
-      "unit_very_rare",
-      "unit_very_rare_Davion",
-      "unit_very_rare_Liao",
-      "unit_rare_Marik",
-      "unit_very_rare_Steiner",
-      "unit_very_rare_Kurita",
-      "unit_very_rare_MagistracyOfCanopus",
-      "unit_very_rare_TaurianConcordat",
-      "unit_very_rare_AuriganDirectorate",
-      "unit_very_rare_AuriganRestoration",
-      "unit_very_rare_ComStar",
-      "unit_very_rare_MercenaryReviewBoard",
-      "unit_rare_DuchyOfAndurien",
-      "unit_none_AuriganMercenaries",
-      "unit_none_AuriganPirates",
-      "unit_none_Locals",
-      "unit_none_Betrayers",
-      "unit_none_MajestyMetals",
-      "unit_none_KellHounds",
-      "unit_none_GrayDeathLegion",
-      "unit_none_FlakJackals",
-      "unit_none_LocalsBrockwayRefugees",
-      "unit_none_SelfEmployed",
-      "unit_none_MasonsMarauders",
-      "unit_none_SteelBeast",
-      "unit_none_RazorbackMercs",
-      "unit_none_RedHareRegiment",
-      "unit_none_EmeraldDawn",
-      "unit_none_SianTriumphant",
-      "unit_none_BlackCalderaDefense",
-      "unit_none_BlackCalderaDefense_Hidden",
-      "unit_none_SecuritySolutionsInc",
-      "unit_none_PaladinProtectionLLC",
-      "unit_none_HouseNakano",
-      "unit_none_HouseKhulan",
-      "unit_none_HostileMercenaries",
-      "unit_none_NoFaction"
-    ],
-    "tagSetSourceFile": ""
-  },
-  "MinAppearanceDate": "2701-01-01T00:00:00Z"
+  "MinAppearanceDate": "2692-01-01T00:00:00Z"
 }
