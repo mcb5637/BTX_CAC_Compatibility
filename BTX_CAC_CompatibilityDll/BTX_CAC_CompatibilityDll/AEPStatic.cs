@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AccessExtension;
 using System.Reflection;
+using Extended_CE;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -36,6 +37,13 @@ namespace BTX_CAC_CompatibilityDll
         [PropertyGet(typeof(Pathing), "WalkingGrid")]
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static PathNodeGrid WalkingGrid(this Pathing s)
+        {
+            return null;
+        }
+
+        [PropertyGet("Extended_CE", "Extended_CE.BTComponents", "Actuators")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static ActuatorInfo GetActuatorInfo()
         {
             return null;
         }
