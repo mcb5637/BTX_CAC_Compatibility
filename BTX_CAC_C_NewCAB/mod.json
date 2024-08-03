@@ -9,7 +9,6 @@
   "IgnoreLoadFailure": true,
 
   "Manifest": [
-    { "Type": "AffinitiesDef", "Path": "affinities" },
     { "Type": "ChassisDef", "Path": "chassisMerge", "ShouldMergeJSON": true },
     { "Type": "Sprite", "Path": "portraits" }
   ]

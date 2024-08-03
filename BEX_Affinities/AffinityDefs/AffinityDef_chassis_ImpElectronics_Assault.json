@@ -4,6 +4,7 @@
   "affinityData": {
     "chassisNames": [
       "chrprfmech_gunslingerbase-001_85",
+      "chrprfmech_cugunslingerbase-001_85",
       "chrPrfMech_cyclopsBase-001_90"
     ],
     "idType": "AssemblyVariant",
