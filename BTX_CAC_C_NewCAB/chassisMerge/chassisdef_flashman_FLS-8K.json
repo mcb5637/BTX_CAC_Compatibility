@@ -1,0 +1,13 @@
+{
+  "HardpointDataDefID": "hardpointdatadef_cuflashman",
+  "PrefabIdentifier": "chrprfmech_cuflashmanbase-001",
+  "PrefabBase": "cuflashman",
+  "ChassisTags": {
+    "items": [
+      "chassis_DHS",
+      "mech_quirk_rugged1",
+      "mech_quirk_largeengine"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

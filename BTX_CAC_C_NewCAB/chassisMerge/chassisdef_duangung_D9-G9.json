@@ -1,0 +1,15 @@
+{
+  "HardpointDataDefID": "hardpointdatadef_duangung",
+  "PrefabIdentifier": "chrprfmech_duangungbase-001",
+  "PrefabBase": "duangung",
+  "ChassisTags": {
+    "items": [
+      "mr-resize-0.65",
+      "chassis_DHS",
+      "chassis_endo",
+      "mech_quirk_protectedactuators",
+      "mech_quirk_nonstandardparts"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

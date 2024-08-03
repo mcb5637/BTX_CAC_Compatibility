@@ -4,7 +4,9 @@
   "affinityData": {
     "chassisNames": [
       "chrprfmech_stingerlambase-001_30",
+      "chrprfmech_stingerlamv2base-001_30",
       "chrprfmech_wasplambase-001_30",
+      "chrprfmech_wasplamv2base-001_30",
       "chrprfmech_urbielordbase-001_30"
     ],
     "idType": "AssemblyVariant",

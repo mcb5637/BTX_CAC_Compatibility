@@ -1,0 +1,14 @@
+{
+  "HardpointDataDefID": "hardpointdatadef_exterminator",
+  "PrefabIdentifier": "chrprfmech_exterminatorbase-001",
+  "PrefabBase": "exterminator",
+  "ChassisTags": {
+    "items": [
+      "chassis_DHS",
+      "chassis_endo",
+      "mech_quirk_difficulttomaintain",
+      "mech_quirk_extralargeengine"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

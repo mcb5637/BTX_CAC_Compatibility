@@ -1,0 +1,36 @@
+{
+  "HardpointDataDefID": "hardpointdatadef_naginata",
+  "PrefabIdentifier": "chrprfmech_naginatabase-001",
+  "PrefabBase": "naginata",
+  "ChassisTags": {
+    "items": [
+      "chassis_DHS",
+      "mech_case_left",
+      "mech_case_right",
+      "mech_quirk_cowl",
+      "mech_quirk_stable"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "StockRole": "C3 Command Unit & Fire support",
+  "FixedEquipment": [
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_C3_Master",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Weapon_TAG_C3-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    }
+  ]
+}
