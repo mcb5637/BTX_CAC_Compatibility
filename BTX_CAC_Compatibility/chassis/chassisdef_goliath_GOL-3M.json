@@ -216,7 +216,6 @@
   "VariantName": "GOL-3M",
   "ChassisTags": {
     "items": [
-      "mr-resize-0.9",
       "mech_case_left",
       "mech_quirk_multitrac",
       "mech_quirk_notorsotwist",
