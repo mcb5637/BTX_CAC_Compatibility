@@ -113,7 +113,6 @@
     <Compile Include="ChassisDef_FixQuirks.cs" />
     <Compile Include="ContractOverride_FixMaxPlayers.cs" />
     <Compile Include="CU2ComponentFix.cs" />
-    <Compile Include="CUNullrefFix.cs" />
     <Compile Include="DoubleCritFix.cs" />
     <Compile Include="Effect_TickOntargetMovementFix.cs" />
     <Compile Include="InfernoExplode.cs" />
