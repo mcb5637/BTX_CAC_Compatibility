@@ -74,6 +74,10 @@
 		"HardpointDescriptionColor": "#008000",
 		"CategoryDescriptionColor": "#008000",
 
+		"RunAutofixer": true,
+		"IgnoreAutofixTags": ["fake_vehicle_chassis", "noautofix"],
+		"IgnoreValidationTags": ["fake_vehicle_chassis"],
+
 		"OmniTechFlag": "chassis_omni",
 		"OmniTechCostBySize": false,
 		"OmniTechInstallCost": 1,

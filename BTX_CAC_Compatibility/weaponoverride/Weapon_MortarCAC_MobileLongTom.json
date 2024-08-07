@@ -51,15 +51,13 @@
     "BonusValueB": "- 15 Tonns",
     "ComponentType": "Weapon",
     "ComponentSubType": "Weapon",
-    "PrefabIdentifier": "AC20",
+    "PrefabIdentifier": "artillery",
     "InventorySize": 10,
     "Tonnage": 15,
     "AllowedLocations": "All",
     "DisallowedLocations": "All",
     "CriticalComponent": false,
-    "statusEffects": [
-        
-    ],
+    "statusEffects": [],
     "ComponentTags": {
         "items": [
             "component_type_stock",

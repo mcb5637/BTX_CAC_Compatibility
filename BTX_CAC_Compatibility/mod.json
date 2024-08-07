@@ -71,7 +71,14 @@
 			"c_special_sAV_1_CaptureBase",
 			"c_special_sAV_2_ThreeWayBattle",
 			"c_special_sAV_3_captureEscort",
-			"c_special_sAV_4_ThreeWayBattle"
+			"c_special_sAV_4_ThreeWayBattle",
+			"c_fp_underTheSun_1_CaptureBase",
+			"c_fp_underTheSun_2_CaptureBase",
+			"c_fp_oWANF_1_Battle",
+			"c_fp_oWANF_2_Battle",
+			"c_fp_oWANF_3_DefendBase",
+			"c_fp_betterLeftBuried_1_Battle",
+			"c_fp_betterLeftBuried_2_CaptureBase"
 		],
 		"ReplaceInItemCollections": {
 			"Weapon_Inferno_Inferno2_0-STOCK": {

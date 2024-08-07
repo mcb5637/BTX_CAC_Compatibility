@@ -51,7 +51,7 @@
 	"BonusValueB": "",
 	"ComponentType": "Weapon",
 	"ComponentSubType": "Weapon",
-	"PrefabIdentifier": "AC20",
+	"PrefabIdentifier": "srm2",
 	"InventorySize": 1,
 	"Tonnage": 0,
 	"AllowedLocations": "All",
