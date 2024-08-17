@@ -27,11 +27,9 @@
 			"Action": "ObjectMerge",
 			"Value": {
 				"Custom": {
-					"Flags": {
-						"flags": [
-							"invalid"
-						]
-					}
+					"Flags": [
+						"invalid"
+					]
 				}
 			}
 		}
