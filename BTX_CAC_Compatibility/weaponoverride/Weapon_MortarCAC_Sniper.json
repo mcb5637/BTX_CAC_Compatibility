@@ -56,7 +56,7 @@
 	"BonusValueB": "75m AoE Range",
 	"ComponentType": "Weapon",
 	"ComponentSubType": "Weapon",
-	"PrefabIdentifier": "AC20",
+	"PrefabIdentifier": "artillery",
 	"InventorySize": 6,
 	"Tonnage": 14,
 	"AllowedLocations": "All",
