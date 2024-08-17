@@ -1,0 +1,14 @@
+{
+	"Settings": [
+		{
+			"Tag": "JumpJet",
+			"Default": "Legs, Torso",
+			"UnitTypes": [
+				{
+					"UnitType": "Quad",
+					"Location": "Arms, Legs, Torso"
+				}
+			]
+		}
+	]
+}

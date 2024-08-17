@@ -1,285 +1,286 @@
 {
-  "Description": {
-    "Cost": 26000000,
-    "Rarity": 4,
-    "Purchasable": true,
-    "Manufacturer": null,
-    "Model": null,
-    "UIName": "Goliath",
-    "Id": "chassisdef_goliath_GOL-3M",
-    "Name": "Goliath",
-    "Details": "The 3M is a 3047 upgrade of the Goliath that uses Star League technology. The 'Mech has had an Hermes 320 XL Engine installed to reduce the engine's weight by half. The 'Mech retains the LRM launchers and Machine Guns of the 1H model. The 'Mech replaces the PPC with a Zeus Slingshot Gauss Rifle which gives the Goliath devastating long-range firepower. The 'Mech still suffers from its close combat deficiencies but with its updated arsenal most 'Mechs are hard pressed to close to short range.",
-    "Icon": "uixTxrIcon_goliath"
-  },
-  "VariantName": "GOL-3M",
-  "ChassisTags": {
-    "items": [
-      "mech_case_left",
-      "mech_quirk_multitrac",
-      "mech_quirk_notorsotwist",
-      "mech_quirk_exposedactuators",
-	  "CAC_C_LoadActuators",
-	  "CAC_C_LoadActuators_No_LeftArmLower",
-	  "CAC_C_LoadActuators_No_RightArmLower"
-    ],
-    "tagSetSourceFile": ""
-  },
-  "CustomParts": {
-    "Unaffected": {
-      "DesignMasks": "false",
-      "Pathing": "false",
-      "Fire": "false",
-      "Landmines": "false"
-    },
-    "ArmsCountedAsLegs": true,
-    "CustomParts": []
-  },
-  "StockRole": "Heavy Cavalry",
-  "YangsThoughts": "The Goliath suffers from low damage output compared to other assault mechs, but thanks to its 4 legs it is a lot more stable.",
-  "MovementCapDefID": "movedef_zeus_ZEU-6S",
-  "PathingCapDefID": "pathingdef_assault",
-  "HardpointDataDefID": "hardpointdatadef_cugoliath",
-  "PrefabIdentifier": "chrprfmech_goliath",
-  "PrefabBase": "cugoliath",
-  "Tonnage": 80,
-  "InitialTonnage": 27.0,
-  "weightClass": "ASSAULT",
-  "BattleValue": 6778200,
-  "Heatsinks": 0,
-  "TopSpeed": 105,
-  "TurnRadius": 90,
-  "MaxJumpjets": 0,
-  "Stability": 300,
-  "StabilityDefenses": [
-    0,
-    0,
-    0,
-    0,
-    0,
-    0
-  ],
-  "SpotterDistanceMultiplier": 1,
-  "VisibilityMultiplier": 1,
-  "SensorRangeMultiplier": 1,
-  "Signature": 0,
-  "Radius": 8,
-  "PunchesWithLeftArm": true,
-  "MeleeDamage": 40,
-  "MeleeInstability": 20,
-  "MeleeToHitModifier": 0,
-  "DFADamage": 80,
-  "DFAToHitModifier": 0,
-  "DFASelfDamage": 80,
-  "DFAInstability": 40,
-  "MechPartMax": 0,
-  "MechPartCount": 0,
-  "EngageRangeModifier": 0,
-  "AlwaysPunchIfPossible": false,
-  "Locations": [
-    {
-      "Location": "Head",
-      "Hardpoints": [],
-      "Tonnage": 0,
-      "InventorySlots": 1,
-      "MaxArmor": 45,
-      "MaxRearArmor": -1,
-      "InternalStructure": 16
-    },
-    {
-      "Location": "LeftArm",
-      "Hardpoints": [],
-      "Tonnage": 0,
-      "InventorySlots": 8,
-      "MaxArmor": 170,
-      "MaxRearArmor": -1,
-      "InternalStructure": 85
-    },
-    {
-      "Location": "LeftTorso",
-      "Hardpoints": [
-        {
-          "Omni": false,
-          "WeaponMountID": "Missile"
-        },
-        {
-          "Omni": false,
-          "WeaponMountID": "Missile"
-        },
-        {
-          "Omni": false,
-          "WeaponMountID": "AntiPersonnel"
-        }
-      ],
-      "Tonnage": 0,
-      "InventorySlots": 10,
-      "MaxArmor": 170,
-      "MaxRearArmor": 85,
-      "InternalStructure": 85
-    },
-    {
-      "Location": "CenterTorso",
-      "Hardpoints": [
-        {
-          "Omni": false,
-          "WeaponMountID": "AntiPersonnel"
-        }
-      ],
-      "Tonnage": 0,
-      "InventorySlots": 4,
-      "MaxArmor": 250,
-      "MaxRearArmor": 125,
-      "InternalStructure": 125
-    },
-    {
-      "Location": "RightTorso",
-      "Hardpoints": [
-        {
-          "Omni": false,
-          "WeaponMountID": "Ballistic"
-        },
-        {
-          "Omni": false,
-          "WeaponMountID": "Ballistic"
-        },
-        {
-          "Omni": false,
-          "WeaponMountID": "Missile"
-        },
-        {
-          "Omni": false,
-          "WeaponMountID": "Missile"
-        },
-        {
-          "Omni": false,
-          "WeaponMountID": "Energy"
-        }
-      ],
-      "Tonnage": 0,
-      "InventorySlots": 10,
-      "MaxArmor": 170,
-      "MaxRearArmor": 85,
-      "InternalStructure": 85
-    },
-    {
-      "Location": "RightArm",
-      "Hardpoints": [],
-      "Tonnage": 0,
-      "InventorySlots": 8,
-      "MaxArmor": 170,
-      "MaxRearArmor": -1,
-      "InternalStructure": 85
-    },
-    {
-      "Location": "LeftLeg",
-      "Hardpoints": [],
-      "Tonnage": 0,
-      "InventorySlots": 4,
-      "MaxArmor": 170,
-      "MaxRearArmor": -1,
-      "InternalStructure": 85
-    },
-    {
-      "Location": "RightLeg",
-      "Hardpoints": [],
-      "Tonnage": 0,
-      "InventorySlots": 4,
-      "MaxArmor": 170,
-      "MaxRearArmor": -1,
-      "InternalStructure": 85
-    }
-  ],
-  "LOSSourcePositions": [
-    {
-      "x": 0,
-      "y": 14,
-      "z": 0
-    },
-    {
-      "x": 4,
-      "y": 15,
-      "z": -1
-    },
-    {
-      "x": -4,
-      "y": 15,
-      "z": -1
-    }
-  ],
-  "LOSTargetPositions": [
-    {
-      "x": 0,
-      "y": 14,
-      "z": 0
-    },
-    {
-      "x": 4,
-      "y": 15,
-      "z": -1
-    },
-    {
-      "x": -4,
-      "y": 15,
-      "z": -1
-    },
-    {
-      "x": 3.5,
-      "y": 5.5,
-      "z": 1
-    },
-    {
-      "x": -3.5,
-      "y": 5.5,
-      "z": 1
-    }
-  ],
-  "FixedEquipment": [
-    {
-      "MountedLocation": "LeftTorso",
-      "ComponentDefID": "Gear_XL_Engine",
-      "SimGameUID": "",
-      "ComponentDefType": "Upgrade",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "GUID": null,
-      "DamageLevel": "Functional",
-      "prefabName": null,
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightTorso",
-      "ComponentDefID": "Gear_XL_Engine",
-      "SimGameUID": "",
-      "ComponentDefType": "Upgrade",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "GUID": null,
-      "DamageLevel": "Functional",
-      "prefabName": null,
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightArm",
-      "ComponentDefID": "Gear_Quad_Actuators",
-      "SimGameUID": "",
-      "ComponentDefType": "Upgrade",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "GUID": null,
-      "DamageLevel": "Functional",
-      "prefabName": null,
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "LeftArm",
-      "ComponentDefID": "Gear_Quad_Actuators",
-      "SimGameUID": "",
-      "ComponentDefType": "Upgrade",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "GUID": null,
-      "DamageLevel": "Functional",
-      "prefabName": null,
-      "hasPrefabName": false
-    }
-  ]
+	"Description": {
+		"Cost": 26000000,
+		"Rarity": 4,
+		"Purchasable": true,
+		"Manufacturer": null,
+		"Model": null,
+		"UIName": "Goliath",
+		"Id": "chassisdef_goliath_GOL-3M",
+		"Name": "Goliath",
+		"Details": "The 3M is a 3047 upgrade of the Goliath that uses Star League technology. The 'Mech has had an Hermes 320 XL Engine installed to reduce the engine's weight by half. The 'Mech retains the LRM launchers and Machine Guns of the 1H model. The 'Mech replaces the PPC with a Zeus Slingshot Gauss Rifle which gives the Goliath devastating long-range firepower. The 'Mech still suffers from its close combat deficiencies but with its updated arsenal most 'Mechs are hard pressed to close to short range.",
+		"Icon": "uixTxrIcon_goliath"
+	},
+	"VariantName": "GOL-3M",
+	"ChassisTags": {
+		"items": [
+			"mech_case_left",
+			"mech_quirk_multitrac",
+			"mech_quirk_notorsotwist",
+			"mech_quirk_exposedactuators",
+			"unit_Quad",
+			"CAC_C_LoadActuators",
+			"CAC_C_LoadActuators_No_LeftArmLower",
+			"CAC_C_LoadActuators_No_RightArmLower"
+		],
+		"tagSetSourceFile": ""
+	},
+	"CustomParts": {
+		"Unaffected": {
+			"DesignMasks": "false",
+			"Pathing": "false",
+			"Fire": "false",
+			"Landmines": "false"
+		},
+		"ArmsCountedAsLegs": true,
+		"CustomParts": []
+	},
+	"StockRole": "Heavy Cavalry",
+	"YangsThoughts": "The Goliath suffers from low damage output compared to other assault mechs, but thanks to its 4 legs it is a lot more stable.",
+	"MovementCapDefID": "movedef_zeus_ZEU-6S",
+	"PathingCapDefID": "pathingdef_assault",
+	"HardpointDataDefID": "hardpointdatadef_cugoliath",
+	"PrefabIdentifier": "chrprfmech_goliath",
+	"PrefabBase": "cugoliath",
+	"Tonnage": 80,
+	"InitialTonnage": 27.0,
+	"weightClass": "ASSAULT",
+	"BattleValue": 6778200,
+	"Heatsinks": 0,
+	"TopSpeed": 105,
+	"TurnRadius": 90,
+	"MaxJumpjets": 0,
+	"Stability": 300,
+	"StabilityDefenses": [
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	],
+	"SpotterDistanceMultiplier": 1,
+	"VisibilityMultiplier": 1,
+	"SensorRangeMultiplier": 1,
+	"Signature": 0,
+	"Radius": 8,
+	"PunchesWithLeftArm": true,
+	"MeleeDamage": 40,
+	"MeleeInstability": 20,
+	"MeleeToHitModifier": 0,
+	"DFADamage": 80,
+	"DFAToHitModifier": 0,
+	"DFASelfDamage": 80,
+	"DFAInstability": 40,
+	"MechPartMax": 0,
+	"MechPartCount": 0,
+	"EngageRangeModifier": 0,
+	"AlwaysPunchIfPossible": false,
+	"Locations": [
+		{
+			"Location": "Head",
+			"Hardpoints": [],
+			"Tonnage": 0,
+			"InventorySlots": 1,
+			"MaxArmor": 45,
+			"MaxRearArmor": -1,
+			"InternalStructure": 16
+		},
+		{
+			"Location": "LeftArm",
+			"Hardpoints": [],
+			"Tonnage": 0,
+			"InventorySlots": 8,
+			"MaxArmor": 170,
+			"MaxRearArmor": -1,
+			"InternalStructure": 85
+		},
+		{
+			"Location": "LeftTorso",
+			"Hardpoints": [
+				{
+					"Omni": false,
+					"WeaponMountID": "Missile"
+				},
+				{
+					"Omni": false,
+					"WeaponMountID": "Missile"
+				},
+				{
+					"Omni": false,
+					"WeaponMountID": "AntiPersonnel"
+				}
+			],
+			"Tonnage": 0,
+			"InventorySlots": 10,
+			"MaxArmor": 170,
+			"MaxRearArmor": 85,
+			"InternalStructure": 85
+		},
+		{
+			"Location": "CenterTorso",
+			"Hardpoints": [
+				{
+					"Omni": false,
+					"WeaponMountID": "AntiPersonnel"
+				}
+			],
+			"Tonnage": 0,
+			"InventorySlots": 4,
+			"MaxArmor": 250,
+			"MaxRearArmor": 125,
+			"InternalStructure": 125
+		},
+		{
+			"Location": "RightTorso",
+			"Hardpoints": [
+				{
+					"Omni": false,
+					"WeaponMountID": "Ballistic"
+				},
+				{
+					"Omni": false,
+					"WeaponMountID": "Ballistic"
+				},
+				{
+					"Omni": false,
+					"WeaponMountID": "Missile"
+				},
+				{
+					"Omni": false,
+					"WeaponMountID": "Missile"
+				},
+				{
+					"Omni": false,
+					"WeaponMountID": "Energy"
+				}
+			],
+			"Tonnage": 0,
+			"InventorySlots": 10,
+			"MaxArmor": 170,
+			"MaxRearArmor": 85,
+			"InternalStructure": 85
+		},
+		{
+			"Location": "RightArm",
+			"Hardpoints": [],
+			"Tonnage": 0,
+			"InventorySlots": 8,
+			"MaxArmor": 170,
+			"MaxRearArmor": -1,
+			"InternalStructure": 85
+		},
+		{
+			"Location": "LeftLeg",
+			"Hardpoints": [],
+			"Tonnage": 0,
+			"InventorySlots": 4,
+			"MaxArmor": 170,
+			"MaxRearArmor": -1,
+			"InternalStructure": 85
+		},
+		{
+			"Location": "RightLeg",
+			"Hardpoints": [],
+			"Tonnage": 0,
+			"InventorySlots": 4,
+			"MaxArmor": 170,
+			"MaxRearArmor": -1,
+			"InternalStructure": 85
+		}
+	],
+	"LOSSourcePositions": [
+		{
+			"x": 0,
+			"y": 14,
+			"z": 0
+		},
+		{
+			"x": 4,
+			"y": 15,
+			"z": -1
+		},
+		{
+			"x": -4,
+			"y": 15,
+			"z": -1
+		}
+	],
+	"LOSTargetPositions": [
+		{
+			"x": 0,
+			"y": 14,
+			"z": 0
+		},
+		{
+			"x": 4,
+			"y": 15,
+			"z": -1
+		},
+		{
+			"x": -4,
+			"y": 15,
+			"z": -1
+		},
+		{
+			"x": 3.5,
+			"y": 5.5,
+			"z": 1
+		},
+		{
+			"x": -3.5,
+			"y": 5.5,
+			"z": 1
+		}
+	],
+	"FixedEquipment": [
+		{
+			"MountedLocation": "LeftTorso",
+			"ComponentDefID": "Gear_XL_Engine",
+			"SimGameUID": "",
+			"ComponentDefType": "Upgrade",
+			"HardpointSlot": -1,
+			"IsFixed": true,
+			"GUID": null,
+			"DamageLevel": "Functional",
+			"prefabName": null,
+			"hasPrefabName": false
+		},
+		{
+			"MountedLocation": "RightTorso",
+			"ComponentDefID": "Gear_XL_Engine",
+			"SimGameUID": "",
+			"ComponentDefType": "Upgrade",
+			"HardpointSlot": -1,
+			"IsFixed": true,
+			"GUID": null,
+			"DamageLevel": "Functional",
+			"prefabName": null,
+			"hasPrefabName": false
+		},
+		{
+			"MountedLocation": "RightArm",
+			"ComponentDefID": "Gear_Quad_Actuators",
+			"SimGameUID": "",
+			"ComponentDefType": "Upgrade",
+			"HardpointSlot": -1,
+			"IsFixed": true,
+			"GUID": null,
+			"DamageLevel": "Functional",
+			"prefabName": null,
+			"hasPrefabName": false
+		},
+		{
+			"MountedLocation": "LeftArm",
+			"ComponentDefID": "Gear_Quad_Actuators",
+			"SimGameUID": "",
+			"ComponentDefType": "Upgrade",
+			"HardpointSlot": -1,
+			"IsFixed": true,
+			"GUID": null,
+			"DamageLevel": "Functional",
+			"prefabName": null,
+			"hasPrefabName": false
+		}
+	]
 }

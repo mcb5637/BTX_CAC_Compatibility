@@ -541,6 +541,11 @@
 			"Path": "jumpjets"
 		},
 		{
+			"Type": "JumpJetDef",
+			"Path": "jumpjet_merge",
+			"ShouldMergeJSON": true
+		},
+		{
 			"Type": "UpgradeDef",
 			"Path": "upgradesNew"
 		},
@@ -613,6 +618,14 @@
 		{
 			"Type": "CCDefaults",
 			"Path": "cc_defaults"
+		},
+		{
+			"Type": "CCUnitTypes",
+			"Path": "cc_unittypes"
+		},
+		{
+			"Type": "CCCEquipLocationTag",
+			"Path": "cc_equiplocationtags"
 		},
 		{
 			"Type": "CombatGameConstants",

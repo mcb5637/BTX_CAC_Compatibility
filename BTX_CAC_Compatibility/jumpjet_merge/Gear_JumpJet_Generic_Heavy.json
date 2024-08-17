@@ -1,0 +1,9 @@
+{
+	"Custom": {
+		"AllowedLocations": {
+			"Tag": "JumpJet"
+		}
+	},
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All"
+}

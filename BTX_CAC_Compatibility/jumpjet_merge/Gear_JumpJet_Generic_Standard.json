@@ -1,0 +1,9 @@
+{
+	"Custom": {
+		"AllowedLocations": {
+			"Tag": "JumpJet"
+		}
+	},
+	"AllowedLocations": "Arms, Legs, Torso",
+	"DisallowedLocations": "Head"
+}
