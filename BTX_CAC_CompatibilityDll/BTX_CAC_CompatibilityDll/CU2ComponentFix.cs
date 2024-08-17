@@ -31,15 +31,16 @@ namespace BTX_CAC_CompatibilityDll
                 Assembly a = AccessExtensionPatcher.GetLoadedAssemblyByName("Extended_CE");
                 // contract completecontract not needed to patch?
                 Type mechcomp_dmg = a.GetType("Extended_CE.BTComponents+MechComponent_DamageComponent");
-                h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "Transpiler_DamageComponent")));
-                h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "Transpiler_DamageComponentPre")));
+                h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_DamageComponent))));
+                h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_DamageComponentPre))));
                 // mech checkforcrit not needed to patch?
                 // mech getcomponentinslot not needed to patch?
                 Type Mech_initstats = a.GetType("Extended_CE.BTComponents+Mech_InitStats");
-                h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "Transpiler_MechInitStats")));
-                h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "Transpiler_MechInitStats")));
+                h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_MechInitStats))));
+                h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_MechInitStats))));
                 // mech update min stability not needed to patch?
                 // weapon init stats only melee, so vehicles should be safe
+                FixMech_InitStats_PatchOrder(h);
             }
             catch (Exception e)
             {
@@ -51,7 +52,7 @@ namespace BTX_CAC_CompatibilityDll
         {
             return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
             {
-                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), "UsingComponents")),
+                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), nameof(UsingComponents))),
             }, (prev) =>
             {
                 CodeInstruction ins = prev.First.Value;
@@ -61,7 +62,7 @@ namespace BTX_CAC_CompatibilityDll
                 return new CodeInstruction[]
                 {
                     ins,
-                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "UsingComponents")),
+                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(UsingComponents))),
                 };
             });
         }
@@ -69,7 +70,7 @@ namespace BTX_CAC_CompatibilityDll
         {
             return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
             {
-                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), "UsingComponents")),
+                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), nameof(UsingComponents))),
             }, (prev) =>
             {
                 CodeInstruction ins = prev.First.Value;
@@ -79,7 +80,7 @@ namespace BTX_CAC_CompatibilityDll
                 return new CodeInstruction[]
                 {
                     ins,
-                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "UsingComponents")),
+                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(UsingComponents))),
                 };
             });
         }
@@ -87,7 +88,7 @@ namespace BTX_CAC_CompatibilityDll
         {
             return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
             {
-                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), "UsingComponents")),
+                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), nameof(UsingComponents))),
             }, (prev) =>
             {
                 CodeInstruction ins = prev.First.Value;
@@ -99,9 +100,30 @@ namespace BTX_CAC_CompatibilityDll
                     ins,
                     new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(MechComponent), "parent")),
                     new CodeInstruction(OpCodes.Isinst, typeof(Mech)),
-                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), "UsingComponents")),
+                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(UsingComponents))),
                 };
             });
+        }
+
+        private static void FixMech_InitStats_PatchOrder(Harmony h)
+        {
+            MethodInfo target = AccessTools.Method(typeof(Mech), "InitStats");
+            Patches patches = Harmony.GetPatchInfo(target);
+            List<Patch> needsReplacement = new List<Patch>();
+            foreach (Patch patch in patches.Prefixes)
+            {
+                if (patch.owner == "BEX.BattleTech.Extended_CE" || patch.owner == "BEX.BattleTech.MechQuirks")
+                    needsReplacement.Add(patch);
+            }
+            foreach (Patch patch in needsReplacement)
+            {
+                var p = new HarmonyMethod(patch.PatchMethod)
+                {
+                    before = new string[] { "io.mission.customdeploy" }
+                };
+                h.Unpatch(target, patch.PatchMethod);
+                h.Patch(target, p);
+            }
         }
     }
 }

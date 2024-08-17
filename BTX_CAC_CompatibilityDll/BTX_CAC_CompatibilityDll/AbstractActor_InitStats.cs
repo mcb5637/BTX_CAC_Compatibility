@@ -10,7 +10,7 @@ namespace BTX_CAC_CompatibilityDll
     class AbstractActor_InitStats
     {
         [HarmonyPatch(typeof(Mech), "InitStats")]
-        [HarmonyBefore("BEX.BattleTech.Extended_CE")]
+        [HarmonyBefore("BEX.BattleTech.Extended_CE", "io.mission.customdeploy")]
         [HarmonyPatch(typeof(Vehicle), "InitStats")]
         [HarmonyPatch(typeof(Turret), "InitStats")]
         public static void Prefix(AbstractActor __instance)

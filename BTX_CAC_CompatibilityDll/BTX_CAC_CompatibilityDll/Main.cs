@@ -44,7 +44,6 @@ namespace BTX_CAC_CompatibilityDll
             Harmony harmony = new Harmony("com.github.mcb5637.BTX_CAC_Compatibility");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             AccessExtensionPatcher.PatchAll(harmony, Assembly.GetExecutingAssembly());
-            AbstractActor_IndirectImmune.Patch(harmony);
             CU2ComponentFix.Patch(harmony);
             if (Sett.FixDropslotsInOldSaves)
                 SimGameState_InitStats.Patch(harmony);
