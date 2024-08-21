@@ -107,6 +107,7 @@
     <Compile Include="CCLoader.cs" />
     <Compile Include="MeleeSprint.cs" />
     <Compile Include="SimGameState_InitStats.cs" />
+    <Compile Include="MovableBlockers.cs" />
     <Compile Include="TonnageCalculation.cs" />
     <Compile Include="WeaponHit_RemoveInfernoFloatie.cs" />
     <Compile Include="AEPStatic.cs" />

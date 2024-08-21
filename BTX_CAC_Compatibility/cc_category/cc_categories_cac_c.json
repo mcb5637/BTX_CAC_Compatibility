@@ -1,0 +1,39 @@
+{
+	"Settings": [
+		{
+			"Name": "BombBay",
+			"AllowMinOverflow": false,
+			"BaseLimits": [
+				{
+					"Location": "All",
+					"Min": 0,
+					"Max": 0
+				}
+			]
+		},
+		{
+			"Name": "EndoStructureBlocker",
+			"AllowMinOverflow": true,
+			"AddCategoryToDescription": false,
+			"BaseLimits": [
+				{
+					"Location": "All",
+					"Min": 0,
+					"Max": 0
+				}
+			]
+		},
+		{
+			"Name": "FerroStructureBlocker",
+			"AllowMinOverflow": true,
+			"AddCategoryToDescription": false,
+			"BaseLimits": [
+				{
+					"Location": "All",
+					"Min": 0,
+					"Max": 0
+				}
+			]
+		}
+	]
+}

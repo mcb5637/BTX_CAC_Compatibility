@@ -47,5 +47,12 @@ namespace BTX_CAC_CompatibilityDll
         {
             return null;
         }
+
+        [FieldSet(typeof(MechDef), "inventory")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void SetInvNoCheck(this MechDef d, MechComponentRef[] i)
+        {
+
+        }
     }
 }
