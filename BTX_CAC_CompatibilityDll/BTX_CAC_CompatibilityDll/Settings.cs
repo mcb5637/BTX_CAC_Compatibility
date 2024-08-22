@@ -14,6 +14,7 @@ namespace BTX_CAC_CompatibilityDll
         public Dictionary<string, WeaponAddonSplit> SplitAddons = new Dictionary<string, WeaponAddonSplit>();
         public bool MECompat = false;
         public bool FixDropslotsInOldSaves = true;
+        public bool LogBlockerErrors = false;
     }
 
     class ItemCollectionReplace
