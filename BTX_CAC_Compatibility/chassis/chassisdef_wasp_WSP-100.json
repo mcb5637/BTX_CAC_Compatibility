@@ -279,7 +279,8 @@
   "ChassisTags": {
     "items": [
       "mech_quirk_nonstandardparts",
-      "mech_quirk_nimblejumper"
+      "mech_quirk_nimblejumper",
+      "LandAirMech"
     ],
     "tagSetSourceFile": ""
   },

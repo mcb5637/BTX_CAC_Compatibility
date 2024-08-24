@@ -236,7 +236,8 @@
     "items": [
       "chassis_DHS",
       "mech_quirk_nonstandardparts",
-      "mech_quirk_nimblejumper"
+      "mech_quirk_nimblejumper",
+      "LandAirMech"
     ],
     "tagSetSourceFile": ""
   },

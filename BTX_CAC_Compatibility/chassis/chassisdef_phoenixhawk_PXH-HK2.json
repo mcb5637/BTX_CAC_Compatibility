@@ -232,7 +232,8 @@
     "items": [
       "mr-resize-0.92",
       "mech_quirk_nonstandardparts",
-      "mech_quirk_nimblejumper"
+      "mech_quirk_nimblejumper",
+      "LandAirMech"
     ],
     "tagSetSourceFile": ""
   },

@@ -206,7 +206,9 @@
   "ChassisTags": {
     "items": [
       "mech_quirk_reinforcedlegs",
-      "mech_quirk_stable"
+      "mech_quirk_stable",
+      "CAC_C_LoadActuators",
+      "CAC_C_LoadActuators_No_RightArmLower"
     ],
     "tagSetSourceFile": ""
   },

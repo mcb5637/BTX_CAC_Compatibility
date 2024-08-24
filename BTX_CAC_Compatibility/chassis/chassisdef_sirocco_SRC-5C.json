@@ -229,7 +229,11 @@
       "mech_case_left",
       "mech_case_right",
       "mech_quirk_directionaltorsomount",
-      "mech_quirk_difficulttomaintain"
+      "mech_quirk_difficulttomaintain",
+      "QuadMech",
+      "CAC_C_LoadActuators",
+      "CAC_C_LoadActuators_No_LeftArmLower",
+      "CAC_C_LoadActuators_No_RightArmLower"
     ],
     "tagSetSourceFile": ""
   },
