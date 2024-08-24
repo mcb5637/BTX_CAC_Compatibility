@@ -8,20 +8,14 @@ using System.Threading.Tasks;
 
 namespace BTX_CAC_CompatibilityDll
 {
+    [HarmonyPatch]
     class AbstractActor_IndirectImmune
     {
+        [HarmonyPatch(typeof(AbstractActor), nameof(AbstractActor.HasIndirectFireImmunity), MethodType.Getter)]
         public static void Postfix(AbstractActor __instance, ref bool __result)
         {
             if (__instance.StatCollection.GetValue<float>("IndirectImmuneFloat") > 0)
                 __result = true;
-        }
-
-        public static void Patch(Harmony h)
-        {
-            HarmonyMethod p = new HarmonyMethod(AccessTools.Method(typeof(AbstractActor_IndirectImmune), "Postfix"));
-            h.Patch(AccessTools.Property(typeof(Mech), "HasIndirectFireImmunity").GetMethod, null, p, null);
-            h.Patch(AccessTools.Property(typeof(Vehicle), "HasIndirectFireImmunity").GetMethod, null, p, null);
-            h.Patch(AccessTools.Property(typeof(Turret), "HasIndirectFireImmunity").GetMethod, null, p, null);
         }
     }
 }

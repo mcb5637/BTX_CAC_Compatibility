@@ -207,7 +207,11 @@
       "mech_quirk_badreputation",
       "mech_quirk_hardtopilot",
       "mech_quirk_notorsotwist",
-      "mech_quirk_largeengine"
+      "mech_quirk_largeengine",
+			"unit_Quad",
+			"CAC_C_LoadActuators",
+			"CAC_C_LoadActuators_No_LeftArmLower",
+			"CAC_C_LoadActuators_No_RightArmLower"
     ],
     "tagSetSourceFile": ""
   },

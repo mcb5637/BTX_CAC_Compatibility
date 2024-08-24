@@ -105,14 +105,15 @@
     <Compile Include="Decay.cs" />
     <Compile Include="MechDef_FromJson.cs" />
     <Compile Include="CCLoader.cs" />
+    <Compile Include="MeleeSprint.cs" />
     <Compile Include="SimGameState_InitStats.cs" />
+    <Compile Include="MovableBlockers.cs" />
     <Compile Include="TonnageCalculation.cs" />
     <Compile Include="WeaponHit_RemoveInfernoFloatie.cs" />
     <Compile Include="AEPStatic.cs" />
     <Compile Include="ChassisDef_FixQuirks.cs" />
     <Compile Include="ContractOverride_FixMaxPlayers.cs" />
     <Compile Include="CU2ComponentFix.cs" />
-    <Compile Include="CUNullrefFix.cs" />
     <Compile Include="DoubleCritFix.cs" />
     <Compile Include="Effect_TickOntargetMovementFix.cs" />
     <Compile Include="InfernoExplode.cs" />

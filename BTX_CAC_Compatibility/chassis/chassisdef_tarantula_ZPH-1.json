@@ -193,7 +193,11 @@
       "chassis_DHS",
       "mech_quirk_easytopilot",
       "mech_quirk_extendedtorsotwistquad",
-      "mech_quirk_exposedactuators"
+      "mech_quirk_exposedactuators",
+	  "unit_Quad",
+	  "CAC_C_LoadActuators",
+	  "CAC_C_LoadActuators_No_LeftArmLower",
+	  "CAC_C_LoadActuators_No_RightArmLower"
     ],
     "tagSetSourceFile": ""
   },

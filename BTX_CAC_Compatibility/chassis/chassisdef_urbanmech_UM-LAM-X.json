@@ -252,7 +252,13 @@
       "mech_quirk_prototype",
       "mech_quirk_nimblejumper",
       "mech_quirk_narrowlowprofile",
-      "mech_quirk_nominimalarms"
+      "mech_quirk_nominimalarms",
+      "LandAirMech",
+      "mech_quirk_narrowlowprofile",
+      "mech_quirk_nominimalarms",
+	  "CAC_C_LoadActuators",
+	  "CAC_C_LoadActuators_No_LeftArmLower",
+	  "CAC_C_LoadActuators_No_RightArmLower"
     ],
     "tagSetSourceFile": ""
   },

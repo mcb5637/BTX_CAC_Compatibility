@@ -48,7 +48,14 @@
 		"HidePassiveAbilitiesIcon": "ram",
 		"overallDeploySize": 4,
 		"CountContractMaxUnits4AsUnlimited": false,
+		"ConvoyMaxDistFromOther": 200,
+		"ConvoyMaxDistFromPlayer": 300,
 		"ConvoyMaxDistFromRoute": 90,
+		"ConvoyRouteBeaconVFXScale": {
+			"x": 1,
+			"y": 1,
+			"z": 1
+		},
 		"DeployManual": true,
 		"IntelShowMiniMap": true,
 		"IntelShowMood": true,
@@ -77,11 +84,6 @@
 		"BaysCountExternalControl": true,
 		"baysWidgetsCount": 6,
 		"AllowVehiclesEdit": false,
-		"ConvoyRouteBeaconVFXScale": {
-			"x": 1,
-			"y": 1,
-			"z": 1
-		},
 		"WeaponPrefabMappings": [
 			{
 				"PrefabIdentifier": "AC2",

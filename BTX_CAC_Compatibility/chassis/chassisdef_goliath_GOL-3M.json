@@ -219,7 +219,11 @@
       "mech_case_left",
       "mech_quirk_multitrac",
       "mech_quirk_notorsotwist",
-      "mech_quirk_exposedactuators"
+      "mech_quirk_exposedactuators",
+			"unit_Quad",
+			"CAC_C_LoadActuators",
+			"CAC_C_LoadActuators_No_LeftArmLower",
+			"CAC_C_LoadActuators_No_RightArmLower"
     ],
     "tagSetSourceFile": ""
   },

@@ -216,7 +216,10 @@
       "chassis_DHS",
       "mech_case_left",
       "mech_quirk_reinforcedlegs",
-      "mech_quirk_stable"
+      "mech_quirk_stable",
+	  "CAC_C_LoadActuators",
+	  "CAC_C_LoadActuators_No_LeftHand",
+	  "CAC_C_LoadActuators_No_RightArmLower"
     ],
     "tagSetSourceFile": ""
   },
