@@ -210,4 +210,17 @@ namespace BTX_CAC_CompatibilityDll
             }
         }
     }
+    [HarmonyPatch(typeof(SimGameState), "CreateComponentInstallWorkOrder")]
+    [HarmonyAfter("io.github.denadan.CustomComponents")]
+    public class SimGameState_CreateComponentInstallWorkOrder
+    {
+        public static void Postfix(MechComponentRef mechComponent, WorkOrderEntry_InstallComponent __result)
+        {
+            if (mechComponent.Def.ComponentTags.Contains("no_remove"))
+            {
+                __result.SetCost(1);
+                __result.SetCBillCost(0);
+            }
+        }
+    }
 }

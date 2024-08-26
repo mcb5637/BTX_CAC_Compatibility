@@ -4,6 +4,6 @@
 			"Tag": "JumpJet"
 		}
 	},
-	"AllowedLocations": "All",
+	"AllowedLocations": "Arms, Legs, Torso",
 	"DisallowedLocations": "All"
 }

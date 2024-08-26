@@ -105,6 +105,7 @@ namespace BTX_CAC_CompatibilityDll
                     {
                         Type t = a.GetType("Quirks.Tooltips.QuirkToolTips");
                         harmony.Patch(t.GetMethod("DetailMechQuirks", BindingFlags.Static | BindingFlags.NonPublic), null, new HarmonyMethod(typeof(QuirkToolTips_DetailMechQuirks), "Postfix"), null);
+                        harmony.Patch(t.GetMethod("DetailMechQuirksBuild", BindingFlags.Static | BindingFlags.NonPublic), null, new HarmonyMethod(typeof(QuirkToolTips_DetailMechQuirksBuild), "Postfix"), null);
                     }
                 }
                 //harmony.Patch(AccessTools.GetDeclaredConstructors(typeof(IndexOutOfRangeException)).Single((x)=>x.GetParameters().Length==0), null, new HarmonyMethod(typeof(Main), "ExCtorLog"));

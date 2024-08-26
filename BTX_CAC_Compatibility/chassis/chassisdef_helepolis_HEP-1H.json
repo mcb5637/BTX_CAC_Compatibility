@@ -17,7 +17,7 @@
   "PrefabIdentifier": "chrprfmech_helepolisbase-001",
   "PrefabBase": "helepolis",
   "Tonnage": 75,
-  "InitialTonnage": 34.31,
+  "InitialTonnage": 21.5,
   "weightClass": "HEAVY",
   "BattleValue": 7124000,
   "Heatsinks": 0,
@@ -207,6 +207,7 @@
     "items": [
       "mech_quirk_reinforcedlegs",
       "mech_quirk_stable",
+	  "chassis_primitive_armor",
       "CAC_C_LoadActuators",
       "CAC_C_LoadActuators_No_RightArmLower"
     ],

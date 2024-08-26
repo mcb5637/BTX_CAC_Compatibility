@@ -54,5 +54,11 @@ namespace BTX_CAC_CompatibilityDll
         {
 
         }
+        [FieldSet(typeof(WorkOrderEntry_MechLab), "CBillCost")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void SetCBillCost(this WorkOrderEntry_MechLab d, int i)
+        {
+
+        }
     }
 }

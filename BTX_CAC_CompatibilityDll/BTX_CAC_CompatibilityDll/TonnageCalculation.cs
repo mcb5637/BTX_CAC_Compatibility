@@ -22,6 +22,10 @@ namespace BTX_CAC_CompatibilityDll
                 else
                     kgperpoint = 896;
             }
+            else if (c.ChassisTags.Contains("chassis_primitive_armor"))
+            {
+                kgperpoint = 534;
+            }
             else
             {
                 kgperpoint = 800;

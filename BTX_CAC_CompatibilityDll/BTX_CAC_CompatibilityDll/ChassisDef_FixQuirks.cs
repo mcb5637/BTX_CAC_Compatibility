@@ -29,4 +29,15 @@ namespace BTX_CAC_CompatibilityDll
                 .Replace("Perform a Sensor Lock on all short range enemies, longer cooldown and shorter range than an Active Probe", "Increased sensor range");
         }
     }
+
+    class QuirkToolTips_DetailMechQuirksBuild
+    {
+        public static void Postfix(ref string __result, ChassisDef chassisDef)
+        {
+            if (chassisDef.ChassisTags.Contains("chassis_primitive_armor"))
+            {
+                __result += "<color=#e40000><b>\nPrimitive Armor: Armor weighs more than standard armor.</b></color>";
+            }
+        }
+    }
 }
