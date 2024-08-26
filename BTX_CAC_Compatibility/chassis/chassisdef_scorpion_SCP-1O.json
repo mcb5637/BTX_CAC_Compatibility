@@ -1,244 +1,240 @@
 {
-	"Description": {
-		"Cost": 5140000,
-		"Rarity": 1,
-		"Purchasable": true,
-		"Manufacturer": "",
-		"Model": "",
-		"UIName": "Scorpion",
-		"Id": "chassisdef_scorpion_SCP-1O",
-		"Name": "Scorpion",
-		"Details": "The SCP-1O, introduced in 3049, is a very basic upgrade of the design which replaces the PPC with an ER PPC. While this gives the Scorpion greater range, it also increases the heat from the ER PPC, greatly overtaxing the 10 single heat sinks.",
-		"Icon": "uixTxrIcon_scorpion"
-	},
-	"MovementCapDefID": "movedef_scorpion_SCP-1N",
-	"PathingCapDefID": "pathingdef_medium_quad",
-	"HardpointDataDefID": "hardpointdatadef_scorpionmech",
-	"PrefabIdentifier": "chrprfmech_scorpionmechbase-001",
-	"PrefabBase": "scorpionmech",
-	"CustomParts": {
-		"Unaffected": {
-			"DesignMasks": "false",
-			"Pathing": "false",
-			"Fire": "false",
-			"Landmines": "false"
-		},
-		"ArmsCountedAsLegs": true,
-		"CustomParts": []
-	},
-	"Tonnage": 55,
-	"InitialTonnage": 37,
-	"weightClass": "MEDIUM",
-	"BattleValue": 6088000,
-	"Heatsinks": 0,
-	"TopSpeed": 80,
-	"TurnRadius": 90,
-	"MaxJumpjets": 0,
-	"Stability": 130,
-	"StabilityDefenses": [
-		0,
-		0,
-		0,
-		0,
-		0,
-		0
-	],
-	"SpotterDistanceMultiplier": 1,
-	"VisibilityMultiplier": 1,
-	"SensorRangeMultiplier": 1,
-	"Signature": 0,
-	"Radius": 5,
-	"PunchesWithLeftArm": false,
-	"MeleeDamage": 30,
-	"MeleeInstability": 15,
-	"MeleeToHitModifier": 0,
-	"DFADamage": 55,
-	"DFAToHitModifier": 0,
-	"DFASelfDamage": 55,
-	"DFAInstability": 30,
-	"Locations": [
-		{
-			"Location": "Head",
-			"Hardpoints": [],
-			"Tonnage": 0,
-			"InventorySlots": 1,
-			"MaxArmor": 45,
-			"MaxRearArmor": -1,
-			"InternalStructure": 16
-		},
-		{
-			"Location": "LeftArm",
-			"Hardpoints": [],
-			"Tonnage": 0,
-			"InventorySlots": 8,
-			"MaxArmor": 130,
-			"MaxRearArmor": -1,
-			"InternalStructure": 65
-		},
-		{
-			"Location": "LeftTorso",
-			"Hardpoints": [],
-			"Tonnage": 0,
-			"InventorySlots": 10,
-			"MaxArmor": 130,
-			"MaxRearArmor": 65,
-			"InternalStructure": 65
-		},
-		{
-			"Location": "CenterTorso",
-			"Hardpoints": [],
-			"Tonnage": 0,
-			"InventorySlots": 4,
-			"MaxArmor": 180,
-			"MaxRearArmor": 90,
-			"InternalStructure": 90
-		},
-		{
-			"Location": "RightTorso",
-			"Hardpoints": [
-				{
-					"WeaponMount": "Energy",
-					"Omni": false
-				},
-				{
-					"WeaponMount": "Energy",
-					"Omni": false
-				},
-				{
-					"WeaponMount": "Energy",
-					"Omni": false
-				},
-				{
-					"WeaponMount": "Missile",
-					"Omni": false
-				},
-				{
-					"WeaponMount": "AntiPersonnel",
-					"Omni": false
-				},
-				{
-					"WeaponMount": "AntiPersonnel",
-					"Omni": false
-				}
-			],
-			"Tonnage": 0,
-			"InventorySlots": 10,
-			"MaxArmor": 130,
-			"MaxRearArmor": 65,
-			"InternalStructure": 65
-		},
-		{
-			"Location": "RightArm",
-			"Hardpoints": [],
-			"Tonnage": 0,
-			"InventorySlots": 8,
-			"MaxArmor": 130,
-			"MaxRearArmor": -1,
-			"InternalStructure": 65
-		},
-		{
-			"Location": "LeftLeg",
-			"Hardpoints": [],
-			"Tonnage": 0,
-			"InventorySlots": 4,
-			"MaxArmor": 130,
-			"MaxRearArmor": -1,
-			"InternalStructure": 65
-		},
-		{
-			"Location": "RightLeg",
-			"Hardpoints": [],
-			"Tonnage": 0,
-			"InventorySlots": 4,
-			"MaxArmor": 130,
-			"MaxRearArmor": -1,
-			"InternalStructure": 65
-		}
-	],
-	"LOSSourcePositions": [
-		{
-			"x": 0,
-			"y": 15,
-			"z": 0
-		},
-		{
-			"x": 4,
-			"y": 15,
-			"z": 0
-		},
-		{
-			"x": -4,
-			"y": 15,
-			"z": 0
-		}
-	],
-	"LOSTargetPositions": [
-		{
-			"x": 0,
-			"y": 15,
-			"z": 0
-		},
-		{
-			"x": 4,
-			"y": 15,
-			"z": 0
-		},
-		{
-			"x": -4,
-			"y": 15,
-			"z": 0
-		},
-		{
-			"x": 3,
-			"y": 5,
-			"z": 0
-		},
-		{
-			"x": -3,
-			"y": 5,
-			"z": 0
-		}
-	],
-	"VariantName": "SCP-1O",
-	"ChassisTags": {
-		"items": [
-			"mech_quirk_badreputation",
-			"mech_quirk_hardtopilot",
-			"mech_quirk_notorsotwist",
-			"mech_quirk_largeengine",
-			"unit_Quad",
-			"CAC_C_LoadActuators",
-			"CAC_C_LoadActuators_No_LeftArmLower",
-			"CAC_C_LoadActuators_No_RightArmLower"
-		],
-		"tagSetSourceFile": ""
-	},
-	"StockRole": "Fire Support",
-	"YangsThoughts": "The Scorpion carries a very basic, though dangerous, weapons payload which makes the 'Mech ideal for fire support.  It comes in reasonably fast for a 55 ton 'Mech.  The down sides?  It's hard to pilot, low armored and the engine is taking up a lot of it's capacity.",
-	"FixedEquipment": [
-		{
-			"MountedLocation": "RightArm",
-			"ComponentDefID": "Gear_Quad_Actuators",
-			"SimGameUID": "",
-			"ComponentDefType": "Upgrade",
-			"HardpointSlot": -1,
-			"IsFixed": true,
-			"GUID": null,
-			"DamageLevel": "Functional",
-			"prefabName": null,
-			"hasPrefabName": false
-		},
-		{
-			"MountedLocation": "LeftArm",
-			"ComponentDefID": "Gear_Quad_Actuators",
-			"SimGameUID": "",
-			"ComponentDefType": "Upgrade",
-			"HardpointSlot": -1,
-			"IsFixed": true,
-			"GUID": null,
-			"DamageLevel": "Functional",
-			"prefabName": null,
-			"hasPrefabName": false
-		}
-	]
+  "Description": {
+    "Cost": 5920000,
+    "Rarity": 5,
+    "Purchasable": true,
+    "Manufacturer": "",
+    "Model": "",
+    "UIName": "Scorpion",
+    "Id": "chassisdef_scorpion_SCP-1O",
+    "Name": "Scorpion",
+    "Details": "The SCP-1O, introduced in 3049, is a very basic upgrade of the design which replaces the PPC with an ER PPC. While this gives the Scorpion greater range, it also increases the heat from the ER PPC, greatly overtaxing the 10 single heat sinks.",
+    "Icon": "uixTxrIcon_scorpion"
+  },
+  "MovementCapDefID": "movedef_scorpion_SCP-1N",
+  "PathingCapDefID": "pathingdef_medium_quad",
+  "HardpointDataDefID": "hardpointdatadef_scorpionmech",
+  "PrefabIdentifier": "chrprfmech_scorpionmechbase-001",
+  "PrefabBase": "scorpionmech",
+  "Tonnage": 55,
+  "InitialTonnage": 37,
+  "weightClass": "MEDIUM",
+  "BattleValue": 6088000,
+  "Heatsinks": 10,
+  "TopSpeed": 80,
+  "TurnRadius": 90,
+  "MaxJumpjets": 0,
+  "Stability": 195,
+  "StabilityDefenses": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpotterDistanceMultiplier": 1,
+  "VisibilityMultiplier": 1,
+  "SensorRangeMultiplier": 1,
+  "Signature": 0,
+  "Radius": 5,
+  "PunchesWithLeftArm": false,
+  "MeleeDamage": 50,
+  "MeleeInstability": 55,
+  "MeleeToHitModifier": 0,
+  "DFADamage": 70,
+  "DFAToHitModifier": 0,
+  "DFASelfDamage": 70,
+  "DFAInstability": 70,
+  "CustomParts": {
+    "Unaffected": {
+      "DesignMasks": "false",
+      "Pathing": "false",
+      "Fire": "false",
+      "Landmines": "false"
+    },
+    "ArmsCountedAsLegs": true,
+    "CustomParts": []
+  },
+  "Locations": [
+    {
+      "Location": "Head",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 1,
+      "MaxArmor": 45,
+      "MaxRearArmor": -1,
+      "InternalStructure": 16
+    },
+    {
+      "Location": "LeftArm",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 130,
+      "MaxRearArmor": -1,
+      "InternalStructure": 65
+    },
+    {
+      "Location": "LeftTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 130,
+      "MaxRearArmor": 65,
+      "InternalStructure": 65
+    },
+    {
+      "Location": "CenterTorso",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 180,
+      "MaxRearArmor": 90,
+      "InternalStructure": 90
+    },
+    {
+      "Location": "RightTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Ballistic",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 130,
+      "MaxRearArmor": 65,
+      "InternalStructure": 65
+    },
+    {
+      "Location": "RightArm",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 130,
+      "MaxRearArmor": -1,
+      "InternalStructure": 65
+    },
+    {
+      "Location": "LeftLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 130,
+      "MaxRearArmor": -1,
+      "InternalStructure": 65
+    },
+    {
+      "Location": "RightLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 130,
+      "MaxRearArmor": -1,
+      "InternalStructure": 65
+    }
+  ],
+  "LOSSourcePositions": [
+    {
+      "x": 0,
+      "y": 15,
+      "z": 0
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": 0
+    },
+    {
+      "x": -4,
+      "y": 15,
+      "z": 0
+    }
+  ],
+  "LOSTargetPositions": [
+    {
+      "x": 0,
+      "y": 15,
+      "z": 0
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": 0
+    },
+    {
+      "x": -4,
+      "y": 15,
+      "z": 0
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "z": 0
+    },
+    {
+      "x": -3,
+      "y": 5,
+      "z": 0
+    }
+  ],
+  "VariantName": "SCP-1O",
+  "ChassisTags": {
+    "items": [
+      "chassis_DHS",
+      "mech_quirk_badreputation",
+      "mech_quirk_hardtopilot",
+      "mech_quirk_notorsotwist",
+      "mech_quirk_largeengine",
+      "QuadMech",
+      "CAC_C_LoadActuators",
+      "CAC_C_LoadActuators_No_LeftArmLower",
+      "CAC_C_LoadActuators_No_RightArmLower"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "StockRole": "Fire Support",
+  "YangsThoughts": "The Scorpion carries a very basic, though dangerous, weapons payload, which makes the 'Mech ideal for close support. It comes in reasonably fast for a 55-ton 'Mech. The downsides? It's hard to pilot, low armored, and the engine is taking up a lot of its capacity.",
+  "FixedEquipment": [
+    {
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Gear_Quad_Actuators",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightArm",
+      "ComponentDefID": "Gear_Quad_Actuators",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    }
+  ]
 }

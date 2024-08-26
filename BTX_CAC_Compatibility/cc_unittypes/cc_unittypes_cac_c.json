@@ -2,16 +2,16 @@
 	"Settings": [
 		{
 			"Name": "LAM",
-			"RequiredTags": [
-				"unit_mech",
-				"LandAirMech"
+			"AnyTags": [
+				"LandAirMech",
+				"unit_lam"
 			]
 		},
 		{
 			"Name": "Quad",
-			"RequiredTags": [
-				"unit_mech",
-				"unit_Quad"
+			"AnyTags": [
+				"QuadMech",
+				"unit_quad"
 			]
 		}
 	]

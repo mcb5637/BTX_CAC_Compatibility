@@ -3,7 +3,7 @@
   "RelativeModifier": 0,
   "AbsoluteModifier": 0,
   "Description": {
-    "Cost": 8000000,
+    "Cost": 40000,
     "Rarity": 99,
     "Purchasable": false,
     "Manufacturer": "Varied",
@@ -11,8 +11,8 @@
     "UIName": "Leg Actuators",
     "Id": "Gear_Quad_Actuators",
     "Name": "Leg Actuators",
-    "Details": "Quad mech technology allows for a more stable weapon platform, but you miss out on arms.",
-    "Icon": "uixSvgIcon_special_Equipment"
+    "Details": "Quad 'Mech design allows for a more stable weapon platform, sacrificing arm functionality in exchange for a 50% increase in stability and better maneuverability on rough terrain compared to a standard design.",
+    "Icon": "uixSvgIcon_equipment_ActuatorLeg"
   },
   "BonusValueA": "",
   "BonusValueB": "",
@@ -25,8 +25,7 @@
   "AllowedLocations": "All",
   "DisallowedLocations": "All",
   "CriticalComponent": false,
-  "statusEffects": [
-  ],
+  "statusEffects": [],
   "ComponentTags": {
     "items": [
       "component_type_stock",

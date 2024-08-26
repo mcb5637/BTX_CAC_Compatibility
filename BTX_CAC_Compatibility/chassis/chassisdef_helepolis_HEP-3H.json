@@ -1,14 +1,14 @@
 {
   "Description": {
-    "Cost": 85000000,
-    "Rarity": 3,
+    "Cost": 7090000,
+    "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
     "UIName": "Helepolis",
     "Id": "chassisdef_helepolis_HEP-3H",
     "Name": "Helepolis",
-    "Details": "First unleashed by the Terran Hegemony in 2460, the Helepolis is a ponderous BattleMech designed to deliver artillery fire.",
+    "Details": "The 3H model enhances the Helepolis' long-range capabilities by swapping the standard Large Laser for an ER Large Laser, which pairs well with the LRM-10 launcher.",
     "Icon": "uixTxrIcon_helepolis"
   },
   "MovementCapDefID": "movedef_awesome_AWS-8Q",
@@ -24,7 +24,7 @@
   "TopSpeed": 54,
   "TurnRadius": 90,
   "MaxJumpjets": 0,
-  "Stability": 160,
+  "Stability": 200,
   "StabilityDefenses": [
     0,
     0,
@@ -39,12 +39,12 @@
   "Signature": 0,
   "Radius": 8,
   "PunchesWithLeftArm": true,
-  "MeleeDamage": 75,
-  "MeleeInstability": 55,
+  "MeleeDamage": 80,
+  "MeleeInstability": 75,
   "MeleeToHitModifier": 0,
   "DFADamage": 95,
   "DFAToHitModifier": 0,
-  "DFASelfDamage": 95,
+  "DFASelfDamage": 48,
   "DFAInstability": 95,
   "Locations": [
     {
@@ -213,16 +213,17 @@
   "VariantName": "HEP-3H",
   "ChassisTags": {
     "items": [
-      "chassis_dhs",
+      "chassis_DHS",
       "mech_case_left",
       "mech_quirk_reinforcedlegs",
       "mech_quirk_stable",
-	  "CAC_C_LoadActuators",
-	  "CAC_C_LoadActuators_No_LeftHand",
-	  "CAC_C_LoadActuators_No_RightArmLower"
+      "CAC_C_LoadActuators",
+      "CAC_C_LoadActuators_No_LeftHand",
+      "CAC_C_LoadActuators_No_RightArmLower"
     ],
     "tagSetSourceFile": ""
   },
   "StockRole": "Artillery",
-  "YangsThoughts": "Its slow, but the sniper artillery doesn't need to be fast moving."
+  "YangsThoughts": "The Helepolis is slow, but it's got a weapon that makes up for it: a Sniper artillery piece. It's the only 'Mech that was ever fitted with one. You wanna talk long-range firepower, the Helepolis is the king of the hill.",
+  "FixedEquipment": []
 }

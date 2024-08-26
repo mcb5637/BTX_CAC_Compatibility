@@ -6,13 +6,13 @@
     "Icon": ""
   },
   "MinGrade": 0.1,
-  "MaxGrade": 1.2,
-  "MaxSteepness": 60.0,
-  "GradeMultiplier": 0.25,
+  "MaxGrade": 0.9,
+  "MaxSteepness": 50.0,
+  "GradeMultiplier": 0.4,
   "GradeMultMaxAscending": 99999.9,
   "GradeMultMaxDescending": 99999.9,
   "MaxStairSize": 4.0,
   "MoveCostNormal": 1.05,
-  "MoveCostBackward": 1.05,
+  "MoveCostBackward": 1.5,
   "PathingAngleCost": 0.0
 }
