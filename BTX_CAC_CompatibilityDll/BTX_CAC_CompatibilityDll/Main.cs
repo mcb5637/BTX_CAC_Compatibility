@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 using UIWidgets;
 using UnityEngine;
 
-[assembly: AssemblyVersion("0.1.22.1")]
+[assembly: AssemblyVersion("0.1.22.2")]
 
 namespace BTX_CAC_CompatibilityDll
 {
