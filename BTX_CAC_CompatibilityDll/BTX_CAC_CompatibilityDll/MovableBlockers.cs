@@ -11,6 +11,9 @@ using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System.Linq;
 using System;
+using UnityEngine;
+using UnityEngine.UI;
+using System.ComponentModel;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -220,6 +223,123 @@ namespace BTX_CAC_CompatibilityDll
             {
                 __result.SetCost(1);
                 __result.SetCBillCost(0);
+            }
+        }
+    }
+    [HarmonyPatch(typeof(MechLabLocationWidget), nameof(MechLabLocationWidget.SetData))]
+    public static class MechLabLocationWidget_SetData
+    {
+        [FieldGet(typeof(MechLabLocationWidget), "maxSlots")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private static int GetMaxSlots(this MechLabLocationWidget i)
+        {
+            return 0;
+        }
+
+        public static IEnumerable<Transform> GetChildren(this Transform t)
+        {
+            foreach (Transform c in t)
+                yield return c;
+        }
+
+        internal static void EnableLayout(GameObject gameObject)
+        {
+            {
+                var component = gameObject.GetComponent<LayoutElement>() ?? gameObject.AddComponent<LayoutElement>();
+                component.ignoreLayout = false;
+                component.enabled = true;
+            }
+
+            {
+                var component = gameObject.GetComponent<HorizontalLayoutGroup>();
+                if (component != null)
+                {
+                    component.childForceExpandHeight = false;
+                    component.childAlignment = TextAnchor.UpperCenter;
+                    component.enabled = true;
+                }
+            }
+
+            {
+                var component = gameObject.GetComponent<VerticalLayoutGroup>();
+                if (component != null)
+                {
+                    component.enabled = true;
+                    component.childForceExpandHeight = false;
+                    component.childForceExpandWidth = false;
+                }
+            }
+
+            {
+                var component = gameObject.GetComponent<GridLayoutGroup>();
+                if (component != null)
+                {
+                    component.enabled = true;
+                }
+            }
+
+            {
+                var component = gameObject.GetComponent<ContentSizeFitter>();
+                if (component != null)
+                {
+                    component.enabled = true;
+                }
+            }
+        }
+
+        public static void Postfix(MechLabLocationWidget __instance, LocationLoadoutDef loadout)
+        {
+            Transform layout_slots = __instance.transform.Find("layout_slots");
+            List<Transform> slots = layout_slots.GetChildren().Where(x => x.name.StartsWith("slot")) .ToList();
+            GameObject template = slots[0].gameObject;
+            int slotTarget = __instance.GetMaxSlots();
+            while (slots.Count > slotTarget)
+            {
+                Transform last = slots[slots.Count - 1];
+                slots.RemoveAt(slots.Count - 1);
+                last.gameObject.SetActive(false);
+                UnityEngine.Object.Destroy(last);
+            }
+            while (slots.Count < slotTarget)
+            {
+                GameObject n = UnityEngine.Object.Instantiate(template, layout_slots);
+                n.transform.SetSiblingIndex(template.transform.GetSiblingIndex() + slots.Count);
+                n.name = $"slot ({slots.Count})";
+                n.SetActive(true);
+                slots.Add(n.transform);
+            }
+            EnableLayout(layout_slots.gameObject);
+            EnableLayout(__instance.gameObject);
+
+            GameObject vertical = __instance.transform.parent.gameObject;
+            if (loadout.Location == ChassisLocations.LeftTorso || loadout.Location == ChassisLocations.RightTorso)
+            {
+                __instance.transform.localPosition = new Vector3(__instance.transform.localPosition.x, 444, 0);
+            }
+            else if (loadout.Location == ChassisLocations.LeftLeg || loadout.Location == ChassisLocations.RightLeg)
+            {
+                __instance.transform.localPosition = new Vector3(__instance.transform.localPosition.x, -138, 0);
+            }
+            else if (loadout.Location == ChassisLocations.LeftArm || loadout.Location == ChassisLocations.RightArm)
+            {
+            }
+            else
+            {
+                GameObject go = __instance.transform.parent.gameObject;
+                EnableLayout(go);
+                ContentSizeFitter component = go.GetComponent<ContentSizeFitter>() ?? go.AddComponent<ContentSizeFitter>();
+                component.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+                component.enabled = true;
+                {
+                    var clg = go.GetComponent<VerticalLayoutGroup>();
+                    clg.padding = new RectOffset(0, 0, 0, 0);
+                    clg.spacing = 56;
+                }
+            }
+            {
+                Transform t = __instance.transform.parent.parent;
+                t.localScale = new Vector3(1, 0.95f, 1);
+                t.localPosition = new Vector3(300, 0, 0);
             }
         }
     }
