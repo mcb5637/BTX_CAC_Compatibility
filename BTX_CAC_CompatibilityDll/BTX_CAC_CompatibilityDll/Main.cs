@@ -26,10 +26,12 @@ namespace BTX_CAC_CompatibilityDll
     {
         public static Settings Sett;
         public static ILog Log;
+        public static string Directory;
 
         public static void Init(string directory, string settingsJSON)
         {
             Log = HBS.Logging.Logger.GetLogger("BTX_CAC_Compatibility");
+            Directory = directory;
             try
             {
                 Sett = JsonConvert.DeserializeObject<Settings>(settingsJSON);

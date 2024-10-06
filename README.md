@@ -3,15 +3,9 @@
 Modifies BEX (and BTXMinusWeapons, if present) for CAC.
 
 Installation/Update: (requires working BEX installation)
-- Add BEX BiggerDrops addon (if not already present)
-- install a new ModTek (4.1+) (if not already present) (BEX by default uses ModTek 0.8)
-	- remove the old ModTek and .modtek folders
-	- verify files (Steam/GOG) / reinstall Battletech (anything else) (to remove ModTek <3.0, if present)
-	- download and unzip ModTek to the correct folder: https://github.com/BattletechModders/ModTek/blob/master/INSTALL.md
-	- direct download link: https://github.com/BattletechModders/ModTek/releases/download/v4.1.0/ModTek.zip
 - Remove BTMLColorLOSMod, MechResizer and StablePiloting from your BTX installation (as CAC, CU and MechAffinity basically do the same)
 - update CAB
-- remove IRBModUtils and MissionControl (CAC-C for now contains their own versions of them)
+- remove IRBModUtils (CAC-C for now contains their own versions of them)
 - remove any previous version of CAC-C, CAE, CAC, CC, CLoc, CPrewarm, CU, CVoices, if they exist
 - Add BTX_CAC_Compatibility, overriding files
 
@@ -27,13 +21,13 @@ Component list (Clan & SLDF ones included):
 		- Heavy Laser: -
 		- Binary Laser: fixed animation
         - Pulse Laser: fixed animation
-		- X-Pulse Laser: changed to single projectile, changed effect to pulse laser
+		- X-Pulse Laser: changed to single projectile
         - Tag: attacking a tagged unit has an +3 accuracy boost, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
         - Flamer: added forestfires
     - Ballistic
         - AC: fixed firing speed
-        - LBX: AC mode to fire AC ammo (slugs), cluster ammo uses CAC shells instead of multiple projectiles, small range increase (to TT values)
-        - UAC: fixed firing speed, added AC mode (1 shot, but +4 acc, lowered recoil, quartered (halved for 20s)) heat, minimal range increase (to TT values)
+        - LBX: AC mode to fire AC ammo (slugs)
+        - UAC: fixed firing speed
         - Gauss: -
 		- Silver Bullet Gauss: fixed multiple projectiles
 		- Heavy Gauss: -
@@ -144,6 +138,9 @@ What to do when adding CAC-C into an existing savegame:
 	- Deadfire LRMs/SRMs (Weapon_SRM_DFSRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_SRM_DF)(Weapon_LRM_DFLRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_LRM_DF) to standard LRMs/SRMs with deadfire ammo
 	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
 	- Artemis SRM/LRM (Weapon_SRM_ASRMXXX/Weapon_LRM_ALRMXXX ->  Gear_Addon_Artemis4) to a matching standard SRM/LRM launcher with Artemis IV FCS attachment
+
+TODO BEX 2.0:
+- remove MC from additional dependencies if not needed
 
 TODO List:
 - quad critable arm actuators to leg actuators

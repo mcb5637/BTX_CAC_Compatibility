@@ -8,10 +8,11 @@
     <OutputType>Library</OutputType>
     <RootNamespace>BTX_CAC_CompatibilityDll</RootNamespace>
     <AssemblyName>BTX_CAC_CompatibilityDll</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -101,6 +102,7 @@
     <Compile Include="AccessExtensionPatcher\MethodCall.cs" />
     <Compile Include="AccessExtensionPatcher\PropertyGet.cs" />
     <Compile Include="AccessExtensionPatcher\PropertySet.cs" />
+    <Compile Include="AutoPatchGenerator.cs" />
     <Compile Include="Briefing_InitializeContractComplete.cs" />
     <Compile Include="Decay.cs" />
     <Compile Include="MechDef_FromJson.cs" />
