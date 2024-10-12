@@ -13,9 +13,9 @@
   },
   "MovementCapDefID": "movedef_wasp_WSP-1A",
   "PathingCapDefID": "pathingdef_light",
-  "HardpointDataDefID": "hardpointdatadef_wasplam",
-  "PrefabIdentifier": "chrprfmech_wasplambase-001",
-  "PrefabBase": "wasplam",
+  "HardpointDataDefID": "hardpointdatadef_wasplamv2",
+  "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
+  "PrefabBase": "wasplamv2",
   "Tonnage": 30,
   "InitialTonnage": 15,
   "weightClass": "LIGHT",
@@ -49,9 +49,9 @@
   "CustomParts": {
     "AlternateRepresentations": [
       {
-        "HardpointDataDef": "hardpointdatadef_wasplam",
-        "PrefabIdentifier": "chrprfmech_wasplambase-001",
-        "PrefabBase": "wasplam",
+        "HardpointDataDef": "hardpointdatadef_wasplamv2",
+        "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
+        "PrefabBase": "wasplamv2"
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
@@ -225,6 +225,7 @@
   "VariantName": "WSP-105M",
   "ChassisTags": {
     "items": [
+      "mr-resize-0.75",
       "mech_quirk_nonstandardparts",
       "mech_quirk_nimblejumper",
       "LandAirMech"

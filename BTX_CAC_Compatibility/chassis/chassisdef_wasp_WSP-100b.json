@@ -13,9 +13,9 @@
   },
   "MovementCapDefID": "movedef_valkyrie_VLK-QA",
   "PathingCapDefID": "pathingdef_light",
-  "HardpointDataDefID": "hardpointdatadef_wasplam",
-  "PrefabIdentifier": "chrprfmech_wasplambase-001",
-  "PrefabBase": "wasplam",
+  "HardpointDataDefID": "hardpointdatadef_wasplamv2",
+  "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
+  "PrefabBase": "wasplamv2",
   "Tonnage": 30,
   "InitialTonnage": 13.5,
   "weightClass": "LIGHT",
@@ -49,9 +49,9 @@
   "CustomParts": {
     "AlternateRepresentations": [
       {
-        "HardpointDataDef": "hardpointdatadef_wasplam",
-        "PrefabIdentifier": "chrprfmech_wasplambase-001",
-        "PrefabBase": "wasplam",
+        "HardpointDataDef": "hardpointdatadef_wasplamv2",
+        "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
+        "PrefabBase": "wasplamv2"
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
@@ -226,6 +226,7 @@
   "VariantName": "WSP-100b",
   "ChassisTags": {
     "items": [
+      "mr-resize-0.75",
       "mech_quirk_nonstandardparts",
       "mech_quirk_nimblejumper",
       "LandAirMech"

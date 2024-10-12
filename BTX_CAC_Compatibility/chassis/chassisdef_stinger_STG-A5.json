@@ -13,9 +13,9 @@
   },
   "MovementCapDefID": "movedef_stinger_STG-3R",
   "PathingCapDefID": "pathingdef_light",
-  "HardpointDataDefID": "hardpointdatadef_stingerlam",
-  "PrefabIdentifier": "chrprfmech_stingerlambase-001",
-  "PrefabBase": "stingerlam",
+  "HardpointDataDefID": "hardpointdatadef_stingerlamv2",
+  "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
+  "PrefabBase": "stingerlamv2",
   "Tonnage": 30,
   "InitialTonnage": 15,
   "weightClass": "LIGHT",
@@ -49,9 +49,9 @@
   "CustomParts": {
     "AlternateRepresentations": [
       {
-        "HardpointDataDef": "hardpointdatadef_stingerlam",
-        "PrefabIdentifier": "chrprfmech_stingerlambase-001",
-        "PrefabBase": "stingerlam",
+        "HardpointDataDef": "hardpointdatadef_stingerlamv2",
+        "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
+        "PrefabBase": "stingerlamv2",
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
@@ -229,6 +229,7 @@
   "VariantName": "STG-A5",
   "ChassisTags": {
     "items": [
+      "mr-resize-0.75",
       "mech_quirk_nonstandardparts",
       "mech_quirk_nimblejumper",
       "LandAirMech"
