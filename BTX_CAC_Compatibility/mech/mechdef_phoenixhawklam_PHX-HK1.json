@@ -13,7 +13,7 @@
     ],
     "tagSetSourceFile": ""
   },
-  "ChassisID": "chassisdef_phoenixhawk_PXH-HK1",
+  "ChassisID": "chassisdef_phoenixhawklam_PHX-HK1",
   "HeraldryID": null,
   "Description": {
     "Cost": 7300000,
@@ -22,7 +22,7 @@
     "Manufacturer": null,
     "Model": null,
     "UIName": "Phoenix Hawk LAM PHX-HK1",
-    "Id": "mechdef_phoenixhawk_PXH-HK1",
+    "Id": "mechdef_phoenixhawklam_PHX-HK1",
     "Name": "Phoenix Hawk LAM",
     "Details": "Developed for the Star League Defense Force Royal Divisions in 2692, this variant of the Phoenix Hawk LAM used four Medium Lasers and a single ER Large Laser as its main firepower. Twelve double heat sinks kept the heat curve low, but the limited fuel, armor, and maneuverability made the Phoenix Hawk LAM easy prey for aerospace fighters of the same weight. It could maneuver fast enough to evade heavier foes however.",
     "Icon": "uixTxrIcon_phoenixhawklam"

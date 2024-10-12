@@ -11,7 +11,7 @@
     ],
     "tagSetSourceFile": ""
   },
-  "ChassisID": "chassisdef_wasp_WSP-100",
+  "ChassisID": "chassisdef_wasplam_WSP-100",
   "HeraldryID": null,
   "Description": {
     "Cost": 2470000,
@@ -20,7 +20,7 @@
     "Manufacturer": null,
     "Model": null,
     "UIName": "Wasp LAM WSP-100",
-    "Id": "mechdef_wasp_WSP-100",
+    "Id": "mechdef_wasplam_WSP-100",
     "Name": "Wasp LAM",
     "Details": "This variant, used by the SLDF, has a slightly lower maximum ground speed at 84 km/h, a 120 meter jump capability, and replaces the SRM-2 with a rear-facing One-Shot version. In exchange, the WSP-100 was equipped with a 5-ton bomb bay, which allowed the LAM to carry Arrow IV missiles and conventional bombs without losing any speed.",
     "Icon": "uixTxrIcon_wasplam"

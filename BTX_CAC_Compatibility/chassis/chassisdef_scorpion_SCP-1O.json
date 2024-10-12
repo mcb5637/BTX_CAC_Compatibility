@@ -11,7 +11,7 @@
     "Details": "The SCP-1O, introduced in 3049, is a very basic upgrade of the design which replaces the PPC with an ER PPC. While this gives the Scorpion greater range, it also increases the heat from the ER PPC, greatly overtaxing the 10 single heat sinks.",
     "Icon": "uixTxrIcon_scorpion"
   },
-  "MovementCapDefID": "movedef_scorpion_SCP-1N",
+  "MovementCapDefID": "movedef_mech_medium_6",
   "PathingCapDefID": "pathingdef_medium_quad",
   "HardpointDataDefID": "hardpointdatadef_scorpionmech",
   "PrefabIdentifier": "chrprfmech_scorpionmechbase-001",
@@ -19,7 +19,7 @@
   "Tonnage": 55,
   "InitialTonnage": 37,
   "weightClass": "MEDIUM",
-  "BattleValue": 6088000,
+  "BattleValue": "5490000",
   "Heatsinks": 10,
   "TopSpeed": 80,
   "TurnRadius": 90,

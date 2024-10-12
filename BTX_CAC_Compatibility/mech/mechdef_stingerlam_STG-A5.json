@@ -4,30 +4,29 @@
       "unit_mech",
       "unit_light",
       "unit_jumpOK",
-      "unit_range_short",
+      "unit_range_medium",
       "unit_speed_high",
       "unit_lance_vanguard",
       "unit_role_scout",
-      "unit_release",
-      "unit_LosTech"
+      "unit_release"
     ],
     "tagSetSourceFile": ""
   },
-  "ChassisID": "chassisdef_stinger_STG-A1",
+  "ChassisID": "chassisdef_stingerlam_STG-A5",
   "HeraldryID": null,
   "Description": {
-    "Cost": 3410000,
-    "Rarity": 5,
+    "Cost": 2820000,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
-    "UIName": "Stinger LAM STG-A1",
-    "Id": "mechdef_stinger_STG-A1",
+    "UIName": "Stinger LAM STG-A5",
+    "Id": "mechdef_stingerlam_STG-A5",
     "Name": "Stinger LAM",
-    "Details": "The original Stinger LAM used by the Star League Defense Force Royal Divisions, this version carries a Medium Pulse Laser and replaces the Machine Guns with Small Pulse Lasers. Double heat sinks kept the temperature manageable, and it was also more heavily armored than its forerunner, carrying five tons of protection.",
+    "Details": "The STG-A5 Stinger was the first mass-produced Land-Air 'Mech, a combination of light 'Mech and light aerospace fighter introduced by LexaTech in 2688 and still produced on the Combine world of Irece. Between crashes and damage to the delicate LostTech conversion equipment, production can't keep pace with demand, so many of the surviving LAMs, like this one, are damaged and can not enter Figher mode. They still have tremendous jumping ability and make superb scouts.",
     "Icon": "uixTxrIcon_stingerlam"
   },
-  "simGameMechPartCost": 340000,
+  "simGameMechPartCost": 280000,
   "Version": 1,
   "Locations": [
     {
@@ -106,15 +105,23 @@
   "inventory": [
     {
       "MountedLocation": "LeftArm",
-      "ComponentDefID": "Weapon_Laser_SmallLaserPulse_0-STOCK",
+      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
       "DamageLevel": "Functional",
       "hasPrefabName": false
     },
     {
+      "MountedLocation": "CenterTorso",
+      "ComponentDefID": "Gear_HeatSink_Generic_Standard",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
       "MountedLocation": "RightTorso",
-      "ComponentDefID": "Weapon_Laser_MediumLaserPulse_0-STOCK",
+      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
       "DamageLevel": "Functional",
@@ -122,12 +129,12 @@
     },
     {
       "MountedLocation": "RightArm",
-      "ComponentDefID": "Weapon_Laser_SmallLaserPulse_0-STOCK",
+      "ComponentDefID": "Weapon_Laser_MediumLaser_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
       "DamageLevel": "Functional",
       "hasPrefabName": false
     }
   ],
-  "MinAppearanceDate": "2688-01-01T00:00:00Z"
+  "MinAppearanceDate": "2701-01-01T00:00:00Z"
 }

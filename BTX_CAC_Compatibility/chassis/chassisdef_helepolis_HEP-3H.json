@@ -11,7 +11,7 @@
     "Details": "The 3H model enhances the Helepolis' long-range capabilities by swapping the standard Large Laser for an ER Large Laser, which pairs well with the LRM-10 launcher.",
     "Icon": "uixTxrIcon_helepolis"
   },
-  "MovementCapDefID": "movedef_awesome_AWS-8Q",
+  "MovementCapDefID": "movedef_mech_heavy_3",
   "PathingCapDefID": "pathingdef_heavy",
   "HardpointDataDefID": "hardpointdatadef_helepolis",
   "PrefabIdentifier": "chrprfmech_helepolisbase-001",
@@ -19,7 +19,7 @@
   "Tonnage": 75,
   "InitialTonnage": 24,
   "weightClass": "HEAVY",
-  "BattleValue": 7124000,
+  "BattleValue": "6900000",
   "Heatsinks": 10,
   "TopSpeed": 54,
   "TurnRadius": 90,

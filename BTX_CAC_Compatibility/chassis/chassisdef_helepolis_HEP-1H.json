@@ -11,7 +11,7 @@
     "Details": "First unleashed by the Terran Hegemony in 2460, the Helepolis is a ponderous BattleMech designed to deliver artillery fire. The 'Mech is built around a Sniper Artillery Piece. The accurate, long-range fire makes it effective against static defenses. The Helepolis carries backup weapons, including a Large Laser, to augment its screening forces. If an enemy gets close, the MechWarrior can also call upon a SRM-6 and a Medium Laser.",
     "Icon": "uixTxrIcon_helepolis"
   },
-  "MovementCapDefID": "movedef_helepolis_HEP-1H",
+  "MovementCapDefID": "movedef_mech_heavy_2",
   "PathingCapDefID": "pathingdef_heavy",
   "HardpointDataDefID": "hardpointdatadef_helepolis",
   "PrefabIdentifier": "chrprfmech_helepolisbase-001",
@@ -19,7 +19,7 @@
   "Tonnage": 75,
   "InitialTonnage": 21.5,
   "weightClass": "HEAVY",
-  "BattleValue": 7124000,
+  "BattleValue": "5315000",
   "Heatsinks": 0,
   "TopSpeed": 32,
   "TurnRadius": 90,
@@ -205,9 +205,9 @@
   "VariantName": "HEP-1H",
   "ChassisTags": {
     "items": [
+      "chassis_primitive_armor",
       "mech_quirk_reinforcedlegs",
       "mech_quirk_stable",
-	  "chassis_primitive_armor",
       "CAC_C_LoadActuators",
       "CAC_C_LoadActuators_No_RightArmLower"
     ],

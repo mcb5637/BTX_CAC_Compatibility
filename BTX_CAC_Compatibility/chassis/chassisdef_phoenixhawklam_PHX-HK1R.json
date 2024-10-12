@@ -1,39 +1,28 @@
 {
-  "Custom": {
-    "AssemblyVariant": {
-      "PrefabID": "UrbanMech LAM",
-      "AssemblyAllowedWith": [
-        "UrbanMech",
-        "Stinger LAM"
-      ]
-    }
-  },
   "Description": {
-    "Cost": 2140000,
+    "Cost": 6780000,
     "Rarity": 5,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
-    "UIName": "UrbanMech LAM",
-    "Id": "chassisdef_urbanmech_UM-LAM-X",
-    "Name": "UrbanMech LAM",
-    "Details": "The experimental UrbanMech LAM was the brainchild of an aging Liao Mechwarrior (who shall not be named here). Using spare parts from Ireces Stinger LAM factory and his ancestral UrbanMech, he created the first version of it. It was later proposed to Kurita and Liao, who both initially showed interest. But poor combat performance soon let the project die. It did not really help either, that the AerospaceFighter mode never really worked.",
-    "Icon": "uixTxrIcon_urbanmech_lam"
+    "UIName": "Phoenix Hawk LAM",
+    "Id": "chassisdef_phoenixhawklam_PHX-HK1R",
+    "Name": "Phoenix Hawk LAM",
+    "Details": "This version was created before the introduction of the PHX-HK2, in 2695. It removed the ER Large Laser, a Medium Laser, and two single heat sinks, replacing them with an experimental Snub-Nose PPC, BeagLe Active Probe, and an additional half ton of armor.",
+    "Icon": "uixTxrIcon_phoenixhawklam"
   },
-  "MovementCapDefID": "movedef_urbanmech_UM-R60",
-  "PathingCapDefID": "pathingdef_light",
-  "HardpointDataDefID": "hardpointdatadef_urbielord",
-  "PrefabIdentifier": "chrprfmech_urbielordbase-001",
-  "PrefabBase": "urbielord",
-  "Tonnage": 30,
-  "InitialTonnage": 10,
-  "weightClass": "LIGHT",
-  "BattleValue": 1892000,
-  "Heatsinks": 0,
-  "TopSpeed": 85,
-  "TurnRadius": 90,
-  "MaxJumpjets": 3,
-  "Stability": 100,
+  "MovementCapDefID": "movedef_mech_medium_5",
+  "PathingCapDefID": "pathingdef_medium",
+  "HardpointDataDefID": "hardpointdatadef_phawklammech",
+  "PrefabIdentifier": "chrprfmech_phawklammechbase-001",
+  "PrefabBase": "phawklammech",
+  "Tonnage": 50,
+  "InitialTonnage": 23.5,
+  "weightClass": "MEDIUM",
+  "BattleValue": "9290000",
+  "Heatsinks": 10,
+  "MaxJumpjets": 5,
+  "Stability": 130,
   "StabilityDefenses": [
     0,
     0,
@@ -46,21 +35,21 @@
   "VisibilityMultiplier": 1,
   "SensorRangeMultiplier": 1,
   "Signature": 0,
-  "Radius": 4,
+  "Radius": 5,
   "PunchesWithLeftArm": false,
-  "MeleeDamage": 25,
-  "MeleeInstability": 30,
+  "MeleeDamage": 70,
+  "MeleeInstability": 50,
   "MeleeToHitModifier": 0,
-  "DFADamage": 40,
+  "DFADamage": 65,
   "DFAToHitModifier": 0,
-  "DFASelfDamage": 40,
-  "DFAInstability": 40,
+  "DFASelfDamage": 65,
+  "DFAInstability": 65,
   "CustomParts": {
     "AlternateRepresentations": [
       {
-        "HardpointDataDef": "hardpointdatadef_urbielord",
-        "PrefabIdentifier": "chrprfmech_urbielordbase-001",
-        "PrefabBase": "urbielord",
+        "HardpointDataDef": "hardpointdatadef_phawklammech",
+        "PrefabIdentifier": "chrprfmech_phawklammechbase-001",
+        "PrefabBase": "phawklammech",
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
@@ -110,20 +99,6 @@
         {
           "WeaponMount": "Energy",
           "Omni": false
-        }
-      ],
-      "Tonnage": 0,
-      "InventorySlots": 8,
-      "MaxArmor": 50,
-      "MaxRearArmor": -1,
-      "InternalStructure": 25
-    },
-    {
-      "Location": "LeftTorso",
-      "Hardpoints": [
-        {
-          "WeaponMount": "Missile",
-          "Omni": false
         },
         {
           "WeaponMount": "AntiPersonnel",
@@ -131,27 +106,13 @@
         }
       ],
       "Tonnage": 0,
-      "InventorySlots": 10,
-      "MaxArmor": 70,
-      "MaxRearArmor": 35,
-      "InternalStructure": 35
+      "InventorySlots": 8,
+      "MaxArmor": 80,
+      "MaxRearArmor": -1,
+      "InternalStructure": 40
     },
     {
-      "Location": "CenterTorso",
-      "Hardpoints": [
-        {
-          "WeaponMount": "AntiPersonnel",
-          "Omni": false
-        }
-      ],
-      "Tonnage": 0,
-      "InventorySlots": 4,
-      "MaxArmor": 100,
-      "MaxRearArmor": 50,
-      "InternalStructure": 50
-    },
-    {
-      "Location": "RightTorso",
+      "Location": "LeftTorso",
       "Hardpoints": [
         {
           "WeaponMount": "Energy",
@@ -160,113 +121,154 @@
       ],
       "Tonnage": 0,
       "InventorySlots": 10,
-      "MaxArmor": 70,
-      "MaxRearArmor": 35,
-      "InternalStructure": 35
+      "MaxArmor": 120,
+      "MaxRearArmor": 60,
+      "InternalStructure": 60
     },
     {
-      "Location": "RightArm",
+      "Location": "CenterTorso",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 160,
+      "MaxRearArmor": 80,
+      "InternalStructure": 80
+    },
+    {
+      "Location": "RightTorso",
       "Hardpoints": [
         {
           "WeaponMount": "Ballistic",
           "Omni": false
         },
         {
-          "WeaponMount": "Missile",
+          "WeaponMount": "Energy",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 120,
+      "MaxRearArmor": 60,
+      "InternalStructure": 60
+    },
+    {
+      "Location": "RightArm",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "AntiPersonnel",
           "Omni": false
         }
       ],
       "Tonnage": 0,
       "InventorySlots": 8,
-      "MaxArmor": 50,
+      "MaxArmor": 80,
       "MaxRearArmor": -1,
-      "InternalStructure": 25
+      "InternalStructure": 40
     },
     {
       "Location": "LeftLeg",
       "Hardpoints": [],
       "Tonnage": 0,
       "InventorySlots": 4,
-      "MaxArmor": 70,
+      "MaxArmor": 120,
       "MaxRearArmor": -1,
-      "InternalStructure": 35
+      "InternalStructure": 60
     },
     {
       "Location": "RightLeg",
       "Hardpoints": [],
       "Tonnage": 0,
       "InventorySlots": 4,
-      "MaxArmor": 70,
+      "MaxArmor": 120,
       "MaxRearArmor": -1,
-      "InternalStructure": 35
+      "InternalStructure": 60
     }
   ],
   "LOSSourcePositions": [
     {
       "x": 0,
-      "y": 9.5,
-      "z": 0.5
+      "y": 13.5,
+      "z": 0
     },
     {
-      "x": -2.5,
-      "y": 8.5,
+      "x": 3.5,
+      "y": 13.5,
       "z": -0.5
     },
     {
-      "x": 2.5,
-      "y": 8.5,
+      "x": -3.5,
+      "y": 13.5,
       "z": -0.5
     }
   ],
   "LOSTargetPositions": [
     {
       "x": 0,
-      "y": 9.5,
-      "z": 0.5
+      "y": 13.5,
+      "z": 0
     },
     {
-      "x": -2.5,
-      "y": 8.5,
+      "x": 3.5,
+      "y": 13.5,
+      "z": -0.5
+    },
+    {
+      "x": -3.5,
+      "y": 13.5,
       "z": -0.5
     },
     {
       "x": 2.5,
-      "y": 8.5,
-      "z": -0.5
+      "y": 5,
+      "z": 1
     },
     {
-      "x": -1.5,
-      "y": 3,
-      "z": 0.5
-    },
-    {
-      "x": 1.5,
-      "y": 3,
-      "z": 0.5
+      "x": -2.5,
+      "y": 5,
+      "z": 1
     }
   ],
-  "VariantName": "UM-LAM-X",
+  "VariantName": "PHX-HK1R",
   "ChassisTags": {
     "items": [
+      "mr-resize-0.92",
+      "chassis_DHS",
       "mech_quirk_nonstandardparts",
-      "mech_quirk_prototype",
       "mech_quirk_nimblejumper",
-      "mech_quirk_narrowlowprofile",
-      "mech_quirk_nominimalarms",
-      "LandAirMech",
-      "CAC_C_LoadActuators",
-      "CAC_C_LoadActuators_No_LeftArmLower",
-      "CAC_C_LoadActuators_No_RightArmLower"
+      "LandAirMech"
     ],
     "tagSetSourceFile": ""
   },
-  "StockRole": "Failed? Experiment",
-  "YangsThoughts": "Well, what a strange 'Mech we have here. This is supposed to combine the damage absorption and firepower of the Urbie with the speed and agility of LAMs. And it fails miserably in both categories.",
+  "StockRole": "Skirmisher",
+  "YangsThoughts": "Boss, this thing is a legend. I'd give my other arm for a working set of conversion gear to bring her all the way back, but even as she is she's a beauty of a backstabber 'Mech.",
   "FixedEquipment": [
     {
       "MountedLocation": "CenterTorso",
       "ComponentDefID": "Gear_LAM_Systems",
       "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet_Idle",
+      "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
       "IsFixed": true,
       "DamageLevel": "Functional",
@@ -282,9 +284,18 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftTorso",
-      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet_Idle",
       "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_SensorCAC_Beagle",
+      "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
       "IsFixed": true,
       "DamageLevel": "Functional",

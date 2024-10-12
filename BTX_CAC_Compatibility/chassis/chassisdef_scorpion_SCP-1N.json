@@ -11,7 +11,7 @@
     "Details": "Introduced and built by the Terran Hegemony in 2570, the Scorpion is an example of an idea that was ahead of its time. The design itself was shunned by most MechWarriors due to the rough ride of the four-legged gait, but if the design is looked at through an objective standpoint the Scorpion is a very capable 'Mech for its intended role.",
     "Icon": "uixTxrIcon_scorpion"
   },
-  "MovementCapDefID": "movedef_scorpion_SCP-1N",
+  "MovementCapDefID": "movedef_mech_medium_6",
   "PathingCapDefID": "pathingdef_medium_quad",
   "HardpointDataDefID": "hardpointdatadef_scorpionmech",
   "PrefabIdentifier": "chrprfmech_scorpionmechbase-001",
@@ -19,7 +19,7 @@
   "Tonnage": 55,
   "InitialTonnage": 37,
   "weightClass": "MEDIUM",
-  "BattleValue": 6088000,
+  "BattleValue": "5095000",
   "Heatsinks": 0,
   "TopSpeed": 80,
   "TurnRadius": 90,

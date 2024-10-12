@@ -14,7 +14,7 @@
     ],
     "tagSetSourceFile": ""
   },
-  "ChassisID": "chassisdef_phoenixhawk_PXH-HK1R",
+  "ChassisID": "chassisdef_phoenixhawklam_PHX-HK1R",
   "HeraldryID": null,
   "Description": {
     "Cost": 8290000,
@@ -23,7 +23,7 @@
     "Manufacturer": null,
     "Model": null,
     "UIName": "Phoenix Hawk LAM PHX-HK1R",
-    "Id": "mechdef_phoenixhawk_PXH-HK1R",
+    "Id": "mechdef_phoenixhawklam_PHX-HK1R",
     "Name": "Phoenix Hawk LAM",
     "Details": "This version was created before the introduction of the PHX-HK2, in 2695. It removed the ER Large Laser, a Medium Laser, and two single heat sinks, replacing them with an experimental Snub-Nose PPC, BeagLe Active Probe, and an additional half ton of armor.",
     "Icon": "uixTxrIcon_phoenixhawklam"

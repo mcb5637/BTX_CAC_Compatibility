@@ -1,29 +1,76 @@
 {
+  "Custom": {
+    "ChassisCategory": {
+      "CategoryID": "BombBay",
+      "Limits": [
+        {
+          "Location": "LeftTorso",
+          "Min": 0,
+          "Max": 0
+        },
+        {
+          "Location": "RightTorso",
+          "Min": 5,
+          "Max": 5
+        }
+      ]
+    },
+    "ChassisDefaults": {
+      "CategoryID": "BombBay",
+      "Defaults": [
+        {
+          "Location": "RightTorso",
+          "DefID": "Gear_LAM_BombBay_Empty",
+          "Type": "Upgrade"
+        },
+        {
+          "Location": "RightTorso",
+          "DefID": "Gear_LAM_BombBay_Empty",
+          "Type": "Upgrade"
+        },
+        {
+          "Location": "RightTorso",
+          "DefID": "Gear_LAM_BombBay_Empty",
+          "Type": "Upgrade"
+        },
+        {
+          "Location": "RightTorso",
+          "DefID": "Gear_LAM_BombBay_Empty",
+          "Type": "Upgrade"
+        },
+        {
+          "Location": "RightTorso",
+          "DefID": "Gear_LAM_BombBay_Empty",
+          "Type": "Upgrade"
+        }
+      ]
+    }
+  },
   "Description": {
-    "Cost": 2830000,
-    "Rarity": 5,
+    "Cost": 2200000,
+    "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
-    "UIName": "Stinger LAM",
-    "Id": "chassisdef_stinger_STG-A1",
-    "Name": "Stinger LAM",
-    "Details": "The original Stinger LAM used by the Star League Defense Force Royal Divisions, this version carries a Medium Pulse Laser and replaces the Machine Guns with Small Pulse Lasers. Double heat sinks kept the temperature manageable, and it was also more heavily armored than its forerunner, carrying five tons of protection.",
-    "Icon": "uixTxrIcon_stingerlam"
+    "UIName": "Wasp LAM",
+    "Id": "chassisdef_wasplam_WSP-100",
+    "Name": "Wasp LAM",
+    "Details": "This variant, used by the SLDF, has a slightly lower maximum ground speed at 84 km/h, a 120 meter jump capability, and replaces the SRM-2 with a rear-facing One-Shot version. In exchange, the WSP-100 was equipped with a 5-ton bomb bay, which allowed the LAM to carry Arrow IV missiles and conventional bombs without losing any speed.",
+    "Icon": "uixTxrIcon_wasplam"
   },
-  "MovementCapDefID": "movedef_stinger_STG-3R",
+  "MovementCapDefID": "movedef_mech_light_5",
   "PathingCapDefID": "pathingdef_light",
-  "HardpointDataDefID": "hardpointdatadef_stingerlamv2",
-  "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
-  "PrefabBase": "stingerlamv2",
+  "HardpointDataDefID": "hardpointdatadef_wasplamv2",
+  "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
+  "PrefabBase": "wasplamv2",
   "Tonnage": 30,
-  "InitialTonnage": 15,
+  "InitialTonnage": 13.5,
   "weightClass": "LIGHT",
-  "BattleValue": 1642000,
-  "Heatsinks": 10,
+  "BattleValue": "2445000",
+  "Heatsinks": 0,
   "TopSpeed": 120,
   "TurnRadius": 90,
-  "MaxJumpjets": 6,
+  "MaxJumpjets": 4,
   "Stability": 100,
   "StabilityDefenses": [
     0,
@@ -49,9 +96,9 @@
   "CustomParts": {
     "AlternateRepresentations": [
       {
-        "HardpointDataDef": "hardpointdatadef_stingerlamv2",
-        "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
-        "PrefabBase": "stingerlamv2",
+        "HardpointDataDef": "hardpointdatadef_wasplamv2",
+        "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
+        "PrefabBase": "wasplamv2",
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
@@ -101,10 +148,6 @@
         {
           "WeaponMount": "Energy",
           "Omni": false
-        },
-        {
-          "WeaponMount": "AntiPersonnel",
-          "Omni": false
         }
       ],
       "Tonnage": 0,
@@ -117,7 +160,7 @@
       "Location": "LeftTorso",
       "Hardpoints": [
         {
-          "WeaponMount": "Energy",
+          "WeaponMount": "AntiPersonnel",
           "Omni": false
         }
       ],
@@ -129,7 +172,12 @@
     },
     {
       "Location": "CenterTorso",
-      "Hardpoints": [],
+      "Hardpoints": [
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        }
+      ],
       "Tonnage": 0,
       "InventorySlots": 4,
       "MaxArmor": 100,
@@ -140,7 +188,7 @@
       "Location": "RightTorso",
       "Hardpoints": [
         {
-          "WeaponMount": "Energy",
+          "WeaponMount": "Missile",
           "Omni": false
         }
       ],
@@ -155,10 +203,6 @@
       "Hardpoints": [
         {
           "WeaponMount": "Energy",
-          "Omni": false
-        },
-        {
-          "WeaponMount": "AntiPersonnel",
           "Omni": false
         }
       ],
@@ -231,11 +275,10 @@
       "z": 0.5
     }
   ],
-  "VariantName": "STG-A1",
+  "VariantName": "WSP-100",
   "ChassisTags": {
     "items": [
       "mr-resize-0.75",
-      "chassis_DHS",
       "mech_quirk_nonstandardparts",
       "mech_quirk_nimblejumper",
       "LandAirMech"
@@ -243,7 +286,7 @@
     "tagSetSourceFile": ""
   },
   "StockRole": "Scout & Skirmisher",
-  "YangsThoughts": "The Stinger LAM is lightly armored and mounts limited weapons. However, even in 'Mech mode, its speed and maneuverability are unmatched.",
+  "YangsThoughts": "The Wasp design has always been used for general scouting and reconnaissance duty. The LAM version built on these strengths, but don't let it get caught standing still.",
   "FixedEquipment": [
     {
       "MountedLocation": "CenterTorso",
@@ -255,7 +298,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftTorso",
+      "MountedLocation": "LeftLeg",
       "ComponentDefID": "Gear_JumpJet_LAMJet",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
@@ -264,7 +307,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "RightTorso",
+      "MountedLocation": "RightLeg",
       "ComponentDefID": "Gear_JumpJet_LAMJet",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
@@ -273,7 +316,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftTorso",
+      "MountedLocation": "LeftLeg",
       "ComponentDefID": "Gear_JumpJet_Generic_Standard",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
@@ -282,16 +325,7 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftTorso",
-      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
-      "IsFixed": true,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightTorso",
+      "MountedLocation": "RightLeg",
       "ComponentDefID": "Gear_JumpJet_Generic_Standard",
       "ComponentDefType": "JumpJet",
       "HardpointSlot": -1,
@@ -301,9 +335,9 @@
     },
     {
       "MountedLocation": "RightTorso",
-      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
-      "ComponentDefType": "JumpJet",
-      "HardpointSlot": -1,
+      "ComponentDefID": "Weapon_BombBay",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
       "IsFixed": true,
       "DamageLevel": "Functional",
       "hasPrefabName": false

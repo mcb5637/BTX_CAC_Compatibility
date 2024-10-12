@@ -1,25 +1,25 @@
 {
   "Description": {
-    "Cost": 2410000,
+    "Cost": 2430000,
     "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": "",
     "Model": "",
-    "UIName": "Wasp LAM",
-    "Id": "chassisdef_wasp_WSP-105",
-    "Name": "Wasp LAM",
-    "Details": "The WSP-105 Wasp was the 2nd Lan-Air 'Mech to be mass-produced for the Terran military, and it is well suited for its scouting role. Earlier vesions with an integral bomb bay made it widely beloved by Star League ground troops. Naturally the lone factory was a priority target in the first Successsion War and few WASP LAMs survive, many of which depend on Stinger LAM parts to rmeain even partly functional as pure Mechs.",
-    "Icon": "uixTxrIcon_wasplam"
+    "UIName": "Stinger LAM",
+    "Id": "chassisdef_stingerlam_STG-A10",
+    "Name": "Stinger LAM",
+    "Details": "Found in the Draconis Combine, this variant's loadout is no different than the A5 model except for a pair of Small Lasers on each arm replacing the Medium Lasers.",
+    "Icon": "uixTxrIcon_stingerlam"
   },
-  "MovementCapDefID": "movedef_wasp_WSP-1A",
+  "MovementCapDefID": "movedef_mech_light_6",
   "PathingCapDefID": "pathingdef_light",
-  "HardpointDataDefID": "hardpointdatadef_wasplamv2",
-  "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
-  "PrefabBase": "wasplamv2",
+  "HardpointDataDefID": "hardpointdatadef_stingerlamv2",
+  "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
+  "PrefabBase": "stingerlamv2",
   "Tonnage": 30,
   "InitialTonnage": 15,
   "weightClass": "LIGHT",
-  "BattleValue": 1642000,
+  "BattleValue": "4405000",
   "Heatsinks": 0,
   "TopSpeed": 120,
   "TurnRadius": 90,
@@ -49,9 +49,9 @@
   "CustomParts": {
     "AlternateRepresentations": [
       {
-        "HardpointDataDef": "hardpointdatadef_wasplamv2",
-        "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
-        "PrefabBase": "wasplamv2"
+        "HardpointDataDef": "hardpointdatadef_stingerlamv2",
+        "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
+        "PrefabBase": "stingerlamv2",
         "AdditionalPrefabs": [],
         "Type": "AirMech",
         "additionalEncounterTags": [
@@ -101,6 +101,10 @@
         {
           "WeaponMount": "AntiPersonnel",
           "Omni": false
+        },
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
         }
       ],
       "Tonnage": 0,
@@ -111,7 +115,12 @@
     },
     {
       "Location": "LeftTorso",
-      "Hardpoints": [],
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        }
+      ],
       "Tonnage": 0,
       "InventorySlots": 10,
       "MaxArmor": 70,
@@ -120,12 +129,7 @@
     },
     {
       "Location": "CenterTorso",
-      "Hardpoints": [
-        {
-          "WeaponMount": "Missile",
-          "Omni": false
-        }
-      ],
+      "Hardpoints": [],
       "Tonnage": 0,
       "InventorySlots": 4,
       "MaxArmor": 100,
@@ -134,7 +138,16 @@
     },
     {
       "Location": "RightTorso",
-      "Hardpoints": [],
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        }
+      ],
       "Tonnage": 0,
       "InventorySlots": 10,
       "MaxArmor": 70,
@@ -145,7 +158,7 @@
       "Location": "RightArm",
       "Hardpoints": [
         {
-          "WeaponMount": "Energy",
+          "WeaponMount": "AntiPersonnel",
           "Omni": false
         },
         {
@@ -222,7 +235,7 @@
       "z": 0.5
     }
   ],
-  "VariantName": "WSP-105",
+  "VariantName": "STG-A10",
   "ChassisTags": {
     "items": [
       "mr-resize-0.75",
@@ -233,7 +246,7 @@
     "tagSetSourceFile": ""
   },
   "StockRole": "Scout & Skirmisher",
-  "YangsThoughts": "The Wasp design has always been used for general scouting and reconnaissance duty. The LAM version built on these strengths, but don't let it get caught standing still.",
+  "YangsThoughts": "The Stinger LAM is lightly armored and mounts limited weapons. However, even in 'Mech mode, its speed and maneuverability are unmatched.",
   "FixedEquipment": [
     {
       "MountedLocation": "CenterTorso",

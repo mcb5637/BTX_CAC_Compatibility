@@ -11,7 +11,7 @@
     "Details": "The Tarantula was designed specifically for a reconnaissance role. Built around a massive Nissan 200 extralight engine, the 'Mech is also equipped with eight jump jets allowing the Tarantula to easily navigate any terrain. The 2A variant is a simple upgrade, replacing the two Medium Lasers with a pair of ER Medium Lasers.",
     "Icon": "uixTxrIcon_tarantula"
   },
-  "MovementCapDefID": "movedef_tarantula_ZPH-1",
+  "MovementCapDefID": "movedef_mech_light_8",
   "PathingCapDefID": "pathingdef_light_quad",
   "HardpointDataDefID": "hardpointdatadef_cutarantula",
   "PrefabIdentifier": "chrprfmech_cutarantulabase-001",
@@ -19,7 +19,7 @@
   "Tonnage": 25,
   "InitialTonnage": 12,
   "weightClass": "LIGHT",
-  "BattleValue": 2061000,
+  "BattleValue": "3720000",
   "Heatsinks": 10,
   "TopSpeed": 85,
   "TurnRadius": 90,

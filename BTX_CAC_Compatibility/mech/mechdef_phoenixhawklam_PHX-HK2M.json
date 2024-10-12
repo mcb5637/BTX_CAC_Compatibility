@@ -4,6 +4,8 @@
       "unit_mech",
       "unit_medium",
       "unit_jumpOK",
+      "unit_indirectFire",
+      "unit_range_long",
       "unit_range_medium",
       "unit_speed_high",
       "unit_lance_vanguard",
@@ -12,21 +14,21 @@
     ],
     "tagSetSourceFile": ""
   },
-  "ChassisID": "chassisdef_phoenixhawk_PXH-HK2",
+  "ChassisID": "chassisdef_phoenixhawklam_PHX-HK2M",
   "HeraldryID": null,
   "Description": {
-    "Cost": 6500000,
+    "Cost": 6690000,
     "Rarity": 4,
     "Purchasable": true,
     "Manufacturer": null,
     "Model": null,
-    "UIName": "Phoenix Hawk LAM PHX-HK2",
-    "Id": "mechdef_phoenixhawk_PXH-HK2",
+    "UIName": "Phoenix Hawk LAM PHX-HK2M",
+    "Id": "mechdef_phoenixhawklam_PHX-HK2M",
     "Name": "Phoenix Hawk LAM",
-    "Details": "The PHX-HK2 is the largest Land-Air 'Mech ever successfully fielded, merging a slightly heavier and slower Phoenix Hawk 'Mech and a capable medium aerospace fighter into one enormously versatile unit. The sophisticated conversion technology was lost in the First Succession War, and battle damage prevents this 'Mech from entering Figher mode.",
+    "Details": "This variant of the Phoenix Hawk LAM produced by House Marik replaces the Large Laser and Machine Guns with a LRM-10 and two tons of ammunition.",
     "Icon": "uixTxrIcon_phoenixhawklam"
   },
-  "simGameMechPartCost": 650000,
+  "simGameMechPartCost": 670000,
   "Version": 1,
   "Locations": [
     {
@@ -112,14 +114,6 @@
       "hasPrefabName": false
     },
     {
-      "MountedLocation": "LeftArm",
-      "ComponentDefID": "Weapon_MachineGun_MachineGun_0-STOCK",
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
-    },
-    {
       "MountedLocation": "LeftTorso",
       "ComponentDefID": "Gear_HeatSink_Generic_Standard",
       "ComponentDefType": "HeatSink",
@@ -129,7 +123,15 @@
     },
     {
       "MountedLocation": "LeftTorso",
-      "ComponentDefID": "Ammo_AmmunitionBox_Generic_MG",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_LRM",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_LRM",
       "ComponentDefType": "AmmunitionBox",
       "HardpointSlot": -1,
       "DamageLevel": "Functional",
@@ -145,7 +147,7 @@
     },
     {
       "MountedLocation": "RightTorso",
-      "ComponentDefID": "Weapon_Laser_LargeLaser_0-STOCK",
+      "ComponentDefID": "Weapon_LRM_LRM10_0-STOCK",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,
       "DamageLevel": "Functional",
@@ -158,15 +160,7 @@
       "HardpointSlot": 0,
       "DamageLevel": "Functional",
       "hasPrefabName": false
-    },
-    {
-      "MountedLocation": "RightArm",
-      "ComponentDefID": "Weapon_MachineGun_MachineGun_0-STOCK",
-      "ComponentDefType": "Weapon",
-      "HardpointSlot": 0,
-      "DamageLevel": "Functional",
-      "hasPrefabName": false
     }
   ],
-  "MinAppearanceDate": "2701-01-01T00:00:00Z"
+  "MinAppearanceDate": "2953-01-01T00:00:00Z"
 }
