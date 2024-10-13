@@ -1,29 +1,25 @@
 {
-  "id": "AffinityDef_chassis_Striker_Heavy",
+  "id": "AffinityDef_chassis_Stability_Assault",
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "chrprfmech_championbase-001_60",
-      "chrprfmech_excaliburbase-001_70",
-      "chrprfmech_jinggaubase-001_65",
-      "chrprfmech_lelikoscheibase-001_65",
-      "chrprfmech_thunderbase-001_70"
+      "chrprfmech_ymirbase-001_90"
     ],
     "idType": "AssemblyVariant",
     "altMaps": [],
     "affinityLevels": [
       {
         "missionsRequired": 20,
-        "levelName": "Heavy Mech+",
-        "decription": "Familiarity with this 'Mech's role on the battlefield improves heat management (+3 Heat Sinking)",
+        "levelName": "Assault Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves stability (+5% Stab Dmg Reduction)",
         "affinities": [],
         "effectData": [
           {
             "Description": {
-              "Details": "Heavy 'Mech familiarity (+3 Heat Sinking)",
+              "Details": "Assault 'Mech familiarity (+5% Stab Dmg Reduction)",
               "Icon": "UixSvgIcon_specialEquip_System",
-              "Id": "StatusEffect-Affinity-HeavyMechBoost",
-              "Name": "Heavy Mech Affinity Defence Boost"
+              "Id": "StatusEffect-Affinity-AssaultMechBoost",
+              "Name": "Assault Mech Affinity Defence Boost"
             },
             "durationData": {
               "duration": -1,
@@ -32,11 +28,10 @@
             "effectType": "StatisticEffect",
             "nature": "Buff",
             "statisticData": {
-              "additionalRules": "NotSet",
-              "modType": "System.Int32",
-              "modValue": "3",
-              "operation": "Int_Add",
-              "statName": "HeatSinkCapacity",
+              "statName": "ReceivedInstabilityMultiplier",
+              "operation": "Float_Multiply",
+              "modValue": "0.95",
+              "modType": "System.Single",
               "targetAmmoCategory": "NotSet",
               "targetCollection": "NotSet",
               "targetWeaponCategory": "NotSet",
@@ -55,15 +50,15 @@
       },
       {
         "missionsRequired": 30,
-        "levelName": "Striker+",
-        "decription": "Familiarity with this 'Mech's fast striker design increases movement and defence (+1 Hit Defence, +10% Movement)",
+        "levelName": "Stability+",
+        "decription": "Familiarity with this 'Mech's stable platform increases defencive capabilities (+1 Hit Defence, +10% Stability Defence)",
         "affinities": [],
         "effectData": [
           {
             "Description": {
               "Details": "Pilot has Mastered the Chassis.",
               "Icon": "UixSvgIcon_specialEquip_System",
-              "Id": "Affinity_Striker_Defense",
+              "Id": "Affinity_Stable_Defense",
               "Name": "BattleMechAffinity"
             },
             "durationData": {
@@ -93,10 +88,10 @@
           },
           {
             "Description": {
-              "Details": "The pilot can push actuators harder with experience (+10% walk speed)",
+              "Details": "Pilot has Mastered the Chassis.",
               "Icon": "UixSvgIcon_specialEquip_System",
-              "Id": "Affinity_Striker_SpeedWalk",
-              "Name": "Mech Affinity Walk Boost"
+              "Id": "Affinity_Stable_StabReduce",
+              "Name": "BattleMechAffinity"
             },
             "durationData": {
               "duration": -1,
@@ -105,11 +100,10 @@
             "effectType": "StatisticEffect",
             "nature": "Buff",
             "statisticData": {
-              "additionalRules": "NotSet",
-              "modType": "System.Single",
-              "modValue": "1.1",
+              "statName": "ReceivedInstabilityMultiplier",
               "operation": "Float_Multiply",
-              "statName": "WalkSpeed",
+              "modValue": "0.9",
+              "modType": "System.Single",
               "targetAmmoCategory": "NotSet",
               "targetCollection": "NotSet",
               "targetWeaponCategory": "NotSet",

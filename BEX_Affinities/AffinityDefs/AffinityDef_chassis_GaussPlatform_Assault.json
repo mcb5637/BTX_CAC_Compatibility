@@ -3,6 +3,7 @@
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
+      "chrprfmech_pillagerbase-001_100",
       "chrprfmech_sorcererbase-001_95",
       "chrprfmech_thunderhawkbase-001_100"
     ],

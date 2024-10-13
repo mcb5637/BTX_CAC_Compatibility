@@ -1,27 +1,30 @@
 {
-  "id": "AffinityDef_chassis_Ressilient_Assault",
+  "id": "AffinityDef_chassis_Resilient_Heavy",
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "chrprfmech_direwolfbase-001_100",
-      "chrprfmech_ionsunderbase-001_90",
-      "chrPrfMech_hauptmannbase-001_95"
+      "chrprfmech_visionquestbase-001_60",
+      "chrprfmech_avatarbase-001_70",
+      "chrPrfMech_cataphractBase-001_70",
+      "chrprfmech_madcatbase-001_75",
+      "chrprfmech_sunspiderbase-001_70",
+      "chrprfmech_rakshasabase-001_75"
     ],
     "idType": "AssemblyVariant",
     "altMaps": [],
     "affinityLevels": [
       {
         "missionsRequired": 20,
-        "levelName": "Assault Mech+",
-        "decription": "Familiarity with this 'Mech's role on the battlefield improves stability (+5% Stab Dmg Reduction)",
+        "levelName": "Heavy Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves heat management (+3 Heat Sinking)",
         "affinities": [],
         "effectData": [
           {
             "Description": {
-              "Details": "Assault 'Mech familiarity (+5% Stab Dmg Reduction)",
+              "Details": "Heavy 'Mech familiarity (+3 Heat Sinking)",
               "Icon": "UixSvgIcon_specialEquip_System",
-              "Id": "StatusEffect-Affinity-AssaultMechBoost",
-              "Name": "Assault Mech Affinity Defence Boost"
+              "Id": "StatusEffect-Affinity-HeavyMechBoost",
+              "Name": "Heavy Mech Affinity Defence Boost"
             },
             "durationData": {
               "duration": -1,
@@ -30,10 +33,11 @@
             "effectType": "StatisticEffect",
             "nature": "Buff",
             "statisticData": {
-              "statName": "ReceivedInstabilityMultiplier",
-              "operation": "Float_Multiply",
-              "modValue": "0.95",
-              "modType": "System.Single",
+              "additionalRules": "NotSet",
+              "modType": "System.Int32",
+              "modValue": "3",
+              "operation": "Int_Add",
+              "statName": "HeatSinkCapacity",
               "targetAmmoCategory": "NotSet",
               "targetCollection": "NotSet",
               "targetWeaponCategory": "NotSet",

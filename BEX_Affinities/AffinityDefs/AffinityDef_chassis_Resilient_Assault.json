@@ -1,20 +1,11 @@
 {
-  "id": "AffinityDef_chassis_Command_Assault",
+  "id": "AffinityDef_chassis_Resilient_Assault",
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "chrPrfMech_atlasBase-001_100",
-      "chrPrfMech_battlemasterBase-001_85",
-      "chrprfmech_emperorbase-001_90",
-      "chrPrfMech_highlanderBase-001_90",
-      "chrPrfMech_highlander_SLDFBase-001_90",
-      "chrprfmech_highlanderiicbase-001_90",
-      "chrprfmech_impbase-001_100",
-      "chrprfmech_marauderiibase-001_100",
-      "chrprfmech_marauderiicbase-001_85",
-      "chrprfmech_naginatabase-001_95",
-      "chrprfmech_nightstarbase-001_95",
-      "chrprfmech_thanatosbase-001_95"
+      "chrprfmech_direwolfbase-001_100",
+      "chrprfmech_ionsunderbase-001_90",
+      "chrPrfMech_hauptmannbase-001_95"
     ],
     "idType": "AssemblyVariant",
     "altMaps": [],
@@ -61,16 +52,16 @@
       },
       {
         "missionsRequired": 30,
-        "levelName": "Command Mech+",
-        "decription": "Familiarity with this 'Mech's Command system has improved their ability to coordinate the team (+1 Resolve generation)",
+        "levelName": "Resilient+",
+        "decription": "Familiarity with this 'Mech's resilient design improves survivability (+25% Critical Hit Resistance)",
         "affinities": [],
         "effectData": [
           {
             "Description": {
-              "Details": "Command 'Mech familiarity (+1 Resolve Gain)",
+              "Details": "The Pilot knows where to avoid hits on this mech (+25% Critical Hit Resistance)",
               "Icon": "UixSvgIcon_specialEquip_System",
-              "Id": "StatusEffect-Affinity-MoraleBoost",
-              "Name": "Command Mech Affinity Morale Boost"
+              "Id": "StatusEffect-Affinity-CritResist",
+              "Name": "Mech Affinity Critical Hit Resistance Boost"
             },
             "durationData": {
               "duration": -1,
@@ -80,10 +71,10 @@
             "nature": "Buff",
             "statisticData": {
               "additionalRules": "NotSet",
-              "modType": "System.Int32",
-              "modValue": "1",
-              "operation": "Int_Add",
-              "statName": "MoraleBonusGain",
+              "modType": "System.Single",
+              "modValue": "0.75",
+              "operation": "Float_Multiply",
+              "statName": "CriticalHitChanceReceivedMultiplier",
               "targetAmmoCategory": "NotSet",
               "targetCollection": "NotSet",
               "targetWeaponCategory": "NotSet",
@@ -91,16 +82,11 @@
               "targetWeaponType": "NotSet"
             },
             "targetingData": {
-              "effectTriggerType": "Passive",
-              "triggerLimit": 0,
-              "extendDurationOnTrigger": 0,
-              "specialRules": "NotSet",
               "effectTargetType": "Creator",
-              "range": 0,
-              "forcePathRebuild": false,
-              "forceVisRebuild": false,
-              "showInTargetPreview": false,
-              "showInStatusPanel": false
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
             }
           }
         ]

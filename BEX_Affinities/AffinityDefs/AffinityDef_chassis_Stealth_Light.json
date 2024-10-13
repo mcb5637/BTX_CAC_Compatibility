@@ -1,30 +1,25 @@
 {
-  "id": "AffinityDef_chassis_Resillient_Heavy",
+  "id": "AffinityDef_chassis_Stealth_Light",
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "chrprfmech_visionquestbase-001_60",
-      "chrprfmech_avatarbase-001_70",
-      "chrPrfMech_cataphractBase-001_70",
-      "chrprfmech_madcatbase-001_75",
-      "chrprfmech_sunspiderbase-001_70",
-      "chrprfmech_rakshasabase-001_75"
+      "chrprfmech_spectorbase-001_35"
     ],
     "idType": "AssemblyVariant",
     "altMaps": [],
     "affinityLevels": [
       {
         "missionsRequired": 20,
-        "levelName": "Heavy Mech+",
-        "decription": "Familiarity with this 'Mech's role on the battlefield improves heat management (+3 Heat Sinking)",
+        "levelName": "Light Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves team coordination (+1 Resolve generation)",
         "affinities": [],
         "effectData": [
           {
             "Description": {
-              "Details": "Heavy 'Mech familiarity (+3 Heat Sinking)",
+              "Details": "Light 'Mech familiarity (+1 Resolve Gain)",
               "Icon": "UixSvgIcon_specialEquip_System",
-              "Id": "StatusEffect-Affinity-HeavyMechBoost",
-              "Name": "Heavy Mech Affinity Defence Boost"
+              "Id": "StatusEffect-Affinity-LightMechBoost",
+              "Name": "Light Mech Affinity Morale Boost"
             },
             "durationData": {
               "duration": -1,
@@ -35,9 +30,9 @@
             "statisticData": {
               "additionalRules": "NotSet",
               "modType": "System.Int32",
-              "modValue": "3",
+              "modValue": "1",
               "operation": "Int_Add",
-              "statName": "HeatSinkCapacity",
+              "statName": "MoraleBonusGainStackable",
               "targetAmmoCategory": "NotSet",
               "targetCollection": "NotSet",
               "targetWeaponCategory": "NotSet",
@@ -45,27 +40,32 @@
               "targetWeaponType": "NotSet"
             },
             "targetingData": {
-              "effectTargetType": "Creator",
               "effectTriggerType": "Passive",
-              "hideApplicationFloatie": true,
-              "showInStatusPanel": false,
-              "showInTargetPreview": false
+              "triggerLimit": 0,
+              "extendDurationOnTrigger": 0,
+              "specialRules": "NotSet",
+              "effectTargetType": "Creator",
+              "range": 0,
+              "forcePathRebuild": false,
+              "forceVisRebuild": false,
+              "showInTargetPreview": false,
+              "showInStatusPanel": false
             }
           }
         ]
       },
       {
         "missionsRequired": 30,
-        "levelName": "Resilient+",
-        "decription": "Familiarity with this 'Mech's resilient design improves survivability (+25% Critical Hit Resistance)",
+        "levelName": "Stealth+",
+        "decription": "Familiarity with the 'Mech's stealth design descreases an enemy's ability to aquire the target (-10% Visibility)",
         "affinities": [],
         "effectData": [
           {
             "Description": {
-              "Details": "The Pilot knows where to avoid hits on this mech (+25% Critical Hit Resistance)",
+              "Details": "Pilot has Mastered the Chassis.",
               "Icon": "UixSvgIcon_specialEquip_System",
-              "Id": "StatusEffect-Affinity-CritResist",
-              "Name": "Mech Affinity Critical Hit Resistance Boost"
+              "Id": "Affinity_Stealth_Visibility",
+              "Name": "BattleMechAffinity"
             },
             "durationData": {
               "duration": -1,
@@ -74,16 +74,10 @@
             "effectType": "StatisticEffect",
             "nature": "Buff",
             "statisticData": {
-              "additionalRules": "NotSet",
-              "modType": "System.Single",
-              "modValue": "0.75",
+              "statName": "SpottingVisibilityMultiplier",
               "operation": "Float_Multiply",
-              "statName": "CriticalHitChanceReceivedMultiplier",
-              "targetAmmoCategory": "NotSet",
-              "targetCollection": "NotSet",
-              "targetWeaponCategory": "NotSet",
-              "targetWeaponSubType": "NotSet",
-              "targetWeaponType": "NotSet"
+              "modValue": "0.9",
+              "modType": "System.Single"
             },
             "targetingData": {
               "effectTargetType": "Creator",

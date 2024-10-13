@@ -3,7 +3,8 @@
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "Flea",
+      "chrPrfMech_fleaBase-001_15",
+      "chrPrfMech_fleaBase-001_20",
       "chrprfmech_hornetbase-001_20",
       "chrPrfMech_locustBase-001_20",
       "chrprfmech_locustiicbase-001_25",
