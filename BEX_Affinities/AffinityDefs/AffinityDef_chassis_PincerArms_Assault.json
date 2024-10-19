@@ -3,6 +3,7 @@
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
+      "chrprfmech_jcrabbase-001_100",
       "chrPrfMech_kingcrabBase-001_100"
     ],
     "idType": "AssemblyVariant",

@@ -4,8 +4,8 @@
   "affinityData": {
     "chassisNames": [
       "chrprfmech_maulerbase-001_90",
-      "chrprfmech_stonerhinobase-001_100",
-      "chrprfmech_mwostonerhinobase-001_100"
+      "chrprfmech_mwostonerhinobase-001_100",
+      "chrprfmech_shogunbase-001_85"
     ],
     "idType": "AssemblyVariant",
     "altMaps": [],

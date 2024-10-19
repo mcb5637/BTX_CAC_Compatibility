@@ -11,7 +11,7 @@
     "Details": "The Exterminator is a BattleMech that was designed in 2630 for the most dubious, but necessary, of purposes: headhunting. The Exterminator 4C is the fully equipped stealth version of the 4D and released in the same year, including the Null-Signature System and Chameleon Light Polarization Shield.",
     "Icon": "uixTxrIcon_exterminator"
   },
-  "MovementCapDefID": "movedef_exterminator_EXT-4D",
+  "MovementCapDefID": "movedef_mech_heavy_6",
   "PathingCapDefID": "pathingdef_heavy",
   "HardpointDataDefID": "hardpointdatadef_exterminator",
   "PrefabIdentifier": "chrprfmech_exterminatorbase-001",
@@ -19,7 +19,7 @@
   "Tonnage": 65,
   "InitialTonnage": 36.5,
   "weightClass": "HEAVY",
-  "BattleValue": 5514000,
+  "BattleValue": "7100000",
   "Heatsinks": 10,
   "TopSpeed": 120,
   "TurnRadius": 90,

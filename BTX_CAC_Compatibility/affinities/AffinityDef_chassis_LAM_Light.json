@@ -61,7 +61,7 @@
         "effectData": [
           {
             "Description": {
-              "Details": "LAM (+10% Speed & Jump Range)",
+              "Details": "LAM familiarity (+10% Speed & Jump Range)",
               "Icon": "UixSvgIcon_specialEquip_System",
               "Id": "Affinity_LAM_Speed",
               "Name": "BattleMechAffinity"

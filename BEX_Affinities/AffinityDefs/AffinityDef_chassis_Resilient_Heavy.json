@@ -1,0 +1,100 @@
+{
+  "id": "AffinityDef_chassis_Resilient_Heavy",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrprfmech_visionquestbase-001_60",
+      "chrprfmech_avatarbase-001_70",
+      "chrPrfMech_cataphractBase-001_70",
+      "chrprfmech_madcatbase-001_75",
+      "chrprfmech_sunspiderbase-001_70",
+      "chrprfmech_rakshasabase-001_75"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Heavy Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves heat management (+3 Heat Sinking)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Heavy 'Mech familiarity (+3 Heat Sinking)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-HeavyMechBoost",
+              "Name": "Heavy Mech Affinity Defence Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Int32",
+              "modValue": "3",
+              "operation": "Int_Add",
+              "statName": "HeatSinkCapacity",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Resilient+",
+        "decription": "Familiarity with this 'Mech's resilient design improves survivability (+25% Critical Hit Resistance)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "The Pilot knows where to avoid hits on this mech (+25% Critical Hit Resistance)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-CritResist",
+              "Name": "Mech Affinity Critical Hit Resistance Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Single",
+              "modValue": "0.75",
+              "operation": "Float_Multiply",
+              "statName": "CriticalHitChanceReceivedMultiplier",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

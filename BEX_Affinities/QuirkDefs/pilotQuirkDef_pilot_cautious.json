@@ -17,7 +17,7 @@
       },
       "effectType": "StatisticEffect",
       "Description": {
-        "Id": "StatusEffect-Defense_ToHit-T3",
+        "Id": "CautiousQuirkEvasion",
         "Name": "HARDER TO HIT",
         "Details": "Provides a penalty to all attacks against this unit.",
         "Icon": "uixSvgIcon_equipment_Gyro"
@@ -26,7 +26,7 @@
       "statisticData": {
         "statName": "ToHitThisActor",
         "operation": "Float_Add",
-        "modValue": "-1.0",
+        "modValue": "1.0",
         "modType": "System.Single"
       }
     },
@@ -49,10 +49,10 @@
       },
       "effectType": "StatisticEffect",
       "Description": {
-        "Id": "CautiousQuirkEvasion",
-        "Name": "Command Consoles",
-        "Details": "Provides + 1 Initiative and several buffs.",
-        "Icon": "uixSvgIcon_equipment_Cockpit"
+        "Id": "CautiousQuirkAccuracy",
+        "Name": "Cautious Accuracy",
+        "Details": "Provides -1 Accuracy.",
+        "Icon": "uixSvgIcon_equipment_Gyro"
       },
       "nature": "Buff",
       "statisticData": {

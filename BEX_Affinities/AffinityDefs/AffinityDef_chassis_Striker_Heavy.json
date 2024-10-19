@@ -4,6 +4,9 @@
   "affinityData": {
     "chassisNames": [
       "chrprfmech_championbase-001_60",
+      "chrprfmech_excaliburbase-001_70",
+      "chrprfmech_jinggaubase-001_65",
+      "chrprfmech_lelikoscheibase-001_65",
       "chrprfmech_thunderbase-001_70"
     ],
     "idType": "AssemblyVariant",

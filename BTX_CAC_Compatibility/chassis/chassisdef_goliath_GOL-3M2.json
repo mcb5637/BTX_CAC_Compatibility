@@ -11,7 +11,7 @@
     "Details": "A slight evolution of the 3M, the 3M2 drops the Machine Guns and their explosive ammo and replaces them with a pair of Small Pulse Lasers. Otherwise this variant is identical to the 3M.",
     "Icon": "uixTxrIcon_goliath"
   },
-  "MovementCapDefID": "movedef_zeus_ZEU-6S",
+  "MovementCapDefID": "movedef_mech_assault_4",
   "PathingCapDefID": "pathingdef_assault_quad",
   "HardpointDataDefID": "hardpointdatadef_cugoliath",
   "PrefabIdentifier": "chrprfmech_goliath",
@@ -19,7 +19,7 @@
   "Tonnage": 80,
   "InitialTonnage": 27,
   "weightClass": "ASSAULT",
-  "BattleValue": 6778200,
+  "BattleValue": "8155000",
   "Heatsinks": 0,
   "TopSpeed": 105,
   "TurnRadius": 90,
