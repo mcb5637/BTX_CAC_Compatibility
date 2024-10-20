@@ -10,8 +10,6 @@ namespace BTX_CAC_CompatibilityDll
     {
         public bool LogLevelLog = true;
         public string[] Use4LimitOnContractIds = new string[] { };
-        public Dictionary<string, ItemCollectionReplace> ReplaceInItemCollections = new Dictionary<string, ItemCollectionReplace>();
-        public Dictionary<string, WeaponAddonSplit> SplitAddons = new Dictionary<string, WeaponAddonSplit>();
         public bool MECompat = false;
         public bool FixDropslotsInOldSaves = true;
         public bool LogBlockerErrors = false;

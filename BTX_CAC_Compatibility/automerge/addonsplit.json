@@ -1,0 +1,506 @@
+{
+  "Weapon_LRM_DFLRM5_0-STOCK": {
+    "WeaponId": "Weapon_LRM_LRM5_0-STOCK",
+    "AddonId": null
+  },
+  "Weapon_LRM_DFLRM20_0-STOCK": {
+    "WeaponId": "Weapon_LRM_LRM20_0-STOCK",
+    "AddonId": null
+  },
+  "Weapon_LRM_DFLRM15_0-STOCK": {
+    "WeaponId": "Weapon_LRM_LRM15_0-STOCK",
+    "AddonId": null
+  },
+  "Weapon_LRM_DFLRM10_0-STOCK": {
+    "WeaponId": "Weapon_LRM_LRM10_0-STOCK",
+    "AddonId": null
+  },
+  "Weapon_LRM_ANLRM5_0-STOCK": {
+    "WeaponId": "Weapon_LRM_NLRM5_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ANLRM20_0-STOCK": {
+    "WeaponId": "Weapon_LRM_NLRM20_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ANLRM15_0-STOCK": {
+    "WeaponId": "Weapon_LRM_NLRM15_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ANLRM10_0-STOCK": {
+    "WeaponId": "Weapon_LRM_NLRM10_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM5_3-Zeus": {
+    "WeaponId": "Weapon_LRM_LRM5_3-Zeus",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM5_2-Zeus": {
+    "WeaponId": "Weapon_LRM_LRM5_2-Zeus",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM5_2-Telos": {
+    "WeaponId": "Weapon_LRM_LRM5_2-Telos",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM5_2-LongFire": {
+    "WeaponId": "Weapon_LRM_LRM5_2-LongFire",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM5_2-Delta": {
+    "WeaponId": "Weapon_LRM_LRM5_2-Delta",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM5_1-Telos": {
+    "WeaponId": "Weapon_LRM_LRM5_1-Telos",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM5_1-LongFire": {
+    "WeaponId": "Weapon_LRM_LRM5_1-LongFire",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM5_1-Delta": {
+    "WeaponId": "Weapon_LRM_LRM5_1-Delta",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM5_0-STOCK": {
+    "WeaponId": "Weapon_LRM_LRM5_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM20_3-Zeus": {
+    "WeaponId": "Weapon_LRM_LRM20_3-Zeus",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM20_2-Zeus": {
+    "WeaponId": "Weapon_LRM_LRM20_2-Zeus",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM20_2-Telos": {
+    "WeaponId": "Weapon_LRM_LRM20_2-Telos",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM20_2-LongFire": {
+    "WeaponId": "Weapon_LRM_LRM20_2-LongFire",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM20_2-Delta": {
+    "WeaponId": "Weapon_LRM_LRM20_2-Delta",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM20_1-Telos": {
+    "WeaponId": "Weapon_LRM_LRM20_1-Telos",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM20_1-LongFire": {
+    "WeaponId": "Weapon_LRM_LRM20_1-LongFire",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM20_1-Delta": {
+    "WeaponId": "Weapon_LRM_LRM20_1-Delta",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM20_0-STOCK": {
+    "WeaponId": "Weapon_LRM_LRM20_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_3-Zeus": {
+    "WeaponId": "Weapon_LRM_LRM15_3-Zeus",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_2-Zeus": {
+    "WeaponId": "Weapon_LRM_LRM15_2-Zeus",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_2-Telos": {
+    "WeaponId": "Weapon_LRM_LRM15_2-Telos",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_2-LongFire": {
+    "WeaponId": "Weapon_LRM_LRM15_2-LongFire",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_2-Delta": {
+    "WeaponId": "Weapon_LRM_LRM15_2-Delta",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_1-Telos": {
+    "WeaponId": "Weapon_LRM_LRM15_1-Telos",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_1-LongFire": {
+    "WeaponId": "Weapon_LRM_LRM15_1-LongFire",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_1-DeltaBoT": {
+    "WeaponId": "Weapon_LRM_LRM15_1-DeltaBoT",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_1-Delta": {
+    "WeaponId": "Weapon_LRM_LRM15_1-Delta",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM15_0-STOCK": {
+    "WeaponId": "Weapon_LRM_LRM15_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM10_3-Zeus": {
+    "WeaponId": "Weapon_LRM_LRM10_3-Zeus",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM10_2-Zeus": {
+    "WeaponId": "Weapon_LRM_LRM10_2-Zeus",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM10_2-Telos": {
+    "WeaponId": "Weapon_LRM_LRM10_2-Telos",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM10_2-LongFire": {
+    "WeaponId": "Weapon_LRM_LRM10_2-LongFire",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM10_2-Delta": {
+    "WeaponId": "Weapon_LRM_LRM10_2-Delta",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM10_1-Telos": {
+    "WeaponId": "Weapon_LRM_LRM10_1-Telos",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM10_1-LongFire": {
+    "WeaponId": "Weapon_LRM_LRM10_1-LongFire",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM10_1-Delta": {
+    "WeaponId": "Weapon_LRM_LRM10_1-Delta",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_ALRM10_0-STOCK": {
+    "WeaponId": "Weapon_LRM_LRM10_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM5_2-TypeVI": {
+    "WeaponId": "Weapon_LRM_CLRM5_2-TypeVI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM5_2-TypeV": {
+    "WeaponId": "Weapon_LRM_CLRM5_2-TypeV",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM5_2-SeriesIX": {
+    "WeaponId": "Weapon_LRM_CLRM5_2-SeriesIX",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM5_2-MK45": {
+    "WeaponId": "Weapon_LRM_CLRM5_2-MK45",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM5_1-TypeVI": {
+    "WeaponId": "Weapon_LRM_CLRM5_1-TypeVI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM5_1-TypeV": {
+    "WeaponId": "Weapon_LRM_CLRM5_1-TypeV",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM5_1-SeriesIX": {
+    "WeaponId": "Weapon_LRM_CLRM5_1-SeriesIX",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM5_1-MK45": {
+    "WeaponId": "Weapon_LRM_CLRM5_1-MK45",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM5_0-STOCK": {
+    "WeaponId": "Weapon_LRM_CLRM5_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM20_2-TypeXXb": {
+    "WeaponId": "Weapon_LRM_CLRM20_2-TypeXXb",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM20_2-TypeXX": {
+    "WeaponId": "Weapon_LRM_CLRM20_2-TypeXX",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM20_2-TypeXb": {
+    "WeaponId": "Weapon_LRM_CLRM20_2-TypeXb",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM20_2-SeriesVII": {
+    "WeaponId": "Weapon_LRM_CLRM20_2-SeriesVII",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM20_1-TypeXXb": {
+    "WeaponId": "Weapon_LRM_CLRM20_1-TypeXXb",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM20_1-TypeXX": {
+    "WeaponId": "Weapon_LRM_CLRM20_1-TypeXX",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM20_1-TypeXb": {
+    "WeaponId": "Weapon_LRM_CLRM20_1-TypeXb",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM20_1-SeriesVII": {
+    "WeaponId": "Weapon_LRM_CLRM20_1-SeriesVII",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM20_0-STOCK": {
+    "WeaponId": "Weapon_LRM_CLRM20_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM15_2-TypeXVI": {
+    "WeaponId": "Weapon_LRM_CLRM15_2-TypeXVI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM15_2-TypeXVb": {
+    "WeaponId": "Weapon_LRM_CLRM15_2-TypeXVb",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM15_2-TypeXV": {
+    "WeaponId": "Weapon_LRM_CLRM15_2-TypeXV",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM15_2-SeriesIV": {
+    "WeaponId": "Weapon_LRM_CLRM15_2-SeriesIV",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM15_1-TypeXVI": {
+    "WeaponId": "Weapon_LRM_CLRM15_1-TypeXVI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM15_1-TypeXVb": {
+    "WeaponId": "Weapon_LRM_CLRM15_1-TypeXVb",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM15_1-TypeXV": {
+    "WeaponId": "Weapon_LRM_CLRM15_1-TypeXV",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM15_1-SeriesIV": {
+    "WeaponId": "Weapon_LRM_CLRM15_1-SeriesIV",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM15_0-STOCK": {
+    "WeaponId": "Weapon_LRM_CLRM15_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM10_2-TypeXa": {
+    "WeaponId": "Weapon_LRM_CLRM10_2-TypeXa",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM10_2-TypeX": {
+    "WeaponId": "Weapon_LRM_CLRM10_2-TypeX",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM10_2-SeriesXII": {
+    "WeaponId": "Weapon_LRM_CLRM10_2-SeriesXII",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM10_2-MK46TII": {
+    "WeaponId": "Weapon_LRM_CLRM10_2-MK46TII",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM10_1-TypeXa": {
+    "WeaponId": "Weapon_LRM_CLRM10_1-TypeXa",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM10_1-TypeX": {
+    "WeaponId": "Weapon_LRM_CLRM10_1-TypeX",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM10_1-SeriesXII": {
+    "WeaponId": "Weapon_LRM_CLRM10_1-SeriesXII",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM10_1-MK46TII": {
+    "WeaponId": "Weapon_LRM_CLRM10_1-MK46TII",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_LRM_CALRM10_0-STOCK": {
+    "WeaponId": "Weapon_LRM_CLRM10_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_DFSRM6_0-STOCK": {
+    "WeaponId": "Weapon_SRM_SRM6_0-STOCK",
+    "AddonId": null
+  },
+  "Weapon_SRM_DFSRM4_0-STOCK": {
+    "WeaponId": "Weapon_SRM_SRM4_0-STOCK",
+    "AddonId": null
+  },
+  "Weapon_SRM_DFSRM2_0-STOCK": {
+    "WeaponId": "Weapon_SRM_SRM2_0-STOCK",
+    "AddonId": null
+  },
+  "Weapon_SRM_ASRM6_3-Valiant": {
+    "WeaponId": "Weapon_SRM_SRM6_3-Valiant",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM6_2-Valiant": {
+    "WeaponId": "Weapon_SRM_SRM6_2-Valiant",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM6_2-Irian": {
+    "WeaponId": "Weapon_SRM_SRM6_2-Irian",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM6_2-Holly": {
+    "WeaponId": "Weapon_SRM_SRM6_2-Holly",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM6_1-Irian": {
+    "WeaponId": "Weapon_SRM_SRM6_1-Irian",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM6_1-Holly": {
+    "WeaponId": "Weapon_SRM_SRM6_1-Holly",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM6_0-STOCK": {
+    "WeaponId": "Weapon_SRM_SRM6_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM4_3-Valiant": {
+    "WeaponId": "Weapon_SRM_SRM4_3-Valiant",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM4_2-Valiant": {
+    "WeaponId": "Weapon_SRM_SRM4_2-Valiant",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM4_2-Irian": {
+    "WeaponId": "Weapon_SRM_SRM4_2-Irian",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM4_2-Holly": {
+    "WeaponId": "Weapon_SRM_SRM4_2-Holly",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM4_1-Irian": {
+    "WeaponId": "Weapon_SRM_SRM4_1-Irian",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM4_1-Holly": {
+    "WeaponId": "Weapon_SRM_SRM4_1-Holly",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM4_0-STOCK": {
+    "WeaponId": "Weapon_SRM_SRM4_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM2_3-Valiant": {
+    "WeaponId": "Weapon_SRM_SRM2_3-Valiant",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM2_2-Valiant": {
+    "WeaponId": "Weapon_SRM_SRM2_2-Valiant",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM2_2-Irian": {
+    "WeaponId": "Weapon_SRM_SRM2_2-Irian",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM2_2-Holly": {
+    "WeaponId": "Weapon_SRM_SRM2_2-Holly",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM2_1-Irian": {
+    "WeaponId": "Weapon_SRM_SRM2_1-Irian",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM2_1-Holly": {
+    "WeaponId": "Weapon_SRM_SRM2_1-Holly",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_ASRM2_0-STOCK": {
+    "WeaponId": "Weapon_SRM_SRM2_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM6_2-TypeI": {
+    "WeaponId": "Weapon_SRM_CSRM6_2-TypeI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM6_2-Series4d": {
+    "WeaponId": "Weapon_SRM_CSRM6_2-Series4d",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM6_2-J7": {
+    "WeaponId": "Weapon_SRM_CSRM6_2-J7",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM6_1-TypeI": {
+    "WeaponId": "Weapon_SRM_CSRM6_1-TypeI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM6_1-Series4d": {
+    "WeaponId": "Weapon_SRM_CSRM6_1-Series4d",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM6_1-J7": {
+    "WeaponId": "Weapon_SRM_CSRM6_1-J7",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM6_0-STOCK": {
+    "WeaponId": "Weapon_SRM_CSRM6_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM4_2-TypeI": {
+    "WeaponId": "Weapon_SRM_CSRM4_2-TypeI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM4_2-SEP": {
+    "WeaponId": "Weapon_SRM_CSRM4_2-SEP",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM4_2-K4": {
+    "WeaponId": "Weapon_SRM_CSRM4_2-K4",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM4_1-TypeI": {
+    "WeaponId": "Weapon_SRM_CSRM4_1-TypeI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM4_1-SEP": {
+    "WeaponId": "Weapon_SRM_CSRM4_1-SEP",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM4_1-K4": {
+    "WeaponId": "Weapon_SRM_CSRM4_1-K4",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM4_0-STOCK": {
+    "WeaponId": "Weapon_SRM_CSRM4_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM2_2-TypeI": {
+    "WeaponId": "Weapon_SRM_CSRM2_2-TypeI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM2_2-D-II": {
+    "WeaponId": "Weapon_SRM_CSRM2_2-D-II",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM2_2-Alpha": {
+    "WeaponId": "Weapon_SRM_CSRM2_2-Alpha",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM2_1-TypeI": {
+    "WeaponId": "Weapon_SRM_CSRM2_1-TypeI",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM2_1-D-II": {
+    "WeaponId": "Weapon_SRM_CSRM2_1-D-II",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM2_1-Alpha": {
+    "WeaponId": "Weapon_SRM_CSRM2_1-Alpha",
+    "AddonId": "Gear_Addon_Artemis4"
+  },
+  "Weapon_SRM_CASRM2_0-STOCK": {
+    "WeaponId": "Weapon_SRM_CSRM2_0-STOCK",
+    "AddonId": "Gear_Addon_Artemis4"
+  }
+}

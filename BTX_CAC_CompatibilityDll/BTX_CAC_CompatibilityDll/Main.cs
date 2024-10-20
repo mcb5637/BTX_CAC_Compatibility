@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
@@ -35,6 +36,8 @@ namespace BTX_CAC_CompatibilityDll
             try
             {
                 Sett = JsonConvert.DeserializeObject<Settings>(settingsJSON);
+                ItemCollectionDef_FromCSV.Replaces = JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "automerge\\itemcollectionreplace.json")));
+                MechDef_FromJson.Splits = JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "automerge\\addonsplit.json")));
             }
             catch (Exception e)
             {

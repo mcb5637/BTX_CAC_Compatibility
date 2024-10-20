@@ -1,0 +1,7 @@
+{
+	"ImprovedBallistic": false,
+	"BallisticDamagePerPallet": false,
+	"HasShells": false,
+	"DisableClustering": true,
+	"FireDelayMultiplier": 1
+}

@@ -36,19 +36,19 @@ Component list (Clan & SLDF ones included):
 		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance (fires at all nearby missles) / can be used as MG)
     - Missle
         - LRM: added hotload mode, added Deadfire ammo
-        - Artemis IV LRM: turned into a Weapon Addon for LRMs (deprecated, but still working)
+        - Artemis IV LRM: turned into a Weapon Addon for LRMs (deprecated)
         - SRM: added inferno ammo (inferno causes fires everywhere), added Deadfire ammo
-        - Artemis IV SRM: turned into a Weapon Addon for SRMs (deprecated, but still working)
+        - Artemis IV SRM: turned into a Weapon Addon for SRMs (deprecated)
         - Streak SRM: added inferno ammo, added streak effect, added Deadfire ammo
         - NARC: multiple pods
-			- Homing Pod: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 3 rounds (depends on launcher), ecm blocks narc acc bonus
+			- Homing Pod: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
 			- Explosive Pod: damge (kurita shops after 3059)
         - ATM: added 3 ammo types, trading damage for range, added clustering
         - Infernos: Broken, use SRM inferno ammo instead
 		- MRM: individual hit generator, unguided flag
 		- RL: individual hit generator, unguided flag
 		- iNarc: multiple pods
-			- Homing Pod: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 3 rounds (depends on launcher), ecm blocks narc acc bonus
+			- Homing Pod: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
 			- Explosive Pod: damge
 			- Haywire Pod: -3 accuracy for 3 rounds
     - Artillery
@@ -87,39 +87,39 @@ Component list (Clan & SLDF ones included):
 	- You only get an accuracy penalty for Indirect Fire if you have to shoot over obstacles to hit your target (if it was considered Indirect Fire by the old rules)
 - Mechs
 	- Exterminator:
-		- EXT-4C (stealth, SLDF) (ComStar) **NEW**
+		- EXT-4C (stealth, SLDF) (ComStar)
 	- Goliath:
 		- GOL-1H (quad, SLDF/SW) (low chance everywhere, factory Oliver/Stewart)
 		- GOL-3M (quad, HC) (Marik after 3047, factory Stewart)
-		- GOL-3M2 (quad, HC) (Liao/Marik after 3052, factory Stewart) **NEW**
+		- GOL-3M2 (quad, HC) (Liao/Marik after 3052, factory Stewart)
 	- Helepolis:
-		- HEP-1H (sniper arty, SLDF) (very low chance Liao) **NEW**
+		- HEP-1H (sniper arty, SLDF) (very low chance Liao)
 		- HEP-3H (sniper arty, SLDF) (ComStar/Snords)
 	- Phoenix Hawk LAM:
 		- PHX-HK1 (SLDF Royal LAM) (ComStar)
-		- PHX-HK1R (SLDF Royal LAM) (ComStar) **NEW**
+		- PHX-HK1R (SLDF Royal LAM) (ComStar)
 		- PHX-HK2 (SLDF LAM) (ComStar)
-		- PHX-HK2M (SW LAM) (ComStar) **NEW**
+		- PHX-HK2M (SW LAM) (ComStar)
 	- Scorpion:
 		- SCP-1N (quad, SLDF/SW) (low chance everywhere, factory Oliver)
 		- SCP-1O (quad, HC) (Kurita/Liao/Marik after 3049, factory Oliver)
 	- Screamer LAM:
 		- SCR-1X-LAM (Experimental LAM) (N/A)
 	- Sirocco:
-		- SRC-3C (quad, HC) (Liao/Marik after 3060, factory Stewart) **NEW**
-		- SRC-5C (quad, HC) (Marik/WoB after 3060, factory Stewart) **NEW**
+		- SRC-3C (quad, HC) (Liao/Marik after 3060, factory Stewart)
+		- SRC-5C (quad, HC) (Marik/WoB after 3060, factory Stewart)
 	- Stinger LAM:
 		- STG-A1 (SLDF Royal LAM) (ComStar)
 		- STG-A5 (SLDF LAM) (ComStar/Kurita, factory Irece)
-		- STG-A10 (SW LAM) (ComStar/Kurita, factory Irece) **NEW**
+		- STG-A10 (SW LAM) (ComStar/Kurita, factory Irece)
 	- Tarantula:
 		- ZPH-1 (quad, HC) (ComStar/Great Houses after 3054, factory Stewart)
 		- ZPH-2A (quad, HC) (ComStar/Great Houses after 3060, factory Stewart)
 	- UrbanMech LAM:
 		- UM-LAM-X (Experimental LAM) (Kurita/Liao, Flying High Again mission)
 	- Wasp LAM:
-		- WSP-100 (SLDF LAM) (ComStar) **NEW**
-		- WSP-100b (SLDF Royal LAM) (ComStar) **NEW**
+		- WSP-100 (SLDF LAM) (ComStar)
+		- WSP-100b (SLDF Royal LAM) (ComStar)
 		- WSP-105 (SLDF LAM) (ComStar/Marik)
 		- WSP-105M (SW LAM) (ComStar/Marik)
 
@@ -141,6 +141,9 @@ What to do when adding CAC-C into an existing savegame:
 
 TODO BEX 2.0:
 - remove MC from additional dependencies if not needed
+- snub ppc, sb gauss
+- tag/narc
+- magshot gauss, plasma rifle, heavy ppc, thunderbolt
 
 TODO List:
 - quad critable arm actuators to leg actuators

@@ -1,0 +1,70 @@
+{
+	"PrefabIdentifier": "UAC2",
+	"ImprovedBallistic": false,
+	"BallisticDamagePerPallet": false,
+	"HasShells": false,
+	"DisableClustering": true,
+	"FireDelayMultiplier": 1,
+	"Modes": [
+		{
+			"Id": "UACMode_1",
+			"UIName": "x1",
+			"Name": "1 Shot Mode",
+			"Description": "Fires 1 projectiles.",
+			"isBaseMode": false,
+			"ShotsWhenFired": -5,
+			"AccuracyModifier": 0,
+			"HeatGenerated": -15
+		},
+		{
+			"Id": "UACMode_2",
+			"UIName": "x2",
+			"Name": "2 Shot Mode",
+			"Description": "Fires 2 projectiles with an accuaracy penalty.",
+			"isBaseMode": false,
+			"ShotsWhenFired": -4,
+			"AccuracyModifier": 3,
+			"HeatGenerated": -12
+		},
+		{
+			"Id": "UACMode_3",
+			"UIName": "x3",
+			"Name": "3 Shot Mode",
+			"Description": "Fires 3 projectiles with an accuaracy penalty.",
+			"isBaseMode": false,
+			"ShotsWhenFired": -3,
+			"AccuracyModifier": 3,
+			"HeatGenerated": -9
+		},
+		{
+			"Id": "UACMode_4",
+			"UIName": "x4",
+			"Name": "4 Shot Mode",
+			"Description": "Fires 4 projectiles with a high accuaracy penalty.",
+			"isBaseMode": false,
+			"ShotsWhenFired": -2,
+			"AccuracyModifier": 4,
+			"HeatGenerated": -6
+		},
+		{
+			"Id": "UACMode_5",
+			"UIName": "x5",
+			"Name": "5 Shot Mode",
+			"Description": "Fires 5 projectiles with a high accuaracy penalty.",
+			"isBaseMode": false,
+			"ShotsWhenFired": -1,
+			"AccuracyModifier": 4,
+			"HeatGenerated": -3
+		},
+		{
+			"Id": "UACMode_6",
+			"UIName": "x6",
+			"Name": "6 Shot Mode",
+			"Description": "Fires 6 projectiles with a high accuaracy penalty.",
+			"isBaseMode": true,
+			"ShotsWhenFired": 0,
+			"AccuracyModifier": 4,
+			"HeatGenerated": 0
+		}
+	]
+}

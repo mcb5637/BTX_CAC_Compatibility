@@ -1,0 +1,29 @@
+{
+	"PrefabIdentifier": "LBX20",
+	"VolleyDivisor": 1,
+	"ImprovedBallistic": true,
+	"FireDelayMultiplier": 1,
+	"Modes": [
+		{
+			"Id": "LBXMode_Cluster",
+			"UIName": "LB-X",
+			"Name": "LB-X Mode",
+			"Description": "LB-X Mode fires LBX Cluster ammunition.",
+			"isBaseMode": true,
+			"HitGenerator": "Cluster"
+		},
+		{
+			"Id": "LBXMode_Slug",
+			"UIName": "AC",
+			"Name": "AC Mode",
+			"Description": "AC Mode fires AC Slug ammunition.",
+			"isBaseMode": false,
+			"DamagePerShot": 95,
+			"Instability": 76,
+			"ShotsWhenFired": -19,
+			"WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
+			"HasShells": false,
+			"AmmoCategory": "AC20"
+		}
+	]
+}
