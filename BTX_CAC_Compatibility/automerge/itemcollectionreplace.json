@@ -1,0 +1,647 @@
+{
+  "Weapon_LRM_DFLRM5_0-STOCK": {
+    "ID": "Ammo_AmmunitionBox_Generic_LRM_DF_Half",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  },
+  "Weapon_LRM_DFLRM20_0-STOCK": {
+    "ID": "Ammo_AmmunitionBox_Generic_LRM_DF",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  },
+  "Weapon_LRM_DFLRM15_0-STOCK": {
+    "ID": "Ammo_AmmunitionBox_Generic_LRM_DF",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  },
+  "Weapon_LRM_DFLRM10_0-STOCK": {
+    "ID": "Ammo_AmmunitionBox_Generic_LRM_DF_Half",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  },
+  "Weapon_LRM_ANLRM5_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ANLRM20_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ANLRM15_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ANLRM10_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM5_3-Zeus": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM5_2-Zeus": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM5_2-Telos": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM5_2-LongFire": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM5_2-Delta": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM5_1-Telos": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM5_1-LongFire": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM5_1-Delta": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM5_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM20_3-Zeus": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM20_2-Zeus": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM20_2-Telos": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM20_2-LongFire": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM20_2-Delta": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM20_1-Telos": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM20_1-LongFire": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM20_1-Delta": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM20_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_3-Zeus": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_2-Zeus": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_2-Telos": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_2-LongFire": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_2-Delta": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_1-Telos": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_1-LongFire": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_1-DeltaBoT": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_1-Delta": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM15_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM10_3-Zeus": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM10_2-Zeus": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM10_2-Telos": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM10_2-LongFire": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM10_2-Delta": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM10_1-Telos": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM10_1-LongFire": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM10_1-Delta": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_ALRM10_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM5_2-TypeVI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM5_2-TypeV": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM5_2-SeriesIX": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM5_2-MK45": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM5_1-TypeVI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM5_1-TypeV": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM5_1-SeriesIX": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM5_1-MK45": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM5_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM20_2-TypeXXb": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM20_2-TypeXX": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM20_2-TypeXb": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM20_2-SeriesVII": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM20_1-TypeXXb": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM20_1-TypeXX": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM20_1-TypeXb": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM20_1-SeriesVII": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM20_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM15_2-TypeXVI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM15_2-TypeXVb": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM15_2-TypeXV": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM15_2-SeriesIV": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM15_1-TypeXVI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM15_1-TypeXVb": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM15_1-TypeXV": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM15_1-SeriesIV": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM15_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM10_2-TypeXa": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM10_2-TypeX": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM10_2-SeriesXII": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM10_2-MK46TII": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM10_1-TypeXa": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM10_1-TypeX": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM10_1-SeriesXII": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM10_1-MK46TII": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_LRM_CALRM10_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_DFSRM6_0-STOCK": {
+    "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  },
+  "Weapon_SRM_DFSRM4_0-STOCK": {
+    "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  },
+  "Weapon_SRM_DFSRM2_0-STOCK": {
+    "ID": "Ammo_AmmunitionBox_Generic_SRM_DF_Half",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM6_3-Valiant": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM6_2-Valiant": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM6_2-Irian": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM6_2-Holly": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM6_1-Irian": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM6_1-Holly": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM6_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM4_3-Valiant": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM4_2-Valiant": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM4_2-Irian": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM4_2-Holly": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM4_1-Irian": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM4_1-Holly": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM4_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM2_3-Valiant": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM2_2-Valiant": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM2_2-Irian": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM2_2-Holly": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM2_1-Irian": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM2_1-Holly": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_ASRM2_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM6_2-TypeI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM6_2-Series4d": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM6_2-J7": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM6_1-TypeI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM6_1-Series4d": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM6_1-J7": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM6_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM4_2-TypeI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM4_2-SEP": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM4_2-K4": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM4_1-TypeI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM4_1-SEP": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM4_1-K4": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM4_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM2_2-TypeI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM2_2-D-II": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM2_2-Alpha": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM2_1-TypeI": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM2_1-D-II": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM2_1-Alpha": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_SRM_CASRM2_0-STOCK": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
+  "Weapon_Inferno_Inferno2_2-Marklin_Mini": {
+    "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  },
+  "Weapon_Inferno_Inferno2_1-Harvester": {
+    "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno_Half",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  },
+  "Weapon_Inferno_Inferno2_0-STOCK": {
+    "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno_Half",
+    "Type": "AmmunitionBox",
+    "Amount": -1
+  }
+}

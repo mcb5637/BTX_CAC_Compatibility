@@ -9,13 +9,15 @@ using BattleTech;
 namespace BTX_CAC_CompatibilityDll
 {
     [HarmonyPatch(typeof(ItemCollectionDef), "FromCSV")]
-    class ItemCollectionDef_FromCSV
+    internal class ItemCollectionDef_FromCSV
     {
+        public static Dictionary<string, ItemCollectionReplace> Replaces = null;
+
         public static void Postfix(ItemCollectionDef __instance)
         {
             foreach (ItemCollectionDef.Entry i in __instance.Entries)
             {
-                if (Main.Sett.ReplaceInItemCollections.TryGetValue(i.ID, out ItemCollectionReplace ne))
+                if (Replaces.TryGetValue(i.ID, out ItemCollectionReplace ne))
                 {
                     i.ID = ne.ID;
                     if (Enum.TryParse(ne.Type, out ShopItemType t))

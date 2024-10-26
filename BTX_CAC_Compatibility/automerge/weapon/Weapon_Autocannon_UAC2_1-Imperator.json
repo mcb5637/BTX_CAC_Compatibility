@@ -1,0 +1,30 @@
+{
+	"PrefabIdentifier": "UAC2",
+	"ImprovedBallistic": false,
+	"BallisticDamagePerPallet": false,
+	"HasShells": false,
+	"DisableClustering": true,
+	"FireDelayMultiplier": 1,
+	"Modes": [
+		{
+			"Id": "UACMode_1",
+			"UIName": "x1",
+			"Name": "AC Mode",
+			"Description": "AC Mode fires only one projectile, but at increased accuracy.",
+			"isBaseMode": false,
+			"ShotsWhenFired": -1,
+			"AccuracyModifier": 0,
+			"HeatGenerated": -5
+		},
+		{
+			"Id": "UACMode_2",
+			"UIName": "x2",
+			"Name": "UAC Mode",
+			"Description": "UAC Mode fires 2 projectiles.",
+			"isBaseMode": true,
+			"ShotsWhenFired": 0,
+			"AccuracyModifier": 3,
+			"HeatGenerated": 0
+		}
+	]
+}
