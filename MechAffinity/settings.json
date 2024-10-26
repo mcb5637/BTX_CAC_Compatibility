@@ -13,11 +13,11 @@
     "maxAffinityPoints": 1000,
     "decayByModulo": false,
     "debugForceTag": "",
-    "defaultDaysBeforeSimDecay": 93,
+    "defaultDaysBeforeSimDecay": 183,
     "showDescriptionsOnChassis": true,
     "trackSimDecayByStat": true,
     "trackLowestDecayByStat": true,
-    "showAllPilotAffinities": true,
+    "showAllPilotAffinities": false,
     "topAffinitiesInTooltipCount": 3,
     "showQuirks": true,
     "affinityGroups": [
@@ -108,6 +108,13 @@
         "affinityId": "chrPrfMech_jagermechBase-001_65",
         "assemblyGroup": [
           "chrPrfMech_jagermechBase-001_70"
+        ]
+      },
+      { /* Mackie */
+        "affinityId": "chrprfmech_mackiebase-001_100",
+        "assemblyGroup": [
+          "chrprfmech_ltmackiebase-001_100",
+          "chrprfmech_t74mackiebase-001_100"
         ]
       },
       { /* Marauder */
