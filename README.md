@@ -90,38 +90,38 @@ Component list (Clan & SLDF ones included):
 		- EXT-4C (stealth, SLDF) (ComStar)
 	- Goliath:
 		- GOL-1H (quad, SLDF/SW) (low chance everywhere, factory Oliver/Stewart)
-		- GOL-3M (quad, HC) (Marik after 3047, factory Stewart)
+		- GOL-3M (quad, HC) (Liao/Marik after 3047, factory Stewart)
 		- GOL-3M2 (quad, HC) (Liao/Marik after 3052, factory Stewart)
 	- Helepolis:
 		- HEP-1H (sniper arty, SLDF) (very low chance Liao)
 		- HEP-3H (sniper arty, SLDF) (ComStar/Snords)
 	- Phoenix Hawk LAM:
 		- PHX-HK1 (SLDF Royal LAM) (ComStar)
-		- PHX-HK1R (SLDF Royal LAM) (ComStar)
-		- PHX-HK2 (SLDF LAM) (ComStar)
-		- PHX-HK2M (SW LAM) (ComStar)
+		- PHX-HK1R (SLDF Royal LAM) (WoB)
+		- PHX-HK2 (SLDF LAM) (ComStar/Great Houses)
+		- PHX-HK2M (SW LAM) (ComStar/Great Houses)
 	- Scorpion:
 		- SCP-1N (quad, SLDF/SW) (low chance everywhere, factory Oliver)
 		- SCP-1O (quad, HC) (Kurita/Liao/Marik after 3049, factory Oliver)
 	- Screamer LAM:
 		- SCR-1X-LAM (Experimental LAM) (N/A)
 	- Sirocco:
-		- SRC-3C (quad, HC) (Liao/Marik after 3060, factory Stewart)
+		- SRC-3C (quad, HC) (Liao/Marik/WoB after 3060, factory Stewart)
 		- SRC-5C (quad, HC) (Marik/WoB after 3060, factory Stewart)
 	- Stinger LAM:
 		- STG-A1 (SLDF Royal LAM) (ComStar)
-		- STG-A5 (SLDF LAM) (ComStar/Kurita, factory Irece)
+		- STG-A5 (SLDF LAM) (ComStar/Great Houses, factory Irece)
 		- STG-A10 (SW LAM) (ComStar/Kurita, factory Irece)
 	- Tarantula:
-		- ZPH-1 (quad, HC) (ComStar/Great Houses after 3054, factory Stewart)
+		- ZPH-1 (quad, HC) (low chance everywhere after 3054, factory Stewart)
 		- ZPH-2A (quad, HC) (ComStar/Great Houses after 3060, factory Stewart)
 	- UrbanMech LAM:
 		- UM-LAM-X (Experimental LAM) (Kurita/Liao, Flying High Again mission)
 	- Wasp LAM:
 		- WSP-100 (SLDF LAM) (ComStar)
 		- WSP-100b (SLDF Royal LAM) (ComStar)
-		- WSP-105 (SLDF LAM) (ComStar/Marik)
-		- WSP-105M (SW LAM) (ComStar/Marik)
+		- WSP-105 (SLDF LAM) (ComStar/Great Houses)
+		- WSP-105M (SW LAM) (Marik/WoB)
 
 What to do when adding CAC-C into an existing savegame:
 - Store and ready every mech that has any of the following fixed equipment:
