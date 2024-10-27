@@ -1,0 +1,118 @@
+{
+	"Gear_AMS_Cal-Boeing": {
+		"WeaponId": "Weapon_AMSCAC_0",
+		"AddonId": "Ammo_AmmunitionBox_Generic_MG",
+		"AddonType": "AmmunitionBox",
+		"Link": false,
+		"AddSupportHardpoint": true,
+		"NotSameLocationRequired": true
+	},
+	"Gear_AMS_Blankenburg": {
+		"WeaponId": "Weapon_AMSCAC_1",
+		"AddonId": "Ammo_AmmunitionBox_Generic_MG",
+		"AddonType": "AmmunitionBox",
+		"Link": false,
+		"AddSupportHardpoint": true,
+		"NotSameLocationRequired": true
+	},
+	"Gear_AMS_Pinard": {
+		"WeaponId": "Weapon_AMSCAC_2",
+		"AddonId": "Ammo_AmmunitionBox_Generic_MG",
+		"AddonType": "AmmunitionBox",
+		"Link": false,
+		"AddSupportHardpoint": true,
+		"NotSameLocationRequired": true
+	},
+	"Gear_AMS_Clan": {
+		"WeaponId": "Weapon_AMSCAC_Clan",
+		"AddonId": "Ammo_AmmunitionBox_Generic_MG",
+		"AddonType": "AmmunitionBox",
+		"Link": false,
+		"AddSupportHardpoint": true,
+		"NotSameLocationRequired": true
+	},
+	"Gear_Sensor_ActiveProbe": {
+		"WeaponId": "Gear_SensorCAC_Beagle",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_ActiveProbeImproved": {
+		"WeaponId": "Gear_SensorCAC_Beagle",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_ActiveProbe_Clan": {
+		"WeaponId": "Gear_SensorCAC_BeagleClan",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_ActiveProbeImproved_Clan": {
+		"WeaponId": "Gear_SensorCAC_BeagleClan",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_Beagle_ActiveProbe": {
+		"WeaponId": "Gear_SensorCAC_Beagle",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_ECM": {
+		"WeaponId": "Gear_SensorCAC_Guardian",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_ECM_Clan": {
+		"WeaponId": "Gear_SensorCAC_GuardianClan",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_Prototype_ActiveProbe": {
+		"WeaponId": "Gear_SensorCAC_LiaoProtoAP",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_Prototype_ECM": {
+		"WeaponId": "Gear_SensorCAC_LiaoProtoECM",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_EWE": {
+		"WeaponId": "Gear_SensorCAC_Guardian",
+		"AddonId": "Gear_SensorCAC_Beagle",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_EWEImproved": {
+		"WeaponId": "Gear_SensorCAC_Guardian",
+		"AddonId": "Gear_SensorCAC_Beagle",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_EWE_Clan": {
+		"WeaponId": "Gear_SensorCAC_GuardianClan",
+		"AddonId": "Gear_SensorCAC_BeagleClan",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_EWEImproved_Clan": {
+		"WeaponId": "Gear_SensorCAC_GuardianClan",
+		"AddonId": "Gear_SensorCAC_BeagleClan",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"Gear_Sensor_Prototype_EWE": {
+		"WeaponId": "Gear_SensorCAC_LiaoProtoAP",
+		"AddonId": "Gear_SensorCAC_LiaoProtoECM",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	}
+}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BattleTech;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,5 +27,10 @@ namespace BTX_CAC_CompatibilityDll
     {
         public string WeaponId = null;
         public string AddonId = null;
+        public ComponentType AddonType = ComponentType.Upgrade;
+        public ComponentType WeaponType = ComponentType.Weapon;
+        public bool Link = true;
+        public bool NotSameLocationRequired = false;
+        public bool AddSupportHardpoint = false;
     }
 }

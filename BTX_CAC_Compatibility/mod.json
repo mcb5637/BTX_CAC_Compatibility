@@ -92,33 +92,38 @@
 		}
 	],
 	"Manifest": [
-		// {
-		// 	"Type": "WeaponDef",
-		// 	"Path": "weapons",
-		// 	"ShouldMergeJSON": true
-		// },
-		// {
-		// 	"Type": "WeaponDef",
-		// 	"Path": "weaponoverride"
-		// },
-		// {
-		// 	"Type": "AmmunitionDef",
-		// 	"Path": "ammo"
-		// },
-		// {
-		// 	"Type": "AmmunitionDef",
-		// 	"Path": "ammomerge",
-		// 	"ShouldMergeJSON": true
-		// },
-		// {
-		// 	"Type": "AmmunitionBoxDef",
-		// 	"Path": "ammobox"
-		// },
-		// {
-		// 	"Type": "AmmunitionBoxDef",
-		// 	"Path": "ammoboxmerge",
-		// 	"ShouldMergeJSON": true
-		// },
+		{
+			"Type": "WeaponDef",
+			"Path": "automerge\\weapon",
+			"ShouldMergeJSON": true
+		},
+		{
+			"Type": "AdvancedJSONMerge",
+			"Path": "automerge\\adv"
+		},
+
+		{
+			"Type": "WeaponDef",
+			"Path": "weaponoverride"
+		},
+		{
+			"Type": "AmmunitionDef",
+			"Path": "ammo"
+		},
+		{
+			"Type": "AmmunitionDef",
+			"Path": "ammomerge",
+			"ShouldMergeJSON": true
+		},
+		{
+			"Type": "AmmunitionBoxDef",
+			"Path": "ammobox"
+		},
+		{
+			"Type": "AmmunitionBoxDef",
+			"Path": "ammoboxmerge",
+			"ShouldMergeJSON": true
+		},
 		// {
 		// 	"Type": "ItemCollectionDef",
 		// 	"Path": "itemCollectionAppend",
@@ -132,10 +137,10 @@
 			"Type": "ShipModuleUpgrade",
 			"Path": "shipUpgrades"
 		},
-		// {
-		// 	"Type": "AdvancedJSONMerge",
-		// 	"Path": "advancedMerge"
-		// },
+		{
+			"Type": "AdvancedJSONMerge",
+			"Path": "advancedMerge"
+		},
 		// {
 		// 	"Type": "ChassisDef",
 		// 	"Path": "chassis",
@@ -160,43 +165,43 @@
 		// 	"Path": "jumpjet_merge",
 		// 	"ShouldMergeJSON": true
 		// },
-		// {
-		// 	"Type": "UpgradeDef",
-		// 	"Path": "upgradesNew"
-		// },
-		// {
-		// 	"Type": "UpgradeDef",
-		// 	"Path": "upgradesMerge",
-		// 	"ShouldMergeJSON": true
-		// },
-		// {
-		// 	"Type": "AbilityDef",
-		// 	"Path": "abilityNew"
-		// },
-		// {
-		// 	"Type": "GameTip",
-		// 	"Path": "GameTips",
-		// 	"ShouldAppendText": true
-		// },
-		// {
-		// 	"Type": "Sprite",
-		// 	"Path": "sprites"
-		// },
+		{
+			"Type": "UpgradeDef",
+			"Path": "upgradesNew"
+		},
+		{
+			"Type": "UpgradeDef",
+			"Path": "upgradesMerge",
+			"ShouldMergeJSON": true
+		},
+		{
+			"Type": "AbilityDef",
+			"Path": "abilityNew"
+		},
+		{
+			"Type": "GameTip",
+			"Path": "GameTips",
+			"ShouldAppendText": true
+		},
+		{
+			"Type": "Sprite",
+			"Path": "sprites"
+		},
 		// {
 		// 	"Type": "StarSystemDef",
 		// 	"Path": "starsystems",
 		// 	"ShouldMergeJSON": true
 		// },
-		// {
-		// 	"Type": "ContractOverride",
-		// 	"Path": "contract",
-		// 	"AddToDB": true
-		// },
-		// {
-		// 	"Type": "HeatSinkDef",
-		// 	"Path": "heatsinks",
-		// 	"ShouldMergeJSON": true
-		// },
+		{
+			"Type": "ContractOverride",
+			"Path": "contract",
+			"AddToDB": true
+		},
+		{
+			"Type": "HeatSinkDef",
+			"Path": "heatsinks",
+			"ShouldMergeJSON": true
+		},
 		{
 			"Type": "DropSlotDef",
 			"Path": "dropslots"

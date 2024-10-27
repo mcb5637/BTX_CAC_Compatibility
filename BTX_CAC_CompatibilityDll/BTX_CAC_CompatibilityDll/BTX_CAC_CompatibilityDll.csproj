@@ -105,7 +105,7 @@
     <Compile Include="AutoPatchGenerator.cs" />
     <Compile Include="Briefing_InitializeContractComplete.cs" />
     <Compile Include="Decay.cs" />
-    <Compile Include="MechDef_FromJson.cs" />
+    <Compile Include="MechAutoFixer.cs" />
     <Compile Include="CCLoader.cs" />
     <Compile Include="MeleeSprint.cs" />
     <Compile Include="SimGameState_InitStats.cs" />

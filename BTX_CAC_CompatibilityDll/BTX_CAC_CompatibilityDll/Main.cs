@@ -28,6 +28,7 @@ namespace BTX_CAC_CompatibilityDll
         public static Settings Sett;
         public static ILog Log;
         public static string Directory;
+        public static Dictionary<string, WeaponAddonSplit> Splits = new Dictionary<string, WeaponAddonSplit>();
 
         public static void Init(string directory, string settingsJSON)
         {
@@ -37,7 +38,10 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Sett = JsonConvert.DeserializeObject<Settings>(settingsJSON);
                 ItemCollectionDef_FromCSV.Replaces = JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "automerge\\itemcollectionreplace.json")));
-                MechDef_FromJson.Splits = JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "automerge\\addonsplit.json")));
+                Splits = JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "automerge\\addonsplit.json")));
+                foreach (KeyValuePair<string, WeaponAddonSplit> kv in JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "addonsplit.json")))) {
+                    Splits[kv.Key] = kv.Value;
+                }
             }
             catch (Exception e)
             {
@@ -62,6 +66,7 @@ namespace BTX_CAC_CompatibilityDll
                 return;
 
             InfernoExplode.Patch(harmony);
+            MechAutoFixer.Register();
 
             try
             {
@@ -84,6 +89,10 @@ namespace BTX_CAC_CompatibilityDll
                 // lbx/uac
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(Contract), "CompleteContract"), "BEX.BattleTech.Extended_CE", true, true, true,
                     "System.Void Extended_CE.WeaponModes+Contract_CompleteContract.Prefix(BattleTech.Contract __instance)");
+                // masc/ams json modify
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(UpgradeDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
+                // ecm
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ChassisDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
 
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AttackEvaluator), "MakeAttackOrder"), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AITeam), "TurnActorProcessActivation"), "BEX.BattleTech.Extended_CE");

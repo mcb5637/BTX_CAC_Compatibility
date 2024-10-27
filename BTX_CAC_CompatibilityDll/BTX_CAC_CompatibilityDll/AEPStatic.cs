@@ -60,5 +60,32 @@ namespace BTX_CAC_CompatibilityDll
         {
 
         }
+
+        [PropertySet(typeof(BaseComponentRef), nameof(BaseComponentRef.ComponentDefType))]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void SetComponentDefType(this BaseComponentRef r, ComponentType c)
+        {
+            
+        }
+
+        [FieldGet(typeof(ChassisDef), "Locations")]
+        [MethodImpl(MethodImplOptions.NoInlining)] 
+        public static LocationDef[] GetLocations(this ChassisDef d)
+        {
+            return new LocationDef[0];
+        }
+
+        [MethodCall(typeof(ChassisDef), "refreshLocationReferences")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void RefreshLocationReferences(this ChassisDef d)
+        {
+
+        }
+
+        [FieldSet(typeof(ChassisDef), "fixedEquipment")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void SetFixedEquipment(this ChassisDef d, MechComponentRef[] i)
+        {
+        }
     }
 }
