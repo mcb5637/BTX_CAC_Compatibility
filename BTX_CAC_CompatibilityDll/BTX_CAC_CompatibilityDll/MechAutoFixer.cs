@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CustomComponents;
 using BattleTech.Save.SaveGameStructure;
 using HarmonyLib;
+using Org.BouncyCastle.Crypto.Parameters;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -42,13 +43,17 @@ namespace BTX_CAC_CompatibilityDll
         {
             bool hasChange = false;
             List<MechComponentRef> mechinv = m.Inventory.ToList();
-            mechinv.RemoveAll((x) => x.IsFixed); // gets re-added by setinv
             List<MechComponentRef> fixedinv = m.Chassis.FixedEquipment?.ToList();
             check(mechinv, false);
             if (fixedinv != null)
+            {
                 check(fixedinv, true);
+                CheckTSM(fixedinv, ref hasChange);
+            }
+
             if (hasChange)
             {
+                mechinv.RemoveAll((x) => x.IsFixed); // gets re-added by setinv
                 if (fixedinv != null)
                     m.Chassis.SetFixedEquipment(fixedinv.ToArray());
                 m.SetInventory(mechinv.ToArray());
@@ -74,11 +79,13 @@ namespace BTX_CAC_CompatibilityDll
             {
                 for (int i = 0; i < l.Count; i++)
                 {
-                    if (Main.Splits.TryGetValue(l[i].ComponentDefID, out WeaponAddonSplit spl))
+                    if (l[i].IsFixed == f && Main.Splits.TryGetValue(l[i].ComponentDefID, out WeaponAddonSplit spl))
                     {
                         l[i].ComponentDefID = spl.WeaponId;
                         l[i].SetComponentDefType(spl.WeaponType);
                         l[i].RefreshComponentDef();
+                        if (f)
+                            hasChange = true;
                         if (spl.AddonId != null)
                         {
                             ChassisLocations loc = l[i].MountedLocation;
@@ -121,6 +128,25 @@ namespace BTX_CAC_CompatibilityDll
                             }
                         }
                     }
+                }
+            }
+        }
+
+        private static void CheckTSM(List<MechComponentRef> fix, ref bool hasChange)
+        {
+            bool first = true;
+            foreach (MechComponentRef c in fix)
+            {
+                if (c.ComponentDefID == "Gear_Triple_Strength_Myomer" || c.ComponentDefID == "Gear_Triple_Strength_Myomer_3" || c.ComponentDefID == "Gear_TSM_Prototype_Bergan")
+                {
+                    if (first)
+                    {
+                        first = false;
+                        continue;
+                    }
+                    hasChange = true;
+                    c.ComponentDefID += "_Idle";
+                    c.RefreshComponentDef();
                 }
             }
         }

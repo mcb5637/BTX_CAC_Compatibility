@@ -9,7 +9,7 @@
         "Manufacturer" : "Varied",
         "Model" : "TSM",
         "UIName" : "TSM",
-        "Id" : "Gear_Triple_Strength_Myomer_3",
+        "Id" : "Gear_Triple_Strength_Myomer_3_Idle",
         "Name" : "Triple Strength Myomer",
         "Details" : "Triple Strength Myomer (aka TSM) is bulkier and also more expensive than standard myomer. It can be used in the \"muscles\" of BattleMechs instead of standard myomer, and delivers significantly improved performance when the 'Mech is at 27+ heat at the end of it's turn. Under these conditions the 'Mech will move faster and deal double damage with melee attacks (Not DFA).",
         "Icon" : "uixSvgIcon_special_Equipment"

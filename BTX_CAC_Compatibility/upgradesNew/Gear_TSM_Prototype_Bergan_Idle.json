@@ -1,37 +1,36 @@
 {
-  "StatName": null,
-  "RelativeModifier": 0,
-  "AbsoluteModifier": 0,
-  "Description": {
-    "Cost": 1000000,
-    "Rarity": 99,
-    "Purchasable": false,
-    "Manufacturer": "Bergan Industries",
-    "Model": "Prototype",
-    "UIName": "T.S.M. (P)",
-    "Id": "Gear_TSM_Prototype_Bergan_Idle",
-    "Name": "Bergan T.S.M. Prototype",
-    "Details": "Prototype TSM is the early manufacture version of TSM. This formula was created by the Capellan Confederation as a result of receiving a 'leak' from the Federated Suns in 3028. It delivers significantly improved performance when the 'Mech is at 27+ heat at the end of it's turn. Under these conditions the 'Mech will move faster and deal double damage with melee attacks (Not DFA).",
-    "Icon": "uixSvgIcon_equipment_HeatBank"
-  },
-  "BonusValueA": "* 1.5 Melee Damage / + 30 m Movement",
-  "BonusValueB": "at 27+ heat",
-  "ComponentType": "Upgrade",
-  "ComponentSubType": "NotSet",
-  "PrefabIdentifier": "",
-  "BattleValue": 0,
-  "InventorySize": 3,
-  "Tonnage": 0,
-  "AllowedLocations": "Torso",
-  "DisallowedLocations": "All",
-  "CriticalComponent": false,
-  "statusEffects": [
-  ],
-  "ComponentTags": {
-    "items": [
-      "BUILT-IN",
-      "BLACKLISTED"
-    ],
-    "tagSetSourceFile": ""
-  }
+	"StatName": null,
+	"RelativeModifier": 0,
+	"AbsoluteModifier": 0,
+	"Description": {
+		"Cost": 1000000,
+		"Rarity": 99,
+		"Purchasable": false,
+		"Manufacturer": "Bergan Industries",
+		"Model": "Prototype",
+		"UIName": "T.S.M. (P)",
+		"Id": "Gear_TSM_Prototype_Bergan_Idle",
+		"Name": "Bergan T.S.M. Prototype",
+		"Details": "Prototype TSM is the early manufacture version of TSM. This formula was created by the Capellan Confederation as a result of receiving a 'leak' from the Federated Suns in 3028. It delivers significantly improved performance when the 'Mech is at 27+ heat at the end of it's turn. Under these conditions the 'Mech will move faster and deal double damage with melee attacks (Not DFA).",
+		"Icon": "uixSvgIcon_equipment_HeatBank"
+	},
+	"BonusValueA": "* 1.5 Melee Damage / + 30 m Movement",
+	"BonusValueB": "at 27+ heat",
+	"ComponentType": "Upgrade",
+	"ComponentSubType": "NotSet",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 3,
+	"Tonnage": 0,
+	"AllowedLocations": "Torso",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"statusEffects": [],
+	"ComponentTags": {
+		"items": [
+			"BUILT-IN",
+			"BLACKLISTED"
+		],
+		"tagSetSourceFile": ""
+	}
 }

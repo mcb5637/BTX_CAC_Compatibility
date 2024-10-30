@@ -1,35 +1,35 @@
 {
-  "StatName": null,
-  "RelativeModifier": 0,
-  "AbsoluteModifier": 0,
-  "Description": {
-    "Cost": 700000,
-    "Rarity": 99,
-    "Purchasable": false,
-    "Manufacturer": "Varied",
-    "Model": "TSM",
-    "UIName": "TSM",
-    "Id": "Gear_Triple_Strength_Myomer_Idle",
-    "Name": "Triple Strength Myomer",
-    "Details": "Triple Strength Myomer (aka TSM) is bulkier and also more expensive than standard myomer. It can be used in the \"muscles\" of BattleMechs instead of standard myomer, and delivers significantly improved performance when the 'Mech is at 27+ heat at the end of it's turn. Under these conditions the 'Mech will move faster and deal double damage with melee attacks (Not DFA).",
-    "Icon": "uixSvgIcon_special_Equipment"
-  },
-  "BonusValueA": "* 2 Melee Damage / + 60 m Movement",
-  "BonusValueB": "at 27+ Heat",
-  "ComponentType": "Upgrade",
-  "ComponentSubType": "NotSet",
-  "PrefabIdentifier": "",
-  "BattleValue": 0,
-  "InventorySize": 2,
-  "Tonnage": 0,
-  "AllowedLocations": "All",
-  "DisallowedLocations": "All",
-  "CriticalComponent": false,
-  "statusEffects": [],
-  "ComponentTags": {
-    "items": [
-      "BUILT-IN"
-    ],
-    "tagSetSourceFile": ""
-  }
+	"StatName": null,
+	"RelativeModifier": 0,
+	"AbsoluteModifier": 0,
+	"Description": {
+		"Cost": 700000,
+		"Rarity": 99,
+		"Purchasable": false,
+		"Manufacturer": "Varied",
+		"Model": "TSM",
+		"UIName": "TSM",
+		"Id": "Gear_Triple_Strength_Myomer_Idle",
+		"Name": "Triple Strength Myomer",
+		"Details": "Triple Strength Myomer (aka TSM) is bulkier and also more expensive than standard myomer. It can be used in the \"muscles\" of BattleMechs instead of standard myomer, and delivers significantly improved performance when the 'Mech is at 27+ heat at the end of it's turn. Under these conditions the 'Mech will move faster and deal double damage with melee attacks (Not DFA).",
+		"Icon": "uixSvgIcon_special_Equipment"
+	},
+	"BonusValueA": "* 2 Melee Damage / + 60 m Movement",
+	"BonusValueB": "at 27+ Heat",
+	"ComponentType": "Upgrade",
+	"ComponentSubType": "NotSet",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 2,
+	"Tonnage": 0,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"statusEffects": [],
+	"ComponentTags": {
+		"items": [
+			"BUILT-IN"
+		],
+		"tagSetSourceFile": ""
+	}
 }

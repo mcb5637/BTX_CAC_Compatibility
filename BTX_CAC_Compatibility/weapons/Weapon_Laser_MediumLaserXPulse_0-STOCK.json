@@ -1,7 +1,0 @@
-{
-    "ImprovedBallistic": false,
-    "ProjectilesPerShot": 1,
-    "Damage": 30,
-    "ShotsWhenFired": 1,
-    "WeaponEffectID": "WeaponEffect-Weapon_LaserPulse_Large",
-}
