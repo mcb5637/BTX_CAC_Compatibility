@@ -3,6 +3,11 @@
 	"VolleyDivisor": 1,
 	"ImprovedBallistic": true,
 	"FireDelayMultiplier": 1,
+	"Custom": {
+		"Clustering": {
+			"Base": 0.7083333
+		}
+	},
 	"Modes": [
 		{
 			"Id": "LBXMode_Cluster",

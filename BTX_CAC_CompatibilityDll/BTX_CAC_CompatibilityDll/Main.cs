@@ -25,7 +25,7 @@ namespace BTX_CAC_CompatibilityDll
 {
     class Main
     {
-        public static Settings Sett;
+        public static Settings Sett = new Settings();
         public static ILog Log;
         public static string Directory;
         public static Dictionary<string, WeaponAddonSplit> Splits = new Dictionary<string, WeaponAddonSplit>();
@@ -45,7 +45,6 @@ namespace BTX_CAC_CompatibilityDll
             }
             catch (Exception e)
             {
-                Sett = new Settings();
                 Log.LogException(e);
             }
             if (Sett.LogLevelLog)
@@ -70,12 +69,6 @@ namespace BTX_CAC_CompatibilityDll
 
             try
             {
-                // artemis
-                //Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AttackDirector.AttackSequence), "GetClusteredHits"), "BEX.BattleTech.Extended_CE");
-                //Type[] ptypes = new Type[] { typeof(Vector3), typeof(Mech), typeof(float), typeof(ArmorLocation), typeof(float), typeof(float), typeof(ArmorLocation), typeof(float) };
-                //Unpatch(harmony, AccessTools.DeclaredMethod(typeof(HitLocation), "GetAdjacentHitLocation", ptypes), "BEX.BattleTech.Extended_CE");
-                //ptypes = new Type[] { typeof(Vector3), typeof(Vehicle), typeof(float), typeof(VehicleChassisLocations), typeof(float), typeof(float), typeof(VehicleChassisLocations), typeof(float) };
-                //Unpatch(harmony, AccessTools.DeclaredMethod(typeof(HitLocation), "GetAdjacentHitLocation", ptypes), "BEX.BattleTech.Extended_CE");
                 // streak
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MissileLauncherEffect), "AllMissilesComplete"), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MissileLauncherEffect), "LaunchMissile"), "BEX.BattleTech.Extended_CE");
@@ -93,6 +86,8 @@ namespace BTX_CAC_CompatibilityDll
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(UpgradeDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
                 // ecm
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ChassisDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
+                // cluster
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetToHitChance)), "BEX.BattleTech.Extended_CE");
 
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AttackEvaluator), "MakeAttackOrder"), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AITeam), "TurnActorProcessActivation"), "BEX.BattleTech.Extended_CE");
@@ -130,6 +125,7 @@ namespace BTX_CAC_CompatibilityDll
             }
 
             ToHitModifiersHelper.registerModifier("BTX_CAC_Compatibility_ECM", "ECM", true, true, ECM_Effect, null);
+            ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, null, null);
             CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());
         }
 

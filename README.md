@@ -145,6 +145,7 @@ TODO BEX 2.0:
 - tag/narc
 - magshot gauss, plasma rifle, heavy ppc, thunderbolt
 - check ammo types: inferno, atm, ac special
+- ppc cap
 
 TODO List:
 - quad critable arm actuators to leg actuators

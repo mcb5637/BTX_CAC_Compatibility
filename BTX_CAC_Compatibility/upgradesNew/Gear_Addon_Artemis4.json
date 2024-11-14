@@ -5,7 +5,7 @@
 			"autoTarget": true,
 			"WeaponAddonIds": [
 				"weaponupgrade_artemis_lrm",
-				"weaponupgrade_artemis_srm_clrm"
+				"weaponupgrade_artemis_srm"
 			]
 		}
 	},

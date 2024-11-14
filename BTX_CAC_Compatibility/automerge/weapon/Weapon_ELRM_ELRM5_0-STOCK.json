@@ -7,26 +7,43 @@
 	"HitGenerator": "Cluster",
 	"AMSHitChance": 0.0,
 	"MissileHealth": 1,
+	"Custom" : {
+		"Clustering": {
+			"Base": 0.6333333,
+			"DeadfireBase": 0.54320985,
+			"ArtemisBase": 0.76666665,
+			"Steps": [
+				{
+					"GunnerySkill": 6,
+					"Mod": 0.03
+				},
+				{
+					"GunnerySkill": 10,
+					"Mod": 0.03
+				}
+			]
+		}
+	},
 	"Modes": [
 		{
-			"Id": "LRM_StdLoad",
+			"Id": "LRM_Std",
 			"UIName": "STD",
 			"Name": "Standard",
-			"Description": "Fired missiles arm after they leave the launcher.",
+			"Description": "",
 			"isBaseMode": true
 		},
 		{
 			"Id": "LRM_HotLoad",
 			"UIName": "HL",
 			"Name": "Hot Load",
-			"Description": "Missiles are armed prelaunch inside the launcher, removing minimum range but having a chance to jam.",
+			"Description": "Missiles are armed inside the launcher instead of after launching, removing minimum range but having a chance to jam.",
 			"isBaseMode": false,
 			"DamageOnJamming": true,
 			"AccuracyModifier": 1.0,
 			"FlatJammingChance": 0.1,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.04,
-			"MinRange": 300
+			"MinRange": -300
 		}
 	]
 }

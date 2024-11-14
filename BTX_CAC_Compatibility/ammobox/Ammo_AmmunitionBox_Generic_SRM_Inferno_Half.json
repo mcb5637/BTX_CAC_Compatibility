@@ -1,5 +1,5 @@
 {
-    "AmmoID": "Ammunition_SRM_Inferno",
+    "AmmoID": "Ammunition_SRMInferno",
     "Capacity": 50,
     "Description": {
         "Cost": 7000,

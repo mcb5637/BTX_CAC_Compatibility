@@ -5,6 +5,31 @@
 	"HasShells": false,
 	"DisableClustering": true,
 	"FireDelayMultiplier": 1,
+	"Custom": {
+		"Clustering": {
+			"Steps": [
+				{
+					"GunnerySkill": 7,
+					"Mod": 0.03
+				}
+			],
+			"Base": 0.6333333,
+			"UAC": [
+				{
+					"Shots": 2,
+					"Base": 0.7083333
+				},
+				{
+					"Shots": 3,
+					"Base": 0.6666667
+				},
+				{
+					"Shots": 4,
+					"Base": 0.6597222
+				}
+			]
+		}
+	},
 	"Modes": [
 		{
 			"Id": "UACMode_1",
