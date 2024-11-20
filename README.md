@@ -144,7 +144,7 @@ TODO BEX 2.0:
 - snub ppc, sb gauss
 - tag/narc
 - magshot gauss, plasma rifle, heavy ppc, thunderbolt
-- check ammo types: inferno, atm, ac special
+- check ammo types: atm, ac special
 - ppc cap
 
 TODO List:

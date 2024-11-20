@@ -8,7 +8,7 @@
 	"modes": [
 		{
 			"Id": "SRM_A4",
-			"UIName": "A4",
+			"UIName": "Art",
 			"Name": "Artemis IV",
 			"Description": "Artemis IV guidance system enabled, improving accuracy and clustering.\r\nOnly compatible with regular ammo.",
 			"HitGenerator": "Cluster",
