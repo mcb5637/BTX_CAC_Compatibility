@@ -1,6 +1,6 @@
 {
     "AmmoID": "Ammunition_LB2X",
-    "Capacity": 12,
+    "Capacity": 22,
     "Description": {
         "Cost": 12000,
         "Rarity": 0,
@@ -13,7 +13,7 @@
         "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nLB 2-X (Half) Ammo Bins each contain 12 rounds and may feed multiple weapons.",
         "Icon": "uixSvgIcon_ammoBox_Ballistic"
     },
-    "BonusValueA": "12 Cluster",
+    "BonusValueA": "Cluster",
     "BonusValueB": "",
     "ComponentType": "AmmunitionBox",
     "ComponentSubType": "Ammunition",

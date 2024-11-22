@@ -1,6 +1,6 @@
 {
     "AmmoID": "Ammunition_AC5",
-    "Capacity": 7,
+    "Capacity": 10,
     "Description": {
         "Cost": 12000,
         "Rarity": 0,

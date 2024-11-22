@@ -1,9 +1,10 @@
 {
-	"Capacity": 15,
+	"Capacity": 20,
 	"Description": {
 		"UIName": "LB 5-X Cluster Ammo",
-		"Name": "LB 5-X Cluster Ammo"
+		"Name": "LB 5-X Cluster Ammo",
+		"Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nLB 5-X Ammo Bins each contain 20 Cluster Shot rounds and may feed multiple weapons."
 	},
-	"BonusValueA": "10 Cluster",
+	"BonusValueA": "Cluster",
 	"BonusValueB": ""
 }

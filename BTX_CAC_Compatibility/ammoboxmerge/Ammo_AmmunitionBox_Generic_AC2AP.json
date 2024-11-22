@@ -1,0 +1,6 @@
+{
+	"Capacity": 22,
+	"Description": {
+		"Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nAP AC/2 Ammo Bins each contain 22 rounds and may feed multiple weapons.\n\nArmor Piercing rounds do a single damage to internal structure even through armor. This can potentially mean internal components are damaged. AP Ammo however, has -1 accuracy."
+	}
+}

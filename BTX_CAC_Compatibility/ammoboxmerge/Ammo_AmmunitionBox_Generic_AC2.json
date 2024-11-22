@@ -1,0 +1,6 @@
+{
+	"Capacity": 45,
+	"Description": {
+		"Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nAC/2 Ammo Bins each contain 45 rounds and may feed multiple weapons."
+	}
+}

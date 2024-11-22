@@ -89,6 +89,7 @@ namespace BTX_CAC_CompatibilityDll
 #if !DEBUG
                 // tt ranges, remains in debug, so autopatcher can read modified values ;)
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(WeaponDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AmmunitionBoxDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
 #endif
                 // cluster
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetToHitChance)), "BEX.BattleTech.Extended_CE");
