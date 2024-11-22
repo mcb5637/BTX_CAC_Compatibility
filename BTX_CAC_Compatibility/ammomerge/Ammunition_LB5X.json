@@ -1,5 +1,6 @@
 {
 	"Description": {
 		"UIName": "LB-X"
-	}
+	},
+	"ShotsPerAmmo": 5
 }
