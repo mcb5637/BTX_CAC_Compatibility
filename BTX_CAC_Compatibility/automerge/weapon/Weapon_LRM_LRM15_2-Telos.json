@@ -1,4 +1,19 @@
 {
+	"MinRange": 180,
+	"MaxRange": 630,
+	"RangeSplit": [
+		210,
+		420,
+		630
+	],
+	"HeatGenerated": 15,
+	"Damage": 7,
+	"Instability": 3,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "LRM15 Long-Range Missile racks deal substantial damage and stability impact over distance, often found in pairs on indirect-fire support units. Like all LRMs, LRM15s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit.\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. LRM weapons accuracy modifier can be positively affected by Artemis IV, Narc Missile Beacon, or negatively affected by Anti Missile Systems."
+	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 15,
 	"MissileFiringIntervalMultiplier": 1,

@@ -86,6 +86,10 @@ namespace BTX_CAC_CompatibilityDll
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(UpgradeDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
                 // ecm
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ChassisDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
+#if !DEBUG
+                // tt ranges, remains in debug, so autopatcher can read modified values ;)
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(WeaponDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
+#endif
                 // cluster
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetToHitChance)), "BEX.BattleTech.Extended_CE");
 

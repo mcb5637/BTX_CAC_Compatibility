@@ -1,0 +1,17 @@
+{
+	"MinRange": 0,
+	"MaxRange": 270,
+	"RangeSplit": [
+		90,
+		180,
+		270
+	],
+	"HeatGenerated": 3,
+	"Damage": 10,
+	"Instability": 5,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "A miniature version of vehicle-mounted Gauss rifles, the Magshot accelerates a small projectile to incredible speeds by use of a magnetic accelerator. Unlike Autocannons, Magnetic Gauss Rifles do not suffer recoil effects from firing.\n\nMagnetic Gauss Rifles explode if destroyed, taking the entire mounted location with them."
+	}
+}

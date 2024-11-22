@@ -1,7 +1,23 @@
 {
-	"PrefabIdentifier": "LBX20",
+	"MinRange": 0,
+	"MaxRange": 360,
+	"RangeSplit": [
+		120,
+		240,
+		360
+	],
+	"HeatGenerated": 18,
+	"Damage": 5,
+	"Instability": 4,
+	"RefireModifier": 2,
+	"AccuracyModifier": 0,
+	"PrefabIdentifier": "LBX20",	
+	"ShotsWhenFired": 20,
 	"VolleyDivisor": 1,
-	"ImprovedBallistic": true,
+	"ImprovedBallistic": false,
+	"BallisticDamagePerPallet": false,
+	"HasShells": false,
+	"DisableClustering": true,
 	"FireDelayMultiplier": 1,
 	"Custom": {
 		"Clustering": {

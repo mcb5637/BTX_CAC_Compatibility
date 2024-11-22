@@ -1,0 +1,17 @@
+{
+	"MinRange": 150,
+	"MaxRange": 540,
+	"RangeSplit": [
+		180,
+		360,
+		540
+	],
+	"HeatGenerated": 24,
+	"Damage": 100,
+	"Instability": 40,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "The Thunderbolt 20 launcher fires a single missile that inflicts a high damage impact. Like all Thunderbolt launchers, Thunderbolt 20s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit.\n\nRequired Hardpoint: <b><color=#008000>Missile</color></b>"
+	}
+}

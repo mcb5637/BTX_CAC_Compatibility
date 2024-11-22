@@ -1,4 +1,19 @@
 {
+	"MinRange": 0,
+	"MaxRange": 270,
+	"RangeSplit": [
+		90,
+		180,
+		270
+	],
+	"HeatGenerated": 8,
+	"Damage": 11,
+	"Instability": 4,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "The midtier rack of Short-Range Missiles, SRM4s deal good damage for comparatively few negatives other than their inherently short range and need for ammunition. As for all SRMs, SRM4 shots deal above-average stability impact per hit compared to other weapons.\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. SRM weapons accuracy modifier can be positively affected by Artemis IV, Narc Missile Beacon, or negatively affected by Anti Missile Systems."
+	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 4,
 	"MissileFiringIntervalMultiplier": 1,

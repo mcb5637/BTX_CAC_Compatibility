@@ -1,0 +1,17 @@
+{
+	"MinRange": 0,
+	"MaxRange": 570,
+	"RangeSplit": [
+		210,
+		420,
+		570
+	],
+	"HeatGenerated": 36,
+	"Damage": 40,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "An improvement upon standard Large Lasers, Extended-Range Large Lasers extend their effective range at the cost of massive heat generation. Like all Lasers, ER Large Lasers do not do stability damage."
+	}
+}

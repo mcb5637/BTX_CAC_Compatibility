@@ -75,10 +75,16 @@ namespace BTX_CAC_CompatibilityDll
         }
 
         private static readonly Pattern<WeaponDef>[] WeaponPatterns = new Pattern<WeaponDef>[] {
-            new StaticPatchPattern<WeaponDef>()
+            new WeaponForwardingPattern()
             {
                 Check = new Regex("^Weapon_Autocannon_L?AC(\\d+)_(\\d+|SPECIAL)-.+$"),
-                Patch = "{\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1\r\n}\n",
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1\r\n}\r\n",
+            },
+            new WeaponForwardingPattern()
+            {
+                Check = new Regex("^Weapon_Gauss_(?:C|Heavy|Light)?Gauss(?:_NU|_Sa|Magshot)?_(\\d+)-.+$"),
+                ExtraData = "\r\n}\r\n",
+                Details = true,
             },
             new WeaponUACPattern()
             {
@@ -88,34 +94,45 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_Autocannon_C?LB(\\d+)X(?:_NU|_Sa)?_(\\d+)-.+$"),
             },
-            new StaticPatchPattern<WeaponDef>()
+            new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Laser_C?(?:Large|Medium|Small|Micro)LaserPulse(?:_NU|_Sa)?_(\\d+)-.+$"),
-                Patch = "{\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1\r\n}\r\n",
+                Check = new Regex("^Weapon_Laser_C?(?:Large|Medium|Small|Micro)LaserX?Pulse(?:_NU|_Sa)?_(\\d+)-.+$"),
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1\r\n}\r\n",
+                Details = true,
             },
-            new StaticPatchPattern<WeaponDef>()
+            new WeaponForwardingPattern()
+            {
+                Check = new Regex("^Weapon_Laser_C?(?:Large|Medium|Small|Micro)LaserER(?:_NU|_Sa)?_(\\d+)-.+$"),
+                ExtraData = "\r\n}\r\n",
+                Details = true,
+            },
+            new WeaponForwardingPattern()
             {
                 Check = new Regex("^Weapon_Laser_BinaryLaserCannon_(\\d+)-.+$"),
-                Patch = "{\r\n\t\"ImprovedBallistic\": true,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"ProjectilesPerShot\": 2\r\n}\r\n",
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"ProjectilesPerShot\": 2\r\n}\r\n",
             },
-            new WeaponXPulsePattern()
-            {
-                Check = new Regex("^Weapon_Laser_C?(?:Large|Medium|Small|Micro)LaserXPulse(?:_NU|_Sa)?_(\\d+)-.+$"),
-            },
-            new StaticPatchPattern<WeaponDef>()
+            new WeaponForwardingPattern()
             {
                 Check = new Regex("^Weapon_PPC_PPC_(\\d+)-.+$"),
-                Patch = "{\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_FI_ON\",\r\n\t\t\t\"UIName\": \"FI ON\",\r\n\t\t\t\"Name\": \"Field Inhibitor ON\",\r\n\t\t\t\"Description\": \"PPC operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_FI_OFF\",\r\n\t\t\t\"UIName\": \"FI OFF\",\r\n\t\t\t\"Name\": \"Field Inhibitor OFF\",\r\n\t\t\t\"Description\": \"Disabled Field Inhibitor removes minimum range, but at the chance to misfire.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamageOnJamming\": true,\r\n\t\t\t\"FlatJammingChance\": 0.1,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.04,\r\n\t\t\t\"MinRange\": -90.0,\r\n\t\t\t\"AccuracyModifier\": 1.0\r\n\t\t}\r\n\t]\r\n}\r\n",
+                ExtraData = ",\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_FI_ON\",\r\n\t\t\t\"UIName\": \"FI ON\",\r\n\t\t\t\"Name\": \"Field Inhibitor ON\",\r\n\t\t\t\"Description\": \"PPC operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_FI_OFF\",\r\n\t\t\t\"UIName\": \"FI OFF\",\r\n\t\t\t\"Name\": \"Field Inhibitor OFF\",\r\n\t\t\t\"Description\": \"Disabled Field Inhibitor removes minimum range, but at the chance to misfire.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamageOnJamming\": true,\r\n\t\t\t\"FlatJammingChance\": 0.1,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.04,\r\n\t\t\t\"MinRange\": -90.0,\r\n\t\t\t\"AccuracyModifier\": 1.0\r\n\t\t}\r\n\t]\r\n}\r\n",
             },
-            new StaticPatchPattern<WeaponDef>()
+            new WeaponForwardingPattern()
+            {
+                Check = new Regex("^Weapon_PPC_C?PPC(?:ER|Heavy)(?:_NU|_Sa)?_(\\d+)-.+$"),
+                ExtraData = "\r\n}\r\n",
+            },
+            new WeaponForwardingPattern()
             {
                 Check = new Regex("^Weapon_Flamer_C?Flamer_(\\d+|SPECIAL)-.+$"),
-                Patch = "{\r\n\t\"FireTerrainChance\": 0.75,\r\n\t\"FireTerrainStrength\": 1,\r\n\t\"FireOnSuccessHit\": true\r\n}\r\n",
+                ExtraData = ",\r\n\t\"FireTerrainChance\": 0.75,\r\n\t\"FireTerrainStrength\": 1,\r\n\t\"FireOnSuccessHit\": true\r\n}\r\n",
+                Heat = true,
+                Details = true,
             },
-            new StaticPatchPattern<WeaponDef>()
+            new WeaponForwardingPattern()
             {
                 Check = new Regex("^Weapon_MachineGun_C?MachineGun(?:Heavy|Light)?_(\\d+)-.+$"),
-                Patch = "{\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"MG_Full\",\r\n\t\t\t\"UIName\": \"x5\",\r\n\t\t\t\"Name\": \"Full Salvo\",\r\n\t\t\t\"Description\": \"Fires the MG at standard speed.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"MG_Double\",\r\n\t\t\t\"UIName\": \"x10\",\r\n\t\t\t\"Name\": \"Double Salvo\",\r\n\t\t\t\"Description\": \"Fires the MG at double speed, decreasing accuracy, increasing heat, but doubles the shots per turn.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"AccuracyModifier\": 4.0,\r\n\t\t\t\"ShotsWhenFired\": 5,\r\n\t\t\t\"HeatGenerated\": 5\r\n\t\t}\r\n\t],\r\n\t\"ShotsPerAmmo\": 0.2,\r\n\t\"VolleyDivisor\": 5\r\n}\r\n",
+                Details = true,
+                ExtraData = ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"MG_Full\",\r\n\t\t\t\"UIName\": \"x5\",\r\n\t\t\t\"Name\": \"Full Salvo\",\r\n\t\t\t\"Description\": \"Fires the MG at standard speed.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"MG_Double\",\r\n\t\t\t\"UIName\": \"x10\",\r\n\t\t\t\"Name\": \"Double Salvo\",\r\n\t\t\t\"Description\": \"Fires the MG at double speed, decreasing accuracy, increasing heat, but doubles the shots per turn.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"AccuracyModifier\": 4.0,\r\n\t\t\t\"ShotsWhenFired\": 5,\r\n\t\t\t\"HeatGenerated\": 5\r\n\t\t}\r\n\t],\r\n\t\"ShotsPerAmmo\": 0.2,\r\n\t\"VolleyDivisor\": 5\r\n}\r\n",
             },
             new WeaponLRMPattern()
             {
@@ -126,6 +143,12 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_ELRM_C?ELRM(\\d+)_(\\d+)-.+$"),
                 EnableArtemis = false,
+            },
+            new WeaponForwardingPattern()
+            {
+                Check = new Regex("^Weapon_Thunderbolt_Thunderbolt(\\d+)_(\\d+)-.+$"),
+                Details = true,
+                ExtraData = "\r\n}\r\n",
             },
             new DeprecatedPatchPattern<WeaponDef>()
             {
@@ -249,6 +272,28 @@ namespace BTX_CAC_CompatibilityDll
             }
         }
 
+        private class WeaponForwardingPattern : Pattern<WeaponDef>
+        {
+            public string ExtraData;
+            public bool Details = false;
+            public bool Heat = false;
+            public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
+            {
+                string p = Forward(data, Details, Heat);
+                p += ExtraData;
+                WriteTo(targetFolder, id, p);
+            }
+
+            public static string Forward(WeaponDef data, bool details, bool heat)
+            {
+                string p = $"{{\r\n\t\"MinRange\": {data.MinRange},\r\n\t\"MaxRange\": {data.MaxRange},\r\n\t\"RangeSplit\": [\r\n\t\t{data.RangeSplit[0]},\r\n\t\t{data.RangeSplit[1]},\r\n\t\t{data.RangeSplit[2]}\r\n\t],\r\n\t\"HeatGenerated\": {data.HeatGenerated},\r\n\t\"Damage\": {data.Damage},\r\n\t\"Instability\": {data.Instability},\r\n\t\"RefireModifier\": {data.RefireModifier},\r\n\t\"AccuracyModifier\": {data.AccuracyModifier}";
+                if (heat)
+                    p += $",\r\n\t\"HeatDamage\": {data.HeatDamage}";
+                if (details)
+                    p += $",\r\n\t\"Description\": {{\r\n\t\t\"Details\": {JsonConvert.ToString(data.Description.Details)}\r\n\t}}";
+                return p;
+            }
+        }
         private class WeaponUACPattern : Pattern<WeaponDef>
         {
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
@@ -264,8 +309,8 @@ namespace BTX_CAC_CompatibilityDll
                         shotSelection = r;
                 }
                 int uacrapidfireacc = 3; //TODO read from settings
-                string p = "{\n";
-                p += $"\t\"PrefabIdentifier\": \"UAC{m.Groups[1].Value}\",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\n";
+                string p = WeaponForwardingPattern.Forward(data, false, false);
+                p += $",\r\n\t\"PrefabIdentifier\": \"UAC{m.Groups[1].Value}\",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
                 p += "\t\"Custom\": {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 7,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"UAC\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 2,\r\n\t\t\t\t\t\"Base\": 0.7083333\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 3,\r\n\t\t\t\t\t\"Base\": 0.6666667\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 4,\r\n\t\t\t\t\t\"Base\": 0.6597222\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
                 p += "\t\"Modes\": [\n";
                 for (int mi = 1; mi <= shotSelection; mi++)
@@ -319,7 +364,8 @@ namespace BTX_CAC_CompatibilityDll
                 int clustersize = int.Parse(m.Groups[1].Value);
                 if (clustersize != data.ShotsWhenFired)
                     throw new InvalidDataException("lbx size missmatch " + id);
-                string p = $"{{\r\n\t\"PrefabIdentifier\": \"LBX{clustersize}\",\r\n\t\"VolleyDivisor\": 1,\r\n\t\"ImprovedBallistic\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
+                string p = WeaponForwardingPattern.Forward(data, false, false);
+                p += $",\r\n\t\"PrefabIdentifier\": \"LBX{clustersize}\",\t\n\t\"ShotsWhenFired\": {data.ShotsWhenFired},\r\n\t\"VolleyDivisor\": 1,\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
                 p += $"\t\"Custom\": {{\r\n\t\t\"Clustering\": {{\r\n\t\t\t\"Base\": {(clustersize <= 2 ? 0.7083333f : 0.6333333f)}\r\n\t\t}}\r\n\t}},\r\n";
                 p += "\t\"Modes\": [\r\n";
                 p += "\t\t{\r\n\t\t\t\"Id\": \"LBXMode_Cluster\",\r\n\t\t\t\"UIName\": \"LB-X\",\r\n\t\t\t\"Name\": \"LB-X Mode\",\r\n\t\t\t\"Description\": \"LB-X Mode fires LBX Cluster ammunition.\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"HitGenerator\": \"Cluster\"\r\n\t\t},\r\n";
@@ -327,16 +373,6 @@ namespace BTX_CAC_CompatibilityDll
                 float stab = data.Instability * clustersize - data.Instability;
                 int shots = 1 - clustersize;
                 p += $"\t\t{{\r\n\t\t\t\"Id\": \"LBXMode_Slug\",\r\n\t\t\t\"UIName\": \"AC\",\r\n\t\t\t\"Name\": \"AC Mode\",\r\n\t\t\t\"Description\": \"AC Mode fires AC Slug ammunition.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamagePerShot\": {dmg},\r\n\t\t\t\"Instability\": {stab},\r\n\t\t\t\"ShotsWhenFired\": {shots},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_AC{clustersize}_Single\",\r\n\t\t\t\"HasShells\": false,\r\n\t\t\t\"AmmoCategory\": \"AC{clustersize}\"\r\n\t\t}}\r\n\t]\r\n}}\r\n";
-                WriteTo(targetFolder, id, p);
-            }
-        }
-
-        private class WeaponXPulsePattern : Pattern<WeaponDef>
-        {
-            public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
-            {
-                float dmg = data.Damage * data.ShotsWhenFired;
-                string p = $"{{\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1,\r\n\t\"Damage\": {dmg},\r\n\t\"ShotsWhenFired\": 1\r\n}}\r\n";
                 WriteTo(targetFolder, id, p);
             }
         }
@@ -350,7 +386,8 @@ namespace BTX_CAC_CompatibilityDll
                     return;
                 float minr = data.MinRange;
                 int size = data.ShotsWhenFired;
-                string p = $"{{\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1";
+                string p = WeaponForwardingPattern.Forward(data, true, false);
+                p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1";
                 p += ",\r\n\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"DeadfireBase\": 0.54320985,\r\n\t\t\t\"ArtemisBase\": 0.76666665,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}";
                 p += ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}";
                 if (minr > 0)
@@ -369,7 +406,8 @@ namespace BTX_CAC_CompatibilityDll
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
                 int size = data.ShotsWhenFired;
-                string p = $"{{\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"{(Streak ? "Streak" : "Individual")}\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n";
+                string p = WeaponForwardingPattern.Forward(data, true, false);
+                p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"{(Streak ? "Streak" : "Individual")}\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n";
                 if (data.ShotsWhenFired >= 6)
                     p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"DeadfireBase\": 0.54320985,\r\n\t\t\t\"ArtemisBase\": 0.76666665,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
                 else if (data.ShotsWhenFired >= 4)
@@ -386,8 +424,9 @@ namespace BTX_CAC_CompatibilityDll
         {
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
+                string p = WeaponForwardingPattern.Forward(data, true, false);
                 int size = data.ShotsWhenFired;
-                string p = $"{{\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Individual\",\r\n\t\"AMSHitChance\": 0.5,\r\n\t\"MissileHealth\": 2,\r\n\t\"Unguided\": true";
+                p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Individual\",\r\n\t\"AMSHitChance\": 0.5,\r\n\t\"MissileHealth\": 2,\r\n\t\"Unguided\": true";
                 p += ",\r\n\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.54320985,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}\r\n}\r\n";
                 WriteTo(targetFolder, id, p);
             }

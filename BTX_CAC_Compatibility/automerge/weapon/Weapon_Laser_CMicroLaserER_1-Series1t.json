@@ -1,0 +1,17 @@
+{
+	"MinRange": 0,
+	"MaxRange": 120,
+	"RangeSplit": [
+		30,
+		60,
+		120
+	],
+	"HeatGenerated": 2,
+	"Damage": 10,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "The Extended-Range Micro Laser is a very compact version of conventional ER laser weaponry. Like all Lasers, ER Micro Lasers do not do stability damage."
+	}
+}

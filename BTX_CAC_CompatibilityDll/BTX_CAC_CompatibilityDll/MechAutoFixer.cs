@@ -153,7 +153,9 @@ namespace BTX_CAC_CompatibilityDll
 
         internal static void Register()
         {
+#if !DEBUG
             AutoFixer.Shared.RegisterMechFixer(Fixer);
+#endif
         }
     }
 }

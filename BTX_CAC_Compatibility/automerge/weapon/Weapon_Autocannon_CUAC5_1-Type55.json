@@ -1,4 +1,16 @@
 {
+	"MinRange": 0,
+	"MaxRange": 630,
+	"RangeSplit": [
+		210,
+		420,
+		630
+	],
+	"HeatGenerated": 6,
+	"Damage": 40,
+	"Instability": 10,
+	"RefireModifier": 2,
+	"AccuracyModifier": 0,
 	"PrefabIdentifier": "UAC5",
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,

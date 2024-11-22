@@ -1,4 +1,19 @@
 {
+	"MinRange": 0,
+	"MaxRange": 540,
+	"RangeSplit": [
+		150,
+		330,
+		540
+	],
+	"HeatGenerated": 9,
+	"Damage": 5,
+	"Instability": 3,
+	"RefireModifier": 0,
+	"AccuracyModifier": 1,
+	"Description": {
+		"Details": "Rocket Launchers are cheap, unguided, one-shot missile launchers. The Rocket Launcher 10 fires ten unguided rockets. Rocket Launchers suffer a to hit penalty over missile launchers and do not receieve the positive or negative modifiers that affect missiles.\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. Rocket Launcher weapons accuracy modifier is not affected by a Narc Missile Beacon, however will be negatively affected by Anti Missile Systems."
+	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 10,
 	"MissileFiringIntervalMultiplier": 1,

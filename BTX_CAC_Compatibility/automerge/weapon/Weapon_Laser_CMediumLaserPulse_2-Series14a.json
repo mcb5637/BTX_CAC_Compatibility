@@ -1,4 +1,19 @@
 {
+	"MinRange": 0,
+	"MaxRange": 360,
+	"RangeSplit": [
+		120,
+		240,
+		360
+	],
+	"HeatGenerated": 9,
+	"Damage": 35,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": 1,
+	"Description": {
+		"Details": "An improvement upon standard Medium Lasers, Medium Pulse Lasers use pulses of light instead of a single beam. This results in better accuracy and damage output but with increased heat and weight. Medium Pulse Lasers are extremely accurate. Clan Pulse weapons are longer range than their Inner Sphere counterparts."
+	},
 	"ImprovedBallistic": false,
 	"ProjectilesPerShot": 1
 }

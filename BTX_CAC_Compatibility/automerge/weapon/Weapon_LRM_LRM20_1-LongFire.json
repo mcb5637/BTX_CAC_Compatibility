@@ -1,4 +1,19 @@
 {
+	"MinRange": 180,
+	"MaxRange": 630,
+	"RangeSplit": [
+		210,
+		420,
+		630
+	],
+	"HeatGenerated": 18,
+	"Damage": 5,
+	"Instability": 3,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "Often found as the secondary weapon on heavier units, LRM20 racks of Long-Range Missiles can deal decent damage while a unit closes range, but they chew through ammunition. Like all LRMs, LRM20s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit.\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. LRM weapons accuracy modifier can be positively affected by Artemis IV, Narc Missile Beacon, or negatively affected by Anti Missile Systems."
+	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 20,
 	"MissileFiringIntervalMultiplier": 1,

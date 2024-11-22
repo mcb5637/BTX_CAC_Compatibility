@@ -1,4 +1,20 @@
 {
+	"MinRange": 0,
+	"MaxRange": 90,
+	"RangeSplit": [
+		30,
+		60,
+		90
+	],
+	"HeatGenerated": 6,
+	"Damage": 10,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"HeatDamage": 11,
+	"Description": {
+		"Details": "Flamer weapons are unique in that they deal both physical damage and expel superheated plasma, applying substantial heat to their target. When done properly, this can hamper enemy return fire or even cause the targeted unit to shut down from overheating."
+	},
 	"FireTerrainChance": 0.75,
 	"FireTerrainStrength": 1,
 	"FireOnSuccessHit": true

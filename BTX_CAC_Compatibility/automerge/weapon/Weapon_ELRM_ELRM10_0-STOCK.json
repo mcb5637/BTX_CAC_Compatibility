@@ -1,4 +1,19 @@
 {
+	"MinRange": 300,
+	"MaxRange": 1140,
+	"RangeSplit": [
+		360,
+		660,
+		1140
+	],
+	"HeatGenerated": 18,
+	"Damage": 5,
+	"Instability": 3,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "The ELRM10 rack of Long-Range Missiles occupies a supporting fire role when mounted on most units, with fairly low damage balanced by low heat and ammunition consumption. Like all ELRMs, ELRM10s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit. Extended LRMs missile modifier is twice as detrimental when within minimum range and cannot benefit from a Narc Missile Beacon or TAG."
+	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 10,
 	"MissileFiringIntervalMultiplier": 1,

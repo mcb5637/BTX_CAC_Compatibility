@@ -1,5 +1,16 @@
 {
-	"Modes": [
+	"MinRange": 90,
+	"MaxRange": 540,
+	"RangeSplit": [
+		180,
+		360,
+		540
+	],
+	"HeatGenerated": 30,
+	"Damage": 50,
+	"Instability": 20,
+	"RefireModifier": 0,
+	"AccuracyModifier": -2,	"Modes": [
 		{
 			"Id": "PPCMode_FI_ON",
 			"UIName": "FI ON",

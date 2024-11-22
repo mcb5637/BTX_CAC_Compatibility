@@ -1,6 +1,19 @@
 {
-	"ImprovedBallistic": false,
-	"ProjectilesPerShot": 1,
+	"MinRange": 0,
+	"MaxRange": 150,
+	"RangeSplit": [
+		60,
+		120,
+		150
+	],
+	"HeatGenerated": 9,
 	"Damage": 15,
-	"ShotsWhenFired": 1
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": -3,
+	"Description": {
+		"Details": "X-Pulse Lasers were an attempt, started in 3055, by the Federated Commonwealth technicians to increase the range of pulse lasers. An improvement upon standard Small Lasers, Small X-Pulse Lasers use pulses of light instead of a single beam. This results in better accuracy and damage output but with increased heat and weight. Small X-Pulse Lasers are extremely accurate."
+	},
+	"ImprovedBallistic": false,
+	"ProjectilesPerShot": 1
 }

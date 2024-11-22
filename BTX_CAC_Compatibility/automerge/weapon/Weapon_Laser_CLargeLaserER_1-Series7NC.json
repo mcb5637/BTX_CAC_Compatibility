@@ -1,0 +1,17 @@
+{
+	"MinRange": 0,
+	"MaxRange": 750,
+	"RangeSplit": [
+		240,
+		450,
+		750
+	],
+	"HeatGenerated": 34,
+	"Damage": 50,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "An improvement upon standard Large Lasers, Extended-Range Large Lasers extend their effective range at the cost of massive heat generation. Like all Lasers, ER Large Lasers do not do stability damage. Clan Extended Range weapons are longer range than their Inner Sphere counterparts."
+	}
+}

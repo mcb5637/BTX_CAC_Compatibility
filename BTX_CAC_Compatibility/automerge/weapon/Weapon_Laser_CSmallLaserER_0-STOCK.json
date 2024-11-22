@@ -1,0 +1,17 @@
+{
+	"MinRange": 0,
+	"MaxRange": 180,
+	"RangeSplit": [
+		60,
+		120,
+		180
+	],
+	"HeatGenerated": 6,
+	"Damage": 25,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "An improvement upon standard Small Lasers, Extended-Range Small Lasers extend their effective range at the cost of more heat generation. Like all Lasers, ER Small Lasers do not do stability damage. Clan Extended Range weapons are longer range than their Inner Sphere counterparts."
+	}
+}

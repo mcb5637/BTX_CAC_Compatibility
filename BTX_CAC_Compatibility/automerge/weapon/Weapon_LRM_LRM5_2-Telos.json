@@ -1,4 +1,19 @@
 {
+	"MinRange": 180,
+	"MaxRange": 630,
+	"RangeSplit": [
+		210,
+		420,
+		630
+	],
+	"HeatGenerated": 6,
+	"Damage": 7,
+	"Instability": 3,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "The smallest rack of Long-Range Missiles, LRM5s are efficient and tend to serve as harassment weapons. Like all LRMs, LRM5s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit.\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. LRM weapons accuracy modifier can be positively affected by Artemis IV, Narc Missile Beacon, or negatively affected by Anti Missile Systems."
+	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 5,
 	"MissileFiringIntervalMultiplier": 1,

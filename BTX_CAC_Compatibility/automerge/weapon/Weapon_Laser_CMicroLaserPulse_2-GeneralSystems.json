@@ -1,4 +1,19 @@
 {
+	"MinRange": 0,
+	"MaxRange": 90,
+	"RangeSplit": [
+		30,
+		60,
+		90
+	],
+	"HeatGenerated": 2,
+	"Damage": 15,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": -4,
+	"Description": {
+		"Details": "The Micro Pulse Laser is a very compact version of conventional Pulse laser weaponry. An improvement upon standard Small Lasers, Micro Pulse Lasers use pulses of light instead of a single beam. This results in better accuracy at the same range and damage. Like all Pulse Lasers, Micro Pulse Lasers are extremely accurate."
+	},
 	"ImprovedBallistic": false,
 	"ProjectilesPerShot": 1
 }

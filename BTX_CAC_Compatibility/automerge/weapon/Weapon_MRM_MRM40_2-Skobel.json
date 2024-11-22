@@ -1,4 +1,19 @@
 {
+	"MinRange": 0,
+	"MaxRange": 360,
+	"RangeSplit": [
+		90,
+		210,
+		360
+	],
+	"HeatGenerated": 36,
+	"Damage": 6,
+	"Instability": 4,
+	"RefireModifier": 0,
+	"AccuracyModifier": 1,
+	"Description": {
+		"Details": "Medium Range Missiles are dead-fire missiles with the guidance systems removed, making the whole package smaller. The MRM-40 is the largest and bulkiest of the MRMs. MRMs suffer a baseline innacuracy over other missile systems, but are more accurate than Dead-Fire modified LRMs.\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. MRM weapons accuracy modifier is not affected by a Narc Missile Beacon, however will be negatively affected by Anti Missile Systems."
+	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 40,
 	"MissileFiringIntervalMultiplier": 1,
