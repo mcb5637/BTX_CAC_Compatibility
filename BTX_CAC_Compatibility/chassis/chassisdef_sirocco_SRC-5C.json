@@ -11,7 +11,7 @@
     "Details": "The 5C variant of the Sirocco is more specialized in both long- and short-range combat. For long-range combat, the Sirocco has two Light Gauss Rifles, which allow the 'Mech to strike an enemy at up to 750 meters. The 5C also has a powerful close-range arsenal if forced to defend itself. The 'Mech has four ER Medium Lasers, two mounted in the front and two in the rear, as well as a Medium Pulse Laser. Also for close combat, the 'Mech has two SRM-4 missile launchers to seek out weak points in an enemy's armor and is even more well defended against enemy sappers with four Anti-Personnel Pods. Finally, the 'Mech retains the ECM Suite to defend itself from electronic warfare systems.",
     "Icon": "uixTxrIcon_sirocco"
   },
-  "MovementCapDefID": "movedef_bullshark_BSK-M3",
+  "MovementCapDefID": "movedef_mech_assault_3",
   "PathingCapDefID": "pathingdef_assault_quad",
   "HardpointDataDefID": "hardpointdatadef_cusirocco",
   "PrefabIdentifier": "chrprfmech_cusiroccobase-001",
@@ -19,6 +19,7 @@
   "Tonnage": 95,
   "InitialTonnage": 34.19,
   "weightClass": "ASSAULT",
+  "BattleValue": "10535000",
   "Heatsinks": 16,
   "TopSpeed": 54,
   "TurnRadius": 90,

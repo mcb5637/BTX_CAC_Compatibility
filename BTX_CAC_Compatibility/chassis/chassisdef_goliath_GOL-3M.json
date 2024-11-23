@@ -11,7 +11,7 @@
     "Details": "The 3M is a 3047 upgrade of the Goliath that uses Star League technology. The 'Mech has had an Hermes 320 XL Engine installed to reduce the engine's weight by half. The 'Mech retains the LRM launchers and Machine Guns of the 1H model. The 'Mech replaces the PPC with a Zeus Slingshot Gauss Rifle which gives the Goliath devastating long-range firepower. The 'Mech still suffers from its close combat deficiencies but with its updated arsenal most 'Mechs are hard pressed to close to short range.",
     "Icon": "uixTxrIcon_goliath"
   },
-  "MovementCapDefID": "movedef_zeus_ZEU-6S",
+  "MovementCapDefID": "movedef_mech_assault_4",
   "PathingCapDefID": "pathingdef_assault_quad",
   "HardpointDataDefID": "hardpointdatadef_cugoliath",
   "PrefabIdentifier": "chrprfmech_goliath",
@@ -19,7 +19,7 @@
   "Tonnage": 80,
   "InitialTonnage": 27.0,
   "weightClass": "ASSAULT",
-  "BattleValue": 6778200,
+  "BattleValue": "7685000",
   "Heatsinks": 0,
   "TopSpeed": 105,
   "TurnRadius": 90,

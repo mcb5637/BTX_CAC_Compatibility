@@ -3,8 +3,11 @@
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
+      "chrprfmech_battleaxebase-001_70",
       "chrPrfMech_catapultBase-001_65",
-      "Jaegermech",
+      "chrprfmech_hammerhandsbase-001_75",
+      "chrPrfMech_jagermechBase-001_65",
+      "chrPrfMech_jagermechBase-001_70",
       "chrprfmech_linebackerbase-001_65",
       "chrprfmech_maddogbase-001_60",
       "chrPrfMech_novacatbase-001_70"

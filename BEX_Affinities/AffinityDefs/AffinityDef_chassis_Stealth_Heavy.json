@@ -3,7 +3,6 @@
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "chrprfmech_ghostbase-001_65",
       "chrprfmech_exterminatorbase-001_65"
     ],
     "idType": "AssemblyVariant",

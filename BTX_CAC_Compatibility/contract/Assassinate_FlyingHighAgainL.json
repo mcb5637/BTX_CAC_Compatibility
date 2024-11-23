@@ -1237,7 +1237,7 @@
             "customUnitName": "Unknown Aricraft",
             "customHeraldryDefId": "",
             "unitType": "Mech",
-            "unitDefId": "mechdef_urbanmech_UM-LAM-X",
+            "unitDefId": "mechdef_urbanmechlam_UM-LAM-X",
             "unitTagSet": {
               "items": [],
               "tagSetSourceFile": "tags/UnitTags"

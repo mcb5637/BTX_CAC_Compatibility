@@ -1,16 +1,16 @@
 {
-    "id": "AffinityDef_Global_SecondNature",
-    "affinityType": "Global",
-    "affinityData": {
-        "missionsRequired": 50,
-        "levelName": "Second Nature+",
-        "decription": "Connection to the battle systems of this chassis (+1 Gunnery)",
-        "affinities": [
-            {
-                "type": "Gunnery",
-                "bonus": 1
-            }
-        ],
-        "effectData": []
-    }
+  "id": "AffinityDef_Global_SecondNature",
+  "affinityType": "Global",
+  "affinityData": {
+    "missionsRequired": 50,
+    "levelName": "Second Nature+",
+    "decription": "Connection to the battle systems of this chassis (+1 Gunnery)",
+    "affinities": [
+      {
+        "type": "Gunnery",
+        "bonus": 1
+      }
+    ],
+    "effectData": []
+  }
 }

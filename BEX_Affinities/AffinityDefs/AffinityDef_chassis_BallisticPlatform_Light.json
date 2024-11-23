@@ -57,7 +57,7 @@
       {
         "missionsRequired": 30,
         "levelName": "Ballistic Platform+",
-        "decription": "Familiarity with this 'Mech's energy capabilities improves damage output (+5% Ballistic Weapon Damage)",
+        "decription": "Familiarity with this 'Mech's ballistic capabilities improves damage output (+5% Ballistic Weapon Damage)",
         "affinities": [],
         "effectData": [
           {

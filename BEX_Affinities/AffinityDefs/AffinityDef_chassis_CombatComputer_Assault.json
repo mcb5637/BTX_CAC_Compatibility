@@ -3,7 +3,8 @@
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "Stalker"
+      "chrPrfMech_stalkerBase-001_75",
+      "chrPrfMech_stalkerBase-001_85"
     ],
     "idType": "AssemblyVariant",
     "altMaps": [],

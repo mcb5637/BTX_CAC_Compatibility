@@ -3,7 +3,8 @@
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "Centurion"
+      "chrPrfMech_centurionBase-001_50",
+      "chrPrfMech_centurionBase-001_55"
     ],
     "idType": "AssemblyVariant",
     "altMaps": [],
