@@ -103,6 +103,7 @@
     <Compile Include="AccessExtensionPatcher\PropertyGet.cs" />
     <Compile Include="AccessExtensionPatcher\PropertySet.cs" />
     <Compile Include="AutoPatchGenerator.cs" />
+    <Compile Include="LightWeatherEffects.cs" />
     <Compile Include="Briefing_InitializeContractComplete.cs" />
     <Compile Include="CustomClustering.cs" />
     <Compile Include="Decay.cs" />

@@ -1,0 +1,14 @@
+{
+	"Description": {
+		"UIName": "AP"
+	},
+	"ammunitionTypeID": "Normal",
+	"ammoCategoryID": "AC2",
+	"HeatGenerated": 0,
+	"HeatGeneratedModifier": 1,
+	"ArmorDamageModifier": 1,
+	"ISDamageModifier": 1,
+	"CriticalDamageModifier": 1,
+	"APDamage": 1,
+	"AccuracyModifier": 1
+}

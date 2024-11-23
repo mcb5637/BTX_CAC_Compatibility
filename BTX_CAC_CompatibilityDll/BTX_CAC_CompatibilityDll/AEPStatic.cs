@@ -87,5 +87,12 @@ namespace BTX_CAC_CompatibilityDll
         public static void SetFixedEquipment(this ChassisDef d, MechComponentRef[] i)
         {
         }
+
+        [FieldGet(typeof(Core), "CurrentLight")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static LightValue GetExtendedCE_Core_CurrentLight()
+        {
+            return LightValue.Day;
+        }
     }
 }

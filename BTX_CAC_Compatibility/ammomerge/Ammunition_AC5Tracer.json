@@ -1,0 +1,13 @@
+{
+	"Description": {
+		"UIName": "TR"
+	},
+	"ammunitionTypeID": "Normal",
+	"ammoCategoryID": "AC5",
+	"HeatGenerated": 0,
+	"HeatGeneratedModifier": 1,
+	"ArmorDamageModifier": 1,
+	"ISDamageModifier": 1,
+	"CriticalDamageModifier": 1,
+	"DamagePerShot": -3
+}
