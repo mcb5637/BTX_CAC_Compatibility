@@ -17,6 +17,12 @@
 	"HasShells": false,
 	"DisableClustering": true,
 	"FireDelayMultiplier": 1,
+	"RestrictedAmmo": [
+		"Ammunition_AC20AP",
+		"Ammunition_AC20Precision",
+		"Ammunition_AC20Tracer",
+		"Ammunition_LB20X"
+	],
 	"Custom": {
 		"Clustering": {
 			"Steps": [

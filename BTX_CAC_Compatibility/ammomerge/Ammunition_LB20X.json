@@ -2,5 +2,12 @@
 	"Description": {
 		"UIName": "LB-X"
 	},
-	"ShotsPerAmmo": 20
+	"ShotsPerAmmo": 20,
+	"ammunitionTypeID": "Normal",
+	"ammoCategoryID": "AC20",
+	"WeaponEffectID": "WeaponEffect-Weapon_LB20X",
+	"ShotsWhenFired": 19,
+	"DamageMultiplier": 0.05,
+	"InstabilityMultiplier": 0.05,
+	"HitGenerator": "Cluster"
 }

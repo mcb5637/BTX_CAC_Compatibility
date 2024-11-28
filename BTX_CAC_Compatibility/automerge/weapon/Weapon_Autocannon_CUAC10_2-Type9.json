@@ -17,6 +17,12 @@
 	"HasShells": false,
 	"DisableClustering": true,
 	"FireDelayMultiplier": 1,
+	"RestrictedAmmo": [
+		"Ammunition_AC10AP",
+		"Ammunition_AC10Precision",
+		"Ammunition_AC10Tracer",
+		"Ammunition_LB10X"
+	],
 	"Custom": {
 		"Clustering": {
 			"Steps": [

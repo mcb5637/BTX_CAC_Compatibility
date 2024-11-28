@@ -2,5 +2,12 @@
 	"Description": {
 		"UIName": "LB-X"
 	},
-	"ShotsPerAmmo": 10
+	"ShotsPerAmmo": 10,
+	"ammunitionTypeID": "Normal",
+	"ammoCategoryID": "AC10",
+	"WeaponEffectID": "WeaponEffect-Weapon_LB10X",
+	"ShotsWhenFired": 9,
+	"DamageMultiplier": 0.1,
+	"InstabilityMultiplier": 0.1,
+	"HitGenerator": "Cluster"
 }

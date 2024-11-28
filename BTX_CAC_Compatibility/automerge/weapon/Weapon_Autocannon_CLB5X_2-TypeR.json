@@ -26,19 +26,11 @@
 	},
 	"Modes": [
 		{
-			"Id": "LBXMode_Cluster",
-			"UIName": "LB-X",
-			"Name": "LB-X Mode",
-			"Description": "LB-X Mode fires LBX Cluster ammunition.",
+			"Id": "LBXMode_Std",
+			"UIName": "STD",
+			"Name": "Standard",
+			"Description": "",
 			"isBaseMode": true,
-			"HitGenerator": "Cluster"
-		},
-		{
-			"Id": "LBXMode_Slug",
-			"UIName": "AC",
-			"Name": "AC Mode",
-			"Description": "AC Mode fires AC Slug ammunition.",
-			"isBaseMode": false,
 			"DamagePerShot": 32,
 			"Instability": 12,
 			"ShotsWhenFired": -4,

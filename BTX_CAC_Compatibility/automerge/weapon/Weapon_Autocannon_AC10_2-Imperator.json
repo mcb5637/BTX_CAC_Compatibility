@@ -15,5 +15,8 @@
 	"BallisticDamagePerPallet": false,
 	"HasShells": false,
 	"DisableClustering": true,
-	"FireDelayMultiplier": 1
+	"FireDelayMultiplier": 1,
+	"RestrictedAmmo": [
+		"Ammunition_LB10X"
+	]
 }

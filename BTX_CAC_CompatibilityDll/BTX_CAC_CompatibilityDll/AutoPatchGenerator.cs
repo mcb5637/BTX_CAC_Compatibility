@@ -75,10 +75,9 @@ namespace BTX_CAC_CompatibilityDll
         }
 
         private static readonly Pattern<WeaponDef>[] WeaponPatterns = new Pattern<WeaponDef>[] {
-            new WeaponForwardingPattern()
+            new WeaponACPattern()
             {
                 Check = new Regex("^Weapon_Autocannon_L?AC(\\d+)_(\\d+|SPECIAL)-.+$"),
-                ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1\r\n}\r\n",
             },
             new WeaponForwardingPattern()
             {
@@ -294,6 +293,16 @@ namespace BTX_CAC_CompatibilityDll
                 return p;
             }
         }
+        private class WeaponACPattern : Pattern<WeaponDef>
+        {
+            public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
+            {
+                string p = WeaponForwardingPattern.Forward(data, false, false);
+                p += ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,";
+                p += $"\r\n\t\"RestrictedAmmo\": [\r\n\t\t\"Ammunition_LB{m.Groups[1].Value}X\"\r\n\t]\r\n}}\r\n";
+                WriteTo(targetFolder, id, p);
+            }
+        }
         private class WeaponUACPattern : Pattern<WeaponDef>
         {
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
@@ -311,6 +320,7 @@ namespace BTX_CAC_CompatibilityDll
                 int uacrapidfireacc = 3; //TODO read from settings
                 string p = WeaponForwardingPattern.Forward(data, false, false);
                 p += $",\r\n\t\"PrefabIdentifier\": \"UAC{m.Groups[1].Value}\",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
+                p += $"\t\"RestrictedAmmo\": [\r\n\t\t\"Ammunition_AC{m.Groups[1].Value}AP\",\r\n\t\t\"Ammunition_AC{m.Groups[1].Value}Precision\",\r\n\t\t\"Ammunition_AC{m.Groups[1].Value}Tracer\",\r\n\t\t\"Ammunition_LB{m.Groups[1].Value}X\"\r\n\t],\r\n";
                 p += "\t\"Custom\": {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 7,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"UAC\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 2,\r\n\t\t\t\t\t\"Base\": 0.7083333\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 3,\r\n\t\t\t\t\t\"Base\": 0.6666667\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 4,\r\n\t\t\t\t\t\"Base\": 0.6597222\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
                 p += "\t\"Modes\": [\n";
                 for (int mi = 1; mi <= shotSelection; mi++)
@@ -368,11 +378,10 @@ namespace BTX_CAC_CompatibilityDll
                 p += $",\r\n\t\"PrefabIdentifier\": \"LBX{clustersize}\",\t\n\t\"ShotsWhenFired\": {data.ShotsWhenFired},\r\n\t\"VolleyDivisor\": 1,\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
                 p += $"\t\"Custom\": {{\r\n\t\t\"Clustering\": {{\r\n\t\t\t\"Base\": {(clustersize <= 2 ? 0.7083333f : 0.6333333f)}\r\n\t\t}}\r\n\t}},\r\n";
                 p += "\t\"Modes\": [\r\n";
-                p += "\t\t{\r\n\t\t\t\"Id\": \"LBXMode_Cluster\",\r\n\t\t\t\"UIName\": \"LB-X\",\r\n\t\t\t\"Name\": \"LB-X Mode\",\r\n\t\t\t\"Description\": \"LB-X Mode fires LBX Cluster ammunition.\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"HitGenerator\": \"Cluster\"\r\n\t\t},\r\n";
                 float dmg = data.Damage * clustersize - data.Damage;
                 float stab = data.Instability * clustersize - data.Instability;
                 int shots = 1 - clustersize;
-                p += $"\t\t{{\r\n\t\t\t\"Id\": \"LBXMode_Slug\",\r\n\t\t\t\"UIName\": \"AC\",\r\n\t\t\t\"Name\": \"AC Mode\",\r\n\t\t\t\"Description\": \"AC Mode fires AC Slug ammunition.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamagePerShot\": {dmg},\r\n\t\t\t\"Instability\": {stab},\r\n\t\t\t\"ShotsWhenFired\": {shots},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_AC{clustersize}_Single\",\r\n\t\t\t\"HasShells\": false,\r\n\t\t\t\"AmmoCategory\": \"AC{clustersize}\"\r\n\t\t}}\r\n\t]\r\n}}\r\n";
+                p += $"\t\t{{\r\n\t\t\t\"Id\": \"LBXMode_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"DamagePerShot\": {dmg},\r\n\t\t\t\"Instability\": {stab},\r\n\t\t\t\"ShotsWhenFired\": {shots},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_AC{clustersize}_Single\",\r\n\t\t\t\"HasShells\": false,\r\n\t\t\t\"AmmoCategory\": \"AC{clustersize}\"\r\n\t\t}}\r\n\t]\r\n}}\r\n";
                 WriteTo(targetFolder, id, p);
             }
         }
