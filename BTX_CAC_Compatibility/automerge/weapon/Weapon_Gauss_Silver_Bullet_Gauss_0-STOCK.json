@@ -1,0 +1,25 @@
+{
+	"MinRange": 60,
+	"MaxRange": 660,
+	"RangeSplit": [
+		210,
+		450,
+		660
+	],
+	"HeatGenerated": 3,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"ImprovedBallistic": true,
+	"FireDelayMultiplier": 0,
+	"HitGenerator": "Cluster",
+	"BallisticDamagePerPallet": true,
+	"ShotsWhenFired": 1,
+	"ProjectilesPerShot": 12,
+	"Damage": 108,
+	"Instability": 60,
+	"ProjectileScale": {
+		"x": 0.2,
+		"y": 0.2,
+		"z": 0.2
+	}
+}

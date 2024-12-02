@@ -85,6 +85,13 @@ namespace BTX_CAC_CompatibilityDll
                 ExtraData = "\r\n}\r\n",
                 Details = true,
             },
+            new WeaponForwardingPattern()
+            {
+                Check = new Regex("^Weapon_Gauss_Silver_Bullet_Gauss_(\\d+)-.+$"),
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"FireDelayMultiplier\": 0,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"BallisticDamagePerPallet\": true,\r\n\t\"ShotsWhenFired\": 1,\r\n\t\"ProjectilesPerShot\": 12,\r\n\t\"Damage\": 108,\r\n\t\"Instability\": 60,\r\n\t\"ProjectileScale\": {\r\n\t\t\"x\": 0.2,\r\n\t\t\"y\": 0.2,\r\n\t\t\"z\": 0.2\r\n\t}\r\n}",
+                Details = false,
+                Damage = false,
+            },
             new WeaponUACPattern()
             {
                 Check = new Regex("^Weapon_Autocannon_C?[UR]AC(\\d+)(?:_NU|_Sa)?_(\\d+)-.+$"),
@@ -119,6 +126,11 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_PPC_C?PPC(?:ER|Heavy)(?:_NU|_Sa)?_(\\d+)-.+$"),
                 ExtraData = "\r\n}\r\n",
+            },
+            new StaticPatchPattern<WeaponDef>()
+            {
+                Check = new Regex("^Weapon_PPC_PPCSnub_(\\d+)-.+$"),
+                Patch = "{\r\n\t\"MinRange\": 0,\r\n\t\"MaxRange\": 450,\r\n\t\"RangeSplit\": [\r\n\t\t270,\r\n\t\t390,\r\n\t\t450\r\n\t],\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"DistantVariance\": 0.5,\r\n\t\"DamageFalloffStartDistance\": 390,\r\n\t\"DamageFalloffEndDistance\": 450,\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Linear\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true,\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_FL\",\r\n\t\t\t\"UIName\": \"FL\",\r\n\t\t\t\"Name\": \"Focusing Lens\",\r\n\t\t\t\"Description\": \"The additional magnetic Focusing Lens allows to focus all particles into one projectile, concentrating the infliced damage to one location, at the cost of slighly increased heat generation.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"HeatGenerated\": 5,\r\n\t\t\t\"DamageMultiplier\": 5,\r\n\t\t\t\"InstabilityMultiplier\": 5,\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}\r\n\t]\r\n}",
             },
             new WeaponForwardingPattern()
             {
@@ -276,16 +288,20 @@ namespace BTX_CAC_CompatibilityDll
             public string ExtraData;
             public bool Details = false;
             public bool Heat = false;
+            public bool Damage = true;
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
-                string p = Forward(data, Details, Heat);
+                string p = Forward(data, Details, Heat, Damage);
                 p += ExtraData;
                 WriteTo(targetFolder, id, p);
             }
 
-            public static string Forward(WeaponDef data, bool details, bool heat)
+            public static string Forward(WeaponDef data, bool details, bool heat, bool damage = true)
             {
-                string p = $"{{\r\n\t\"MinRange\": {data.MinRange},\r\n\t\"MaxRange\": {data.MaxRange},\r\n\t\"RangeSplit\": [\r\n\t\t{data.RangeSplit[0]},\r\n\t\t{data.RangeSplit[1]},\r\n\t\t{data.RangeSplit[2]}\r\n\t],\r\n\t\"HeatGenerated\": {data.HeatGenerated},\r\n\t\"Damage\": {data.Damage},\r\n\t\"Instability\": {data.Instability},\r\n\t\"RefireModifier\": {data.RefireModifier},\r\n\t\"AccuracyModifier\": {data.AccuracyModifier}";
+                string p = $"{{\r\n\t\"MinRange\": {data.MinRange},\r\n\t\"MaxRange\": {data.MaxRange},\r\n\t\"RangeSplit\": [\r\n\t\t{data.RangeSplit[0]},\r\n\t\t{data.RangeSplit[1]},\r\n\t\t{data.RangeSplit[2]}\r\n\t],\r\n\t\"HeatGenerated\": {data.HeatGenerated}";
+                if (damage)
+                    p += $",\r\n\t\"Damage\": {data.Damage},\r\n\t\"Instability\": {data.Instability}";
+                p += $",\r\n\t\"RefireModifier\": {data.RefireModifier},\r\n\t\"AccuracyModifier\": {data.AccuracyModifier}";
                 if (heat)
                     p += $",\r\n\t\"HeatDamage\": {data.HeatDamage}";
                 if (details)
