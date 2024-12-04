@@ -10,11 +10,12 @@
 	"Damage": 60,
 	"Instability": 20,
 	"RefireModifier": 0,
-	"AccuracyModifier": 0,	"Modes": [
+	"AccuracyModifier": 0,
+	"Modes": [
 		{
-			"Id": "PPCMode_FI_ON",
-			"UIName": "FI ON",
-			"Name": "Field Inhibitor ON",
+			"Id": "PPCMode_Std",
+			"UIName": "STD",
+			"Name": "Standard",
 			"Description": "PPC operates normally.",
 			"isBaseMode": true
 		},

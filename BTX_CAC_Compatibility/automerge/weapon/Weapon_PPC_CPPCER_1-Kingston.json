@@ -10,5 +10,14 @@
 	"Damage": 75,
 	"Instability": 30,
 	"RefireModifier": 0,
-	"AccuracyModifier": 0
+	"AccuracyModifier": 0,
+	"Modes": [
+		{
+			"Id": "PPCMode_Std",
+			"UIName": "STD",
+			"Name": "Standard",
+			"Description": "PPC operates normally.",
+			"isBaseMode": true
+		}
+	]
 }

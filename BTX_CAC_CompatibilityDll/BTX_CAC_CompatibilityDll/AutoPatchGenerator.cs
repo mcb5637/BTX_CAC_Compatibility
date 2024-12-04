@@ -53,6 +53,22 @@ namespace BTX_CAC_CompatibilityDll
 
                 File.WriteAllText(Path.Combine(amfolder, "artemis_srm_enable.json"), p);
             }
+            {
+                c.AddPPCCap.Sort();
+                string p = "{\r\n\t\"TargetIDs\": [\r\n\t\t";
+                p += c.AddPPCCap.Join((s) => $"\"{s}\"", ",\r\n\t\t");
+                p += "\r\n\t],\r\n\t\"Instructions\": [\r\n\t\t{\r\n\t\t\t\"JSONPath\": \"$.ComponentTags.items\",\r\n\t\t\t\"Action\": \"ArrayAdd\",\r\n\t\t\t\"Value\": \"ppc_capacitor_attachable\"\r\n\t\t}\r\n\t]\r\n}\r\n";
+
+                File.WriteAllText(Path.Combine(amfolder, "ppc_cap_enable.json"), p);
+            }
+            {
+                c.AddPPCCapSnub.Sort();
+                string p = "{\r\n\t\"TargetIDs\": [\r\n\t\t";
+                p += c.AddPPCCapSnub.Join((s) => $"\"{s}\"", ",\r\n\t\t");
+                p += "\r\n\t],\r\n\t\"Instructions\": [\r\n\t\t{\r\n\t\t\t\"JSONPath\": \"$.ComponentTags.items\",\r\n\t\t\t\"Action\": \"ArrayAdd\",\r\n\t\t\t\"Value\": \"ppc_capacitor_attachable_snub\"\r\n\t\t}\r\n\t]\r\n}\r\n";
+
+                File.WriteAllText(Path.Combine(amfolder, "ppc_cap_snub_enable.json"), p);
+            }
         }
 
         private static void GenerateWeapons(DataManager m, string targetfolder, IdCollector c)
@@ -120,17 +136,20 @@ namespace BTX_CAC_CompatibilityDll
             new WeaponForwardingPattern()
             {
                 Check = new Regex("^Weapon_PPC_PPC_(\\d+)-.+$"),
-                ExtraData = ",\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_FI_ON\",\r\n\t\t\t\"UIName\": \"FI ON\",\r\n\t\t\t\"Name\": \"Field Inhibitor ON\",\r\n\t\t\t\"Description\": \"PPC operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_FI_OFF\",\r\n\t\t\t\"UIName\": \"FI OFF\",\r\n\t\t\t\"Name\": \"Field Inhibitor OFF\",\r\n\t\t\t\"Description\": \"Disabled Field Inhibitor removes minimum range, but at the chance to misfire.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamageOnJamming\": true,\r\n\t\t\t\"FlatJammingChance\": 0.1,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.04,\r\n\t\t\t\"MinRange\": -90.0,\r\n\t\t\t\"AccuracyModifier\": 1.0\r\n\t\t}\r\n\t]\r\n}\r\n",
+                ExtraData = ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"PPC operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_FI_OFF\",\r\n\t\t\t\"UIName\": \"FI OFF\",\r\n\t\t\t\"Name\": \"Field Inhibitor OFF\",\r\n\t\t\t\"Description\": \"Disabled Field Inhibitor removes minimum range, but at the chance to misfire.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamageOnJamming\": true,\r\n\t\t\t\"FlatJammingChance\": 0.1,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.04,\r\n\t\t\t\"MinRange\": -90.0,\r\n\t\t\t\"AccuracyModifier\": 1.0\r\n\t\t}\r\n\t]\r\n}\r\n",
+                AddToList = (x) => x.AddPPCCap,
             },
             new WeaponForwardingPattern()
             {
                 Check = new Regex("^Weapon_PPC_C?PPC(?:ER|Heavy)(?:_NU|_Sa)?_(\\d+)-.+$"),
-                ExtraData = "\r\n}\r\n",
+                ExtraData = ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"PPC operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}\r\n\t]\r\n}\r\n",
+                AddToList = (x) => x.AddPPCCap,
             },
             new StaticPatchPattern<WeaponDef>()
             {
                 Check = new Regex("^Weapon_PPC_PPCSnub_(\\d+)-.+$"),
                 Patch = "{\r\n\t\"MinRange\": 0,\r\n\t\"MaxRange\": 450,\r\n\t\"RangeSplit\": [\r\n\t\t270,\r\n\t\t390,\r\n\t\t450\r\n\t],\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"DistantVariance\": 0.5,\r\n\t\"DamageFalloffStartDistance\": 390,\r\n\t\"DamageFalloffEndDistance\": 450,\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Linear\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true,\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_FL\",\r\n\t\t\t\"UIName\": \"FL\",\r\n\t\t\t\"Name\": \"Focusing Lens\",\r\n\t\t\t\"Description\": \"The additional magnetic Focusing Lens allows to focus all particles into one projectile, concentrating the infliced damage to one location, at the cost of slighly increased heat generation.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"HeatGenerated\": 5,\r\n\t\t\t\"DamageMultiplier\": 5,\r\n\t\t\t\"InstabilityMultiplier\": 5,\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}\r\n\t]\r\n}",
+                AddToList = (x) => x.AddPPCCapSnub,
             },
             new WeaponForwardingPattern()
             {
@@ -222,6 +241,8 @@ namespace BTX_CAC_CompatibilityDll
         {
             public readonly List<string> AddArtemisLRM = new List<string>();
             public readonly List<string> AddArtemisSRM = new List<string>();
+            public readonly List<string> AddPPCCap = new List<string>();
+            public readonly List<string> AddPPCCapSnub = new List<string>();
             public readonly Dictionary<string, ItemCollectionReplace> ICReplace = new Dictionary<string, ItemCollectionReplace>();
             public readonly Dictionary<string, WeaponAddonSplit> Splits = new Dictionary<string, WeaponAddonSplit>();
         }
@@ -240,9 +261,12 @@ namespace BTX_CAC_CompatibilityDll
         private class StaticPatchPattern<T> : Pattern<T>
         {
             public string Patch;
+            public Func<IdCollector, List<string>> AddToList = null;
             public override void Generate(T data, Match m, string targetFolder, string id, IdCollector c)
             {
                 WriteTo(targetFolder, id, Patch);
+                if (AddToList != null)
+                    AddToList(c)?.Add(id);
             }
         }
         private class DeprecatedPatchPattern<T> : Pattern<T>
@@ -289,11 +313,14 @@ namespace BTX_CAC_CompatibilityDll
             public bool Details = false;
             public bool Heat = false;
             public bool Damage = true;
+            public Func<IdCollector, List<string>> AddToList = null;
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
                 string p = Forward(data, Details, Heat, Damage);
                 p += ExtraData;
                 WriteTo(targetFolder, id, p);
+                if (AddToList != null)
+                    AddToList(c)?.Add(id);
             }
 
             public static string Forward(WeaponDef data, bool details, bool heat, bool damage = true)

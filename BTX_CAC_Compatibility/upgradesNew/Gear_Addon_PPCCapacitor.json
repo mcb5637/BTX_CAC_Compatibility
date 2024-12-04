@@ -4,7 +4,8 @@
 			"installedLocationOnly": true,
 			"autoTarget": true,
 			"WeaponAddonIds": [
-				"weaponupgrade_ppc_capacitor"
+				"weaponupgrade_ppc_capacitor",
+				"weaponupgrade_ppc_capacitor_snub"
 			]
 		}
 	},
@@ -20,7 +21,7 @@
 		"UIName": "PPC Capacitor",
 		"Id": "Gear_Addon_PPCCapacitor",
 		"Name": "PPC Capacitor",
-		"Details": "Extra Capacitor banks to be attached to one PPC. If switched on before firing, they increase the heat and damage the connected PPC inflicts. Incompatible with Snub PPCs, but ER PPCs may be connected.\nThe main Drawback is increased charge time, an active capacitor halves a PPCs firing speed.",
+		"Details": "Extra Capacitor banks to be attached to one PPC. If switched on before firing, they increase the heat and damage the connected PPC inflicts.\nThe main Drawback is increased charge time, an active capacitor halves a PPCs firing speed.",
 		"Icon": "uixSvgIcon_special_Equipment"
 	},
 	"BonusValueA": "+25 Dmg.",

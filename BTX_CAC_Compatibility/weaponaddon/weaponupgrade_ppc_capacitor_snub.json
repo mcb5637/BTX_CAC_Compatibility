@@ -1,18 +1,18 @@
 {
-	"Id": "weaponupgrade_ppc_capacitor",
+	"Id": "weaponupgrade_ppc_capacitor_snub",
 	"autoTarget": true,
 	"installedLocationOnly": true,
 	"targetComponentTags": [
-		"ppc_capacitor_attachable"
+		"ppc_capacitor_attachable_snub"
 	],
 	"modes": [
 		{
-			"Id": "PPCMode_CAP",
+			"Id": "SPPC_CAP",
 			"UIName": "CAP",
 			"Name": "PPC Capacitor",
 			"Description": "An active PPC Capacitor increases Damage and Heat at the cost of decreased fire rate.",
 			"isBaseMode": false,
-			"DamagePerShot": 25,
+			"DamagePerShot": 5,
 			"HeatGenerated": 15,
 			"Cooldown": 1,
 			"ProjectileScale": {

@@ -15,7 +15,7 @@ Component list (Clan & SLDF ones included):
     - Energy
         - PPC: added FI OFF mode
         - ER PPC: -
-        - Snub PPC: 5 projectiles, damage falloff over medium range, upgraded version have extra mode with 1 projectile
+        - Snub PPC: 5 projectiles, damage falloff over long range, extra mode with 1 projectile
         - Laser: -
         - ER Laser: -
 		- Heavy Laser: -
@@ -78,7 +78,7 @@ Component list (Clan & SLDF ones included):
 	- MASC: Activatable (\*2 speed) (fail chance 15%, add up per turn in use)
 	- Coolant Pod: doubles heatsinking for 1 turn, 1 activation per pod (does not stack)
 	- Artemis IV FCS: attaches to one SRM or LRM launcher and gives it: +4 direct fire acc, better clustering
-	- PPC Capacitor: attaches to one PPC or ERPPC and gives it: CAP Mode (+25 DMG, +15 Heat, 1 turn Weapon Cooldown)
+	- PPC Capacitor: attaches to one PPC (including ER, Heavy and Snub) and gives it: CAP Mode (+25 DMG, +15 Heat, 1 turn Weapon Cooldown)
 - Argo Upgrades
 	- Storage: added 3 additional storage upgrades, each giving a new mechbay to use
 	- Engine Repairs: The storage upgrades do fix BiggerDrops tonnage increase upgrades, by giving you a way to fullfill their requirements
@@ -144,7 +144,6 @@ TODO BEX 2.0:
 - snub ppc, sb gauss
 - tag/narc
 - magshot gauss, plasma rifle, heavy ppc, thunderbolt
-- ppc cap
 - atm
 - weather acc modifiers?
 
