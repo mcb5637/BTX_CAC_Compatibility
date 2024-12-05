@@ -1,0 +1,14 @@
+{
+  "Description": {
+    "Name": "ATM ER Ammo",
+	"UIName": "ER"
+  },
+  "ammoCategoryID": "ATM",
+  "DamagePerShot": -4,
+  "Instability": -2,
+  "MinRange": 0,
+  "ShortRange": 120,
+  "MiddleRange": 240,
+  "LongRange": 360,
+  "MaxRange": 360
+}

@@ -1,8 +1,8 @@
 {
 	"Description": {
-		"Model": "ATM ST",
+        "Name" : "ATM Standard Ranged Ammo",
 		"UIName": "ATM ST Ammo"
 	},
-	"BonusValueA": "+ 4 Dmg",
-	"BonusValueB": "+ 180/120m Range"
+	"BonusValueA": "",
+	"BonusValueB": ""
 }

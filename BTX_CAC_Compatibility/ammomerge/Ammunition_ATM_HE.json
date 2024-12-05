@@ -1,0 +1,14 @@
+{
+	"Description": {
+		"Name": "ATM HE Ammo",
+		"UIName": "HE"
+	},
+	"ammoCategoryID": "ATM",
+	"DamagePerShot": 8,
+	"Instability": 4,
+	"MinRange": -120,
+	"ShortRange": -90,
+	"MiddleRange": -40,
+	"LongRange": -180,
+	"MaxRange": -180
+}

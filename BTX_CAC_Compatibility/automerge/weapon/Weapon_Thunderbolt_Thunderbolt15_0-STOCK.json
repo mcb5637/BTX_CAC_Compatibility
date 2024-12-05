@@ -13,5 +13,18 @@
 	"AccuracyModifier": 0,
 	"Description": {
 		"Details": "The Thunderbolt 15 launcher fires a single missile that inflicts a high damage impact. Like all Thunderbolt launchers, Thunderbolt 15s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit.\n\nRequired Hardpoint: <b><color=#008000>Missile</color></b>"
+	},
+	"ImprovedBallistic": true,
+	"MissileVolleySize": 1,
+	"MissileFiringIntervalMultiplier": 1,
+	"MissileVolleyIntervalMultiplier": 1,
+	"FireDelayMultiplier": 1,
+	"HitGenerator": "Individual",
+	"AMSHitChance": 0.5,
+	"MissileHealth": 5,
+	"ProjectileScale": {
+		"x": 2,
+		"y": 2,
+		"z": 2
 	}
 }

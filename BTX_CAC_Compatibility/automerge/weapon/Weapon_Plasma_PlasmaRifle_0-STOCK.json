@@ -1,0 +1,17 @@
+{
+	"MinRange": 0,
+	"MaxRange": 450,
+	"RangeSplit": [
+		150,
+		300,
+		450
+	],
+	"HeatGenerated": 30,
+	"Damage": 50,
+	"Instability": 10,
+	"RefireModifier": 0,
+	"AccuracyModifier": 0,
+	"FireTerrainChance": 0.9,
+	"FireTerrainStrength": 1,
+	"FireOnSuccessHit": true
+}

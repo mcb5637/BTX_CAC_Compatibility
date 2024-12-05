@@ -3,11 +3,11 @@
 		"Name": "ATM ST Ammo",
 		"UIName": "ST"
 	},
-	"DamagePerShot": 4,
-	"Instability": 2,
-	"MinRange": 120,
-	"MaxRange": 180,
-	"ShortRange": 120,
-	"MiddleRange": 120,
-	"LongRange": 180
+	"DamagePerShot": 0,
+	"Instability": 0,
+	"MinRange": 0,
+	"ShortRange": 0,
+	"MiddleRange": 0,
+	"LongRange": 0,
+	"MaxRange": 0
 }

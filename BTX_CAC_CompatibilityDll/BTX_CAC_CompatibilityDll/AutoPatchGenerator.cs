@@ -153,6 +153,11 @@ namespace BTX_CAC_CompatibilityDll
             },
             new WeaponForwardingPattern()
             {
+                Check = new Regex("^Weapon_Plasma_PlasmaRifle_(\\d+)-.+$"),
+                ExtraData = ",\r\n\t\"FireTerrainChance\": 0.9,\r\n\t\"FireTerrainStrength\": 1,\r\n\t\"FireOnSuccessHit\": true\r\n}\r\n",
+            },
+            new WeaponForwardingPattern()
+            {
                 Check = new Regex("^Weapon_Flamer_C?Flamer_(\\d+|SPECIAL)-.+$"),
                 ExtraData = ",\r\n\t\"FireTerrainChance\": 0.75,\r\n\t\"FireTerrainStrength\": 1,\r\n\t\"FireOnSuccessHit\": true\r\n}\r\n",
                 Heat = true,
@@ -178,7 +183,7 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_Thunderbolt_Thunderbolt(\\d+)_(\\d+)-.+$"),
                 Details = true,
-                ExtraData = "\r\n}\r\n",
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": 1,\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Individual\",\r\n\t\"AMSHitChance\": 0.5,\r\n\t\"MissileHealth\": 5,\r\n\t\"ProjectileScale\": {\r\n\t\t\"x\": 2,\r\n\t\t\"y\": 2,\r\n\t\t\"z\": 2\r\n\t}\r\n}\r\n",
             },
             new DeprecatedPatchPattern<WeaponDef>()
             {
@@ -234,6 +239,10 @@ namespace BTX_CAC_CompatibilityDll
             new WeaponMRMPattern()
             {
                 Check = new Regex("^Weapon_(?:MRM|RL)_(?:MRM|RL)(\\d+)_(\\d+-.+)$"),
+            },
+            new WeaponATMPattern()
+            {
+                Check = new Regex("^Weapon_ATM_ATM(\\d+)_(\\d+-.+)$"),
             },
         };
 
@@ -483,7 +492,23 @@ namespace BTX_CAC_CompatibilityDll
                 WriteTo(targetFolder, id, p);
             }
         }
-
+        private class WeaponATMPattern : Pattern<WeaponDef>
+        {
+            public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
+            {
+                int size = data.ShotsWhenFired;
+                string p = WeaponForwardingPattern.Forward(data, true, false, false);
+                p += ",\r\n\t\"Damage\": 8,\r\n\t\"Instability\": 4,";
+                p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1";
+                p += ",\r\n\t\"ClusteringModifier\": 10,\r\n\t\"DirectFireModifier\": -4";
+                string clu = "0.6333333";
+                if (size == 3)
+                    clu = "0.6666667";
+                p += $",\r\n\t\"Custom\" : {{\r\n\t\t\"Clustering\": {{\r\n\t\t\t\"Base\": {clu},\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}},\r\n\t\t\t\t{{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}}\r\n\t\t\t]\r\n\t\t}}\r\n\t}}";
+                p += "\r\n}\r\n";
+                WriteTo(targetFolder, id, p);
+            }
+        }
     }
 
     [HarmonyPatch(typeof(SimGameState), "SetSimRoomState")]
