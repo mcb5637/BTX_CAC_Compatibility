@@ -1,8 +1,10 @@
 ﻿using AccessExtension;
 using BattleTech;
 using BattleTech.Save;
+using BattleTech.StringInterpolation;
 using BattleTech.UI;
 using CustAmmoCategories;
+using CustAmmoCategoriesPatches;
 using CustomActivatableEquipment;
 using Extended_CE;
 using HarmonyLib;
@@ -10,9 +12,11 @@ using HBS.Logging;
 using InControl;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
@@ -96,6 +100,9 @@ namespace BTX_CAC_CompatibilityDll
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetToHitChance)), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetAllModifiers)), "BEX.BattleTech.Extended_CE");
 
+                // movement
+                Unpatch(harmony, AccessTools.DeclaredPropertyGetter(typeof(Mech), nameof(Mech.CanSprint)), "BEX.BattleTech.Extended_CE");
+
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AttackEvaluator), "MakeAttackOrder"), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(AITeam), "TurnActorProcessActivation"), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(CombatHUDWeaponSlot), "OnPointerUp"), "BEX.BattleTech.Extended_CE");
@@ -135,8 +142,10 @@ namespace BTX_CAC_CompatibilityDll
             ToHitModifiersHelper.registerModifier("LIGHT", "LIGHT", true, false, LightWeatherEffects.Light_Effect, null);
             ToHitModifiersHelper.registerModifier("ILLUMINATED", "HEAT ILLUMINATED", true, false, LightWeatherEffects.Illuminated_Effect, null);
             ToHitModifiersHelper.registerModifier("TRACER", "TRACER", true, false, LightWeatherEffects.Tracer_Effect, null);
+            ToHitModifiersHelper.registerModifier("MOVED SELF", "MOVED SELF", false, false, MovementRework.MovedSelf_Effect, MovementRework.MovedSelf_EffectName);
             ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, null, null);
             CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());
+            MoveStatusPreview_DisplayPreviewStatus.MoveTypeDisplayOverride = MovementRework.MoveTypeDisplayOverride;
         }
 
         private static float ECM_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)

@@ -141,10 +141,7 @@ What to do when adding CAC-C into an existing savegame:
 
 TODO BEX 2.0:
 - remove MC from additional dependencies if not needed
-- snub ppc, sb gauss
 - tag/narc
-- magshot gauss, plasma rifle, heavy ppc, thunderbolt
-- atm
 - weather acc modifiers?
 
 TODO List:

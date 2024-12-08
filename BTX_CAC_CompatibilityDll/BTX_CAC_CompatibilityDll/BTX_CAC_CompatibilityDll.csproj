@@ -110,6 +110,7 @@
     <Compile Include="MechAutoFixer.cs" />
     <Compile Include="CCLoader.cs" />
     <Compile Include="MeleeSprint.cs" />
+    <Compile Include="MovementRework.cs" />
     <Compile Include="SimGameState_InitStats.cs" />
     <Compile Include="MovableBlockers.cs" />
     <Compile Include="TonnageCalculation.cs" />

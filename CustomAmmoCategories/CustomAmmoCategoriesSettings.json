@@ -255,6 +255,7 @@
   "ToHitVehicleFromFront":0,
   "ToHitVehicleFromSide":-1,
   "ToHitVehicleFromRear":-2,
+  "RemoveToHitModifiers":["JUMPED"],
   "WeaponPanelWidthScale":1,
   "WeaponPanelHeightScale":1,
   "DefaultMoveCosts": {

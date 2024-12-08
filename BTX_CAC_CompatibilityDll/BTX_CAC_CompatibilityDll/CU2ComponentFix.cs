@@ -31,13 +31,13 @@ namespace BTX_CAC_CompatibilityDll
                 Assembly a = AccessExtensionPatcher.GetLoadedAssemblyByName("Extended_CE");
                 // contract completecontract not needed to patch?
                 Type mechcomp_dmg = a.GetType("Extended_CE.BTComponents+MechComponent_DamageComponent");
-                h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_DamageComponent))));
-                h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_DamageComponentPre))));
+                //h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_DamageComponent))));
+                //h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_DamageComponentPre))));
                 // mech checkforcrit not needed to patch?
                 // mech getcomponentinslot not needed to patch?
                 Type Mech_initstats = a.GetType("Extended_CE.BTComponents+Mech_InitStats");
-                h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_MechInitStats))));
-                h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_MechInitStats))));
+                //h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_MechInitStats))));
+                //h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_MechInitStats))));
                 // mech update min stability not needed to patch?
                 // weapon init stats only melee, so vehicles should be safe
                 FixMech_InitStats_PatchOrder(h);
