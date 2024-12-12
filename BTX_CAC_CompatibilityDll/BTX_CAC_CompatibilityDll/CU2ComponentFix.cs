@@ -1,108 +1,34 @@
 ﻿using AccessExtension;
 using BattleTech;
+using CustAmmoCategories;
 using CustomUnits;
+using Extended_CE;
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace BTX_CAC_CompatibilityDll
 {
+    [HarmonyPatch]
     public class CU2ComponentFix
     {
-        public static bool UsingComponents(Mech m)
-        {
-            if (m != null && m is CustomMech cm)
-            {
-                if (cm.isSquad || cm.isVehicle)
-                    return false;
-            }
-            return Extended_CE.Core.UsingComponents();
-        }
-
         public static void Patch(Harmony h)
         {
             try
             {
-                Assembly a = AccessExtensionPatcher.GetLoadedAssemblyByName("Extended_CE");
-                // contract completecontract not needed to patch?
-                Type mechcomp_dmg = a.GetType("Extended_CE.BTComponents+MechComponent_DamageComponent");
-                //h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_DamageComponent))));
-                //h.Patch(AccessTools.DeclaredMethod(mechcomp_dmg, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_DamageComponentPre))));
-                // mech checkforcrit not needed to patch?
-                // mech getcomponentinslot not needed to patch?
-                Type Mech_initstats = a.GetType("Extended_CE.BTComponents+Mech_InitStats");
-                //h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Prefix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_MechInitStats))));
-                //h.Patch(AccessTools.DeclaredMethod(Mech_initstats, "Postfix"), null, null, new HarmonyMethod(AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(Transpiler_MechInitStats))));
-                // mech update min stability not needed to patch?
-                // weapon init stats only melee, so vehicles should be safe
                 FixMech_InitStats_PatchOrder(h);
             }
             catch (Exception e)
             {
                 Main.Log.LogError(e.ToString());
             }
-        }
-
-        public static IEnumerable<CodeInstruction> Transpiler_MechInitStats(IEnumerable<CodeInstruction> code)
-        {
-            return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
-            {
-                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), nameof(UsingComponents))),
-            }, (prev) =>
-            {
-                CodeInstruction ins = prev.First.Value;
-                ins.operand = null;
-                ins.opcode = OpCodes.Ldarg_0;
-                prev.Clear();
-                return new CodeInstruction[]
-                {
-                    ins,
-                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(UsingComponents))),
-                };
-            });
-        }
-        public static IEnumerable<CodeInstruction> Transpiler_DamageComponent(IEnumerable<CodeInstruction> code)
-        {
-            return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
-            {
-                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), nameof(UsingComponents))),
-            }, (prev) =>
-            {
-                CodeInstruction ins = prev.First.Value;
-                ins.operand = null;
-                ins.opcode = OpCodes.Ldloc_0;
-                prev.Clear();
-                return new CodeInstruction[]
-                {
-                    ins,
-                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(UsingComponents))),
-                };
-            });
-        }
-        public static IEnumerable<CodeInstruction> Transpiler_DamageComponentPre(IEnumerable<CodeInstruction> code)
-        {
-            return AccessExtensionPatcher.TranspilerHelper(code, new CodeInstruction[]
-            {
-                new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(Extended_CE.Core), nameof(UsingComponents))),
-            }, (prev) =>
-            {
-                CodeInstruction ins = prev.First.Value;
-                ins.operand = null;
-                ins.opcode = OpCodes.Ldarg_0;
-                prev.Clear();
-                return new CodeInstruction[]
-                {
-                    ins,
-                    new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(MechComponent), "parent")),
-                    new CodeInstruction(OpCodes.Isinst, typeof(Mech)),
-                    new CodeInstruction(OpCodes.Call, AccessTools.DeclaredMethod(typeof(CU2ComponentFix), nameof(UsingComponents))),
-                };
-            });
         }
 
         private static void FixMech_InitStats_PatchOrder(Harmony h)
@@ -123,6 +49,82 @@ namespace BTX_CAC_CompatibilityDll
                 };
                 h.Unpatch(target, patch.PatchMethod);
                 h.Patch(target, p);
+            }
+        }
+
+        [MethodCall(typeof(BTComponents.Mech_InitStats), "AddOurComponent")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private static void AddOurComponent(Mech mech, string componentId, ChassisLocations location)
+        {
+
+        }
+
+        [HarmonyBefore("io.mission.customdeploy")]
+        [HarmonyPatch(typeof(Mech), "InitStats")]
+        [HarmonyPrefix]
+        public static void Mech_InitStats_Prefix(Mech __instance)
+        {
+            if (__instance is FakeVehicleMech)
+            {
+                AddOurComponent(__instance, "Gear_BEX_MotiveSystem", FakeVehicleLocationConvertHelper.chassisLocationFromVehicleLocation(VehicleChassisLocations.Front));
+                AddOurComponent(__instance, "Gear_BEX_MotiveSystem", FakeVehicleLocationConvertHelper.chassisLocationFromVehicleLocation(VehicleChassisLocations.Left));
+                AddOurComponent(__instance, "Gear_BEX_MotiveSystem", FakeVehicleLocationConvertHelper.chassisLocationFromVehicleLocation(VehicleChassisLocations.Right));
+                AddOurComponent(__instance, "Gear_BEX_MotiveSystem", FakeVehicleLocationConvertHelper.chassisLocationFromVehicleLocation(VehicleChassisLocations.Rear));
+            }
+        }
+
+        [HarmonyPatch(typeof(Mech), nameof(Mech.TakeWeaponDamage))]
+        [HarmonyPostfix]
+        public static void Mech_TakeWeaponDamage_Postfix(Mech __instance, WeaponHitInfo hitInfo, int hitLocation, Weapon weapon)
+        {
+            if (!(__instance is FakeVehicleMech))
+                return;
+            VehicleDef vehicleDef = __instance.MechDef.toVehicleDef(__instance.MechDef.DataManager);
+            if (vehicleDef.VehicleTags.Contains("unit_vtol"))
+                return;
+            ChassisLocations chassisloc = (ChassisLocations)hitLocation;
+            VehicleChassisLocations vehloc = chassisloc.toFakeVehicleChassis();
+            if (!(vehloc == VehicleChassisLocations.Front || vehloc == VehicleChassisLocations.Right || vehloc == VehicleChassisLocations.Left || vehloc == VehicleChassisLocations.Rear))
+                return;
+            if (weapon.DamagePerShot < 0)
+                return;
+            if (__instance.IsLocationDestroyed(chassisloc))
+                return;
+            float critchance = 1.0f - __instance.GetCurrentStructure(chassisloc) / __instance.GetMaxStructure(chassisloc);
+            critchance = Mathf.Max(critchance, __instance.Combat.Constants.ResolutionConstants.MinCritChance);
+            critchance *= __instance.Combat.CritChance.GetCritMultiplier(__instance, weapon, false);
+            if (vehloc == VehicleChassisLocations.Front)
+                critchance *= 0.5f;
+            else if (vehloc == VehicleChassisLocations.Rear)
+                critchance *= 0.75f;
+            if (vehicleDef.VehicleTags.Contains("unit_tracks"))
+                critchance *= 0.5f;
+            else if (vehicleDef.VehicleTags.Contains("unit_hover"))
+                critchance *= 0.75f;
+            if (weapon.WeaponSubType >= WeaponSubType.LRM5 && weapon.WeaponSubType <= WeaponSubType.LRM20)
+                critchance *= 0.2f;
+            float[] random = __instance.Combat.AttackDirector.GetRandomFromCache(hitInfo, 1);
+            if (random[0] <= critchance)
+            {
+                MechComponent tocrit = __instance.allComponents.FirstOrDefault((c) => c.Location == hitLocation && c.Description.Id.StartsWith("Gear_BEX_MotiveSystem"));
+                if (tocrit != null)
+                {
+                    if (__instance.GameRep != null)
+                    {
+                        if (weapon.weaponRep != null && weapon.weaponRep.HasWeaponEffect)
+                            WwiseManager.SetSwitch(weapon.weaponRep.WeaponEffect.weaponImpactType, __instance.GameRep.audioObject);
+                        else
+                            WwiseManager.SetSwitch(AudioSwitch_weapon_type.laser_medium, __instance.GameRep.audioObject);
+                        WwiseManager.SetSwitch(AudioSwitch_surface_type.mech_critical_hit, __instance.GameRep.audioObject);
+                        WwiseManager.PostEvent(AudioEventList_impact.impact_weapon, __instance.GameRep.audioObject, null, null);
+                        WwiseManager.PostEvent(AudioEventList_explosion.explosion_small, __instance.GameRep.audioObject, null, null);
+                        if (__instance.team.LocalPlayerControlsTeam)
+                            AudioEventManager.PlayAudioEvent("audioeventdef_musictriggers_combat", "critical_hit_friendly ", null, null);
+                        else if (!__instance.team.IsFriendly(__instance.Combat.LocalPlayerTeam))
+                            AudioEventManager.PlayAudioEvent("audioeventdef_musictriggers_combat", "critical_hit_enemy", null, null);
+                    }
+                    tocrit.DamageComponent(hitInfo, ComponentDamageLevel.Penalized, true);
+                }
             }
         }
     }
