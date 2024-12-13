@@ -31,15 +31,15 @@
 			"Description": {
 				"Id": "StatusEffect-NARC-IncomingAttBonus",
 				"Name": "NARC ATTACHED",
-				"Details": "Increased accuracy for incoming attacks by [AMT], blocked by ECM",
+				"Details": "Increased accuracy for incoming missiles by 4, blocked by ECM",
 				"Icon": "uixSvgIcon_statusMarked"
 			},
 			"nature": "Debuff",
 			"statisticData": {
 				"appliesEachTick": false,
-				"statName": "ToHitThisActor",
+				"statName": "NARCCount",
 				"operation": "Float_Add",
-				"modValue": "-3",
+				"modValue": "1",
 				"modType": "System.Single"
 			},
 			"tagData": null,

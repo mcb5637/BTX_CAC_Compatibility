@@ -1,0 +1,17 @@
+{
+	"MinRange": 0,
+	"MaxRange": 90,
+	"RangeSplit": [
+		30,
+		60,
+		90
+	],
+	"HeatGenerated": 3,
+	"Damage": 15,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": -2,
+	"Description": {
+		"Details": "Small Lasers deal superb damage for their weight and heat generation but have extremely limited range. Like all Lasers, Small Lasers do not do stability damage."
+	}
+}

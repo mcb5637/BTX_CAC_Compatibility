@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace BTX_CAC_CompatibilityDll
 {
-    public class LightWeatherEffects
+    internal class LightWeatherEffects
     {
         internal static float Light_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
@@ -40,7 +40,7 @@ namespace BTX_CAC_CompatibilityDll
 
         internal static float Tracer_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
-            if (wep.ammo().DamagePerShot < 0 && AEPStatic.GetExtendedCE_Core_CurrentLight() > LightValue.Day)
+            if (wep.WeaponCategoryValue.IsBallistic && wep.ammo().DamagePerShot < 0 && AEPStatic.GetExtendedCE_Core_CurrentLight() > LightValue.Day)
                 return -1;
             return 0;
         }

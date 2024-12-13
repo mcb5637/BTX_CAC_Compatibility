@@ -143,6 +143,7 @@ TODO BEX 2.0:
 - remove MC from additional dependencies if not needed
 - tag/narc
 - weather acc modifiers?
+- movable blockers
 
 TODO List:
 - quad critable arm actuators to leg actuators

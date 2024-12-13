@@ -21,7 +21,7 @@
 		"UIName": "Artemis IV FCS",
 		"Id": "Gear_Addon_Artemis4",
 		"Name": "Artemis IV FCS",
-		"Details": "Artemis IV FCS is a guidance system that utilizes an infrared laser designator and tight-beam microwave transmitter which improves the grouping of one LRM or SRM launcher.",
+		"Details": "Artemis IV FCS is a guidance system that utilizes an infrared laser designator and tight-beam microwave transmitter which improves the grouping of one LRM or SRM launcher.\r\nTo fire special munition or fire indirectly, the FCS needs to be disabled.",
 		"Icon": "uixSvgIcon_special_Equipment"
 	},
 	"BonusValueA": "+4 Acc.",

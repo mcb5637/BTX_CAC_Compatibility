@@ -92,7 +92,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractActor_IndirectImmune.cs" />
     <Compile Include="AbstractActor_InitStats.cs" />
     <Compile Include="AccessExtensionPatcher\AccessExtensionPatcher.cs" />
     <Compile Include="AccessExtensionPatcher\AEPData.cs" />
@@ -103,6 +102,7 @@
     <Compile Include="AccessExtensionPatcher\PropertyGet.cs" />
     <Compile Include="AccessExtensionPatcher\PropertySet.cs" />
     <Compile Include="AutoPatchGenerator.cs" />
+    <Compile Include="ElectronicWarfare.cs" />
     <Compile Include="LightWeatherEffects.cs" />
     <Compile Include="Briefing_InitializeContractComplete.cs" />
     <Compile Include="CustomClustering.cs" />
@@ -120,9 +120,7 @@
     <Compile Include="ContractOverride_FixMaxPlayers.cs" />
     <Compile Include="CU2ComponentFix.cs" />
     <Compile Include="DoubleCritFix.cs" />
-    <Compile Include="Effect_TickOntargetMovementFix.cs" />
     <Compile Include="InfernoExplode.cs" />
-    <Compile Include="LineOfSight_IndirectFireCheck.cs" />
     <Compile Include="ItemCollectionDef_ReplaceEntries.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MarkEffects_Patch.cs" />

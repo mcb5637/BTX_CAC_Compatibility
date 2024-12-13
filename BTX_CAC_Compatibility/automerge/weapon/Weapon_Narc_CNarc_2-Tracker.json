@@ -1,0 +1,15 @@
+{
+	"MinRange": 0,
+	"MaxRange": 360,
+	"RangeSplit": [
+		120,
+		240,
+		360
+	],
+	"HeatGenerated": 0,
+	"Description": {
+		"Details": "The Narc Missile Beacon launcher is designed to fire a single, highly specialized missile that deploys a homing beacon upon impact. The attached beacon transmits data to allied units, causing the linked target to receive a better Missile accuracy modifier for standard LRM, NLRM or SRM based attacks. Artemis IV linked weaponry cannot benefit from a Narc Missile Beacon."
+	},
+	"AccuracyModifier": 0,
+	"BonusValueA": "+ 3 Acc."
+}

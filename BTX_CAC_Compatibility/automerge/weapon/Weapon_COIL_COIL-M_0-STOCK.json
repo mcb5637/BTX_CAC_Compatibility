@@ -1,0 +1,14 @@
+{
+	"MinRange": 0,
+	"MaxRange": 270,
+	"RangeSplit": [
+		90,
+		180,
+		270
+	],
+	"HeatGenerated": 50,
+	"Damage": 15,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": -1
+}

@@ -4,6 +4,6 @@
 		"Name": "Narc Homing Pod Ammo",
 		"Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Homing Pod Ammo Bins cannot explode.\n\nNarc Beacon Ammo Bins each contain 6 rounds and may feed multiple weapons."
 	},
-	"BonusValueA": "+ 3 Acc. Mark",
+	"BonusValueA": "+ 4 Acc. Mark",
 	"BonusValueB": "3 Rounds"
 }

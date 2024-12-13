@@ -1,0 +1,17 @@
+{
+	"MinRange": 0,
+	"MaxRange": 270,
+	"RangeSplit": [
+		90,
+		180,
+		270
+	],
+	"HeatGenerated": 12,
+	"Damage": 25,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": -2,
+	"Description": {
+		"Details": "Medium Lasers are lightweight with respectable damage. Because of this, at least one can be found mounted on most units that cross the battlefield. Like all Lasers, Medium Lasers do not do stability damage."
+	}
+}

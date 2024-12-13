@@ -1,0 +1,57 @@
+{
+	"Gear_AMS_Cal-Boeing": {
+		"ID": "Weapon_AMSCAC_0",
+		"Type": "Weapon",
+		"Amount": -1
+	},
+	"Gear_AMS_Blankenburg": {
+		"ID": "Weapon_AMSCAC_1",
+		"Type": "Weapon",
+		"Amount": -1
+	},
+	"Gear_AMS_Pinard": {
+		"ID": "Weapon_AMSCAC_2",
+		"Type": "Weapon",
+		"Amount": -1
+	},
+	"Gear_AMS_Clan": {
+		"ID": "Weapon_AMSCAC_Clan",
+		"Type": "Weapon",
+		"Amount": -1
+	},
+	"Gear_Sensor_ActiveProbe": {
+		"ID": "Gear_SensorCAC_Beagle",
+		"Type": "Upgrade",
+		"Amount": -1
+	},
+	"Gear_Sensor_ActiveProbe_Clan": {
+		"ID": "Gear_SensorCAC_BeagleClan",
+		"Type": "Upgrade",
+		"Amount": -1
+	},
+	"Gear_Sensor_Beagle_ActiveProbe": {
+		"ID": "Gear_SensorCAC_Beagle",
+		"Type": "Upgrade",
+		"Amount": -1
+	},
+	"Gear_Sensor_ECM": {
+		"ID": "Gear_SensorCAC_Guardian",
+		"Type": "Upgrade",
+		"Amount": -1
+	},
+	"Gear_Sensor_ECM_Clan": {
+		"ID": "Gear_SensorCAC_GuardianClan",
+		"Type": "Upgrade",
+		"Amount": -1
+	},
+	"Gear_Sensor_Prototype_ActiveProbe": {
+		"ID": "Gear_SensorCAC_LiaoProtoAP",
+		"Type": "Upgrade",
+		"Amount": -1
+	},
+	"Gear_Sensor_Prototype_ECM": {
+		"ID": "Gear_SensorCAC_LiaoProtoECM",
+		"Type": "Upgrade",
+		"Amount": -1
+	}
+}

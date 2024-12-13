@@ -43,6 +43,10 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Sett = JsonConvert.DeserializeObject<Settings>(settingsJSON);
                 ItemCollectionDef_FromCSV.Replaces = JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "automerge\\itemcollectionreplace.json")));
+                foreach (KeyValuePair<string, ItemCollectionReplace> kv in JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "itemcollectionreplace.json"))))
+                {
+                    ItemCollectionDef_FromCSV.Replaces[kv.Key] = kv.Value;
+                }
                 Splits = JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "automerge\\addonsplit.json")));
                 foreach (KeyValuePair<string, WeaponAddonSplit> kv in JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "addonsplit.json")))) {
                     Splits[kv.Key] = kv.Value;
@@ -138,26 +142,15 @@ namespace BTX_CAC_CompatibilityDll
                 Log.LogError(e.ToString());
             }
 
-            ToHitModifiersHelper.registerModifier("BTX_CAC_Compatibility_ECM", "ECM", true, true, ECM_Effect, null);
+            ToHitModifiersHelper.registerModifier("BTX_CAC_Compatibility_ECM", "ECM", true, true, ElectronicWarfare.ECM_Effect, null);
             ToHitModifiersHelper.registerModifier("LIGHT", "LIGHT", true, false, LightWeatherEffects.Light_Effect, null);
             ToHitModifiersHelper.registerModifier("ILLUMINATED", "HEAT ILLUMINATED", true, false, LightWeatherEffects.Illuminated_Effect, null);
             ToHitModifiersHelper.registerModifier("TRACER", "TRACER", true, false, LightWeatherEffects.Tracer_Effect, null);
             ToHitModifiersHelper.registerModifier("MOVED SELF", "MOVED SELF", false, false, MovementRework.MovedSelf_Effect, MovementRework.MovedSelf_EffectName);
+            ToHitModifiersHelper.registerModifier("TAGNARC", "TAGNARC", true, false, ElectronicWarfare.NARC_TAG_Effect, ElectronicWarfare.NARC_TAG_EffectName);
             ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, null, null);
             CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());
             MoveStatusPreview_DisplayPreviewStatus.MoveTypeDisplayOverride = MovementRework.MoveTypeDisplayOverride;
-        }
-
-        private static float ECM_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
-        {
-            float mod = 0;
-            if (target is AbstractActor at && at.StatCollection.GetValue<float>("DefendedByECM") > 0)
-            {
-                mod += 4;
-                if (at.Combat.EffectManager.GetAllEffectsTargetingWithBaseID(at, "StatusEffect-NARC-IncomingAttBonus").Count > 0)
-                    mod += 3;
-            }
-            return mod;
         }
 
         private static void Unpatch(Harmony harmony, MethodBase b, string id, bool pre = true, bool post = true, bool trans = true, string onlyUnpatch = null)

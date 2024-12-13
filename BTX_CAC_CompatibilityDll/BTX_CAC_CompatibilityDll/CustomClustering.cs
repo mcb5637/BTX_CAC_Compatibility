@@ -30,11 +30,11 @@ namespace BTX_CAC_CompatibilityDll
         public float ArtemisBase = -1.0f;
         public UACBase[] UAC = null;
 
-        public float GetModifier(Weapon w)
+        public float GetModifier(Weapon w, ICombatant target)
         {
             if (DeadfireBase >= 0.0f && w.Unguided())
                 return DeadfireBase;
-            if (ArtemisBase >= 0.0f && w.mode().Id.EndsWith("RM_A4"))
+            if (ArtemisBase >= 0.0f && (IsArtemisMode(w) || ElectronicWarfare.DoesNARCApply(w, target)))
                 return ArtemisBase;
             if (UAC != null)
             {
@@ -48,14 +48,19 @@ namespace BTX_CAC_CompatibilityDll
             return Base;
         }
 
-        public static float GetModifierForWeapon(Weapon w, int gunnery)
+        internal static bool IsArtemisMode(Weapon w)
+        {
+            return w.mode().Id.EndsWith("RM_A4");
+        }
+
+        public static float GetModifierForWeapon(Weapon w, int gunnery, ICombatant target)
         {
             if (w.ShotsWhenFired <= 1)
                 return 1.0f;
             CustomClustering clust = w.weaponDef.GetComponent<CustomClustering>();
             if (clust == null)
                 return 1.0f;
-            float f = clust.GetModifier(w);
+            float f = clust.GetModifier(w, target);
             Modifier[] steps = clust.Steps;
             if (f <= 0.0f)
                 return 1.0f;
@@ -71,7 +76,7 @@ namespace BTX_CAC_CompatibilityDll
 
         public static float Cluster_Multiplier(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
-            return GetModifierForWeapon(wep, attacker.GetPilot()?.Gunnery ?? 0);
+            return GetModifierForWeapon(wep, attacker.GetPilot()?.Gunnery ?? 0, target);
         }
     }
 }

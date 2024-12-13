@@ -69,6 +69,14 @@ namespace BTX_CAC_CompatibilityDll
 
                 File.WriteAllText(Path.Combine(amfolder, "ppc_cap_snub_enable.json"), p);
             }
+            {
+                c.AddNarcCompatible.Sort();
+                string p = "{\r\n\t\"TargetIDs\": [\r\n\t\t";
+                p += c.AddNarcCompatible.Join((s) => $"\"{s}\"", ",\r\n\t\t");
+                p += "\r\n\t],\r\n\t\"Instructions\": [\r\n\t\t{\r\n\t\t\t\"JSONPath\": \"$.ComponentTags.items\",\r\n\t\t\t\"Action\": \"ArrayAdd\",\r\n\t\t\t\"Value\": \"component_usesnarc\"\r\n\t\t}\r\n\t]\r\n}\r\n";
+
+                File.WriteAllText(Path.Combine(amfolder, "narc_enable.json"), p);
+            }
         }
 
         private static void GenerateWeapons(DataManager m, string targetfolder, IdCollector c)
@@ -79,14 +87,18 @@ namespace BTX_CAC_CompatibilityDll
             {
                 if (kv.Key != kv.Value.Description.Id)
                     throw new InvalidDataException("id missmatch: " + kv.Key);
+                bool found = false;
                 foreach (Pattern<WeaponDef> p in WeaponPatterns)
                 {
                     Match match = p.Check.Match(kv.Key);
                     if (match == null || !match.Success)
                         continue;
                     p.Generate(kv.Value, match, wepfolder, kv.Key, c);
+                    found = true;
                     break;
                 }
+                if (!found)
+                    FileLog.Log($"weapon {kv.Key} does not have a pattern");
             }
         }
 
@@ -130,12 +142,23 @@ namespace BTX_CAC_CompatibilityDll
             },
             new WeaponForwardingPattern()
             {
+                Check = new Regex("^Weapon_Laser_C?(?:Large|Medium|Small|Micro)Laser(?:Heavy)?_(-?\\d+)-.+$"),
+                ExtraData = "\r\n}\r\n",
+                Details = true,
+            },
+            new WeaponForwardingPattern()
+            {
+                Check = new Regex("^Weapon_COIL_COIL-(S|M|L)_.+$"),
+                ExtraData = "\r\n}\r\n",
+            },
+            new WeaponForwardingPattern()
+            {
                 Check = new Regex("^Weapon_Laser_BinaryLaserCannon_(\\d+)-.+$"),
                 ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"ProjectilesPerShot\": 2\r\n}\r\n",
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_PPC_PPC_(\\d+)-.+$"),
+                Check = new Regex("^Weapon_PPC_PPC_(-?\\d+)-.+$"),
                 ExtraData = ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"PPC operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_FI_OFF\",\r\n\t\t\t\"UIName\": \"FI OFF\",\r\n\t\t\t\"Name\": \"Field Inhibitor OFF\",\r\n\t\t\t\"Description\": \"Disabled Field Inhibitor removes minimum range, but at the chance to misfire.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamageOnJamming\": true,\r\n\t\t\t\"FlatJammingChance\": 0.1,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.04,\r\n\t\t\t\"MinRange\": -90.0,\r\n\t\t\t\"AccuracyModifier\": 1.0\r\n\t\t}\r\n\t]\r\n}\r\n",
                 AddToList = (x) => x.AddPPCCap,
             },
@@ -173,16 +196,19 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_LRM_C?N?LRM(\\d+)_(\\d+)-.+$"),
                 EnableArtemis = true,
+                EnableNarc = true,
             },
             new WeaponLRMPattern()
             {
                 Check = new Regex("^Weapon_ELRM_C?ELRM(\\d+)_(\\d+)-.+$"),
                 EnableArtemis = false,
+                EnableNarc = true,
             },
             new WeaponForwardingPattern()
             {
                 Check = new Regex("^Weapon_Thunderbolt_Thunderbolt(\\d+)_(\\d+)-.+$"),
                 Details = true,
+                AddToList = (x) => x.AddNarcCompatible,
                 ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": 1,\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Individual\",\r\n\t\"AMSHitChance\": 0.5,\r\n\t\"MissileHealth\": 5,\r\n\t\"ProjectileScale\": {\r\n\t\t\"x\": 2,\r\n\t\t\"y\": 2,\r\n\t\t\"z\": 2\r\n\t}\r\n}\r\n",
             },
             new DeprecatedPatchPattern<WeaponDef>()
@@ -206,6 +232,7 @@ namespace BTX_CAC_CompatibilityDll
                 Check = new Regex("^Weapon_SRM_C?SRM(\\d+)_(\\d+-.+|OneShot)$"),
                 EnableArtemis = true,
                 Streak = false,
+                EnableNarc = true,
             },
             new WeaponSRMPattern()
             {
@@ -244,6 +271,16 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_ATM_ATM(\\d+)_(\\d+-.+)$"),
             },
+            new WeaponForwardingPattern()
+            {
+                Check = new Regex("^Weapon_TAG_(?:Standard|Light_Clan|Clan|C3)(?:_\\d+)?-.+$"),
+                Details = true,
+                ExtraData = ",\r\n\t\"statusEffects\": [\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": true,\r\n\t\t\t\t\"showInStatusPanel\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"StatisticEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IncomingAttBonus\",\r\n\t\t\t\t\"Name\": \"TAG MARKED\",\r\n\t\t\t\t\"Details\": \"If targeted by non Clan LRMs/NLRMs this unit does not have an indirect fire modifier and all evasion is ignored. These effects do not stack with Artemis IV or a Narc Missile Beacon.\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_statusMarked\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"statisticData\": {\r\n\t\t\t\t\"appliesEachTick\": false,\r\n\t\t\t\t\"statName\": \"TAGCount\",\r\n\t\t\t\t\"operation\": \"Float_Add\",\r\n\t\t\t\t\"modValue\": \"1\",\r\n\t\t\t\t\"modType\": \"System.Single\"\r\n\t\t\t},\r\n\t\t\t\"tagData\": null,\r\n\t\t\t\"floatieData\": null,\r\n\t\t\t\"actorBurningData\": null,\r\n\t\t\t\"vfxData\": null,\r\n\t\t\t\"instantModData\": null,\r\n\t\t\t\"poorlyMaintainedEffectData\": null\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": false,\r\n\t\t\t\t\"showInStatusPanel\": false,\r\n\t\t\t\t\"hideApplicationFloatie\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"VFXEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IndicatorVFX\",\r\n\t\t\t\t\"Name\": \"Inferno VFX\",\r\n\t\t\t\t\"Details\": \"Visual indicator of the TAG effect\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_status_sensorsImpaired\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"vfxData\": {\r\n\t\t\t\t\"vfxName\": \"vfxPrfPrtl_TAGmarker_loop\",\r\n\t\t\t\t\"attachToImpactPoint\": true,\r\n\t\t\t\t\"location\": -1,\r\n\t\t\t\t\"isAttached\": true,\r\n\t\t\t\t\"facesAttacker\": false,\r\n\t\t\t\t\"isOneShot\": false,\r\n\t\t\t\t\"duration\": -1.0\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}",
+            },
+            new WeaponNarcPattern()
+            {
+                Check = new Regex("^Weapon_Narc_(?:Standard|Improved|CNarc)_(\\d+)-.+$"),
+            },
         };
 
         private class IdCollector
@@ -252,6 +289,7 @@ namespace BTX_CAC_CompatibilityDll
             public readonly List<string> AddArtemisSRM = new List<string>();
             public readonly List<string> AddPPCCap = new List<string>();
             public readonly List<string> AddPPCCapSnub = new List<string>();
+            public readonly List<string> AddNarcCompatible = new List<string>();
             public readonly Dictionary<string, ItemCollectionReplace> ICReplace = new Dictionary<string, ItemCollectionReplace>();
             public readonly Dictionary<string, WeaponAddonSplit> Splits = new Dictionary<string, WeaponAddonSplit>();
         }
@@ -322,26 +360,30 @@ namespace BTX_CAC_CompatibilityDll
             public bool Details = false;
             public bool Heat = false;
             public bool Damage = true;
+            public bool Boni = false;
             public Func<IdCollector, List<string>> AddToList = null;
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
-                string p = Forward(data, Details, Heat, Damage);
+                string p = Forward(data, Details, Heat, Damage, Boni);
                 p += ExtraData;
                 WriteTo(targetFolder, id, p);
                 if (AddToList != null)
                     AddToList(c)?.Add(id);
             }
 
-            public static string Forward(WeaponDef data, bool details, bool heat, bool damage = true)
+            public static string Forward(WeaponDef data, bool details, bool heat, bool damage = true, bool boni = false, bool acc = true)
             {
                 string p = $"{{\r\n\t\"MinRange\": {data.MinRange},\r\n\t\"MaxRange\": {data.MaxRange},\r\n\t\"RangeSplit\": [\r\n\t\t{data.RangeSplit[0]},\r\n\t\t{data.RangeSplit[1]},\r\n\t\t{data.RangeSplit[2]}\r\n\t],\r\n\t\"HeatGenerated\": {data.HeatGenerated}";
                 if (damage)
                     p += $",\r\n\t\"Damage\": {data.Damage},\r\n\t\"Instability\": {data.Instability}";
-                p += $",\r\n\t\"RefireModifier\": {data.RefireModifier},\r\n\t\"AccuracyModifier\": {data.AccuracyModifier}";
+                if (acc)
+                    p += $",\r\n\t\"RefireModifier\": {data.RefireModifier},\r\n\t\"AccuracyModifier\": {data.AccuracyModifier}";
                 if (heat)
                     p += $",\r\n\t\"HeatDamage\": {data.HeatDamage}";
                 if (details)
                     p += $",\r\n\t\"Description\": {{\r\n\t\t\"Details\": {JsonConvert.ToString(data.Description.Details)}\r\n\t}}";
+                if (boni)
+                    p += $",\r\n\t\"BonusValueA\": \"{data.BonusValueA},\r\n\t\"BonusValueB\": \"{data.BonusValueB}";
                 return p;
             }
         }
@@ -440,7 +482,7 @@ namespace BTX_CAC_CompatibilityDll
 
         private class WeaponLRMPattern : Pattern<WeaponDef>
         {
-            public bool EnableArtemis;
+            public bool EnableArtemis, EnableNarc;
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
                 if (id == "Weapon_LRM_LRM15_1-DeltaBoT")
@@ -459,11 +501,13 @@ namespace BTX_CAC_CompatibilityDll
                 WriteTo(targetFolder, id, p);
                 if (EnableArtemis)
                     c.AddArtemisLRM.Add(id);
+                if (EnableNarc)
+                    c.AddNarcCompatible.Add(id);
             }
         }
         private class WeaponSRMPattern : Pattern<WeaponDef>
         {
-            public bool EnableArtemis, Streak;
+            public bool EnableArtemis, Streak, EnableNarc;
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
                 int size = data.ShotsWhenFired;
@@ -479,6 +523,8 @@ namespace BTX_CAC_CompatibilityDll
                 WriteTo(targetFolder, id, p);
                 if (EnableArtemis)
                     c.AddArtemisSRM.Add(id);
+                if (EnableNarc)
+                    c.AddNarcCompatible.Add(id);
             }
         }
         private class WeaponMRMPattern : Pattern<WeaponDef>
@@ -506,6 +552,21 @@ namespace BTX_CAC_CompatibilityDll
                     clu = "0.6666667";
                 p += $",\r\n\t\"Custom\" : {{\r\n\t\t\"Clustering\": {{\r\n\t\t\t\"Base\": {clu},\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}},\r\n\t\t\t\t{{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}}\r\n\t\t\t]\r\n\t\t}}\r\n\t}}";
                 p += "\r\n}\r\n";
+                WriteTo(targetFolder, id, p);
+            }
+        }
+        private class WeaponNarcPattern : Pattern<WeaponDef>
+        {
+            public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
+            {
+                string p = WeaponForwardingPattern.Forward(data, true, false, false, false, false);
+                float a = data.AccuracyModifier;
+                p += $",\r\n\t\"AccuracyModifier\": {a}";
+                if (int.TryParse(m.Groups[1].Value, out int r) && r > 0) {
+                    a += r+1;
+                    p += $",\r\n\t\"BonusValueA\": \"+ {r+1} Acc.\"";
+                }
+                p += "\r\n}";
                 WriteTo(targetFolder, id, p);
             }
         }

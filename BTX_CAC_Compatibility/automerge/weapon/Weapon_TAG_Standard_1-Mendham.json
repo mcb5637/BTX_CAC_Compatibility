@@ -1,0 +1,104 @@
+{
+	"MinRange": 0,
+	"MaxRange": 450,
+	"RangeSplit": [
+		150,
+		270,
+		450
+	],
+	"HeatGenerated": 0,
+	"Damage": 1,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": -1,
+	"Description": {
+		"Details": "Target Acquistion Gear—TAG—is a specialized piece of equipment that \"paints\" a target for homing munitions. Any LRM or NLRM that is not equpied with Artemis IV will receive the advantage of the TAG marked target. This bonus will not work alongside a Narc Missile Beacon marked target, and does not benefit Clan LRMs. TAG is not affected by ECM fields.\r\n\r\nLRMs/NLRMs fired at a TAG marked target will ignore all movement modifiers of the target. Indirect fire can also be used against the target at the same accuracy as direct fire."
+	},
+	"statusEffects": [
+		{
+			"durationData": {
+				"duration": 1,
+				"ticksOnActivations": false,
+				"useActivationsOfTarget": true,
+				"ticksOnEndOfRound": false,
+				"ticksOnMovements": true,
+				"stackLimit": 1,
+				"clearedWhenAttacked": false
+			},
+			"targetingData": {
+				"effectTriggerType": "OnHit",
+				"triggerLimit": 0,
+				"extendDurationOnTrigger": 0,
+				"specialRules": "NotSet",
+				"effectTargetType": "NotSet",
+				"range": 0,
+				"forcePathRebuild": false,
+				"forceVisRebuild": false,
+				"showInTargetPreview": true,
+				"showInStatusPanel": true
+			},
+			"effectType": "StatisticEffect",
+			"Description": {
+				"Id": "StatusEffect-TAG-IncomingAttBonus",
+				"Name": "TAG MARKED",
+				"Details": "If targeted by non Clan LRMs/NLRMs this unit does not have an indirect fire modifier and all evasion is ignored. These effects do not stack with Artemis IV or a Narc Missile Beacon.",
+				"Icon": "uixSvgIcon_statusMarked"
+			},
+			"nature": "Debuff",
+			"statisticData": {
+				"appliesEachTick": false,
+				"statName": "TAGCount",
+				"operation": "Float_Add",
+				"modValue": "1",
+				"modType": "System.Single"
+			},
+			"tagData": null,
+			"floatieData": null,
+			"actorBurningData": null,
+			"vfxData": null,
+			"instantModData": null,
+			"poorlyMaintainedEffectData": null
+		},
+		{
+			"durationData": {
+				"duration": 1,
+				"ticksOnActivations": false,
+				"useActivationsOfTarget": true,
+				"ticksOnEndOfRound": false,
+				"ticksOnMovements": true,
+				"stackLimit": 1,
+				"clearedWhenAttacked": false
+			},
+			"targetingData": {
+				"effectTriggerType": "OnHit",
+				"triggerLimit": 0,
+				"extendDurationOnTrigger": 0,
+				"specialRules": "NotSet",
+				"effectTargetType": "NotSet",
+				"range": 0,
+				"forcePathRebuild": false,
+				"forceVisRebuild": false,
+				"showInTargetPreview": false,
+				"showInStatusPanel": false,
+				"hideApplicationFloatie": true
+			},
+			"effectType": "VFXEffect",
+			"Description": {
+				"Id": "StatusEffect-TAG-IndicatorVFX",
+				"Name": "Inferno VFX",
+				"Details": "Visual indicator of the TAG effect",
+				"Icon": "uixSvgIcon_status_sensorsImpaired"
+			},
+			"nature": "Debuff",
+			"vfxData": {
+				"vfxName": "vfxPrfPrtl_TAGmarker_loop",
+				"attachToImpactPoint": true,
+				"location": -1,
+				"isAttached": true,
+				"facesAttacker": false,
+				"isOneShot": false,
+				"duration": -1.0
+			}
+		}
+	]
+}

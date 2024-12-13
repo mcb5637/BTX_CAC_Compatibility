@@ -1,0 +1,17 @@
+{
+	"MinRange": 0,
+	"MaxRange": 270,
+	"RangeSplit": [
+		90,
+		180,
+		270
+	],
+	"HeatGenerated": 21,
+	"Damage": 50,
+	"Instability": 0,
+	"RefireModifier": 0,
+	"AccuracyModifier": 1,
+	"Description": {
+		"Details": "Clan Star Adder developed the family of Heavy Lasers in 3059 as a way of packing more punch into a relatively small package. All Heavy Lasers, however, build a tremendous amount of heat and interfere with a 'Mech's sensors. A subtle firing delay and interference with a BattleMech's sensors means that a Heavy Medium Laser suffers with accuracy loss."
+	}
+}
