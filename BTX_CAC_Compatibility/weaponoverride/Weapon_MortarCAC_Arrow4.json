@@ -78,6 +78,7 @@
 			"range_extreme",
 			"component_type_lostech",
 			"BLACKLISTED",
+			"component_usestag",
 			"artillery_loader_attachable"
 		],
 		"tagSetSourceFile": ""

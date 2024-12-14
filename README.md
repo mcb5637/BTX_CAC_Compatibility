@@ -22,7 +22,7 @@ Component list (Clan & SLDF ones included):
 		- Binary Laser: fixed animation
         - Pulse Laser: fixed animation
 		- X-Pulse Laser: changed to single projectile
-        - Tag: attacking a tagged unit has an +3 accuracy boost, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
+        - Tag: attacking a tagged unit ignores evasion+indirect penalities, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
         - Flamer: added forestfires
     - Ballistic
         - AC: fixed firing speed, special ammo types
@@ -35,25 +35,25 @@ Component list (Clan & SLDF ones included):
         - MG: added double speed mode (double shots, -4 acc, +5 heat)
 		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance (fires at all nearby missles) / can be used as MG)
     - Missle
-        - LRM: added hotload mode, added Deadfire ammo
+        - LRM: added hotload mode, added Deadfire ammo (narc, tag or artemis compatible)
         - Artemis IV LRM: turned into a Weapon Addon for LRMs (deprecated)
-        - SRM: added inferno ammo (inferno causes fires everywhere), added Deadfire ammo
+        - SRM: added inferno ammo (inferno causes fires everywhere), added Deadfire ammo (narc or artemis compatible)
         - Artemis IV SRM: turned into a Weapon Addon for SRMs (deprecated)
         - Streak SRM: added inferno ammo, added streak effect, added Deadfire ammo
         - NARC: multiple pods
-			- Homing Pod: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
+			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
 			- Explosive Pod: damge (kurita shops after 3059)
-        - ATM: added 3 ammo types, trading damage for range, added clustering
+        - ATM: 3 ammo types, trading damage for range, added clustering
         - Infernos: Broken, use SRM inferno ammo instead
 		- MRM: individual hit generator, unguided flag
 		- RL: individual hit generator, unguided flag
 		- iNarc: multiple pods
-			- Homing Pod: attacking a narced unit has an +3 accuracy boost, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
+			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
 			- Explosive Pod: damge
 			- Haywire Pod: -3 accuracy for 3 rounds
     - Artillery
         - Thumper: light artillery (replaces HM mortar / Bull Shark)
-        - Sniper: medium artillery (found in mining shops)
+        - Sniper: medium artillery (found in mining shops) (tag compatible)
         - Long Tom: heavy artillery (found in mining shops, only mountable in Bull Shark)
         - Arrow IV: medium artillery (lostech / FP reward / Liao shops after 3049)
 		- Artillery Loader: every artillery needs a Loader attached in the same or adjacent location (found in mining shops)
@@ -77,7 +77,7 @@ Component list (Clan & SLDF ones included):
 	- Prototype TSM: Auto activates at >27 heat (\*1.5 melee damage, +30m movement)
 	- MASC: Activatable (\*2 speed) (fail chance 15%, add up per turn in use)
 	- Coolant Pod: doubles heatsinking for 1 turn, 1 activation per pod (does not stack)
-	- Artemis IV FCS: attaches to one SRM or LRM launcher and gives it: +4 direct fire acc, better clustering
+	- Artemis IV FCS: attaches to one SRM or LRM launcher and gives it: +4 direct fire acc, better clustering (can be turned off to fire special ammo or use tag/narc)
 	- PPC Capacitor: attaches to one PPC (including ER, Heavy and Snub) and gives it: CAP Mode (+25 DMG, +15 Heat, 1 turn Weapon Cooldown)
 - Argo Upgrades
 	- Storage: added 3 additional storage upgrades, each giving a new mechbay to use
@@ -140,8 +140,6 @@ What to do when adding CAC-C into an existing savegame:
 	- Artemis SRM/LRM (Weapon_SRM_ASRMXXX/Weapon_LRM_ALRMXXX ->  Gear_Addon_Artemis4) to a matching standard SRM/LRM launcher with Artemis IV FCS attachment
 
 TODO BEX 2.0:
-- remove MC from additional dependencies if not needed
-- tag/narc
 - weather acc modifiers?
 - movable blockers
 
@@ -163,7 +161,6 @@ Optional:
 - i recommend having a look at BT_Extended_CE/mod.json settings and enable some of these in all modes
 - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
 - manual deployment can be enabled via CU, set "DeployManual": to true to do so (warning: laggy)
-- if you do not want to drop more than 4 mechs, i recommend turning off MissionControls AdditionalLances
 
 Manual setup:
 - clone git repo, including submodules
@@ -172,12 +169,10 @@ Manual setup:
 Package for release:
 - update version info in mod.json and dll
 - setup additionalDependencies
-	- ModTek 4.1
 	- SimpleMechAssembly
 	- IRBModUtils
 	- BiggerDrops
 	- MechAffinity 1.4 (dll only)
-	- MissionControl
 	- CustomComponents (latest, Dec 28, 2023)
 	- CAC & CAE repos
 - compile CAC & CAE
