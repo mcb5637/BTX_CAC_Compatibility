@@ -261,7 +261,7 @@
     },
     {
       "MountedLocation": "CenterTorso",
-      "ComponentDefID": "Gear_SensorCAC_GuardianHC",
+      "ComponentDefID": "Gear_SensorCAC_Guardian",
       "ComponentDefType": "Upgrade",
       "HardpointSlot": -1,
       "IsFixed": true,

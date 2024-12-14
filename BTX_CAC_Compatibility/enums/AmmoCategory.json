@@ -1,7 +1,7 @@
 {
 	"enumerationValueList": [
 		{
-			"ID": 50,
+			"ID": 70,
 			"Name": "Thumper",
 			"FriendlyName": "Thumper",
 			"IsBallistic": true,
@@ -15,7 +15,7 @@
 			"OutOfAmmoAudioVOEvent": "AmmoDepleted_Gauss"
 		},
 		{
-			"ID": 51,
+			"ID": 71,
 			"Name": "SniperArti",
 			"FriendlyName": "Sniper",
 			"IsBallistic": true,
@@ -29,7 +29,7 @@
 			"OutOfAmmoAudioVOEvent": "AmmoDepleted_Gauss"
 		},
 		{
-			"ID": 52,
+			"ID": 72,
 			"Name": "LongTom",
 			"FriendlyName": "Long Tom",
 			"IsBallistic": true,
@@ -43,7 +43,7 @@
 			"OutOfAmmoAudioVOEvent": "AmmoDepleted_Gauss"
 		},
 		{
-			"ID": 53,
+			"ID": 73,
 			"Name": "Arrow4",
 			"FriendlyName": "Arrow IV",
 			"IsBallistic": false,
@@ -57,7 +57,7 @@
 			"OutOfAmmoAudioVOEvent": "AmmoDepleted_LRM"
 		},
 		{
-			"ID": 54,
+			"ID": 74,
 			"Name": "BombBay",
 			"FriendlyName": "Bombs",
 			"IsBallistic": false,

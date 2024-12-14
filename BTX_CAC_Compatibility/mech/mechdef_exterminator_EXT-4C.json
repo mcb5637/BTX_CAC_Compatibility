@@ -195,7 +195,7 @@
     },
     {
       "MountedLocation": "RightTorso",
-      "ComponentDefID": "Weapon_AMSCAC_0SLDF",
+      "ComponentDefID": "Weapon_AMSCAC_0",
       "SimGameUID": "",
       "ComponentDefType": "Weapon",
       "HardpointSlot": 0,

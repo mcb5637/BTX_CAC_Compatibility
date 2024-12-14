@@ -124,15 +124,15 @@
 			"Path": "ammoboxmerge",
 			"ShouldMergeJSON": true
 		},
-		// {
-		// 	"Type": "ItemCollectionDef",
-		// 	"Path": "itemCollectionAppend",
-		// 	"ShouldAppendText": true
-		// },
-		// {
-		// 	"Type": "ItemCollectionDef",
-		// 	"Path": "itemCollectionAdd"
-		// },
+		{
+			"Type": "ItemCollectionDef",
+			"Path": "itemCollectionAppend",
+			"ShouldAppendText": true
+		},
+		{
+			"Type": "ItemCollectionDef",
+			"Path": "itemCollectionAdd"
+		},
 		{
 			"Type": "ShipModuleUpgrade",
 			"Path": "shipUpgrades"
@@ -141,30 +141,30 @@
 			"Type": "AdvancedJSONMerge",
 			"Path": "advancedMerge"
 		},
-		// {
-		// 	"Type": "ChassisDef",
-		// 	"Path": "chassis",
-		// 	"AddToDB": true
-		// },
-		// {
-		// 	"Type": "ChassisDef",
-		// 	"Path": "chassismerge",
-		// 	"ShouldMergeJSON": true
-		// },
-		// {
-		// 	"Type": "MechDef",
-		// 	"Path": "mech",
-		// 	"AddToDB": true
-		// },
-		// {
-		// 	"Type": "JumpJetDef",
-		// 	"Path": "jumpjets"
-		// },
-		// {
-		// 	"Type": "JumpJetDef",
-		// 	"Path": "jumpjet_merge",
-		// 	"ShouldMergeJSON": true
-		// },
+		{
+			"Type": "ChassisDef",
+			"Path": "chassis",
+			"AddToDB": true
+		},
+		{
+			"Type": "ChassisDef",
+			"Path": "chassismerge",
+			"ShouldMergeJSON": true
+		},
+		{
+			"Type": "MechDef",
+			"Path": "mech",
+			"AddToDB": true
+		},
+		{
+			"Type": "JumpJetDef",
+			"Path": "jumpjets"
+		},
+		{
+			"Type": "JumpJetDef",
+			"Path": "jumpjet_merge",
+			"ShouldMergeJSON": true
+		},
 		{
 			"Type": "UpgradeDef",
 			"Path": "upgradesNew"
@@ -187,11 +187,11 @@
 			"Type": "Sprite",
 			"Path": "sprites"
 		},
-		// {
-		// 	"Type": "StarSystemDef",
-		// 	"Path": "starsystems",
-		// 	"ShouldMergeJSON": true
-		// },
+		{
+			"Type": "StarSystemDef",
+			"Path": "starsystems",
+			"ShouldMergeJSON": true
+		},
 		{
 			"Type": "ContractOverride",
 			"Path": "contract",
