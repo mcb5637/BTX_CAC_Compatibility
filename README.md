@@ -9,6 +9,11 @@ Installation/Update: (requires working BEX installation)
 - remove any previous version of CAC-C, CAE, CAC, CC, CLoc, CPrewarm, CU, CVoices, if they exist
 - Add BTX_CAC_Compatibility, overriding files
 
+Versioning:
+The first 2 parts of the version number match the intended BEX version number.
+The other 2 follow semantic versioning.
+A "b" as last char in the github release/git tag indicates beta status, this is not included in assembly/mod.json.
+There will not be different releases that differ only in this beta marker.
 
 Component list (Clan & SLDF ones included):
 - Weapons (& Ammo)
@@ -144,7 +149,6 @@ TODO BEX 2.0:
 - movable blockers
 
 TODO List:
-- quad critable arm actuators to leg actuators
 - imp sensor unlocks sensorlock without skill (add to irtweaks)
 - multitarget quirk unlocks without skill? (irtweaks stat)
 - a-pods CAE?
@@ -152,7 +156,6 @@ TODO List:
 - NARC reveals target?
 - Flamers & Inferno ammo balance
 - ECM tohit balance
-- new mechs: LAMs
 
 Known bugs:
 - CustomLoc patchig strings
@@ -190,3 +193,4 @@ Credits:
 - Hounfor + Graywolfe for helping updating to BTX 1.9.3
 - Hounfor for Flying High Again contracts
 - Kierk for Scorpion/Tarantula pathing
+- Kierk for adapting mechs, affinities, shops and xotl tables to 2.0
