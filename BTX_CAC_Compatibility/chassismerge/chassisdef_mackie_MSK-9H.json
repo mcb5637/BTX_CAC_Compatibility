@@ -1,0 +1,16 @@
+{
+  "HardpointDataDefID": "hardpointdatadef_ltmackie",
+  "PrefabIdentifier": "chrprfmech_ltmackiebase-001",
+  "PrefabBase": "ltmackie",
+  "ChassisTags": {
+    "items": [
+      "mr-resize-1.10-1.15-1.10",
+      "mech_case_right",
+      "mech_quirk_easytomaintain",
+      "mech_quirk_oversized",
+      "mech_quirk_protectedactuators",
+      "mech_quirk_rugged1"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

@@ -11,7 +11,7 @@
     "Details": "The Goliath is armed with what would be considered a paltry armament for a 'Mech of its size. Its primary weapon is a PPC backed up by two LRM-10 launchers. The Goliath has respectable firepower at long ranges. When an enemy closes though the 'Mech only has two Machine Guns to rely on for defense.",
     "Icon": "uixTxrIcon_goliath"
   },
-  "MovementCapDefID": "movedef_zeus_ZEU-6S",
+  "MovementCapDefID": "movedef_mech_assault_4",
   "PathingCapDefID": "pathingdef_assault_quad",
   "HardpointDataDefID": "hardpointdatadef_cugoliath",
   "PrefabIdentifier": "chrprfmech_goliath",
@@ -19,7 +19,7 @@
   "Tonnage": 80,
   "InitialTonnage": 37.5,
   "weightClass": "ASSAULT",
-  "BattleValue": 6778200,
+  "BattleValue": "7245000",
   "Heatsinks": 0,
   "TopSpeed": 105,
   "TurnRadius": 90,

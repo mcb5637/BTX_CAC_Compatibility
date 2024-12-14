@@ -5,6 +5,8 @@
     "chassisNames": [
       "chrPrfMech_bullsharkBase-001_95",
       "chrprfmech_gargoylebase-001_80",
+      "chrprfmech_lelialbatrossbase-001_95",
+      "chrprfmech_strikermechbase-001_80",
       "chrPrfMech_zeusBase-001_80"
     ],
     "idType": "AssemblyVariant",

@@ -11,7 +11,7 @@
     "Details": "The Sirocco was developed to replace aging Goliath BattleMechs in successor state armies. It has impressive protection and a heavy arsenal, including a pair of Ultra Autocannon/10s that provide the 'Mech with a great deal of long-range firepower. For close combat, the Sirocco carries six ER Medium Lasers, two of which are rear-mounted, allowing the Sirocco to defend itself from any angle. Additionally, the 'Mech uses a Medium Pulse Laser to round out its close-range firepower. To dissuade knee-capping attacks made by enemy sappers, the Sirocco has two Anti-Personnel Pods. Finally, to disrupt enemy electronic warfare systems, the 'Mech carries a Guardian ECM Suite.",
     "Icon": "uixTxrIcon_sirocco"
   },
-  "MovementCapDefID": "movedef_bullshark_BSK-M3",
+  "MovementCapDefID": "movedef_mech_assault_3",
   "PathingCapDefID": "pathingdef_assault_quad",
   "HardpointDataDefID": "hardpointdatadef_cusirocco",
   "PrefabIdentifier": "chrprfmech_cusiroccobase-001",
@@ -19,6 +19,7 @@
   "Tonnage": 95,
   "InitialTonnage": 33.19,
   "weightClass": "ASSAULT",
+  "BattleValue": "10770000",
   "Heatsinks": 16,
   "TopSpeed": 54,
   "TurnRadius": 90,

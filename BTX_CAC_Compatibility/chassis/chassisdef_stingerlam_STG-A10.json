@@ -1,0 +1,315 @@
+{
+  "Description": {
+    "Cost": 2430000,
+    "Rarity": 4,
+    "Purchasable": true,
+    "Manufacturer": "",
+    "Model": "",
+    "UIName": "Stinger LAM",
+    "Id": "chassisdef_stingerlam_STG-A10",
+    "Name": "Stinger LAM",
+    "Details": "Found in the Draconis Combine, this variant's loadout is no different than the A5 model except for a pair of Small Lasers on each arm replacing the Medium Lasers.",
+    "Icon": "uixTxrIcon_stingerlam"
+  },
+  "MovementCapDefID": "movedef_mech_light_6",
+  "PathingCapDefID": "pathingdef_light",
+  "HardpointDataDefID": "hardpointdatadef_stingerlamv2",
+  "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
+  "PrefabBase": "stingerlamv2",
+  "Tonnage": 30,
+  "InitialTonnage": 15,
+  "weightClass": "LIGHT",
+  "BattleValue": "4405000",
+  "Heatsinks": 0,
+  "TopSpeed": 120,
+  "TurnRadius": 90,
+  "MaxJumpjets": 6,
+  "Stability": 100,
+  "StabilityDefenses": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpotterDistanceMultiplier": 1,
+  "VisibilityMultiplier": 1,
+  "SensorRangeMultiplier": 1,
+  "Signature": 0,
+  "Radius": 4,
+  "PunchesWithLeftArm": false,
+  "MeleeDamage": 40,
+  "MeleeInstability": 30,
+  "MeleeToHitModifier": 0,
+  "DFADamage": 40,
+  "DFAToHitModifier": 0,
+  "DFASelfDamage": 40,
+  "DFAInstability": 40,
+  "CustomParts": {
+    "AlternateRepresentations": [
+      {
+        "HardpointDataDef": "hardpointdatadef_stingerlamv2",
+        "PrefabIdentifier": "chrprfmech_stingerlamv2base-001",
+        "PrefabBase": "stingerlamv2",
+        "AdditionalPrefabs": [],
+        "Type": "AirMech",
+        "additionalEncounterTags": [
+          "unit_lam"
+        ],
+        "FlyHeight": 15.0,
+        "NoJumpjetsBlock": true,
+        "AirMechVerticalJets": [
+          {
+            "Prefab": "vf11lam_vjets_left_leg",
+            "Attach": "j_LHeel",
+            "JetsAttachPoints": [
+              "jetAttachPoint"
+            ]
+          },
+          {
+            "Prefab": "vf11lam_vjets_right_leg",
+            "Attach": "j_RHeel",
+            "JetsAttachPoints": [
+              "jetAttachPoint"
+            ]
+          },
+          {
+            "Prefab": "vf11lam_vjets_torso",
+            "Attach": "j_Spine2",
+            "JetsAttachPoints": [
+              "jetAttachPoint"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Locations": [
+    {
+      "Location": "Head",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 1,
+      "MaxArmor": 45,
+      "MaxRearArmor": -1,
+      "InternalStructure": 16
+    },
+    {
+      "Location": "LeftArm",
+      "Hardpoints": [
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 50,
+      "MaxRearArmor": -1,
+      "InternalStructure": 25
+    },
+    {
+      "Location": "LeftTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 70,
+      "MaxRearArmor": 35,
+      "InternalStructure": 35
+    },
+    {
+      "Location": "CenterTorso",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 100,
+      "MaxRearArmor": 50,
+      "InternalStructure": 50
+    },
+    {
+      "Location": "RightTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 70,
+      "MaxRearArmor": 35,
+      "InternalStructure": 35
+    },
+    {
+      "Location": "RightArm",
+      "Hardpoints": [
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 50,
+      "MaxRearArmor": -1,
+      "InternalStructure": 25
+    },
+    {
+      "Location": "LeftLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 70,
+      "MaxRearArmor": -1,
+      "InternalStructure": 35
+    },
+    {
+      "Location": "RightLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 70,
+      "MaxRearArmor": -1,
+      "InternalStructure": 35
+    }
+  ],
+  "LOSSourcePositions": [
+    {
+      "x": 0,
+      "y": 10.9,
+      "z": 0.5
+    },
+    {
+      "x": -2.8,
+      "y": 9.7,
+      "z": -0.5
+    },
+    {
+      "x": 2.8,
+      "y": 9.7,
+      "z": -0.5
+    }
+  ],
+  "LOSTargetPositions": [
+    {
+      "x": 0,
+      "y": 10.9,
+      "z": 0.5
+    },
+    {
+      "x": -2.8,
+      "y": 9.7,
+      "z": -0.5
+    },
+    {
+      "x": 2.8,
+      "y": 9.7,
+      "z": -0.5
+    },
+    {
+      "x": -1.7,
+      "y": 3.4,
+      "z": 0.5
+    },
+    {
+      "x": 1.7,
+      "y": 3.4,
+      "z": 0.5
+    }
+  ],
+  "VariantName": "STG-A10",
+  "ChassisTags": {
+    "items": [
+      "mr-resize-0.75",
+      "mech_quirk_nonstandardparts",
+      "mech_quirk_nimblejumper",
+      "LandAirMech"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "StockRole": "Scout & Skirmisher",
+  "YangsThoughts": "The Stinger LAM is lightly armored and mounts limited weapons. However, even in 'Mech mode, its speed and maneuverability are unmatched.",
+  "FixedEquipment": [
+    {
+      "MountedLocation": "CenterTorso",
+      "ComponentDefID": "Gear_LAM_Systems",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    }
+  ]
+}

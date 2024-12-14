@@ -17,9 +17,9 @@
       },
       "effectType": "StatisticEffect",
       "Description": {
-        "Id": "StatusEffect-Defense_ToHit-T3",
-        "Name": "HARDER TO HIT",
-        "Details": "Provides a penalty to all attacks against this unit.",
+        "Id": "JinxedQuirkEvasion",
+        "Name": "EASIER TO HIT",
+        "Details": "Provides a buff to all attacks against this unit.",
         "Icon": "uixSvgIcon_equipment_Gyro"
       },
       "nature": "Buff",

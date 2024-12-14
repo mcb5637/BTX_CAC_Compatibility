@@ -1,0 +1,302 @@
+{
+  "Description": {
+    "Cost": 2460000,
+    "Rarity": 4,
+    "Purchasable": true,
+    "Manufacturer": "",
+    "Model": "",
+    "UIName": "Wasp LAM",
+    "Id": "chassisdef_wasplam_WSP-105M",
+    "Name": "Wasp LAM",
+    "Details": "Fielded by the Free Worlds League, this subvariant of the WSP-105 replaced the SRM-2 and one single heat sink with a single LRM-5.",
+    "Icon": "uixTxrIcon_wasplam"
+  },
+  "MovementCapDefID": "movedef_mech_light_6",
+  "PathingCapDefID": "pathingdef_light",
+  "HardpointDataDefID": "hardpointdatadef_wasplamv2",
+  "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
+  "PrefabBase": "wasplamv2",
+  "Tonnage": 30,
+  "InitialTonnage": 15,
+  "weightClass": "LIGHT",
+  "BattleValue": "4535000",
+  "Heatsinks": 0,
+  "TopSpeed": 120,
+  "TurnRadius": 90,
+  "MaxJumpjets": 6,
+  "Stability": 100,
+  "StabilityDefenses": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpotterDistanceMultiplier": 1,
+  "VisibilityMultiplier": 1,
+  "SensorRangeMultiplier": 1,
+  "Signature": 0,
+  "Radius": 4,
+  "PunchesWithLeftArm": false,
+  "MeleeDamage": 40,
+  "MeleeInstability": 30,
+  "MeleeToHitModifier": 0,
+  "DFADamage": 40,
+  "DFAToHitModifier": 0,
+  "DFASelfDamage": 40,
+  "DFAInstability": 40,
+  "CustomParts": {
+    "AlternateRepresentations": [
+      {
+        "HardpointDataDef": "hardpointdatadef_wasplamv2",
+        "PrefabIdentifier": "chrprfmech_wasplamv2base-001",
+        "PrefabBase": "wasplamv2",
+        "AdditionalPrefabs": [],
+        "Type": "AirMech",
+        "additionalEncounterTags": [
+          "unit_lam"
+        ],
+        "FlyHeight": 15.0,
+        "NoJumpjetsBlock": true,
+        "AirMechVerticalJets": [
+          {
+            "Prefab": "vf11lam_vjets_left_leg",
+            "Attach": "j_LHeel",
+            "JetsAttachPoints": [
+              "jetAttachPoint"
+            ]
+          },
+          {
+            "Prefab": "vf11lam_vjets_right_leg",
+            "Attach": "j_RHeel",
+            "JetsAttachPoints": [
+              "jetAttachPoint"
+            ]
+          },
+          {
+            "Prefab": "vf11lam_vjets_torso",
+            "Attach": "j_Spine2",
+            "JetsAttachPoints": [
+              "jetAttachPoint"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Locations": [
+    {
+      "Location": "Head",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 1,
+      "MaxArmor": 45,
+      "MaxRearArmor": -1,
+      "InternalStructure": 16
+    },
+    {
+      "Location": "LeftArm",
+      "Hardpoints": [
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 50,
+      "MaxRearArmor": -1,
+      "InternalStructure": 25
+    },
+    {
+      "Location": "LeftTorso",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 70,
+      "MaxRearArmor": 35,
+      "InternalStructure": 35
+    },
+    {
+      "Location": "CenterTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 100,
+      "MaxRearArmor": 50,
+      "InternalStructure": 50
+    },
+    {
+      "Location": "RightTorso",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 70,
+      "MaxRearArmor": 35,
+      "InternalStructure": 35
+    },
+    {
+      "Location": "RightArm",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 50,
+      "MaxRearArmor": -1,
+      "InternalStructure": 25
+    },
+    {
+      "Location": "LeftLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 70,
+      "MaxRearArmor": -1,
+      "InternalStructure": 35
+    },
+    {
+      "Location": "RightLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 70,
+      "MaxRearArmor": -1,
+      "InternalStructure": 35
+    }
+  ],
+  "LOSSourcePositions": [
+    {
+      "x": 0,
+      "y": 10.9,
+      "z": 0.5
+    },
+    {
+      "x": -2.8,
+      "y": 9.7,
+      "z": -0.5
+    },
+    {
+      "x": 2.8,
+      "y": 9.7,
+      "z": -0.5
+    }
+  ],
+  "LOSTargetPositions": [
+    {
+      "x": 0,
+      "y": 10.9,
+      "z": 0.5
+    },
+    {
+      "x": -2.8,
+      "y": 9.7,
+      "z": -0.5
+    },
+    {
+      "x": 2.8,
+      "y": 9.7,
+      "z": -0.5
+    },
+    {
+      "x": -1.7,
+      "y": 3.4,
+      "z": 0.5
+    },
+    {
+      "x": 1.7,
+      "y": 3.4,
+      "z": 0.5
+    }
+  ],
+  "VariantName": "WSP-105M",
+  "ChassisTags": {
+    "items": [
+      "mr-resize-0.75",
+      "mech_quirk_nonstandardparts",
+      "mech_quirk_nimblejumper",
+      "LandAirMech"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "StockRole": "Scout & Skirmisher",
+  "YangsThoughts": "The Wasp design has always been used for general scouting and reconnaissance duty. The LAM version built on these strengths, but don't let it get caught standing still.",
+  "FixedEquipment": [
+    {
+      "MountedLocation": "CenterTorso",
+      "ComponentDefID": "Gear_LAM_Systems",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_JumpJet_LAMJet",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftLeg",
+      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftLeg",
+      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightLeg",
+      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightLeg",
+      "ComponentDefID": "Gear_JumpJet_Generic_Standard",
+      "ComponentDefType": "JumpJet",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    }
+  ]
+}

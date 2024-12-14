@@ -7,73 +7,402 @@
   "enableMonthlyMoraleReset": false,
   "enableStablePiloting": true,
   "affinitySettings": {
-    "missionsBeforeDecay": 5,
+    "missionsBeforeDecay": 6,
     "lowestPossibleDecay": 0,
     "removeAffinityAfter": 50,
     "maxAffinityPoints": 1000,
     "decayByModulo": false,
     "debugForceTag": "",
-    "defaultDaysBeforeSimDecay": 93,
+    "defaultDaysBeforeSimDecay": 183,
     "showDescriptionsOnChassis": true,
     "trackSimDecayByStat": true,
     "trackLowestDecayByStat": true,
-    "showAllPilotAffinities": true,
+    "showAllPilotAffinities": false,
     "topAffinitiesInTooltipCount": 3,
     "showQuirks": true,
     "affinityGroups": [
-      {
-        "affinityId": "Flea",
+      { /* Annihilator */
+        "affinityId": "chrPrfMech_annihilatorBase-001_100",
         "assemblyGroup": [
-          "chrPrfMech_fleaBase-001_15",
+          "chrPrfMech_annihilator_BlackWidowBase-001_100"
+        ]
+      },
+      { /* Archer */
+        "affinityId": "chrPrfMech_archerBase-001_70",
+        "assemblyGroup": [
+          "chrPrfMech_archer_BHABase-001_70",
+          "chrPrfMech_archer_BlackWidowBase-001_70"
+        ]
+      },
+      { /* Atlas */
+        "affinityId": "chrPrfMech_atlasBase-001_100",
+        "assemblyGroup": [
+          "chrPrfMech_atlas_BHABase-001_100",
+          "chrPrfMech_atlasBacker-SBA_100",
+          "chrPrfMech_atlasBacker-VALHA_100"
+        ]
+      },
+      { /* Battlemaster */
+        "affinityId": "chrPrfMech_battlemasterBase-001_85",
+        "assemblyGroup": [
+          "chrPrfMech_battlemasterBacker-VALHA_85",
+          "chrprfmech_redcorsairbase-001_85"
+        ]
+      },
+      { /* Black Knight */
+        "affinityId": "chrPrfMech_blackknightBase-001_75",
+        "assemblyGroup": [
+          "chrprfmech_redreaperbase-001_75"
+        ]
+      },
+      { /* Centurion */
+        "affinityId": "chrPrfMech_centurionBase-001_50",
+        "assemblyGroup": [
+          "chrPrfMech_centurionBase-001_55",
+          "chrprfmech_yenlowang1base-001_50"
+        ]
+      },
+      { /* Firestarter */
+        "affinityId": "chrPrfMech_firestarterBase-001_35",
+        "assemblyGroup": [
+          "chrPrfMech_firestarterBacker-VNGRD_35"
+        ]
+      },
+      { /* Firestarter Omni */
+        "affinityId": "chrPrfMech_firestarterBase-001_45",
+        "assemblyGroup": [
+          "chrPrfMech_firestarterBacker-VNGRD_45"
+        ]
+      },
+      { /* Flea */
+        "affinityId": "chrPrfMech_fleaBase-001_15",
+        "assemblyGroup": [
           "chrPrfMech_fleaBase-001_20"
         ]
       },
-      {
-        "affinityId": "Centurion",
+      { /* Griffin */
+        "affinityId": "chrPrfMech_griffinBase-001_55",
         "assemblyGroup": [
-          "chrPrfMech_centurionBase-001_50",
-          "chrPrfMech_centurionBase-001_55"
+          "chrPrfMech_griffinBacker-VALHA_55"
         ]
       },
-      {
-        "affinityId": "Stalker",
+      { /* Hammer */
+        "affinityId": "chrPrfMech_atlasBase-001_30",
         "assemblyGroup": [
-          "chrPrfMech_stalkerBase-001_85",
-          "chrPrfMech_stalkerBase-001_75"
+          "chrPrfMech_atlasBacker-SBA_30"
         ]
       },
-      {
-        "affinityId": "Jaegermech",
+      { /* Hatamoto */
+        "affinityId": "chrPrfMech_hatamotochiBase-001_80",
         "assemblyGroup": [
-          "chrPrfMech_jagermechBase-001_65",
+          "chrprfmech_hatamotochisam-001_80"
+        ]
+      },
+      { /* Highlander */
+        "affinityId": "chrPrfMech_highlanderBase-001_90",
+        "assemblyGroup": [
+          "chrPrfMech_highlander_SLDFBase-001_90"
+        ]
+      },
+      { /* Jagermech */
+        "affinityId": "chrPrfMech_jagermechBase-001_65",
+        "assemblyGroup": [
           "chrPrfMech_jagermechBase-001_70"
+        ]
+      },
+      { /* Mackie */
+        "affinityId": "chrprfmech_mackiebase-001_100",
+        "assemblyGroup": [
+          "chrprfmech_ltmackiebase-001_100",
+          "chrprfmech_t74mackiebase-001_100"
+        ]
+      },
+      { /* Marauder */
+        "affinityId": "chrPrfMech_marauderBase-001_75",
+        "assemblyGroup": [
+          "chrPrfMech_marauder_BHABase-001_75",
+          "chrPrfMech_marauder_BlackWidowBase-001_75"
+        ]
+      },
+      { /* Rifleman */
+        "affinityId": "chrPrfMech_riflemanBase-001_60",
+        "assemblyGroup": [
+          "chrPrfMech_rifleman_BHABase-001_60"
+        ]
+      },
+      { /* Shadow Hawk */
+        "affinityId": "chrPrfMech_shadowhawkBase-001_55",
+        "assemblyGroup": [
+          "chrPrfMech_shadowhawkBacker-UMBRA_55"
+        ]
+      },
+      { /* Warhammer */
+        "affinityId": "chrPrfMech_warhammerBase-001_70",
+        "assemblyGroup": [
+          "chrPrfMech_warhammer_BlackWidowBase-001_70"
         ]
       }
     ],
     "prefabOverrides": [
       {
-        "prefabId": "chrPrfMech_urbanmechBase-001_30",
-        "overrideName": "UrbanMech"
+        "prefabId": "chrPrfMech_annihilatorBase-001_100",
+        "overrideName": "Annihilator"
       },
       {
-        "prefabId": "chrPrfMech_pantherBase-001_35",
-        "overrideName": "Panther"
+        "prefabId": "chrPrfMech_archerBase-001_70",
+        "overrideName": "Archer"
+      },
+      {
+        "prefabId": "chrPrfMech_atlasBase-001_100",
+        "overrideName": "Atlas"
+      },
+      {
+        "prefabId": "chrPrfMech_awesomeBase-001_80",
+        "overrideName": "Awesome"
+      },
+      {
+        "prefabId": "chrPrfMech_bansheeBase-001_95",
+        "overrideName": "Banshee"
+      },
+      {
+        "prefabId": "chrprfmech_battleaxebase-001_70",
+        "overrideName": "BattleAxe"
+      },
+      {
+        "prefabId": "chrPrfMech_battlemasterBase-001_85",
+        "overrideName": "BattleMaster"
+      },
+      {
+        "prefabId": "chrPrfMech_cataphractBase-001_70",
+        "overrideName": "Cataphract"
+      },
+      {
+        "prefabId": "chrPrfMech_catapultBase-001_65",
+        "overrideName": "Catapult"
       },
       {
         "prefabId": "chrPrfMech_centurionBase-001_50",
         "overrideName": "Centurion"
       },
       {
+        "prefabId": "chrPrfMech_centurionBase-001_55",
+        "overrideName": "Centurion"
+      },
+      {
+        "prefabId": "chrprfmech_championbase-001_60",
+        "overrideName": "Champion"
+      },
+      {
+        "prefabId": "chrPrfMech_cicadaBase-001_40",
+        "overrideName": "Cicada"
+      },
+      {
         "prefabId": "chrPrfMech_commandoBase-001_25",
         "overrideName": "Commando"
+      },
+      {
+        "prefabId": "chrprfmech_rtcorsair4base-001_95",
+        "overrideName": "Corsair"
+      },
+      {
+        "prefabId": "chrPrfMech_crabBase-001_50",
+        "overrideName": "Crab"
+      },
+      {
+        "prefabId": "chrprfmech_crosscutbase-001_30",
+        "overrideName": "Crosscut"
+      },
+      {
+        "prefabId": "chrPrfMech_cyclopsBase-001_90",
+        "overrideName": "Cyclops"
+      },
+      {
+        "prefabId": "chrprfmech_dervishbase-001_55",
+        "overrideName": "Dervish"
+      },
+      {
+        "prefabId": "chrprfmech_emperorbase-001_90",
+        "overrideName": "Emperor"
+      },
+      {
+        "prefabId": "chrprfmech_exterminatorbase-001_65",
+        "overrideName": "Exterminator"
+      },
+      {
+        "prefabId": "chrPrfMech_vaporeagleBase-001_55",
+        "overrideName": "Goshawk"
+      },
+      {
+        "prefabId": "chrPrfMech_grasshopperBase-001_70",
+        "overrideName": "Grasshopper"
+      },
+      {
+        "prefabId": "chrPrfMech_griffinBase-001_55",
+        "overrideName": "Griffin"
+      },
+      {
+        "prefabId": " chrprfmech_cugulonbase-001-25",
+        "overrideName": "Gulon"
+      },
+      {
+        "prefabId": "chrprfmech_hammerhandsbase-001_75",
+        "overrideName": "Hammerhands"
+      },
+      {
+        "prefabId": "chrPrfMech_hatchetmanBase-001_45",
+        "overrideName": "Hatchetman"
+      },
+      {
+        "prefabId": "chrprfmech_helepolisbase-001_75",
+        "overrideName": "Helepolis"
+      },
+      {
+        "prefabId": "chrPrfMech_highlanderBase-001_90",
+        "overrideName": "Highlander"
+      },
+      {
+        "prefabId": "chrPrfMech_hunchbackBase-001_50",
+        "overrideName": "Hunchback"
+      },
+      {
+        "prefabId": "chrprfmech_hussarbase-001_30",
+        "overrideName": "Hussar"
+      },
+      {
+        "prefabId": "chrprfmech_icarusiibase-001_40",
+        "overrideName": "Icarus II"
+      },
+      {
+        "prefabId": "chrPrfMech_jagermechBase-001_65",
+        "overrideName": "Jagermech"
+      },
+      {
+        "prefabId": "chrPrfMech_jagermechBase-001_70",
+        "overrideName": "Jagermech"
       },
       {
         "prefabId": "chrPrfMech_javelinBase-001_30",
         "overrideName": "Javelin"
       },
       {
-        "prefabId": "chrPrfMech_crabBase-001_50",
-        "overrideName": "Crab"
+        "prefabId": "chrPrfMech_jennerBase-001_35",
+        "overrideName": "Jenner"
+      },
+      {
+        "prefabId": "chrPrfMech_kingcrabBase-001_100",
+        "overrideName": "King Crab"
+      },
+      {
+        "prefabId": "chrprfmech_kodiakbase-001_100",
+        "overrideName": "Kodiak"
+      },
+      {
+        "prefabId": "chrprfmech_mackiebase-001_100",
+        "overrideName": "Mackie"
+      },
+      {
+        "prefabId": "chrprfmech_mantisbase-001_30",
+        "overrideName": "Mantis"
+      },
+      {
+        "prefabId": "chrPrfMech_marauderBase-001_75",
+        "overrideName": "Marauder"
+      },
+      {
+        "prefabId": "chrprfmech_maulerbase-001_90",
+        "overrideName": "Mauler"
+      },
+      {
+        "prefabId": "chrprfmech_nightstarbase-001_95",
+        "overrideName": "Nightstar"
+      },
+      {
+        "prefabId": "chrPrfMech_orionBase-001_75",
+        "overrideName": "Orion"
+      },
+      {
+        "prefabId": "chrPrfMech_pantherBase-001_35",
+        "overrideName": "Panther"
+      },
+      {
+        "prefabId": "chrprfmech_pillagerbase-001_100",
+        "overrideName": "Pillager"
+      },
+      {
+        "prefabId": "chrPrfMech_quickdrawBase-001_60",
+        "overrideName": "Quickdraw"
+      },
+      {
+        "prefabId": "chrPrfMech_riflemanBase-001_60",
+        "overrideName": "Rifleman"
+      },
+      {
+        "prefabId": "chrprfmech_sentinelbase-001_40",
+        "overrideName": "Sentinel"
+      },
+      {
+        "prefabId": "chrPrfMech_shadowhawkBase-001_55",
+        "overrideName": "Shadow Hawk"
+      },
+      {
+        "prefabId": "chrPrfMech_stalkerBase-001_85",
+        "overrideName": "Stalker"
+      },
+      {
+        "prefabId": "chrPrfMech_stingerHotD-001_20",
+        "overrideName": "Stinger"
+      },
+      {
+        "prefabId": "chrprfmech_swdbase-001_40",
+        "overrideName": "Swordsman"
+      },
+      {
+        "prefabId": "chrPrfMech_thugBase-001_80",
+        "overrideName": "Thug"
+      },
+      {
+        "prefabId": "chrPrfMech_thunderboltBase-001_65",
+        "overrideName": "Thunderbolt"
+      },
+      {
+        "prefabId": "chrprfmech_thunderhawkbase-001_100",
+        "overrideName": "Thunder Hawk"
+      },
+      {
+        "prefabId": "chrPrfMech_trebuchetBase-001_50",
+        "overrideName": "Trebuchet"
+      },
+      {
+        "prefabId": "chrPrfMech_urbanmechBase-001_30",
+        "overrideName": "UrbanMech"
+      },
+      {
+        "prefabId": "chrprfmech_valkyriehotd-001_30",
+        "overrideName": "Valkyrie"
+      },
+      {
+        "prefabId": "chrPrfMech_victorBase-001_80",
+        "overrideName": "Victor"
+      },
+      {
+        "prefabId": "chrPrfMech_vindicatorBase-001_45",
+        "overrideName": "Vindicator"
+      },
+      {
+        "prefabId": "chrPrfMech_warhammerBase-001_70",
+        "overrideName": "Warhammer"
+      },
+      {
+        "prefabId": "chrPrfMech_wolverineBase-001_55",
+        "overrideName": "Wolverine"
+      },
+      {
+        "prefabId": "chrprfmech_ymirbase-001_90",
+        "overrideName": "Ymir"
+      },
+      {
+        "prefabId": "chrPrfMech_zeusBase-001_80",
+        "overrideName": "Zeus"
       }
     ]
   },

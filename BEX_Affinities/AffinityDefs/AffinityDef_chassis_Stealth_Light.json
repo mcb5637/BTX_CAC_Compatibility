@@ -1,0 +1,94 @@
+{
+  "id": "AffinityDef_chassis_Stealth_Light",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrprfmech_spectorbase-001_35"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Light Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves team coordination (+1 Resolve generation)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Light 'Mech familiarity (+1 Resolve Gain)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-LightMechBoost",
+              "Name": "Light Mech Affinity Morale Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "additionalRules": "NotSet",
+              "modType": "System.Int32",
+              "modValue": "1",
+              "operation": "Int_Add",
+              "statName": "MoraleBonusGainStackable",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTriggerType": "Passive",
+              "triggerLimit": 0,
+              "extendDurationOnTrigger": 0,
+              "specialRules": "NotSet",
+              "effectTargetType": "Creator",
+              "range": 0,
+              "forcePathRebuild": false,
+              "forceVisRebuild": false,
+              "showInTargetPreview": false,
+              "showInStatusPanel": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Stealth+",
+        "decription": "Familiarity with the 'Mech's stealth design descreases an enemy's ability to aquire the target (-10% Visibility)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Pilot has Mastered the Chassis.",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_Stealth_Visibility",
+              "Name": "BattleMechAffinity"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "SpottingVisibilityMultiplier",
+              "operation": "Float_Multiply",
+              "modValue": "0.9",
+              "modType": "System.Single"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

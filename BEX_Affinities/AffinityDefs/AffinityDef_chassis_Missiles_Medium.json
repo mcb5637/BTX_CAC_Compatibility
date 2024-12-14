@@ -1,0 +1,96 @@
+{
+  "id": "AffinityDef_chassis_Missiles_Medium",
+  "affinityType": "Chassis",
+  "affinityData": {
+    "chassisNames": [
+      "chrprfmech_kyudobase-001_45",
+      "chrPrfMech_trebuchetBase-001_50"
+    ],
+    "idType": "AssemblyVariant",
+    "altMaps": [],
+    "affinityLevels": [
+      {
+        "missionsRequired": 20,
+        "levelName": "Medium Mech+",
+        "decription": "Familiarity with this 'Mech's role on the battlefield improves survivability (+1 Hit Defence)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Medium 'Mech familiarity (+1 Hit Defence)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "StatusEffect-Affinity-MediumMechBoost",
+              "Name": "Medium Mech Affinity Defence Boost"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": -1
+            },
+            "effectType": "StatisticEffect",
+            "nature": "Buff",
+            "statisticData": {
+              "statName": "ToHitThisActor",
+              "operation": "Float_Add",
+              "modValue": "1",
+              "modType": "System.Single",
+              "targetAmmoCategory": "NotSet",
+              "targetCollection": "NotSet",
+              "targetWeaponCategory": "NotSet",
+              "targetWeaponSubType": "NotSet",
+              "targetWeaponType": "NotSet"
+            },
+            "targetingData": {
+              "effectTargetType": "Creator",
+              "effectTriggerType": "Passive",
+              "hideApplicationFloatie": true,
+              "showInStatusPanel": false,
+              "showInTargetPreview": false
+            }
+          }
+        ]
+      },
+      {
+        "missionsRequired": 30,
+        "levelName": "Missiles+",
+        "decription": "Familiarity with this 'Mech's missile capabilities improves hitting moving targets (+1 Missile EVASIVE ignore)",
+        "affinities": [],
+        "effectData": [
+          {
+            "Description": {
+              "Details": "Missile Platform familiarity (+1 EVASIVE Ignore)",
+              "Icon": "UixSvgIcon_specialEquip_System",
+              "Id": "Affinity_Missile_EvasionIgnore",
+              "Name": "Multi-Trac Computer Affinity Evasion Ignore"
+            },
+            "durationData": {
+              "duration": -1,
+              "stackLimit": 1
+            },
+            "targetingData": {
+              "effectTriggerType": "Passive",
+              "effectTargetType": "Creator",
+              "showInTargetPreview": false,
+              "showInStatusPanel": false
+            },
+            "effectType": "StatisticEffect",
+            "statisticData": {
+              "appliesEachTick": false,
+              "effectsPersistAfterDestruction": false,
+              "statName": "EvasivePipsIgnored",
+              "operation": "Float_Add",
+              "modValue": "1",
+              "modType": "System.Single",
+              "additionalRules": "NotSet",
+              "targetCollection": "Weapon",
+              "targetWeaponCategory": "Missile",
+              "targetWeaponType": "NotSet",
+              "targetAmmoCategory": "NotSet",
+              "targetWeaponSubType": "NotSet"
+            },
+            "nature": "Buff"
+          }
+        ]
+      }
+    ]
+  }
+}

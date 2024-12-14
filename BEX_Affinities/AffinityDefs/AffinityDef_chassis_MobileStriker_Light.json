@@ -3,7 +3,8 @@
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "chrprfmech_arcticcheetahbase-001_30"
+      "chrprfmech_arcticcheetahbase-001_30",
+      "chrprfmech_cossackbase-001_20"
     ],
     "idType": "AssemblyVariant",
     "altMaps": [],
