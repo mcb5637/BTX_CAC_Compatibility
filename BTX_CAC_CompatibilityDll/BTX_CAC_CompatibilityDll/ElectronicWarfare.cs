@@ -24,6 +24,10 @@ namespace BTX_CAC_CompatibilityDll
             return mod;
         }
 
+        internal static bool IsClan(Weapon w)
+        {
+            return w.weaponDef.ComponentTags.Contains("component_type_clan");
+        }
         internal static bool DoesNARCApply(Weapon wep, ICombatant t)
         {
             if (!wep.weaponDef.ComponentTags.Contains("component_usesnarc"))
@@ -42,7 +46,7 @@ namespace BTX_CAC_CompatibilityDll
                 return false;
             if (CustomClustering.IsArtemisMode(wep))
                 return false;
-            return t.StatCollection.GetValue<float>("TAGCount") > 0.0f;
+            return t.StatCollection.GetValue<float>(IsClan(wep) ? "TAGCountClan" : "TAGCount") > 0.0f;
         }
         private static float GetTAGBonus(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
@@ -52,15 +56,15 @@ namespace BTX_CAC_CompatibilityDll
         }
         private static float GetNARCBonus(Weapon wep, ICombatant target)
         {
-            return DoesNARCApply(wep, target) ? 4.0f : 0.0f;
+            return DoesNARCApply(wep, target) ? -4.0f : 0.0f;
         }
         internal static float NARC_TAG_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
-            return Mathf.Max(GetNARCBonus(wep, target), GetTAGBonus(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot));
+            return Mathf.Min(GetNARCBonus(wep, target), GetTAGBonus(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot));
         }
         internal static string NARC_TAG_EffectName(ToHit h, AbstractActor a, Weapon w, ICombatant t, Vector3 ap, Vector3 tp, LineOfFireLevel lof, MeleeAttackType mt, bool cs)
         {
-            if (GetNARCBonus(w, t) >= GetTAGBonus(h, a, w, t, ap, tp, lof, mt, cs))
+            if (GetNARCBonus(w, t) <= GetTAGBonus(h, a, w, t, ap, tp, lof, mt, cs))
                 return "NARC";
             else
                 return "TAG";

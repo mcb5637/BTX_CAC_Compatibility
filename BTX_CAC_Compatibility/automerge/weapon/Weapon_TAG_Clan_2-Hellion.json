@@ -14,6 +14,8 @@
 	"Description": {
 		"Details": "Target Acquistion Gear—TAG—is a specialized piece of equipment that \"paints\" a target for homing munitions. Any LRM or NLRM that is not equpied with Artemis IV will receive the advantage of the TAG marked target. This bonus will not work alongside a Narc Missile Beacon marked target, and does not benefit Clan LRMs. TAG is not affected by ECM fields.\r\n\r\nLRMs/NLRMs fired at a TAG marked target will ignore all movement modifiers of the target. Indirect fire can also be used against the target at the same accuracy as direct fire."
 	},
+	"BonusValueA": "- LRM Ev/Indirect",
+	"BonusValueB": "+ 2 Acc.",
 	"statusEffects": [
 		{
 			"durationData": {
@@ -47,7 +49,7 @@
 			"nature": "Debuff",
 			"statisticData": {
 				"appliesEachTick": false,
-				"statName": "TAGCount",
+				"statName": "TAGCountClan",
 				"operation": "Float_Add",
 				"modValue": "1",
 				"modType": "System.Single"

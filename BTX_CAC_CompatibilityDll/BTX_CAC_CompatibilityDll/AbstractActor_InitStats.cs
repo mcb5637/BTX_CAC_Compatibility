@@ -23,6 +23,7 @@ namespace BTX_CAC_CompatibilityDll
                 __instance.StatCollection.AddStatistic("LightAccuracy", 0f);
                 __instance.StatCollection.AddStatistic("NARCCount", 0f);
                 __instance.StatCollection.AddStatistic("TAGCount", 0f);
+                __instance.StatCollection.AddStatistic("TAGCountClan", 0f);
             }
 
             if (__instance is Mech m)
