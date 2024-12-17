@@ -72,7 +72,7 @@
         "effectTriggerType": "OnActivation",
         "effectTargetType": "Creator",
         "forcePathRebuild": true,
-        "showInStatusPanel": true
+        "showInStatusPanel": false
       },
       "effectType": "StatisticEffect",
       "Description": {
