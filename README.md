@@ -3,11 +3,10 @@
 Modifies BEX (and BTXMinusWeapons, if present) for CAC.
 
 Installation/Update: (requires working BEX installation)
-- Remove BTMLColorLOSMod, MechResizer and StablePiloting from your BTX installation (as CAC, CU and MechAffinity basically do the same)
-- update CAB
-- remove IRBModUtils (CAC-C for now contains their own versions of them)
-- remove any previous version of CAC-C, CAE, CAC, CC, CLoc, CPrewarm, CU, CVoices, if they exist
-- Add BTX_CAC_Compatibility, overriding files
+- Update CAB
+- Remove the BTMLColorLOSMod, IRBTModUtils, MechResizer, Retrainer, and StabilePiloting mod folders
+- When updating, remove any previous versions of CAC-C, CAE, CAC, CC, CLoc, CPrewarm, CU, and CVoices
+- Unpack BTX_CAC_Compatibility, overwriting files
 
 Versioning:
 The first 2 parts of the version number match the intended BEX version number.
@@ -16,67 +15,67 @@ A "b" as last char in the github release/git tag indicates beta status, this is 
 There will not be different releases that differ only in this beta marker.
 
 Component list (Clan & SLDF ones included):
-- Weapons (& Ammo)
-    - Energy
-        - PPC: added FI OFF mode
-        - ER PPC: -
-        - Snub PPC: 5 projectiles, damage falloff over long range, extra mode with 1 projectile
-        - Laser: -
-        - ER Laser: -
-		- Heavy Laser: -
-		- Binary Laser: fixed animation
-        - Pulse Laser: fixed animation
-		- X-Pulse Laser: changed to single projectile
-        - Tag: attacking a tagged unit ignores evasion+indirect penalities, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
-        - Flamer: added forestfires
-    - Ballistic
-        - AC: fixed firing speed, special ammo types
-        - LBX: can switch ammo between cluster and ac (including special ac ammo types)
-        - UAC/RAC: fixed firing speed, no access to special ammo types
-        - Gauss: -
+- Weapons (& Ammo):
+	- Ballistic:
+		- AC: fixed firing speed, special ammo types
+		- LBX: can switch ammo between cluster and ac (including special ac ammo types)
+		- UAC/RAC: fixed firing speed, no access to special ammo types
+		- Gauss: -
 		- Silver Bullet Gauss: fixed multiple projectiles
 		- Heavy Gauss: -
 		- Light Gauss: -
-        - MG: added double speed mode (double shots, -4 acc, +5 heat)
-		- AMS: MG that shoots at incoming missles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance (fires at all nearby missles) / can be used as MG)
-    - Missle
-        - LRM: added hotload mode, added Deadfire ammo (narc, tag or artemis compatible)
-        - Artemis IV LRM: turned into a Weapon Addon for LRMs (deprecated)
-        - SRM: added inferno ammo (inferno causes fires everywhere), added Deadfire ammo (narc or artemis compatible)
-        - Artemis IV SRM: turned into a Weapon Addon for SRMs (deprecated)
-        - Streak SRM: added inferno ammo, added streak effect, added Deadfire ammo
-        - NARC: multiple pods
+		- MG: added double speed mode (double shots, -4 acc, +5 heat)
+		- AMS: MG that shoots at incoming missiles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance (fires at all nearby missiles) / can be used as MG)
+	- Energy:
+		- PPC: added FI OFF mode
+		- ER PPC: -
+		- Snub PPC: 5 projectiles, damage falloff over long range, extra mode with 1 projectile
+		- Laser: -
+		- ER Laser: -
+		- Heavy Laser: -
+		- Binary Laser: fixed animation
+		- Pulse Laser: fixed animation
+		- X-Pulse Laser: changed to single projectile
+		- Tag: attacking a tagged unit ignores evasion+indirect penalities, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
+		- Flamer: added forestfires
+	- Missile:
+		- LRM: added hotload mode, added Deadfire ammo (narc, tag or artemis compatible)
+		- Artemis IV LRM: turned into a Weapon Addon for LRMs (deprecated)
+		- SRM: added inferno ammo (inferno causes fires everywhere), added Deadfire ammo (narc or artemis compatible)
+		- Artemis IV SRM: turned into a Weapon Addon for SRMs (deprecated)
+		- Streak SRM: added inferno ammo, added streak effect, added Deadfire ammo
+		- NARC: multiple pods
 			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
 			- Explosive Pod: damge (kurita shops after 3059)
-        - ATM: 3 ammo types, trading damage for range, added clustering
-        - Infernos: Broken, use SRM inferno ammo instead
+		- ATM: 3 ammo types, trading damage for range, added clustering
+		- Infernos: Broken, use SRM inferno ammo instead
 		- MRM: individual hit generator, unguided flag
 		- RL: individual hit generator, unguided flag
 		- iNarc: multiple pods
 			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
 			- Explosive Pod: damge
 			- Haywire Pod: -3 accuracy for 3 rounds
-    - Artillery
-        - Thumper: light artillery (replaces HM mortar / Bull Shark)
-        - Sniper: medium artillery (found in mining shops) (tag compatible)
-        - Long Tom: heavy artillery (found in mining shops, only mountable in Bull Shark)
-        - Arrow IV: medium artillery (lostech / FP reward / Liao shops after 3049)
+	- Artillery:
+		- Thumper: light artillery (replaces HM mortar / Bull Shark)
+		- Sniper: medium artillery (found in mining shops) (tag compatible)
+		- Long Tom: heavy artillery (found in mining shops, only mountable in Bull Shark)
+		- Arrow IV: medium artillery (lostech / FP reward / Liao shops after 3049)
 		- Artillery Loader: every artillery needs a Loader attached in the same or adjacent location (found in mining shops)
-- Electronics
-    - ECM
-        - Guardian ECM: -20% detectability, 180m aura (ECM: +4 defense, indirect immune, sensorlock immune, friendly only, blue or ECCM: negates 1 ECM, cyan)
-        - Liao Prototype ECM: -10% detectability, 90m aura (ECM: +4 defense, indirect immune, sensorlock immune, friendly only, blue or ECCM: negates 1 ECM, cyan)
-        - Packrat ECM (only in Packrat vehicle): 90m aura (+4 defense, indirect immune, friendly + enemy, blue)
-    - AP
-        - Beagle Active Probe: +150m sensor range, free action sensor lock, 120m active probe ping (free action) (brown)
-        - Liao Prototype AP: +100m sensor range, free action sensor lock, 90m active probe ping (free action) (brown)
-    - Mech Quiks
-        - Improved Sensors Quirk: +50m sensor range (stacks with AP)
-        - Improved Comms Quirk: 200m aura (removes indirect immune) (hostile only) (green)
-	- Stealth:
+- Electronics:
+	- ECM:
+		- Guardian ECM: -20% detectability, 180m aura (ECM: +4 defense, indirect immune, sensorlock immune, friendly only, blue or ECCM: negates 1 ECM, cyan)
+		- Liao Prototype ECM: -10% detectability, 90m aura (ECM: +4 defense, indirect immune, sensorlock immune, friendly only, blue or ECCM: negates 1 ECM, cyan)
+		- Packrat ECM (only in Packrat vehicle): 90m aura (+4 defense, indirect immune, friendly + enemy, blue)
+	- AP:
+		- Beagle Active Probe: +150m sensor range, free action sensor lock, 120m active probe ping (free action) (brown)
+		- Liao Prototype AP: +100m sensor range, free action sensor lock, 90m active probe ping (free action) (brown)
+	- Mech Quiks:
+		- Improved Sensors Quirk: +50m sensor range (stacks with AP)
+		- Improved Comms Quirk: 200m aura (removes indirect immune) (hostile only) (green)
+	- Stealth
 		- Null Signature System: Activatable (+2 defense, -50% detectability, +1 stealth, sensorlock immune (counts as 10 Guardians), +10 heat)
 		- Chameleon Light Polarization Shield: Activatable (+2 defense, -50% visibility, +1 stealth, +6 heat)
-- Upgrades
+- Upgrades:
 	- AMS: Broken, use Ballistic Weapon AMS instead
 	- TSM: Auto activates at >27 heat (\*2 melee damage, + 60m movement)
 	- Prototype TSM: Auto activates at >27 heat (\*1.5 melee damage, +30m movement)
@@ -84,13 +83,13 @@ Component list (Clan & SLDF ones included):
 	- Coolant Pod: doubles heatsinking for 1 turn, 1 activation per pod (does not stack)
 	- Artemis IV FCS: attaches to one SRM or LRM launcher and gives it: +4 direct fire acc, better clustering (can be turned off to fire special ammo or use tag/narc)
 	- PPC Capacitor: attaches to one PPC (including ER, Heavy and Snub) and gives it: CAP Mode (+25 DMG, +15 Heat, 1 turn Weapon Cooldown)
-- Argo Upgrades
+- Argo Upgrades:
 	- Storage: added 3 additional storage upgrades, each giving a new mechbay to use
 	- Engine Repairs: The storage upgrades do fix BiggerDrops tonnage increase upgrades, by giving you a way to fullfill their requirements
 - Indirect Fire changes:
 	- Shooting at something you cannot see (but your ally can) is considered Indirect Fire, and in turn will be blocked if the target is covered by ECM
 	- You only get an accuracy penalty for Indirect Fire if you have to shoot over obstacles to hit your target (if it was considered Indirect Fire by the old rules)
-- Mechs
+- Mechs:
 	- Exterminator:
 		- EXT-4C (stealth, SLDF) (ComStar)
 	- Goliath:
@@ -163,9 +162,7 @@ Known bugs:
 - CustomLoc patchig strings
 
 Optional:
-- i recommend having a look at BT_Extended_CE/mod.json settings and enable some of these in all modes
 - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
-- manual deployment can be enabled via CU, set "DeployManual": to true to do so (warning: laggy)
 
 Manual setup:
 - clone git repo, including submodules
@@ -175,7 +172,7 @@ Package for release:
 - update version info in mod.json and dll
 - setup additionalDependencies
 	- SimpleMechAssembly
-	- IRBModUtils
+	- IRBTModUtils
 	- BiggerDrops
 	- MechAffinity 1.4 (dll only)
 	- CustomComponents (latest, Dec 28, 2023)
