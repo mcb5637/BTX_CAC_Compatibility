@@ -1,0 +1,14 @@
+{
+	"Custom": {
+		"Category": {
+			"CategoryID": "EndoStructureBlocker",
+			"Weight": 5
+		},
+		"Flags": [
+			"default"
+		]
+	},
+	"Description" : {
+        "Id" : "Gear_EndoSteel_5_Slot"
+    }
+}

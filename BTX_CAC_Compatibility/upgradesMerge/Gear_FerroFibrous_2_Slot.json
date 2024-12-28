@@ -1,0 +1,11 @@
+{
+	"Custom": {
+		"Category": {
+			"CategoryID": "FerroStructureBlocker",
+			"Weight": 2
+		},
+		"Flags": [
+			"default"
+		]
+	}
+}

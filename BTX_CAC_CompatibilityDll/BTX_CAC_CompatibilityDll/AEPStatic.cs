@@ -94,5 +94,12 @@ namespace BTX_CAC_CompatibilityDll
         {
             return LightValue.Day;
         }
+
+        [PropertySet(typeof(BaseComponentRef), nameof(BaseComponentRef.IsFixed))]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void SetIsFixed(this BaseComponentRef r, bool f)
+        {
+
+        }
     }
 }

@@ -49,6 +49,7 @@ namespace BTX_CAC_CompatibilityDll
             {
                 check(fixedinv, true);
                 CheckTSM(fixedinv, ref hasChange);
+                hasChange = hasChange | MovableBlockers.HandleChassisDef(m.Chassis, fixedinv, mechinv);
             }
 
             if (hasChange)

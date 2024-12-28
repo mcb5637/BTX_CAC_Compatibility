@@ -1,0 +1,45 @@
+{
+	"Custom": {
+		"Category": {
+			"CategoryID": "FerroStructureBlocker",
+			"Weight": 8
+		},
+		"Flags": [
+			"default"
+		]
+	},
+	"StatName": null,
+	"RelativeModifier": 0,
+	"AbsoluteModifier": 0,
+	"Description": {
+		"Cost": 16500,
+		"Rarity": 99,
+		"Purchasable": false,
+		"Manufacturer": "Varied",
+		"Model": "Ferro-Fibrous",
+		"UIName": "Ferro-Fibrous",
+		"Id": "Gear_FerroFibrous_8_Slot",
+		"Name": "Ferro-Fibrous",
+		"Details": "Utilizing a weave of ferro-steel, ferro-titanium, and diamond weave fibers which boosts the tensile strength of the plating, Ferro-Fibrous Armor provides a 12% increase in protection per ton over standard armor, but takes up more space on the 'Mech or vehicle.",
+		"Icon": "uixSvgIcon_special_Equipment"
+	},
+	"BonusValueA": "Saves Weight",
+	"BonusValueB": "Takes Spaces",
+	"ComponentType": "Upgrade",
+	"ComponentSubType": "NotSet",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 8,
+	"Tonnage": 0,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"statusEffects": [],
+	"ComponentTags": {
+		"items": [
+			"not_critable",
+			"BUILT-IN"
+		],
+		"tagSetSourceFile": ""
+	}
+}
