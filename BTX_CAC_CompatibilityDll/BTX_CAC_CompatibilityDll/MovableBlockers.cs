@@ -235,50 +235,9 @@ namespace BTX_CAC_CompatibilityDll
 
                 int slots = c.Def.InventorySize;
                 string cat = c.GetBlockerCategory();
-
-                foreach (ChassisLocations sea in LocSearch)
-                {
-                    if (sea == location)
-                        continue;
-
-                    if (!mechDef.Inventory.Any((x) => x.IsBlocker(cat)))
-                        continue;
-
-                    int slotsAvail = ch.GetLocationDef(sea).InventorySlots - SlotsInLocation(sea, drop_item, changes, mechDef);
-                    if (slotsAvail > 0)
-                    {
-                        int toMove = Math.Min(slotsAvail, slotsNeeded);
-                        changes.Enqueue(new Change_Add(GetBlockerID(toMove, c.DataManager, cat), ComponentType.Upgrade, sea));
-                        slotsNeeded -= toMove;
-                        slots -= toMove;
-                        if (slots <= 0)
-                            break;
-                        if (slotsNeeded <= 0)
-                            break;
-                    }
-                }
-
-                foreach (ChassisLocations sea in LocSearch)
-                {
-                    if (sea == location)
-                        continue;
-
-                    if (mechDef.Inventory.Any((x) => x.IsBlocker(cat)))
-                        continue;
-
-                    int slotsAvail = ch.GetLocationDef(sea).InventorySlots - SlotsInLocation(sea, drop_item, changes, mechDef);
-                    if (slotsAvail > 0)
-                    {
-                        int toMove = Math.Min(slotsAvail, slotsNeeded);
-                        changes.Enqueue(new Change_Add(GetBlockerID(toMove, c.DataManager, cat), ComponentType.Upgrade, sea));
-                        slotsNeeded -= toMove;
-                        slots -= toMove;
-                        if (slots <= 0)
-                            break;
-                        if (slotsNeeded <= 0)
-                            break;
-                    }
-                }
+                checkLocs(c, cat, ref slots, true);
+                if (slots > 0 && slotsNeeded > 0)
+                    checkLocs(c, cat, ref slots, false);
 
                 if (slots != c.Def.InventorySize)
                 {
@@ -291,6 +250,34 @@ namespace BTX_CAC_CompatibilityDll
             OptimizeBlockers(changes, mechDef);
 
             return string.Empty;
+
+            void checkLocs(MechComponentRef c, string cat, ref int slots, bool sameloc)
+            {
+                foreach (ChassisLocations sea in LocSearch)
+                {
+                    if (sea == location)
+                        continue;
+
+                    bool issameloc = mechDef.Inventory.Any((x) => x.MountedLocation == sea && x.IsBlocker(cat));
+                    if (sameloc && !issameloc)
+                        continue;
+                    if (!sameloc && issameloc)
+                        continue;
+
+                    int slotsAvail = ch.GetLocationDef(sea).InventorySlots - SlotsInLocation(sea, drop_item, changes, mechDef);
+                    if (slotsAvail > 0)
+                    {
+                        int toMove = Math.Min(slotsAvail, slotsNeeded);
+                        changes.Enqueue(new Change_Add(GetBlockerID(toMove, c.DataManager, cat), ComponentType.Upgrade, sea));
+                        slotsNeeded -= toMove;
+                        slots -= toMove;
+                        if (slots <= 0)
+                            break;
+                        if (slotsNeeded <= 0)
+                            break;
+                    }
+                }
+            }
         }
 
         private static int SlotsInLocation(ChassisLocations l, MechLabItemSlotElement drop_item, Queue<IChange> changes, MechDef mechDef)
