@@ -1,0 +1,39 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CLargeLaserPulse_0-STOCK",
+		"Weapon_Laser_CLargeLaserPulse_1-Delta",
+		"Weapon_Laser_CLargeLaserPulse_1-Kolibri",
+		"Weapon_Laser_CLargeLaserPulse_1-Series44h",
+		"Weapon_Laser_CLargeLaserPulse_1-Series7A",
+		"Weapon_Laser_CLargeLaserPulse_2-Delta",
+		"Weapon_Laser_CLargeLaserPulse_2-Kolibri",
+		"Weapon_Laser_CLargeLaserPulse_2-Series44h",
+		"Weapon_Laser_CLargeLaserPulse_2-Series7A",
+		"Weapon_Laser_LargeLaserPulse_0-STOCK",
+		"Weapon_Laser_LargeLaserPulse_1-Thunderbolt12",
+		"Weapon_Laser_LargeLaserPulse_2-Exostar",
+		"Weapon_Laser_LargeLaserPulse_NU_0-STOCK",
+		"Weapon_Laser_LargeLaserPulse_NU_1-Diverse_Optics",
+		"Weapon_Laser_LargeLaserPulse_NU_1-Maxell",
+		"Weapon_Laser_LargeLaserPulse_NU_1-Sutel",
+		"Weapon_Laser_LargeLaserPulse_NU_2-Diverse_Optics",
+		"Weapon_Laser_LargeLaserPulse_NU_2-Magna",
+		"Weapon_Laser_LargeLaserPulse_NU_2-Maxell",
+		"Weapon_Laser_LargeLaserPulse_NU_2-Sutel",
+		"Weapon_Laser_LargeLaserPulse_NU_3-Magna",
+		"Weapon_Laser_LargeLaserPulse_Sa_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 80
+					}
+				}
+			}
+		}
+	]
+}

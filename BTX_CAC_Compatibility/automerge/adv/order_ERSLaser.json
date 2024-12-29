@@ -1,0 +1,38 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CSmallLaserER_0-STOCK",
+		"Weapon_Laser_CSmallLaserER_1-Series1",
+		"Weapon_Laser_CSmallLaserER_1-Series1g",
+		"Weapon_Laser_CSmallLaserER_1-Series1NC",
+		"Weapon_Laser_CSmallLaserER_1-SeriesAE1",
+		"Weapon_Laser_CSmallLaserER_2-Series1",
+		"Weapon_Laser_CSmallLaserER_2-Series1g",
+		"Weapon_Laser_CSmallLaserER_2-Series1NC",
+		"Weapon_Laser_CSmallLaserER_2-SeriesAE1",
+		"Weapon_Laser_SmallLaserER_0-STOCK",
+		"Weapon_Laser_SmallLaserER_1-Diverse_Optics",
+		"Weapon_Laser_SmallLaserER_2-BlazeFire",
+		"Weapon_Laser_SmallLaserER_NU_0-STOCK",
+		"Weapon_Laser_SmallLaserER_NU_1-Diverse_Optics",
+		"Weapon_Laser_SmallLaserER_NU_1-ExoStar",
+		"Weapon_Laser_SmallLaserER_NU_1-Magna",
+		"Weapon_Laser_SmallLaserER_NU_2-Diverse_Optics",
+		"Weapon_Laser_SmallLaserER_NU_2-ExoStar",
+		"Weapon_Laser_SmallLaserER_NU_2-Intek",
+		"Weapon_Laser_SmallLaserER_NU_2-Magna",
+		"Weapon_Laser_SmallLaserER_NU_3-Intek"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 132
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,34 @@
+{
+	"TargetIDs": [
+		"Weapon_Autocannon_CUAC20_0-STOCK",
+		"Weapon_Autocannon_CUAC20_1-Aero-Model6",
+		"Weapon_Autocannon_CUAC20_1-Devastator",
+		"Weapon_Autocannon_CUAC20_1-ModelSH",
+		"Weapon_Autocannon_CUAC20_1-Type57",
+		"Weapon_Autocannon_CUAC20_2-Aero-Model6",
+		"Weapon_Autocannon_CUAC20_2-Devastator",
+		"Weapon_Autocannon_CUAC20_2-ModelSH",
+		"Weapon_Autocannon_CUAC20_2-Type57",
+		"Weapon_Autocannon_UAC20_0-STOCK",
+		"Weapon_Autocannon_UAC20_1-Kali_Yama",
+		"Weapon_Autocannon_UAC20_2-Kali_Yama",
+		"Weapon_Autocannon_UAC20_NU_0-STOCK",
+		"Weapon_Autocannon_UAC20_NU_1-Defiance",
+		"Weapon_Autocannon_UAC20_NU_2-Ceres",
+		"Weapon_Autocannon_UAC20_NU_2-Defiance",
+		"Weapon_Autocannon_UAC20_NU_3-Ceres"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 54
+					}
+				}
+			}
+		}
+	]
+}

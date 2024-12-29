@@ -1,0 +1,23 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_LRM",
+		"Ammo_AmmunitionBox_Generic_LRM_Half",
+		"Ammo_AmmunitionBox_Generic_Thunderbolt10",
+		"Ammo_AmmunitionBox_Generic_Thunderbolt15",
+		"Ammo_AmmunitionBox_Generic_Thunderbolt20",
+		"Ammo_AmmunitionBox_Generic_Thunderbolt5"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 180
+					}
+				}
+			}
+		}
+	]
+}

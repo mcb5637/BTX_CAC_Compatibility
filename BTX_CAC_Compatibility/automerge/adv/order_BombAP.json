@@ -1,0 +1,18 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_BombBay_AP"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 6
+					}
+				}
+			}
+		}
+	]
+}

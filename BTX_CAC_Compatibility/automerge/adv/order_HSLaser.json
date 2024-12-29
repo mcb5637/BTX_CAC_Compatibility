@@ -1,0 +1,26 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CSmallLaserHeavy_0-STOCK",
+		"Weapon_Laser_CSmallLaserHeavy_1-GeneralSystems",
+		"Weapon_Laser_CSmallLaserHeavy_1-Harpa",
+		"Weapon_Laser_CSmallLaserHeavy_1-ModelII",
+		"Weapon_Laser_CSmallLaserHeavy_1-Series14k",
+		"Weapon_Laser_CSmallLaserHeavy_2-GeneralSystems",
+		"Weapon_Laser_CSmallLaserHeavy_2-Harpa",
+		"Weapon_Laser_CSmallLaserHeavy_2-ModelII",
+		"Weapon_Laser_CSmallLaserHeavy_2-Series14k"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 129
+					}
+				}
+			}
+		}
+	]
+}

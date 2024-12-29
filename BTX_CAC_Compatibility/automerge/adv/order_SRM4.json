@@ -1,0 +1,33 @@
+{
+	"TargetIDs": [
+		"Weapon_SRM_CSRM4_0-STOCK",
+		"Weapon_SRM_CSRM4_1-K4",
+		"Weapon_SRM_CSRM4_1-SEP",
+		"Weapon_SRM_CSRM4_1-TypeI",
+		"Weapon_SRM_CSRM4_2-K4",
+		"Weapon_SRM_CSRM4_2-SEP",
+		"Weapon_SRM_CSRM4_2-TypeI",
+		"Weapon_SRM_SRM4_0-INV",
+		"Weapon_SRM_SRM4_0-STOCK",
+		"Weapon_SRM_SRM4_1-Holly",
+		"Weapon_SRM_SRM4_1-Irian",
+		"Weapon_SRM_SRM4_2-Holly",
+		"Weapon_SRM_SRM4_2-Irian",
+		"Weapon_SRM_SRM4_2-Valiant",
+		"Weapon_SRM_SRM4_3-Valiant",
+		"Weapon_SRM_SRM4_OneShot"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 109
+					}
+				}
+			}
+		}
+	]
+}

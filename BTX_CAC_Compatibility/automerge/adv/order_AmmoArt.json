@@ -1,0 +1,21 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_Arrow4",
+		"Ammo_AmmunitionBox_Generic_LongTom",
+		"Ammo_AmmunitionBox_Generic_Sniper",
+		"Ammo_AmmunitionBox_Generic_Thumper"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 150
+					}
+				}
+			}
+		}
+	]
+}

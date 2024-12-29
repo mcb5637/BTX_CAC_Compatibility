@@ -1,0 +1,20 @@
+{
+	"TargetIDs": [
+		"Weapon_COIL_COIL-L_0-STOCK",
+		"Weapon_COIL_COIL-M_0-STOCK",
+		"Weapon_COIL_COIL-S_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 128
+					}
+				}
+			}
+		}
+	]
+}

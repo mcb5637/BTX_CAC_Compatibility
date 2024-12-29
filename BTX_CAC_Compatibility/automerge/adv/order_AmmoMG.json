@@ -1,0 +1,19 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_MG",
+		"Ammo_AmmunitionBox_Generic_MG_Half"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 193
+					}
+				}
+			}
+		}
+	]
+}

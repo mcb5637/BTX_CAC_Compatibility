@@ -1,0 +1,18 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_Plasma"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 175
+					}
+				}
+			}
+		}
+	]
+}

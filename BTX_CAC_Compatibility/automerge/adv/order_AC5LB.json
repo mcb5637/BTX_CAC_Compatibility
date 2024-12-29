@@ -1,0 +1,32 @@
+{
+	"TargetIDs": [
+		"Weapon_Autocannon_CLB5X_0-STOCK",
+		"Weapon_Autocannon_CLB5X_1-TypeHS",
+		"Weapon_Autocannon_CLB5X_1-TypeOVR-X",
+		"Weapon_Autocannon_CLB5X_1-TypeR",
+		"Weapon_Autocannon_CLB5X_1-TypeTK",
+		"Weapon_Autocannon_CLB5X_2-TypeHS",
+		"Weapon_Autocannon_CLB5X_2-TypeOVR-X",
+		"Weapon_Autocannon_CLB5X_2-TypeR",
+		"Weapon_Autocannon_CLB5X_2-TypeTK",
+		"Weapon_Autocannon_LB5X_0-STOCK",
+		"Weapon_Autocannon_LB5X_1-GM",
+		"Weapon_Autocannon_LB5X_2-GM",
+		"Weapon_Autocannon_LB5X_NU_0-STOCK",
+		"Weapon_Autocannon_LB5X_NU_1-Mydron",
+		"Weapon_Autocannon_LB5X_NU_2-Mydron"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 62
+					}
+				}
+			}
+		}
+	]
+}

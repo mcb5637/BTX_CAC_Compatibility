@@ -1,0 +1,27 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_LargeLaser_0-STOCK",
+		"Weapon_Laser_LargeLaser_1-Diverse_Optics",
+		"Weapon_Laser_LargeLaser_1-ExoStar",
+		"Weapon_Laser_LargeLaser_1-Intek",
+		"Weapon_Laser_LargeLaser_-1-Tronel",
+		"Weapon_Laser_LargeLaser_2-Diverse_Optics",
+		"Weapon_Laser_LargeLaser_2-ExoStar",
+		"Weapon_Laser_LargeLaser_2-Intek",
+		"Weapon_Laser_LargeLaser_2-Magna",
+		"Weapon_Laser_LargeLaser_3-Magna"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 82
+					}
+				}
+			}
+		}
+	]
+}

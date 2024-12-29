@@ -1,0 +1,18 @@
+{
+	"TargetIDs": [
+		"Weapon_RL_RL20_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 117
+					}
+				}
+			}
+		}
+	]
+}

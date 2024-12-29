@@ -1,0 +1,24 @@
+{
+	"TargetIDs": [
+		"Weapon_Flamer_CFlamer_0-STOCK",
+		"Weapon_Flamer_CFlamer_1-Hellfire",
+		"Weapon_Flamer_CFlamer_2-Hellfire",
+		"Weapon_Flamer_Flamer_0-STOCK",
+		"Weapon_Flamer_Flamer_1-Hotshot",
+		"Weapon_Flamer_Flamer_2-Olympus",
+		"Weapon_Flamer_Flamer_SPECIAL-Victoria"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 127
+					}
+				}
+			}
+		}
+	]
+}

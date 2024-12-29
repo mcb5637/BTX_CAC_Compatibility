@@ -1,0 +1,29 @@
+{
+	"TargetIDs": [
+		"Weapon_Autocannon_AC20_0-STOCK",
+		"Weapon_Autocannon_AC20_1-Defiance",
+		"Weapon_Autocannon_AC20_1-Federated",
+		"Weapon_Autocannon_AC20_1-Imperator",
+		"Weapon_Autocannon_AC20_1-Mydron",
+		"Weapon_Autocannon_AC20_2-Defiance",
+		"Weapon_Autocannon_AC20_2-Federated",
+		"Weapon_Autocannon_AC20_2-Imperator",
+		"Weapon_Autocannon_AC20_2-Kali_Yama",
+		"Weapon_Autocannon_AC20_2-Mydron",
+		"Weapon_Autocannon_AC20_3-Kali_Yama",
+		"Weapon_Autocannon_AC20_SPECIAL-Victoria"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 56
+					}
+				}
+			}
+		}
+	]
+}

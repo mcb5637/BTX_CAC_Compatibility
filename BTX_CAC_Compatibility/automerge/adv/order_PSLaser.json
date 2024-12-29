@@ -1,0 +1,39 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CSmallLaserPulse_0-STOCK",
+		"Weapon_Laser_CSmallLaserPulse_1-Chi",
+		"Weapon_Laser_CSmallLaserPulse_1-GeneralSystems",
+		"Weapon_Laser_CSmallLaserPulse_1-Kolibri",
+		"Weapon_Laser_CSmallLaserPulse_1-Rho",
+		"Weapon_Laser_CSmallLaserPulse_2-Chi",
+		"Weapon_Laser_CSmallLaserPulse_2-GeneralSystems",
+		"Weapon_Laser_CSmallLaserPulse_2-Kolibri",
+		"Weapon_Laser_CSmallLaserPulse_2-Rho",
+		"Weapon_Laser_SmallLaserPulse_0-STOCK",
+		"Weapon_Laser_SmallLaserPulse_1-Maxell",
+		"Weapon_Laser_SmallLaserPulse_2-Magna200P",
+		"Weapon_Laser_SmallLaserPulse_NU_0-STOCK",
+		"Weapon_Laser_SmallLaserPulse_NU_1-Diverse_Optics",
+		"Weapon_Laser_SmallLaserPulse_NU_1-ExoStar",
+		"Weapon_Laser_SmallLaserPulse_NU_1-Magna",
+		"Weapon_Laser_SmallLaserPulse_NU_2-Diverse_Optics",
+		"Weapon_Laser_SmallLaserPulse_NU_2-ExoStar",
+		"Weapon_Laser_SmallLaserPulse_NU_2-Magna",
+		"Weapon_Laser_SmallLaserPulse_NU_2-Sunglow",
+		"Weapon_Laser_SmallLaserPulse_NU_3-Sunglow",
+		"Weapon_Laser_SmallLaserPulse_Sa_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 131
+					}
+				}
+			}
+		}
+	]
+}

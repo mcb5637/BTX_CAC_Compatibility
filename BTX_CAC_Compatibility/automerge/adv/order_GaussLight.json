@@ -1,0 +1,23 @@
+{
+	"TargetIDs": [
+		"Weapon_Gauss_LightGauss_0-STOCK",
+		"Weapon_Gauss_LightGauss_1-Corean",
+		"Weapon_Gauss_LightGauss_1-Imperator",
+		"Weapon_Gauss_LightGauss_1-Krupp",
+		"Weapon_Gauss_LightGauss_2-Corean",
+		"Weapon_Gauss_LightGauss_2-Imperator"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 52
+					}
+				}
+			}
+		}
+	]
+}

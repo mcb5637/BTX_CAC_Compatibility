@@ -1,0 +1,22 @@
+{
+	"TargetIDs": [
+		"Weapon_ATM_ATM9_0-STOCK",
+		"Weapon_ATM_ATM9_1-Remer",
+		"Weapon_ATM_ATM9_1-Type9",
+		"Weapon_ATM_ATM9_2-Remer",
+		"Weapon_ATM_ATM9_2-Type9"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 91
+					}
+				}
+			}
+		}
+	]
+}

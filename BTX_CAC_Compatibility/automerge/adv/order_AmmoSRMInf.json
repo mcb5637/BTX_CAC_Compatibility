@@ -1,0 +1,19 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_SRM_Inferno_Half",
+		"Ammo_AmmunitionBox_Generic_SRMInferno"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 183
+					}
+				}
+			}
+		}
+	]
+}

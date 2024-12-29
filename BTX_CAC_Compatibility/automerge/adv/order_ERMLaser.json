@@ -1,0 +1,38 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CMediumLaserER_0-STOCK",
+		"Weapon_Laser_CMediumLaserER_1-GeneralSystems",
+		"Weapon_Laser_CMediumLaserER_1-Series2FM",
+		"Weapon_Laser_CMediumLaserER_1-Series2NC",
+		"Weapon_Laser_CMediumLaserER_1-Series7JA",
+		"Weapon_Laser_CMediumLaserER_2-GeneralSystems",
+		"Weapon_Laser_CMediumLaserER_2-Series2FM",
+		"Weapon_Laser_CMediumLaserER_2-Series2NC",
+		"Weapon_Laser_CMediumLaserER_2-Series7JA",
+		"Weapon_Laser_MediumLaserER_0-STOCK",
+		"Weapon_Laser_MediumLaserER_1-MagnaVI",
+		"Weapon_Laser_MediumLaserER_2-BrightBloom",
+		"Weapon_Laser_MediumLaserER_NU_0-STOCK",
+		"Weapon_Laser_MediumLaserER_NU_1-ExoStar",
+		"Weapon_Laser_MediumLaserER_NU_1-Magna",
+		"Weapon_Laser_MediumLaserER_NU_1-RAMTech",
+		"Weapon_Laser_MediumLaserER_NU_2-Diverse_Optics",
+		"Weapon_Laser_MediumLaserER_NU_2-ExoStar",
+		"Weapon_Laser_MediumLaserER_NU_2-Magna",
+		"Weapon_Laser_MediumLaserER_NU_2-RAMTech",
+		"Weapon_Laser_MediumLaserER_NU_3-Diverse_Optics"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 87
+					}
+				}
+			}
+		}
+	]
+}

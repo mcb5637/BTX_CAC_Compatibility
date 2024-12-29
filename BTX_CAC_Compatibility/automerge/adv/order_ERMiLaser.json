@@ -1,0 +1,26 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CMicroLaserER_0-STOCK",
+		"Weapon_Laser_CMicroLaserER_1-Mustang",
+		"Weapon_Laser_CMicroLaserER_1-Series1",
+		"Weapon_Laser_CMicroLaserER_1-Series1t",
+		"Weapon_Laser_CMicroLaserER_1-Series2g",
+		"Weapon_Laser_CMicroLaserER_2-Mustang",
+		"Weapon_Laser_CMicroLaserER_2-Series1",
+		"Weapon_Laser_CMicroLaserER_2-Series1t",
+		"Weapon_Laser_CMicroLaserER_2-Series2g"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 135
+					}
+				}
+			}
+		}
+	]
+}

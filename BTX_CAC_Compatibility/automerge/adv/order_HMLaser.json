@@ -1,0 +1,26 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CMediumLaserHeavy_0-STOCK",
+		"Weapon_Laser_CMediumLaserHeavy_1-GeneralSystems",
+		"Weapon_Laser_CMediumLaserHeavy_1-ModelV",
+		"Weapon_Laser_CMediumLaserHeavy_1-Series6A",
+		"Weapon_Laser_CMediumLaserHeavy_1-Tiercel",
+		"Weapon_Laser_CMediumLaserHeavy_2-GeneralSystems",
+		"Weapon_Laser_CMediumLaserHeavy_2-ModelV",
+		"Weapon_Laser_CMediumLaserHeavy_2-Series6A",
+		"Weapon_Laser_CMediumLaserHeavy_2-Tiercel"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 84
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"TargetIDs": [
+		"Weapon_AMSCAC_0",
+		"Weapon_AMSCAC_1",
+		"Weapon_AMSCAC_2",
+		"Weapon_AMSCAC_Clan"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 123
+					}
+				}
+			}
+		}
+	]
+}

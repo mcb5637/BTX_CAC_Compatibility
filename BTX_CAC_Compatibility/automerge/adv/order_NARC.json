@@ -1,0 +1,23 @@
+{
+	"TargetIDs": [
+		"Weapon_Narc_CNarc_0-STOCK",
+		"Weapon_Narc_CNarc_1-Tracker",
+		"Weapon_Narc_CNarc_2-Tracker",
+		"Weapon_Narc_Standard_0-STOCK",
+		"Weapon_Narc_Standard_1-Ceres_Arms",
+		"Weapon_Narc_Standard_2-Kali_Yama"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 121
+					}
+				}
+			}
+		}
+	]
+}

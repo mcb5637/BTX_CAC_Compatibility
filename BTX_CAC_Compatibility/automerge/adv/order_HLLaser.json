@@ -1,0 +1,26 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CLargeLaserHeavy_0-STOCK",
+		"Weapon_Laser_CLargeLaserHeavy_1-GeneralSystems",
+		"Weapon_Laser_CLargeLaserHeavy_1-ModelX",
+		"Weapon_Laser_CLargeLaserHeavy_1-Omega",
+		"Weapon_Laser_CLargeLaserHeavy_1-Series4D-2",
+		"Weapon_Laser_CLargeLaserHeavy_2-GeneralSystems",
+		"Weapon_Laser_CLargeLaserHeavy_2-ModelX",
+		"Weapon_Laser_CLargeLaserHeavy_2-Omega",
+		"Weapon_Laser_CLargeLaserHeavy_2-Series4D-2"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": {
+						"Order": 78
+					}
+				}
+			}
+		}
+	]
+}
