@@ -2,5 +2,7 @@
 	"Capacity": 10,
 	"Description": {
 		"Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nPrecision AC/5 Ammo Bins each contain 10 rounds and may feed multiple weapons.\n\nPrecision rounds ignore 2 Evasion Charges."
-	}
+	},
+	"BonusValueA": "+ 2 Evasion Ignore",
+	"BonusValueB": ""
 }
