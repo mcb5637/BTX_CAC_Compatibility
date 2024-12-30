@@ -1,0 +1,22 @@
+{
+	"TargetIDs": [
+		"Gear_TAC1_Clan",
+		"Gear_TAC2_Clan",
+		"Gear_TAC3_Clan",
+		"Gear_TAC4_Clan",
+		"Gear_TAC5_Clan",
+		"Gear_TAC6_Clan",
+		"Gear_TAC7_Clan"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 254
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+	"TargetIDs": [
+		"Gear_HeatSink_Clan_Double",
+		"Gear_HeatSink_Generic_Double"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 257
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"TargetIDs": [
+		"Gear_HeatSink_Generic_Bulk-Bank",
+		"Gear_HeatSink_Generic_Improved-Bank",
+		"Gear_HeatSink_Generic_Standard-Bank"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 260
+				}
+			}
+		}
+	]
+}

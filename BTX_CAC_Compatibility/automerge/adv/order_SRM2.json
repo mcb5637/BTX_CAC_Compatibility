@@ -22,9 +22,7 @@
 			"Action": "ObjectMerge",
 			"Value": {
 				"Custom": {
-					"Sorter": {
-						"Order": 111
-					}
+					"Sorter": 111
 				}
 			}
 		}

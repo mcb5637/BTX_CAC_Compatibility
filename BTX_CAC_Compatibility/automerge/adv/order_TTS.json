@@ -1,0 +1,27 @@
+{
+	"TargetIDs": [
+		"Gear_TargetingTrackingSystem_Hartford_F1800",
+		"Gear_TargetingTrackingSystem_Hartford_F2400",
+		"Gear_TargetingTrackingSystem_Hartford_F3000",
+		"Gear_TargetingTrackingSystem_Hartford_S2000",
+		"Gear_TargetingTrackingSystem_Kallon_A-C-1000",
+		"Gear_TargetingTrackingSystem_Kallon_A-C-1500",
+		"Gear_TargetingTrackingSystem_Kallon_A-C-P150+",
+		"Gear_TargetingTrackingSystem_Kallon_Lock-On",
+		"Gear_TargetingTrackingSystem_RCA_InstaTrac-IX",
+		"Gear_TargetingTrackingSystem_RCA_InstaTrac-VIII",
+		"Gear_TargetingTrackingSystem_RCA_InstaTrac-X",
+		"Gear_TargetingTrackingSystem_RCA_InstaTrac-XII"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 255
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"TargetIDs": [
+		"Gear_EndoSteel_1_Slot",
+		"Gear_EndoSteel_2_Slot",
+		"Gear_EndoSteel_3_Slot",
+		"Gear_EndoSteel_4_Slot",
+		"Gear_EndoSteel_5_Slot",
+		"Gear_EndoSteel_6_Slot",
+		"Gear_EndoSteel_7_Slot",
+		"Gear_EndoSteel_8_Slot",
+		"Gear_FerroFibrous_1_Slot",
+		"Gear_FerroFibrous_2_Slot",
+		"Gear_FerroFibrous_3_Slot",
+		"Gear_FerroFibrous_4_Slot",
+		"Gear_FerroFibrous_5_Slot",
+		"Gear_FerroFibrous_6_Slot",
+		"Gear_FerroFibrous_7_Slot",
+		"Gear_FerroFibrous_8_Slot"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 1
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Gear_LAM_BombBay_Empty"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 8
+				}
+			}
+		}
+	]
+}

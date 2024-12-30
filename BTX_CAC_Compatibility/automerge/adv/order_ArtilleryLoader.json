@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Gear_Addon_Artillery_Loader"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 3
+				}
+			}
+		}
+	]
+}

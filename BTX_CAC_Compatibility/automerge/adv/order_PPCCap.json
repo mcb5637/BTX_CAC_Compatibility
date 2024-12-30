@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Gear_Addon_PPCCapacitor"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 74
+				}
+			}
+		}
+	]
+}

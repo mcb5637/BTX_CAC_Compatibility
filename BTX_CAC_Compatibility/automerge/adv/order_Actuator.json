@@ -1,0 +1,35 @@
+{
+	"TargetIDs": [
+		"Gear_Actuator_Coventry_Alpha",
+		"Gear_Actuator_Coventry_B20-Extended",
+		"Gear_Actuator_Coventry_B40-Extended",
+		"Gear_Actuator_Coventry_B60-Extended",
+		"Gear_Actuator_Coventry_X55-Standard",
+		"Gear_Actuator_Coventry_X65-Standard",
+		"Gear_Actuator_Coventry_X75-Standard",
+		"Gear_Actuator_Friedhof_Behemoth",
+		"Gear_Actuator_Friedhof_Colossus",
+		"Gear_Actuator_Friedhof_Cronos",
+		"Gear_Actuator_Friedhof_Gargantuan",
+		"Gear_Actuator_Friedhof_Heracles",
+		"Gear_Actuator_Friedhof_Perseus",
+		"Gear_Actuator_Friedhof_Theseus",
+		"Gear_Actuator_Pitban_Jackrabbit",
+		"Gear_Actuator_Pitban_Kangaroo",
+		"Gear_Actuator_Pitban_Wallaby",
+		"Gear_Actuator_Rawlings_Epsilon",
+		"Gear_Actuator_Rawlings_Omega",
+		"Gear_Actuator_Rawlings_Omicron"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 250
+				}
+			}
+		}
+	]
+}

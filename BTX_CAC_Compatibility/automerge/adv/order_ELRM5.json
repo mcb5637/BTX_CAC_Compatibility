@@ -8,9 +8,7 @@
 			"Action": "ObjectMerge",
 			"Value": {
 				"Custom": {
-					"Sorter": {
-						"Order": 103
-					}
+					"Sorter": 103
 				}
 			}
 		}

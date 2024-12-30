@@ -1,17 +1,13 @@
 ﻿using BattleTech;
 using BattleTech.Data;
-using CustAmmoCategories;
 using HarmonyLib;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using UnityEngine;
-using static UnityEngine.RectTransform;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -23,8 +19,6 @@ namespace BTX_CAC_CompatibilityDll
             Invalid = -1,
             Fixed = 0,
             Blocker,
-
-            CockpitMod,
 
             Artillery,
             ArtilleryLoader,
@@ -211,6 +205,7 @@ namespace BTX_CAC_CompatibilityDll
 
 
             Actuator = 250,
+            CockpitMod,
             C3,
             Gyro,
             TAC,
@@ -223,6 +218,7 @@ namespace BTX_CAC_CompatibilityDll
             HSinkX,
             HBank,
             HEx,
+            HCPod,
 
             JJ,
         }
@@ -235,6 +231,9 @@ namespace BTX_CAC_CompatibilityDll
             IdCollector c = new IdCollector();
             GenerateWeapons(m, targetfolder, c);
             GenerateAmmoBoxes(m, targetfolder, c);
+            GenerateJJComponents(m, targetfolder, c);
+            GenerateHSComponents(m, targetfolder, c);
+            GenerateUpgradeComponents(m, targetfolder, c);
             GenerateAdvMerges(m, targetfolder, c);
 
             {
@@ -298,7 +297,7 @@ namespace BTX_CAC_CompatibilityDll
 
                 string p = "{\r\n\t\"TargetIDs\": [\r\n\t\t";
                 p += kv.Value.Join((s) => $"\"{s}\"", ",\r\n\t\t");
-                p += $"\r\n\t],\r\n\t\"Instructions\": [\r\n\t\t{{\r\n\t\t\t\"JSONPath\": \"$\",\r\n\t\t\t\"Action\": \"ObjectMerge\",\r\n\t\t\t\"Value\": {{\r\n\t\t\t\t\"Custom\": {{\r\n\t\t\t\t\t\"Sorter\": {{\r\n\t\t\t\t\t\t\"Order\": {(int)kv.Key}\r\n\t\t\t\t\t}}\r\n\t\t\t\t}}\r\n\t\t\t}}\r\n\t\t}}\r\n\t]\r\n}}";
+                p += $"\r\n\t],\r\n\t\"Instructions\": [\r\n\t\t{{\r\n\t\t\t\"JSONPath\": \"$\",\r\n\t\t\t\"Action\": \"ObjectMerge\",\r\n\t\t\t\"Value\": {{\r\n\t\t\t\t\"Custom\": {{\r\n\t\t\t\t\t\"Sorter\": {(int)kv.Key}\r\n\t\t\t\t}}\r\n\t\t\t}}\r\n\t\t}}\r\n\t]\r\n}}";
 
                 File.WriteAllText(Path.Combine(amfolder, $"order_{kv.Key}.json"), p);
             }
@@ -877,6 +876,230 @@ namespace BTX_CAC_CompatibilityDll
             new IgnorePattern<AmmunitionBoxDef>()
             {
                 Check = new Regex("^FuelTank_Extended|Ammo_AmmunitionBox_Generic_Flamer|AmmunitionBox_Flamer|Ammo_AmmunitionBox_Generic_S|Ammo_AmmunitionBox_Generic_LT$"),
+            },
+        };
+
+
+        private static void GenerateJJComponents(DataManager m, string targetfolder, IdCollector c)
+        {
+            string wepfolder = Path.Combine(targetfolder, "jj");
+            //Directory.CreateDirectory(wepfolder);
+            foreach (KeyValuePair<string, JumpJetDef> kv in m.JumpJetDefs)
+            {
+                if (kv.Key != kv.Value.Description.Id)
+                    throw new InvalidDataException("id missmatch: " + kv.Key);
+                bool found = false;
+                foreach (Pattern<MechComponentDef> p in OtherPatterns)
+                {
+                    Match match = p.Check.Match(kv.Key);
+                    if (match == null || !match.Success)
+                        continue;
+                    p.Generate(kv.Value, match, wepfolder, kv.Key, c);
+                    found = true;
+                    break;
+                }
+                if (!found)
+                    FileLog.Log($"jumpjet {kv.Key} does not have a pattern");
+            }
+        }
+        private static void GenerateHSComponents(DataManager m, string targetfolder, IdCollector c)
+        {
+            string wepfolder = Path.Combine(targetfolder, "hs");
+            //Directory.CreateDirectory(wepfolder);
+            foreach (KeyValuePair<string, HeatSinkDef> kv in m.HeatSinkDefs)
+            {
+                if (kv.Key != kv.Value.Description.Id)
+                    throw new InvalidDataException("id missmatch: " + kv.Key);
+                bool found = false;
+                foreach (Pattern<MechComponentDef> p in OtherPatterns)
+                {
+                    Match match = p.Check.Match(kv.Key);
+                    if (match == null || !match.Success)
+                        continue;
+                    p.Generate(kv.Value, match, wepfolder, kv.Key, c);
+                    found = true;
+                    break;
+                }
+                if (!found)
+                    FileLog.Log($"heatsink {kv.Key} does not have a pattern");
+            }
+        }
+        private static void GenerateUpgradeComponents(DataManager m, string targetfolder, IdCollector c)
+        {
+            string wepfolder = Path.Combine(targetfolder, "upgrades");
+            //Directory.CreateDirectory(wepfolder);
+            foreach (KeyValuePair<string, UpgradeDef> kv in m.UpgradeDefs)
+            {
+                if (kv.Key != kv.Value.Description.Id)
+                    throw new InvalidDataException("id missmatch: " + kv.Key);
+                bool found = false;
+                foreach (Pattern<MechComponentDef> p in OtherPatterns)
+                {
+                    Match match = p.Check.Match(kv.Key);
+                    if (match == null || !match.Success)
+                        continue;
+                    p.Generate(kv.Value, match, wepfolder, kv.Key, c);
+                    found = true;
+                    break;
+                }
+                if (!found)
+                    FileLog.Log($"upgrade {kv.Key} does not have a pattern");
+            }
+        }
+
+        private static readonly Pattern<MechComponentDef>[] OtherPatterns = new Pattern<MechComponentDef>[] {
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Actuator_Axman_Hatchet|Gear_Actuator_Berserker_Hatchet|Gear_Actuator_BlackKnight_Sword|Gear_Actuator_Firestarter_Sword|Gear_Actuator_LifterClamp|Gear_Actuator_LiftHoist|Gear_Actuator_Prototype_Hatchet|Gear_Actuator_Vindicator_Sword$"),
+                Order = (m) => ComponentOrder.Fixed,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Arm_Vestigal_Hand|Gear_BEX_.+|Gear_Quad_Actuators|Gear_Quirk_.+|Gear_RemoteSensorDispenser|Gear_UM-R50_Profile$"),
+                Order = (m) => ComponentOrder.Fixed,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Actuator_.+$"),
+                Order = (m) => ComponentOrder.Actuator,
+            },
+
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Addon_Artemis4$"),
+                Order = (m) => ComponentOrder.Artemis,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Addon_Artillery_Loader_BS$"),
+                Order = (m) => ComponentOrder.Fixed,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Addon_Artillery_Loader$"),
+                Order = (m) => ComponentOrder.ArtilleryLoader,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Addon_PPCCapacitor$"),
+                Order = (m) => ComponentOrder.PPCCap,
+            },
+
+
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_APod(?:_Clan)?$"),
+                Order = (m) => ComponentOrder.APod,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_C3_.+$"),
+                Order = (m) => ComponentOrder.C3,
+            },
+
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Cockpit_CommandConsole|Gear_Cockpit_CommandConsole_with_B2000|Gear_Cockpit_Corean_B-Tech|Gear_Cockpit_Tacticon_B2000_Battle_Computer$"),
+                Order = (m) => ComponentOrder.Fixed,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Cockpit_.+$"),
+                Order = (m) => ComponentOrder.CockpitMod,
+            },
+
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_EndoSteel_.+|Gear_FerroFibrous_.+$"),
+                Order = (m) => ComponentOrder.Blocker,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_General_.+|Gear_Gyro_Cosara_Balanced_Gyros(?:_1)?$"),
+                Order = (m) => ComponentOrder.Fixed,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Gyro_.+$"),
+                Order = (m) => ComponentOrder.Gyro,
+            },
+
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_HeatSink_Generic_Standard$"),
+                Order = (m) => ComponentOrder.HSink,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_HeatSink_Generic_Standard$"),
+                Order = (m) => ComponentOrder.HSink,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_HeatSink_Generic_Double|Gear_HeatSink_Clan_Double$"),
+                Order = (m) => ComponentOrder.HSinkD,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_HeatSink_DHS_NAIS|Gear_HeatSink_FDHS|Gear_HeatSink_Generic_Compact$"),
+                Order = (m) => ComponentOrder.HSinkX,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_HeatSink_Generic_Bulk-Bank|Gear_HeatSink_Generic_Improved-Bank|Gear_HeatSink_Generic_Standard-Bank$"),
+                Order = (m) => ComponentOrder.HBank,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_HeatSink_Generic_Coolant_Pod$"),
+                Order = (m) => ComponentOrder.HCPod,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_HeatSink_Generic_Thermal-Exchanger-.+$"),
+                Order = (m) => ComponentOrder.HEx,
+            },
+
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_JumpJet_LAMJet(?:_Idle)?|Gear_JumpJet_Vectored_Thrust_Kit|Gear_JumpJet_VTR_Vectored_Thrust|Gear_LAM_Systems$"),
+                Order = (m) => ComponentOrder.Fixed,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_JumpJet_Generic_.+$"),
+                Order = (m) => ComponentOrder.JJ,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_LAM_BombBay_Empty$"),
+                Order = (m) => ComponentOrder.BombEmpty,
+            },
+
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_Light_Engine|Gear_MASC_.*|Gear_SensorCAC_.+|Gear_Structure_Prototype_TSM|Gear_Triple_Strength_Myomer.*|Gear_TSM_Prototype_Bergan.*|Gear_VTOL|Gear_XL_Engine.*$"),
+                Order = (m) => ComponentOrder.Fixed,
+            },
+            new IgnorePattern<MechComponentDef>()
+            {
+                Check = new Regex("Gear_Sensor_.+|Gear_EndoFerroCombo_.+|Gear_Mortar_.+|Gear_AMS_.+|Gear_Proto_EWS")
+            },
+
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_TAC.+_Clan$"),
+                Order = (m) => ComponentOrder.TAC,
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_TargetingTrackingSystem_.+$"),
+                Order = (m) => ComponentOrder.TTS,
+            },
+
+            new IgnorePattern<MechComponentDef>()
+            {
+                Check = new Regex("repairkit_Weapon_.+|TargetDummyMod|TT_Gear_Sensor_.*")
             },
         };
 
