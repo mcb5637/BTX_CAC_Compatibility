@@ -14,7 +14,10 @@
 			"ClusteringModifier": 10,
 			"DirectFireModifier": -4,
 			"IndirectFireCapable": false,
-			"isBaseMode": true
+			"isBaseMode": true,
+			"RestrictedAmmo": [
+				"Ammunition_LRM_DF"
+			]
 		}
 	]
 }
