@@ -108,20 +108,19 @@ namespace BTX_CAC_CompatibilityDll
             return d.Blockers[cat][s];
         }
 
-        public static bool HandleMech(MechDef m, List<MechComponentRef> fixedinv, List<MechComponentRef> inv)
+        public static void HandleMech(MechDef m, List<MechComponentRef> fixedinv, List<MechComponentRef> inv)
         {
-            bool cc = HandleChassisDef(m, fixedinv, inv);
-            bool mc = HandleMechDef(m, inv);
-            return cc || mc;
+            HandleChassisDef(m, fixedinv, inv);
+            HandleMechDef(m, inv);
         }
 
-        private static bool HandleChassisDef(MechDef m, List<MechComponentRef> fixedinv, List<MechComponentRef> inv)
+        private static void HandleChassisDef(MechDef m, List<MechComponentRef> fixedinv, List<MechComponentRef> inv)
         {
             ChassisDef d = m.Chassis;
             if (fixedinv == null || fixedinv.Count == 0)
-                return false;
+                return;
             if (HasLimits(d))
-                return false;
+                return;
             int endoSlots = 0;
             int ferroSlots = 0;
             int comboSlots = 0;
@@ -169,40 +168,36 @@ namespace BTX_CAC_CompatibilityDll
             {
                 SetCategoryLimit("EndoStructureBlocker", endoSlots, d);
                 SetCategoryDefaults("EndoStructureBlocker", endos, d);
-                return true;
+                return;
             }
             if (ferroSlots > 0)
             {
                 SetCategoryLimit("FerroStructureBlocker", ferroSlots, d);
                 SetCategoryDefaults("FerroStructureBlocker", ferros, d);
-                return true;
+                return;
             }
             if (comboSlots > 0)
             {
                 SetCategoryLimit("ComboStructureBlocker", comboSlots, d);
                 SetCategoryDefaults("ComboStructureBlocker", combos, d);
-                return true;
+                return;
             }
-            return false;
         }
 
-        private static bool HandleMechDef(MechDef m, List<MechComponentRef> inv)
+        private static void HandleMechDef(MechDef m, List<MechComponentRef> inv)
         {
             ChassisDef d = m.Chassis;
-            bool r = false;
             foreach (CustomBlockerList c in d.GetComponents<CustomBlockerList>())
             {
                 if (inv.Any((x) => x.IsBlocker(c.Category)))
                 {
                     continue;
                 }
-                r = true;
                 foreach (DefaultsInfoRecord b in c.Blockers)
                 {
                     AddToInvRaw(b.DefID, b.Location, b.Type, m.DataManager, inv);
                 }
             }
-            return r;
         }
 
         private static void AddToInvRaw(string id, ChassisLocations c, ComponentType t, DataManager m, List<MechComponentRef> inv)
