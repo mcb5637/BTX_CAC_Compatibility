@@ -13,7 +13,14 @@ namespace BTX_CAC_CompatibilityDll
 {
     public static class MovableBlockers
     {
-        private static readonly string[] Categories = new string[] { "EndoStructureBlocker", "FerroStructureBlocker" }; // TODO config
+        [CustomComponent("BlockerList")]
+        public class CustomBlockerList : SimpleCustomComponent
+        {
+            public string Category;
+            public DefaultsInfoRecord[] Blockers;
+        }
+
+        private static readonly string[] Categories = new string[] { "EndoStructureBlocker", "FerroStructureBlocker", "ComboStructureBlocker" }; // TODO config
 
         private static bool HasLimits(this ChassisDef d)
         {
@@ -32,7 +39,7 @@ namespace BTX_CAC_CompatibilityDll
         {
             return d.IsCategory(cat);
         }
-        private static bool IsBlocker(this MechComponentRef d)
+        public static bool IsBlocker(this MechComponentRef d)
         {
             return Categories.Any((cat) => d.IsCategory(cat));
         }
@@ -40,15 +47,7 @@ namespace BTX_CAC_CompatibilityDll
         {
             return Categories.FirstOrDefault((cat) => d.IsCategory(cat));
         }
-        private static bool IsComboBlocker(this MechComponentRef d) // TODO config
-        {
-            return d.ComponentDefID.StartsWith("Gear_EndoFerroCombo_");
-        }
-        private static int GetComboBlockerSize(string id) // TODO config
-        {
-            return int.Parse(id.Replace("Gear_EndoFerroCombo_", "").Replace("_Slot", ""));
-        }
-         
+
         private class BlockerDatabase
         {
             public Dictionary<string, MechComponentDef[]> Blockers = new Dictionary<string, MechComponentDef[]>();
@@ -69,6 +68,7 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     MechComponentDef[] en = Database_i.Blockers["EndoStructureBlocker"];
                     MechComponentDef[] fe = Database_i.Blockers["FerroStructureBlocker"];
+                    MechComponentDef[] co = Database_i.Blockers["ComboStructureBlocker"];
                     if (m.UpgradeDefs.TryGet($"Gear_EndoSteel_{i}_Slot", out UpgradeDef u)) {
                         int e = GetBlockerSize(u, "EndoStructureBlocker");
                         if (e > 0 && en[e - 1] == null)
@@ -80,7 +80,21 @@ namespace BTX_CAC_CompatibilityDll
                         if (e > 0 && fe[e - 1] == null)
                             fe[e - 1] = f;
                     }
+                    if (m.UpgradeDefs.TryGet($"Gear_EndoFerroCombo_{i}_Slot", out UpgradeDef c))
+                    {
+                        int e = GetBlockerSize(c, "ComboStructureBlocker");
+                        if (e > 0 && co[e - 1] == null)
+                            co[e - 1] = c;
+                    }
                 }
+                //foreach (var kv in Database_i.Blockers)
+                //{
+                //    FileLog.Log($"blocker {kv.Key}");
+                //    for (int i = 0; i < kv.Value.Length; i++)
+                //    {
+                //        FileLog.Log($"{kv.Value[i]?.Description.Id ?? "null"} {i + 1} {GetBlockerSize(kv.Value[i], kv.Key)}");
+                //    }
+                //}
             }
             return Database_i;
         }
@@ -93,17 +107,17 @@ namespace BTX_CAC_CompatibilityDll
                 return null;
             return d.Blockers[cat][s];
         }
-        private static MechComponentDef GetEndoBlocker(int s, DataManager m)
+
+        public static bool HandleMech(MechDef m, List<MechComponentRef> fixedinv, List<MechComponentRef> inv)
         {
-            return GetBlocker(s, m, "EndoStructureBlocker");
-        }
-        private static MechComponentDef GetFerroBlocker(int s, DataManager m)
-        {
-            return GetBlocker(s, m, "FerroStructureBlocker");
+            bool cc = HandleChassisDef(m, fixedinv, inv);
+            bool mc = HandleMechDef(m, inv);
+            return cc || mc;
         }
 
-        public static bool HandleChassisDef(ChassisDef d, List<MechComponentRef> fixedinv, List<MechComponentRef> inv)
+        private static bool HandleChassisDef(MechDef m, List<MechComponentRef> fixedinv, List<MechComponentRef> inv)
         {
+            ChassisDef d = m.Chassis;
             if (fixedinv == null || fixedinv.Count == 0)
                 return false;
             if (HasLimits(d))
@@ -111,70 +125,89 @@ namespace BTX_CAC_CompatibilityDll
             int endoSlots = 0;
             int ferroSlots = 0;
             int comboSlots = 0;
+            List<DefaultsInfoRecord> endos = new List<DefaultsInfoRecord>();
+            List<DefaultsInfoRecord> ferros = new List<DefaultsInfoRecord>();
+            List<DefaultsInfoRecord> combos = new List<DefaultsInfoRecord>();
             foreach (MechComponentRef c in fixedinv)
             {
                 if (c.IsBlocker("EndoStructureBlocker"))
+                {
                     endoSlots += GetBlockerSize(c.Def, "EndoStructureBlocker");
+                    endos.Add(new DefaultsInfoRecord()
+                    {
+                        Location = c.MountedLocation,
+                        DefID = c.ComponentDefID,
+                        Type = c.ComponentDefType,
+                    });
+                }
                 else if (c.IsBlocker("FerroStructureBlocker"))
+                {
                     ferroSlots += GetBlockerSize(c.Def, "FerroStructureBlocker");
-                else if (c.IsComboBlocker())
-                    comboSlots += GetComboBlockerSize(c.ComponentDefID);
+                    ferros.Add(new DefaultsInfoRecord()
+                    {
+                        Location = c.MountedLocation,
+                        DefID = c.ComponentDefID,
+                        Type = c.ComponentDefType,
+                    });
+                }
+                else if (c.IsBlocker("ComboStructureBlocker"))
+                {
+                    comboSlots += GetBlockerSize(c.Def, "ComboStructureBlocker");
+                    combos.Add(new DefaultsInfoRecord()
+                    {
+                        Location = c.MountedLocation,
+                        DefID = c.ComponentDefID,
+                        Type = c.ComponentDefType,
+                    });
+                }
+            }
+            
+            inv.RemoveAll(IsBlocker);
+            fixedinv.RemoveAll(IsBlocker);
+
+            if (endoSlots > 0)
+            {
+                SetCategoryLimit("EndoStructureBlocker", endoSlots, d);
+                SetCategoryDefaults("EndoStructureBlocker", endos, d);
+                return true;
+            }
+            if (ferroSlots > 0)
+            {
+                SetCategoryLimit("FerroStructureBlocker", ferroSlots, d);
+                SetCategoryDefaults("FerroStructureBlocker", ferros, d);
+                return true;
             }
             if (comboSlots > 0)
             {
-                int f = comboSlots / 2;
-                int e = comboSlots - f;
-                ferroSlots += f;
-                endoSlots += e;
-                while (e + f > 0)
-                {
-                    MechComponentRef c = fixedinv.FirstOrDefault((x) => x.IsComboBlocker());
-                    if (c == null)
-                        break;
-                    int cs = GetComboBlockerSize(c.ComponentDefID);
-                    if (cs <= e)
-                    {
-                        e -= cs;
-                        c.ComponentDefID = GetEndoBlocker(cs, c.DataManager).Description.Id;
-                        c.RefreshComponentDef();
-                    }
-                    else if (e > 0)
-                    {
-                        int newf = cs - e;
-                        c.ComponentDefID = GetEndoBlocker(e, c.DataManager).Description.Id;
-                        c.RefreshComponentDef();
-                        e = 0;
-                        AddToInvRaw(GetFerroBlocker(newf, c.DataManager).Description.Id, c.MountedLocation, c.DataManager, fixedinv);
-                        f -= newf;
-                    }
-                    else
-                    {
-                        f -= cs;
-                        c.ComponentDefID = GetFerroBlocker(cs, c.DataManager).Description.Id;
-                        c.RefreshComponentDef();
-                    }
-                }
+                SetCategoryLimit("ComboStructureBlocker", comboSlots, d);
+                SetCategoryDefaults("ComboStructureBlocker", combos, d);
+                return true;
             }
-
-            inv.RemoveAll((c) => c.IsBlocker() || c.IsComboBlocker());
-            inv.InsertRange(0, fixedinv.Where((c) => c.IsBlocker()));
-            fixedinv.RemoveAll((c) => c.IsBlocker() || c.IsComboBlocker());
-            foreach (MechComponentRef c in inv.Where((c) => c.IsBlocker()))
-            {
-                c.SetIsFixed(false);
-            }
-
-            if (endoSlots > 0 || ferroSlots > 0)
-            {
-                SetCategoryLimit("EndoStructureBlocker", endoSlots, d);
-                SetCategoryLimit("FerroStructureBlocker", ferroSlots, d);
-            }
-            return endoSlots > 0 || ferroSlots > 0;
+            return false;
         }
 
-        private static void AddToInvRaw(string id, ChassisLocations c, DataManager m, List<MechComponentRef> inv)
+        private static bool HandleMechDef(MechDef m, List<MechComponentRef> inv)
         {
-            MechComponentRef a = new MechComponentRef(id, null, ComponentType.Upgrade, c, -1, ComponentDamageLevel.Functional, true)
+            ChassisDef d = m.Chassis;
+            bool r = false;
+            foreach (CustomBlockerList c in d.GetComponents<CustomBlockerList>())
+            {
+                if (inv.Any((x) => x.IsBlocker(c.Category)))
+                {
+                    continue;
+                }
+                r = true;
+                foreach (DefaultsInfoRecord b in c.Blockers)
+                {
+                    AddToInvRaw(b.DefID, b.Location, b.Type, m.DataManager, inv);
+                }
+            }
+            return r;
+        }
+
+        private static void AddToInvRaw(string id, ChassisLocations c, ComponentType t, DataManager m, List<MechComponentRef> inv)
+        {
+            MechComponentRef a = new MechComponentRef(id, null, t, c, -1, ComponentDamageLevel.Functional, false)
             {
                 DataManager = m
             };
@@ -199,6 +232,20 @@ namespace BTX_CAC_CompatibilityDll
             };
         }
 
+        private static void SetCategoryDefaults(string cat, List<DefaultsInfoRecord> l, ChassisDef d)
+        {
+            CustomBlockerList c = d.GetComponents<CustomBlockerList>().FirstOrDefault((x) => x.Category == cat);
+            if (c == null)
+            {
+                c = new CustomBlockerList
+                {
+                    Category = cat,
+                };
+                d.AddComponent(c);
+            }
+            c.Blockers = l.ToArray();
+        }
+
         public static void RegisterValidators()
         {
             Validator.RegisterDropValidator(null, ReplaceValidateDropDelegate, null);
@@ -214,6 +261,23 @@ namespace BTX_CAC_CompatibilityDll
             ChassisLocations.CenterTorso,
             ChassisLocations.Head,
         };
+
+        //public static void DumpInv(this MechDef m)
+        //{
+        //    FileLog.Log($"dumping {m.Description.Id}");
+        //    foreach (var c in m.Inventory)
+        //    {
+        //        FileLog.Log($" {c.ComponentDefID} {c.MountedLocation} {c.IsFixed} {GetBlockerCategory(c) ?? "null"}");
+        //        if (c.IsBlocker())
+        //            c.SetIsFixed( false );
+        //    }
+        //    FileLog.Log($"dumping {m.Chassis.Description.Id}");
+        //    foreach (var c in m.Chassis.FixedEquipment)
+        //    {
+        //        FileLog.Log($" {c.ComponentDefID} {c.MountedLocation} {c.IsFixed} {GetBlockerCategory(c) ?? "null"}");
+        //    }
+        //}
+
         private static string ReplaceValidateDropDelegate(MechLabItemSlotElement drop_item, ChassisLocations location, Queue<IChange> changes)
         {
             MechDef mechDef = MechLabHelper.CurrentMechLab.ActiveMech;
@@ -221,7 +285,7 @@ namespace BTX_CAC_CompatibilityDll
 
             if (!HasLimits(mechDef.Chassis))
                 return string.Empty;
-
+            
             int slotsMax = ch.GetLocationDef(location).InventorySlots;
             int slotsNeeded = SlotsInLocation(location, drop_item, changes, mechDef) - slotsMax;
 

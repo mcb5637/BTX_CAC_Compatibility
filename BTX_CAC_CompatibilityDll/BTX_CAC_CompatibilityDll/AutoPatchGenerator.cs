@@ -1010,7 +1010,7 @@ namespace BTX_CAC_CompatibilityDll
 
             new OrderOnlyPattern<MechComponentDef>()
             {
-                Check = new Regex("^Gear_EndoSteel_.+|Gear_FerroFibrous_.+$"),
+                Check = new Regex("^Gear_EndoSteel_.+|Gear_FerroFibrous_.+|Gear_EndoFerroCombo_.+$"),
                 Order = (m) => ComponentOrder.Blocker,
             },
             new OrderOnlyPattern<MechComponentDef>()
@@ -1083,7 +1083,7 @@ namespace BTX_CAC_CompatibilityDll
             },
             new IgnorePattern<MechComponentDef>()
             {
-                Check = new Regex("Gear_Sensor_.+|Gear_EndoFerroCombo_.+|Gear_Mortar_.+|Gear_AMS_.+|Gear_Proto_EWS")
+                Check = new Regex("Gear_Sensor_.+|Gear_Mortar_.+|Gear_AMS_.+|Gear_Proto_EWS")
             },
 
             new OrderOnlyPattern<MechComponentDef>()

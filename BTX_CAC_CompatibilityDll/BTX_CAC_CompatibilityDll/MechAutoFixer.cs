@@ -49,12 +49,12 @@ namespace BTX_CAC_CompatibilityDll
             {
                 check(fixedinv, true);
                 CheckTSM(fixedinv, ref hasChange);
-                hasChange = hasChange | MovableBlockers.HandleChassisDef(m.Chassis, fixedinv, mechinv);
+                hasChange |= MovableBlockers.HandleMech(m, fixedinv, mechinv);
             }
 
             if (hasChange)
             {
-                mechinv.RemoveAll((x) => x.IsFixed); // gets re-added by setinv
+                mechinv.RemoveAll((x) => x.IsFixed && !x.IsBlocker()); // gets re-added by setinv
                 if (fixedinv != null)
                     m.Chassis.SetFixedEquipment(fixedinv.ToArray());
                 m.SetInventory(mechinv.ToArray());

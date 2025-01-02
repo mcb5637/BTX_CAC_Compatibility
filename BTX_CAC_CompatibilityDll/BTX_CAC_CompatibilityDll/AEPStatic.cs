@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using AccessExtension;
 using System.Reflection;
 using Extended_CE;
+using CustomComponents;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -100,6 +101,20 @@ namespace BTX_CAC_CompatibilityDll
         public static void SetIsFixed(this BaseComponentRef r, bool f)
         {
 
+        }
+
+        [MethodCall(typeof(DefaultFixer), "FixMech")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void FixMech(this DefaultFixer f, MechDef m)
+        {
+            
+        }
+
+        [FieldGet(typeof(AutoFixer), "fixers")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static List<AutoFixerDelegate> GetFixers(this AutoFixer f)
+        {
+            return null;
         }
     }
 }

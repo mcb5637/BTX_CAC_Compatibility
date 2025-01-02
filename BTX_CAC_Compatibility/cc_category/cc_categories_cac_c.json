@@ -34,6 +34,18 @@
 					"Max": 0
 				}
 			]
+		},
+		{
+			"Name": "ComboStructureBlocker",
+			"AllowMinOverflow": true,
+			"AddCategoryToDescription": false,
+			"BaseLimits": [
+				{
+					"Location": "All",
+					"Min": 0,
+					"Max": 0
+				}
+			]
 		}
 	]
 }

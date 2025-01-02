@@ -1,5 +1,13 @@
 {
 	"TargetIDs": [
+		"Gear_EndoFerroCombo_1_Slot",
+		"Gear_EndoFerroCombo_2_Slot",
+		"Gear_EndoFerroCombo_3_Slot",
+		"Gear_EndoFerroCombo_4_Slot",
+		"Gear_EndoFerroCombo_5_Slot",
+		"Gear_EndoFerroCombo_6_Slot",
+		"Gear_EndoFerroCombo_7_Slot",
+		"Gear_EndoFerroCombo_8_Slot",
 		"Gear_EndoSteel_1_Slot",
 		"Gear_EndoSteel_2_Slot",
 		"Gear_EndoSteel_3_Slot",
