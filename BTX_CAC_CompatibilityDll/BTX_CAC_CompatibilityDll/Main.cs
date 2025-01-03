@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 using UIWidgets;
 using UnityEngine;
 
-[assembly: AssemblyVersion("2.0.0.1")]
+[assembly: AssemblyVersion("2.0.0.2")]
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -198,5 +198,17 @@ namespace BTX_CAC_CompatibilityDll
         //{
         //    FileLog.Log($"{originalHitLoc} -> {aLoc}");
         //}
+    }
+
+    [HarmonyPatch]
+    public class Mech_InitStats_MASCFix
+    {
+        [HarmonyPatch(typeof(Mech), "InitStats")]
+        [HarmonyAfter("BEX.BattleTech.Extended_CE")]
+        public static void Postfix(Mech __instance)
+        {
+            if (BTComponents.MechTTRuleInfo.MechTTStatStore.TryGetValue(__instance.uid, out BTComponents.TTRuleInfo i))
+                i.OperatingMASC = false;
+        }
     }
 }
