@@ -26,8 +26,8 @@
     "IncludeEnemyTurrets": false
   },
   "AdditionalLances": {
-    "Enable": true,
-    "EnableForFlashpoints": true,
+    "Enable": false,
+    "EnableForFlashpoints": false,
     "EnableForStory": false,
     "ExcludeContractTypes": ["SoloDuel", "DuoDuel"],
     "IsPrimaryObjectiveIn": ["SimpleBattle", "CaptureBase"],
@@ -47,13 +47,13 @@
     },
     "MatchAllyLanceCountToEnemy": false,
     "DropWeightInfluence": {
-      "Enable": true,
+      "Enable": false,
       "EnemySpawnInfluenceMax": 0.9,
       "AllySpawnInfluenceMax": 0.9,
       "EnemySpawnInfluencePerHalfSkullAbove": 0.1,
       "AllySpawnInfluencePerHalfSkullAbove": -0.1,
-      "EnemySpawnInfluencePerHalfSkullBelow": 0.0,
-      "AllySpawnInfluencePerHalfSkullBelow": 0.0
+      "EnemySpawnInfluencePerHalfSkullBelow": -0.1,
+      "AllySpawnInfluencePerHalfSkullBelow": 0.1
     },
     "DisableAllies": false,
     "DisableEnemies": false

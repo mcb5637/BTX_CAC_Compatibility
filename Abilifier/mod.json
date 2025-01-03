@@ -1,0 +1,55 @@
+{
+  "Name": "Abilifier",
+  "DLL": "Abilifier.dll",
+  "Enabled": true,
+  "Version": "1.4.2.0",
+
+  "Description": "Allows for choices between abilities when leveling pilots.",
+  "Author": "gnivler, T-Bone",
+
+  "ConflictsWith": [ "AbilityRealizer" ],
+  "DependsOn": [ "CustomActivatableEquipment", "IRBTModUtils" ],
+  "OptionallyDependsOn": [ "CustomUnits", "Lifepaths" ],
+
+  "Settings": {
+    "debugExpiration": false,
+    "enableTrace": false,
+    "enableLog": true,
+    "usePopUpsForAbilityDesc": false,
+    "debugXP": false,
+    "enableResolverator": false,
+    "disableResolveAttackGround": true,
+    "resolveGenBaseMult": 1.0,
+    "resolveCostBaseMult": 1.0,
+    "resolveCostHighMult": 0.8,
+    "resolveCostLowMult": 1.2,
+    "extraFirstTierAbilities": 0,
+    "extraAbilities": 0,
+    "extraAbilitiesAllowedPerSkill": 0,
+    "nonTreeAbilities": 1,
+    "cleanUpCombatUI": false,
+    "skillLockThreshold": 8,
+    "usingCACabilitySelector": true,
+    "usingHumanResources": false,
+    "disableCalledShotExploit": true,
+    "proceduralTagCleanup": {},
+    "tagTraitForTree": {},
+    "defaultTagTraitForTree": {},
+    "defaultTagTraitException": "",
+    "abilityReqs": {},
+    "ticksOnMovementDistanceIDs": [],
+    "retrainerSettings": {
+      "enableRetrainer": true,
+      "cost": 500000,
+      "onceOnly": true,
+      "trainingModuleRequired": true,
+      "ignoredAbilities": [],
+      "confirmAbilityText": ""
+    }
+  },
+
+  "Manifest": [
+    { "Type": "AbilityDef", "Path": "abilities" },
+    { "Type": "SVGAsset", "Path": "icons", "ShouldMergeJSON": false }
+  ]
+}
