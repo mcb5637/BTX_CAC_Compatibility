@@ -19,7 +19,7 @@ namespace BTX_CAC_CompatibilityDll
             {
                 try
                 {
-                    SplitAddons(mech);
+                    HandleMech(mech);
                 }
                 catch (Exception e)
                 {
@@ -39,17 +39,18 @@ namespace BTX_CAC_CompatibilityDll
             ChassisLocations.RightLeg,
             ChassisLocations.Head,
         };
-        private static void SplitAddons(MechDef m)
+        private static void HandleMech(MechDef m)
         {
             List<MechComponentRef> mechinv = m.Inventory.ToList();
             List<MechComponentRef> fixedinv = m.Chassis.FixedEquipment?.ToList();
-            CheckInventory(mechinv, false, m, mechinv);
+            CheckAddons(mechinv, false, m, mechinv);
             if (fixedinv != null)
             {
-                CheckInventory(fixedinv, true, m, mechinv);
+                CheckAddons(fixedinv, true, m, mechinv);
                 CheckTSM(fixedinv);
-                MovableBlockers.HandleMech(m, fixedinv, mechinv);
+                MovableBlockers.FixChassisDef(m, fixedinv);
             }
+            MovableBlockers.FixMechDef(m, mechinv);
 
             mechinv.RemoveAll((x) => x.IsFixed && !x.IsBlocker()); // gets re-added by setinv
             foreach (MechComponentRef c in mechinv)
@@ -65,7 +66,7 @@ namespace BTX_CAC_CompatibilityDll
                 m.Chassis.ChassisTags.Add("autofixed_hardpoints");
         }
 
-        private static void CheckInventory(List<MechComponentRef> l, bool fix, MechDef m, List<MechComponentRef> mechinv)
+        private static void CheckAddons(List<MechComponentRef> l, bool fix, MechDef m, List<MechComponentRef> mechinv)
         {
             for (int i = 0; i < l.Count; i++)
             {
