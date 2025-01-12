@@ -14,7 +14,7 @@ namespace BTX_CAC_CompatibilityDll
     public static class MovableBlockers
     {
         [CustomComponent("BlockerList")]
-        public class CustomBlockerList : SimpleCustomComponent
+        public class CustomBlockerList : SimpleCustomChassis
         {
             public string Category;
             public DefaultsInfoRecord[] Blockers;
@@ -136,14 +136,14 @@ namespace BTX_CAC_CompatibilityDll
                 int l = fixedinv.Select((x) => x.GetBlockerSize(cat)).Sum();
                 if (l > 0)
                 {
-                    SetCategoryLimit("EndoStructureBlocker", l, d);
+                    SetCategoryLimit(cat, l, d);
                     DefaultsInfoRecord[] b = fixedinv.Where((x) => x.IsBlocker(cat)).Select((x) => new DefaultsInfoRecord()
                         {
                             Location = x.MountedLocation,
                             DefID = x.ComponentDefID,
                             Type = x.ComponentDefType,
                         }).ToArray();
-                    SetCategoryDefaults("EndoStructureBlocker", b, d);
+                    SetCategoryDefaults(cat, b, d);
                 }
             }
 
@@ -157,16 +157,16 @@ namespace BTX_CAC_CompatibilityDll
             {
                 int l = d.GetLimit(cat);
                 if (l > 0 && l != inv.Select((x) => x.GetBlockerSize(cat)).Sum())
+                {
                     inv.RemoveAll((x) => x.IsBlocker(cat));
+                }
             }
             foreach (CustomBlockerList c in d.GetComponents<CustomBlockerList>())
             {
                 if (inv.Any((x) => x.IsBlocker(c.Category)))
                 {
-                    FileLog.Log($"skip {m.Description.Id} {c.Category}");
                     continue;
                 }
-                FileLog.Log($"add {m.Description.Id} {c.Category}");
                 foreach (DefaultsInfoRecord b in c.Blockers)
                 {
                     AddToInvRaw(b.DefID, b.Location, b.Type, m.DataManager, inv);

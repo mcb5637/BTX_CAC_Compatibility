@@ -1,0 +1,55 @@
+{
+	"Custom": {
+		"ChassisCategory": {
+			"CategoryID": "FerroStructureBlocker",
+			"Limits": [
+				{
+					"Location": "All",
+					"Min": 13,
+					"Max": 13
+				}
+			]
+		},
+		"BlockerList": {
+			"Category": "FerroStructureBlocker",
+			"Blockers": [
+				{
+					"Location": "LeftArm",
+					"DefID": "Gear_FerroFibrous_3_Slot",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "LeftTorso",
+					"DefID": "Gear_FerroFibrous_1_Slot",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "CenterTorso",
+					"DefID": "Gear_FerroFibrous_1_Slot",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "RightTorso",
+					"DefID": "Gear_FerroFibrous_2_Slot",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "RightArm",
+					"DefID": "Gear_FerroFibrous_2_Slot",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "LeftLeg",
+					"DefID": "Gear_FerroFibrous_2_Slot",
+					"Type": "Upgrade"
+				},
+				{
+					"Location": "RightLeg",
+					"DefID": "Gear_FerroFibrous_2_Slot",
+					"Type": "Upgrade"
+				}
+			]
+		}
+	},
+	"FixedEquipment": []
+}
