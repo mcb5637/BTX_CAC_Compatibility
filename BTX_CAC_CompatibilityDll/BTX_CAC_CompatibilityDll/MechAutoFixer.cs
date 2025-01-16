@@ -42,15 +42,17 @@ namespace BTX_CAC_CompatibilityDll
         private static void HandleMech(MechDef m)
         {
             List<MechComponentRef> mechinv = m.Inventory.ToList();
-            List<MechComponentRef> fixedinv = m.Chassis.FixedEquipment?.ToList();
+            ChassisDef ch = m.Chassis;
+            ChassisDef mngch = ch.DataManager.ChassisDefs.Get(ch.Description.Id);
+            List<MechComponentRef> fixedinv = ch.FixedEquipment?.ToList();
             CheckAddons(mechinv, false, m, mechinv);
             if (fixedinv != null)
             {
                 CheckAddons(fixedinv, true, m, mechinv);
                 CheckTSM(fixedinv);
-                MovableBlockers.FixChassisDef(m, fixedinv);
+                MovableBlockers.FixChassisDef(mngch, fixedinv);
             }
-            MovableBlockers.FixMechDef(m, mechinv);
+            MovableBlockers.FixMechInventory(mngch, mechinv);
 
             mechinv.RemoveAll((x) => x.IsFixed && !x.IsBlocker()); // gets re-added by setinv
             foreach (MechComponentRef c in mechinv)
@@ -59,11 +61,15 @@ namespace BTX_CAC_CompatibilityDll
                     c.SetSimGameUID(c.SimGameUID.Replace("FixedEquipment-", ""));
             }
             if (fixedinv != null)
-                m.Chassis.SetFixedEquipment(fixedinv.ToArray());
+                mngch.SetFixedEquipment(fixedinv.ToArray());
+            mngch.RefreshLocationReferences();
+            if (!mngch.ChassisTags.Contains("autofixed_hardpoints"))
+                mngch.ChassisTags.Add("autofixed_hardpoints");
+            if (!ReferenceEquals(ch, mngch)) // happens, if m has prefabOverride set
+            {
+                m.Chassis = mngch;
+            }
             m.SetInventory(mechinv.ToArray());
-            m.Chassis.RefreshLocationReferences();
-            if (!m.Chassis.ChassisTags.Contains("autofixed_hardpoints"))
-                m.Chassis.ChassisTags.Add("autofixed_hardpoints");
         }
 
         private static void CheckAddons(List<MechComponentRef> l, bool fix, MechDef m, List<MechComponentRef> mechinv)

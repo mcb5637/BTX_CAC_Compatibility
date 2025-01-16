@@ -117,9 +117,8 @@ namespace BTX_CAC_CompatibilityDll
             return d.Blockers[cat][s];
         }
 
-        public static void FixChassisDef(MechDef m, List<MechComponentRef> fixedinv)
+        public static void FixChassisDef(ChassisDef d, List<MechComponentRef> fixedinv)
         {
-            ChassisDef d = m.Chassis;
             if (fixedinv == null)
                 return;
             if (HasLimits(d))
@@ -150,9 +149,8 @@ namespace BTX_CAC_CompatibilityDll
             fixedinv.RemoveAll(IsBlocker);
         }
 
-        public static void FixMechDef(MechDef m, List<MechComponentRef> inv)
+        public static void FixMechInventory(ChassisDef d, List<MechComponentRef> inv)
         {
-            ChassisDef d = m.Chassis;
             foreach (string cat in Categories)
             {
                 int l = d.GetLimit(cat);
@@ -169,7 +167,7 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 foreach (DefaultsInfoRecord b in c.Blockers)
                 {
-                    AddToInvRaw(b.DefID, b.Location, b.Type, m.DataManager, inv);
+                    AddToInvRaw(b.DefID, b.Location, b.Type, d.DataManager, inv);
                 }
             }
         }
