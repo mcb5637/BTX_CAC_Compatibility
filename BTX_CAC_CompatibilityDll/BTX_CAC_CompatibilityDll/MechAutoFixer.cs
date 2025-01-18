@@ -8,6 +8,7 @@ using CustomComponents;
 using BattleTech.Save.SaveGameStructure;
 using HarmonyLib;
 using Org.BouncyCastle.Crypto.Parameters;
+using BattleTech.Data;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -43,8 +44,9 @@ namespace BTX_CAC_CompatibilityDll
         {
             List<MechComponentRef> mechinv = m.Inventory.ToList();
             ChassisDef ch = m.Chassis;
-            ChassisDef mngch = ch.DataManager.ChassisDefs.Get(ch.Description.Id);
-            List<MechComponentRef> fixedinv = ch.FixedEquipment?.ToList();
+            if (!ch.DataManager.ChassisDefs.TryGet(ch.Description.Id, out ChassisDef mngch))
+                mngch = ch;
+            List <MechComponentRef> fixedinv = mngch.FixedEquipment?.ToList();
             CheckAddons(mechinv, false, m, mechinv);
             if (fixedinv != null)
             {
@@ -67,7 +69,13 @@ namespace BTX_CAC_CompatibilityDll
                 mngch.ChassisTags.Add("autofixed_hardpoints");
             if (!ReferenceEquals(ch, mngch)) // happens, if m has prefabOverride set
             {
+                DataManager dm = ch.DataManager ?? mngch.DataManager;
                 m.Chassis = mngch;
+                if (m.Chassis.DataManager == null && dm != null)
+                {
+                    m.Chassis.DataManager = dm;
+                    m.Chassis.Refresh();
+                }
             }
             m.SetInventory(mechinv.ToArray());
         }

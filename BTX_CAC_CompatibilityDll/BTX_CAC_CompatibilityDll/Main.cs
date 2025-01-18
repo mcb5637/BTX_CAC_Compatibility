@@ -211,4 +211,23 @@ namespace BTX_CAC_CompatibilityDll
                 i.OperatingMASC = false;
         }
     }
+
+    [HarmonyPatch]
+    public class Chassis_MovementCapDef_Fix
+    {
+        [HarmonyPatch(typeof(ChassisDef), nameof(ChassisDef.MovementCapDef), MethodType.Getter)]
+        public static void Postfix(ChassisDef __instance, ref MovementCapabilitiesDef __result)
+        {
+            if (__result == null)
+            {
+                if (__instance.DataManager == null)
+                    __instance.DataManager = UnityGameInstance.BattleTechGame.DataManager;
+                if (__instance.DataManager != null && __instance.DataManager.MovementCapabilitiesDefs.Exists(__instance.MovementCapDefID))
+                {
+                    __instance.Refresh();
+                    __result = __instance.MovementCapDef;
+                }
+            }
+        }
+    }
 }
