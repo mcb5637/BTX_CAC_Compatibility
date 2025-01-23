@@ -1,5 +1,6 @@
 ﻿using BattleTech;
 using BattleTech.Data;
+using BTRandomMechComponentUpgrader;
 using HarmonyLib;
 using Newtonsoft.Json;
 using System;
@@ -235,6 +236,7 @@ namespace BTX_CAC_CompatibilityDll
             GenerateHSComponents(m, targetfolder, c);
             GenerateUpgradeComponents(m, targetfolder, c);
             GenerateAdvMerges(m, targetfolder, c);
+            GenerateULists(targetfolder, c);
 
             {
                 File.WriteAllText(Path.Combine(targetfolder, "itemcollectionreplace.json"), JsonConvert.SerializeObject(c.ICReplace, Formatting.Indented));
@@ -303,6 +305,107 @@ namespace BTX_CAC_CompatibilityDll
             }
         }
 
+        enum ERating
+        {
+            F, D, C, B, A, CS, CSP
+        }
+        // [rarity][plus]
+        private static readonly int[][] UListWeights = new int[][] {
+                // F Awful
+                new int[] {100, 1, 0, 0},
+                // D Poor
+                new int[] {100, 5, 1, 0},
+                // C Average
+                new int[] {100, 10, 5, 1},
+                // B Very Good
+                new int[] {100, 20, 10, 5},
+                // A Exceptional
+                new int[] {50, 50, 25, 25},
+                // CS ComStar
+                new int[] {1, 50, 100, 50},
+                // CSP ComStar+
+                new int[] {0, 0, 0, 100},
+            };
+        private static readonly string[] FactionRoots = new string[]
+        {
+            "Davion", "Kurita", "Liao", "Marik", "Steiner", "Rasalhague", "Ives",
+            "TaurianConcordat", "Outworld", "MagistracyOfCanopus",
+            "Mercenaries",
+        };
+        private static void GenerateULists(string targetfolder, IdCollector c)
+        {
+            string ufolder = Path.Combine(targetfolder, "usublist");
+            Directory.CreateDirectory(ufolder);
+            string lfolder = Path.Combine(targetfolder, "ulist");
+            Directory.CreateDirectory(lfolder);
+            foreach (KeyValuePair<string, UpgradeSubList> kv in c.SubLists)
+            {
+                List<UpgradeEntry> l = kv.Value.MainUpgradePath.ToList();
+                l.Sort((a, b) => a.Weight - b.Weight);
+                if (l[l.Count-1].Weight == 2)
+                {
+                    foreach (UpgradeEntry e in l)
+                    {
+                        if (e.Weight == 2)
+                            e.Weight = 3;
+                    }
+                }
+                UpgradeSubList st = new UpgradeSubList()
+                {
+                    Addons = kv.Value.Addons,
+                    AmmoTypes = kv.Value.AmmoTypes,
+                };
+                for (int i = (int) ERating.F; i <= (int) ERating.CSP; i++)
+                {
+                    st.MainUpgradePath = l.Select((s) =>
+                    {
+                        return new UpgradeEntry()
+                        {
+                            ID = s.ID,
+                            AllowDowngrade = s.AllowDowngrade,
+                            ListLink = s.ListLink,
+                            MinDate = s.MinDate,
+                            Weight = UListWeights[i][Math.Max(Math.Min(s.Weight, 3), 0)],
+                        };
+                    }).ToArray();
+                    File.WriteAllText(Path.Combine(ufolder, $"{kv.Key}_{(ERating)i}.json"), JsonConvert.SerializeObject(st, Formatting.Indented));
+                }
+            }
+            for (int i = (int)ERating.F; i <= (int)ERating.CSP; i++)
+            {
+                UpgradeList l = new UpgradeList
+                {
+                    AllowDowngrade = false,
+                    CanRemove = new string[]{""},
+                    Factions = fByER((ERating)i),
+                    FactionPrefixWithNumber = Array.Empty<string>(),
+                    LoadAdditions = Array.Empty<string>(),
+                    LoadUpgrades = c.SubLists.Keys.Select(x => $"{x}_{(ERating)i}").ToArray(),
+                    RemoveMaxFactor = 0,
+                    Sort = i,
+                    UpgradePerComponentChance = 1,
+                };
+                File.WriteAllText(Path.Combine(lfolder, $"Generic_{(ERating)i}.json"), JsonConvert.SerializeObject(l, Formatting.Indented));
+            }
+
+            string[] fByER(ERating i)
+            {
+                if (i == ERating.F)
+                {
+                    return FactionRoots.Select(x => $"{x}F").Concat(FactionRoots.Select(x => $"{x}Locals")).ToArray();
+                }
+                else if (i == ERating.CS)
+                {
+                    return new string[] { "ComStar" };
+                }
+                else if (i == ERating.CSP)
+                {
+                    return new string[] { "ComStarPlus" };
+                }
+                return FactionRoots.Select(x => $"{x}{i}").ToArray();
+            }
+        }
+
         private static void GenerateWeapons(DataManager m, string targetfolder, IdCollector c)
         {
             string wepfolder = Path.Combine(targetfolder, "weapon");
@@ -329,11 +432,11 @@ namespace BTX_CAC_CompatibilityDll
         private static readonly Pattern<WeaponDef>[] WeaponPatterns = new Pattern<WeaponDef>[] {
             new WeaponACPattern()
             {
-                Check = new Regex("^Weapon_Autocannon_(?<li>L?)AC(?<size>\\d+)_(?:\\d+|SPECIAL)-.+$"),
+                Check = new Regex("^Weapon_Autocannon_(?<li>L?)AC(?<size>\\d+)_(?<plus>\\d+|SPECIAL)-.+$"),
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Gauss_(?<hl>C|Heavy|Light)?Gauss(?<mag>_NU|_Sa|Magshot)?_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_Gauss_(?<hl>C|Heavy|Light)?Gauss(?<mag>_NU|_Sa|Magshot)?_(?<plus>\\d+)-.+$"),
                 ExtraData = "\r\n}\r\n",
                 Details = true,
                 Order = (m) =>
@@ -346,26 +449,45 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.GaussLight;
                     return ComponentOrder.Gauss;
                 },
+                SubList = (d, id, m, c) =>
+                {
+                    string hl = m.Groups["hl"].Value;
+                    string mag = m.Groups["mag"].Value;
+                    string list;
+                    if (mag == "Magshot")
+                        list = "GaussMag";
+                    else
+                        list = $"Gauss{hl}";
+                    if ((mag == "" || mag == "_Sa") && hl == "")
+                        list = "SLDF" + list;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList(list, id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Gauss_Silver_Bullet_Gauss_(\\d+)-.+$"),
+                Check = new Regex("^Weapon_Gauss_Silver_Bullet_Gauss_(?<plus>\\d+)-.+$"),
                 ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"FireDelayMultiplier\": 0,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"BallisticDamagePerPallet\": true,\r\n\t\"ShotsWhenFired\": 1,\r\n\t\"ProjectilesPerShot\": 12,\r\n\t\"Damage\": 108,\r\n\t\"Instability\": 60,\r\n\t\"ProjectileScale\": {\r\n\t\t\"x\": 0.2,\r\n\t\t\"y\": 0.2,\r\n\t\t\"z\": 0.2\r\n\t}\r\n}",
                 Details = false,
                 Damage = false,
                 Order = (m) => ComponentOrder.GaussSB,
+                SubList = (d, id, m, c) =>
+                {
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList("GaussSB", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
+                },
             },
             new WeaponUACPattern()
             {
-                Check = new Regex("^Weapon_Autocannon_C?(?<ur>[UR])AC(?<size>\\d+)(?:_NU|_Sa)?_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_Autocannon_(?<ur>C?[UR])AC(?<size>\\d+)(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
             },
             new WeaponLBXPattern()
             {
-                Check = new Regex("^Weapon_Autocannon_C?LB(?<size>\\d+)X(?:_NU|_Sa)?_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_Autocannon_(?<c>C?)LB(?<size>\\d+)X(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Laser_C?(?<size>Large|Medium|Small|Micro)LaserPulse(?:_NU|_Sa)?_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_Laser_(?<c>C?)(?<size>Large|Medium|Small|Micro)LaserPulse(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
                 ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1\r\n}\r\n",
                 Details = true,
                 Order = (m) =>
@@ -378,10 +500,18 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.PSLaser;
                     return ComponentOrder.PMiLaser;
                 },
+                SubList = (d, id, m, c) =>
+                {
+                    string sl = WeaponForwardingPattern.GetSLDFPrefix(m);
+                    string si = m.Groups["size"].Value;
+                    string cl = m.Groups["cl"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"{sl}{cl}{si}PLaser", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Laser_C?(?<size>Large|Medium|Small)LaserXPulse(?:_NU|_Sa)?_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_Laser_(?<size>Large|Medium|Small)LaserXPulse_(?:\\d+)-.+$"),
                 ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1\r\n}\r\n",
                 Details = true,
                 Order = (m) =>
@@ -392,10 +522,16 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.XPMLaser;
                     return ComponentOrder.XPSLaser;
                 },
+                SubList = (d, id, m, c) =>
+                {
+                    string si = m.Groups["size"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"{si}XPLaser", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Laser_C?(?<size>Large|Medium|Small|Micro)LaserER(?:_NU|_Sa)?_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_Laser_(?<c>C?)(?<size>Large|Medium|Small|Micro)LaserER(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
                 ExtraData = "\r\n}\r\n",
                 Details = true,
                 Order = (m) =>
@@ -408,10 +544,18 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.ERSLaser;
                     return ComponentOrder.ERMiLaser;
                 },
+                SubList = (d, id, m, c) =>
+                {
+                    string sl = WeaponForwardingPattern.GetSLDFPrefix(m);
+                    string si = m.Groups["size"].Value;
+                    string cl = m.Groups["c"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"{sl}{cl}{si}ERLaser", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Laser_C?(?<size>Large|Medium|Small)Laser?_(?:-?\\d+)-.+$"),
+                Check = new Regex("^Weapon_Laser_(?<size>Large|Medium|Small)Laser_(?<plus>-?\\d+)-.+$"),
                 ExtraData = "\r\n}\r\n",
                 Details = true,
                 Order = (m) =>
@@ -422,10 +566,16 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.MLaser;
                     return ComponentOrder.SLaser;
                 },
+                SubList = (d, id, m, c) =>
+                {
+                    string si = m.Groups["size"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"{si}Laser", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Laser_C?(?<size>Large|Medium|Small)LaserHeavy?_(?:-?\\d+)-.+$"),
+                Check = new Regex("^Weapon_Laser_C(?<size>Large|Medium|Small)LaserHeavy_(?<plus>\\d+)-.+$"),
                 ExtraData = "\r\n}\r\n",
                 Details = true,
                 Order = (m) =>
@@ -435,6 +585,12 @@ namespace BTX_CAC_CompatibilityDll
                     if (m.Groups["size"].Value == "Medium")
                         return ComponentOrder.HMLaser;
                     return ComponentOrder.HSLaser;
+                },
+                SubList = (d, id, m, c) =>
+                {
+                    string si = m.Groups["size"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"C{si}LaserHeavy", id, Array.Empty<string>(), new string[] { }, lvl);
                 },
             },
             new WeaponForwardingPattern()
@@ -452,20 +608,32 @@ namespace BTX_CAC_CompatibilityDll
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Laser_BinaryLaserCannon_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_Laser_BinaryLaserCannon_(?<plus>\\d+)-.+$"),
                 ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"ProjectilesPerShot\": 2\r\n}\r\n",
                 Order = (m) => ComponentOrder.BLaser,
+                SubList = (d, id, m, c) =>
+                {
+                    string si = m.Groups["size"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"BLaser", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_PPC_PPC_(?:-?\\d+)-.+$"),
+                Check = new Regex("^Weapon_PPC_PPC_(?<plus>-?\\d+)-.+$"),
                 ExtraData = ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"PPC operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_FI_OFF\",\r\n\t\t\t\"UIName\": \"FI OFF\",\r\n\t\t\t\"Name\": \"Field Inhibitor OFF\",\r\n\t\t\t\"Description\": \"Disabled Field Inhibitor removes minimum range, but at the chance to misfire.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamageOnJamming\": true,\r\n\t\t\t\"FlatJammingChance\": 0.1,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.04,\r\n\t\t\t\"MinRange\": -90.0,\r\n\t\t\t\"AccuracyModifier\": 1.0\r\n\t\t}\r\n\t]\r\n}\r\n",
                 AddToList = (x) => x.AddPPCCap,
                 Order = (m) => ComponentOrder.PPC,
+                SubList = (d, id, m, c) =>
+                {
+                    string si = m.Groups["size"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"PPC", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_PPC_C?PPC(?<eh>ER|Heavy)(?:_NU|_Sa)?_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_PPC_(?<c>C?)PPC(?<eh>ER|Heavy)(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
                 ExtraData = ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"PPCMode_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"PPC operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}\r\n\t]\r\n}\r\n",
                 AddToList = (x) => x.AddPPCCap,
                 Order = (m) =>
@@ -474,13 +642,26 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.ERPPC;
                     return ComponentOrder.HPPC;
                 },
+                SubList = (d, id, m, c) =>
+                {
+                    string eh = m.Groups["eh"].Value;
+                    string sl = eh == "ER" ? WeaponForwardingPattern.GetSLDFPrefix(m) : "";
+                    string cl = m.Groups["c"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"{sl}{cl}PPC{eh}", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new StaticPatchPattern<WeaponDef>()
             {
-                Check = new Regex("^Weapon_PPC_PPCSnub_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_PPC_PPCSnub_(?<plus>\\d+)-.+$"),
                 Patch = "{\r\n\t\"MinRange\": 0,\r\n\t\"MaxRange\": 450,\r\n\t\"RangeSplit\": [\r\n\t\t270,\r\n\t\t390,\r\n\t\t450\r\n\t],\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"DistantVariance\": 0.5,\r\n\t\"DamageFalloffStartDistance\": 390,\r\n\t\"DamageFalloffEndDistance\": 450,\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Linear\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true,\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_FL\",\r\n\t\t\t\"UIName\": \"FL\",\r\n\t\t\t\"Name\": \"Focusing Lens\",\r\n\t\t\t\"Description\": \"The additional magnetic Focusing Lens allows to focus all particles into one projectile, concentrating the infliced damage to one location, at the cost of slighly increased heat generation.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"HeatGenerated\": 5,\r\n\t\t\t\"DamageMultiplier\": 5,\r\n\t\t\t\"InstabilityMultiplier\": 5,\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}\r\n\t]\r\n}",
                 AddToList = (x) => x.AddPPCCapSnub,
                 Order = (m) => ComponentOrder.SPPC,
+                SubList = (d, id, m, c) =>
+                {
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"SnubPPC", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
@@ -490,15 +671,21 @@ namespace BTX_CAC_CompatibilityDll
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Flamer_C?Flamer_(?:\\d+|SPECIAL)-.+$"),
+                Check = new Regex("^Weapon_Flamer_(?<c>C?)Flamer_(?<plus>\\d+|SPECIAL)-.+$"),
                 ExtraData = ",\r\n\t\"FireTerrainChance\": 0.75,\r\n\t\"FireTerrainStrength\": 1,\r\n\t\"FireOnSuccessHit\": true\r\n}\r\n",
                 Heat = true,
                 Details = true,
                 Order = (m) => ComponentOrder.Flamer,
+                SubList = (d, id, m, c) =>
+                {
+                    string cl = m.Groups["c"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"{cl}Flamer", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_MachineGun_C?MachineGun(?<hl>Heavy|Light)?_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_MachineGun_(?<c>C?)MachineGun(?<hl>Heavy|Light)?_(?<plus>\\d+)-.+$"),
                 Details = true,
                 ExtraData = ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"MG_Full\",\r\n\t\t\t\"UIName\": \"x5\",\r\n\t\t\t\"Name\": \"Full Salvo\",\r\n\t\t\t\"Description\": \"Fires the MG at standard speed.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"MG_Double\",\r\n\t\t\t\"UIName\": \"x10\",\r\n\t\t\t\"Name\": \"Double Salvo\",\r\n\t\t\t\"Description\": \"Fires the MG at double speed, decreasing accuracy, increasing heat, but doubles the shots per turn.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"AccuracyModifier\": 4.0,\r\n\t\t\t\"ShotsWhenFired\": 5,\r\n\t\t\t\"HeatGenerated\": 5\r\n\t\t}\r\n\t],\r\n\t\"ShotsPerAmmo\": 0.2,\r\n\t\"VolleyDivisor\": 5\r\n}\r\n",
                 Order = (m) =>
@@ -509,23 +696,30 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.LMG;
                     return ComponentOrder.MG;
                 },
+                SubList = (d, id, m, c) =>
+                {
+                    string cl = m.Groups["c"].Value;
+                    string hl = m.Groups["hl"].Value;
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"{cl}MG{hl}", id, Array.Empty<string>(), new string[] { }, lvl);
+                },
             },
             new WeaponLRMPattern()
             {
-                Check = new Regex("^Weapon_LRM_C?(?<n>N?)LRM(?<size>\\d+)_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_LRM_(?<c>C?)(?<n>N?)LRM(?<size>\\d+)_(?<plus>\\d+)-.+$"),
                 EnableArtemis = true,
                 EnableNarc = true,
             },
             new WeaponLRMPattern()
             {
-                Check = new Regex("^Weapon_ELRM_C?ELRM(?<size>\\d+)_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_ELRM_ELRM(?<size>\\d+)_(?<plus>\\d+)-.+$"),
                 EnableArtemis = false,
                 EnableNarc = true,
                 E = true,
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Thunderbolt_Thunderbolt(?<size>\\d+)_(?:\\d+)-.+$"),
+                Check = new Regex("^Weapon_Thunderbolt_Thunderbolt(?<size>\\d+)_(?<plus>\\d+)-.+$"),
                 Details = true,
                 AddToList = (x) => x.AddNarcCompatible,
                 ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": 1,\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Individual\",\r\n\t\"AMSHitChance\": 0.5,\r\n\t\"MissileHealth\": 5,\r\n\t\"ProjectileScale\": {\r\n\t\t\"x\": 2,\r\n\t\t\"y\": 2,\r\n\t\t\"z\": 2\r\n\t}\r\n}\r\n",
@@ -538,6 +732,11 @@ namespace BTX_CAC_CompatibilityDll
                     if (m.Groups["size"].Value == "10")
                         return ComponentOrder.LRM10;
                     return ComponentOrder.LRM5;
+                },
+                SubList = (d, id, m, c) =>
+                {
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"Thunderbolt{m.Groups["size"].Value}", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
                 },
             },
             new DeprecatedPatchPattern<WeaponDef>()
@@ -558,14 +757,14 @@ namespace BTX_CAC_CompatibilityDll
             },
             new WeaponSRMPattern()
             {
-                Check = new Regex("^Weapon_SRM_C?SRM(?<size>\\d+)_(?:\\d+-.+|OneShot)$"),
+                Check = new Regex("^Weapon_SRM_(?<c>C?)SRM(?<size>\\d+)_((?<plus>\\d+)-.+|OneShot)$"),
                 EnableArtemis = true,
                 Streak = false,
                 EnableNarc = true,
             },
             new WeaponSRMPattern()
             {
-                Check = new Regex("^Weapon_SRM_C?SSRM(?<size>\\d+)_(?:\\d+-.+|OneShot)$"),
+                Check = new Regex("^Weapon_SRM_(?<c>C?)SSRM(?<size>\\d+)_((?<plus>\\d+)-.+|OneShot)$"),
                 EnableArtemis = false,
                 Streak = true,
             },
@@ -594,27 +793,37 @@ namespace BTX_CAC_CompatibilityDll
             },
             new WeaponMRMPattern()
             {
-                Check = new Regex("^Weapon_(?:MRM|RL)_(?<mr>MRM|RL)(?<size>\\d+)_(?:\\d+-.+)$"),
+                Check = new Regex("^Weapon_(?:MRM|RL)_(?<mr>MRM|RL)(?<size>\\d+)_(?<plus>\\d+)-.+$"),
             },
             new WeaponATMPattern()
             {
-                Check = new Regex("^Weapon_ATM_ATM(?<size>\\d+)_(?:\\d+-.+)$"),
+                Check = new Regex("^Weapon_ATM_ATM(?<size>\\d+)_(?<plus>\\d+)-.+$"),
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_TAG_(?:Standard|C3)(?:_\\d+)?-.+$"),
+                Check = new Regex("^Weapon_TAG_(?<ty>Standard|C3)(?:_(?<plus>\\d+))?-.+$"),
                 Details = true,
                 Boni = true,
                 ExtraData = ",\r\n\t\"statusEffects\": [\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": true,\r\n\t\t\t\t\"showInStatusPanel\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"StatisticEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IncomingAttBonus\",\r\n\t\t\t\t\"Name\": \"TAG MARKED\",\r\n\t\t\t\t\"Details\": \"If targeted by non Clan LRMs/NLRMs this unit does not have an indirect fire modifier and all evasion is ignored. These effects do not stack with Artemis IV or a Narc Missile Beacon.\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_statusMarked\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"statisticData\": {\r\n\t\t\t\t\"appliesEachTick\": false,\r\n\t\t\t\t\"statName\": \"TAGCount\",\r\n\t\t\t\t\"operation\": \"Float_Add\",\r\n\t\t\t\t\"modValue\": \"1\",\r\n\t\t\t\t\"modType\": \"System.Single\"\r\n\t\t\t},\r\n\t\t\t\"tagData\": null,\r\n\t\t\t\"floatieData\": null,\r\n\t\t\t\"actorBurningData\": null,\r\n\t\t\t\"vfxData\": null,\r\n\t\t\t\"instantModData\": null,\r\n\t\t\t\"poorlyMaintainedEffectData\": null\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": false,\r\n\t\t\t\t\"showInStatusPanel\": false,\r\n\t\t\t\t\"hideApplicationFloatie\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"VFXEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IndicatorVFX\",\r\n\t\t\t\t\"Name\": \"Inferno VFX\",\r\n\t\t\t\t\"Details\": \"Visual indicator of the TAG effect\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_status_sensorsImpaired\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"vfxData\": {\r\n\t\t\t\t\"vfxName\": \"vfxPrfPrtl_TAGmarker_loop\",\r\n\t\t\t\t\"attachToImpactPoint\": true,\r\n\t\t\t\t\"location\": -1,\r\n\t\t\t\t\"isAttached\": true,\r\n\t\t\t\t\"facesAttacker\": false,\r\n\t\t\t\t\"isOneShot\": false,\r\n\t\t\t\t\"duration\": -1.0\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}",
                 Order = (m) => ComponentOrder.TAG,
+                SubList = (d, id, m, c) =>
+                {
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"TAG{m.Groups["ty"].Value}", id, Array.Empty<string>(), Array.Empty<string>(), lvl);
+                },
             },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_TAG_(?:Light_Clan|Clan|C3)(?:_\\d+)?-.+$"),
+                Check = new Regex("^Weapon_TAG_(?<ty>Light_Clan|Clan)_(?<plus>\\d+)-.+$"),
                 Details = true,
                 Boni = true,
                 ExtraData = ",\r\n\t\"statusEffects\": [\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": true,\r\n\t\t\t\t\"showInStatusPanel\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"StatisticEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IncomingAttBonus\",\r\n\t\t\t\t\"Name\": \"TAG MARKED\",\r\n\t\t\t\t\"Details\": \"If targeted by non Clan LRMs/NLRMs this unit does not have an indirect fire modifier and all evasion is ignored. These effects do not stack with Artemis IV or a Narc Missile Beacon.\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_statusMarked\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"statisticData\": {\r\n\t\t\t\t\"appliesEachTick\": false,\r\n\t\t\t\t\"statName\": \"TAGCountClan\",\r\n\t\t\t\t\"operation\": \"Float_Add\",\r\n\t\t\t\t\"modValue\": \"1\",\r\n\t\t\t\t\"modType\": \"System.Single\"\r\n\t\t\t},\r\n\t\t\t\"tagData\": null,\r\n\t\t\t\"floatieData\": null,\r\n\t\t\t\"actorBurningData\": null,\r\n\t\t\t\"vfxData\": null,\r\n\t\t\t\"instantModData\": null,\r\n\t\t\t\"poorlyMaintainedEffectData\": null\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": false,\r\n\t\t\t\t\"showInStatusPanel\": false,\r\n\t\t\t\t\"hideApplicationFloatie\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"VFXEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IndicatorVFX\",\r\n\t\t\t\t\"Name\": \"Inferno VFX\",\r\n\t\t\t\t\"Details\": \"Visual indicator of the TAG effect\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_status_sensorsImpaired\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"vfxData\": {\r\n\t\t\t\t\"vfxName\": \"vfxPrfPrtl_TAGmarker_loop\",\r\n\t\t\t\t\"attachToImpactPoint\": true,\r\n\t\t\t\t\"location\": -1,\r\n\t\t\t\t\"isAttached\": true,\r\n\t\t\t\t\"facesAttacker\": false,\r\n\t\t\t\t\"isOneShot\": false,\r\n\t\t\t\t\"duration\": -1.0\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}",
                 Order = (m) => ComponentOrder.TAG,
+                SubList = (d, id, m, c) =>
+                {
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"TAG{m.Groups["ty"].Value}", id, Array.Empty<string>(), Array.Empty<string>(), lvl);
+                },
             },
             new WeaponNarcPattern()
             {
@@ -1113,6 +1322,7 @@ namespace BTX_CAC_CompatibilityDll
             public readonly Dictionary<string, ItemCollectionReplace> ICReplace = new Dictionary<string, ItemCollectionReplace>();
             public readonly Dictionary<string, WeaponAddonSplit> Splits = new Dictionary<string, WeaponAddonSplit>();
             public readonly Dictionary<ComponentOrder, List<string>> Order = new Dictionary<ComponentOrder, List<string>>();
+            public readonly Dictionary<string, UpgradeSubList> SubLists = new Dictionary<string, UpgradeSubList>();
 
             public void AddOrder(ComponentOrder order, string id)
             {
@@ -1122,6 +1332,29 @@ namespace BTX_CAC_CompatibilityDll
                     Order.Add(order, l);
                 }
                 l.Add(id);
+            }
+            public void AddSubList(string listname, string id, string[] addons, string[] ammo, int lvl)
+            {
+                UpgradeEntry e = new UpgradeEntry
+                {
+                    AllowDowngrade = lvl == 0,
+                    ID = id,
+                    ListLink = false,
+                    Weight = lvl,
+                };
+                if (SubLists.TryGetValue(listname, out UpgradeSubList l))
+                {
+                    l.MainUpgradePath = l.MainUpgradePath.AddToArray(e);
+                }
+                else
+                {
+                    SubLists.Add(listname, new UpgradeSubList
+                    {
+                        MainUpgradePath = new UpgradeEntry[] { e },
+                        Addons = addons.Select((x) => new UpgradeEntry { ID = x, ListLink = false, Weight = 0 }).ToArray(),
+                        AmmoTypes = ammo.Select((x) => new UpgradeEntry { ID = x, ListLink = false, Weight = 0 }).ToArray(),
+                    });
+                }
             }
         }
 
@@ -1141,6 +1374,7 @@ namespace BTX_CAC_CompatibilityDll
             public string Patch;
             public Func<IdCollector, List<string>> AddToList = null;
             public Func<Match, ComponentOrder> Order = null;
+            public Action<T, string, Match, IdCollector> SubList = null;
             public override void Generate(T data, Match m, string targetFolder, string id, IdCollector c)
             {
                 WriteTo(targetFolder, id, Patch);
@@ -1148,6 +1382,7 @@ namespace BTX_CAC_CompatibilityDll
                     AddToList(c)?.Add(id);
                 if (Order != null)
                     c.AddOrder(Order(m), id);
+                SubList?.Invoke(data, id, m, c);
             }
         }
         private class DeprecatedPatchPattern<T> : Pattern<T>
@@ -1212,6 +1447,7 @@ namespace BTX_CAC_CompatibilityDll
             public bool Boni = false;
             public Func<IdCollector, List<string>> AddToList = null;
             public Func<Match, ComponentOrder> Order = null;
+            public Action<WeaponDef, string, Match, IdCollector> SubList = null;
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
                 string p = Forward(data, Details, Heat, Damage, Boni);
@@ -1221,6 +1457,7 @@ namespace BTX_CAC_CompatibilityDll
                     AddToList(c)?.Add(id);
                 if (Order != null)
                     c.AddOrder(Order(m), id);
+                SubList?.Invoke(data, id, m, c);
             }
 
             public static string Forward(WeaponDef data, bool details, bool heat, bool damage = true, bool boni = false, bool acc = true)
@@ -1237,6 +1474,11 @@ namespace BTX_CAC_CompatibilityDll
                 if (boni)
                     p += $",\r\n\t\"BonusValueA\": \"{data.BonusValueA}\",\r\n\t\"BonusValueB\": \"{data.BonusValueB}\"";
                 return p;
+            }
+
+            public static string GetSLDFPrefix(Match m)
+            {
+                return m.Groups["sl"].Value == "_NU" || m.Groups["c"].Value == "C" ? "" : "SLDF";
             }
         }
         private class WeaponACPattern : Pattern<WeaponDef>
@@ -1263,6 +1505,8 @@ namespace BTX_CAC_CompatibilityDll
                 else if (s == "2")
                     o = ComponentOrder.AC2;
                 c.AddOrder(o, id);
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"{li}AC{s}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{s}", $"Ammo_AmmunitionBox_Generic_AC{s}AP", $"Ammo_AmmunitionBox_Generic_AC{s}Precision", $"Ammo_AmmunitionBox_Generic_AC{s}Tracer" }, lvl);
             }
         }
         private class WeaponUACPattern : Pattern<WeaponDef>
@@ -1343,6 +1587,10 @@ namespace BTX_CAC_CompatibilityDll
                 else if (size == "2")
                     o = ComponentOrder.AC2U;
                 c.AddOrder(o, id);
+                string sl = WeaponForwardingPattern.GetSLDFPrefix(m);
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"{sl}{ur}AC{size}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{size}" }, lvl);
+
             }
         }
         private class WeaponLBXPattern : Pattern<WeaponDef>
@@ -1371,16 +1619,24 @@ namespace BTX_CAC_CompatibilityDll
                 else if (clustersize == 2)
                     o = ComponentOrder.AC2LB;
                 c.AddOrder(o, id);
+                string sl = WeaponForwardingPattern.GetSLDFPrefix(m);
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"{sl}{m.Groups["c"].Value}LBX{clustersize}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{clustersize}", $"Ammo_AmmunitionBox_Generic_AC{clustersize}AP", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Precision", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Tracer", $"Ammo_AmmunitionBox_Generic_LB{clustersize}X" }, lvl);
             }
         }
 
         private class WeaponLRMPattern : Pattern<WeaponDef>
         {
-            public bool EnableArtemis, EnableNarc, E=false;
+            public bool EnableArtemis, EnableNarc, E = false;
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
                 if (id == "Weapon_LRM_LRM15_1-DeltaBoT")
+                {
+                    c.AddOrder(ComponentOrder.LRM15, id);
+                    c.AddSubList($"LRM15", id, new string[] { "Gear_Addon_Artemis4" }, new string[] { $"Ammo_AmmunitionBox_Generic_LRM", $"Ammo_AmmunitionBox_Generic_LRM_DF" }, 1);
                     return;
+                }
+
                 float minr = data.MinRange;
                 int size = data.ShotsWhenFired;
                 string p = WeaponForwardingPattern.Forward(data, true, false);
@@ -1398,7 +1654,7 @@ namespace BTX_CAC_CompatibilityDll
                 if (EnableNarc)
                     c.AddNarcCompatible.Add(id);
                 string s = m.Groups["size"].Value;
-                Capture n = m.Groups["n"];
+                string n = m.Groups["n"].Value;
                 ComponentOrder o = ComponentOrder.Invalid;
                 if (E)
                 {
@@ -1411,7 +1667,7 @@ namespace BTX_CAC_CompatibilityDll
                     else if (s == "5")
                         o = ComponentOrder.ELRM5;
                 }
-                else if (n != null && n.Value == "N")
+                else if (n == "N")
                 {
                     if (s == "20")
                         o = ComponentOrder.NLRM20;
@@ -1434,6 +1690,8 @@ namespace BTX_CAC_CompatibilityDll
                         o = ComponentOrder.LRM5;
                 }
                 c.AddOrder(o, id);
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"{m.Groups["c"].Value}{n}{(E ? "E" : "")}LRM{size}", id, n == "N" || E ? Array.Empty<string>() : new string[] { "Gear_Addon_Artemis4" }, new string[] { $"Ammo_AmmunitionBox_Generic_LRM", $"Ammo_AmmunitionBox_Generic_LRM_DF" }, lvl);
             }
         }
         private class WeaponSRMPattern : Pattern<WeaponDef>
@@ -1477,6 +1735,8 @@ namespace BTX_CAC_CompatibilityDll
                         o = ComponentOrder.SRM2;
                 }
                 c.AddOrder(o, id);
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"{m.Groups["c"].Value}{(Streak ? "S" : "")}SRM{s}", id, Streak ? Array.Empty<string>() : new string[] { "Gear_Addon_Artemis4" }, new string[] { "Ammo_AmmunitionBox_Generic_SRM", "Ammo_AmmunitionBox_Generic_SRMInferno", "Ammo_AmmunitionBox_Generic_SRM_DF" }, lvl);
             }
         }
         private class WeaponMRMPattern : Pattern<WeaponDef>
@@ -1490,7 +1750,8 @@ namespace BTX_CAC_CompatibilityDll
                 WriteTo(targetFolder, id, p);
                 string s = m.Groups["size"].Value;
                 ComponentOrder o = ComponentOrder.Invalid;
-                if (m.Groups["mr"].Value == "MRM")
+                string mr = m.Groups["mr"].Value;
+                if (mr == "MRM")
                 {
                     if (s == "40")
                         o = ComponentOrder.MRM40;
@@ -1510,6 +1771,8 @@ namespace BTX_CAC_CompatibilityDll
                         o = ComponentOrder.RL10;
                 }
                 c.AddOrder(o, id);
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"{mr}{s}", id, Array.Empty<string>(), mr == "MRM" ? new string[] { data.AmmoCategoryToAmmoBoxId } : Array.Empty<string>(), lvl);
             }
         }
         private class WeaponATMPattern : Pattern<WeaponDef>
@@ -1538,6 +1801,8 @@ namespace BTX_CAC_CompatibilityDll
                 else if (s == "3")
                     o = ComponentOrder.ATM3;
                 c.AddOrder(o, id);
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"ATM{s}", id, Array.Empty<string>(), new string[] { "Ammo_AmmunitionBox_Generic_ATM", "Ammo_AmmunitionBox_Generic_ATM_ER", "Ammo_AmmunitionBox_Generic_ATM_HE" }, lvl);
             }
         }
         private class WeaponNarcPattern : Pattern<WeaponDef>
@@ -1568,6 +1833,15 @@ namespace BTX_CAC_CompatibilityDll
                 else if (s == "CNarc")
                     o = ComponentOrder.NARC;
                 c.AddOrder(o, id);
+                if (int.TryParse(m.Groups["bon"].Value, out int lvl))
+                {
+                    string[] am;
+                    if (s == "Improved")
+                        am = new string[] { "Ammo_AmmunitionBox_Generic_iNarc", "Ammo_AmmunitionBox_Generic_iNarc_Explosive", "Ammo_AmmunitionBox_Generic_iNarc_Haywire" };
+                    else
+                        am = new string[] { "Ammo_AmmunitionBox_Generic_Narc", "Ammo_AmmunitionBox_Generic_Narc_Explosive" };
+                    c.AddSubList($"NARC{s}", id, Array.Empty<string>(), am, lvl);
+                }
             }
         }
     }

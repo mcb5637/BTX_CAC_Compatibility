@@ -1,0 +1,30 @@
+{
+  "MainUpgradePath": [
+    {
+      "ID": "Weapon_Laser_MediumLaserER_0-STOCK",
+      "Weight": 50,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": true
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserER_1-MagnaVI",
+      "Weight": 50,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserER_2-BrightBloom",
+      "Weight": 25,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    }
+  ],
+  "AmmoTypes": [],
+  "Addons": []
+}

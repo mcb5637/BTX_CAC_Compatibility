@@ -76,6 +76,7 @@ namespace BTX_CAC_CompatibilityDll
             InfernoExplode.Patch(harmony);
             MechAutoFixer.Register();
             MovableBlockers.RegisterValidators();
+            ComponentUpgrader.Init();
 
             try
             {

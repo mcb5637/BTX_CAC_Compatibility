@@ -116,5 +116,12 @@ namespace BTX_CAC_CompatibilityDll
         {
             return null;
         }
+
+        [FieldGet(typeof(FullXotlTables.Core), "Settings")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static FullXotlTables.ModSettings GetXotlSettings()
+        {
+            return null;
+        }
     }
 }

@@ -17,7 +17,8 @@
 		"CustomUnits",
 		"CustomVoices",
 		"IRTweaks",
-		"MechAffinity"
+		"MechAffinity",
+		"BTRandomMechComponentUpgrader"
 	],
 	"OptionallyDependsOn": [
 		"BTXMinusWeapons"
