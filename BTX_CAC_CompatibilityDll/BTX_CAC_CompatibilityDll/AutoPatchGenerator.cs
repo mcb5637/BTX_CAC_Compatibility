@@ -338,11 +338,101 @@ namespace BTX_CAC_CompatibilityDll
             Directory.CreateDirectory(ufolder);
             string lfolder = Path.Combine(targetfolder, "ulist");
             Directory.CreateDirectory(lfolder);
+
+            c.SubLists["Add_Gyro"] = new UpgradeSubList
+            {
+                MainUpgradePath = new UpgradeEntry[]
+                {
+                    new UpgradeEntry
+                    {
+                        ID = "",
+                        AllowDowngrade = true,
+                        ListLink = false,
+                        MinDate = DateTime.MinValue,
+                        Weight = 0,
+                    },
+                    new UpgradeEntry
+                    {
+                        ID = "Gear_Gyro_Coventry_Mark-75",
+                        AllowDowngrade = false,
+                        ListLink = true,
+                        MinDate = DateTime.MinValue,
+                        Weight = 3,
+                    },
+                    new UpgradeEntry
+                    {
+                        ID = "Gear_Gyro_Friedhof_Kite",
+                        AllowDowngrade = false,
+                        ListLink = true,
+                        MinDate = DateTime.MinValue,
+                        Weight = 3,
+                    },
+                    new UpgradeEntry
+                    {
+                        ID = "Gear_Gyro_Rawlings_StabiliTrak-5",
+                        AllowDowngrade = false,
+                        ListLink = true,
+                        MinDate = DateTime.MinValue,
+                        Weight = 3,
+                    },
+                },
+                AmmoTypes = Array.Empty<UpgradeEntry>(),
+                Addons = Array.Empty<UpgradeEntry>(),
+            };
+            c.SubLists["Add_Cockpit"] = new UpgradeSubList
+            {
+                MainUpgradePath = new UpgradeEntry[]
+                {
+                    new UpgradeEntry
+                    {
+                        ID = "",
+                        AllowDowngrade = true,
+                        ListLink = false,
+                        MinDate = DateTime.MinValue,
+                        Weight = 0,
+                    },
+                    new UpgradeEntry
+                    {
+                        ID = "Gear_Cockpit_Ceres_Metals_Braced",
+                        AllowDowngrade = false,
+                        ListLink = true,
+                        MinDate = DateTime.MinValue,
+                        Weight = 3,
+                    },
+                    new UpgradeEntry
+                    {
+                        ID = "Gear_Cockpit_Kallon_Industries_A6",
+                        AllowDowngrade = false,
+                        ListLink = true,
+                        MinDate = DateTime.MinValue,
+                        Weight = 3,
+                    },
+                    new UpgradeEntry
+                    {
+                        ID = "Gear_Cockpit_Majesty_M_M_60KL",
+                        AllowDowngrade = false,
+                        ListLink = true,
+                        MinDate = DateTime.MinValue,
+                        Weight = 3,
+                    },
+                    new UpgradeEntry
+                    {
+                        ID = "Gear_Cockpit_StarCorps_Improved",
+                        AllowDowngrade = false,
+                        ListLink = true,
+                        MinDate = DateTime.MinValue,
+                        Weight = 3,
+                    },
+                },
+                AmmoTypes = Array.Empty<UpgradeEntry>(),
+                Addons = Array.Empty<UpgradeEntry>(),
+            };
+
             foreach (KeyValuePair<string, UpgradeSubList> kv in c.SubLists)
             {
                 List<UpgradeEntry> l = kv.Value.MainUpgradePath.ToList();
                 l.Sort((a, b) => a.Weight - b.Weight);
-                if (l[l.Count-1].Weight == 2)
+                if (l[l.Count - 1].Weight == 2)
                 {
                     foreach (UpgradeEntry e in l)
                     {
@@ -355,7 +445,7 @@ namespace BTX_CAC_CompatibilityDll
                     Addons = kv.Value.Addons,
                     AmmoTypes = kv.Value.AmmoTypes,
                 };
-                for (int i = (int) ERating.F; i <= (int) ERating.CSP; i++)
+                for (int i = (int)ERating.F; i <= (int)ERating.CSP; i++)
                 {
                     st.MainUpgradePath = l.Select((s) =>
                     {
@@ -376,16 +466,31 @@ namespace BTX_CAC_CompatibilityDll
                 UpgradeList l = new UpgradeList
                 {
                     AllowDowngrade = false,
-                    CanRemove = new string[]{""},
+                    CanRemove = new string[] { "Gear_HeatSink_Generic_Standard", "Gear_HeatSink_Clan_Double", "Gear_HeatSink_Generic_Double" },
                     Factions = fByER((ERating)i),
                     FactionPrefixWithNumber = Array.Empty<string>(),
-                    LoadAdditions = Array.Empty<string>(),
-                    LoadUpgrades = c.SubLists.Keys.Select(x => $"{x}_{(ERating)i}").ToArray(),
-                    RemoveMaxFactor = 0,
+                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).Select(x => $"{x}_{(ERating)i}").ToArray(),
+                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HSC").Select(x => $"{x}_{(ERating)i}").ToArray(),
+                    RemoveMaxFactor = 0.25f,
                     Sort = i,
                     UpgradePerComponentChance = 1,
                 };
                 File.WriteAllText(Path.Combine(lfolder, $"Generic_{(ERating)i}.json"), JsonConvert.SerializeObject(l, Formatting.Indented));
+            }
+            {
+                UpgradeList l = new UpgradeList
+                {
+                    AllowDowngrade = false,
+                    CanRemove = new string[] { "Gear_HeatSink_Generic_Standard", "Gear_HeatSink_Clan_Double", "Gear_HeatSink_Generic_Double" },
+                    Factions = new string[] { "ClansB" },
+                    FactionPrefixWithNumber = Array.Empty<string>(),
+                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).Select(x => $"{x}_{ERating.B}").ToArray(),
+                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HS").Select(x => $"{x}_{ERating.B}").ToArray(),
+                    RemoveMaxFactor = 0.25f,
+                    Sort = ((int)ERating.CSP) + 1,
+                    UpgradePerComponentChance = 1,
+                };
+                File.WriteAllText(Path.Combine(lfolder, $"Generic_ClanB.json"), JsonConvert.SerializeObject(l, Formatting.Indented));
             }
 
             string[] fByER(ERating i)
@@ -1213,8 +1318,14 @@ namespace BTX_CAC_CompatibilityDll
             },
             new OrderOnlyPattern<MechComponentDef>()
             {
-                Check = new Regex("^Gear_Cockpit_.+$"),
+                Check = new Regex("^Gear_Cockpit_(?<ty>Ceres_Metals|Kallon_Industries|Majesty_M_M|StarCorps).+$"),
                 Order = (m) => ComponentOrder.CockpitMod,
+                SubList = (d, id, m, c) =>
+                {
+                    string ty = m.Groups["ty"].Value;
+                    int lvl = d.Description.UIName.Count(x => x == '+');
+                    c.AddSubList($"Cockpit{ty}", id, Array.Empty<string>(), Array.Empty<string>(), lvl);
+                },
             },
 
             new OrderOnlyPattern<MechComponentDef>()
@@ -1229,24 +1340,45 @@ namespace BTX_CAC_CompatibilityDll
             },
             new OrderOnlyPattern<MechComponentDef>()
             {
-                Check = new Regex("^Gear_Gyro_.+$"),
+                Check = new Regex("^Gear_Gyro_(?<ty>\\w+).+$"),
                 Order = (m) => ComponentOrder.Gyro,
+                SubList = (d, id, m, c) =>
+                {
+                    string ty = m.Groups["ty"].Value;
+                    if (ty == "Hermes")
+                        ty = "Rawlings";
+                    int lvl = d.Description.UIName.Count(x => x == '+');
+                    c.AddSubList($"Gyro{ty}", id, Array.Empty<string>(), Array.Empty<string>(), lvl);
+                },
             },
 
             new OrderOnlyPattern<MechComponentDef>()
             {
                 Check = new Regex("^Gear_HeatSink_Generic_Standard$"),
                 Order = (m) => ComponentOrder.HSink,
+                SubList = (d, id, m, c) =>
+                {
+                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 0);
+                    c.AddSubList("HSC", id, Array.Empty<string>(), Array.Empty<string>(), 0);
+                },
             },
             new OrderOnlyPattern<MechComponentDef>()
             {
-                Check = new Regex("^Gear_HeatSink_Generic_Standard$"),
-                Order = (m) => ComponentOrder.HSink,
-            },
-            new OrderOnlyPattern<MechComponentDef>()
-            {
-                Check = new Regex("^Gear_HeatSink_Generic_Double|Gear_HeatSink_Clan_Double$"),
+                Check = new Regex("^Gear_HeatSink_Generic_Double$"),
                 Order = (m) => ComponentOrder.HSinkD,
+                SubList = (d, id, m, c) =>
+                {
+                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 1, DateTime.Parse("3050-01-01"));
+                },
+            },
+            new OrderOnlyPattern<MechComponentDef>()
+            {
+                Check = new Regex("^Gear_HeatSink_Clan_Double$"),
+                Order = (m) => ComponentOrder.HSinkD,
+                SubList = (d, id, m, c) =>
+                {
+                    c.AddSubList("HSC", id, Array.Empty<string>(), Array.Empty<string>(), 1);
+                },
             },
             new OrderOnlyPattern<MechComponentDef>()
             {
@@ -1333,7 +1465,7 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 l.Add(id);
             }
-            public void AddSubList(string listname, string id, string[] addons, string[] ammo, int lvl)
+            public void AddSubList(string listname, string id, string[] addons, string[] ammo, int lvl, DateTime? md = null)
             {
                 UpgradeEntry e = new UpgradeEntry
                 {
@@ -1341,6 +1473,7 @@ namespace BTX_CAC_CompatibilityDll
                     ID = id,
                     ListLink = false,
                     Weight = lvl,
+                    MinDate = md ?? DateTime.MinValue,
                 };
                 if (SubLists.TryGetValue(listname, out UpgradeSubList l))
                 {
@@ -1426,9 +1559,11 @@ namespace BTX_CAC_CompatibilityDll
         private class OrderOnlyPattern<T> : Pattern<T>
         {
             public Func<Match, ComponentOrder> Order = null;
+            public Action<T, string, Match, IdCollector> SubList = null;
             public override void Generate(T data, Match m, string targetFolder, string id, IdCollector c)
             {
                 c.AddOrder(Order(m), id);
+                SubList?.Invoke(data, id, m, c);
             }
         }
         private class IgnorePattern<T> : Pattern<T>

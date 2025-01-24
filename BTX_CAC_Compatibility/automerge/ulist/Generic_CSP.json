@@ -6,9 +6,11 @@
   "FactionPrefixWithNumber": [],
   "UpgradePerComponentChance": 1.0,
   "CanRemove": [
-    ""
+    "Gear_HeatSink_Generic_Standard",
+    "Gear_HeatSink_Clan_Double",
+    "Gear_HeatSink_Generic_Double"
   ],
-  "RemoveMaxFactor": 0.0,
+  "RemoveMaxFactor": 0.25,
   "Additions": [],
   "AllowDowngrade": false,
   "LoadUpgrades": [
@@ -135,8 +137,22 @@
     "LRM10_CSP",
     "AC5_CSP",
     "AC2_CSP",
-    "AC10_CSP"
+    "AC10_CSP",
+    "HS_CSP",
+    "GyroHermes_Equilibriu_CSP",
+    "GyroCoventry_Mark_CSP",
+    "GyroRawlings_StabiliTrak_CSP",
+    "GyroFriedhof_Ospre_CSP",
+    "GyroFriedhof_Kit_CSP",
+    "GyroFriedhof_Sparro_CSP",
+    "CockpitStarCorps_CSP",
+    "CockpitCeres_Metals_CSP",
+    "CockpitMajesty_M_M_CSP",
+    "CockpitKallon_Industries_CSP"
   ],
-  "LoadAdditions": [],
+  "LoadAdditions": [
+    "Add_Gyro_CSP",
+    "Add_Cockpit_CSP"
+  ],
   "Sort": 6
 }

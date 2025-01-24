@@ -16,9 +16,11 @@
   "FactionPrefixWithNumber": [],
   "UpgradePerComponentChance": 1.0,
   "CanRemove": [
-    ""
+    "Gear_HeatSink_Generic_Standard",
+    "Gear_HeatSink_Clan_Double",
+    "Gear_HeatSink_Generic_Double"
   ],
-  "RemoveMaxFactor": 0.0,
+  "RemoveMaxFactor": 0.25,
   "Additions": [],
   "AllowDowngrade": false,
   "LoadUpgrades": [
@@ -145,8 +147,22 @@
     "LRM10_D",
     "AC5_D",
     "AC2_D",
-    "AC10_D"
+    "AC10_D",
+    "HS_D",
+    "GyroHermes_Equilibriu_D",
+    "GyroCoventry_Mark_D",
+    "GyroRawlings_StabiliTrak_D",
+    "GyroFriedhof_Ospre_D",
+    "GyroFriedhof_Kit_D",
+    "GyroFriedhof_Sparro_D",
+    "CockpitStarCorps_D",
+    "CockpitCeres_Metals_D",
+    "CockpitMajesty_M_M_D",
+    "CockpitKallon_Industries_D"
   ],
-  "LoadAdditions": [],
+  "LoadAdditions": [
+    "Add_Gyro_D",
+    "Add_Cockpit_D"
+  ],
   "Sort": 1
 }

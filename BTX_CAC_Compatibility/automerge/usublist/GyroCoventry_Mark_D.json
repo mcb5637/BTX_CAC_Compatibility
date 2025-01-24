@@ -1,0 +1,30 @@
+{
+  "MainUpgradePath": [
+    {
+      "ID": "Gear_Gyro_Coventry_Mark-75",
+      "Weight": 100,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": true
+    },
+    {
+      "ID": "Gear_Gyro_Coventry_Mark-85",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Gear_Gyro_Coventry_Mark-95",
+      "Weight": 0,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    }
+  ],
+  "AmmoTypes": [],
+  "Addons": []
+}

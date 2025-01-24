@@ -1,0 +1,22 @@
+{
+  "MainUpgradePath": [
+    {
+      "ID": "Gear_HeatSink_Generic_Standard",
+      "Weight": 100,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": true
+    },
+    {
+      "ID": "Gear_HeatSink_Clan_Double",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    }
+  ],
+  "AmmoTypes": [],
+  "Addons": []
+}

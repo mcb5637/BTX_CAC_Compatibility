@@ -1,17 +1,7 @@
 {
   "Upgrades": [],
   "Factions": [
-    "DavionB",
-    "KuritaB",
-    "LiaoB",
-    "MarikB",
-    "SteinerB",
-    "RasalhagueB",
-    "IvesB",
-    "TaurianConcordatB",
-    "OutworldB",
-    "MagistracyOfCanopusB",
-    "MercenariesB"
+    "ClansB"
   ],
   "FactionPrefixWithNumber": [],
   "UpgradePerComponentChance": 1.0,
@@ -148,7 +138,7 @@
     "AC5_B",
     "AC2_B",
     "AC10_B",
-    "HS_B",
+    "HSC_B",
     "GyroHermes_Equilibriu_B",
     "GyroCoventry_Mark_B",
     "GyroRawlings_StabiliTrak_B",
@@ -164,5 +154,5 @@
     "Add_Gyro_B",
     "Add_Cockpit_B"
   ],
-  "Sort": 3
+  "Sort": 7
 }
