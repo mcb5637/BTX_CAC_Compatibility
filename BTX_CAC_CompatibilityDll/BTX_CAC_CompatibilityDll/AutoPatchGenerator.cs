@@ -312,19 +312,19 @@ namespace BTX_CAC_CompatibilityDll
         // [rarity][plus]
         private static readonly int[][] UListWeights = new int[][] {
                 // F Awful
-                new int[] {100, 1, 0, 0},
+                new int[] {10, 100, 1, 0, 0},
                 // D Poor
-                new int[] {100, 5, 1, 0},
+                new int[] {5, 100, 5, 1, 0},
                 // C Average
-                new int[] {100, 10, 5, 1},
+                new int[] {1, 100, 10, 5, 1},
                 // B Very Good
-                new int[] {100, 20, 10, 5},
+                new int[] {0, 100, 20, 10, 5},
                 // A Exceptional
-                new int[] {50, 50, 25, 25},
+                new int[] {0, 50, 50, 25, 25},
                 // CS ComStar
-                new int[] {1, 50, 100, 50},
+                new int[] {0, 1, 50, 100, 50},
                 // CSP ComStar+
-                new int[] {0, 0, 0, 100},
+                new int[] {0, 0, 0, 0, 100},
             };
         private static readonly string[] FactionRoots = new string[]
         {
@@ -440,26 +440,12 @@ namespace BTX_CAC_CompatibilityDll
                             e.Weight = 3;
                     }
                 }
-                UpgradeSubList st = new UpgradeSubList()
+                foreach (UpgradeEntry e in l)
                 {
-                    Addons = kv.Value.Addons,
-                    AmmoTypes = kv.Value.AmmoTypes,
-                };
-                for (int i = (int)ERating.F; i <= (int)ERating.CSP; i++)
-                {
-                    st.MainUpgradePath = l.Select((s) =>
-                    {
-                        return new UpgradeEntry()
-                        {
-                            ID = s.ID,
-                            AllowDowngrade = s.AllowDowngrade,
-                            ListLink = s.ListLink,
-                            MinDate = s.MinDate,
-                            Weight = UListWeights[i][Math.Max(Math.Min(s.Weight, 3), 0)],
-                        };
-                    }).ToArray();
-                    File.WriteAllText(Path.Combine(ufolder, $"{kv.Key}_{(ERating)i}.json"), JsonConvert.SerializeObject(st, Formatting.Indented));
+                    e.Weight++; // -1 weapons exists
                 }
+                kv.Value.MainUpgradePath = l.ToArray();
+                File.WriteAllText(Path.Combine(ufolder, $"{kv.Key}.json"), JsonConvert.SerializeObject(kv.Value, Formatting.Indented));
             }
             for (int i = (int)ERating.F; i <= (int)ERating.CSP; i++)
             {
@@ -469,11 +455,12 @@ namespace BTX_CAC_CompatibilityDll
                     CanRemove = new string[] { "Gear_HeatSink_Generic_Standard", "Gear_HeatSink_Clan_Double", "Gear_HeatSink_Generic_Double" },
                     Factions = fByER((ERating)i),
                     FactionPrefixWithNumber = Array.Empty<string>(),
-                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).Select(x => $"{x}_{(ERating)i}").ToArray(),
-                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HSC").Select(x => $"{x}_{(ERating)i}").ToArray(),
+                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).ToArray(),
+                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HSC").ToArray(),
                     RemoveMaxFactor = 0.25f,
                     Sort = i,
                     UpgradePerComponentChance = 1,
+                    WeightLookupTable = UListWeights[i],
                 };
                 File.WriteAllText(Path.Combine(lfolder, $"Generic_{(ERating)i}.json"), JsonConvert.SerializeObject(l, Formatting.Indented));
             }
@@ -484,11 +471,12 @@ namespace BTX_CAC_CompatibilityDll
                     CanRemove = new string[] { "Gear_HeatSink_Generic_Standard", "Gear_HeatSink_Clan_Double", "Gear_HeatSink_Generic_Double" },
                     Factions = new string[] { "ClansB" },
                     FactionPrefixWithNumber = Array.Empty<string>(),
-                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).Select(x => $"{x}_{ERating.B}").ToArray(),
-                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HS").Select(x => $"{x}_{ERating.B}").ToArray(),
+                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).ToArray(),
+                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HS").ToArray(),
                     RemoveMaxFactor = 0.25f,
                     Sort = ((int)ERating.CSP) + 1,
                     UpgradePerComponentChance = 1,
+                    WeightLookupTable = UListWeights[(int)ERating.B],
                 };
                 File.WriteAllText(Path.Combine(lfolder, $"Generic_ClanB.json"), JsonConvert.SerializeObject(l, Formatting.Indented));
             }

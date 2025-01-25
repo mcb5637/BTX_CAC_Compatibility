@@ -1,0 +1,38 @@
+{
+  "MainUpgradePath": [
+    {
+      "ID": "Weapon_Laser_MediumLaserPulse_0-STOCK",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": true
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserPulse_Sa_0-STOCK",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": true
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserPulse_1-RakerIV",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserPulse_2-Magna400P",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    }
+  ],
+  "AmmoTypes": [],
+  "Addons": []
+}

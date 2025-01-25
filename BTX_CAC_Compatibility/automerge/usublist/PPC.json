@@ -1,0 +1,70 @@
+{
+  "MainUpgradePath": [
+    {
+      "ID": "Weapon_PPC_PPC_-1-Magna",
+      "Weight": 0,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_PPC_PPC_0-STOCK",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": true
+    },
+    {
+      "ID": "Weapon_PPC_PPC_1-Tiegart",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_PPC_PPC_1-Donal",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_PPC_PPC_1-Ceres_Arms",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_PPC_PPC_2-Tiegart",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_PPC_PPC_2-Donal",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_PPC_PPC_2-Ceres_Arms",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    }
+  ],
+  "AmmoTypes": [],
+  "Addons": []
+}
