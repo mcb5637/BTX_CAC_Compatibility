@@ -42,12 +42,12 @@ namespace BTX_CAC_CompatibilityDll
             try
             {
                 Sett = JsonConvert.DeserializeObject<Settings>(settingsJSON);
-                ItemCollectionDef_FromCSV.Replaces = JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "automerge\\itemcollectionreplace.json")));
+                ItemCollectionDef_FromCSV.Replaces = JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "automerge", "itemcollectionreplace.json")));
                 foreach (KeyValuePair<string, ItemCollectionReplace> kv in JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "itemcollectionreplace.json"))))
                 {
                     ItemCollectionDef_FromCSV.Replaces[kv.Key] = kv.Value;
                 }
-                Splits = JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "automerge\\addonsplit.json")));
+                Splits = JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "automerge", "addonsplit.json")));
                 foreach (KeyValuePair<string, WeaponAddonSplit> kv in JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "addonsplit.json")))) {
                     Splits[kv.Key] = kv.Value;
                 }
