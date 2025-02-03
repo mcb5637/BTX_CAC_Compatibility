@@ -859,7 +859,7 @@ namespace BTX_CAC_CompatibilityDll
                     string cl = m.Groups["c"].Value;
                     string hl = m.Groups["hl"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"{cl}MG{hl}", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"{cl}MG{hl}", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
                 },
             },
             new WeaponLRMPattern()
@@ -999,8 +999,23 @@ namespace BTX_CAC_CompatibilityDll
             },
             new OrderOnlyPattern<WeaponDef>()
             {
-                Check = new Regex("^Weapon_AMSCAC_.+$"),
+                Check = new Regex("^Weapon_AMSCAC_(?<plus>\\d+)$"),
                 Order = (m) => ComponentOrder.AMS,
+                SubList = (d, id, m, c) =>
+                {
+                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                        c.AddSubList($"AMS", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
+                },
+            },
+            new OrderOnlyPattern<WeaponDef>()
+            {
+                Check = new Regex("^Weapon_AMSCAC_Clan$"),
+                Order = (m) => ComponentOrder.AMS,
+                //SubList = (d, id, m, c) =>
+                //{
+                //    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                //        c.AddSubList($"CAMS", id, Array.Empty<string>(), Array.Empty<string>(), lvl);
+                //},
             },
             new IgnorePattern<WeaponDef>()
             {
@@ -1832,7 +1847,32 @@ namespace BTX_CAC_CompatibilityDll
                 if (id == "Weapon_LRM_LRM15_1-DeltaBoT")
                 {
                     c.AddOrder(ComponentOrder.LRM15, id);
-                    c.AddSubList($"LRM15", id, new string[] { "Gear_Addon_Artemis4" }, new string[] { $"Ammo_AmmunitionBox_Generic_LRM", $"Ammo_AmmunitionBox_Generic_LRM_DF" }, 1);
+                    c.AddSubList($"LRM15", id, new UpgradeEntry[] {
+                                new UpgradeEntry
+                                {
+                                    ID = "",
+                                    AllowDowngrade = false,
+                                    ListLink = false,
+                                    MinDate = DateTime.MinValue,
+                                    Weight = 0,
+                                },
+                                new UpgradeEntry
+                                {
+                                    ID = "Gear_Addon_Artemis4",
+                                    AllowDowngrade = false,
+                                    ListLink = false,
+                                    MinDate = HCDate,
+                                    Weight = 4,
+                                },
+                                new UpgradeEntry
+                                {
+                                    ID = "Gear_Addon_Artemis4",
+                                    AllowDowngrade = false,
+                                    ListLink = false,
+                                    MinDate = DateTime.MinValue,
+                                    Weight = 5,
+                                },
+                            }, new string[] { $"Ammo_AmmunitionBox_Generic_LRM", $"Ammo_AmmunitionBox_Generic_LRM_DF" }, 1);
                     return;
                 }
 
@@ -1894,7 +1934,6 @@ namespace BTX_CAC_CompatibilityDll
                     UpgradeEntry[] ad;
                     if (EnableArtemis)
                         ad = new UpgradeEntry[] {
-
                                 new UpgradeEntry
                                 {
                                     ID = "",

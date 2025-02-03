@@ -101,8 +101,24 @@
   ],
   "Addons": [
     {
-      "ID": "Gear_Addon_Artemis4",
+      "ID": "",
       "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Gear_Addon_Artemis4",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Gear_Addon_Artemis4",
+      "Weight": 6,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
