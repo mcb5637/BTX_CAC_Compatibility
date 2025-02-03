@@ -53,5 +53,10 @@
 		"ID": "Gear_SensorCAC_LiaoProtoECM",
 		"Type": "Upgrade",
 		"Amount": -1
+	},
+	"Gear_Mortar_MechMortar": {
+		"ID": "itemCollection_thumperloader",
+		"Type": "Reference",
+		"Amount": 0
 	}
 }

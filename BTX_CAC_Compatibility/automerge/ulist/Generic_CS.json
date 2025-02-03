@@ -70,8 +70,8 @@
     "ELRM20",
     "ELRM15",
     "ELRM10",
-    "SLDFRAC5",
-    "SLDFRAC2",
+    "RAC5",
+    "RAC2",
     "LAC5",
     "LAC2",
     "SSRM6",
@@ -109,10 +109,10 @@
     "CLRM15",
     "CLRM10",
     "GaussC",
-    "SLDFCUAC5",
-    "SLDFCUAC2",
-    "SLDFCUAC20",
-    "SLDFCUAC10",
+    "CUAC5",
+    "CUAC2",
+    "CUAC20",
+    "CUAC10",
     "CLBX5",
     "CLBX2",
     "CLBX20",
@@ -159,7 +159,9 @@
     1,
     50,
     100,
-    50
+    50,
+    10,
+    1
   ],
   "Sort": 5
 }

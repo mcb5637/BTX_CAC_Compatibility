@@ -71,6 +71,46 @@
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_SmallLaserER_NU_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_SmallLaserPulse_NU_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_SmallLaserXPulse_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3065-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_SmallLaserER_0-STOCK",
+      "Weight": 6,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_SmallLaserPulse_0-STOCK",
+      "Weight": 6,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
     }
   ],
   "AmmoTypes": [],

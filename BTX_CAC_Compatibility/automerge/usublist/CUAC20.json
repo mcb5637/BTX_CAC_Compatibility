@@ -1,7 +1,7 @@
 {
   "MainUpgradePath": [
     {
-      "ID": "Weapon_Autocannon_CUAC10_0-STOCK",
+      "ID": "Weapon_Autocannon_CUAC20_0-STOCK",
       "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -9,7 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_1-TypeDL",
+      "ID": "Weapon_Autocannon_CUAC20_1-Type57",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -17,7 +17,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_1-Type9",
+      "ID": "Weapon_Autocannon_CUAC20_1-ModelSH",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -25,7 +25,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_1-Type9-A",
+      "ID": "Weapon_Autocannon_CUAC20_1-Devastator",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,7 +33,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_1-Irrlicht",
+      "ID": "Weapon_Autocannon_CUAC20_1-Aero-Model6",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,7 +41,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_2-TypeDL",
+      "ID": "Weapon_Autocannon_CUAC20_2-Type57",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -49,7 +49,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_2-Type9",
+      "ID": "Weapon_Autocannon_CUAC20_2-ModelSH",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -57,7 +57,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_2-Type9-A",
+      "ID": "Weapon_Autocannon_CUAC20_2-Devastator",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -65,7 +65,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_2-Irrlicht",
+      "ID": "Weapon_Autocannon_CUAC20_2-Aero-Model6",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -75,8 +75,8 @@
   ],
   "AmmoTypes": [
     {
-      "ID": "Ammo_AmmunitionBox_Generic_AC10",
-      "Weight": 0,
+      "ID": "Ammo_AmmunitionBox_Generic_AC20",
+      "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,

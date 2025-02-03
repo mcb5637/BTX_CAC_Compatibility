@@ -79,6 +79,46 @@
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserER_NU_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserPulse_NU_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserXPulse_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3065-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserER_0-STOCK",
+      "Weight": 6,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserPulse_0-STOCK",
+      "Weight": 6,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
     }
   ],
   "AmmoTypes": [],
