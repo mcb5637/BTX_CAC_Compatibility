@@ -140,6 +140,8 @@
     "AC2",
     "AC10",
     "HSC",
+    "CockpitMajesty_M_M",
+    "CockpitCeres_Metals",
     "GyroHermes_Equilibriu",
     "GyroCoventry_Mark",
     "GyroRawlings_StabiliTrak",
@@ -147,8 +149,6 @@
     "GyroFriedhof_Kit",
     "GyroFriedhof_Sparro",
     "CockpitStarCorps",
-    "CockpitCeres_Metals",
-    "CockpitMajesty_M_M",
     "CockpitKallon_Industries"
   ],
   "LoadAdditions": [

@@ -1436,7 +1436,8 @@ namespace BTX_CAC_CompatibilityDll
                 Order = (m) => ComponentOrder.HSinkD,
                 SubList = (d, id, m, c) =>
                 {
-                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 1, HCDate);
+                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 4, HCDate);
+                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 5);
                 },
             },
             new OrderOnlyPattern<MechComponentDef>()
@@ -1445,7 +1446,7 @@ namespace BTX_CAC_CompatibilityDll
                 Order = (m) => ComponentOrder.HSinkD,
                 SubList = (d, id, m, c) =>
                 {
-                    c.AddSubList("HSC", id, Array.Empty<string>(), Array.Empty<string>(), 1);
+                    c.AddSubList("HSC", id, Array.Empty<string>(), Array.Empty<string>(), 3);
                 },
             },
             new OrderOnlyPattern<MechComponentDef>()
