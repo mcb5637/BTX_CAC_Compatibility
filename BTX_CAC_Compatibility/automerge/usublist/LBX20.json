@@ -9,14 +9,6 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_Autocannon_LB20X_NU_1-Shengli",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
       "ID": "Weapon_Autocannon_LB20X_NU_1-Omnitech",
       "Weight": 2,
       "RandomLimit": 0.0,
@@ -25,7 +17,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_LB20X_NU_2-TharHes",
+      "ID": "Weapon_Autocannon_LB20X_NU_1-Shengli",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_LB20X_NU_2-Omnitech",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,7 +41,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_LB20X_NU_2-Omnitech",
+      "ID": "Weapon_Autocannon_LB20X_NU_2-TharHes",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

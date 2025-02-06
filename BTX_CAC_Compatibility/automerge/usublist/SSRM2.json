@@ -9,14 +9,6 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_SRM_SSRM2_1-Holly",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
       "ID": "Weapon_SRM_SSRM2_1-Coventry",
       "Weight": 2,
       "RandomLimit": 0.0,
@@ -25,7 +17,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_SRM_SSRM2_2-Valiant",
+      "ID": "Weapon_SRM_SSRM2_1-Holly",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_SRM_SSRM2_2-Coventry",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,7 +41,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_SRM_SSRM2_2-Coventry",
+      "ID": "Weapon_SRM_SSRM2_2-Valiant",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -67,7 +67,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Ammo_AmmunitionBox_Generic_SRMInferno",
+      "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
       "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -75,7 +75,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
+      "ID": "Ammo_AmmunitionBox_Generic_SRMInferno",
       "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

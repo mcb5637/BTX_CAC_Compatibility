@@ -9,15 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_Laser_CMicroLaserPulse_1-Series1",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Laser_CMicroLaserPulse_1-Raid",
+      "ID": "Weapon_Laser_CMicroLaserPulse_1-GeneralSystems",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,7 +25,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CMicroLaserPulse_1-GeneralSystems",
+      "ID": "Weapon_Laser_CMicroLaserPulse_1-Raid",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,15 +33,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CMicroLaserPulse_2-Series1",
-      "Weight": 4,
+      "ID": "Weapon_Laser_CMicroLaserPulse_1-Series1",
+      "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CMicroLaserPulse_2-Raid",
+      "ID": "Weapon_Laser_CMicroLaserPulse_2-GeneralSystems",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -65,7 +57,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CMicroLaserPulse_2-GeneralSystems",
+      "ID": "Weapon_Laser_CMicroLaserPulse_2-Raid",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CMicroLaserPulse_2-Series1",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

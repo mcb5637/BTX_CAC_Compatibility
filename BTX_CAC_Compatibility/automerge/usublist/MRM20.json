@@ -9,14 +9,6 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_MRM_MRM20_1-Maltex",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
       "ID": "Weapon_MRM_MRM20_1-Hellespont",
       "Weight": 2,
       "RandomLimit": 0.0,
@@ -25,7 +17,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_MRM_MRM20_2-Skobel",
+      "ID": "Weapon_MRM_MRM20_1-Maltex",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_MRM_MRM20_2-Hellespont",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,7 +41,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_MRM_MRM20_2-Hellespont",
+      "ID": "Weapon_MRM_MRM20_2-Skobel",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

@@ -9,14 +9,6 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_Autocannon_UAC10_NU_1-Mydron",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
       "ID": "Weapon_Autocannon_UAC10_NU_1-Imperator",
       "Weight": 2,
       "RandomLimit": 0.0,
@@ -25,7 +17,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_UAC10_NU_2-Mydron",
+      "ID": "Weapon_Autocannon_UAC10_NU_1-Mydron",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_UAC10_NU_2-Federated",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,7 +41,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_UAC10_NU_2-Federated",
+      "ID": "Weapon_Autocannon_UAC10_NU_2-Mydron",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

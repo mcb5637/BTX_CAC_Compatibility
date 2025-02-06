@@ -9,15 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_Laser_CSmallLaserER_1-SeriesAE1",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Laser_CSmallLaserER_1-Series1NC",
+      "ID": "Weapon_Laser_CSmallLaserER_1-Series1",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,7 +25,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CSmallLaserER_1-Series1",
+      "ID": "Weapon_Laser_CSmallLaserER_1-Series1NC",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,15 +33,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CSmallLaserER_2-SeriesAE1",
-      "Weight": 4,
+      "ID": "Weapon_Laser_CSmallLaserER_1-SeriesAE1",
+      "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CSmallLaserER_2-Series1NC",
+      "ID": "Weapon_Laser_CSmallLaserER_2-Series1",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -65,7 +57,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CSmallLaserER_2-Series1",
+      "ID": "Weapon_Laser_CSmallLaserER_2-Series1NC",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CSmallLaserER_2-SeriesAE1",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

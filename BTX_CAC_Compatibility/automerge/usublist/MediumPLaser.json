@@ -49,14 +49,6 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_MediumLaserPulse_NU_1-Sutel",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
       "ID": "Weapon_Laser_MediumLaserPulse_NU_1-ExoStar",
       "Weight": 2,
       "RandomLimit": 0.0,
@@ -73,39 +65,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_MediumLaserPulse_NU_2-Intek",
-      "Weight": 3,
+      "ID": "Weapon_Laser_MediumLaserPulse_NU_1-Sutel",
+      "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_MediumLaserPulse_NU_2-ExoStar",
-      "Weight": 3,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Laser_MediumLaserPulse_NU_2-Diverse_Optics",
-      "Weight": 3,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Laser_CMediumLaserPulse_2-Series14a",
-      "Weight": 3,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Laser_CMediumLaserPulse_2-PPS-XIX",
+      "ID": "Weapon_Laser_CMediumLaserPulse_2-Kolibri",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -121,7 +89,39 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CMediumLaserPulse_2-Kolibri",
+      "ID": "Weapon_Laser_CMediumLaserPulse_2-PPS-XIX",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CMediumLaserPulse_2-Series14a",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserPulse_NU_2-Diverse_Optics",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserPulse_NU_2-ExoStar",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_MediumLaserPulse_NU_2-Intek",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

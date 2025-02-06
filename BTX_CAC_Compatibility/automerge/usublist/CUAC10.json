@@ -9,7 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_1-TypeDL",
+      "ID": "Weapon_Autocannon_CUAC10_1-Irrlicht",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,7 +33,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_1-Irrlicht",
+      "ID": "Weapon_Autocannon_CUAC10_1-TypeDL",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,7 +41,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_2-TypeDL",
+      "ID": "Weapon_Autocannon_CUAC10_2-Irrlicht",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -65,7 +65,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_CUAC10_2-Irrlicht",
+      "ID": "Weapon_Autocannon_CUAC10_2-TypeDL",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

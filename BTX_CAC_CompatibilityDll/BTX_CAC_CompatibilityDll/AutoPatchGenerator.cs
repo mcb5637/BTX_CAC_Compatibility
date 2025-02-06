@@ -55,32 +55,6 @@ namespace BTX_CAC_CompatibilityDll
             AC2Li,
 
 
-            HPPC,
-            ERPPC,
-            SPPC,
-            PPC,
-            PPCCap,
-
-            Plasma,
-
-            COILL,
-            BLaser,
-            HLLaser,
-            XPLLaser,
-            PLLaser,
-            ERLLaser,
-            LLaser,
-
-            COILM,
-            HMLaser,
-            XPMLaser,
-            PMLaser,
-            ERMLaser,
-            MLaser,
-
-            TAG,
-
-
 
             ATM12,
             ATM9,
@@ -123,6 +97,34 @@ namespace BTX_CAC_CompatibilityDll
 
             INARC,
             NARC,
+
+
+            HPPC,
+            ERPPC,
+            SPPC,
+            PPC,
+            PPCCap,
+
+            Plasma,
+
+            COILL,
+            BLaser,
+            HLLaser,
+            XPLLaser,
+            PLLaser,
+            ERLLaser,
+            LLaser,
+
+            COILM,
+            HMLaser,
+            XPMLaser,
+            PMLaser,
+            ERMLaser,
+            MLaser,
+
+            TAG,
+
+
 
 
             GaussMagshot,
@@ -358,8 +360,8 @@ namespace BTX_CAC_CompatibilityDll
                     CanRemove = new string[] { "Gear_HeatSink_Generic_Standard", "Gear_HeatSink_Clan_Double", "Gear_HeatSink_Generic_Double" },
                     Factions = fByER((ERating)i),
                     FactionPrefixWithNumber = Array.Empty<string>(),
-                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).ToArray(),
-                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HSC").ToArray(),
+                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).OrderBy(x => x).ToArray(),
+                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HSC").OrderBy(x => x).ToArray(),
                     RemoveMaxFactor = 0.25f,
                     Sort = i,
                     UpgradePerComponentChance = 1,
@@ -374,8 +376,8 @@ namespace BTX_CAC_CompatibilityDll
                     CanRemove = new string[] { "Gear_HeatSink_Generic_Standard", "Gear_HeatSink_Clan_Double", "Gear_HeatSink_Generic_Double" },
                     Factions = new string[] { "ClansB" },
                     FactionPrefixWithNumber = Array.Empty<string>(),
-                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).ToArray(),
-                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HS").ToArray(),
+                    LoadAdditions = c.SubLists.Keys.Where(x => x.StartsWith("Add")).OrderBy(x => x).ToArray(),
+                    LoadUpgrades = c.SubLists.Keys.Where(x => !x.StartsWith("Add") && x != "HS").OrderBy(x => x).ToArray(),
                     RemoveMaxFactor = 0.25f,
                     Sort = ((int)ERating.CSP) + 1,
                     UpgradePerComponentChance = 1,
@@ -548,7 +550,7 @@ namespace BTX_CAC_CompatibilityDll
         private static UpgradeEntry[] FixWeights(UpgradeEntry[] u)
         {
             List<UpgradeEntry> l = u.ToList();
-            l.Sort((a, b) => a.Weight - b.Weight);
+            l.Sort((a, b) => a.Weight == b.Weight ? a.ID.CompareTo(b.ID) : a.Weight - b.Weight);
             if (!l.Any(x => x.Weight == 3))
             {
                 foreach (UpgradeEntry e in l)

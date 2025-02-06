@@ -9,7 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_LRM_LRM20_1-Telos",
+      "ID": "Weapon_LRM_LRM20_1-Delta",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -25,7 +25,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_LRM_LRM20_1-Delta",
+      "ID": "Weapon_LRM_LRM20_1-Telos",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,15 +33,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_LRM_LRM20_2-Zeus",
-      "Weight": 3,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_LRM_LRM20_2-Telos",
+      "ID": "Weapon_LRM_LRM20_2-Delta",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -57,7 +49,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_LRM_LRM20_2-Delta",
+      "ID": "Weapon_LRM_LRM20_2-Telos",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_LRM_LRM20_2-Zeus",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

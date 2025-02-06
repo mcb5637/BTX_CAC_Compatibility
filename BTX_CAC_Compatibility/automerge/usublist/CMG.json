@@ -17,7 +17,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_MachineGun_CMachineGun_2-SeriesXII",
+      "ID": "Weapon_MachineGun_CMachineGun_2-SeriesIX",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -25,7 +25,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_MachineGun_CMachineGun_2-SeriesIX",
+      "ID": "Weapon_MachineGun_CMachineGun_2-SeriesXII",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

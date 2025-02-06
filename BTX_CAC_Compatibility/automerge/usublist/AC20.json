@@ -9,15 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_Autocannon_AC20_1-Mydron",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Autocannon_AC20_1-Imperator",
+      "ID": "Weapon_Autocannon_AC20_1-Defiance",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,7 +25,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_AC20_1-Defiance",
+      "ID": "Weapon_Autocannon_AC20_1-Imperator",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,23 +33,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_AC20_2-Mydron",
-      "Weight": 3,
+      "ID": "Weapon_Autocannon_AC20_1-Mydron",
+      "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_AC20_2-Kali_Yama",
-      "Weight": 3,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Autocannon_AC20_2-Imperator",
+      "ID": "Weapon_Autocannon_AC20_2-Defiance",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -73,7 +57,23 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_AC20_2-Defiance",
+      "ID": "Weapon_Autocannon_AC20_2-Imperator",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC20_2-Kali_Yama",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC20_2-Mydron",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -89,14 +89,6 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_UAC20_NU_0-STOCK",
-      "Weight": 5,
-      "RandomLimit": 0.0,
-      "MinDate": "3050-01-01T00:00:00",
-      "ListLink": true,
-      "AllowDowngrade": false
-    },
-    {
       "ID": "Weapon_Autocannon_LB20X_NU_0-STOCK",
       "Weight": 5,
       "RandomLimit": 0.0,
@@ -105,7 +97,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_UAC20_0-STOCK",
+      "ID": "Weapon_Autocannon_UAC20_NU_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_LB20X_0-STOCK",
       "Weight": 6,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -113,7 +113,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_LB20X_0-STOCK",
+      "ID": "Weapon_Autocannon_UAC20_0-STOCK",
       "Weight": 6,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

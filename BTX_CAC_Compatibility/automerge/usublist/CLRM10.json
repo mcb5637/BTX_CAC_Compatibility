@@ -9,15 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_LRM_CLRM10_1-TypeXa",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_LRM_CLRM10_1-TypeX",
+      "ID": "Weapon_LRM_CLRM10_1-MK46TII",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,7 +25,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_LRM_CLRM10_1-MK46TII",
+      "ID": "Weapon_LRM_CLRM10_1-TypeX",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,15 +33,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_LRM_CLRM10_2-TypeXa",
-      "Weight": 4,
+      "ID": "Weapon_LRM_CLRM10_1-TypeXa",
+      "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_LRM_CLRM10_2-TypeX",
+      "ID": "Weapon_LRM_CLRM10_2-MK46TII",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -65,7 +57,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_LRM_CLRM10_2-MK46TII",
+      "ID": "Weapon_LRM_CLRM10_2-TypeX",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_LRM_CLRM10_2-TypeXa",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
