@@ -322,9 +322,9 @@ namespace BTX_CAC_CompatibilityDll
                 // C Average
                 new int[] {1, 100, 10, 5, 1, 0, 0},
                 // B Very Good
-                new int[] {0, 100, 20, 10, 5, 0, 1},
+                new int[] {0, 100, 20, 10, 5, 1, 0},
                 // A Exceptional
-                new int[] {0, 50, 50, 25, 25, 0, 5},
+                new int[] {0, 50, 50, 25, 25, 5, 0},
                 // CS ComStar
                 new int[] {0, 1, 50, 100, 50, 10, 1},
                 // CSP ComStar+

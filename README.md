@@ -148,8 +148,6 @@ TODO BEX 2.0:
 - weather acc modifiers?
 - component upgrader ammo/addon
 - TTS addon?
-- loc from RT
-- cv mac from RT
 
 TODO List:
 - imp sensor unlocks sensorlock without skill (add to irtweaks)
