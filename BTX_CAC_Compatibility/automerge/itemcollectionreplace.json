@@ -630,18 +630,168 @@
     "Amount": -1
   },
   "Weapon_Inferno_Inferno2_2-Marklin_Mini": {
-    "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno",
+    "ID": "Ammo_AmmunitionBox_Generic_SRMInferno",
     "Type": "AmmunitionBox",
     "Amount": -1
   },
   "Weapon_Inferno_Inferno2_1-Harvester": {
-    "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno_Half",
+    "ID": "Ammo_AmmunitionBox_Generic_SRMInferno_Half",
     "Type": "AmmunitionBox",
     "Amount": -1
   },
   "Weapon_Inferno_Inferno2_0-STOCK": {
-    "ID": "Ammo_AmmunitionBox_Generic_SRM_Inferno_Half",
+    "ID": "Ammo_AmmunitionBox_Generic_SRMInferno_Half",
     "Type": "AmmunitionBox",
     "Amount": -1
+  },
+  "Ammo_AmmunitionBox_Generic_AC20": {
+    "ID": "itemcollection_Ammunition_AC20",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_LRM": {
+    "ID": "itemcollection_Ammunition_LRM",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC10": {
+    "ID": "itemcollection_Ammunition_AC10",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_SRM_DF": {
+    "ID": "itemcollection_Ammunition_SRM_DF",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_LRM_DF": {
+    "ID": "itemcollection_Ammunition_LRM_DF",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_SBGAUSS": {
+    "ID": "itemcollection_Ammunition_SBGAUSS",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_MAGGAUSS": {
+    "ID": "itemcollection_Ammunition_MAGGAUSS",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_LGAUSS": {
+    "ID": "itemcollection_Ammunition_LGAUSS",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_HGAUSS": {
+    "ID": "itemcollection_Ammunition_HGAUSS",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC5Tracer": {
+    "ID": "itemcollection_Ammunition_AC5Tracer",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC5Precision": {
+    "ID": "itemcollection_Ammunition_AC5Precision",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC5AP": {
+    "ID": "itemcollection_Ammunition_AC5AP",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC2Tracer": {
+    "ID": "itemcollection_Ammunition_AC2Tracer",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC2Precision": {
+    "ID": "itemcollection_Ammunition_AC2Precision",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC2AP": {
+    "ID": "itemcollection_Ammunition_AC2AP",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC20Tracer": {
+    "ID": "itemcollection_Ammunition_AC20Tracer",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC20Precision": {
+    "ID": "itemcollection_Ammunition_AC20Precision",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC20AP": {
+    "ID": "itemcollection_Ammunition_AC20AP",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC10Tracer": {
+    "ID": "itemcollection_Ammunition_AC10Tracer",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC10Precision": {
+    "ID": "itemcollection_Ammunition_AC10Precision",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC10AP": {
+    "ID": "itemcollection_Ammunition_AC10AP",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_SRMInferno": {
+    "ID": "itemcollection_Ammunition_SRMInferno",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_LB5X": {
+    "ID": "itemcollection_Ammunition_LB5X",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_LB2X": {
+    "ID": "itemcollection_Ammunition_LB2X",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_LB20X": {
+    "ID": "itemcollection_Ammunition_LB20X",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_LB10X": {
+    "ID": "itemcollection_Ammunition_LB10X",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_SRM": {
+    "ID": "itemcollection_Ammunition_SRM",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_GAUSS": {
+    "ID": "itemcollection_Ammunition_GAUSS",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC5": {
+    "ID": "itemcollection_Ammunition_AC5",
+    "Type": "Reference",
+    "Amount": 0
+  },
+  "Ammo_AmmunitionBox_Generic_AC2": {
+    "ID": "itemcollection_Ammunition_AC2",
+    "Type": "Reference",
+    "Amount": 0
   }
 }

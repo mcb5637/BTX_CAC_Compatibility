@@ -58,7 +58,7 @@ namespace BTX_CAC_CompatibilityDll
             return l;
         }
 
-        public static void Init()
+        public static void Register()
         {
             MechProcessor.GetUpgradeList = GetUpgradeList;
         }

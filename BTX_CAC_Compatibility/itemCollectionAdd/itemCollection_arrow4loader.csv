@@ -1,4 +1,6 @@
 itemCollection_arrow4loader,,,
 Weapon_MortarCAC_Arrow4,Weapon,1,1
 Gear_Addon_Artillery_Loader,Upgrade,1,1
-Ammo_AmmunitionBox_Generic_Arrow4,AmmunitionBox,0,10
+Ammo_AmmunitionBox_Generic_Arrow4,AmmunitionBox,2,10
+Ammo_AmmunitionBox_Generic_Arrow4_Double,AmmunitionBox,2,10
+Ammo_AmmunitionBox_Generic_Arrow4_Triple,AmmunitionBox,2,10

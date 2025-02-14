@@ -1,6 +1,7 @@
 {
 	"TargetIDs": [
 		"Ammo_AmmunitionBox_Generic_SRM",
+		"Ammo_AmmunitionBox_Generic_SRM_Double",
 		"Ammo_AmmunitionBox_Generic_SRM_Half"
 	],
 	"Instructions": [

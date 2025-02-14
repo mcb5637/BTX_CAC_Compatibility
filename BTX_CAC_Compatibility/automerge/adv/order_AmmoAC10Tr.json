@@ -1,6 +1,8 @@
 {
 	"TargetIDs": [
-		"Ammo_AmmunitionBox_Generic_AC10Tracer"
+		"Ammo_AmmunitionBox_Generic_AC10Tracer",
+		"Ammo_AmmunitionBox_Generic_AC10Tracer_Double",
+		"Ammo_AmmunitionBox_Generic_AC10Tracer_Triple"
 	],
 	"Instructions": [
 		{

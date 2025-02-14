@@ -18,7 +18,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using UIWidgets;
@@ -48,7 +47,8 @@ namespace BTX_CAC_CompatibilityDll
                     ItemCollectionDef_FromCSV.Replaces[kv.Key] = kv.Value;
                 }
                 Splits = JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "automerge", "addonsplit.json")));
-                foreach (KeyValuePair<string, WeaponAddonSplit> kv in JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "addonsplit.json")))) {
+                foreach (KeyValuePair<string, WeaponAddonSplit> kv in JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "addonsplit.json"))))
+                {
                     Splits[kv.Key] = kv.Value;
                 }
             }
@@ -76,7 +76,7 @@ namespace BTX_CAC_CompatibilityDll
             InfernoExplode.Patch(harmony);
             MechAutoFixer.Register();
             MovableBlockers.RegisterValidators();
-            ComponentUpgrader.Init();
+            ComponentUpgrader.Register();
 
             try
             {

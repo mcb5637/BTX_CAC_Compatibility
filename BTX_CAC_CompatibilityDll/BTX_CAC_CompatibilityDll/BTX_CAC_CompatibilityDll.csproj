@@ -109,6 +109,7 @@
     <Compile Include="AccessExtensionPatcher\PropertySet.cs" />
     <Compile Include="AutoPatchGenerator.cs" />
     <Compile Include="ComponentUpgrader.cs" />
+    <Compile Include="DebuggingHelpers.cs" />
     <Compile Include="ElectronicWarfare.cs" />
     <Compile Include="LightWeatherEffects.cs" />
     <Compile Include="Briefing_InitializeContractComplete.cs" />

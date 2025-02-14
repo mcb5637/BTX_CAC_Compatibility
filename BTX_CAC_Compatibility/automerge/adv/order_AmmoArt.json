@@ -1,9 +1,15 @@
 {
 	"TargetIDs": [
 		"Ammo_AmmunitionBox_Generic_Arrow4",
+		"Ammo_AmmunitionBox_Generic_Arrow4_Double",
+		"Ammo_AmmunitionBox_Generic_Arrow4_Triple",
 		"Ammo_AmmunitionBox_Generic_LongTom",
+		"Ammo_AmmunitionBox_Generic_LongTom_Double",
+		"Ammo_AmmunitionBox_Generic_LongTom_Triple",
 		"Ammo_AmmunitionBox_Generic_Sniper",
-		"Ammo_AmmunitionBox_Generic_Thumper"
+		"Ammo_AmmunitionBox_Generic_Sniper_Double",
+		"Ammo_AmmunitionBox_Generic_Thumper",
+		"Ammo_AmmunitionBox_Generic_Thumper_Half"
 	],
 	"Instructions": [
 		{

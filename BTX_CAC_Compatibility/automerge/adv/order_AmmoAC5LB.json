@@ -1,6 +1,7 @@
 {
 	"TargetIDs": [
 		"Ammo_AmmunitionBox_Generic_LB5X",
+		"Ammo_AmmunitionBox_Generic_LB5X_Double",
 		"Ammo_AmmunitionBox_Generic_LB5X_Half"
 	],
 	"Instructions": [

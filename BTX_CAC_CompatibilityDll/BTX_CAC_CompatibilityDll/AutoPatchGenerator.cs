@@ -3,12 +3,14 @@ using BattleTech.Data;
 using BTRandomMechComponentUpgrader;
 using HarmonyLib;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using static UnityEngine.RectTransform;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -947,7 +949,7 @@ namespace BTX_CAC_CompatibilityDll
             new DeprecatedPatchPattern<WeaponDef>()
             {
                 Check = new Regex("^Weapon_Inferno_Inferno(\\d+)_(\\d+)-.+$"),
-                Id = new string[]{ "Ammo_AmmunitionBox_Generic_SRM_Inferno_Half", "Ammo_AmmunitionBox_Generic_SRM_Inferno" },
+                Id = new string[]{ "Ammo_AmmunitionBox_Generic_SRMInferno_Half", "Ammo_AmmunitionBox_Generic_SRMInferno" },
                 Div = 2,
                 Type = "AmmunitionBox",
             },
@@ -1028,8 +1030,9 @@ namespace BTX_CAC_CompatibilityDll
 
         private static void GenerateAmmoBoxes(DataManager m, string targetfolder, IdCollector c)
         {
-            string wepfolder = Path.Combine(targetfolder, "ammobox");
-            //Directory.CreateDirectory(wepfolder);
+            string wepfolder = Path.Combine(targetfolder, "ammoboxnew");
+            Directory.CreateDirectory(wepfolder);
+            Directory.CreateDirectory(Path.Combine(targetfolder, "itemcollections"));
             foreach (KeyValuePair<string, AmmunitionBoxDef> kv in m.AmmoBoxDefs)
             {
                 if (kv.Key != kv.Value.Description.Id)
@@ -1050,9 +1053,9 @@ namespace BTX_CAC_CompatibilityDll
         }
 
         private static readonly Pattern<AmmunitionBoxDef>[] AmmoBoxPatterns = new Pattern<AmmunitionBoxDef>[] {
-            new OrderOnlyPattern<AmmunitionBoxDef>()
+            new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_AC20(?<t>_Half||AP|Precision|Tracer)$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_AC20(?<t>AP||Precision|Tracer)$"),
                 Order = (m) =>
                 {
                     if (m.Groups["t"].Value == "AP")
@@ -1063,10 +1066,13 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.AmmoAC20Tr;
                     return ComponentOrder.AmmoAC20;
                 },
+                Double = true,
+                Triple = true,
+                ItemColAmount = 4,
             },
-            new OrderOnlyPattern<AmmunitionBoxDef>()
+            new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_AC10(?<t>_Half||AP|Precision|Tracer)$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_AC10(?<t>AP||Precision|Tracer)$"),
                 Order = (m) =>
                 {
                     if (m.Groups["t"].Value == "AP")
@@ -1077,10 +1083,13 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.AmmoAC10Tr;
                     return ComponentOrder.AmmoAC10;
                 },
+                Double = true,
+                Triple = true,
+                ItemColAmount = 3,
             },
-            new OrderOnlyPattern<AmmunitionBoxDef>()
+            new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_AC5(?<t>_Half||AP|Precision|Tracer)$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_AC5(?<t>AP||Precision|Tracer)$"),
                 Order = (m) =>
                 {
                     if (m.Groups["t"].Value == "AP")
@@ -1091,10 +1100,13 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.AmmoAC5Tr;
                     return ComponentOrder.AmmoAC5;
                 },
+                Half = true,
+                Double = true,
+                ItemColAmount = 2,
             },
-            new OrderOnlyPattern<AmmunitionBoxDef>()
+            new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_AC2(?<t>_Half||AP|Precision|Tracer)$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_AC2(?<t>AP||Precision|Tracer)$"),
                 Order = (m) =>
                 {
                     if (m.Groups["t"].Value == "AP")
@@ -1105,38 +1117,63 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.AmmoAC2Tr;
                     return ComponentOrder.AmmoAC2;
                 },
+                Half = true,
+                Double = true,
+                ItemColAmount = 1,
             },
-            new OrderOnlyPattern<AmmunitionBoxDef>()
+            new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_LB(?<t>20|10|5|2)X(?:_Half)?$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_LB(?<t>5|2)X?$"),
                 Order = (m) =>
                 {
-                    if (m.Groups["t"].Value == "20")
-                        return ComponentOrder.AmmoAC20LB;
-                    if (m.Groups["t"].Value == "10")
-                        return ComponentOrder.AmmoAC10LB;
                     if (m.Groups["t"].Value == "5")
                         return ComponentOrder.AmmoAC5LB;
                     if (m.Groups["t"].Value == "2")
                         return ComponentOrder.AmmoAC2LB;
                     return ComponentOrder.Invalid;
                 },
+                Half = true,
+                Double = true,
+                ItemColAmount = 2,
             },
-            new OrderOnlyPattern<AmmunitionBoxDef>()
+            new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_(?<t>|H|L|SB|MAG)GAUSS$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_LB(?<t>20|10)X?$"),
+                Order = (m) =>
+                {
+                    if (m.Groups["t"].Value == "20")
+                        return ComponentOrder.AmmoAC20LB;
+                    if (m.Groups["t"].Value == "10")
+                        return ComponentOrder.AmmoAC10LB;
+                    return ComponentOrder.Invalid;
+                },
+                Double = true,
+                Triple = true,
+                ItemColAmount = 3,
+            },
+            new AmmoBoxGenPattern()
+            {
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_(?<t>|H|L|SB)GAUSS$"),
                 Order = (m) =>
                 {
                     if (m.Groups["t"].Value == "H")
                         return ComponentOrder.AmmoHGauss;
                     if (m.Groups["t"].Value == "L")
                         return ComponentOrder.AmmoLGauss;
-                    if (m.Groups["t"].Value == "MAG")
-                        return ComponentOrder.AmmoGaussMagshot;
                     if (m.Groups["t"].Value == "SB")
                         return ComponentOrder.AmmoGaussSB;
                     return ComponentOrder.AmmoGauss;
                 },
+                Double = true,
+                Triple = true,
+                ItemColAmount = 1,
+            },
+            new AmmoBoxGenPattern()
+            {
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_MAGGAUSS$"),
+                Order = (m) => ComponentOrder.AmmoGaussMagshot,
+                Half = true,
+                ItemColAmount = 1,
             },
             new OrderOnlyPattern<AmmunitionBoxDef>()
             {
@@ -1149,10 +1186,24 @@ namespace BTX_CAC_CompatibilityDll
                 },
             },
 
-            new OrderOnlyPattern<AmmunitionBoxDef>()
+            new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_(?:Arrow4|LongTom|Sniper|Thumper)$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_Thumper$"),
                 Order = (m) => ComponentOrder.AmmoArt,
+                Half = true,
+            },
+            new AmmoBoxGenPattern()
+            {
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_Sniper$"),
+                Order = (m) => ComponentOrder.AmmoArt,
+                Double = true,
+            },
+            new AmmoBoxGenPattern()
+            {
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_(?:Arrow4|LongTom)$"),
+                Order = (m) => ComponentOrder.AmmoArt,
+                Double = true,
+                Triple = true,
             },
 
             new OrderOnlyPattern<AmmunitionBoxDef>()
@@ -1172,15 +1223,19 @@ namespace BTX_CAC_CompatibilityDll
                 Check = new Regex("^Ammo_AmmunitionBox_Generic_ELRM$"),
                 Order = (m) => ComponentOrder.AmmoELRM,
             },
-            new OrderOnlyPattern<AmmunitionBoxDef>()
+            new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_LRM(?<t>|_DF)(?:_Half)?$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_LRM(?<t>|_DF)?$"),
                 Order = (m) =>
                 {
                     if (m.Groups["t"].Value == "_DF")
                         return ComponentOrder.AmmoLRMDF;
                     return ComponentOrder.AmmoLRM;
                 },
+                Half = true,
+                Double = true,
+                Triple = true,
+                ItemColAmount = 4,
             },
             new OrderOnlyPattern<AmmunitionBoxDef>()
             {
@@ -1209,9 +1264,13 @@ namespace BTX_CAC_CompatibilityDll
                     return ComponentOrder.AmmoNARC;
                 },
             },
-            new OrderOnlyPattern<AmmunitionBoxDef>()
+            new IgnorePattern<AmmunitionBoxDef>()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_SRM(?<t>_DF||_Inferno|Inferno)(?:_Half)?$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_SRM_Inferno_Half$"),
+            },
+            new AmmoBoxGenPattern()
+            {
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_SRM(?<t>_DF||Inferno)?$"),
                 Order = (m) =>
                 {
                     if (m.Groups["t"].Value == "_DF")
@@ -1222,6 +1281,9 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.AmmoSRMInf;
                     return ComponentOrder.AmmoSRM;
                 },
+                Half = true,
+                Double = true,
+                ItemColAmount = 3,
             },
             new OrderOnlyPattern<AmmunitionBoxDef>()
             {
@@ -2149,6 +2211,71 @@ namespace BTX_CAC_CompatibilityDll
                         am = new string[] { "Ammo_AmmunitionBox_Generic_Narc", "Ammo_AmmunitionBox_Generic_Narc_Explosive" };
                     c.AddSubList($"NARC{s}", id, Array.Empty<string>(), am, lvl);
                 }
+            }
+        }
+
+        private class AmmoBoxGenPattern : Pattern<AmmunitionBoxDef>
+        {
+            public Func<Match, ComponentOrder> Order = null;
+            public bool Half = false, Double = false, Triple = false;
+            public int ItemColAmount = -1;
+            public override void Generate(AmmunitionBoxDef data, Match m, string targetFolder, string id, IdCollector c)
+            {
+                ComponentOrder o = Order(m);
+                c.AddOrder(o, id);
+                string icname = $"itemcollection_{data.AmmoID}";
+                string itemcol = $"{icname},,,\r\n{data.Description.Id},AmmunitionBox,{ItemColAmount},10\r\n";
+                if (Half)
+                {
+                    string nid = id + "_Half";
+                    string b = MakeBox(data, nid, "(Half)", 0.5f, 1, (int)(data.Capacity * 0.5f));
+                    WriteTo(targetFolder, nid, b);
+                    c.AddOrder(o, nid);
+                    itemcol += $"{nid},AmmunitionBox,{ItemColAmount},10\r\n";
+                }
+                if (Double)
+                {
+                    string nid = id + "_Double";
+                    string b = MakeBox(data, nid, "(Double)", 2, 2, Mathf.CeilToInt(data.Capacity * 2.5f));
+                    WriteTo(targetFolder, nid, b);
+                    c.AddOrder(o, nid);
+                    itemcol += $"{nid},AmmunitionBox,{ItemColAmount},10\r\n";
+                }
+                if (Triple)
+                {
+                    string nid = id + "_Triple";
+                    string b = MakeBox(data, nid, "(Triple)", 3, 3, Mathf.CeilToInt(data.Capacity * 4f));
+                    WriteTo(targetFolder, nid, b);
+                    c.AddOrder(o, nid);
+                    itemcol += $"{nid},AmmunitionBox,{ItemColAmount},10\r\n";
+                }
+                if (ItemColAmount > 0)
+                {
+                    string icfol = Path.Combine(Path.GetDirectoryName(targetFolder), "itemcollections");
+                    File.WriteAllText(Path.ChangeExtension(Path.Combine(icfol, icname), "csv"), itemcol);
+                    c.ICReplace[id] = new ItemCollectionReplace()
+                    {
+                        Amount = 0,
+                        Type = "Reference",
+                        ID = icname,
+                    };
+                }
+            }
+
+            private string MakeBox(AmmunitionBoxDef data, string id, string nameadd, float tons, int slots, int newcap)
+            {
+                VersionManifestEntry e = data.DataManager.ResourceLocator.EntryByID(data.Description.Id, BattleTechResourceType.AmmunitionBoxDef);
+                JObject json = JObject.Parse(File.ReadAllText(e.FilePath));
+                json["Description"]["Id"] = id;
+                string newname = $"{data.Description.UIName} {nameadd}";
+                json["Description"]["UIName"] = newname;
+                string desc = json["Description"]["Details"].ToString().Replace(data.Description.UIName, newname);
+                desc = Regex.Replace(desc, "each contain [\\d]+ rounds and may feed multiple weapons", $"each contain {newcap} rounds and may feed multiple weapons");
+                json["Description"]["Details"] = desc;
+                json["InventorySize"] = slots;
+                json["Tonnage"] = tons;
+                json["Capacity"] = newcap;
+                return json.ToString(Formatting.Indented);
             }
         }
     }

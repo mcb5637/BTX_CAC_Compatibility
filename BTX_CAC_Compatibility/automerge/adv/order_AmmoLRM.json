@@ -1,7 +1,9 @@
 {
 	"TargetIDs": [
 		"Ammo_AmmunitionBox_Generic_LRM",
+		"Ammo_AmmunitionBox_Generic_LRM_Double",
 		"Ammo_AmmunitionBox_Generic_LRM_Half",
+		"Ammo_AmmunitionBox_Generic_LRM_Triple",
 		"Ammo_AmmunitionBox_Generic_Thunderbolt10",
 		"Ammo_AmmunitionBox_Generic_Thunderbolt15",
 		"Ammo_AmmunitionBox_Generic_Thunderbolt20",

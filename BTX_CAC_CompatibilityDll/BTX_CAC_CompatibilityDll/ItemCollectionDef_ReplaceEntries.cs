@@ -15,9 +15,11 @@ namespace BTX_CAC_CompatibilityDll
 
         public static void Postfix(ItemCollectionDef __instance)
         {
+            if (__instance.ID.StartsWith("itemcollection_Ammunition_"))
+                return;
             foreach (ItemCollectionDef.Entry i in __instance.Entries)
             {
-                if (Replaces.TryGetValue(i.ID, out ItemCollectionReplace ne))
+                if (Replaces.TryGetValue(i.ID, out ItemCollectionReplace ne) && __instance.ID != ne.ID)
                 {
                     i.ID = ne.ID;
                     if (Enum.TryParse(ne.Type, out ShopItemType t))

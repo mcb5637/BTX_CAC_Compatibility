@@ -118,6 +118,10 @@
 		},
 		{
 			"Type": "AmmunitionBoxDef",
+			"Path": "automerge/ammoboxnew"
+		},
+		{
+			"Type": "AmmunitionBoxDef",
 			"Path": "ammoboxmerge",
 			"ShouldMergeJSON": true
 		},
@@ -129,6 +133,10 @@
 		{
 			"Type": "ItemCollectionDef",
 			"Path": "itemCollectionAdd"
+		},
+		{
+			"Type": "ItemCollectionDef",
+			"Path": "automerge/itemcollections"
 		},
 		{
 			"Type": "ShipModuleUpgrade",
