@@ -56,7 +56,7 @@
 	"ComponentSubType": "Weapon",
 	"PrefabIdentifier": "arrow",
 	"BattleValue": 0,
-	"InventorySize": 6,
+	"InventorySize": 5,
 	"Tonnage": 10,
 	"AllowedLocations": "All",
 	"DisallowedLocations": "All",
