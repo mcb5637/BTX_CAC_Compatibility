@@ -1,0 +1,9 @@
+{
+	"Id": "weaponupgrade_tts_energy",
+	"autoTarget": true,
+	"installedLocationOnly": false,
+	"targetComponentTags": [
+		"energy_tts_attachable"
+	],
+	"modes": []
+}

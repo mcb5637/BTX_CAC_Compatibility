@@ -38,13 +38,6 @@ namespace BTX_CAC_CompatibilityDll
             return false;
         }
 
-        private static IEnumerable<MechComponentRef> Attachments(MechDef m, MechComponentRef r)
-        {
-            if (r.LocalGUID() == "")
-                return Array.Empty<MechComponentRef>();
-            return m.Inventory.Where((i) => i.Def.Is<AddonReference>() && i.TargetComponentGUID() == r.LocalGUID());
-        }
-
         public string LoaderType;
 
         public void AddErr(Dictionary<MechValidationType, List<Text>> errors, string e)
@@ -59,7 +52,7 @@ namespace BTX_CAC_CompatibilityDll
 
         public void ValidateMech(Dictionary<MechValidationType, List<Text>> errors, MechValidationLevel validationLevel, MechDef mechDef, MechComponentRef componentRef)
         {
-            IEnumerable<MechComponentRef> loaders = Attachments(mechDef, componentRef).Where((r) => r.Def.ComponentTags.Contains(LoaderType));
+            IEnumerable<MechComponentRef> loaders = componentRef.Attachments(mechDef).Where((r) => r.Def.ComponentTags.Contains(LoaderType));
             if (loaders.Count() != 1)
             {
                 AddErr(errors, $"{componentRef.Def.Description.Name} in {componentRef.MountedLocation} is missing its loader");
@@ -79,7 +72,7 @@ namespace BTX_CAC_CompatibilityDll
 
         public bool ValidateMechCanBeFielded(MechDef mechDef, MechComponentRef componentRef)
         {
-            IEnumerable<MechComponentRef> loaders = Attachments(mechDef, componentRef).Where((r) => r.Def.ComponentTags.Contains(LoaderType));
+            IEnumerable<MechComponentRef> loaders = componentRef.Attachments(mechDef).Where((r) => r.Def.ComponentTags.Contains(LoaderType));
             if (loaders.Count() != 1)
             {
                 return false;
@@ -144,6 +137,52 @@ namespace BTX_CAC_CompatibilityDll
             {
                 CustomHardPointsHelper.Add("chrPrfWeap_bullshark_righttorso_ac20_bh1", "chrPrfWeap_bullshark_centertorso_thumper");
             }
+        }
+    }
+
+    public static class TTS
+    {
+        public static IEnumerable<MechComponentRef> Attachments(this MechComponentRef r, MechDef m)
+        {
+            if (r.LocalGUID() == "")
+                return Array.Empty<MechComponentRef>();
+            return m.Inventory.Where((i) => i.Def.Is<AddonReference>() && i.TargetComponentGUID() == r.LocalGUID());
+        }
+
+        public static bool IsTTS(this MechComponentRef x)
+        {
+            return x.Def.Description.UIName.StartsWith("TTS");
+        }
+
+        public static void MechValidator(Dictionary<MechValidationType, List<Text>> errors, MechValidationLevel validationLevel, MechDef mechDef)
+        {
+            foreach (MechComponentRef d in mechDef.Inventory)
+            {
+                if (d.Def is WeaponDef w)
+                {
+                    if (d.Attachments(mechDef).Where(x => x.IsTTS() || x.ComponentDefID == "Gear_Addon_Artemis4").Count() > 1)
+                    {
+                        if (!errors.TryGetValue(MechValidationType.WeaponsMissing, out List<Text> err))
+                        {
+                            err = new List<Text>();
+                            errors[MechValidationType.WeaponsMissing] = err;
+                        }
+                        err.Add(new Text($"{d.Def.Description.UIName} in {d.MountedLocation} can only have one TTS or Artemis attached to it."));
+                    }
+                }
+            }
+        }
+        public static bool MechValidatorFieldable(MechDef mechDef)
+        {
+            foreach (MechComponentRef d in mechDef.Inventory)
+            {
+                if (d.Def is WeaponDef w)
+                {
+                    if (d.Attachments(mechDef).Where(x => x.IsTTS() || x.ComponentDefID == "Gear_Addon_Artemis4").Count() > 1)
+                        return true;
+                }
+            }
+            return true;
         }
     }
 }

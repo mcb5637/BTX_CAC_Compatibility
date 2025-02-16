@@ -120,6 +120,9 @@ namespace BTX_CAC_CompatibilityDll
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechLabMechInfoWidget), "CalculateTonnage"), "BEX.BattleTech.Extended_CE");
 
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(InventoryItemElement_NotListView), "OnDestroy"), "com.github.m22spencer.BattletechPerformanceFix");
+
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechValidationRules), "ValidatePrototypeEquipment"), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechValidationRules), "ValidateMechDef"), "BEX.BattleTech.Extended_CE");
             }
             catch (Exception e)
             {
@@ -152,6 +155,7 @@ namespace BTX_CAC_CompatibilityDll
             ToHitModifiersHelper.registerModifier("TAGNARC", "TAGNARC", true, false, ElectronicWarfare.NARC_TAG_Effect, ElectronicWarfare.NARC_TAG_EffectName);
             ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, CustomClustering.Cluster_EffectName, null);
             CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());
+            CustomComponents.Validator.RegisterMechValidator(TTS.MechValidator, TTS.MechValidatorFieldable);
             MoveStatusPreview_DisplayPreviewStatus.MoveTypeDisplayOverride = MovementRework.MoveTypeDisplayOverride;
         }
 

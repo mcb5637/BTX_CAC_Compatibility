@@ -147,7 +147,6 @@ What to do when adding CAC-C into an existing savegame:
 TODO BEX 2.0:
 - weather acc modifiers?
 - component upgrader ammo/addon
-- TTS addon?
 
 TODO List:
 - imp sensor unlocks sensorlock without skill (add to irtweaks)

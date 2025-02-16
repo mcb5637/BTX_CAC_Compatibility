@@ -1,0 +1,9 @@
+{
+	"Id": "weaponupgrade_tts_ballistic",
+	"autoTarget": true,
+	"installedLocationOnly": false,
+	"targetComponentTags": [
+		"ballistic_tts_attachable"
+	],
+	"modes": []
+}
