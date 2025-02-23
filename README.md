@@ -76,6 +76,7 @@ Component list (Clan & SLDF ones included):
 	- Stealth:
 		- Null Signature System: Activatable (+2 defense, -50% detectability, +1 stealth, sensorlock immune (counts as 10 Guardians), +10 heat)
 		- Chameleon Light Polarization Shield: Activatable (+2 defense, -50% visibility, +1 stealth, +6 heat)
+	- TTS: attaches to one weapon, +1/1/2/3 Acc, 1 Slot, 1/0.5/0.5/0.5 Tons (only one TTS or Artemis per Weapon)
 - Upgrades
 	- AMS: Broken, use Ballistic Weapon AMS instead
 	- TSM: Auto activates at >27 heat (\*2 melee damage, + 60m movement)
@@ -144,10 +145,6 @@ What to do when adding CAC-C into an existing savegame:
 	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
 	- Artemis SRM/LRM (Weapon_SRM_ASRMXXX/Weapon_LRM_ALRMXXX ->  Gear_Addon_Artemis4) to a matching standard SRM/LRM launcher with Artemis IV FCS attachment
 
-TODO BEX 2.0:
-- weather acc modifiers?
-- component upgrader ammo/addon
-
 TODO List:
 - imp sensor unlocks sensorlock without skill (add to irtweaks)
 - multitarget quirk unlocks without skill? (irtweaks stat)
@@ -156,6 +153,8 @@ TODO List:
 - NARC reveals target?
 - Flamers & Inferno ammo balance
 - ECM tohit balance
+- weather acc modifiers?
+- component upgrader ammo/addon
 
 Known bugs:
 - CustomLoc patchig strings

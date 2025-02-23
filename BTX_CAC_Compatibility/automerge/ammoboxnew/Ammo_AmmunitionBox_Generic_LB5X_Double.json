@@ -1,6 +1,6 @@
 {
   "AmmoID": "Ammunition_LB5X",
-  "Capacity": 250,
+  "Capacity": 50,
   "Description": {
     "Cost": 30000,
     "Rarity": 0,
@@ -10,7 +10,7 @@
     "UIName": "LB 5-X Cluster Ammo (Double)",
     "Id": "Ammo_AmmunitionBox_Generic_LB5X_Double",
     "Name": "LB 5-X Cluster Ammo",
-    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nLB 5-X Ammo Bins each contain 20 Cluster Shot rounds and may feed multiple weapons.",
+    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nLB 5-X Ammo Bins each contain 50 Cluster Shot rounds and may feed multiple weapons.",
     "Icon": "uixSvgIcon_ammoBox_Ballistic"
   },
   "BonusValueA": "Cluster",

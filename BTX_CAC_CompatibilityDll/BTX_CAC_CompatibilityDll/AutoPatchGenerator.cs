@@ -2242,7 +2242,7 @@ namespace BTX_CAC_CompatibilityDll
                 if (Half)
                 {
                     string nid = id + "_Half";
-                    string b = MakeBox(data, nid, "(Half)", 0.5f, 1, (int)(data.Capacity * 0.5f));
+                    string b = MakeBox(data, nid, "(Half)", 0.5f, 1, 0.5f);
                     WriteTo(targetFolder, nid, b);
                     c.AddOrder(o, nid);
                     itemcol += $"{nid},AmmunitionBox,{ItemColAmount},10\r\n";
@@ -2250,7 +2250,7 @@ namespace BTX_CAC_CompatibilityDll
                 if (Double)
                 {
                     string nid = id + "_Double";
-                    string b = MakeBox(data, nid, "(Double)", 2, 2, Mathf.CeilToInt(data.Capacity * 2.5f));
+                    string b = MakeBox(data, nid, "(Double)", 2, 2, 2.5f);
                     WriteTo(targetFolder, nid, b);
                     c.AddOrder(o, nid);
                     itemcol += $"{nid},AmmunitionBox,{ItemColAmount},10\r\n";
@@ -2258,7 +2258,7 @@ namespace BTX_CAC_CompatibilityDll
                 if (Triple)
                 {
                     string nid = id + "_Triple";
-                    string b = MakeBox(data, nid, "(Triple)", 3, 3, Mathf.CeilToInt(data.Capacity * 4f));
+                    string b = MakeBox(data, nid, "(Triple)", 3, 3, 4f);
                     WriteTo(targetFolder, nid, b);
                     c.AddOrder(o, nid);
                     itemcol += $"{nid},AmmunitionBox,{ItemColAmount},10\r\n";
@@ -2276,15 +2276,22 @@ namespace BTX_CAC_CompatibilityDll
                 }
             }
 
-            private string MakeBox(AmmunitionBoxDef data, string id, string nameadd, float tons, int slots, int newcap)
+            private string MakeBox(AmmunitionBoxDef data, string id, string nameadd, float tons, int slots, float capmul)
             {
                 VersionManifestEntry e = data.DataManager.ResourceLocator.EntryByID(data.Description.Id, BattleTechResourceType.AmmunitionBoxDef);
                 JObject json = JObject.Parse(File.ReadAllText(e.FilePath));
+
+                int newcap = int.Parse(json["Capacity"].ToString());
+                if (capmul > 0)
+                    newcap = Mathf.CeilToInt(capmul * newcap);
+                else
+                    newcap = (int)capmul * newcap;
+
                 json["Description"]["Id"] = id;
                 string newname = $"{data.Description.UIName} {nameadd}";
                 json["Description"]["UIName"] = newname;
                 string desc = json["Description"]["Details"].ToString().Replace(data.Description.UIName, newname);
-                desc = Regex.Replace(desc, "each contain [\\d]+ rounds and may feed multiple weapons", $"each contain {newcap} rounds and may feed multiple weapons");
+                desc = Regex.Replace(desc, "each contain [\\d]+(?<ty> Cluster Shot)? rounds and may feed multiple weapons", $"each contain {newcap}${{ty}} rounds and may feed multiple weapons");
                 json["Description"]["Details"] = desc;
                 json["InventorySize"] = slots;
                 json["Tonnage"] = tons;

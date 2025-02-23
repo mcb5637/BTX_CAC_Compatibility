@@ -14,7 +14,7 @@
 	"BonusValueA": "+ 1 Acc.",
 	"BonusValueB": "(Energy)",
 	"InventorySize": 1,
-	"Tonnage": 1,
+	"Tonnage": 0.5,
 	"statusEffects": [
 		{
 			"durationData": {
