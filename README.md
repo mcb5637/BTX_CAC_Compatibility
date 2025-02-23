@@ -3,7 +3,7 @@
 Modifies BEX (and BTXMinusWeapons, if present) for CAC.
 
 Installation/Update: (requires working BEX installation)
-- Update CAB
+- Update the CAB
 - Remove the BTMLColorLOSMod, IRBTModUtils, MechResizer, Retrainer, and StabilePiloting mod folders
 - When updating, remove any previous versions of CAC-C, CAE, CAC, CC, CLoc, CPrewarm, CU, and CVoices
 - Unpack BTX_CAC_Compatibility, overwriting files
@@ -69,10 +69,10 @@ Component list (Clan & SLDF ones included):
 	- AP:
 		- Beagle Active Probe: +150m sensor range, free action sensor lock, 120m active probe ping (free action) (brown)
 		- Liao Prototype AP: +100m sensor range, free action sensor lock, 90m active probe ping (free action) (brown)
-	- Mech Quiks:
+	- Mech Quirks:
 		- Improved Sensors Quirk: +50m sensor range (stacks with AP)
 		- Improved Comms Quirk: 200m aura (removes indirect immune) (hostile only) (green)
-	- Stealth
+	- Stealth:
 		- Null Signature System: Activatable (+2 defense, -50% detectability, +1 stealth, sensorlock immune (counts as 10 Guardians), +10 heat)
 		- Chameleon Light Polarization Shield: Activatable (+2 defense, -50% visibility, +1 stealth, +6 heat)
 - Upgrades:
@@ -83,12 +83,16 @@ Component list (Clan & SLDF ones included):
 	- Coolant Pod: doubles heatsinking for 1 turn, 1 activation per pod (does not stack)
 	- Artemis IV FCS: attaches to one SRM or LRM launcher and gives it: +4 direct fire acc, better clustering (can be turned off to fire special ammo or use tag/narc)
 	- PPC Capacitor: attaches to one PPC (including ER, Heavy and Snub) and gives it: CAP Mode (+25 DMG, +15 Heat, 1 turn Weapon Cooldown)
+	- TTS: attaches to one weapon, +1/1/2/3 Acc, 1 Slot, 1/0.5/0.5/0.5 Tons (only one TTS or Artemis per Weapon)
 - Argo Upgrades:
 	- Storage: added 3 additional storage upgrades, each giving a new mechbay to use
 	- Engine Repairs: The storage upgrades do fix BiggerDrops tonnage increase upgrades, by giving you a way to fullfill their requirements
-- Indirect Fire changes:
+- Indirect Fire Changes:
 	- Shooting at something you cannot see (but your ally can) is considered Indirect Fire, and in turn will be blocked if the target is covered by ECM
 	- You only get an accuracy penalty for Indirect Fire if you have to shoot over obstacles to hit your target (if it was considered Indirect Fire by the old rules)
+- Mech Types:
+	- Quads: No arms, but 50% more stable and better on rough terrain (steeper slopes, small cliffs).
+	- LAMs: Switch between land and air modes. Jumping gives +10% damage and reduces instability (like walking for other mechs).
 - Mechs:
 	- Exterminator:
 		- EXT-4C (stealth, SLDF) (ComStar)
@@ -141,11 +145,7 @@ What to do when adding CAC-C into an existing savegame:
 	- Infernos Launcher (Weapon_Inferno_Inferno2_XXX -> Ammo_AmmunitionBox_Generic_SRM_Inferno) to standard SRMs with Inferno ammo
 	- Deadfire LRMs/SRMs (Weapon_SRM_DFSRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_SRM_DF)(Weapon_LRM_DFLRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_LRM_DF) to standard LRMs/SRMs with deadfire ammo
 	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
-	- Artemis SRM/LRM (Weapon_SRM_ASRMXXX/Weapon_LRM_ALRMXXX ->  Gear_Addon_Artemis4) to a matching standard SRM/LRM launcher with Artemis IV FCS attachment
-
-TODO BEX 2.0:
-- weather acc modifiers?
-- component upgrader
+	- Artemis SRM/LRM (Weapon_SRM_ASRMXXX/Weapon_LRM_ALRMXXX -> Gear_Addon_Artemis4) to a matching standard SRM/LRM launcher with Artemis IV FCS attachment
 
 TODO List:
 - imp sensor unlocks sensorlock without skill (add to irtweaks)
@@ -155,6 +155,8 @@ TODO List:
 - NARC reveals target?
 - Flamers & Inferno ammo balance
 - ECM tohit balance
+- weather acc modifiers?
+- component upgrader ammo/addon
 
 Known bugs:
 - CustomLoc patchig strings
