@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Weapon_BombBay"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 4
+				}
+			}
+		}
+	]
+}

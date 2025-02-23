@@ -1,0 +1,34 @@
+{
+	"TargetIDs": [
+		"Weapon_Autocannon_CUAC10_0-STOCK",
+		"Weapon_Autocannon_CUAC10_1-Irrlicht",
+		"Weapon_Autocannon_CUAC10_1-Type9",
+		"Weapon_Autocannon_CUAC10_1-Type9-A",
+		"Weapon_Autocannon_CUAC10_1-TypeDL",
+		"Weapon_Autocannon_CUAC10_2-Irrlicht",
+		"Weapon_Autocannon_CUAC10_2-Type9",
+		"Weapon_Autocannon_CUAC10_2-Type9-A",
+		"Weapon_Autocannon_CUAC10_2-TypeDL",
+		"Weapon_Autocannon_UAC10_0-STOCK",
+		"Weapon_Autocannon_UAC10_1-Federated",
+		"Weapon_Autocannon_UAC10_2-Federated",
+		"Weapon_Autocannon_UAC10_NU_0-STOCK",
+		"Weapon_Autocannon_UAC10_NU_1-Imperator",
+		"Weapon_Autocannon_UAC10_NU_1-Mydron",
+		"Weapon_Autocannon_UAC10_NU_2-Federated",
+		"Weapon_Autocannon_UAC10_NU_2-Imperator",
+		"Weapon_Autocannon_UAC10_NU_2-Mydron",
+		"Weapon_Autocannon_UAC10_NU_3-Federated"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 57
+				}
+			}
+		}
+	]
+}

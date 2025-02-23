@@ -1,0 +1,28 @@
+{
+	"TargetIDs": [
+		"Weapon_Autocannon_CLB2X_0-STOCK",
+		"Weapon_Autocannon_CLB2X_1-TypeF",
+		"Weapon_Autocannon_CLB2X_1-TypeG",
+		"Weapon_Autocannon_CLB2X_1-TypeOVR-V",
+		"Weapon_Autocannon_CLB2X_1-TypeRS",
+		"Weapon_Autocannon_CLB2X_2-TypeF",
+		"Weapon_Autocannon_CLB2X_2-TypeG",
+		"Weapon_Autocannon_CLB2X_2-TypeOVR-V",
+		"Weapon_Autocannon_CLB2X_2-TypeRS",
+		"Weapon_Autocannon_LB2X_0-STOCK",
+		"Weapon_Autocannon_LB2X_1-Defiance",
+		"Weapon_Autocannon_LB2X_2-Defiance",
+		"Weapon_Autocannon_LB2X_NU_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 67
+				}
+			}
+		}
+	]
+}

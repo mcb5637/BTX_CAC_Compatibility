@@ -1,0 +1,127 @@
+{
+  "MainUpgradePath": [
+    {
+      "ID": "Weapon_Autocannon_AC2_0-STOCK",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": true
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_1-Mydron",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_1-Kali_Yama",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_1-Federated",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_1-Defiance",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_2-Mydron",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_2-Kali_Yama",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_2-Imperator",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_2-Federated",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_2-Defiance",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC2_3-Imperator",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    }
+  ],
+  "AmmoTypes": [
+    {
+      "ID": "Ammo_AmmunitionBox_Generic_AC2",
+      "Weight": 0,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Ammo_AmmunitionBox_Generic_AC2AP",
+      "Weight": 0,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Ammo_AmmunitionBox_Generic_AC2Precision",
+      "Weight": 0,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Ammo_AmmunitionBox_Generic_AC2Tracer",
+      "Weight": 0,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    }
+  ],
+  "Addons": []
+}

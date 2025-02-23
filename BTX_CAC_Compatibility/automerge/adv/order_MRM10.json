@@ -1,0 +1,43 @@
+{
+	"TargetIDs": [
+		"Weapon_MRM_MRM10_0-STOCK",
+		"Weapon_MRM_MRM10_1-Hellespont",
+		"Weapon_MRM_MRM10_1-Maltex",
+		"Weapon_MRM_MRM10_2-Hellespont",
+		"Weapon_MRM_MRM10_2-Maltex",
+		"Weapon_MRM_MRM10_2-Skobel",
+		"Weapon_MRM_MRM10_3-Skobel",
+		"Weapon_MRM_MRM20_0-STOCK",
+		"Weapon_MRM_MRM20_1-Hellespont",
+		"Weapon_MRM_MRM20_1-Maltex",
+		"Weapon_MRM_MRM20_2-Hellespont",
+		"Weapon_MRM_MRM20_2-Maltex",
+		"Weapon_MRM_MRM20_2-Skobel",
+		"Weapon_MRM_MRM20_3-Skobel",
+		"Weapon_MRM_MRM30_0-STOCK",
+		"Weapon_MRM_MRM30_1-Hellespont",
+		"Weapon_MRM_MRM30_1-Maltex",
+		"Weapon_MRM_MRM30_2-Hellespont",
+		"Weapon_MRM_MRM30_2-Maltex",
+		"Weapon_MRM_MRM30_2-Skobel",
+		"Weapon_MRM_MRM30_3-Skobel",
+		"Weapon_MRM_MRM40_0-STOCK",
+		"Weapon_MRM_MRM40_1-Hellespont",
+		"Weapon_MRM_MRM40_1-Maltex",
+		"Weapon_MRM_MRM40_2-Hellespont",
+		"Weapon_MRM_MRM40_2-Maltex",
+		"Weapon_MRM_MRM40_2-Skobel",
+		"Weapon_MRM_MRM40_3-Skobel"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 116
+				}
+			}
+		}
+	]
+}

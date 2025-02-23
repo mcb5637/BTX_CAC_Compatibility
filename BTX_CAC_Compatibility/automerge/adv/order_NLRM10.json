@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Weapon_LRM_NLRM10_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 101
+				}
+			}
+		}
+	]
+}

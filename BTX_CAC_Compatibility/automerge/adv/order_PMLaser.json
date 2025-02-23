@@ -1,0 +1,37 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CMediumLaserPulse_0-STOCK",
+		"Weapon_Laser_CMediumLaserPulse_1-Kolibri",
+		"Weapon_Laser_CMediumLaserPulse_1-Lambda",
+		"Weapon_Laser_CMediumLaserPulse_1-PPS-XIX",
+		"Weapon_Laser_CMediumLaserPulse_1-Series14a",
+		"Weapon_Laser_CMediumLaserPulse_2-Kolibri",
+		"Weapon_Laser_CMediumLaserPulse_2-Lambda",
+		"Weapon_Laser_CMediumLaserPulse_2-PPS-XIX",
+		"Weapon_Laser_CMediumLaserPulse_2-Series14a",
+		"Weapon_Laser_MediumLaserPulse_0-STOCK",
+		"Weapon_Laser_MediumLaserPulse_1-RakerIV",
+		"Weapon_Laser_MediumLaserPulse_2-Magna400P",
+		"Weapon_Laser_MediumLaserPulse_NU_0-STOCK",
+		"Weapon_Laser_MediumLaserPulse_NU_1-ExoStar",
+		"Weapon_Laser_MediumLaserPulse_NU_1-Intek",
+		"Weapon_Laser_MediumLaserPulse_NU_1-Sutel",
+		"Weapon_Laser_MediumLaserPulse_NU_2-Diverse_Optics",
+		"Weapon_Laser_MediumLaserPulse_NU_2-ExoStar",
+		"Weapon_Laser_MediumLaserPulse_NU_2-Intek",
+		"Weapon_Laser_MediumLaserPulse_NU_2-Sutel",
+		"Weapon_Laser_MediumLaserPulse_NU_3-Diverse_Optics",
+		"Weapon_Laser_MediumLaserPulse_Sa_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 86
+				}
+			}
+		}
+	]
+}

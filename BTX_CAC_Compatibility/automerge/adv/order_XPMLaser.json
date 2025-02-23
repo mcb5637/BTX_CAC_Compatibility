@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_MediumLaserXPulse_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 85
+				}
+			}
+		}
+	]
+}

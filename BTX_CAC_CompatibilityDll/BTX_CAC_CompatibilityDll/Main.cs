@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 using UIWidgets;
 using UnityEngine;
 
-[assembly: AssemblyVersion("2.0.0.1")]
+[assembly: AssemblyVersion("2.0.0.3")]
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -75,6 +75,8 @@ namespace BTX_CAC_CompatibilityDll
 
             InfernoExplode.Patch(harmony);
             MechAutoFixer.Register();
+            MovableBlockers.RegisterValidators();
+            ComponentUpgrader.Init();
 
             try
             {
@@ -148,7 +150,7 @@ namespace BTX_CAC_CompatibilityDll
             ToHitModifiersHelper.registerModifier("TRACER", "TRACER", true, false, LightWeatherEffects.Tracer_Effect, null);
             ToHitModifiersHelper.registerModifier("MOVED SELF", "MOVED SELF", false, false, MovementRework.MovedSelf_Effect, MovementRework.MovedSelf_EffectName);
             ToHitModifiersHelper.registerModifier("TAGNARC", "TAGNARC", true, false, ElectronicWarfare.NARC_TAG_Effect, ElectronicWarfare.NARC_TAG_EffectName);
-            ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, null, null);
+            ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, CustomClustering.Cluster_EffectName, null);
             CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());
             MoveStatusPreview_DisplayPreviewStatus.MoveTypeDisplayOverride = MovementRework.MoveTypeDisplayOverride;
         }
@@ -197,5 +199,36 @@ namespace BTX_CAC_CompatibilityDll
         //{
         //    FileLog.Log($"{originalHitLoc} -> {aLoc}");
         //}
+    }
+
+    [HarmonyPatch]
+    public class Mech_InitStats_MASCFix
+    {
+        [HarmonyPatch(typeof(Mech), "InitStats")]
+        [HarmonyAfter("BEX.BattleTech.Extended_CE")]
+        public static void Postfix(Mech __instance)
+        {
+            if (BTComponents.MechTTRuleInfo.MechTTStatStore.TryGetValue(__instance.uid, out BTComponents.TTRuleInfo i))
+                i.OperatingMASC = false;
+        }
+    }
+
+    [HarmonyPatch]
+    public class Chassis_MovementCapDef_Fix
+    {
+        [HarmonyPatch(typeof(ChassisDef), nameof(ChassisDef.MovementCapDef), MethodType.Getter)]
+        public static void Postfix(ChassisDef __instance, ref MovementCapabilitiesDef __result)
+        {
+            if (__result == null)
+            {
+                if (__instance.DataManager == null)
+                    __instance.DataManager = UnityGameInstance.BattleTechGame.DataManager;
+                if (__instance.DataManager != null && __instance.DataManager.MovementCapabilitiesDefs.Exists(__instance.MovementCapDefID))
+                {
+                    __instance.Refresh();
+                    __result = __instance.MovementCapDef;
+                }
+            }
+        }
     }
 }

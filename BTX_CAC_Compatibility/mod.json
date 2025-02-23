@@ -4,7 +4,7 @@
 	"Description": "Modifies BTX (and BTXMinusWeapons) for CAC.",
 	"Author": "mcb",
 	"Website": "",
-	"Version": "2.0.0.1",
+	"Version": "2.0.0.3",
 	"DependsOn": [
 		"BT_Extended",
 		"BT_Extended_Timeline",
@@ -17,7 +17,8 @@
 		"CustomUnits",
 		"CustomVoices",
 		"IRTweaks",
-		"MechAffinity"
+		"MechAffinity",
+		"BTRandomMechComponentUpgrader"
 	],
 	"OptionallyDependsOn": [
 		"BTXMinusWeapons"
@@ -96,10 +97,6 @@
 			"Type": "WeaponDef",
 			"Path": "automerge\\weapon",
 			"ShouldMergeJSON": true
-		},
-		{
-			"Type": "AdvancedJSONMerge",
-			"Path": "automerge\\adv"
 		},
 
 		{
@@ -251,6 +248,19 @@
 			"Type": "CombatGameConstants",
 			"Path": "combatgameconstants",
 			"ShouldMergeJSON": true
+		},
+		
+		{
+			"Type": "AdvancedJSONMerge",
+			"Path": "automerge\\adv"
+		},
+		{
+		  "Type": "ComponentUpgradeList",
+		  "Path": "automerge\\ulist"
+		},
+		{
+		  "Type": "ComponentUpgradeSubList",
+		  "Path": "automerge\\usublist"
 		}
 	]
 }

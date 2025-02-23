@@ -1,0 +1,23 @@
+{
+	"TargetIDs": [
+		"Weapon_PPC_PPC_0-STOCK",
+		"Weapon_PPC_PPC_1-Ceres_Arms",
+		"Weapon_PPC_PPC_1-Donal",
+		"Weapon_PPC_PPC_-1-Magna",
+		"Weapon_PPC_PPC_1-Tiegart",
+		"Weapon_PPC_PPC_2-Ceres_Arms",
+		"Weapon_PPC_PPC_2-Donal",
+		"Weapon_PPC_PPC_2-Tiegart"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 73
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"TargetIDs": [
+		"Weapon_TAG_C3-STOCK",
+		"Weapon_TAG_Clan_0-STOCK",
+		"Weapon_TAG_Clan_1-ICD",
+		"Weapon_TAG_Clan_2-Hellion",
+		"Weapon_TAG_Light_Clan_0-STOCK",
+		"Weapon_TAG_Light_Clan_1-Wolf",
+		"Weapon_TAG_Light_Clan_2-Wolf",
+		"Weapon_TAG_Standard_0-STOCK",
+		"Weapon_TAG_Standard_1-Mendham",
+		"Weapon_TAG_Standard_2-Ceres_Arms"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 89
+				}
+			}
+		}
+	]
+}

@@ -71,7 +71,7 @@ namespace BTX_CAC_CompatibilityDll
         }
 
         [HarmonyPatch(typeof(AbstractActor), nameof(AbstractActor.HasIndirectFireImmunity), MethodType.Getter)]
-        [HarmonyPrefix]
+        [HarmonyPostfix]
         public static void AbstractActor_HasIndirectFireImmunity_Postfix(AbstractActor __instance, ref bool __result)
         {
             if (__instance.StatCollection.GetValue<float>("IndirectImmuneFloat") > 0)

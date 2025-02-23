@@ -1,0 +1,34 @@
+{
+	"TargetIDs": [
+		"Weapon_LRM_CLRM5_0-STOCK",
+		"Weapon_LRM_CLRM5_1-MK45",
+		"Weapon_LRM_CLRM5_1-SeriesIX",
+		"Weapon_LRM_CLRM5_1-TypeV",
+		"Weapon_LRM_CLRM5_1-TypeVI",
+		"Weapon_LRM_CLRM5_2-MK45",
+		"Weapon_LRM_CLRM5_2-SeriesIX",
+		"Weapon_LRM_CLRM5_2-TypeV",
+		"Weapon_LRM_CLRM5_2-TypeVI",
+		"Weapon_LRM_LRM5_0-STOCK",
+		"Weapon_LRM_LRM5_1-Delta",
+		"Weapon_LRM_LRM5_1-LongFire",
+		"Weapon_LRM_LRM5_1-Telos",
+		"Weapon_LRM_LRM5_2-Delta",
+		"Weapon_LRM_LRM5_2-LongFire",
+		"Weapon_LRM_LRM5_2-Telos",
+		"Weapon_LRM_LRM5_2-Zeus",
+		"Weapon_LRM_LRM5_3-Zeus",
+		"Weapon_Thunderbolt_Thunderbolt5_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 105
+				}
+			}
+		}
+	]
+}

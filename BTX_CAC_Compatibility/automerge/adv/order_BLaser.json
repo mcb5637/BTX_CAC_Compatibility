@@ -1,0 +1,17 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_BinaryLaserCannon_0-STOCK",
+		"Weapon_Laser_BinaryLaserCannon_1-Defiance"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 77
+				}
+			}
+		}
+	]
+}

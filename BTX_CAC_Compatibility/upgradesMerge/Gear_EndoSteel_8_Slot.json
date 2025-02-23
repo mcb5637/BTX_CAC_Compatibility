@@ -1,0 +1,11 @@
+{
+	"Custom": {
+		"Category": {
+			"CategoryID": "EndoStructureBlocker",
+			"Weight": 8
+		},
+		"Flags": [
+			"default"
+		]
+	}
+}

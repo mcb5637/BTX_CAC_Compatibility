@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Weapon_MachineGun_MachineGunLight_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 126
+				}
+			}
+		}
+	]
+}

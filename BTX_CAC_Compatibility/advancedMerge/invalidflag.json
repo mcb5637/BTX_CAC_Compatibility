@@ -25,7 +25,8 @@
 			"Value": {
 				"Custom": {
 					"Flags": [
-						"invalid"
+						"invalid",
+						"hide"
 					]
 				}
 			}

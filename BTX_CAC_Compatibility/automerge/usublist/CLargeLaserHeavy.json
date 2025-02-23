@@ -1,0 +1,78 @@
+{
+  "MainUpgradePath": [
+    {
+      "ID": "Weapon_Laser_CLargeLaserHeavy_0-STOCK",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": true
+    },
+    {
+      "ID": "Weapon_Laser_CLargeLaserHeavy_1-GeneralSystems",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CLargeLaserHeavy_1-ModelX",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CLargeLaserHeavy_1-Omega",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CLargeLaserHeavy_1-Series4D-2",
+      "Weight": 2,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CLargeLaserHeavy_2-GeneralSystems",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CLargeLaserHeavy_2-ModelX",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CLargeLaserHeavy_2-Omega",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CLargeLaserHeavy_2-Series4D-2",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    }
+  ],
+  "AmmoTypes": [],
+  "Addons": []
+}

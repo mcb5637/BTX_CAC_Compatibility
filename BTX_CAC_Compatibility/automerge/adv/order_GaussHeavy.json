@@ -1,0 +1,18 @@
+{
+	"TargetIDs": [
+		"Weapon_Gauss_HeavyGauss_0-STOCK",
+		"Weapon_Gauss_HeavyGauss_1-Defiance",
+		"Weapon_Gauss_HeavyGauss_2-Defiance"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 50
+				}
+			}
+		}
+	]
+}

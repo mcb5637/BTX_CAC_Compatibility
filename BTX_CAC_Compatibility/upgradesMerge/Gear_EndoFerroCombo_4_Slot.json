@@ -1,0 +1,11 @@
+{
+	"Custom": {
+		"Category": {
+			"CategoryID": "ComboStructureBlocker",
+			"Weight": 4
+		},
+		"Flags": [
+			"default"
+		]
+	}
+}

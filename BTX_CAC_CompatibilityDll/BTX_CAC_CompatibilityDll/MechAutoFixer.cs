@@ -8,6 +8,7 @@ using CustomComponents;
 using BattleTech.Save.SaveGameStructure;
 using HarmonyLib;
 using Org.BouncyCastle.Crypto.Parameters;
+using BattleTech.Data;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -19,7 +20,7 @@ namespace BTX_CAC_CompatibilityDll
             {
                 try
                 {
-                    SplitAddons(mech);
+                    HandleMech(mech);
                 }
                 catch (Exception e)
                 {
@@ -39,100 +40,123 @@ namespace BTX_CAC_CompatibilityDll
             ChassisLocations.RightLeg,
             ChassisLocations.Head,
         };
-        private static void SplitAddons(MechDef m)
+        private static void HandleMech(MechDef m)
         {
-            bool hasChange = false;
             List<MechComponentRef> mechinv = m.Inventory.ToList();
-            List<MechComponentRef> fixedinv = m.Chassis.FixedEquipment?.ToList();
-            check(mechinv, false);
+            ChassisDef ch = m.Chassis;
+            if (!ch.DataManager.ChassisDefs.TryGet(ch.Description.Id, out ChassisDef mngch))
+                mngch = ch;
+            List <MechComponentRef> fixedinv = mngch.FixedEquipment?.ToList();
+            CheckAddons(mechinv, false, m, mechinv);
             if (fixedinv != null)
             {
-                check(fixedinv, true);
-                CheckTSM(fixedinv, ref hasChange);
+                CheckAddons(fixedinv, true, m, mechinv);
+                CheckTSM(fixedinv);
+                MovableBlockers.FixChassisDef(mngch, fixedinv);
             }
+            MovableBlockers.FixMechInventory(mngch, mechinv);
 
-            if (hasChange)
+            mechinv.RemoveAll((x) => x.IsFixed && !x.IsBlocker()); // gets re-added by setinv
+            foreach (MechComponentRef c in mechinv)
             {
-                mechinv.RemoveAll((x) => x.IsFixed); // gets re-added by setinv
-                if (fixedinv != null)
-                    m.Chassis.SetFixedEquipment(fixedinv.ToArray());
-                m.SetInventory(mechinv.ToArray());
-                m.Chassis.RefreshLocationReferences();
+                if (c.SimGameUID != null && c.SimGameUID.StartsWith("FixedEquipment-"))
+                    c.SetSimGameUID(c.SimGameUID.Replace("FixedEquipment-", ""));
             }
-
-            int slotsleft(ChassisLocations loc)
+            if (fixedinv != null)
+                mngch.SetFixedEquipment(fixedinv.ToArray());
+            mngch.RefreshLocationReferences();
+            if (!mngch.ChassisTags.Contains("autofixed_hardpoints"))
+                mngch.ChassisTags.Add("autofixed_hardpoints");
+            if (!ReferenceEquals(ch, mngch)) // happens, if m has prefabOverride set
             {
-                int usage = mechinv.Where((x) => x.MountedLocation == loc).Select((x) => {
-                    if (x.Def == null)
-                        x.RefreshComponentDef();
-                    if (x.Def == null)
-                    {
-                        FileLog.Log($"found null comp {x.ComponentDefID} {x.ComponentDefType} in {m.Description.Id}");
-                        return 0;
-                    }
-                    return x.Def.InventorySize;
-                }).Sum();
-                int max = m.Chassis.GetLocationDef(loc).InventorySlots;
-                return max - usage;
-            }
-            void check(List<MechComponentRef> l, bool f)
-            {
-                for (int i = 0; i < l.Count; i++)
+                DataManager dm = ch.DataManager ?? mngch.DataManager;
+                m.Chassis = mngch;
+                if (m.Chassis.DataManager == null && dm != null)
                 {
-                    if (l[i].IsFixed == f && Main.Splits.TryGetValue(l[i].ComponentDefID, out WeaponAddonSplit spl))
+                    m.Chassis.DataManager = dm;
+                    m.Chassis.Refresh();
+                }
+            }
+            m.SetInventory(mechinv.ToArray());
+        }
+
+        private static void CheckAddons(List<MechComponentRef> l, bool fix, MechDef m, List<MechComponentRef> mechinv)
+        {
+            for (int i = 0; i < l.Count; i++)
+            {
+                if (l[i].IsFixed == fix && Main.Splits.TryGetValue(l[i].ComponentDefID, out WeaponAddonSplit spl))
+                {
+                    l[i].ComponentDefID = spl.WeaponId;
+                    l[i].SetComponentDefType(spl.WeaponType);
+                    l[i].RefreshComponentDef();
+                    if (spl.AddonId != null)
                     {
-                        l[i].ComponentDefID = spl.WeaponId;
-                        l[i].SetComponentDefType(spl.WeaponType);
-                        l[i].RefreshComponentDef();
-                        if (f)
-                            hasChange = true;
-                        if (spl.AddonId != null)
+                        ChassisLocations loc = l[i].MountedLocation;
+                        if (spl.NotSameLocationRequired && GetSlotsLeftInLocation(loc, m, mechinv) <= 0)
                         {
-                            ChassisLocations loc = l[i].MountedLocation;
-                            if (spl.NotSameLocationRequired && slotsleft(loc) <= 0)
+                            foreach (ChassisLocations loc2 in AllLocs)
                             {
-                                foreach (ChassisLocations loc2 in AllLocs)
+                                if (GetSlotsLeftInLocation(loc2, m, mechinv) > 0)
                                 {
-                                    if (slotsleft(loc2) > 0)
-                                    {
-                                        loc = loc2;
-                                        break;
-                                    }
-                                }
-                            }
-                            MechComponentRef addon = new MechComponentRef(spl.AddonId, null, spl.AddonType, loc, -1, ComponentDamageLevel.Functional, f)
-                            {
-                                DataManager = m.DataManager,
-                            };
-                            if (spl.Link)
-                            {
-                                string guid = Guid.NewGuid().ToString();
-                                l[i].LocalGUID = guid;
-                                addon.TargetComponentGUID = guid;
-                            }
-                            l.Insert(i + 1, addon);
-                            hasChange = true;
-                        }
-                        if (spl.AddSupportHardpoint) // why is LocationDef a struct???
-                        {
-                            LocationDef[] locs = m.Chassis.GetLocations();
-                            for (int j = 0; j < locs.Length; ++j)
-                            {
-                                if (locs[j].Location == l[i].MountedLocation)
-                                {
-                                    LocationDef loc = locs[j];
-                                    loc.Hardpoints = loc.Hardpoints.Append(new HardpointDef(WeaponCategoryEnumeration.GetSupport(), false)).ToArray();
-                                    locs[j] = loc;
-                                    hasChange = true;
+                                    loc = loc2;
+                                    break;
                                 }
                             }
                         }
+                        MechComponentRef addon = new MechComponentRef(spl.AddonId, null, spl.AddonType, loc, -1, ComponentDamageLevel.Functional, fix)
+                        {
+                            DataManager = m.DataManager,
+                        };
+                        if (spl.Link)
+                        {
+                            string guid = Guid.NewGuid().ToString();
+                            l[i].LocalGUID = guid;
+                            addon.TargetComponentGUID = guid;
+                        }
+                        l.Insert(i + 1, addon);
+                    }
+                    if (spl.AddSupportHardpoint) // why is LocationDef a struct???
+                    {
+                        AddHardpoint(l, m, i);
                     }
                 }
             }
         }
 
-        private static void CheckTSM(List<MechComponentRef> fix, ref bool hasChange)
+        private static void AddHardpoint(List<MechComponentRef> l, MechDef m, int i)
+        {
+            if (m.Chassis.ChassisTags.Contains("autofixed_hardpoints"))
+                return;
+            LocationDef[] locs = m.Chassis.GetLocations();
+            for (int j = 0; j < locs.Length; ++j)
+            {
+                if (locs[j].Location == l[i].MountedLocation)
+                {
+                    LocationDef loc = locs[j];
+                    loc.Hardpoints = loc.Hardpoints.Append(new HardpointDef(WeaponCategoryEnumeration.GetSupport(), false)).ToArray();
+                    locs[j] = loc;
+                }
+            }
+        }
+
+        private static int GetSlotsLeftInLocation(ChassisLocations loc, MechDef m, List<MechComponentRef> mechinv)
+        {
+            int usage = mechinv.Where((x) => x.MountedLocation == loc).Select((x) =>
+            {
+                if (x.Def == null)
+                    x.RefreshComponentDef();
+                if (x.Def == null)
+                {
+                    FileLog.Log($"found null comp {x.ComponentDefID} {x.ComponentDefType} in {m.Description.Id}");
+                    return 0;
+                }
+                return x.Def.InventorySize;
+            }).Sum();
+            int max = m.Chassis.GetLocationDef(loc).InventorySlots;
+            return max - usage;
+        }
+
+        private static void CheckTSM(List<MechComponentRef> fix)
         {
             bool first = true;
             foreach (MechComponentRef c in fix)
@@ -144,7 +168,6 @@ namespace BTX_CAC_CompatibilityDll
                         first = false;
                         continue;
                     }
-                    hasChange = true;
                     c.ComponentDefID += "_Idle";
                     c.RefreshComponentDef();
                 }

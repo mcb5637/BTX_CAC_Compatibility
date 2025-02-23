@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Weapon_Autocannon_RAC2_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 65
+				}
+			}
+		}
+	]
+}

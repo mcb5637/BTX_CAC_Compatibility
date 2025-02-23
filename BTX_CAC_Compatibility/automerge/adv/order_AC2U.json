@@ -1,0 +1,31 @@
+{
+	"TargetIDs": [
+		"Weapon_Autocannon_CUAC2_0-STOCK",
+		"Weapon_Autocannon_CUAC2_1-ModelHHC-30",
+		"Weapon_Autocannon_CUAC2_1-Type12",
+		"Weapon_Autocannon_CUAC2_1-Type25",
+		"Weapon_Autocannon_CUAC2_1-Type30",
+		"Weapon_Autocannon_CUAC2_2-ModelHHC-30",
+		"Weapon_Autocannon_CUAC2_2-Type12",
+		"Weapon_Autocannon_CUAC2_2-Type25",
+		"Weapon_Autocannon_CUAC2_2-Type30",
+		"Weapon_Autocannon_UAC2_0-STOCK",
+		"Weapon_Autocannon_UAC2_1-Imperator",
+		"Weapon_Autocannon_UAC2_2-Imperator",
+		"Weapon_Autocannon_UAC2_NU_0-STOCK",
+		"Weapon_Autocannon_UAC2_NU_1-Mydron",
+		"Weapon_Autocannon_UAC2_NU_2-Mydron",
+		"Weapon_Autocannon_UAC2_NU_3-Mydron"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 66
+				}
+			}
+		}
+	]
+}

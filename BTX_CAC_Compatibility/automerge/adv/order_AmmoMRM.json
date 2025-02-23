@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_MRM"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 185
+				}
+			}
+		}
+	]
+}

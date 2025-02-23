@@ -1,0 +1,24 @@
+{
+	"TargetIDs": [
+		"Weapon_Laser_CMicroLaserPulse_0-STOCK",
+		"Weapon_Laser_CMicroLaserPulse_1-GeneralSystems",
+		"Weapon_Laser_CMicroLaserPulse_1-Kolibri",
+		"Weapon_Laser_CMicroLaserPulse_1-Raid",
+		"Weapon_Laser_CMicroLaserPulse_1-Series1",
+		"Weapon_Laser_CMicroLaserPulse_2-GeneralSystems",
+		"Weapon_Laser_CMicroLaserPulse_2-Kolibri",
+		"Weapon_Laser_CMicroLaserPulse_2-Raid",
+		"Weapon_Laser_CMicroLaserPulse_2-Series1"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 134
+				}
+			}
+		}
+	]
+}

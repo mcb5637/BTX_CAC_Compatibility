@@ -1,0 +1,25 @@
+{
+	"TargetIDs": [
+		"Gear_Gyro_Coventry_Mark-75",
+		"Gear_Gyro_Coventry_Mark-85",
+		"Gear_Gyro_Coventry_Mark-95",
+		"Gear_Gyro_Friedhof_Kite",
+		"Gear_Gyro_Friedhof_Osprey",
+		"Gear_Gyro_Friedhof_Sparrow",
+		"Gear_Gyro_Hermes_Equilibrium",
+		"Gear_Gyro_Rawlings_StabiliTrak-10",
+		"Gear_Gyro_Rawlings_StabiliTrak-15",
+		"Gear_Gyro_Rawlings_StabiliTrak-5"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 253
+				}
+			}
+		}
+	]
+}

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using AccessExtension;
 using System.Reflection;
 using Extended_CE;
+using CustomComponents;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -93,6 +94,34 @@ namespace BTX_CAC_CompatibilityDll
         public static LightValue GetExtendedCE_Core_CurrentLight()
         {
             return LightValue.Day;
+        }
+
+        [PropertySet(typeof(BaseComponentRef), nameof(BaseComponentRef.IsFixed))]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void SetIsFixed(this BaseComponentRef r, bool f)
+        {
+
+        }
+
+        [MethodCall(typeof(DefaultFixer), "FixMech")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void FixMech(this DefaultFixer f, MechDef m)
+        {
+            
+        }
+
+        [FieldGet(typeof(AutoFixer), "fixers")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static List<AutoFixerDelegate> GetFixers(this AutoFixer f)
+        {
+            return null;
+        }
+
+        [FieldGet(typeof(FullXotlTables.Core), "Settings")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static FullXotlTables.ModSettings GetXotlSettings()
+        {
+            return null;
         }
     }
 }

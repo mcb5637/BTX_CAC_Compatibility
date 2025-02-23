@@ -1,0 +1,29 @@
+{
+	"TargetIDs": [
+		"Gear_Cockpit_Ceres_Metals_Braced",
+		"Gear_Cockpit_Ceres_Metals_Hardened",
+		"Gear_Cockpit_Ceres_Metals_Reinforced",
+		"Gear_Cockpit_Kallon_Industries_500S",
+		"Gear_Cockpit_Kallon_Industries_A6",
+		"Gear_Cockpit_Kallon_Industries_A99",
+		"Gear_Cockpit_Majesty_M_M_120KL",
+		"Gear_Cockpit_Majesty_M_M_180KL",
+		"Gear_Cockpit_Majesty_M_M_60KL",
+		"Gear_Cockpit_Majesty_M_M_MagestrixAlpha",
+		"Gear_Cockpit_StarCorps_Advanced",
+		"Gear_Cockpit_StarCorps_Dalban",
+		"Gear_Cockpit_StarCorps_Enhanced",
+		"Gear_Cockpit_StarCorps_Improved"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 251
+				}
+			}
+		}
+	]
+}

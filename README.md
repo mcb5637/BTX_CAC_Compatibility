@@ -145,8 +145,6 @@ What to do when adding CAC-C into an existing savegame:
 
 TODO BEX 2.0:
 - weather acc modifiers?
-- movable blockers
-- CAC PRs
 - component upgrader
 
 TODO List:

@@ -1,0 +1,29 @@
+{
+	"TargetIDs": [
+		"Weapon_SRM_CSSRM2_0-STOCK",
+		"Weapon_SRM_CSSRM2_1-CCWP-12",
+		"Weapon_SRM_CSSRM2_1-J2",
+		"Weapon_SRM_CSSRM2_1-J6",
+		"Weapon_SRM_CSSRM2_2-CCWP-12",
+		"Weapon_SRM_CSSRM2_2-J2",
+		"Weapon_SRM_CSSRM2_2-J6",
+		"Weapon_SRM_SSRM2_0-STOCK",
+		"Weapon_SRM_SSRM2_1-Coventry",
+		"Weapon_SRM_SSRM2_1-Holly",
+		"Weapon_SRM_SSRM2_2-Coventry",
+		"Weapon_SRM_SSRM2_2-Holly",
+		"Weapon_SRM_SSRM2_2-Valiant",
+		"Weapon_SRM_SSRM2_3-Valiant"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 110
+				}
+			}
+		}
+	]
+}

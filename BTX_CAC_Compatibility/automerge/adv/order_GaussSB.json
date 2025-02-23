@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Weapon_Gauss_Silver_Bullet_Gauss_0-STOCK"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 53
+				}
+			}
+		}
+	]
+}

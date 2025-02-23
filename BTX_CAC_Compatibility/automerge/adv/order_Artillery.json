@@ -1,0 +1,21 @@
+{
+	"TargetIDs": [
+		"Weapon_MortarCAC_Arrow4",
+		"Weapon_MortarCAC_LongTom",
+		"Weapon_MortarCAC_MobileLongTom",
+		"Weapon_MortarCAC_Sniper",
+		"Weapon_MortarCAC_Thumper",
+		"Weapon_MortarCAC_ThumperFree"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 2
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"TargetIDs": [
+		"Gear_Addon_Artemis4"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 112
+				}
+			}
+		}
+	]
+}

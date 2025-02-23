@@ -1,0 +1,34 @@
+{
+	"TargetIDs": [
+		"Weapon_Autocannon_CLB20X_0-STOCK",
+		"Weapon_Autocannon_CLB20X_1-Flocculation",
+		"Weapon_Autocannon_CLB20X_1-TypeJ",
+		"Weapon_Autocannon_CLB20X_1-TypeMu",
+		"Weapon_Autocannon_CLB20X_1-TypeOVR-Y",
+		"Weapon_Autocannon_CLB20X_2-Flocculation",
+		"Weapon_Autocannon_CLB20X_2-TypeJ",
+		"Weapon_Autocannon_CLB20X_2-TypeMu",
+		"Weapon_Autocannon_CLB20X_2-TypeOVR-Y",
+		"Weapon_Autocannon_LB20X_0-STOCK",
+		"Weapon_Autocannon_LB20X_1-Shengli_Arms",
+		"Weapon_Autocannon_LB20X_2-Shengli_Arms",
+		"Weapon_Autocannon_LB20X_NU_0-STOCK",
+		"Weapon_Autocannon_LB20X_NU_1-Omnitech",
+		"Weapon_Autocannon_LB20X_NU_1-Shengli",
+		"Weapon_Autocannon_LB20X_NU_2-Omnitech",
+		"Weapon_Autocannon_LB20X_NU_2-Shengli",
+		"Weapon_Autocannon_LB20X_NU_2-TharHes",
+		"Weapon_Autocannon_LB20X_NU_3-TharHes"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 55
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,85 @@
+{
+	"TargetIDs": [
+		"CareerDifficultySettings",
+		"DifficultySettings"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$.difficultyList",
+			"Action": "ArrayConcat",
+			"Value": [
+				{
+					"ID": "diff_opforcomp",
+					"Name": "Enemy Components",
+					"UIOrder": 0,
+					"TelemetryEventName": "",
+					"Tooltip": "Select, if enemy (and allied) 'Mechs in mission have upgraded components.\nDefault -> Off (any already upgraded components stay upgraded)\nUpgraded -> actual upgrade chances depend on equipment rating.",
+					"Enabled": true,
+					"Visible": true,
+					"Toggle": false,
+					"StartOnly": false,
+					"DefaultIndex": 0,
+					"Options": [
+						{
+							"ID": "diff_opforcompoff",
+							"Name": "Default",
+							"TelemetryEventDesc": "",
+							"DifficultyValue": 0,
+							"CareerScoreModifier": 0,
+							"DifficultyConstants": [
+								{
+									"ConstantType": "AdditionalSettings",
+									"ConstantName": "RemoveSimGameTag",
+									"ConstantValue": "CAC_C_UpgradedComponents"
+								},
+								{
+									"ConstantType": "AdditionalSettings",
+									"ConstantName": "RemoveSimGameTag",
+									"ConstantValue": "CAC_C_UpgradedComponentsCSP"
+								}
+							]
+						},
+						{
+							"ID": "diff_opforcompon",
+							"Name": "Upgraded",
+							"TelemetryEventDesc": "",
+							"DifficultyValue": 0,
+							"CareerScoreModifier": 0,
+							"DifficultyConstants": [
+								{
+									"ConstantType": "AdditionalSettings",
+									"ConstantName": "AddSimGameTag",
+									"ConstantValue": "CAC_C_UpgradedComponents"
+								},
+								{
+									"ConstantType": "AdditionalSettings",
+									"ConstantName": "RemoveSimGameTag",
+									"ConstantValue": "CAC_C_UpgradedComponentsCSP"
+								}
+							]
+						},
+						{
+							"ID": "diff_opforcompplus",
+							"Name": "Upgraded+",
+							"TelemetryEventDesc": "",
+							"DifficultyValue": 0,
+							"CareerScoreModifier": 0,
+							"DifficultyConstants": [
+								{
+									"ConstantType": "AdditionalSettings",
+									"ConstantName": "AddSimGameTag",
+									"ConstantValue": "CAC_C_UpgradedComponents"
+								},
+								{
+									"ConstantType": "AdditionalSettings",
+									"ConstantName": "AddSimGameTag",
+									"ConstantValue": "CAC_C_UpgradedComponentsCSP"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
