@@ -49,14 +49,6 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_LargeLaserPulse_NU_1-Sutel",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
       "ID": "Weapon_Laser_LargeLaserPulse_NU_1-Diverse_Optics",
       "Weight": 2,
       "RandomLimit": 0.0,
@@ -73,39 +65,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_LargeLaserPulse_NU_2-Maxell",
-      "Weight": 3,
+      "ID": "Weapon_Laser_LargeLaserPulse_NU_1-Sutel",
+      "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_LargeLaserPulse_NU_2-Magna",
-      "Weight": 3,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Laser_LargeLaserPulse_NU_2-Diverse_Optics",
-      "Weight": 3,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Laser_CLargeLaserPulse_2-Series7A",
-      "Weight": 3,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Laser_CLargeLaserPulse_2-Series44h",
+      "ID": "Weapon_Laser_CLargeLaserPulse_2-Delta",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -121,7 +89,39 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Laser_CLargeLaserPulse_2-Delta",
+      "ID": "Weapon_Laser_CLargeLaserPulse_2-Series44h",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_CLargeLaserPulse_2-Series7A",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_LargeLaserPulse_NU_2-Diverse_Optics",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_LargeLaserPulse_NU_2-Magna",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Laser_LargeLaserPulse_NU_2-Maxell",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",

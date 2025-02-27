@@ -1,6 +1,8 @@
 {
 	"TargetIDs": [
-		"Ammo_AmmunitionBox_Generic_SBGAUSS"
+		"Ammo_AmmunitionBox_Generic_SBGAUSS",
+		"Ammo_AmmunitionBox_Generic_SBGAUSS_Double",
+		"Ammo_AmmunitionBox_Generic_SBGAUSS_Triple"
 	],
 	"Instructions": [
 		{

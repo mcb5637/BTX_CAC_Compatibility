@@ -145,7 +145,7 @@ What to do when adding CAC-C into an existing savegame:
 	- Infernos Launcher (Weapon_Inferno_Inferno2_XXX -> Ammo_AmmunitionBox_Generic_SRM_Inferno) to standard SRMs with Inferno ammo
 	- Deadfire LRMs/SRMs (Weapon_SRM_DFSRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_SRM_DF)(Weapon_LRM_DFLRMX_0-STOCK -> Ammo_AmmunitionBox_Generic_LRM_DF) to standard LRMs/SRMs with deadfire ammo
 	- Mech Mortar (Gear_Mortar_MechMortar -> Weapon_MortarCAC_ThumperFree) to Thumper with matching ammo (requires ballistics slot)
-	- Artemis SRM/LRM (Weapon_SRM_ASRMXXX/Weapon_LRM_ALRMXXX -> Gear_Addon_Artemis4) to a matching standard SRM/LRM launcher with Artemis IV FCS attachment
+	- Artemis SRM/LRM (Weapon_SRM_ASRMXXX/Weapon_LRM_ALRMXXX -> Gear_Addon_Artemis4) to a matching standard SRM/LRM launcher with Artemis IV FCS attachmen
 
 TODO List:
 - imp sensor unlocks sensorlock without skill (add to irtweaks)

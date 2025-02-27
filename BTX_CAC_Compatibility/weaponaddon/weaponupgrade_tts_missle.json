@@ -1,0 +1,9 @@
+{
+	"Id": "weaponupgrade_tts_missle",
+	"autoTarget": true,
+	"installedLocationOnly": false,
+	"targetComponentTags": [
+		"missle_tts_attachable"
+	],
+	"modes": []
+}

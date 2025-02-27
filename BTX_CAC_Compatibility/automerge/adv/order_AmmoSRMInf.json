@@ -1,7 +1,8 @@
 {
 	"TargetIDs": [
-		"Ammo_AmmunitionBox_Generic_SRM_Inferno_Half",
-		"Ammo_AmmunitionBox_Generic_SRMInferno"
+		"Ammo_AmmunitionBox_Generic_SRMInferno",
+		"Ammo_AmmunitionBox_Generic_SRMInferno_Double",
+		"Ammo_AmmunitionBox_Generic_SRMInferno_Half"
 	],
 	"Instructions": [
 		{

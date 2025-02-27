@@ -9,7 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_Gauss_LightGauss_1-Krupp",
+      "ID": "Weapon_Gauss_LightGauss_1-Corean",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -25,16 +25,8 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Gauss_LightGauss_1-Corean",
+      "ID": "Weapon_Gauss_LightGauss_1-Krupp",
       "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Gauss_LightGauss_2-Imperator",
-      "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
@@ -47,12 +39,20 @@
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Gauss_LightGauss_2-Imperator",
+      "Weight": 4,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
     }
   ],
   "AmmoTypes": [
     {
       "ID": "Ammo_AmmunitionBox_Generic_LGAUSS",
-      "Weight": 0,
+      "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,

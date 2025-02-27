@@ -4,7 +4,7 @@
 	"Description": "Modifies BTX (and BTXMinusWeapons) for CAC.",
 	"Author": "mcb",
 	"Website": "",
-	"Version": "2.0.0.3",
+	"Version": "2.0.1.0",
 	"DependsOn": [
 		"BT_Extended",
 		"BT_Extended_Timeline",
@@ -95,7 +95,7 @@
 	"Manifest": [
 		{
 			"Type": "WeaponDef",
-			"Path": "automerge\\weapon",
+			"Path": "automerge/weapon",
 			"ShouldMergeJSON": true
 		},
 
@@ -118,6 +118,10 @@
 		},
 		{
 			"Type": "AmmunitionBoxDef",
+			"Path": "automerge/ammoboxnew"
+		},
+		{
+			"Type": "AmmunitionBoxDef",
 			"Path": "ammoboxmerge",
 			"ShouldMergeJSON": true
 		},
@@ -129,6 +133,10 @@
 		{
 			"Type": "ItemCollectionDef",
 			"Path": "itemCollectionAdd"
+		},
+		{
+			"Type": "ItemCollectionDef",
+			"Path": "automerge/itemcollections"
 		},
 		{
 			"Type": "ShipModuleUpgrade",
@@ -252,15 +260,15 @@
 		
 		{
 			"Type": "AdvancedJSONMerge",
-			"Path": "automerge\\adv"
+			"Path": "automerge/adv"
 		},
 		{
 		  "Type": "ComponentUpgradeList",
-		  "Path": "automerge\\ulist"
+		  "Path": "automerge/ulist"
 		},
 		{
 		  "Type": "ComponentUpgradeSubList",
-		  "Path": "automerge\\usublist"
+		  "Path": "automerge/usublist"
 		}
 	]
 }

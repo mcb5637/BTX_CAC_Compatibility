@@ -1,6 +1,8 @@
 {
 	"TargetIDs": [
-		"Ammo_AmmunitionBox_Generic_HGAUSS"
+		"Ammo_AmmunitionBox_Generic_HGAUSS",
+		"Ammo_AmmunitionBox_Generic_HGAUSS_Double",
+		"Ammo_AmmunitionBox_Generic_HGAUSS_Triple"
 	],
 	"Instructions": [
 		{

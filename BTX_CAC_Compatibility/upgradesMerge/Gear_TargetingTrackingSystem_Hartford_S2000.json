@@ -1,0 +1,55 @@
+{
+	"Custom": {
+		"AddonReference": {
+			"installedLocationOnly": false,
+			"autoTarget": true,
+			"WeaponAddonIds": [
+				"weaponupgrade_tts_missle"
+			]
+		}
+	},
+	"Description": {
+		"Details": "All 'Mechs come equipped with a stock targeting and tracking system—or TTS—which can be upgraded for improved performance. Upgrades increases accuracy of the attached missile Weapon."
+	},
+	"BonusValueA": "+ 3 Acc.",
+	"BonusValueB": "(Missile)",
+	"InventorySize": 1,
+	"Tonnage": 0.5,
+	"statusEffects": [
+		{
+			"durationData": {
+				"duration": -1,
+				"stackLimit": -1
+			},
+			"targetingData": {
+				"effectTriggerType": "Passive",
+				"effectTargetType": "Creator",
+				"showInTargetPreview": false,
+				"showInStatusPanel": true
+			},
+			"effectType": "StatisticEffect",
+			"Description": {
+				"Id": "StatusEffect-Attack_ToHitMissile",
+				"Name": "Missile WEAPON HIT CHANCE IMPROVED",
+				"Details": "Missile weapon attacks have their hit improved by [AMT].",
+				"Icon": "uixSvgIcon_equipment_TTS"
+			},
+			"statisticData": {
+				"appliesEachTick": false,
+				"effectsPersistAfterDestruction": false,
+				"statName": "AccuracyModifier",
+				"operation": "Float_Add",
+				"modValue": "-3.0",
+				"modType": "System.Single",
+				"additionalRules": "NotSet",
+				"targetCollection": "Weapon",
+				"targetWeaponCategory": "NotSet",
+				"targetWeaponType": "NotSet",
+				"targetAmmoCategory": "NotSet",
+				"targetWeaponSubType": "NotSet",
+				"Location": "{target}"
+			},
+			"nature": "Buff"
+		}
+	]
+}

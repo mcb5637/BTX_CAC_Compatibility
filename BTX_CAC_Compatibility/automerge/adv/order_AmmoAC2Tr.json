@@ -1,6 +1,8 @@
 {
 	"TargetIDs": [
-		"Ammo_AmmunitionBox_Generic_AC2Tracer"
+		"Ammo_AmmunitionBox_Generic_AC2Tracer",
+		"Ammo_AmmunitionBox_Generic_AC2Tracer_Double",
+		"Ammo_AmmunitionBox_Generic_AC2Tracer_Half"
 	],
 	"Instructions": [
 		{

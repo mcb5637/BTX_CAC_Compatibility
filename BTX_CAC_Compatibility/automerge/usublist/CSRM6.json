@@ -9,7 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_SRM_CSRM6_1-TypeI",
+      "ID": "Weapon_SRM_CSRM6_1-J7",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -25,7 +25,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_SRM_CSRM6_1-J7",
+      "ID": "Weapon_SRM_CSRM6_1-TypeI",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,7 +33,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_SRM_CSRM6_2-TypeI",
+      "ID": "Weapon_SRM_CSRM6_2-J7",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -49,7 +49,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_SRM_CSRM6_2-J7",
+      "ID": "Weapon_SRM_CSRM6_2-TypeI",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -60,15 +60,7 @@
   "AmmoTypes": [
     {
       "ID": "Ammo_AmmunitionBox_Generic_SRM",
-      "Weight": 0,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Ammo_AmmunitionBox_Generic_SRMInferno",
-      "Weight": 0,
+      "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
@@ -76,7 +68,15 @@
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
-      "Weight": 0,
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Ammo_AmmunitionBox_Generic_SRMInferno",
+      "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
@@ -85,8 +85,24 @@
   ],
   "Addons": [
     {
+      "ID": "",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
       "ID": "Gear_Addon_Artemis4",
-      "Weight": 0,
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Gear_Addon_Artemis4",
+      "Weight": 6,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,

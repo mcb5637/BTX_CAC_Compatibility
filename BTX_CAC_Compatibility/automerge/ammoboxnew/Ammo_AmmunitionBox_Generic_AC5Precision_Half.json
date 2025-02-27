@@ -1,0 +1,35 @@
+{
+  "AmmoID": "Ammunition_AC5Precision",
+  "Capacity": 5,
+  "Description": {
+    "Cost": 30000,
+    "Rarity": 4,
+    "Purchasable": true,
+    "Manufacturer": "Generic",
+    "Model": "Precision AC5",
+    "UIName": "AC/5 Precision Ammo (Half)",
+    "Id": "Ammo_AmmunitionBox_Generic_AC5Precision_Half",
+    "Name": "Precision AC/5 Ammo",
+    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nPrecision AC/5 Ammo Bins each contain 5 rounds and may feed multiple weapons.\n\nPrecision rounds ignore 2 Evasion Charges.",
+    "Icon": "uixSvgIcon_ammoBox_Ballistic"
+  },
+  "BonusValueA": "+ 2 Evasion Ignore",
+  "BonusValueB": "",
+  "ComponentType": "AmmunitionBox",
+  "ComponentSubType": "Ammunition",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 1,
+  "Tonnage": 0.5,
+  "CanExplode": true,
+  "AllowedLocations": "All",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "statusEffects": [],
+  "ComponentTags": {
+    "items": [
+      "component_type_stock"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

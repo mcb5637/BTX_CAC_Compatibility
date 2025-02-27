@@ -1,4 +1,10 @@
 {
+	"Custom": {
+		"Flags": [
+			"invalid",
+			"hide"
+		]
+	},
 	"AmmoID": "Ammunition_SRMInferno",
 	"Capacity": 50,
 	"Description": {

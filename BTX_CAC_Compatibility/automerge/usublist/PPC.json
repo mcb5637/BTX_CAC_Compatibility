@@ -17,7 +17,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_PPC_PPC_1-Tiegart",
+      "ID": "Weapon_PPC_PPC_1-Ceres_Arms",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,7 +33,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_PPC_PPC_1-Ceres_Arms",
+      "ID": "Weapon_PPC_PPC_1-Tiegart",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,7 +41,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_PPC_PPC_2-Tiegart",
+      "ID": "Weapon_PPC_PPC_2-Ceres_Arms",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -57,11 +57,35 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_PPC_PPC_2-Ceres_Arms",
+      "ID": "Weapon_PPC_PPC_2-Tiegart",
       "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_PPC_PPCER_NU_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_PPC_PPCSnub_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3065-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_PPC_PPCER_0-STOCK",
+      "Weight": 6,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": true,
       "AllowDowngrade": false
     }
   ],

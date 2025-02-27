@@ -57,7 +57,7 @@
 	"ComponentType": "Weapon",
 	"ComponentSubType": "Weapon",
 	"PrefabIdentifier": "artillery",
-	"InventorySize": 6,
+	"InventorySize": 5,
 	"Tonnage": 14,
 	"AllowedLocations": "All",
 	"DisallowedLocations": "All",

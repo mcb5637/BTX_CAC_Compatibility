@@ -10,7 +10,7 @@
     },
     {
       "ID": "Gear_HeatSink_Clan_Double",
-      "Weight": 2,
+      "Weight": 4,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,

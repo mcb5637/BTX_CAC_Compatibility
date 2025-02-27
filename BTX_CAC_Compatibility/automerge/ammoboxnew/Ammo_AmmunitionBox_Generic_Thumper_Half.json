@@ -1,0 +1,35 @@
+{
+  "AmmoID": "Ammunition_Thumper",
+  "Capacity": 10,
+  "Description": {
+    "Cost": 4500,
+    "Rarity": 0,
+    "Purchasable": true,
+    "Manufacturer": "Generic",
+    "Model": "Thumper",
+    "UIName": "Thumper Artillery Ammo (Half)",
+    "Id": "Ammo_AmmunitionBox_Generic_Thumper_Half",
+    "Name": "Thumper Artillery Ammo",
+    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nThumper Ammo Bins each contain 10 rounds and may feed multiple weapons.",
+    "Icon": "uixSvgIcon_ammoBox_Ballistic"
+  },
+  "BonusValueA": "",
+  "BonusValueB": "",
+  "ComponentType": "AmmunitionBox",
+  "ComponentSubType": "Ammunition",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 1,
+  "Tonnage": 0.5,
+  "CanExplode": true,
+  "AllowedLocations": "All",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "statusEffects": [],
+  "ComponentTags": {
+    "items": [
+      "component_type_stock"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

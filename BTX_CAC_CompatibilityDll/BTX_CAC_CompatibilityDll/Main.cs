@@ -18,13 +18,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using UIWidgets;
 using UnityEngine;
 
-[assembly: AssemblyVersion("2.0.0.3")]
+[assembly: AssemblyVersion("2.0.1.0")]
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -42,13 +41,14 @@ namespace BTX_CAC_CompatibilityDll
             try
             {
                 Sett = JsonConvert.DeserializeObject<Settings>(settingsJSON);
-                ItemCollectionDef_FromCSV.Replaces = JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "automerge\\itemcollectionreplace.json")));
+                ItemCollectionDef_FromCSV.Replaces = JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "automerge", "itemcollectionreplace.json")));
                 foreach (KeyValuePair<string, ItemCollectionReplace> kv in JsonConvert.DeserializeObject<Dictionary<string, ItemCollectionReplace>>(File.ReadAllText(Path.Combine(directory, "itemcollectionreplace.json"))))
                 {
                     ItemCollectionDef_FromCSV.Replaces[kv.Key] = kv.Value;
                 }
-                Splits = JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "automerge\\addonsplit.json")));
-                foreach (KeyValuePair<string, WeaponAddonSplit> kv in JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "addonsplit.json")))) {
+                Splits = JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "automerge", "addonsplit.json")));
+                foreach (KeyValuePair<string, WeaponAddonSplit> kv in JsonConvert.DeserializeObject<Dictionary<string, WeaponAddonSplit>>(File.ReadAllText(Path.Combine(directory, "addonsplit.json"))))
+                {
                     Splits[kv.Key] = kv.Value;
                 }
             }
@@ -76,7 +76,7 @@ namespace BTX_CAC_CompatibilityDll
             InfernoExplode.Patch(harmony);
             MechAutoFixer.Register();
             MovableBlockers.RegisterValidators();
-            ComponentUpgrader.Init();
+            ComponentUpgrader.Register();
 
             try
             {
@@ -120,6 +120,9 @@ namespace BTX_CAC_CompatibilityDll
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechLabMechInfoWidget), "CalculateTonnage"), "BEX.BattleTech.Extended_CE");
 
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(InventoryItemElement_NotListView), "OnDestroy"), "com.github.m22spencer.BattletechPerformanceFix");
+
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechValidationRules), "ValidatePrototypeEquipment"), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechValidationRules), "ValidateMechDef"), "BEX.BattleTech.Extended_CE");
             }
             catch (Exception e)
             {
@@ -152,6 +155,7 @@ namespace BTX_CAC_CompatibilityDll
             ToHitModifiersHelper.registerModifier("TAGNARC", "TAGNARC", true, false, ElectronicWarfare.NARC_TAG_Effect, ElectronicWarfare.NARC_TAG_EffectName);
             ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, CustomClustering.Cluster_EffectName, null);
             CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());
+            CustomComponents.Validator.RegisterMechValidator(TTS.MechValidator, TTS.MechValidatorFieldable);
             MoveStatusPreview_DisplayPreviewStatus.MoveTypeDisplayOverride = MovementRework.MoveTypeDisplayOverride;
         }
 

@@ -1,6 +1,7 @@
 ﻿using BattleTech;
 using CustAmmoCategories;
 using HarmonyLib;
+using Localize;
 using System;
 using System.Collections.Generic;
 using System.Linq;

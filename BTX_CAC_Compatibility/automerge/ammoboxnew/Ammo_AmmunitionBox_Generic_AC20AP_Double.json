@@ -1,0 +1,35 @@
+{
+  "AmmoID": "Ammunition_AC20AP",
+  "Capacity": 5,
+  "Description": {
+    "Cost": 60000,
+    "Rarity": 4,
+    "Purchasable": true,
+    "Manufacturer": "Generic",
+    "Model": "AP AC20",
+    "UIName": "AC/20 AP Ammo (Double)",
+    "Id": "Ammo_AmmunitionBox_Generic_AC20AP_Double",
+    "Name": "AP AC/20 Ammo",
+    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nAP AC/20 Ammo Bins each contain 5 rounds and may feed multiple weapons.\n\nArmor Piercing rounds do a single damage to internal structure even through armor. This can potentially mean internal components are damaged. AP Ammo however, has -1 accuracy.",
+    "Icon": "uixSvgIcon_ammoBox_Ballistic"
+  },
+  "BonusValueA": "+ 1 AP Dmg.",
+  "BonusValueB": "- 1 Acc.",
+  "ComponentType": "AmmunitionBox",
+  "ComponentSubType": "Ammunition",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 2,
+  "Tonnage": 2.0,
+  "CanExplode": true,
+  "AllowedLocations": "All",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "statusEffects": [],
+  "ComponentTags": {
+    "items": [
+      "component_type_stock"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

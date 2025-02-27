@@ -1,7 +1,9 @@
 {
 	"TargetIDs": [
 		"Ammo_AmmunitionBox_Generic_LRM_DF",
-		"Ammo_AmmunitionBox_Generic_LRM_DF_Half"
+		"Ammo_AmmunitionBox_Generic_LRM_DF_Double",
+		"Ammo_AmmunitionBox_Generic_LRM_DF_Half",
+		"Ammo_AmmunitionBox_Generic_LRM_DF_Triple"
 	],
 	"Instructions": [
 		{

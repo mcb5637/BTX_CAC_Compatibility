@@ -9,15 +9,7 @@
       "AllowDowngrade": true
     },
     {
-      "ID": "Weapon_Autocannon_AC10_1-Mydron",
-      "Weight": 2,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Autocannon_AC10_1-Kali_Yama",
+      "ID": "Weapon_Autocannon_AC10_1-Defiance",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -33,7 +25,7 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_AC10_1-Defiance",
+      "ID": "Weapon_Autocannon_AC10_1-Kali_Yama",
       "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -41,23 +33,15 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_AC10_2-Mydron",
-      "Weight": 3,
+      "ID": "Weapon_Autocannon_AC10_1-Mydron",
+      "Weight": 2,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_AC10_2-Kali_Yama",
-      "Weight": 3,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Weapon_Autocannon_AC10_2-Imperator",
+      "ID": "Weapon_Autocannon_AC10_2-Defiance",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -73,7 +57,23 @@
       "AllowDowngrade": false
     },
     {
-      "ID": "Weapon_Autocannon_AC10_2-Defiance",
+      "ID": "Weapon_Autocannon_AC10_2-Imperator",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC10_2-Kali_Yama",
+      "Weight": 3,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_AC10_2-Mydron",
       "Weight": 3,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
@@ -87,12 +87,44 @@
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_LB10X_NU_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_UAC10_NU_0-STOCK",
+      "Weight": 5,
+      "RandomLimit": 0.0,
+      "MinDate": "3050-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_LB10X_0-STOCK",
+      "Weight": 6,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Weapon_Autocannon_UAC10_0-STOCK",
+      "Weight": 6,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": true,
+      "AllowDowngrade": false
     }
   ],
   "AmmoTypes": [
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC10",
-      "Weight": 0,
+      "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
@@ -100,7 +132,7 @@
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC10AP",
-      "Weight": 0,
+      "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
@@ -108,7 +140,7 @@
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC10Precision",
-      "Weight": 0,
+      "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
@@ -116,7 +148,7 @@
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC10Tracer",
-      "Weight": 0,
+      "Weight": 1,
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
