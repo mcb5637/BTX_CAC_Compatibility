@@ -65,22 +65,6 @@
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
-    },
-    {
-      "ID": "Ammo_AmmunitionBox_Generic_SRM_DF",
-      "Weight": 1,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
-    },
-    {
-      "ID": "Ammo_AmmunitionBox_Generic_SRMInferno",
-      "Weight": 1,
-      "RandomLimit": 0.0,
-      "MinDate": "0001-01-01T00:00:00",
-      "ListLink": false,
-      "AllowDowngrade": false
     }
   ],
   "Addons": [

@@ -2048,12 +2048,19 @@ namespace BTX_CAC_CompatibilityDll
                 int size = data.ShotsWhenFired;
                 string p = WeaponForwardingPattern.Forward(data, true, false);
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"{(Streak ? "Streak" : "Individual")}\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n";
-                if (data.ShotsWhenFired >= 6)
-                    p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"DeadfireBase\": 0.54320985,\r\n\t\t\t\"ArtemisBase\": 0.76666665,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
-                else if (data.ShotsWhenFired >= 4)
-                    p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6597222,\r\n\t\t\t\"DeadfireBase\": 0.568287,\r\n\t\t\t\"ArtemisBase\": 0.7962963,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                if (Streak)
+                {
+                    p += "\t\"RestrictedAmmo\": [\r\n\t\t\"Ammunition_SRMInferno\",\r\n\t\t\"Ammunition_SRM_DF\"\r\n\t],\r\n";
+                }
                 else
-                    p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.7083333,\r\n\t\t\t\"DeadfireBase\": 0.599537,\r\n\t\t\t\"ArtemisBase\": 0.8611111,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                {
+                    if (data.ShotsWhenFired >= 6)
+                        p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"DeadfireBase\": 0.54320985,\r\n\t\t\t\"ArtemisBase\": 0.76666665,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                    else if (data.ShotsWhenFired >= 4)
+                        p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6597222,\r\n\t\t\t\"DeadfireBase\": 0.568287,\r\n\t\t\t\"ArtemisBase\": 0.7962963,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                    else
+                        p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.7083333,\r\n\t\t\t\"DeadfireBase\": 0.599537,\r\n\t\t\t\"ArtemisBase\": 0.8611111,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                }
                 p += $"\t\"Modes\": [\r\n\t\t{{\r\n\t\t\t\"Id\": \"SRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}}\r\n\t]{(Streak ? ",\r\n\t\"Streak\": true" : "")}\r\n}}\r\n";
                 WriteTo(targetFolder, id, p);
                 if (EnableArtemis)
@@ -2085,36 +2092,48 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     UpgradeEntry[] ad;
                     if (EnableArtemis)
+                    {
                         ad = new UpgradeEntry[] {
-
-                                new UpgradeEntry
-                                {
-                                    ID = "",
-                                    AllowDowngrade = false,
-                                    ListLink = false,
-                                    MinDate = DateTime.MinValue,
-                                    Weight = 0,
-                                },
-                                new UpgradeEntry
-                                {
-                                    ID = "Gear_Addon_Artemis4",
-                                    AllowDowngrade = false,
-                                    ListLink = false,
-                                    MinDate = HCDate,
-                                    Weight = 4,
-                                },
-                                new UpgradeEntry
-                                {
-                                    ID = "Gear_Addon_Artemis4",
-                                    AllowDowngrade = false,
-                                    ListLink = false,
-                                    MinDate = DateTime.MinValue,
-                                    Weight = 5,
-                                },
-                            };
+                            new UpgradeEntry
+                            {
+                                ID = "",
+                                AllowDowngrade = false,
+                                ListLink = false,
+                                MinDate = DateTime.MinValue,
+                                Weight = 0,
+                            },
+                            new UpgradeEntry
+                            {
+                                ID = "Gear_Addon_Artemis4",
+                                AllowDowngrade = false,
+                                ListLink = false,
+                                MinDate = HCDate,
+                                Weight = 4,
+                            },
+                            new UpgradeEntry
+                            {
+                                ID = "Gear_Addon_Artemis4",
+                                AllowDowngrade = false,
+                                ListLink = false,
+                                MinDate = DateTime.MinValue,
+                                Weight = 5,
+                            },
+                        };
+                    }
                     else
+                    {
                         ad = Array.Empty<UpgradeEntry>();
-                    c.AddSubList($"{m.Groups["c"].Value}{(Streak ? "S" : "")}SRM{s}", id, ad, new string[] { "Ammo_AmmunitionBox_Generic_SRM", "Ammo_AmmunitionBox_Generic_SRMInferno", "Ammo_AmmunitionBox_Generic_SRM_DF" }, lvl);
+                    }
+                    string[] abox;
+                    if (Streak)
+                    {
+                        abox = new string[] { "Ammo_AmmunitionBox_Generic_SRM", "Ammo_AmmunitionBox_Generic_SRMInferno", "Ammo_AmmunitionBox_Generic_SRM_DF" };
+                    }
+                    else
+                    {
+                        abox = new string[] { "Ammo_AmmunitionBox_Generic_SRM" };
+                    }
+                    c.AddSubList($"{m.Groups["c"].Value}{(Streak ? "S" : "")}SRM{s}", id, ad, abox, lvl);
                     c.AddMissleTTS.Add(id);
                 }
             }

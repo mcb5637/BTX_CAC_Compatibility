@@ -22,23 +22,10 @@
 	"HitGenerator": "Streak",
 	"AMSHitChance": 0.0,
 	"MissileHealth": 1,
-	"Custom" : {
-		"Clustering": {
-			"Base": 0.6597222,
-			"DeadfireBase": 0.568287,
-			"ArtemisBase": 0.7962963,
-			"Steps": [
-				{
-					"GunnerySkill": 6,
-					"Mod": 0.03
-				},
-				{
-					"GunnerySkill": 10,
-					"Mod": 0.03
-				}
-			]
-		}
-	},
+	"RestrictedAmmo": [
+		"Ammunition_SRMInferno",
+		"Ammunition_SRM_DF"
+	],
 	"Modes": [
 		{
 			"Id": "SRM_Std",
