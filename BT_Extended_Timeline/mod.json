@@ -300,14 +300,8 @@
 		
 		"FactionShopDeletion":
 		{
-			"3030-11-23T00:00:00":
-			[
-				"starsystemdef_Corey"
-			],
-			"3051-12-22T00:00:00":
-			[
-				"starsystemdef_Irece"
-			]
+			"3030-11-23T00:00:00": ["starsystemdef_Corey"],
+			"3051-12-22T00:00:00": ["starsystemdef_Irece"]
 		},
 		
 		"ShopSwitch":
