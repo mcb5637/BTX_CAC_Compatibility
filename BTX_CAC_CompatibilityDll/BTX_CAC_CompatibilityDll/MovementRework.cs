@@ -43,15 +43,36 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 else
                 {
-                    if (m.JumpedLastRound)
-                        return SelfMovedModifier.Jump;
-                    if (m.SprintedLastRound)
-                        return SelfMovedModifier.Sprint;
-                    float max = m.MaxMoveDistance();
-                    float rem = m.MoveCostLeft();
-                    if (IsRunning(rem, max))
-                        return SelfMovedModifier.Run;
-                    return SelfMovedModifier.Walk;
+                    if (m.HasMovedThisRound)
+                    {
+                        if (m.JumpedLastRound)
+                            return SelfMovedModifier.Jump;
+                        if (m.SprintedLastRound)
+                            return SelfMovedModifier.Sprint;
+                        float max = m.MaxMoveDistance();
+                        float rem = m.MoveCostLeft();
+                        if (IsRunning(rem, max))
+                            return SelfMovedModifier.Run;
+                        return SelfMovedModifier.Walk;
+                    }
+                    else
+                    {
+                        if (m.JumpPathing != null && m.JumpPathing.IsLockedToDest)
+                            return SelfMovedModifier.Jump;
+                        if (m.Pathing != null && m.Pathing.HasPath)
+                        {
+                            if (m.Pathing.MoveType == MoveType.Sprinting)
+                                return SelfMovedModifier.Sprint;
+                            if (m.Pathing.MoveType == MoveType.Walking || m.Pathing.MoveType == MoveType.Melee)
+                            {
+                                float max = m.MaxMoveDistance();
+                                float rem = m.MoveCostLeft();
+                                if (IsRunning(rem, max))
+                                    return SelfMovedModifier.Run;
+                                return SelfMovedModifier.Walk;
+                            }
+                        }
+                    }
                 }
             }
             return SelfMovedModifier.None;
@@ -68,7 +89,7 @@ namespace BTX_CAC_CompatibilityDll
                     r = attacker.Combat.Constants.ToHit.ToHitSelfWalkVehicle;
                     break;
                 case SelfMovedModifier.Sprint:
-                    r = 2;
+                    r = attacker.Combat.Constants.ToHit.ToHitSelfSprinted;
                     goto case SelfMovedModifier.Walk;
                 case SelfMovedModifier.Run:
                     r = 2;
