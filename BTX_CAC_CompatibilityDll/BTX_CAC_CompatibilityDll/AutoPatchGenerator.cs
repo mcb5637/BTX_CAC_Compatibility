@@ -627,10 +627,10 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_Autocannon_(?<c>C?)LB(?<size>\\d+)X(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
             },
-            new WeaponForwardingPattern()
+            new WeaponLaserPattern()
             {
                 Check = new Regex("^Weapon_Laser_(?<c>C?)(?<size>Large|Medium|Small|Micro)LaserPulse(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
-                ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1\r\n}\r\n",
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1",
                 Details = true,
                 Order = (m) =>
                 {
@@ -652,10 +652,10 @@ namespace BTX_CAC_CompatibilityDll
                     c.AddEnergyTTS.Add(id);
                 },
             },
-            new WeaponForwardingPattern()
+            new WeaponLaserPattern()
             {
                 Check = new Regex("^Weapon_Laser_(?<size>Large|Medium|Small)LaserXPulse_(?:\\d+)-.+$"),
-                ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1\r\n}\r\n",
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1",
                 Details = true,
                 Order = (m) =>
                 {
@@ -673,10 +673,10 @@ namespace BTX_CAC_CompatibilityDll
                     c.AddEnergyTTS.Add(id);
                 },
             },
-            new WeaponForwardingPattern()
+            new WeaponLaserPattern()
             {
                 Check = new Regex("^Weapon_Laser_(?<c>C?)(?<size>Large|Medium|Small|Micro)LaserER(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
-                ExtraData = "\r\n}\r\n",
+                ExtraData = "",
                 Details = true,
                 Order = (m) =>
                 {
@@ -698,10 +698,10 @@ namespace BTX_CAC_CompatibilityDll
                     c.AddEnergyTTS.Add(id);
                 },
             },
-            new WeaponForwardingPattern()
+            new WeaponLaserPattern()
             {
                 Check = new Regex("^Weapon_Laser_(?<size>Large|Medium|Small)Laser_(?<plus>-?\\d+)-.+$"),
-                ExtraData = "\r\n}\r\n",
+                ExtraData = "",
                 Details = true,
                 Order = (m) =>
                 {
@@ -719,10 +719,10 @@ namespace BTX_CAC_CompatibilityDll
                     c.AddEnergyTTS.Add(id);
                 },
             },
-            new WeaponForwardingPattern()
+            new WeaponLaserPattern()
             {
                 Check = new Regex("^Weapon_Laser_C(?<size>Large|Medium|Small)LaserHeavy_(?<plus>\\d+)-.+$"),
-                ExtraData = "\r\n}\r\n",
+                ExtraData = "",
                 Details = true,
                 Order = (m) =>
                 {
@@ -756,10 +756,10 @@ namespace BTX_CAC_CompatibilityDll
                     c.AddEnergyTTS.Add(id);
                 },
             },
-            new WeaponForwardingPattern()
+            new WeaponLaserPattern()
             {
                 Check = new Regex("^Weapon_Laser_BinaryLaserCannon_(?<plus>\\d+)-.+$"),
-                ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"ProjectilesPerShot\": 2\r\n}\r\n",
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"ProjectilesPerShot\": 2",
                 Order = (m) => ComponentOrder.BLaser,
                 SubList = (d, id, m, c) =>
                 {
@@ -1909,6 +1909,32 @@ namespace BTX_CAC_CompatibilityDll
                     c.AddSubList($"{sl}{m.Groups["c"].Value}LBX{clustersize}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{clustersize}", $"Ammo_AmmunitionBox_Generic_AC{clustersize}AP", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Precision", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Tracer", $"Ammo_AmmunitionBox_Generic_LB{clustersize}X" }, lvl);
                 }
                 c.AddBallisticTTS.Add(id);
+            }
+        }
+
+        private class WeaponLaserPattern : Pattern<WeaponDef>
+        {
+            public string ExtraData;
+            public bool Details = false;
+            public bool Heat = false;
+            public bool Damage = true;
+            public bool Boni = false;
+            public Func<IdCollector, List<string>> AddToList = null;
+            public Func<Match, ComponentOrder> Order = null;
+            public Action<WeaponDef, string, Match, IdCollector> SubList = null;
+            public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
+            {
+                string p = WeaponForwardingPattern.Forward(data, Details, Heat, Damage, Boni);
+                p += ExtraData;
+                p += ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LMode_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Laser operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},";
+                int torem = Math.Min((int)data.Damage / 5 / 2, data.HeatGenerated / 3 / 2);
+                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"LMode_LowPower\",\r\n\t\t\t\"UIName\": \"LP\",\r\n\t\t\t\"Name\": \"Low Power Mode\",\r\n\t\t\t\"Description\": \"Using less Energy to create the Laser reduces heat generation at the cost of Damage.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamagePerShot\": -{torem*5},\r\n\t\t\t\"HeatGenerated\": -{torem*3}\r\n\t\t}}\r\n\t]\r\n}}\r\n";
+                WriteTo(targetFolder, id, p);
+                if (AddToList != null)
+                    AddToList(c)?.Add(id);
+                if (Order != null)
+                    c.AddOrder(Order(m), id);
+                SubList?.Invoke(data, id, m, c);
             }
         }
 

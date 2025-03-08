@@ -13,5 +13,23 @@
 	"AccuracyModifier": 0,
 	"Description": {
 		"Details": "Small Lasers deal superb damage for their weight and heat generation but have extremely limited range. Like all Lasers, Small Lasers do not do stability damage."
-	}
+	},
+	"Modes": [
+		{
+			"Id": "LMode_Std",
+			"UIName": "STD",
+			"Name": "Standard",
+			"Description": "Laser operates normally.",
+			"isBaseMode": true
+		},
+		{
+			"Id": "LMode_LowPower",
+			"UIName": "LP",
+			"Name": "Low Power Mode",
+			"Description": "Using less Energy to create the Laser reduces heat generation at the cost of Damage.",
+			"isBaseMode": false,
+			"DamagePerShot": -0,
+			"HeatGenerated": -0
+		}
+	]
 }

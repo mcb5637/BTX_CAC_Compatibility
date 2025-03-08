@@ -13,5 +13,23 @@
 	"AccuracyModifier": -1,
 	"Description": {
 		"Details": "An improvement upon standard Medium Lasers, Extended-Range Medium Lasers extend their effective range at the cost of considerable heat generation. Like all Lasers, ER Medium Lasers do not do stability damage. Clan Extended Range weapons are longer range than their Inner Sphere counterparts."
-	}
+	},
+	"Modes": [
+		{
+			"Id": "LMode_Std",
+			"UIName": "STD",
+			"Name": "Standard",
+			"Description": "Laser operates normally.",
+			"isBaseMode": true
+		},
+		{
+			"Id": "LMode_LowPower",
+			"UIName": "LP",
+			"Name": "Low Power Mode",
+			"Description": "Using less Energy to create the Laser reduces heat generation at the cost of Damage.",
+			"isBaseMode": false,
+			"DamagePerShot": -10,
+			"HeatGenerated": -6
+		}
+	]
 }

@@ -13,5 +13,23 @@
 	"AccuracyModifier": -1,
 	"Description": {
 		"Details": "The Extended-Range Micro Laser is a very compact version of conventional ER laser weaponry. Like all Lasers, ER Micro Lasers do not do stability damage."
-	}
+	},
+	"Modes": [
+		{
+			"Id": "LMode_Std",
+			"UIName": "STD",
+			"Name": "Standard",
+			"Description": "Laser operates normally.",
+			"isBaseMode": true
+		},
+		{
+			"Id": "LMode_LowPower",
+			"UIName": "LP",
+			"Name": "Low Power Mode",
+			"Description": "Using less Energy to create the Laser reduces heat generation at the cost of Damage.",
+			"isBaseMode": false,
+			"DamagePerShot": -0,
+			"HeatGenerated": -0
+		}
+	]
 }

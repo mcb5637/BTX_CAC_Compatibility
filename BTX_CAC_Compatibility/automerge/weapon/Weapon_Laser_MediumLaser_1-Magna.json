@@ -13,5 +13,23 @@
 	"AccuracyModifier": 0,
 	"Description": {
 		"Details": "Medium Lasers are lightweight with respectable damage. Because of this, at least one can be found mounted on most units that cross the battlefield. Like all Lasers, Medium Lasers do not do stability damage."
-	}
+	},
+	"Modes": [
+		{
+			"Id": "LMode_Std",
+			"UIName": "STD",
+			"Name": "Standard",
+			"Description": "Laser operates normally.",
+			"isBaseMode": true
+		},
+		{
+			"Id": "LMode_LowPower",
+			"UIName": "LP",
+			"Name": "Low Power Mode",
+			"Description": "Using less Energy to create the Laser reduces heat generation at the cost of Damage.",
+			"isBaseMode": false,
+			"DamagePerShot": -10,
+			"HeatGenerated": -6
+		}
+	]
 }

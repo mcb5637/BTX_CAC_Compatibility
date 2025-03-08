@@ -15,5 +15,23 @@
 		"Details": "An improvement upon standard Large Lasers, Large Pulse Lasers use pulses of light instead of a single beam. This results in better accuracy and damage output but with greatly increased heat and weight. Large Pulse Lasers are extremely accurate. Clan Pulse weapons are longer range than their Inner Sphere counterparts."
 	},
 	"ImprovedBallistic": false,
-	"ProjectilesPerShot": 1
+	"ProjectilesPerShot": 1,
+	"Modes": [
+		{
+			"Id": "LMode_Std",
+			"UIName": "STD",
+			"Name": "Standard",
+			"Description": "Laser operates normally.",
+			"isBaseMode": true
+		},
+		{
+			"Id": "LMode_LowPower",
+			"UIName": "LP",
+			"Name": "Low Power Mode",
+			"Description": "Using less Energy to create the Laser reduces heat generation at the cost of Damage.",
+			"isBaseMode": false,
+			"DamagePerShot": -20,
+			"HeatGenerated": -12
+		}
+	]
 }
