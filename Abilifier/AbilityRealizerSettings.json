@@ -1,0 +1,13 @@
+{
+  "DumpAbilityDefNamesAtAddToTeam": false,
+  "AddTreeAbilities": false,
+  "RemoveNonTreeAbilities": false,
+  "IgnoreAbilities": [],
+  "IgnorePilotsWithTags": [],
+  "FactionAbilities": {},
+  "TagAbilities": {
+    "commander_player": [ "AbilityDef_CarefulManeuvers" ],
+    "PqMarked": [ "AbilityDef_CarefulManeuvers" ]
+  },
+  "SwapAIAbilities": {}
+}

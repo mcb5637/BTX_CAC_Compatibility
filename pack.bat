@@ -9,6 +9,6 @@ cd .\CBD
 cd ..\
 "C:\Program Files\7-Zip\7z.exe" d ".\BTX_CAC_Compatibility.zip" "CustomAmmoCategories\StreamingAssets"
 "C:\Program Files\7-Zip\7z.exe" d ".\BTX_CAC_Compatibility.zip" "ModTek\Injectors\RogueTechPerfFixesInjector.dll"
-"C:\Program Files\7-Zip\7z.exe" a ".\BTX_CAC_Compatibility.zip" ".\CustomActivatableEquipment\" ".\CustomAmmoCategories\" ".\CustomComponents\" ".\CustomLocalization\" ".\CustomUnits\" ".\RaidFix\"
+"C:\Program Files\7-Zip\7z.exe" a ".\BTX_CAC_Compatibility.zip" ".\CustomActivatableEquipment\" ".\CustomAmmoCategories\" ".\CustomComponents\" ".\CustomLocalization\" ".\CustomUnits\" ".\RaidFix\" ".\Abilifier\"
 
 pause

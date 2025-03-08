@@ -3,7 +3,7 @@
 Modifies BEX (and BTXMinusWeapons, if present) for CAC.
 
 Installation/Update: (requires working BEX installation)
-- Remove BTMLColorLOSMod, MechResizer and StablePiloting from your BTX installation (as CAC, CU and MechAffinity basically do the same)
+- Remove BTMLColorLOSMod, MechResizer, Retrainer and StablePiloting from your BTX installation (as CAC, CU and MechAffinity basically do the same)
 - update CAB
 - remove IRBModUtils (CAC-C for now contains their own versions of them)
 - remove any previous version of CAC-C, CAE, CAC, CC, CLoc, CPrewarm, CU, CVoices, if they exist
@@ -176,6 +176,7 @@ Package for release:
 	- BiggerDrops
 	- MechAffinity 1.4 (dll only)
 	- CustomComponents (latest, Dec 28, 2023)
+	- Abilifier
 	- CAC & CAE repos
 - compile CAC & CAE
 - compile as release
