@@ -218,6 +218,10 @@
 		
 		"FactionShopCreation":
 		{
+			"3024-12-22T00:00:00":
+			{
+				"starsystemdef_Irece": "Kurita"
+			},
 			"3031-01-01T00:00:00":
 			{
 				"starsystemdef_Outreach": "WolfsDragoons"

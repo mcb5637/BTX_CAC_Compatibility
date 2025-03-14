@@ -115,6 +115,54 @@
 		"Link": false,
 		"WeaponType": "Upgrade"
 	},
+	"TT_Gear_Sensor_ECM": {
+		"WeaponId": "Gear_SensorCAC_Guardian",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"TT_Gear_Sensor_ECM_Clan": {
+		"WeaponId": "Gear_SensorCAC_GuardianClan",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"TT_Gear_Sensor_Prototype_ECM": {
+		"WeaponId": "Gear_SensorCAC_LiaoProtoECM",
+		"AddonId": null,
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"TT_Gear_Sensor_EWE": {
+		"WeaponId": "Gear_SensorCAC_Guardian",
+		"AddonId": "Gear_SensorCAC_Beagle",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"TT_Gear_Sensor_EWEImproved": {
+		"WeaponId": "Gear_SensorCAC_Guardian",
+		"AddonId": "Gear_SensorCAC_Beagle",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"TT_Gear_Sensor_EWE_Clan": {
+		"WeaponId": "Gear_SensorCAC_GuardianClan",
+		"AddonId": "Gear_SensorCAC_BeagleClan",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"TT_Gear_Sensor_EWEImproved_Clan": {
+		"WeaponId": "Gear_SensorCAC_GuardianClan",
+		"AddonId": "Gear_SensorCAC_BeagleClan",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
+	"TT_Gear_Sensor_Prototype_EWE": {
+		"WeaponId": "Gear_SensorCAC_LiaoProtoAP",
+		"AddonId": "Gear_SensorCAC_LiaoProtoECM",
+		"Link": false,
+		"WeaponType": "Upgrade"
+	},
 	"Ammo_AmmunitionBox_Generic_SRM_Inferno_Half": {
 		"WeaponId": "Ammo_AmmunitionBox_Generic_SRMInferno_Half",
 		"AddonId": null,

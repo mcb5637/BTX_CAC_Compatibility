@@ -6,6 +6,7 @@ using BattleTech.UI;
 using CustAmmoCategories;
 using CustAmmoCategoriesPatches;
 using CustomActivatableEquipment;
+using CustomUnits;
 using Extended_CE;
 using HarmonyLib;
 using HBS.Logging;
@@ -18,6 +19,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using UIWidgets;
@@ -96,7 +98,7 @@ namespace BTX_CAC_CompatibilityDll
                 // masc/ams json modify
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(UpgradeDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
                 // ecm
-                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ChassisDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
+                //Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ChassisDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
 #if !DEBUG
                 // tt ranges, remains in debug, so autopatcher can read modified values ;)
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(WeaponDef), "FromJSON"), "BEX.BattleTech.Extended_CE");
@@ -233,6 +235,31 @@ namespace BTX_CAC_CompatibilityDll
                     __instance.Refresh();
                     __result = __instance.MovementCapDef;
                 }
+            }
+        }
+    }
+    [HarmonyPatch]
+    public class RandomPatches
+    {
+        private static void Clear(List<string> l)
+        {
+            l?.Clear();
+        }
+        [HarmonyPatch(typeof(BEXTimeline.UpdateOwnership), nameof(BEXTimeline.UpdateOwnership.UpdateTheMap))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> UpdateTheMapNullref(IEnumerable<CodeInstruction> inst)
+        {
+            MethodInfo ori = AccessTools.Method(typeof(List<string>), nameof(List<string>.Clear));
+            MethodInfo rep = AccessTools.Method(typeof(RandomPatches), nameof(Clear));
+            foreach (CodeInstruction i in inst)
+            {
+                if ((i.opcode == OpCodes.Call || i.opcode == OpCodes.Callvirt) && (i.operand as MethodInfo) == ori)
+                {
+                    i.opcode = OpCodes.Call;
+                    i.operand = rep;
+                }
+
+                yield return i;
             }
         }
     }

@@ -46,6 +46,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>C:\goggames\BATTLETECH\mods\.modtek\AssembliesInjected\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="BEXTimeline">
+      <HintPath>C:\goggames\BATTLETECH\mods_bex_actual\BT_Extended_Timeline\BEXTimeline.dll</HintPath>
+    </Reference>
     <Reference Include="BiggerDrops">
       <HintPath>C:\goggames\BATTLETECH\mods\BiggerDrops\BiggerDrops.dll</HintPath>
     </Reference>

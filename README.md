@@ -30,11 +30,11 @@ Component list (Clan & SLDF ones included):
 		- PPC: added FI OFF mode
 		- ER PPC: -
 		- Snub PPC: 5 projectiles, damage falloff over long range, extra mode with 1 projectile
-		- Laser: -
-		- ER Laser: -
-		- Heavy Laser: -
-		- Binary Laser: fixed animation
-		- Pulse Laser: fixed animation
+		- Laser: added low power mode
+		- ER Laser: added low power mode
+		- Heavy Laser: added low power mode
+		- Binary Laser: added low power mode, fixed animation
+		- Pulse Laser: added low power mode, fixed animation
 		- X-Pulse Laser: changed to single projectile
 		- Tag: attacking a tagged unit ignores evasion+indirect penalities, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
 		- Flamer: added forestfires
