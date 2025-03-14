@@ -8,9 +8,12 @@ using System;
 using BattleTech.Data;
 using CustomComponents.Changes;
 using UIWidgets;
+using System.Reflection.Emit;
+using System.Reflection;
 
 namespace BTX_CAC_CompatibilityDll
 {
+    [HarmonyPatch]
     public static class MovableBlockers
     {
         [CustomComponent("BlockerList")]
@@ -154,8 +157,10 @@ namespace BTX_CAC_CompatibilityDll
             foreach (string cat in Categories)
             {
                 int l = d.GetLimit(cat);
-                if (l > 0 && l != inv.Select((x) => x.GetBlockerSize(cat)).Sum())
+                int bl = inv.Select((x) => x.GetBlockerSize(cat)).Sum();
+                if (l > 0 && l != bl && bl > 0)
                 {
+                    //FileLog.Log($"{d.Description.Id} nuke blockers {cat} (was {bl} expeced {l})");
                     inv.RemoveAll((x) => x.IsBlocker(cat));
                 }
             }
@@ -163,8 +168,10 @@ namespace BTX_CAC_CompatibilityDll
             {
                 if (inv.Any((x) => x.IsBlocker(c.Category)))
                 {
+                    //FileLog.Log($"{d.Description.Id} skip blockers {c.Category}");
                     continue;
                 }
+                //FileLog.Log($"{d.Description.Id} add blockers {c.Category}");
                 foreach (DefaultsInfoRecord b in c.Blockers)
                 {
                     AddToInvRaw(b.DefID, b.Location, b.Type, d.DataManager, inv);
@@ -454,6 +461,17 @@ namespace BTX_CAC_CompatibilityDll
                     changes.Enqueue(new Change_Add(GetBlockerID(total - 8, m.DataManager, cat), ComponentType.Upgrade, loc));
                 }
             }
+        }
+
+        [HarmonyPatch(typeof(ChassisDef), nameof(ChassisDef.FromJSON))]
+        [HarmonyPostfix]
+        public static void ChassisDef_FromJSON(ChassisDef __instance)
+        {
+            if (__instance.FixedEquipment == null || __instance.FixedEquipment.Length == 0)
+                return;
+            List<MechComponentRef> inv = __instance.FixedEquipment.ToList();
+            FixChassisDef(__instance, inv);
+            __instance.SetFixedEquipment(inv.ToArray());
         }
     }
 }
