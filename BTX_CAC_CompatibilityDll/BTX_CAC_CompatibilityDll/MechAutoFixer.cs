@@ -46,27 +46,21 @@ namespace BTX_CAC_CompatibilityDll
             ChassisDef ch = m.Chassis;
             if (!ch.DataManager.ChassisDefs.TryGet(ch.Description.Id, out ChassisDef mngch))
                 mngch = ch;
-            List <MechComponentRef> fixedinv = mngch.FixedEquipment?.ToList();
-            CheckAddons(mechinv, false, m, mechinv);
+            List<MechComponentRef> fixedinv = mngch.FixedEquipment?.ToList();
             if (fixedinv != null)
             {
-                CheckAddons(fixedinv, true, m, mechinv);
+                CheckAddons(fixedinv, true, m, mngch, mechinv);
                 CheckTSM(fixedinv);
-                MovableBlockers.FixChassisDef(mngch, fixedinv);
+                CheckTSM(mechinv);
             }
+            CheckAddons(mechinv, false, m, mngch, mechinv);
             MovableBlockers.FixMechInventory(mngch, mechinv);
 
-            mechinv.RemoveAll((x) => x.IsFixed && !x.IsBlocker()); // gets re-added by setinv
-            foreach (MechComponentRef c in mechinv)
-            {
-                if (c.SimGameUID != null && c.SimGameUID.StartsWith("FixedEquipment-"))
-                    c.SetSimGameUID(c.SimGameUID.Replace("FixedEquipment-", ""));
-            }
             if (fixedinv != null)
                 mngch.SetFixedEquipment(fixedinv.ToArray());
-            mngch.RefreshLocationReferences();
             if (!mngch.ChassisTags.Contains("autofixed_hardpoints"))
                 mngch.ChassisTags.Add("autofixed_hardpoints");
+            mngch.RefreshLocationReferences();
             if (!ReferenceEquals(ch, mngch)) // happens, if m has prefabOverride set
             {
                 DataManager dm = ch.DataManager ?? mngch.DataManager;
@@ -80,11 +74,11 @@ namespace BTX_CAC_CompatibilityDll
             m.SetInventory(mechinv.ToArray());
         }
 
-        private static void CheckAddons(List<MechComponentRef> l, bool fix, MechDef m, List<MechComponentRef> mechinv)
+        private static void CheckAddons(List<MechComponentRef> l, bool isFixed, MechDef m, ChassisDef c, List<MechComponentRef> mechinv)
         {
             for (int i = 0; i < l.Count; i++)
             {
-                if (l[i].IsFixed == fix && Main.Splits.TryGetValue(l[i].ComponentDefID, out WeaponAddonSplit spl))
+                if (Main.Splits.TryGetValue(l[i].ComponentDefID, out WeaponAddonSplit spl))
                 {
                     l[i].ComponentDefID = spl.WeaponId;
                     l[i].SetComponentDefType(spl.WeaponType);
@@ -103,10 +97,12 @@ namespace BTX_CAC_CompatibilityDll
                                 }
                             }
                         }
-                        MechComponentRef addon = new MechComponentRef(spl.AddonId, null, spl.AddonType, loc, -1, ComponentDamageLevel.Functional, fix)
+                        MechComponentRef addon = new MechComponentRef(spl.AddonId, null, spl.AddonType, loc, -1, ComponentDamageLevel.Functional, l[i].IsFixed)
                         {
                             DataManager = m.DataManager,
                         };
+                        if (l[i].IsFixed)
+                            addon.SetSimGameUID($"FixedEquipment-{Guid.NewGuid()}");
                         if (spl.Link)
                         {
                             string guid = Guid.NewGuid().ToString();
@@ -115,19 +111,19 @@ namespace BTX_CAC_CompatibilityDll
                         }
                         l.Insert(i + 1, addon);
                     }
-                    if (spl.AddSupportHardpoint) // why is LocationDef a struct???
+                    if (spl.AddSupportHardpoint && l[i].IsFixed == isFixed) // why is LocationDef a struct???
                     {
-                        AddHardpoint(l, m, i);
+                        AddHardpoint(l, c, i);
                     }
                 }
             }
         }
 
-        private static void AddHardpoint(List<MechComponentRef> l, MechDef m, int i)
+        private static void AddHardpoint(List<MechComponentRef> l, ChassisDef c, int i)
         {
-            if (m.Chassis.ChassisTags.Contains("autofixed_hardpoints"))
+            if (c.ChassisTags.Contains("autofixed_hardpoints"))
                 return;
-            LocationDef[] locs = m.Chassis.GetLocations();
+            LocationDef[] locs = c.GetLocations();
             for (int j = 0; j < locs.Length; ++j)
             {
                 if (locs[j].Location == l[i].MountedLocation)

@@ -10,6 +10,8 @@ using CustomComponents.Changes;
 using UIWidgets;
 using System.Reflection.Emit;
 using System.Reflection;
+using UnityEngine;
+using System.Text.RegularExpressions;
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -23,7 +25,27 @@ namespace BTX_CAC_CompatibilityDll
             public DefaultsInfoRecord[] Blockers;
         }
 
-        private static readonly string[] Categories = new string[] { "EndoStructureBlocker", "FerroStructureBlocker", "ComboStructureBlocker" }; // TODO config
+
+        internal class BlockerCategory
+        {
+            internal string CategoryName;
+            internal Regex Pattern;
+        }
+        private static readonly BlockerCategory[] BlockerCategories = new BlockerCategory[] {
+            new BlockerCategory() {
+                CategoryName = "EndoStructureBlocker",
+                Pattern = new Regex("Gear_EndoSteel_(?<i>\\d+)_Slot"),
+            },
+            new BlockerCategory() {
+                CategoryName = "FerroStructureBlocker",
+                Pattern = new Regex("Gear_FerroFibrous_(?<i>\\d+)_Slot"),
+            },
+            new BlockerCategory() {
+                CategoryName = "ComboStructureBlocker",
+                Pattern = new Regex("Gear_EndoFerroCombo_(?<i>\\d+)_Slot"),
+            },
+        }; // TODO config
+        private static IEnumerable<string> Categories => BlockerCategories.Select(x => x.CategoryName);
 
         private static bool HasLimits(this ChassisDef d)
         {
@@ -39,6 +61,15 @@ namespace BTX_CAC_CompatibilityDll
         {
             return d.GetCategory(cat)?.Weight ?? 0;
         }
+        private static int GetBlockerSizeSave(this MechComponentRef d, BlockerCategory cat)
+        {
+            Match m = cat.Pattern.Match(d.ComponentDefID);
+            if (!m.Success)
+                return 0;
+            if (int.TryParse(m.Groups["i"].Value, out int s))
+                return s;
+            return 0;
+        }
         private static int GetBlockerSize(this MechComponentDef d, string cat)
         {
             return d.GetCategory(cat)?.Weight ?? 0;
@@ -51,13 +82,25 @@ namespace BTX_CAC_CompatibilityDll
         {
             return d.IsCategory(cat);
         }
+        private static bool IsBlockerSave(this MechComponentRef d, BlockerCategory cat)
+        {
+            return cat.Pattern.IsMatch(d.ComponentDefID);
+        }
         public static bool IsBlocker(this MechComponentRef d)
         {
             return Categories.Any((cat) => d.IsCategory(cat));
         }
+        public static bool IsBlockerSave(this MechComponentRef d)
+        {
+            return BlockerCategories.Any((cat) => d.IsBlockerSave(cat));
+        }
         private static string GetBlockerCategory(this MechComponentRef d)
         {
             return Categories.FirstOrDefault((cat) => d.IsCategory(cat));
+        }
+        private static string GetBlockerCategorySave(this MechComponentRef d)
+        {
+            return BlockerCategories.FirstOrDefault((cat) => d.IsBlockerSave(cat))?.CategoryName;
         }
 
         private class BlockerDatabase
@@ -126,30 +169,30 @@ namespace BTX_CAC_CompatibilityDll
                 return;
             if (HasLimits(d))
             {
-                fixedinv.RemoveAll(IsBlocker);
+                fixedinv.RemoveAll(IsBlockerSave);
                 return;
             }
             if (fixedinv.Count == 0)
                 return;
 
             List<DefaultsInfoRecord> def = new List<DefaultsInfoRecord>();
-            foreach (string cat in Categories)
+            foreach (BlockerCategory cat in BlockerCategories)
             {
-                int l = fixedinv.Select((x) => x.GetBlockerSize(cat)).Sum();
+                int l = fixedinv.Select((x) => x.GetBlockerSizeSave(cat)).Sum();
                 if (l > 0)
                 {
-                    SetCategoryLimit(cat, l, d);
-                    DefaultsInfoRecord[] b = fixedinv.Where((x) => x.IsBlocker(cat)).Select((x) => new DefaultsInfoRecord()
+                    SetCategoryLimit(cat.CategoryName, l, d);
+                    DefaultsInfoRecord[] b = fixedinv.Where((x) => x.IsBlockerSave(cat)).Select((x) => new DefaultsInfoRecord()
                         {
                             Location = x.MountedLocation,
                             DefID = x.ComponentDefID,
                             Type = x.ComponentDefType,
                         }).ToArray();
-                    SetCategoryDefaults(cat, b, d);
+                    SetCategoryDefaults(cat.CategoryName, b, d);
                 }
             }
 
-            fixedinv.RemoveAll(IsBlocker);
+            fixedinv.RemoveAll(IsBlockerSave);
         }
 
         public static void FixMechInventory(ChassisDef d, List<MechComponentRef> inv)
@@ -176,6 +219,11 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     AddToInvRaw(b.DefID, b.Location, b.Type, d.DataManager, inv);
                 }
+            }
+            foreach (MechComponentRef c in inv)
+            {
+                if (c.IsBlocker() && c.SimGameUID != null && c.SimGameUID.StartsWith("FixedEquipment-"))
+                    c.SetSimGameUID(c.SimGameUID.Replace("FixedEquipment-", ""));
             }
         }
 
@@ -467,11 +515,18 @@ namespace BTX_CAC_CompatibilityDll
         [HarmonyPostfix]
         public static void ChassisDef_FromJSON(ChassisDef __instance)
         {
-            if (__instance.FixedEquipment == null || __instance.FixedEquipment.Length == 0)
-                return;
-            List<MechComponentRef> inv = __instance.FixedEquipment.ToList();
-            FixChassisDef(__instance, inv);
-            __instance.SetFixedEquipment(inv.ToArray());
+            try
+            {
+                if (__instance.FixedEquipment == null || __instance.FixedEquipment.Length == 0)
+                    return;
+                List<MechComponentRef> inv = __instance.FixedEquipment.ToList();
+                FixChassisDef(__instance, inv);
+                __instance.SetFixedEquipment(inv.ToArray());
+            }
+            catch (Exception e)
+            {
+                FileLog.Log($"except chassis {__instance.Description.Id} {e}");
+            }
         }
     }
 }
