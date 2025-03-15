@@ -9,5 +9,6 @@
 	"ShotsWhenFired": 9,
 	"DamageMultiplier": 0.1,
 	"InstabilityMultiplier": 0.1,
+	"CriticalChanceMultiplier": 1,
 	"HitGenerator": "Cluster"
 }
