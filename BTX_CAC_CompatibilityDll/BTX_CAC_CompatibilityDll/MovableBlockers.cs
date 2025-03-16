@@ -335,7 +335,7 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     changes.Enqueue(new Change_Remove(c, c.MountedLocation));
                     if (slots > 0)
-                        changes.Enqueue(new Change_Add(GetBlockerID(slots, c.DataManager, cat), ComponentType.Upgrade, c.MountedLocation));
+                        changes.Enqueue(CreateAdd(slots, c.DataManager, cat, c.MountedLocation));
                 }
             }
 
@@ -360,7 +360,7 @@ namespace BTX_CAC_CompatibilityDll
                     if (slotsAvail > 0)
                     {
                         int toMove = Math.Min(slotsAvail, slotsNeeded);
-                        changes.Enqueue(new Change_Add(GetBlockerID(toMove, c.DataManager, cat), ComponentType.Upgrade, sea));
+                        changes.Enqueue(CreateAdd(toMove, c.DataManager, cat, sea));
                         slotsNeeded -= toMove;
                         slots -= toMove;
                         if (slots <= 0)
@@ -370,6 +370,15 @@ namespace BTX_CAC_CompatibilityDll
                     }
                 }
             }
+        }
+
+        private static Change_Add CreateAdd(string id, ComponentType t, ChassisLocations l)
+        {
+            return new Change_Add(DefaultHelper.CreateSlot(id, t), l);
+        }
+        private static Change_Add CreateAdd(int s, DataManager dm, string cat, ChassisLocations l)
+        {
+            return CreateAdd(GetBlockerID(s, dm, cat), ComponentType.Upgrade, l);
         }
 
         private static int SlotsInLocation(ChassisLocations l, MechLabItemSlotElement drop_item, Queue<IChange> changes, MechDef mechDef)
@@ -500,13 +509,13 @@ namespace BTX_CAC_CompatibilityDll
                 if (l.Count > 1 && total <= 8)
                 {
                     remAll(l);
-                    changes.Enqueue(new Change_Add(GetBlockerID(total, m.DataManager, cat), ComponentType.Upgrade, loc));
+                    changes.Enqueue(CreateAdd(total, m.DataManager, cat, loc));
                 }
                 else if (l.Count > 2)
                 {
                     remAll(l);
-                    changes.Enqueue(new Change_Add(GetBlockerID(8, m.DataManager, cat), ComponentType.Upgrade, loc));
-                    changes.Enqueue(new Change_Add(GetBlockerID(total - 8, m.DataManager, cat), ComponentType.Upgrade, loc));
+                    changes.Enqueue(CreateAdd(8, m.DataManager, cat, loc));
+                    changes.Enqueue(CreateAdd(total - 8, m.DataManager, cat, loc));
                 }
             }
         }
