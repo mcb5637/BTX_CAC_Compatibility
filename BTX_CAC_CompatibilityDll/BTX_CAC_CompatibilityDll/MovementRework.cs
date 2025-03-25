@@ -28,7 +28,7 @@ namespace BTX_CAC_CompatibilityDll
             return rem < max / 3;
         }
 
-        private static SelfMovedModifier ClassifyMoved(AbstractActor a)
+        private static SelfMovedModifier ClassifyMoved(AbstractActor a, Vector3 apos)
         {
             if (a.StatCollection.GetValue<bool>("IgnoreHeatMovementPenalties"))
                 return SelfMovedModifier.None;
@@ -55,7 +55,7 @@ namespace BTX_CAC_CompatibilityDll
                             return SelfMovedModifier.Run;
                         return SelfMovedModifier.Walk;
                     }
-                    else
+                    else if ((a.CurrentPosition - apos).magnitude > 0.001f)
                     {
                         if (m.JumpPathing != null && m.JumpPathing.IsLockedToDest)
                             return SelfMovedModifier.Jump;
@@ -81,7 +81,7 @@ namespace BTX_CAC_CompatibilityDll
         internal static float MovedSelf_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
             float r = 0;
-            switch (ClassifyMoved(attacker))
+            switch (ClassifyMoved(attacker, apos))
             {
                 case SelfMovedModifier.None:
                     break;
@@ -126,7 +126,7 @@ namespace BTX_CAC_CompatibilityDll
 
         internal static string MovedSelf_EffectName(ToHit h, AbstractActor a, Weapon w, ICombatant t, Vector3 ap, Vector3 tp, LineOfFireLevel lof, MeleeAttackType mt, bool cs)
         {
-            switch (ClassifyMoved(a))
+            switch (ClassifyMoved(a, ap))
             {
                 case SelfMovedModifier.Walk:
                     return "WALKED";
