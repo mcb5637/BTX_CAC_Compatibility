@@ -12,10 +12,10 @@
 	"DisableClustering": true,
 	"HitGenerator": "Cluster",
 	"DistantVariance": 0.5,
-	"DamageFalloffStartDistance": 390,
+	"DamageFalloffStartDistance": 270,
 	"DamageFalloffEndDistance": 450,
 	"DistantVarianceReversed": false,
-	"RangedDmgFalloffType": "Linear",
+	"RangedDmgFalloffType": "Quadratic",
 	"isDamageVariation": true,
 	"isStabilityVariation": true,
 	"Modes": [
@@ -24,18 +24,18 @@
 			"UIName": "STD",
 			"Name": "Standard",
 			"Description": "Snub PPC fires normally.",
-			"isBaseMode": true
+			"isBaseMode": false
 		},
 		{
 			"Id": "SPPC_FL",
 			"UIName": "FL",
 			"Name": "Focusing Lens",
 			"Description": "The additional magnetic Focusing Lens allows to focus all particles into one projectile, concentrating the infliced damage to one location, at the cost of slighly increased heat generation.",
-			"isBaseMode": false,
+			"isBaseMode": true,
 			"ShotsWhenFired": -4,
 			"HeatGenerated": 5,
-			"DamageMultiplier": 5,
-			"InstabilityMultiplier": 5,
+			"DamagePerShot": 35,
+			"Instability": 35,
 			"WeaponEffectID": "WeaponEffect-Weapon_PPC"
 		}
 	]

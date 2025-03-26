@@ -574,17 +574,19 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_Autocannon_(?<li>L?)AC(?<size>\\d+)_(?<plus>\\d+|SPECIAL)-.+$"),
             },
+            new WeaponHGaussPattern()
+            {
+                Check = new Regex("^Weapon_Gauss_HeavyGauss(?<mag>_NU|_Sa|Magshot)?_(?<plus>\\d+)-.+$"),
+            },
             new WeaponForwardingPattern()
             {
-                Check = new Regex("^Weapon_Gauss_(?<hl>C|Heavy|Light)?Gauss(?<mag>_NU|_Sa|Magshot)?_(?<plus>\\d+)-.+$"),
+                Check = new Regex("^Weapon_Gauss_(?<hl>C|Light)?Gauss(?<mag>_NU|_Sa|Magshot)?_(?<plus>\\d+)-.+$"),
                 ExtraData = "\r\n}\r\n",
                 Details = true,
                 Order = (m) =>
                 {
                     if (m.Groups["mag"].Value == "Magshot")
                         return ComponentOrder.GaussMagshot;
-                    if (m.Groups["hl"].Value == "Heavy")
-                        return ComponentOrder.GaussHeavy;
                     if (m.Groups["hl"].Value == "Light")
                         return ComponentOrder.GaussLight;
                     return ComponentOrder.Gauss;
@@ -804,18 +806,9 @@ namespace BTX_CAC_CompatibilityDll
                     c.AddEnergyTTS.Add(id);
                 },
             },
-            new StaticPatchPattern<WeaponDef>()
+            new WeaponSPPCPattern()
             {
                 Check = new Regex("^Weapon_PPC_PPCSnub_(?<plus>\\d+)-.+$"),
-                Patch = "{\r\n\t\"MinRange\": 0,\r\n\t\"MaxRange\": 450,\r\n\t\"RangeSplit\": [\r\n\t\t270,\r\n\t\t390,\r\n\t\t450\r\n\t],\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"DistantVariance\": 0.5,\r\n\t\"DamageFalloffStartDistance\": 390,\r\n\t\"DamageFalloffEndDistance\": 450,\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Linear\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true,\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_FL\",\r\n\t\t\t\"UIName\": \"FL\",\r\n\t\t\t\"Name\": \"Focusing Lens\",\r\n\t\t\t\"Description\": \"The additional magnetic Focusing Lens allows to focus all particles into one projectile, concentrating the infliced damage to one location, at the cost of slighly increased heat generation.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"HeatGenerated\": 5,\r\n\t\t\t\"DamageMultiplier\": 5,\r\n\t\t\t\"InstabilityMultiplier\": 5,\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}\r\n\t]\r\n}",
-                AddToList = (x) => x.AddPPCCapSnub,
-                Order = (m) => ComponentOrder.SPPC,
-                SubList = (d, id, m, c) =>
-                {
-                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"SnubPPC", id, Array.Empty<string>(), new string[] { }, lvl);
-                    c.AddEnergyTTS.Add(id);
-                },
             },
             new WeaponForwardingPattern()
             {
@@ -1787,6 +1780,28 @@ namespace BTX_CAC_CompatibilityDll
                 c.AddBallisticTTS.Add(id);
             }
         }
+
+
+        private class WeaponHGaussPattern : Pattern<WeaponDef>
+        {
+            public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
+            {
+                float sr = data.ShortRange;
+                float maxr = data.MaxRange;
+                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true);
+                p += $",\r\n\t\"DistantVariance\": 0.4,\r\n\t\"DamageFalloffStartDistance\": {sr},\r\n\t\"DamageFalloffEndDistance\": {maxr},\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Quadratic\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true";
+                p += "\r\n}";
+
+                WriteTo(targetFolder, id, p);
+
+                c.AddBallisticTTS.Add(id);
+                c.AddOrder(ComponentOrder.GaussHeavy, id);
+
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"GaussHeavy", id, Array.Empty<string>(), new string[] { data.AmmoCategoryToAmmoBoxId }, lvl);
+            }
+        }
+
         private class WeaponUACPattern : Pattern<WeaponDef>
         {
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
@@ -1935,6 +1950,35 @@ namespace BTX_CAC_CompatibilityDll
                 if (Order != null)
                     c.AddOrder(Order(m), id);
                 SubList?.Invoke(data, id, m, c);
+            }
+        }
+
+        private class WeaponSPPCPattern : Pattern<WeaponDef>
+        {
+            public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
+            {
+                float minr = 0 * 30.0f;
+                float sr = 9 * 30f;
+                float mr = 13 * 30f;
+                float maxr = 15 * 30f;
+                string p = $"{{\r\n\t\"MinRange\": {minr},\r\n\t\"MaxRange\": {maxr},\r\n\t\"RangeSplit\": [\r\n\t\t{sr},\r\n\t\t{mr},\r\n\t\t{maxr}\r\n\t]";
+                p += ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"HitGenerator\": \"Cluster\"";
+                p += $",\r\n\t\"DistantVariance\": 0.5,\r\n\t\"DamageFalloffStartDistance\": {sr},\r\n\t\"DamageFalloffEndDistance\": {maxr},\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Quadratic\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true";
+                p += ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": false\r\n\t\t}";
+
+                float fl_targetdmg = (data.Damage - 15) * 5 + 50;
+                float fl_targetstab = (data.Instability - 5) * 5 + 20;
+                p += $",\r\n\t\t{{\r\n\t\t\t\"Id\": \"SPPC_FL\",\r\n\t\t\t\"UIName\": \"FL\",\r\n\t\t\t\"Name\": \"Focusing Lens\",\r\n\t\t\t\"Description\": \"The additional magnetic Focusing Lens allows to focus all particles into one projectile, concentrating the infliced damage to one location, at the cost of slighly increased heat generation.\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"HeatGenerated\": 5,\r\n\t\t\t\"DamagePerShot\": {fl_targetdmg-data.Damage},\r\n\t\t\t\"Instability\": {fl_targetstab-data.Instability},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}}";
+                p += "\r\n\t]\r\n}";
+
+                WriteTo(targetFolder, id, p);
+
+                c.AddPPCCapSnub.Add(id);
+                c.AddEnergyTTS.Add(id);
+                c.AddOrder(ComponentOrder.SPPC, id);
+
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"SnubPPC", id, Array.Empty<string>(), new string[] { }, lvl);
             }
         }
 
