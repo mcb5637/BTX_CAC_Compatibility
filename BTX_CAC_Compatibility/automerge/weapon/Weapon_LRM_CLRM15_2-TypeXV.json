@@ -22,6 +22,7 @@
 	"HitGenerator": "Cluster",
 	"AMSHitChance": 0.0,
 	"MissileHealth": 1,
+	"UnsafeJamChance": 0.1,
 	"Custom" : {
 		"Clustering": {
 			"Base": 0.6333333,

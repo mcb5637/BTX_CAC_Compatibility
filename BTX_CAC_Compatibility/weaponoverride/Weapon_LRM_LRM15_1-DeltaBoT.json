@@ -5,14 +5,14 @@
 	"MinRange": 180,
 	"MaxRange": 630,
 	"RangeSplit": [
-		420,
+		210,
 		420,
 		630
 	],
-	"AmmoCategory": "LRM",
+	"ammoCategoryID": "LRM",
 	"StartingAmmoCapacity": 0,
-	"HeatGenerated": 16,
-	"Damage": 4,
+	"HeatGenerated": 15,
+	"Damage": 5,
 	"OverheatedDamageMultiplier": 0,
 	"EvasiveDamageMultiplier": 0,
 	"EvasivePipsIgnored": 0,
@@ -26,7 +26,7 @@
 	"ShotsWhenFired": 15,
 	"ProjectilesPerShot": 1,
 	"AttackRecoil": 1,
-	"Instability": 2,
+	"Instability": 3,
 	"WeaponEffectID": "WeaponEffect-Weapon_LRM15",
 	"Description": {
 		"Cost": 320000,
@@ -37,7 +37,7 @@
 		"UIName": "LRM15 +",
 		"Id": "Weapon_LRM_LRM15_1-DeltaBoT",
 		"Name": "LRM15 +",
-		"Details": "LRM15 Long-Range Missile racks deal substantial damage and stability impact over distance, often found in pairs on indirect-fire support units. Like all LRMs, LRM15s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit.",
+		"Details": "LRM15 Long-Range Missile racks deal substantial damage and stability impact over distance, often found in pairs on indirect-fire support units. Like all LRMs, LRM15s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit.\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. LRM weapons accuracy modifier can be positively affected by Artemis IV, Narc Missile Beacon, or negatively affected by Anti Missile Systems.",
 		"Icon": "uixSvgIcon_weapon_Missile"
 	},
 	"BonusValueA": "- 1 Slot.",
@@ -56,9 +56,10 @@
 		"items": [
 			"component_type_variant",
 			"component_type_variant1",
-			"component_type_lostech",
 			"range_extreme",
-			"component_usestag"
+			"component_usestag",
+			"artemis_lrm_attachable",
+			"component_usesnarc"
 		],
 		"tagSetSourceFile": ""
 	},
@@ -70,26 +71,44 @@
 	"HitGenerator": "Cluster",
 	"AMSHitChance": 0.0,
 	"MissileHealth": 1,
+	"UnsafeJamChance": 0.1,
+	"Custom": {
+		"Clustering": {
+			"Base": 0.6333333,
+			"DeadfireBase": 0.54320985,
+			"ArtemisBase": 0.76666665,
+			"Steps": [
+				{
+					"GunnerySkill": 6,
+					"Mod": 0.03
+				},
+				{
+					"GunnerySkill": 10,
+					"Mod": 0.03
+				}
+			]
+		}
+	},
 	"Modes": [
 		{
-			"Id": "LRM_StdLoad",
+			"Id": "LRM_Std",
 			"UIName": "STD",
 			"Name": "Standard",
-			"Description": "Fired missiles arm after they leave the launcher.",
+			"Description": "",
 			"isBaseMode": true
 		},
 		{
 			"Id": "LRM_HotLoad",
 			"UIName": "HL",
 			"Name": "Hot Load",
-			"Description": "Missiles are armed prelaunch inside the launcher, removing minimum range but having a chance to jam.",
+			"Description": "Missiles are armed inside the launcher instead of after launching, removing minimum range but having a chance to jam.",
 			"isBaseMode": false,
 			"DamageOnJamming": true,
 			"AccuracyModifier": 1.0,
-			"FlatJammingChance": 0.1,
+			"FlatJammingChance": 0.25,
 			"GunneryJammingBase": 10,
-			"GunneryJammingMult": 0.04,
-			"MinRange": 180
+			"GunneryJammingMult": 0.025,
+			"MinRange": -180
 		}
 	]
 }

@@ -11,6 +11,7 @@
 	"Instability": 20,
 	"RefireModifier": 0,
 	"AccuracyModifier": 1,
+	"UnsafeJamChance": 0.1,
 	"Modes": [
 		{
 			"Id": "PPCMode_Std",
@@ -26,9 +27,9 @@
 			"Description": "Disabled Field Inhibitor removes minimum range, but at the chance to misfire.",
 			"isBaseMode": false,
 			"DamageOnJamming": true,
-			"FlatJammingChance": 0.1,
+			"FlatJammingChance": 0.25,
 			"GunneryJammingBase": 10,
-			"GunneryJammingMult": 0.04,
+			"GunneryJammingMult": 0.025,
 			"MinRange": -90.0,
 			"AccuracyModifier": 1.0
 		}

@@ -22,6 +22,7 @@
 	"HitGenerator": "Cluster",
 	"AMSHitChance": 0.0,
 	"MissileHealth": 1,
+	"UnsafeJamChance": 0.1,
 	"Custom" : {
 		"Clustering": {
 			"Base": 0.6333333,
@@ -55,9 +56,9 @@
 			"isBaseMode": false,
 			"DamageOnJamming": true,
 			"AccuracyModifier": 1.0,
-			"FlatJammingChance": 0.1,
+			"FlatJammingChance": 0.25,
 			"GunneryJammingBase": 10,
-			"GunneryJammingMult": 0.04,
+			"GunneryJammingMult": 0.025,
 			"MinRange": -180
 		}
 	]
