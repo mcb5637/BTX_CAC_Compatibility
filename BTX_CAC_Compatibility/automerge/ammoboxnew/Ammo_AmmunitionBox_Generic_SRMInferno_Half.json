@@ -10,7 +10,7 @@
     "UIName": "SRM Inferno Ammo (Half)",
     "Id": "Ammo_AmmunitionBox_Generic_SRMInferno_Half",
     "Name": "SRM Inferno Ammo",
-    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nInferno SRMs are missiles containing a napalm-like substance that coats their target in a gel which burns for a short period, applying Heat.\n\nSRM Inferno Ammo (Half) Bins each contain 50 rounds and may feed multiple weapons.",
+    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nInferno SRMs are missiles containing a napalm-like substance that coats their target in a gel which burns for a short period, applying Heat. Usage may lead to dangerous forest fires, if used in the wrong conditions.\n\nSRM Inferno Ammo (Half) Bins each contain 50 rounds and may feed multiple weapons.",
     "Icon": "uixSvgIcon_ammoBox_Missile"
   },
   "BonusValueA": "- 7 Dmg",

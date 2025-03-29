@@ -6,6 +6,9 @@
 		390,
 		450
 	],
+	"Description": {
+		"Details": "A unique modification of a standard Particle Projector Cannon, the Snub PPC shortens a standard PPC, leading to a lighter and more compact weapon system. The trade-off is a shorter range and damage fallof at long ranges.\nThe last remaining (magnetic) focusing lens can be disabled, leading to an increase in damage, but spread over a larger area."
+	},
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
 	"HasShells": false,
@@ -24,19 +27,18 @@
 			"UIName": "STD",
 			"Name": "Standard",
 			"Description": "Snub PPC fires normally.",
-			"isBaseMode": false
-		},
-		{
-			"Id": "SPPC_FL",
-			"UIName": "FL",
-			"Name": "Focusing Lens",
-			"Description": "The additional magnetic Focusing Lens allows to focus all particles into one projectile, concentrating the infliced damage to one location, at the cost of slighly increased heat generation.",
 			"isBaseMode": true,
 			"ShotsWhenFired": -4,
-			"HeatGenerated": 5,
 			"DamagePerShot": 35,
 			"Instability": 55,
 			"WeaponEffectID": "WeaponEffect-Weapon_PPC"
+		},
+		{
+			"Id": "SPPC_FLO",
+			"UIName": "FLO",
+			"Name": "No Focusing Lens",
+			"Description": "Disabled focusing lens leads to more overall damage, spread all over the target.",
+			"isBaseMode": false
 		}
 	]
 }

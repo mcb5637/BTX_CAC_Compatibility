@@ -10,7 +10,7 @@
 	"RefireModifier": 0,
 	"AccuracyModifier": 0,
 	"Description": {
-		"Details": "The Advanced Tactical Missile system (ATM) was developed by Clan Coyote from 3054 to 3060. ATMs include an integral Artemis IV Fire Control System. The ATM 6 is the second smallest and second lightest of the ATMs.\n\nRequired Hardpoint: <b><color=#008000>Missile</color></b>\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. ATM weapons accuracy modifier is positively affected by an integrated Artemis IV, and negatively affected by a target's Anti Missile Systems. ATM systems cannot benefit from a Narc Missile Beacon."
+		"Details": "The Advanced Tactical Missile system (ATM) was developed by Clan Coyote from 3054 to 3060. ATMs include an integral Artemis IV Fire Control System. The ATM 6 is the second smallest and second lightest of the ATMs.\n\nRequired Hardpoint: <b><color=#008000>Missile</color></b>\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. ATM weapons accuracy modifier is positively affected by an integrated Artemis IV. ATM systems cannot benefit from a Narc Missile Beacon."
 	},
 	"Damage": 8,
 	"Instability": 4,

@@ -11,6 +11,9 @@
 	"Instability": 20,
 	"RefireModifier": 0,
 	"AccuracyModifier": 1,
+	"Description": {
+		"Details": "Particle Projector Cannons—PPCs—fire streams of energized lightning at their target that deal substantial damage and stability impact. However, this comes with intense heat generation and bulkiness. PPCs also generate a mild EM field that degrades the firing capability of their target.\n\nRequired Hardpoint: <b><color=#008000>Energy</color></b>\nPPCs can switch off their Field Inhibitor, allowing the weapon to ignore minimum range penalties, but risking a potentially destructive misfire."
+	},
 	"UnsafeJamChance": 0.1,
 	"Modes": [
 		{

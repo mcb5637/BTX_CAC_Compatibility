@@ -12,7 +12,7 @@
 	"RefireModifier": 0,
 	"AccuracyModifier": 0,
 	"Description": {
-		"Details": "SRM6s are the largest available rack of Short-Range Missiles and pack considerable punch while also being lightweight. As for all SRMs, SRM6 shots deal above-average stability impact per hit compared to other weapons. The Streak Missile Launcher is a specialized version of the standard Short Range Missile launcher which withholds fire until it receives a solid lock ensuring all missiles will hit. If the launcher cannot gain a lock on the target the missiles won't fire.\n\nUnlike other missile systems, Streak based weaponry does not suffer from a Missile accuracy modifier, unless the target is using an active Anti Missile System."
+		"Details": "SRM6s are the largest available rack of Short-Range Missiles and pack considerable punch while also being lightweight. As for all SRMs, SRM6 shots deal above-average stability impact per hit compared to other weapons. The Streak Missile Launcher is a specialized version of the standard Short Range Missile launcher which withholds fire until it receives a solid lock ensuring all missiles will hit. If the launcher cannot gain a lock on the target the missiles won't fire.\n\nUnlike other missile systems, Streak based weaponry does not suffer from a Missile accuracy modifier."
 	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 6,

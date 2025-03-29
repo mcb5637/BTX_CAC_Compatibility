@@ -1,9 +1,5 @@
 {
 	"TargetIDs": [
-		"Weapon_ELRM_ELRM10_0-STOCK",
-		"Weapon_ELRM_ELRM15_0-STOCK",
-		"Weapon_ELRM_ELRM20_0-STOCK",
-		"Weapon_ELRM_ELRM5_0-STOCK",
 		"Weapon_LRM_CLRM10_0-STOCK",
 		"Weapon_LRM_CLRM10_1-MK46TII",
 		"Weapon_LRM_CLRM10_1-SeriesXII",
@@ -51,6 +47,7 @@
 		"Weapon_LRM_LRM10_3-Zeus",
 		"Weapon_LRM_LRM15_0-STOCK",
 		"Weapon_LRM_LRM15_1-Delta",
+		"Weapon_LRM_LRM15_1-DeltaBoT",
 		"Weapon_LRM_LRM15_1-LongFire",
 		"Weapon_LRM_LRM15_1-Telos",
 		"Weapon_LRM_LRM15_2-Delta",

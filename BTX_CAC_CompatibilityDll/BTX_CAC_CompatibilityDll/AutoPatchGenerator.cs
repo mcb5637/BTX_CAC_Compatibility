@@ -624,10 +624,12 @@ namespace BTX_CAC_CompatibilityDll
             new WeaponUACPattern()
             {
                 Check = new Regex("^Weapon_Autocannon_(?<ur>C?[UR])AC(?<size>\\d+)(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
+                // TODO desc, ammo
             },
             new WeaponLBXPattern()
             {
                 Check = new Regex("^Weapon_Autocannon_(?<c>C?)LB(?<size>\\d+)X(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
+                // TODO desc, ammo
             },
             new WeaponLaserPattern()
             {
@@ -784,6 +786,8 @@ namespace BTX_CAC_CompatibilityDll
                         c.AddSubList($"PPC", id, Array.Empty<string>(), new string[] { }, lvl);
                     c.AddEnergyTTS.Add(id);
                 },
+                Details = true,
+                DetailsMap = (d) => d.Description.Details + "\nPPCs can switch off their Field Inhibitor, allowing the weapon to ignore minimum range penalties, but risking a potentially destructive misfire."
             },
             new WeaponForwardingPattern()
             {
@@ -833,6 +837,7 @@ namespace BTX_CAC_CompatibilityDll
                         c.AddSubList($"{cl}Flamer", id, Array.Empty<string>(), new string[] { }, lvl);
                     c.AddEnergyTTS.Add(id);
                 },
+                DetailsMap = (d) => Regex.Replace(d.Description.Details, "cause the targeted unit to shut down from overheating", "cause the targeted unit to shut down from overheating. Usage may lead to dangerous forest fires, if used in the wrong conditions"),
             },
             new WeaponForwardingPattern()
             {
@@ -866,7 +871,7 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_ELRM_ELRM(?<size>\\d+)_(?<plus>\\d+)-.+$"),
                 EnableArtemis = false,
-                EnableNarc = true,
+                EnableNarc = false,
                 E = true,
             },
             new WeaponForwardingPattern()
@@ -1718,9 +1723,10 @@ namespace BTX_CAC_CompatibilityDll
             public Func<IdCollector, List<string>> AddToList = null;
             public Func<Match, ComponentOrder> Order = null;
             public Action<WeaponDef, string, Match, IdCollector> SubList = null;
+            public Func<WeaponDef, string> DetailsMap = null;
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
-                string p = Forward(data, Details, Heat, Damage, Boni);
+                string p = Forward(data, Details, Heat, Damage, Boni, true, DetailsMap);
                 p += ExtraData;
                 WriteTo(targetFolder, id, p);
                 if (AddToList != null)
@@ -1730,7 +1736,7 @@ namespace BTX_CAC_CompatibilityDll
                 SubList?.Invoke(data, id, m, c);
             }
 
-            public static string Forward(WeaponDef data, bool details, bool heat, bool damage = true, bool boni = false, bool acc = true)
+            public static string Forward(WeaponDef data, bool details, bool heat, bool damage = true, bool boni = false, bool acc = true, Func<WeaponDef, string> detailsMap = null)
             {
                 string p = $"{{\r\n\t\"MinRange\": {data.MinRange},\r\n\t\"MaxRange\": {data.MaxRange},\r\n\t\"RangeSplit\": [\r\n\t\t{data.RangeSplit[0]},\r\n\t\t{data.RangeSplit[1]},\r\n\t\t{data.RangeSplit[2]}\r\n\t],\r\n\t\"HeatGenerated\": {data.HeatGenerated}";
                 if (damage)
@@ -1740,7 +1746,14 @@ namespace BTX_CAC_CompatibilityDll
                 if (heat)
                     p += $",\r\n\t\"HeatDamage\": {data.HeatDamage}";
                 if (details)
-                    p += $",\r\n\t\"Description\": {{\r\n\t\t\"Details\": {JsonConvert.ToString(data.Description.Details)}\r\n\t}}";
+                {
+                    string d = null;
+                    if (detailsMap != null)
+                        d = detailsMap(data);
+                    if (d == null)
+                        d = data.Description.Details;
+                    p += $",\r\n\t\"Description\": {{\r\n\t\t\"Details\": {JsonConvert.ToString(d)}\r\n\t}}";
+                }
                 if (boni)
                     p += $",\r\n\t\"BonusValueA\": \"{data.BonusValueA}\",\r\n\t\"BonusValueB\": \"{data.BonusValueB}\"";
                 return p;
@@ -1788,7 +1801,7 @@ namespace BTX_CAC_CompatibilityDll
             {
                 float sr = data.ShortRange;
                 float maxr = data.MaxRange;
-                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true);
+                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 p += $",\r\n\t\"DistantVariance\": 0.4,\r\n\t\"DamageFalloffStartDistance\": {sr},\r\n\t\"DamageFalloffEndDistance\": {maxr},\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Quadratic\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true";
                 p += "\r\n}";
 
@@ -1799,6 +1812,11 @@ namespace BTX_CAC_CompatibilityDll
 
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
                     c.AddSubList($"GaussHeavy", id, Array.Empty<string>(), new string[] { data.AmmoCategoryToAmmoBoxId }, lvl);
+            }
+
+            private static string Desc(WeaponDef d)
+            {
+                return Regex.Replace(d.Description.Details, "Unlike other Gauss Rifles the Heavy Gauss Rifle does suffer a slight recoil effect from firing", "Unlike other Gauss Rifles the Heavy Gauss Rifle does suffer a slight recoil effect from firing and Damage falloff at long ranges");
             }
         }
 
@@ -1962,13 +1980,15 @@ namespace BTX_CAC_CompatibilityDll
                 float mr = 13 * 30f;
                 float maxr = 15 * 30f;
                 string p = $"{{\r\n\t\"MinRange\": {minr},\r\n\t\"MaxRange\": {maxr},\r\n\t\"RangeSplit\": [\r\n\t\t{sr},\r\n\t\t{mr},\r\n\t\t{maxr}\r\n\t]";
+                p += $",\r\n\t\"Description\": {{\r\n\t\t\"Details\": {JsonConvert.ToString("A unique modification of a standard Particle Projector Cannon, the Snub PPC shortens a standard PPC, leading to a lighter and more compact weapon system. The trade-off is a shorter range and damage fallof at long ranges.\nThe last remaining (magnetic) focusing lens can be disabled, leading to an increase in damage, but spread over a larger area.")}\r\n\t}}";
                 p += ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"HitGenerator\": \"Cluster\"";
                 p += $",\r\n\t\"DistantVariance\": 0.5,\r\n\t\"DamageFalloffStartDistance\": {sr},\r\n\t\"DamageFalloffEndDistance\": {maxr},\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Quadratic\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true";
-                p += ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": false\r\n\t\t}";
+                p += ",\r\n\t\"Modes\": [";
 
                 float fl_targetdmg = (data.Damage - 15) * 5 + 50;
                 float fl_targetstab = (data.Instability - 5) * 5 + 20;
-                p += $",\r\n\t\t{{\r\n\t\t\t\"Id\": \"SPPC_FL\",\r\n\t\t\t\"UIName\": \"FL\",\r\n\t\t\t\"Name\": \"Focusing Lens\",\r\n\t\t\t\"Description\": \"The additional magnetic Focusing Lens allows to focus all particles into one projectile, concentrating the infliced damage to one location, at the cost of slighly increased heat generation.\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"HeatGenerated\": 5,\r\n\t\t\t\"DamagePerShot\": {fl_targetdmg-data.Damage},\r\n\t\t\t\"Instability\": {fl_targetstab-data.Instability},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}}";
+                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"DamagePerShot\": {fl_targetdmg-data.Damage},\r\n\t\t\t\"Instability\": {fl_targetstab-data.Instability},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}}";
+                p += ",\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_FLO\",\r\n\t\t\t\"UIName\": \"FLO\",\r\n\t\t\t\"Name\": \"No Focusing Lens\",\r\n\t\t\t\"Description\": \"Disabled focusing lens leads to more overall damage, spread all over the target.\",\r\n\t\t\t\"isBaseMode\": false\r\n\t\t}";
                 p += "\r\n\t]\r\n}";
 
                 WriteTo(targetFolder, id, p);
@@ -1987,42 +2007,9 @@ namespace BTX_CAC_CompatibilityDll
             public bool EnableArtemis, EnableNarc, E = false;
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
-                if (id == "Weapon_LRM_LRM15_1-DeltaBoT")
-                {
-                    c.AddOrder(ComponentOrder.LRM15, id);
-                    c.AddSubList($"LRM15", id, new UpgradeEntry[] {
-                                new UpgradeEntry
-                                {
-                                    ID = "",
-                                    AllowDowngrade = false,
-                                    ListLink = false,
-                                    MinDate = DateTime.MinValue,
-                                    Weight = 0,
-                                },
-                                new UpgradeEntry
-                                {
-                                    ID = "Gear_Addon_Artemis4",
-                                    AllowDowngrade = false,
-                                    ListLink = false,
-                                    MinDate = HCDate,
-                                    Weight = 4,
-                                },
-                                new UpgradeEntry
-                                {
-                                    ID = "Gear_Addon_Artemis4",
-                                    AllowDowngrade = false,
-                                    ListLink = false,
-                                    MinDate = DateTime.MinValue,
-                                    Weight = 5,
-                                },
-                            }, new string[] { $"Ammo_AmmunitionBox_Generic_LRM", $"Ammo_AmmunitionBox_Generic_LRM_DF" }, 1);
-                    c.AddMissleTTS.Add(id);
-                    return;
-                }
-
                 float minr = data.MinRange;
                 int size = data.ShotsWhenFired;
-                string p = WeaponForwardingPattern.Forward(data, true, false);
+                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n\t\"UnsafeJamChance\": 0.1";
                 p += ",\r\n\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"DeadfireBase\": 0.54320985,\r\n\t\t\t\"ArtemisBase\": 0.76666665,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}";
                 p += ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}";
@@ -2073,6 +2060,7 @@ namespace BTX_CAC_CompatibilityDll
                         o = ComponentOrder.LRM5;
                 }
                 c.AddOrder(o, id);
+                c.AddMissleTTS.Add(id);
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
                 {
                     UpgradeEntry[] ad;
@@ -2106,8 +2094,32 @@ namespace BTX_CAC_CompatibilityDll
                     else
                         ad = Array.Empty<UpgradeEntry>();
                     c.AddSubList($"{m.Groups["c"].Value}{n}{(E ? "E" : "")}LRM{size}", id, ad, new string[] { $"Ammo_AmmunitionBox_Generic_LRM", $"Ammo_AmmunitionBox_Generic_LRM_DF" }, lvl);
-                    c.AddMissleTTS.Add(id);
                 }
+            }
+
+            private string Desc(WeaponDef d)
+            {
+                string r = d.Description.Details;
+                if (E)
+                {
+                    r = Regex.Replace(r, "Extended LRMs missile modifier is twice as detrimental when within minimum range and cannot benefit from a Narc Missile Beacon or TAG", "Extended LRMs use an additional booster rocket to increase the weapons range, at the cost of decreased accuracy while in minimum range.\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated");
+                }
+                else
+                {
+                    string re;
+                    if (EnableArtemis && EnableNarc)
+                        re = "LRM weapons accuracy modifier can be positively affected by an attached Artemis IV FCS or Narc Homing Pod on the target (not both)";
+                    else if (EnableArtemis)
+                        re = "LRM weapons accuracy modifier can be positively affected by an attached Artemis IV FCS";
+                    else if (EnableNarc)
+                        re = "LRM weapons accuracy modifier can be positively affected by a Narc Homing Pod on the target";
+                    else
+                        re = "";
+                    r = Regex.Replace(r, "LRM weapons accuracy modifier can be positively affected by Artemis IV, Narc Missile Beacon, or negatively affected by Anti Missile Systems", re);
+                }
+                if (d.MinRange > 0)
+                    r += "\nBy arming the missiles in the launch tubes, minimum range penalties can be ignored, but risking a potentially destructive misfire.";
+                return r;
             }
         }
         private class WeaponSRMPattern : Pattern<WeaponDef>
@@ -2116,7 +2128,7 @@ namespace BTX_CAC_CompatibilityDll
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
                 int size = data.ShotsWhenFired;
-                string p = WeaponForwardingPattern.Forward(data, true, false);
+                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"{(Streak ? "Streak" : "Individual")}\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n";
                 if (Streak)
                 {
@@ -2158,7 +2170,8 @@ namespace BTX_CAC_CompatibilityDll
                         o = ComponentOrder.SRM2;
                 }
                 c.AddOrder(o, id);
-                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                c.AddMissleTTS.Add(id);
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl) && id != "Weapon_SRM_SRM4_0-INV")
                 {
                     UpgradeEntry[] ad;
                     if (EnableArtemis)
@@ -2204,15 +2217,37 @@ namespace BTX_CAC_CompatibilityDll
                         abox = new string[] { "Ammo_AmmunitionBox_Generic_SRM" };
                     }
                     c.AddSubList($"{m.Groups["c"].Value}{(Streak ? "S" : "")}SRM{s}", id, ad, abox, lvl);
-                    c.AddMissleTTS.Add(id);
                 }
+            }
+
+            private string Desc(WeaponDef d)
+            {
+                string r = d.Description.Details;
+                if (Streak)
+                {
+                    r = Regex.Replace(r, "Unlike other missile systems, Streak based weaponry does not suffer from a Missile accuracy modifier, unless the target is using an active Anti Missile System", "Unlike other missile systems, Streak based weaponry does not suffer from a Missile accuracy modifier");
+                }
+                else
+                {
+                    string re;
+                    if (EnableArtemis && EnableNarc)
+                        re = "SRM weapons accuracy modifier can be positively affected by an attached Artemis IV FCS or Narc Homing Pod on the target (not both)";
+                    else if (EnableArtemis)
+                        re = "SRM weapons accuracy modifier can be positively affected by an attached Artemis IV FCS";
+                    else if (EnableNarc)
+                        re = "SRM weapons accuracy modifier can be positively affected by a Narc Homing Pod on the target";
+                    else
+                        re = "";
+                    r = Regex.Replace(r, "SRM weapons accuracy modifier can be positively affected by Artemis IV, Narc Missile Beacon, or negatively affected by Anti Missile Systems", re);
+                }
+                return r;
             }
         }
         private class WeaponMRMPattern : Pattern<WeaponDef>
         {
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
-                string p = WeaponForwardingPattern.Forward(data, true, false);
+                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 int size = data.ShotsWhenFired;
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Individual\",\r\n\t\"AMSHitChance\": 0.5,\r\n\t\"MissileHealth\": 2,\r\n\t\"Unguided\": true";
                 p += ",\r\n\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.54320985,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}\r\n}\r\n";
@@ -2244,13 +2279,19 @@ namespace BTX_CAC_CompatibilityDll
                     c.AddSubList($"{mr}{s}", id, Array.Empty<string>(), mr == "MRM" ? new string[] { data.AmmoCategoryToAmmoBoxId } : Array.Empty<string>(), lvl);
                 c.AddMissleTTS.Add(id);
             }
+
+            private string Desc(WeaponDef s)
+            {
+                return s.Description.Details.Replace("MRM weapons accuracy modifier is not affected by a Narc Missile Beacon, however will be negatively affected by Anti Missile Systems", "MRM weapons accuracy modifier is not affected by a Narc Homing Pod on the target").
+                    Replace("Rocket Launcher weapons accuracy modifier is not affected by a Narc Missile Beacon, however will be negatively affected by Anti Missile Systems.", "Rocket Launcher weapons accuracy modifier is not affected by a Narc Missile Beacon.");
+            }
         }
         private class WeaponATMPattern : Pattern<WeaponDef>
         {
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
                 int size = data.ShotsWhenFired;
-                string p = WeaponForwardingPattern.Forward(data, true, false, false);
+                string p = WeaponForwardingPattern.Forward(data, true, false, false, false, true, Desc);
                 p += ",\r\n\t\"Damage\": 8,\r\n\t\"Instability\": 4,";
                 p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1";
                 p += ",\r\n\t\"ClusteringModifier\": 10,\r\n\t\"DirectFireModifier\": -4";
@@ -2273,7 +2314,12 @@ namespace BTX_CAC_CompatibilityDll
                 c.AddOrder(o, id);
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
                     c.AddSubList($"ATM{s}", id, Array.Empty<string>(), new string[] { "Ammo_AmmunitionBox_Generic_ATM", "Ammo_AmmunitionBox_Generic_ATM_ER", "Ammo_AmmunitionBox_Generic_ATM_HE" }, lvl);
-                c.AddMissleTTS.Add(id);
+            }
+
+            private string Desc(WeaponDef s)
+            {
+                return s.Description.Details.Replace("ATM Missiles are able to switch between 3 different missile types during combat using the middle mouse button, each with their own range and damage profile", "ATM Launchers are able to switch between 3 different missile types during combat, each with their own range and damage profile").
+                    Replace("ATM weapons accuracy modifier is positively affected by an integrated Artemis IV, and negatively affected by a target's Anti Missile Systems. ATM systems cannot benefit from a Narc Missile Beacon.", "ATM weapons accuracy modifier is positively affected by an integrated Artemis IV. ATM systems cannot benefit from a Narc Missile Beacon.");
             }
         }
         private class WeaponNarcPattern : Pattern<WeaponDef>

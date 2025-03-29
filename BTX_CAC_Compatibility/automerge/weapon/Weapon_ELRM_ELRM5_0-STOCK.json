@@ -12,7 +12,7 @@
 	"RefireModifier": 0,
 	"AccuracyModifier": 0,
 	"Description": {
-		"Details": "The smallest rack of Long-Range Missiles, ELRM5s are efficient and tend to serve as harassment weapons. Like all ELRMs, ELRM5s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit. Extended LRMs missile modifier is twice as detrimental when within minimum range and cannot benefit from a Narc Missile Beacon or TAG."
+		"Details": "The smallest rack of Long-Range Missiles, ELRM5s are efficient and tend to serve as harassment weapons. Like all ELRMs, ELRM5s are capable of indirect fire over obstacles and terrain with the benefit of a spotter unit. Extended LRMs use an additional booster rocket to increase the weapons range, at the cost of decreased accuracy while in minimum range.\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated.\nBy arming the missiles in the launch tubes, minimum range penalties can be ignored, but risking a potentially destructive misfire."
 	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 5,

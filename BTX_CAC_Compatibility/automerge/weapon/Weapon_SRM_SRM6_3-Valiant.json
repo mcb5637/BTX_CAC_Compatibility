@@ -12,7 +12,7 @@
 	"RefireModifier": 0,
 	"AccuracyModifier": 0,
 	"Description": {
-		"Details": "SRM6s are the largest available rack of Short-Range Missiles and pack considerable punch while also being lightweight. As for all SRMs, SRM6 shots deal above-average stability impact per hit compared to other weapons.\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. SRM weapons accuracy modifier can be positively affected by Artemis IV, Narc Missile Beacon, or negatively affected by Anti Missile Systems."
+		"Details": "SRM6s are the largest available rack of Short-Range Missiles and pack considerable punch while also being lightweight. As for all SRMs, SRM6 shots deal above-average stability impact per hit compared to other weapons.\n\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated. SRM weapons accuracy modifier can be positively affected by an attached Artemis IV FCS or Narc Homing Pod on the target (not both)."
 	},
 	"ImprovedBallistic": true,
 	"MissileVolleySize": 6,
