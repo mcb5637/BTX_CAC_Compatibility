@@ -95,14 +95,14 @@
 	"Manifest": [
 		{
 			"Type": "WeaponDef",
+			"Path": "weaponoverride"
+		},
+		{
+			"Type": "WeaponDef",
 			"Path": "automerge/weapon",
 			"ShouldMergeJSON": true
 		},
 
-		{
-			"Type": "WeaponDef",
-			"Path": "weaponoverride"
-		},
 		{
 			"Type": "AmmunitionDef",
 			"Path": "ammo"
