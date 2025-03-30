@@ -22,14 +22,14 @@ Component list (Clan & SLDF ones included):
 		- UAC/RAC: fixed firing speed, no access to special ammo types
 		- Gauss: -
 		- Silver Bullet Gauss: fixed multiple projectiles
-		- Heavy Gauss: -
+		- Heavy Gauss: damage falloff
 		- Light Gauss: -
 		- MG: added double speed mode (double shots, -4 acc, +5 heat)
 		- AMS: MG that shoots at incoming missiles (20 shots at 0.5 acc) (can overload for 30 shots + jam chance (fires at all nearby missiles) / can be used as MG)
 	- Energy:
 		- PPC: added FI OFF mode
 		- ER PPC: -
-		- Snub PPC: 5 projectiles, damage falloff over long range, extra mode with 1 projectile
+		- Snub PPC: 1 projectile, damage falloff, extra mode with 5 projectiles
 		- Laser: added low power mode
 		- ER Laser: added low power mode
 		- Heavy Laser: added low power mode
@@ -43,17 +43,17 @@ Component list (Clan & SLDF ones included):
 		- Artemis IV LRM: turned into a Weapon Addon for LRMs (deprecated)
 		- SRM: added inferno ammo (inferno causes fires everywhere), added Deadfire ammo (narc or artemis compatible)
 		- Artemis IV SRM: turned into a Weapon Addon for SRMs (deprecated)
-		- Streak SRM: added inferno ammo, added streak effect, added Deadfire ammo
+		- Streak SRM: fixed streak effect
 		- NARC: multiple pods
 			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
-			- Explosive Pod: damge (kurita shops after 3059)
+			- Explosive Pod: damage (kurita shops after 3059)
 		- ATM: 3 ammo types, trading damage for range, added clustering
 		- Infernos: Broken, use SRM inferno ammo instead
 		- MRM: individual hit generator, unguided flag
 		- RL: individual hit generator, unguided flag
 		- iNarc: multiple pods
 			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
-			- Explosive Pod: damge
+			- Explosive Pod: damage
 			- Haywire Pod: -3 accuracy for 3 rounds
 	- Artillery:
 		- Thumper: light artillery (replaces HM mortar / Bull Shark)
