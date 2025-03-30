@@ -583,6 +583,7 @@ namespace BTX_CAC_CompatibilityDll
                 Check = new Regex("^Weapon_Gauss_(?<hl>C|Light)?Gauss(?<mag>_NU|_Sa|Magshot)?_(?<plus>\\d+)-.+$"),
                 ExtraData = "\r\n}\r\n",
                 Details = true,
+                Damage = false,
                 Order = (m) =>
                 {
                     if (m.Groups["mag"].Value == "Magshot")
@@ -1801,7 +1802,7 @@ namespace BTX_CAC_CompatibilityDll
             {
                 float sr = data.ShortRange;
                 float maxr = data.MaxRange;
-                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
+                string p = WeaponForwardingPattern.Forward(data, true, false, false, false, true, Desc);
                 p += $",\r\n\t\"DistantVariance\": 0.4,\r\n\t\"DamageFalloffStartDistance\": {sr},\r\n\t\"DamageFalloffEndDistance\": {maxr},\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Quadratic\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true";
                 p += "\r\n}";
 
