@@ -11,6 +11,9 @@
 	"Instability": 2,
 	"RefireModifier": 2,
 	"AccuracyModifier": -1,
+	"Description": {
+		"Details": "Delivering massive cluster rounds of stability damage with each volley, the LB 20-X smashes its opponents into the ground at short range and strips armor away in hunks. Like all LB-X Autocannons, the LB 20-X can switch between Standard, AP, Precision, Tracer and LBX Cluster rounds."
+	},
 	"PrefabIdentifier": "LBX20",	
 	"ShotsWhenFired": 20,
 	"VolleyDivisor": 1,

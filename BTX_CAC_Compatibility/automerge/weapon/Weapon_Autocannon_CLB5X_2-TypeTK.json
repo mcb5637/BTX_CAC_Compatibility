@@ -11,6 +11,9 @@
 	"Instability": 3,
 	"RefireModifier": 1,
 	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "The LB 5-X is ideal for battering lighter targets with its shogtun-like hits, which deal substantially more stability damage than the weapon's standard counterpart. Like all LB-X Autocannons, the LB 5-X can switch between Standard, AP, Precision, Tracer and LBX Cluster rounds."
+	},
 	"PrefabIdentifier": "LBX5",	
 	"ShotsWhenFired": 5,
 	"VolleyDivisor": 1,

@@ -65,6 +65,30 @@
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
       "AllowDowngrade": false
+    },
+    {
+      "ID": "Ammo_AmmunitionBox_Generic_AC10AP",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Ammo_AmmunitionBox_Generic_AC10Precision",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
+    },
+    {
+      "ID": "Ammo_AmmunitionBox_Generic_AC10Tracer",
+      "Weight": 1,
+      "RandomLimit": 0.0,
+      "MinDate": "0001-01-01T00:00:00",
+      "ListLink": false,
+      "AllowDowngrade": false
     }
   ],
   "Addons": []

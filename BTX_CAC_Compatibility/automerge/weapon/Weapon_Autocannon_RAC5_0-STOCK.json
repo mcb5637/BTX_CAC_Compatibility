@@ -11,6 +11,9 @@
 	"Instability": 10,
 	"RefireModifier": 4,
 	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "Rotary Autocannons are based loosely on standard Autocannons.  While they have the same bore they can fire up to 6 times as many rounds, although damage per shot and range is reduced. Like all Rapid Fire weaponry, RAC/5s suffer from increasing accuracy loss and ammo consumption increasing with the rate of fire. RAC weapons are able to fire Standard, AP, Precision and Tracer rounds, although AP, Precision and Tracer rounds have a chance to Jam the weapon."
+	},
 	"PrefabIdentifier": "UAC5",
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
@@ -18,9 +21,6 @@
 	"DisableClustering": true,
 	"FireDelayMultiplier": 1,
 	"RestrictedAmmo": [
-		"Ammunition_AC5AP",
-		"Ammunition_AC5Precision",
-		"Ammunition_AC5Tracer",
 		"Ammunition_LB5X"
 	],
 	"Custom": {
@@ -57,7 +57,9 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -5,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -15
+			"HeatGenerated": -15,			"FlatJammingChance": 0.1,
+			"GunneryJammingBase": 10,
+			"GunneryJammingMult": 0.01
 		},
 		{
 			"Id": "UACMode_2",
@@ -67,7 +69,9 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -4,
 			"AccuracyModifier": 3,
-			"HeatGenerated": -12
+			"HeatGenerated": -12,			"FlatJammingChance": 0.2,
+			"GunneryJammingBase": 10,
+			"GunneryJammingMult": 0.02
 		},
 		{
 			"Id": "UACMode_3",
@@ -77,7 +81,9 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -3,
 			"AccuracyModifier": 3,
-			"HeatGenerated": -9
+			"HeatGenerated": -9,			"FlatJammingChance": 0.2,
+			"GunneryJammingBase": 10,
+			"GunneryJammingMult": 0.02
 		},
 		{
 			"Id": "UACMode_4",
@@ -87,7 +93,9 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -2,
 			"AccuracyModifier": 4,
-			"HeatGenerated": -6
+			"HeatGenerated": -6,			"FlatJammingChance": 0.2,
+			"GunneryJammingBase": 10,
+			"GunneryJammingMult": 0.02
 		},
 		{
 			"Id": "UACMode_5",
@@ -97,7 +105,9 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -1,
 			"AccuracyModifier": 4,
-			"HeatGenerated": -3
+			"HeatGenerated": -3,			"FlatJammingChance": 0.2,
+			"GunneryJammingBase": 10,
+			"GunneryJammingMult": 0.02
 		},
 		{
 			"Id": "UACMode_6",
@@ -107,7 +117,9 @@
 			"isBaseMode": true,
 			"ShotsWhenFired": 0,
 			"AccuracyModifier": 4,
-			"HeatGenerated": 0
+			"HeatGenerated": 0,			"FlatJammingChance": 0.2,
+			"GunneryJammingBase": 10,
+			"GunneryJammingMult": 0.02
 		}
 	]
 }

@@ -203,7 +203,7 @@ namespace BTX_CAC_CompatibilityDll
                 int bl = inv.Select((x) => x.GetBlockerSize(cat)).Sum();
                 if (l > 0 && l != bl && bl > 0)
                 {
-                    //FileLog.Log($"{d.Description.Id} nuke blockers {cat} (was {bl} expeced {l})");
+                    Main.Log.LogWarning($"{d.Description.Id} nuke blockers {cat} (was {bl} expeced {l})");
                     inv.RemoveAll((x) => x.IsBlocker(cat));
                 }
             }

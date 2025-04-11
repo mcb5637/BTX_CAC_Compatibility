@@ -625,12 +625,10 @@ namespace BTX_CAC_CompatibilityDll
             new WeaponUACPattern()
             {
                 Check = new Regex("^Weapon_Autocannon_(?<ur>C?[UR])AC(?<size>\\d+)(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
-                // TODO desc, ammo
             },
             new WeaponLBXPattern()
             {
                 Check = new Regex("^Weapon_Autocannon_(?<c>C?)LB(?<size>\\d+)X(?<sl>_NU|_Sa)?_(?<plus>\\d+)-.+$"),
-                // TODO desc, ammo
             },
             new WeaponLaserPattern()
             {
@@ -1753,7 +1751,7 @@ namespace BTX_CAC_CompatibilityDll
                         d = detailsMap(data);
                     if (d == null)
                         d = data.Description.Details;
-                    p += $",\r\n\t\"Description\": {{\r\n\t\t\"Details\": {JsonConvert.ToString(d)}\r\n\t}}";
+                    p += $",\r\n\t\"Description\": {{\r\n\t\t\"Details\": {EscapeDetails(d)}\r\n\t}}";
                 }
                 if (boni)
                     p += $",\r\n\t\"BonusValueA\": \"{data.BonusValueA}\",\r\n\t\"BonusValueB\": \"{data.BonusValueB}\"";
@@ -1764,12 +1762,18 @@ namespace BTX_CAC_CompatibilityDll
             {
                 return m.Groups["sl"].Value == "_NU" || m.Groups["c"].Value == "C" ? "" : "SLDF";
             }
+
+            public static string EscapeDetails(string d)
+            {
+                d = Regex.Replace(d, "\n\nRequired Hardpoint: <b><color=#([\\da-fA-F]+)>\\w+</color></b>", "");
+                return JsonConvert.ToString(d);
+            }
         }
         private class WeaponACPattern : Pattern<WeaponDef>
         {
             public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
             {
-                string p = WeaponForwardingPattern.Forward(data, false, false);
+                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 p += ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,";
                 string s = m.Groups["size"].Value;
                 string li = m.Groups["li"].Value;
@@ -1792,6 +1796,10 @@ namespace BTX_CAC_CompatibilityDll
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
                     c.AddSubList($"{li}AC{s}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{s}", $"Ammo_AmmunitionBox_Generic_AC{s}AP", $"Ammo_AmmunitionBox_Generic_AC{s}Precision", $"Ammo_AmmunitionBox_Generic_AC{s}Tracer" }, lvl);
                 c.AddBallisticTTS.Add(id);
+            }
+            private static string Desc(WeaponDef d)
+            {
+                return d.Description.Details + "\nCan fire Standard, AP, Precision and Tracer rounds.";
             }
         }
 
@@ -1836,11 +1844,12 @@ namespace BTX_CAC_CompatibilityDll
                         shotSelection = r;
                 }
                 int uacrapidfireacc = 3; //TODO read from settings
-                string p = WeaponForwardingPattern.Forward(data, false, false);
                 string size = m.Groups["size"].Value;
                 string ur = m.Groups["ur"].Value;
+                string wdesc = Desc(ur, data);
+                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, (_) => wdesc);
                 p += $",\r\n\t\"PrefabIdentifier\": \"UAC{size}\",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
-                p += $"\t\"RestrictedAmmo\": [\r\n\t\t\"Ammunition_AC{size}AP\",\r\n\t\t\"Ammunition_AC{size}Precision\",\r\n\t\t\"Ammunition_AC{size}Tracer\",\r\n\t\t\"Ammunition_LB{size}X\"\r\n\t],\r\n";
+                p += $"\t\"RestrictedAmmo\": [\r\n\t\t\"Ammunition_LB{size}X\"\r\n\t],\r\n";
                 p += "\t\"Custom\": {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 7,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"UAC\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 2,\r\n\t\t\t\t\t\"Base\": 0.7083333\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 3,\r\n\t\t\t\t\t\"Base\": 0.6666667\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 4,\r\n\t\t\t\t\t\"Base\": 0.6597222\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
                 p += "\t\"Modes\": [\n";
                 for (int mi = 1; mi <= shotSelection; mi++)
@@ -1878,7 +1887,12 @@ namespace BTX_CAC_CompatibilityDll
                             desc += " with an accuaracy penalty";
                         desc += ".";
                     }
-                    p += $"\t\t{{\r\n\t\t\t\"Id\": \"UACMode_{mi}\",\r\n\t\t\t\"UIName\": \"x{mi}\",\r\n\t\t\t\"Name\": \"{name}\",\r\n\t\t\t\"Description\": \"{desc}\",\r\n\t\t\t\"isBaseMode\": {basemode.ToString().ToLower()},\r\n\t\t\t\"ShotsWhenFired\": {sfired},\r\n\t\t\t\"AccuracyModifier\": {acc},\r\n\t\t\t\"HeatGenerated\": {heatmod}\r\n\t\t}}";
+                    string jam;
+                    if (mi == 1)
+                        jam = "\t\t\t\"FlatJammingChance\": 0.1,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.01";
+                    else
+                        jam = "\t\t\t\"FlatJammingChance\": 0.2,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.02";
+                    p += $"\t\t{{\r\n\t\t\t\"Id\": \"UACMode_{mi}\",\r\n\t\t\t\"UIName\": \"x{mi}\",\r\n\t\t\t\"Name\": \"{name}\",\r\n\t\t\t\"Description\": \"{desc}\",\r\n\t\t\t\"isBaseMode\": {basemode.ToString().ToLower()},\r\n\t\t\t\"ShotsWhenFired\": {sfired},\r\n\t\t\t\"AccuracyModifier\": {acc},\r\n\t\t\t\"HeatGenerated\": {heatmod},{jam}\r\n\t\t}}";
                     if (mi < shotSelection)
                         p += ",";
                     p += "\n";
@@ -1906,9 +1920,23 @@ namespace BTX_CAC_CompatibilityDll
                     sl = "";
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
                 {
-                    c.AddSubList($"{sl}{ur}AC{size}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{size}" }, lvl);
+                    c.AddSubList($"{sl}{ur}AC{size}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{size}", $"Ammo_AmmunitionBox_Generic_AC{size}AP", $"Ammo_AmmunitionBox_Generic_AC{size}Precision", $"Ammo_AmmunitionBox_Generic_AC{size}Tracer" }, lvl);
                 }
                 c.AddBallisticTTS.Add(id);
+            }
+            private static string Desc(string ur, WeaponDef d)
+            {
+                if (ur == "R")
+                {
+                    string r = d.Description.Details.Replace("suffer from substantial recoil effects from firing and consume ammo based on firing mode.", "suffer from increasing accuracy loss and ammo consumption increasing with the rate of fire. RAC weapons are able to fire Standard, AP, Precision and Tracer rounds, although AP, Precision and Tracer rounds have a chance to Jam the weapon.");
+                    return r;
+                }
+                else
+                {
+                    string r = d.Description.Details.Replace("can use both Rapid Fire or Single Fire modes using the middle mouse button to change modes. Rapid Fire modes suffer from accuracy loss and consume two ammo per attack. UAC weapons are unable to use special munition types.", "can use both Rapid Fire or Single Fire modes. Rapid Fire modes suffer from accuracy loss and consume two ammo per attack. UAC weapons are able to fire Standard, AP, Precision and Tracer rounds, although AP, Precision and Tracer rounds have a chance to Jam the weapon.");
+                    r = r.Replace("suffer from substantial recoil effects from firing and consume two ammo per attack.", "can use both Rapid Fire or Single Fire modes. Rapid Fire modes suffer from accuracy loss and consume two ammo per attack. UAC weapons are able to fire Standard, AP, Precision and Tracer rounds, although AP, Precision and Tracer rounds have a chance to Jam the weapon.");
+                    return r;
+                }
             }
         }
         private class WeaponLBXPattern : Pattern<WeaponDef>
@@ -1918,7 +1946,7 @@ namespace BTX_CAC_CompatibilityDll
                 int clustersize = int.Parse(m.Groups["size"].Value);
                 if (clustersize != data.ShotsWhenFired)
                     throw new InvalidDataException("lbx size missmatch " + id);
-                string p = WeaponForwardingPattern.Forward(data, false, false);
+                string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 p += $",\r\n\t\"PrefabIdentifier\": \"LBX{clustersize}\",\t\n\t\"ShotsWhenFired\": {data.ShotsWhenFired},\r\n\t\"VolleyDivisor\": 1,\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
                 p += $"\t\"Custom\": {{\r\n\t\t\"Clustering\": {{\r\n\t\t\t\"Base\": {(clustersize <= 2 ? 0.7083333f : 0.6333333f)}\r\n\t\t}}\r\n\t}},\r\n";
                 p += "\t\"Modes\": [\r\n";
@@ -1943,6 +1971,12 @@ namespace BTX_CAC_CompatibilityDll
                     c.AddSubList($"{sl}{m.Groups["c"].Value}LBX{clustersize}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{clustersize}", $"Ammo_AmmunitionBox_Generic_AC{clustersize}AP", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Precision", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Tracer", $"Ammo_AmmunitionBox_Generic_LB{clustersize}X" }, lvl);
                 }
                 c.AddBallisticTTS.Add(id);
+            }
+            private static string Desc(WeaponDef d)
+            {
+                string r = d.Description.Details.Replace("can use both Cluster or Solid Slug Fire modes using the middle mouse button to change modes. Cluster munitions are required for Cluster Fire mode, standard Autocannon munitions for Solid Slug. LB-X weapons are unable to use other special munitions.", "can switch between Standard, AP, Precision, Tracer and LBX Cluster rounds.");
+                r = r.Replace("fires cluster munitions and suffers recoil from continuous fire.", "can switch between Standard, AP, Precision, Tracer and LBX Cluster rounds.");
+                return r;
             }
         }
 
@@ -1981,7 +2015,7 @@ namespace BTX_CAC_CompatibilityDll
                 float mr = 13 * 30f;
                 float maxr = 15 * 30f;
                 string p = $"{{\r\n\t\"MinRange\": {minr},\r\n\t\"MaxRange\": {maxr},\r\n\t\"RangeSplit\": [\r\n\t\t{sr},\r\n\t\t{mr},\r\n\t\t{maxr}\r\n\t]";
-                p += $",\r\n\t\"Description\": {{\r\n\t\t\"Details\": {JsonConvert.ToString("A unique modification of a standard Particle Projector Cannon, the Snub PPC shortens a standard PPC, leading to a lighter and more compact weapon system. The trade-off is a shorter range and damage fallof at long ranges.\nThe last remaining (magnetic) focusing lens can be disabled, leading to an increase in damage, but spread over a larger area.")}\r\n\t}}";
+                p += $",\r\n\t\"Description\": {{\r\n\t\t\"Details\": {WeaponForwardingPattern.EscapeDetails("A unique modification of a standard Particle Projector Cannon, the Snub PPC shortens a standard PPC, leading to a lighter and more compact weapon system. The trade-off is a shorter range and damage fallof at long ranges.\nThe last remaining (magnetic) focusing lens can be disabled, leading to an increase in damage, but spread over a larger area.")}\r\n\t}}";
                 p += ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"HitGenerator\": \"Cluster\"";
                 p += $",\r\n\t\"DistantVariance\": 0.5,\r\n\t\"DamageFalloffStartDistance\": {sr},\r\n\t\"DamageFalloffEndDistance\": {maxr},\r\n\t\"DistantVarianceReversed\": false,\r\n\t\"RangedDmgFalloffType\": \"Quadratic\",\r\n\t\"isDamageVariation\": true,\r\n\t\"isStabilityVariation\": true";
                 p += ",\r\n\t\"Modes\": [";

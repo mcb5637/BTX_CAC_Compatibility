@@ -12,7 +12,7 @@
 	"RefireModifier": 0,
 	"AccuracyModifier": 0,
 	"Description": {
-		"Details": "The Light Machine Gun is a lower damage version of the standard Machine Gun, the gain though is increased range while using the same ammunition. Light Machine Guns, like their predecessors have a greatly increased chance to cause Criticals when they impact a target that has been stripped of its armor.\n\nRequired Hardpoint: <b><color=#008000>Support</color></b>"
+		"Details": "The Light Machine Gun is a lower damage version of the standard Machine Gun, the gain though is increased range while using the same ammunition. Light Machine Guns, like their predecessors have a greatly increased chance to cause Criticals when they impact a target that has been stripped of its armor."
 	},
 	"Modes": [
 		{

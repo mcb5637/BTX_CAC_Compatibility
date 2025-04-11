@@ -12,7 +12,7 @@
 	"RefireModifier": 0,
 	"AccuracyModifier": 0,
 	"Description": {
-		"Details": "As its name implies, the Heavy Machine Gun is a larger version of the standard Machine Gun. Twice as heavy as its more traditional cousin, the Heavy Machine Gun does increased damage, though at the cost of a third of its already short range. Heavy Machine Guns, like their smaller predecessors have a greatly increased chance to cause Criticals when they impact a target that has been stripped of its armor.\n\nRequired Hardpoint: <b><color=#008000>Support</color></b>"
+		"Details": "As its name implies, the Heavy Machine Gun is a larger version of the standard Machine Gun. Twice as heavy as its more traditional cousin, the Heavy Machine Gun does increased damage, though at the cost of a third of its already short range. Heavy Machine Guns, like their smaller predecessors have a greatly increased chance to cause Criticals when they impact a target that has been stripped of its armor."
 	},
 	"Modes": [
 		{

@@ -11,6 +11,9 @@
 	"Instability": 40,
 	"RefireModifier": 3,
 	"AccuracyModifier": -2,
+	"Description": {
+		"Details": "Delivering unparalleled damage output, Ultra AC/20s issue nightmarish volleys of devastation. Like all Ultra Autocannon weaponry, UAC/20s can use both Rapid Fire or Single Fire modes. Rapid Fire modes suffer from accuracy loss and consume two ammo per attack. UAC weapons are able to fire Standard, AP, Precision and Tracer rounds, although AP, Precision and Tracer rounds have a chance to Jam the weapon."
+	},
 	"PrefabIdentifier": "UAC20",
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
@@ -18,9 +21,6 @@
 	"DisableClustering": true,
 	"FireDelayMultiplier": 1,
 	"RestrictedAmmo": [
-		"Ammunition_AC20AP",
-		"Ammunition_AC20Precision",
-		"Ammunition_AC20Tracer",
 		"Ammunition_LB20X"
 	],
 	"Custom": {
@@ -57,7 +57,9 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -1,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -24
+			"HeatGenerated": -24,			"FlatJammingChance": 0.1,
+			"GunneryJammingBase": 10,
+			"GunneryJammingMult": 0.01
 		},
 		{
 			"Id": "UACMode_2",
@@ -67,7 +69,9 @@
 			"isBaseMode": true,
 			"ShotsWhenFired": 0,
 			"AccuracyModifier": 3,
-			"HeatGenerated": 0
+			"HeatGenerated": 0,			"FlatJammingChance": 0.2,
+			"GunneryJammingBase": 10,
+			"GunneryJammingMult": 0.02
 		}
 	]
 }

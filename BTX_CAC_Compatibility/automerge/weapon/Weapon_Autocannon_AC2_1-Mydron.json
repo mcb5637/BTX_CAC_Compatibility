@@ -11,6 +11,9 @@
 	"Instability": 20,
 	"RefireModifier": 0,
 	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "Intended for use as supporting fire at very long range, AC/2s deal moderate damage with low heat and a large ammunition count per ton. Like all Autocannon weaponry, AC/2s suffer from recoil effects from continuous fire.\nCan fire Standard, AP, Precision and Tracer rounds."
+	},
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
 	"HasShells": false,

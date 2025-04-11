@@ -11,6 +11,9 @@
 	"Instability": 5,
 	"RefireModifier": 1,
 	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "The Light AC/2, as its name implies, is a smaller, lighter version of the Autocannon/2. While it does not have the range of its larger cousin, it does have the ability to use the same special munitions.\nCan fire Standard, AP, Precision and Tracer rounds."
+	},
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
 	"HasShells": false,

@@ -11,6 +11,9 @@
 	"Instability": 25,
 	"RefireModifier": 1,
 	"AccuracyModifier": -1,
+	"Description": {
+		"Details": "A flexible weapon, AC/5s strike a balance between long range, power, and performance. These weapons are commonly found on medium 'Mechs as their primary source of reliable damage. Like all Autocannon weaponry, AC/5s suffer from recoil effects from continuous fire.\nCan fire Standard, AP, Precision and Tracer rounds."
+	},
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
 	"HasShells": false,

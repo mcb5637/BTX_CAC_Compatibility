@@ -11,6 +11,9 @@
 	"Instability": 2,
 	"RefireModifier": 2,
 	"AccuracyModifier": -2,
+	"Description": {
+		"Details": "The LB 10-X sands away considerable amounts of armor and severely destabilizes targets with its large-gauge scatter shots and high stability damage. Like all LB-X Autocannons, the LB 10-X can switch between Standard, AP, Precision, Tracer and LBX Cluster rounds."
+	},
 	"PrefabIdentifier": "LBX10",	
 	"ShotsWhenFired": 10,
 	"VolleyDivisor": 1,

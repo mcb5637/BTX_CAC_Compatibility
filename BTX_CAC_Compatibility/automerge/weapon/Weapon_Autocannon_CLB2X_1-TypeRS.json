@@ -11,6 +11,9 @@
 	"Instability": 5,
 	"RefireModifier": 1,
 	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "Paradoxically a \"long-range shotgun\", the LB 2-X is ideal for delivering Critical Hits from afar or peppering away light armor. Like all LB-X Autocannons, the LB 2-X can switch between Standard, AP, Precision, Tracer and LBX Cluster rounds."
+	},
 	"PrefabIdentifier": "LBX2",	
 	"ShotsWhenFired": 2,
 	"VolleyDivisor": 1,

@@ -1,5 +1,6 @@
 {
 	"Description": {
 		"UIName": "ST"
-	}
+	},
+	"FlatJammingChance": -1.0
 }

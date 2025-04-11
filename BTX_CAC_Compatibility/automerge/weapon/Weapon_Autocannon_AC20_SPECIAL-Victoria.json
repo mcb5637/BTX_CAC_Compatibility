@@ -11,6 +11,9 @@
 	"Instability": 40,
 	"RefireModifier": 2,
 	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "The king of the battlefield in terms of raw damage, AC/20s hit harder than any other weapon. However, this comes at the expense of weight, range, and severely limited ammunition. Like all Autocannon weaponry, AC/20s suffer from recoil effects from continuous fire.\nCan fire Standard, AP, Precision and Tracer rounds."
+	},
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
 	"HasShells": false,

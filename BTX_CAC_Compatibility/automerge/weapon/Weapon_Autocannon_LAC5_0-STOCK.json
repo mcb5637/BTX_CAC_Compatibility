@@ -11,6 +11,9 @@
 	"Instability": 10,
 	"RefireModifier": 1,
 	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "The light AC/5 is, as its name implies, a smaller, lighter version of the autocannon/5. While it does not have the range of its larger cousin, it retains the ability to use the same special munitions.\nCan fire Standard, AP, Precision and Tracer rounds."
+	},
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
 	"HasShells": false,

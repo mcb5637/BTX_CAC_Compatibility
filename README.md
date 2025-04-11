@@ -19,7 +19,7 @@ Component list (Clan & SLDF ones included):
 	- Ballistic:
 		- AC: fixed firing speed, special ammo types
 		- LBX: can switch ammo between cluster and ac (including special ac ammo types)
-		- UAC/RAC: fixed firing speed, no access to special ammo types
+		- UAC/RAC: fixed firing speed, special ammo types (with jam chance)
 		- Gauss: -
 		- Silver Bullet Gauss: fixed multiple projectiles
 		- Heavy Gauss: damage falloff

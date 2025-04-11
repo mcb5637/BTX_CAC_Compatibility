@@ -11,6 +11,9 @@
 	"Instability": 20,
 	"RefireModifier": 2,
 	"AccuracyModifier": 0,
+	"Description": {
+		"Details": "One of the most powerful and efficient weapons mounted in combat, AC/10s are known for their heavy damage and ability to stagger opponents. Like all Autocannon weaponry, AC/10s suffer from recoil effects from continuous fire.\nCan fire Standard, AP, Precision and Tracer rounds."
+	},
 	"ImprovedBallistic": false,
 	"BallisticDamagePerPallet": false,
 	"HasShells": false,
