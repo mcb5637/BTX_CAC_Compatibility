@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 using UIWidgets;
 using UnityEngine;
 
-[assembly: AssemblyVersion("2.0.1.2")]
+[assembly: AssemblyVersion("2.0.1.3")]
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -261,6 +261,36 @@ namespace BTX_CAC_CompatibilityDll
 
                 yield return i;
             }
+        }
+
+        private static float GetFlexDamage(Weapon w)
+        {
+            ExtAmmunitionDef a = w.ammo();
+            if (a.Id == "Ammunition_SRMInferno")
+            {
+                float bon = w.weaponDef.Damage - 10.0f;
+                if (bon > 0)
+                    return bon;
+            }
+            return 0.0f;
+        }
+        [HarmonyPatch(typeof(Weapon), nameof(Weapon.HeatDamagePerShot), MethodType.Getter)]
+        [HarmonyPostfix]
+        [HarmonyBefore("io.mission.modrepuation")]
+        public static void Weapon_HeatDamagePerShot(Weapon __instance, ref float __result)
+        {
+            float f = GetFlexDamage(__instance);
+            if (f > 0.0f)
+                __result += f;
+        }
+        [HarmonyPatch(typeof(Weapon), nameof(Weapon.DamagePerShot), MethodType.Getter)]
+        [HarmonyPostfix]
+        [HarmonyBefore("io.mission.modrepuation")]
+        public static void Weapon_DamagePerShot(Weapon __instance, ref float __result)
+        {
+            float f = GetFlexDamage(__instance);
+            if (f > 0.0f)
+                __result -= f;
         }
     }
 }
