@@ -4,6 +4,7 @@ using HarmonyLib;
 using Localize;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,6 +76,14 @@ namespace BTX_CAC_CompatibilityDll
         [HarmonyPostfix]
         public static void AbstractActor_HasIndirectFireImmunity_Postfix(AbstractActor __instance, ref bool __result)
         {
+            foreach (StackFrame f in new StackTrace().GetFrames())
+            {
+                if (f.GetMethod().DeclaringType == typeof(SelectionStateCommandAttackGround))
+                {
+                    __result = false;
+                    return;
+                }
+            }
             if (__instance.StatCollection.GetValue<float>("IndirectImmuneFloat") > 0)
                 __result = true;
         }

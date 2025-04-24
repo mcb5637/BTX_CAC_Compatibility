@@ -17,8 +17,8 @@
 	"ForbiddenRange": 90,
 	"AmmoCategory": "Thumper",
 	"StartingAmmoCapacity": 0,
-	"HeatGenerated": 40,
-	"Damage": 40,
+	"HeatGenerated": 18,
+	"Damage": 0,
 	"OverheatedDamageMultiplier": 0,
 	"EvasiveDamageMultiplier": 0,
 	"EvasivePipsIgnored": 0,
@@ -28,18 +28,20 @@
 	"AccuracyModifier": 0,
 	"CriticalChanceMultiplier": 1,
 	"AOECapable": true,
-	"AOERange": 60,
+	"AOERange": 75,
 	"AOEDamage": 75,
 	"AOEHeatDamage": 0,
 	"AOEInstability": 75,
 	"IndirectFireCapable": true,
 	"RefireModifier": 4,
-	"ShotsWhenFired": 1,
+	"ShotsWhenFired": 2,
 	"ProjectilesPerShot": 1,
 	"AttackRecoil": 4,
 	"Instability": 75,
 	"AoEDmgFalloffType": "Linear",
 	"WeaponEffectID": "WeaponEffect-Weapon_AC20_Single",
+	"MinMissRadius": 10,
+	"MaxMissRadius": 75,
 	"Description": {
 		"Cost": 177500,
 		"Rarity": 99,
@@ -53,7 +55,7 @@
 		"Icon": "uixSvgIcon_weapon_Ballistic"
 	},
 	"BonusValueA": "75 AoE Dmg.",
-	"BonusValueB": "60m AoE Range",
+	"BonusValueB": "75m AoE Range",
 	"ComponentType": "Weapon",
 	"ComponentSubType": "Weapon",
 	"PrefabIdentifier": "artillery",
@@ -70,7 +72,7 @@
 			"Name": "Base",
 			"Description": "",
 			"isBaseMode": true,
-			"ShotsWhenFired": -1
+			"ShotsWhenFired": -2
 		}
 	],
 	"ComponentTags": {
@@ -89,5 +91,12 @@
 	"AdditionalImpactVFX": "WFX_BELarger",
 	"AdditionalImpactVFXScaleX": 12,
 	"AdditionalImpactVFXScaleY": 12,
-	"AdditionalImpactVFXScaleZ": 12
+	"AdditionalImpactVFXScaleZ": 12,
+	"IsArtillery": true,
+	"ArtilleryReticleColor": {
+		"C": "#FF0000",
+		"I": 1.5
+	},
+	"ArtilleryReticleRadius": 75,
+	"ArtilleryReticleText": "Thumper Artillery"
 }
