@@ -1,15 +1,15 @@
 {
 	"MinRange": 60,
-	"MaxRange": 600,
+	"MaxRange": 630,
 	"RangeSplit": [
-		180,
-		390,
-		600
+		210,
+		420,
+		630
 	],
 	"HeatGenerated": 6,
 	"Damage": 40,
 	"Instability": 10,
-	"RefireModifier": 2,
+	"RefireModifier": 0,
 	"AccuracyModifier": 0,
 	"Description": {
 		"Details": "Retaining the perfomance niche of the standard model, Ultra AC/5s are a serious force to be reckoned with. Like all Ultra Autocannon weaponry, UAC/5s can use both Rapid Fire or Single Fire modes. Rapid Fire modes suffer from accuracy loss and consume two ammo per attack. UAC weapons are able to fire Standard, AP, Precision and Tracer rounds, although AP, Precision and Tracer rounds have a chance to Jam the weapon."

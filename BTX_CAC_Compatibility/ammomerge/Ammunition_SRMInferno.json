@@ -12,6 +12,7 @@
 	"CriticalDamageModifier": 1,
 	"DamagePerShot": -9,
 	"HeatDamagePerShot": 6,
+	"Instability": -4,
 	"FireTerrainChance": 0.8,
 	"FireDurationWithoutForest": 1,
 	"FireTerrainStrength": 0,

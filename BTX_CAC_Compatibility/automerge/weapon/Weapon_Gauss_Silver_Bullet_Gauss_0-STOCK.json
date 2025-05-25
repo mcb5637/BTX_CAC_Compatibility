@@ -8,7 +8,7 @@
 	],
 	"HeatGenerated": 3,
 	"RefireModifier": 0,
-	"AccuracyModifier": 0,
+	"AccuracyModifier": -1,
 	"ImprovedBallistic": true,
 	"FireDelayMultiplier": 0,
 	"HitGenerator": "Cluster",

@@ -1,10 +1,10 @@
 {
 	"MinRange": 60,
-	"MaxRange": 600,
+	"MaxRange": 630,
 	"RangeSplit": [
-		180,
-		390,
-		600
+		210,
+		420,
+		630
 	],
 	"HeatGenerated": 6,
 	"Damage": 40,

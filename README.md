@@ -171,10 +171,8 @@ Manual setup:
 Package for release:
 - update version info in mod.json and dll
 - setup additionalDependencies
-	- SimpleMechAssembly
 	- IRBTModUtils
 	- BiggerDrops
-	- MechAffinity 1.4 (dll only)
 	- CustomComponents (latest, Dec 28, 2023)
 	- Abilifier
 	- CAC & CAE repos

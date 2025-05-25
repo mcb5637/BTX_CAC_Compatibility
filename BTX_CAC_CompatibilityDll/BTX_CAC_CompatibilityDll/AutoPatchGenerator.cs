@@ -2137,7 +2137,7 @@ namespace BTX_CAC_CompatibilityDll
                 string r = d.Description.Details;
                 if (E)
                 {
-                    r = Regex.Replace(r, "Extended LRMs missile modifier is twice as detrimental when within minimum range and cannot benefit from a Narc Missile Beacon or TAG", "Extended LRMs use an additional booster rocket to increase the weapons range, at the cost of decreased accuracy while in minimum range.\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated");
+                    r = Regex.Replace(r, "Extended LRMs missile modifier is twice as detrimental when within minimum range and cannot benefit from a Narc Missile Beacon", "Extended LRMs use an additional booster rocket to increase the weapons range, at the cost of decreased accuracy while in minimum range.\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated");
                 }
                 else
                 {

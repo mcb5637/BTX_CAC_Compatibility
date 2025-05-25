@@ -8,6 +8,7 @@ using CustAmmoCategoriesPatches;
 using CustomActivatableEquipment;
 using CustomUnits;
 using Extended_CE;
+using Extended_CE.Functionality;
 using HarmonyLib;
 using HBS.Logging;
 using InControl;
@@ -107,6 +108,7 @@ namespace BTX_CAC_CompatibilityDll
                 // cluster
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetToHitChance)), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetAllModifiers)), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetAllMeleeModifiers)), "BEX.BattleTech.Extended_CE");
 
                 // movement
                 Unpatch(harmony, AccessTools.DeclaredPropertyGetter(typeof(Mech), nameof(Mech.CanSprint)), "BEX.BattleTech.Extended_CE");
@@ -155,11 +157,54 @@ namespace BTX_CAC_CompatibilityDll
             ToHitModifiersHelper.registerModifier("TRACER", "TRACER", true, false, LightWeatherEffects.Tracer_Effect, null);
             ToHitModifiersHelper.registerModifier("MOVED SELF", "MOVED SELF", false, false, MovementRework.MovedSelf_Effect, MovementRework.MovedSelf_EffectName);
             ToHitModifiersHelper.registerModifier("TAGNARC", "TAGNARC", true, false, ElectronicWarfare.NARC_TAG_Effect, ElectronicWarfare.NARC_TAG_EffectName);
+            ToHitModifiersHelper.registerModifier("ROLE", "ROLE", true, false, Role_Effect, Role_EffectName);
             ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, CustomClustering.Cluster_EffectName, null);
             ToHitModifiersHelper.modifiers.Remove("SPRINTED");
             CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());
             CustomComponents.Validator.RegisterMechValidator(TTS.MechValidator, TTS.MechValidatorFieldable);
             MoveStatusPreview_DisplayPreviewStatus.MoveTypeDisplayOverride = MovementRework.MoveTypeDisplayOverride;
+        }
+
+        internal static float Role_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
+        {
+            if (!TacticalGameChanges.UnitRoleStore.TryGetValue(attacker.uid, out Extended_CE.UnitRole attacker_role))
+                return 0.0f;
+            switch (attacker_role)
+            {
+                case Extended_CE.UnitRole.Scout:
+                    {
+                        if (!TacticalGameChanges.UnitRoleStore.TryGetValue(target.uid, out Extended_CE.UnitRole target_role))
+                            return 0.0f;
+                        return target_role == Extended_CE.UnitRole.Scout ? 1.0f : 0.0f;
+                    }
+                case Extended_CE.UnitRole.Striker:
+                    {
+                        bool v = target is Vehicle;
+                        bool t = target is Turret;
+                        if (target is CustomMech cm)
+                        {
+                            v = cm.isVehicle;
+                            t = cm.isTurret;
+                        }
+                        if (v || target is Building || t)
+                            return -1.0f;
+                        return 0.0f;
+                    }
+                case Extended_CE.UnitRole.Ambusher:
+                    return TacticalGameChanges.AmbushersYetToFire.Contains(attacker.uid) ? -2.0f : 0.0f;
+                case Extended_CE.UnitRole.Skirmisher:
+                    return MovementRework.ClassifyMoved(attacker, apos) == SelfMovedModifier.Run ? -1.0f : 0.0f;
+                case Extended_CE.UnitRole.Sniper:
+                    return MovementRework.ClassifyMoved(attacker, apos) == SelfMovedModifier.None ? -1.0f : 0.0f;
+                default:
+                    return 0.0f;
+            }
+        }
+        internal static string Role_EffectName(ToHit h, AbstractActor a, Weapon w, ICombatant t, Vector3 ap, Vector3 tp, LineOfFireLevel lof, MeleeAttackType mt, bool cs)
+        {
+            if (!TacticalGameChanges.UnitRoleStore.TryGetValue(a.uid, out Extended_CE.UnitRole attacker_role))
+                return "ROLE";
+            return attacker_role.ToString().ToUpper();
         }
 
         private static void Unpatch(Harmony harmony, MethodBase b, string id, bool pre = true, bool post = true, bool trans = true, string onlyUnpatch = null)

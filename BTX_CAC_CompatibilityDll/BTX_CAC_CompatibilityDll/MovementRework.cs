@@ -28,7 +28,7 @@ namespace BTX_CAC_CompatibilityDll
             return rem < max / 3;
         }
 
-        private static SelfMovedModifier ClassifyMoved(AbstractActor a, Vector3 apos)
+        internal static SelfMovedModifier ClassifyMoved(AbstractActor a, Vector3 apos)
         {
             if (a.StatCollection.GetValue<bool>("IgnoreHeatMovementPenalties"))
                 return SelfMovedModifier.None;

@@ -1,8 +1,0 @@
-{
-  "id": "pilotQuirkDef_pilot_klutz",
-  "tag": "pilot_klutz",
-  "quirkName": "Klutz",
-  "description": "May eject when knocked down",
-  "effectData": [],
-  "quirkEffects": []
-}
