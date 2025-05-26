@@ -175,7 +175,7 @@ namespace BTX_CAC_CompatibilityDll
                     {
                         if (!TacticalGameChanges.UnitRoleStore.TryGetValue(target.uid, out Extended_CE.UnitRole target_role))
                             return 0.0f;
-                        return target_role == Extended_CE.UnitRole.Scout ? 1.0f : 0.0f;
+                        return target_role == Extended_CE.UnitRole.Scout ? -1.0f : 0.0f;
                     }
                 case Extended_CE.UnitRole.Striker:
                     {
