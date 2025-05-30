@@ -31,7 +31,6 @@
 					"Mod": 0.03
 				}
 			],
-			"Base": 0.6333333,
 			"UAC": [
 				{
 					"Shots": 2,
@@ -45,7 +44,8 @@
 					"Shots": 4,
 					"Base": 0.6597222
 				}
-			]
+			],
+			"Base": 0.6333333
 		}
 	},
 	"Modes": [
@@ -57,8 +57,8 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -5,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -15
-,			"FlatJammingChance": 0.1,
+			"HeatGenerated": -15,
+			"FlatJammingChance": 0.1,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.01
 		},
@@ -70,8 +70,8 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -4,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -12
-,			"FlatJammingChance": 0.2,
+			"HeatGenerated": -12,
+			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		},
@@ -83,8 +83,8 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -3,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -9
-,			"FlatJammingChance": 0.2,
+			"HeatGenerated": -9,
+			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		},
@@ -96,8 +96,8 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -2,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -6
-,			"FlatJammingChance": 0.2,
+			"HeatGenerated": -6,
+			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		},
@@ -109,8 +109,8 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -1,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -3
-,			"FlatJammingChance": 0.2,
+			"HeatGenerated": -3,
+			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		},
@@ -122,8 +122,8 @@
 			"isBaseMode": true,
 			"ShotsWhenFired": 0,
 			"AccuracyModifier": 0,
-			"HeatGenerated": 0
-,			"FlatJammingChance": 0.2,
+			"HeatGenerated": 0,
+			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		}
