@@ -95,7 +95,7 @@ namespace BTX_CAC_CompatibilityDll
                     r = attacker.Combat.Constants.ToHit.ToHitSelfSprinted;
                     goto case SelfMovedModifier.Walk;
                 case SelfMovedModifier.Run:
-                    r = 2;
+                    r = AEPStatic.GetCESettings().RunningToHitCumulativePenalty;
                     goto case SelfMovedModifier.Walk;
                 case SelfMovedModifier.Walk:
                     switch (((Mech)attacker).weightClass)
@@ -115,7 +115,7 @@ namespace BTX_CAC_CompatibilityDll
                     }
                     break;
                 case SelfMovedModifier.Jump:
-                    r = 3;
+                    r = AEPStatic.GetCESettings().ToHitSelfJumped;
                     break;
             }
             if (r >= 1f && attacker.StatCollection.GetValue<bool>("CanUseFocusedBalance"))

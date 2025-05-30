@@ -1843,7 +1843,7 @@ namespace BTX_CAC_CompatibilityDll
                     if (int.TryParse(tag.Substring(7), out int r))
                         shotSelection = r;
                 }
-                int uacrapidfireacc = 3; //TODO read from settings
+                int uacrapidfireacc = (int)AEPStatic.GetCESettings().UACRapidFireAccuracyLoss;
                 string size = m.Groups["size"].Value;
                 string ur = m.Groups["ur"].Value;
                 string wdesc = Desc(ur, data);
@@ -1855,10 +1855,13 @@ namespace BTX_CAC_CompatibilityDll
                 for (int mi = 1; mi <= shotSelection; mi++)
                 {
                     int acc = 0;
-                    if (mi > 3)
-                        acc = uacrapidfireacc + 1;
-                    else if (mi > 1)
-                        acc = uacrapidfireacc;
+                    if (!AEPStatic.GetCESettings().TabletopWeapons)
+                    {
+                        if (mi > 3)
+                            acc = uacrapidfireacc + 1;
+                        else if (mi > 1)
+                            acc = uacrapidfireacc;
+                    }
                     bool basemode = data.ShotsWhenFired == mi;
                     int sfired = mi - data.ShotsWhenFired;
                     int heatmod = heat * mi - data.HeatGenerated;
@@ -1892,7 +1895,7 @@ namespace BTX_CAC_CompatibilityDll
                         jam = "\t\t\t\"FlatJammingChance\": 0.1,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.01";
                     else
                         jam = "\t\t\t\"FlatJammingChance\": 0.2,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.02";
-                    p += $"\t\t{{\r\n\t\t\t\"Id\": \"UACMode_{mi}\",\r\n\t\t\t\"UIName\": \"x{mi}\",\r\n\t\t\t\"Name\": \"{name}\",\r\n\t\t\t\"Description\": \"{desc}\",\r\n\t\t\t\"isBaseMode\": {basemode.ToString().ToLower()},\r\n\t\t\t\"ShotsWhenFired\": {sfired},\r\n\t\t\t\"AccuracyModifier\": {acc},\r\n\t\t\t\"HeatGenerated\": {heatmod},{jam}\r\n\t\t}}";
+                    p += $"\t\t{{\r\n\t\t\t\"Id\": \"UACMode_{mi}\",\r\n\t\t\t\"UIName\": \"x{mi}\",\r\n\t\t\t\"Name\": \"{name}\",\r\n\t\t\t\"Description\": \"{desc}\",\r\n\t\t\t\"isBaseMode\": {basemode.ToString().ToLower()},\r\n\t\t\t\"ShotsWhenFired\": {sfired},\r\n\t\t\t\"AccuracyModifier\": {acc},\r\n\t\t\t\"HeatGenerated\": {heatmod}\r\n,{jam}\r\n\t\t}}";
                     if (mi < shotSelection)
                         p += ",";
                     p += "\n";

@@ -57,7 +57,8 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -5,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -15,			"FlatJammingChance": 0.1,
+			"HeatGenerated": -15
+,			"FlatJammingChance": 0.1,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.01
 		},
@@ -68,8 +69,9 @@
 			"Description": "Fires 2 projectiles with an accuaracy penalty.",
 			"isBaseMode": false,
 			"ShotsWhenFired": -4,
-			"AccuracyModifier": 3,
-			"HeatGenerated": -12,			"FlatJammingChance": 0.2,
+			"AccuracyModifier": 0,
+			"HeatGenerated": -12
+,			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		},
@@ -80,8 +82,9 @@
 			"Description": "Fires 3 projectiles with an accuaracy penalty.",
 			"isBaseMode": false,
 			"ShotsWhenFired": -3,
-			"AccuracyModifier": 3,
-			"HeatGenerated": -9,			"FlatJammingChance": 0.2,
+			"AccuracyModifier": 0,
+			"HeatGenerated": -9
+,			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		},
@@ -92,8 +95,9 @@
 			"Description": "Fires 4 projectiles with a high accuaracy penalty.",
 			"isBaseMode": false,
 			"ShotsWhenFired": -2,
-			"AccuracyModifier": 4,
-			"HeatGenerated": -6,			"FlatJammingChance": 0.2,
+			"AccuracyModifier": 0,
+			"HeatGenerated": -6
+,			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		},
@@ -104,8 +108,9 @@
 			"Description": "Fires 5 projectiles with a high accuaracy penalty.",
 			"isBaseMode": false,
 			"ShotsWhenFired": -1,
-			"AccuracyModifier": 4,
-			"HeatGenerated": -3,			"FlatJammingChance": 0.2,
+			"AccuracyModifier": 0,
+			"HeatGenerated": -3
+,			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		},
@@ -116,8 +121,9 @@
 			"Description": "Fires 6 projectiles with a high accuaracy penalty.",
 			"isBaseMode": true,
 			"ShotsWhenFired": 0,
-			"AccuracyModifier": 4,
-			"HeatGenerated": 0,			"FlatJammingChance": 0.2,
+			"AccuracyModifier": 0,
+			"HeatGenerated": 0
+,			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		}

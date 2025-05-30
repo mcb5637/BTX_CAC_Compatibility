@@ -123,5 +123,11 @@ namespace BTX_CAC_CompatibilityDll
         {
             return null;
         }
+        [FieldGet(typeof(Core), "Settings")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static ModSettings GetCESettings()
+        {
+            return null;
+        }
     }
 }
