@@ -25,16 +25,7 @@
 	"UnsafeJamChance": 0.1,
 	"Custom": {
 		"Clustering": {
-			"Steps": [
-				{
-					"GunnerySkill": 6,
-					"Mod": 0.03
-				},
-				{
-					"GunnerySkill": 10,
-					"Mod": 0.03
-				}
-			],
+			"StepType": "LRM",
 			"DeadfireBase": 0.5432099,
 			"ArtemisBase": 0.7666667,
 			"Base": 0.6333333

@@ -1771,10 +1771,11 @@ namespace BTX_CAC_CompatibilityDll
                 return JsonConvert.ToString(d);
             }
 
-            public static string BuildClustering(string basefld, IEnumerable<int> steps, float stepin, string deadfirefld, string artfld, IEnumerable<(int, string)> uac)
+            public static string BuildClustering(string basefld, IEnumerable<int> steps, float stepin, CustomClustering.ClusterStepType stepty, string deadfirefld, string artfld, IEnumerable<(int, string)> uac)
             {
                 float ba = Get(basefld);
                 string r = "\t\t\"Clustering\": {\r\n";
+                r += $"\t\t\t\"StepType\": \"{stepty}\",\r\n";
                 if (steps != null)
                 {
                     float step = stepin / 100.0f;
@@ -1903,8 +1904,7 @@ namespace BTX_CAC_CompatibilityDll
                 p += $",\r\n\t\"PrefabIdentifier\": \"UAC{size}\",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
                 p += $"\t\"RestrictedAmmo\": [\r\n\t\t\"Ammunition_LB{size}X\"\r\n\t],\r\n";
                 p += "\t\"Custom\": {\r\n";
-                p += WeaponForwardingPattern.BuildClustering("clusterMod",
-                    AEPStatic.GetCESettings().TTRFBonusSteps, AEPStatic.GetCESettings().TTRFStepSize, null, null, new[]
+                p += WeaponForwardingPattern.BuildClustering("clusterMod", null, 0.0f, CustomClustering.ClusterStepType.UAC, null, null, new[]
                     {
                         (2, "clusterModTwo"),
                         (3, "clusterModThree"),
@@ -2013,7 +2013,7 @@ namespace BTX_CAC_CompatibilityDll
                 if (AEPStatic.GetCESettings().TTWpnRangeLBXClusterModifier)
                 {
                     p += "\t\"Custom\": {\r\n";
-                    p += WeaponForwardingPattern.BuildClustering(clustersize <= 2 ? "clusterModTwo" : "clusterMod", null, 0.0f, null, null, null);
+                    p += WeaponForwardingPattern.BuildClustering(clustersize <= 2 ? "clusterModTwo" : "clusterMod", null, 0.0f, CustomClustering.ClusterStepType.Json, null, null, null);
                     p += "\t},\r\n";
                 }
                 p += "\t\"Modes\": [\r\n";
@@ -2114,9 +2114,7 @@ namespace BTX_CAC_CompatibilityDll
                 string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n\t\"UnsafeJamChance\": 0.1";
                 p += ",\r\n\t\"Custom\": {\r\n";
-                p += WeaponForwardingPattern.BuildClustering("clusterMod",
-                    AEPStatic.GetCESettings().TTLRMBonusSteps, AEPStatic.GetCESettings().TTLRMStepSize, "clusterModDeadFire", "clusterMod_PlusTwo", null
-                );
+                p += WeaponForwardingPattern.BuildClustering("clusterMod", null, 0.0f, CustomClustering.ClusterStepType.LRM, "clusterModDeadFire", "clusterMod_PlusTwo", null);
                 p += "\t},\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}";
                 if (minr > 0)
                 {
@@ -2244,21 +2242,15 @@ namespace BTX_CAC_CompatibilityDll
                     p += "\t\"Custom\": {\r\n";
                     if (data.ShotsWhenFired >= 6)
                     {
-                        p += WeaponForwardingPattern.BuildClustering("clusterMod",
-                            AEPStatic.GetCESettings().TTSRMBonusSteps, AEPStatic.GetCESettings().TTSRMStepSize, "clusterModDeadFire", "clusterMod_PlusTwo", null
-                        );
+                        p += WeaponForwardingPattern.BuildClustering("clusterMod", null, 0.0f, CustomClustering.ClusterStepType.SRM, "clusterModDeadFire", "clusterMod_PlusTwo", null);
                     }
                     else if (data.ShotsWhenFired >= 4)
                     {
-                        p += WeaponForwardingPattern.BuildClustering("clusterModFour",
-                            AEPStatic.GetCESettings().TTSRMBonusSteps, AEPStatic.GetCESettings().TTSRMStepSize, "clusterModFourDeadFire", "clusterModThree_PlusTwo", null
-                        );
+                        p += WeaponForwardingPattern.BuildClustering("clusterModFour", null, 0.0f, CustomClustering.ClusterStepType.SRM, "clusterModFourDeadFire", "clusterModThree_PlusTwo", null);
                     }
                     else
                     {
-                        p += WeaponForwardingPattern.BuildClustering("clusterModTwo",
-                            AEPStatic.GetCESettings().TTSRMBonusSteps, AEPStatic.GetCESettings().TTSRMStepSize, "clusterModTwoDeadFire", "clusterModTwo_PlusTwo", null
-                        );
+                        p += WeaponForwardingPattern.BuildClustering("clusterModTwo", null, 0.0f, CustomClustering.ClusterStepType.SRM, "clusterModTwoDeadFire", "clusterModTwo_PlusTwo", null);
                     }
 
                     p += "\t},\r\n";
@@ -2371,9 +2363,7 @@ namespace BTX_CAC_CompatibilityDll
                 int size = data.ShotsWhenFired;
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Individual\",\r\n\t\"AMSHitChance\": 0.5,\r\n\t\"MissileHealth\": 2,\r\n\t\"Unguided\": true";
                 p += ",\r\n\t\"Custom\": {\r\n";
-                p += WeaponForwardingPattern.BuildClustering("clusterModDeadFire",
-                    AEPStatic.GetCESettings().TTLRMBonusSteps, AEPStatic.GetCESettings().TTLRMStepSize, null, null, null
-                );
+                p += WeaponForwardingPattern.BuildClustering("clusterModDeadFire", null, 0.0f, CustomClustering.ClusterStepType.LRM, null, null, null);
                 p += "\r\n\t}\r\n}\r\n";
                 WriteTo(targetFolder, id, p);
                 string s = m.Groups["size"].Value;
@@ -2420,9 +2410,7 @@ namespace BTX_CAC_CompatibilityDll
                 p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1";
                 p += ",\r\n\t\"ClusteringModifier\": 10,\r\n\t\"DirectFireModifier\": -4";
                 p += ",\r\n\t\"Custom\": {\r\n";
-                p += WeaponForwardingPattern.BuildClustering(size == 3 ? "clusterModThree" : "clusterMod",
-                    AEPStatic.GetCESettings().TTLRMBonusSteps, AEPStatic.GetCESettings().TTLRMStepSize, null, null, null
-                );
+                p += WeaponForwardingPattern.BuildClustering(size == 3 ? "clusterModThree" : "clusterMod", null, 0.0f, CustomClustering.ClusterStepType.LRM, null, null, null );
                 p += "\r\n\t}\r\n}\r\n";
                 WriteTo(targetFolder, id, p);
                 string s = m.Groups["size"].Value;

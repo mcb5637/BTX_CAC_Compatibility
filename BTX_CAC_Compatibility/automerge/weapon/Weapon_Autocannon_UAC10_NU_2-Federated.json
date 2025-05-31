@@ -25,12 +25,7 @@
 	],
 	"Custom": {
 		"Clustering": {
-			"Steps": [
-				{
-					"GunnerySkill": 7,
-					"Mod": 0.03
-				}
-			],
+			"StepType": "UAC",
 			"UAC": [
 				{
 					"Shots": 2,

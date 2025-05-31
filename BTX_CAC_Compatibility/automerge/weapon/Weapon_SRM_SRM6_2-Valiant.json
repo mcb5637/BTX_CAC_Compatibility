@@ -24,16 +24,7 @@
 	"MissileHealth": 1,
 	"Custom": {
 		"Clustering": {
-			"Steps": [
-				{
-					"GunnerySkill": 4,
-					"Mod": 0.03
-				},
-				{
-					"GunnerySkill": 9,
-					"Mod": 0.03
-				}
-			],
+			"StepType": "SRM",
 			"DeadfireBase": 0.5432099,
 			"ArtemisBase": 0.7666667,
 			"Base": 0.6333333

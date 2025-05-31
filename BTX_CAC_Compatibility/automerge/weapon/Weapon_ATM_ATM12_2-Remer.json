@@ -26,16 +26,7 @@
 	"DirectFireModifier": -4,
 	"Custom": {
 		"Clustering": {
-			"Steps": [
-				{
-					"GunnerySkill": 6,
-					"Mod": 0.03
-				},
-				{
-					"GunnerySkill": 10,
-					"Mod": 0.03
-				}
-			],
+			"StepType": "LRM",
 			"Base": 0.6333333
 		}
 
