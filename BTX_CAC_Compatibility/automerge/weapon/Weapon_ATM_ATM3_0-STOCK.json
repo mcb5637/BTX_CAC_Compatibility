@@ -24,9 +24,8 @@
 	"MissileHealth": 1,
 	"ClusteringModifier": 10,
 	"DirectFireModifier": -4,
-	"Custom" : {
+	"Custom": {
 		"Clustering": {
-			"Base": 0.6666667,
 			"Steps": [
 				{
 					"GunnerySkill": 6,
@@ -36,7 +35,9 @@
 					"GunnerySkill": 10,
 					"Mod": 0.03
 				}
-			]
+			],
+			"Base": 0.6666667
 		}
+
 	}
 }

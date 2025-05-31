@@ -1791,11 +1791,11 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 if (deadfirefld != null)
                 {
-                    r += $"\t\t\t\"DeadfireBase\": {Get(deadfirefld)},";
+                    r += $"\t\t\t\"DeadfireBase\": {Get(deadfirefld)},\r\n";
                 }
                 if (artfld != null)
                 {
-                    r += $"\t\t\t\"ArtemisBase\": {Get(artfld)},";
+                    r += $"\t\t\t\"ArtemisBase\": {Get(artfld)},\r\n";
                 }
                 if (uac != null)
                 {
@@ -1813,7 +1813,7 @@ namespace BTX_CAC_CompatibilityDll
                 r += $"\t\t\t\"Base\": {ba}\r\n\t\t}}\r\n";
 
                 return r;
-            
+
                 float Get(string field)
                 {
                     FieldInfo f = typeof(ModSettings).Assembly.GetType("Extended_CE.Functionality.TTWeaponRanges").GetField(field, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
@@ -2063,7 +2063,7 @@ namespace BTX_CAC_CompatibilityDll
                 p += ExtraData;
                 p += ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LMode_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Laser operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},";
                 int torem = Math.Min((int)data.Damage / 5 / 2, data.HeatGenerated / 3 / 2);
-                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"LMode_LowPower\",\r\n\t\t\t\"UIName\": \"LP\",\r\n\t\t\t\"Name\": \"Low Power Mode\",\r\n\t\t\t\"Description\": \"Using less Energy to create the Laser reduces heat generation at the cost of Damage.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamagePerShot\": -{torem*5},\r\n\t\t\t\"HeatGenerated\": -{torem*3}\r\n\t\t}}\r\n\t]\r\n}}\r\n";
+                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"LMode_LowPower\",\r\n\t\t\t\"UIName\": \"LP\",\r\n\t\t\t\"Name\": \"Low Power Mode\",\r\n\t\t\t\"Description\": \"Using less Energy to create the Laser reduces heat generation at the cost of Damage.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamagePerShot\": -{torem * 5},\r\n\t\t\t\"HeatGenerated\": -{torem * 3}\r\n\t\t}}\r\n\t]\r\n}}\r\n";
                 WriteTo(targetFolder, id, p);
                 if (AddToList != null)
                     AddToList(c)?.Add(id);
@@ -2089,7 +2089,7 @@ namespace BTX_CAC_CompatibilityDll
 
                 float fl_targetdmg = (data.Damage - 15) * 5 + 50;
                 float fl_targetstab = (data.Instability - 5) * 5 + 20;
-                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"DamagePerShot\": {fl_targetdmg-data.Damage},\r\n\t\t\t\"Instability\": {fl_targetstab-data.Instability},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}}";
+                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"DamagePerShot\": {fl_targetdmg - data.Damage},\r\n\t\t\t\"Instability\": {fl_targetstab - data.Instability},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}}";
                 p += ",\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_FLO\",\r\n\t\t\t\"UIName\": \"FLO\",\r\n\t\t\t\"Name\": \"No Focusing Lens\",\r\n\t\t\t\"Description\": \"Disabled focusing lens leads to more overall damage, spread all over the target.\",\r\n\t\t\t\"isBaseMode\": false\r\n\t\t}";
                 p += "\r\n\t]\r\n}";
 
@@ -2113,8 +2113,11 @@ namespace BTX_CAC_CompatibilityDll
                 int size = data.ShotsWhenFired;
                 string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n\t\"UnsafeJamChance\": 0.1";
-                p += ",\r\n\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"DeadfireBase\": 0.54320985,\r\n\t\t\t\"ArtemisBase\": 0.76666665,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}";
-                p += ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}";
+                p += ",\r\n\t\"Custom\": {\r\n";
+                p += WeaponForwardingPattern.BuildClustering("clusterMod",
+                    AEPStatic.GetCESettings().TTLRMBonusSteps, AEPStatic.GetCESettings().TTLRMStepSize, "clusterModDeadFire", "clusterMod_PlusTwo", null
+                );
+                p += "\t},\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}";
                 if (minr > 0)
                 {
                     p += $",\r\n\t\t{{\r\n\t\t\t\"Id\": \"LRM_HotLoad\",\r\n\t\t\t\"UIName\": \"HL\",\r\n\t\t\t\"Name\": \"Hot Load\",\r\n\t\t\t\"Description\": \"Missiles are armed inside the launcher instead of after launching, removing minimum range but having a chance to jam.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamageOnJamming\": true,\r\n\t\t\t\"AccuracyModifier\": 1.0,\r\n\t\t\t\"FlatJammingChance\": 0.25,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.025,\r\n\t\t\t\"MinRange\": {-minr}\r\n\t\t}}";
@@ -2238,12 +2241,27 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 else
                 {
+                    p += "\t\"Custom\": {\r\n";
                     if (data.ShotsWhenFired >= 6)
-                        p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"DeadfireBase\": 0.54320985,\r\n\t\t\t\"ArtemisBase\": 0.76666665,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                    {
+                        p += WeaponForwardingPattern.BuildClustering("clusterMod",
+                            AEPStatic.GetCESettings().TTSRMBonusSteps, AEPStatic.GetCESettings().TTSRMStepSize, "clusterModDeadFire", "clusterMod_PlusTwo", null
+                        );
+                    }
                     else if (data.ShotsWhenFired >= 4)
-                        p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6597222,\r\n\t\t\t\"DeadfireBase\": 0.568287,\r\n\t\t\t\"ArtemisBase\": 0.7962963,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                    {
+                        p += WeaponForwardingPattern.BuildClustering("clusterModFour",
+                            AEPStatic.GetCESettings().TTSRMBonusSteps, AEPStatic.GetCESettings().TTSRMStepSize, "clusterModFourDeadFire", "clusterModThree_PlusTwo", null
+                        );
+                    }
                     else
-                        p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.7083333,\r\n\t\t\t\"DeadfireBase\": 0.599537,\r\n\t\t\t\"ArtemisBase\": 0.8611111,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                    {
+                        p += WeaponForwardingPattern.BuildClustering("clusterModTwo",
+                            AEPStatic.GetCESettings().TTSRMBonusSteps, AEPStatic.GetCESettings().TTSRMStepSize, "clusterModTwoDeadFire", "clusterModTwo_PlusTwo", null
+                        );
+                    }
+
+                    p += "\t},\r\n";
                 }
                 p += $"\t\"Modes\": [\r\n\t\t{{\r\n\t\t\t\"Id\": \"SRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}}\r\n\t]{(Streak ? ",\r\n\t\"Streak\": true" : "")}\r\n}}\r\n";
                 WriteTo(targetFolder, id, p);
@@ -2352,7 +2370,11 @@ namespace BTX_CAC_CompatibilityDll
                 string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 int size = data.ShotsWhenFired;
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Individual\",\r\n\t\"AMSHitChance\": 0.5,\r\n\t\"MissileHealth\": 2,\r\n\t\"Unguided\": true";
-                p += ",\r\n\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.54320985,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}\r\n}\r\n";
+                p += ",\r\n\t\"Custom\": {\r\n";
+                p += WeaponForwardingPattern.BuildClustering("clusterModDeadFire",
+                    AEPStatic.GetCESettings().TTLRMBonusSteps, AEPStatic.GetCESettings().TTLRMStepSize, null, null, null
+                );
+                p += "\r\n\t}\r\n}\r\n";
                 WriteTo(targetFolder, id, p);
                 string s = m.Groups["size"].Value;
                 ComponentOrder o = ComponentOrder.Invalid;
@@ -2397,11 +2419,11 @@ namespace BTX_CAC_CompatibilityDll
                 p += ",\r\n\t\"Damage\": 8,\r\n\t\"Instability\": 4,";
                 p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1";
                 p += ",\r\n\t\"ClusteringModifier\": 10,\r\n\t\"DirectFireModifier\": -4";
-                string clu = "0.6333333";
-                if (size == 3)
-                    clu = "0.6666667";
-                p += $",\r\n\t\"Custom\" : {{\r\n\t\t\"Clustering\": {{\r\n\t\t\t\"Base\": {clu},\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}},\r\n\t\t\t\t{{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}}\r\n\t\t\t]\r\n\t\t}}\r\n\t}}";
-                p += "\r\n}\r\n";
+                p += ",\r\n\t\"Custom\": {\r\n";
+                p += WeaponForwardingPattern.BuildClustering(size == 3 ? "clusterModThree" : "clusterMod",
+                    AEPStatic.GetCESettings().TTLRMBonusSteps, AEPStatic.GetCESettings().TTLRMStepSize, null, null, null
+                );
+                p += "\r\n\t}\r\n}\r\n";
                 WriteTo(targetFolder, id, p);
                 string s = m.Groups["size"].Value;
                 ComponentOrder o = ComponentOrder.Invalid;

@@ -23,9 +23,8 @@
 	"AMSHitChance": 0.5,
 	"MissileHealth": 2,
 	"Unguided": true,
-	"Custom" : {
+	"Custom": {
 		"Clustering": {
-			"Base": 0.54320985,
 			"Steps": [
 				{
 					"GunnerySkill": 6,
@@ -35,7 +34,9 @@
 					"GunnerySkill": 10,
 					"Mod": 0.03
 				}
-			]
+			],
+			"Base": 0.5432099
 		}
+
 	}
 }

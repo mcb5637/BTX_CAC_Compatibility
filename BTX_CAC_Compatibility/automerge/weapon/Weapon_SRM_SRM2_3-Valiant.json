@@ -22,21 +22,21 @@
 	"HitGenerator": "Individual",
 	"AMSHitChance": 0.0,
 	"MissileHealth": 1,
-	"Custom" : {
+	"Custom": {
 		"Clustering": {
-			"Base": 0.7083333,
-			"DeadfireBase": 0.599537,
-			"ArtemisBase": 0.8611111,
 			"Steps": [
 				{
-					"GunnerySkill": 6,
+					"GunnerySkill": 4,
 					"Mod": 0.03
 				},
 				{
-					"GunnerySkill": 10,
+					"GunnerySkill": 9,
 					"Mod": 0.03
 				}
-			]
+			],
+			"DeadfireBase": 0.599537,
+			"ArtemisBase": 0.8611111,
+			"Base": 0.7083333
 		}
 	},
 	"Modes": [
