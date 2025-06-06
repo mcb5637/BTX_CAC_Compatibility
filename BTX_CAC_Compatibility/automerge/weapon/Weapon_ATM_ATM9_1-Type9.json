@@ -23,7 +23,6 @@
 	"AMSHitChance": 0.0,
 	"MissileHealth": 1,
 	"ClusteringModifier": 10,
-	"DirectFireModifier": -4,
 	"Custom": {
 		"Clustering": {
 			"StepType": "LRM",

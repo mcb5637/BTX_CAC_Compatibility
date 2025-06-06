@@ -160,14 +160,14 @@ namespace BTX_CAC_CompatibilityDll
             {
                 if (d.Def is WeaponDef w)
                 {
-                    if (d.Attachments(mechDef).Where(x => x.IsTTS() || x.ComponentDefID == "Gear_Addon_Artemis4").Count() > 1)
+                    if (d.Attachments(mechDef).Where(IsTTS).Count() > 1)
                     {
                         if (!errors.TryGetValue(MechValidationType.WeaponsMissing, out List<Text> err))
                         {
                             err = new List<Text>();
                             errors[MechValidationType.WeaponsMissing] = err;
                         }
-                        err.Add(new Text($"{d.Def.Description.UIName} in {d.MountedLocation} can only have one TTS or Artemis attached to it."));
+                        err.Add(new Text($"{d.Def.Description.UIName} in {d.MountedLocation} can only have one TTS attached to it."));
                     }
                 }
             }
@@ -178,8 +178,8 @@ namespace BTX_CAC_CompatibilityDll
             {
                 if (d.Def is WeaponDef w)
                 {
-                    if (d.Attachments(mechDef).Where(x => x.IsTTS() || x.ComponentDefID == "Gear_Addon_Artemis4").Count() > 1)
-                        return true;
+                    if (d.Attachments(mechDef).Where(IsTTS).Count() > 1)
+                        return false;
                 }
             }
             return true;

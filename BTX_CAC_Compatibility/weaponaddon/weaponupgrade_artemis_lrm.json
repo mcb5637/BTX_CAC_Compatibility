@@ -12,7 +12,6 @@
 			"Name": "Artemis IV",
 			"Description": "Artemis IV guidance system enabled, improving direct-fire accuracy and clustering.\r\nOnly compatible with regular ammo.",
 			"ClusteringModifier": 10,
-			"DirectFireModifier": -4,
 			"IndirectFireCapable": false,
 			"isBaseMode": true,
 			"RestrictedAmmo": [

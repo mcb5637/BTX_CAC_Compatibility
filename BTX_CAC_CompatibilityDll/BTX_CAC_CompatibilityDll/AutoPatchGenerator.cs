@@ -2408,7 +2408,7 @@ namespace BTX_CAC_CompatibilityDll
                 string p = WeaponForwardingPattern.Forward(data, true, false, false, false, true, Desc);
                 p += ",\r\n\t\"Damage\": 8,\r\n\t\"Instability\": 4,";
                 p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1";
-                p += ",\r\n\t\"ClusteringModifier\": 10,\r\n\t\"DirectFireModifier\": -4";
+                p += ",\r\n\t\"ClusteringModifier\": 10";
                 p += ",\r\n\t\"Custom\": {\r\n";
                 p += WeaponForwardingPattern.BuildClustering(size == 3 ? "clusterModThree" : "clusterMod", null, 0.0f, CustomClustering.ClusterStepType.LRM, null, null, null );
                 p += "\r\n\t}\r\n}\r\n";
@@ -2426,6 +2426,7 @@ namespace BTX_CAC_CompatibilityDll
                 c.AddOrder(o, id);
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
                     c.AddSubList($"ATM{s}", id, Array.Empty<string>(), new string[] { "Ammo_AmmunitionBox_Generic_ATM", "Ammo_AmmunitionBox_Generic_ATM_ER", "Ammo_AmmunitionBox_Generic_ATM_HE" }, lvl);
+                c.AddMissleTTS.Add(id);
             }
 
             private string Desc(WeaponDef s)

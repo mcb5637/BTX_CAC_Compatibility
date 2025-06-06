@@ -13,7 +13,6 @@
 			"Description": "Artemis IV guidance system enabled, improving accuracy and clustering.\r\nOnly compatible with regular ammo.",
 			"HitGenerator": "Cluster",
 			"ClusteringModifier": 10,
-			"AccuracyModifier": -4,
 			"isBaseMode": true,
 			"RestrictedAmmo": [
 				"Ammunition_SRMInferno",
