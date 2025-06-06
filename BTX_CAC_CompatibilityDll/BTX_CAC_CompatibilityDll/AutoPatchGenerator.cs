@@ -2232,7 +2232,7 @@ namespace BTX_CAC_CompatibilityDll
             {
                 int size = data.ShotsWhenFired;
                 string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
-                p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"{(Streak ? "Streak" : "Individual")}\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n";
+                p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"{(Streak ? "Streak" : "Individual")}\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 2,\r\n";
                 if (Streak)
                 {
                     p += "\t\"RestrictedAmmo\": [\r\n\t\t\"Ammunition_SRMInferno\",\r\n\t\t\"Ammunition_SRM_DF\"\r\n\t],\r\n";
@@ -2407,7 +2407,7 @@ namespace BTX_CAC_CompatibilityDll
                 int size = data.ShotsWhenFired;
                 string p = WeaponForwardingPattern.Forward(data, true, false, false, false, true, Desc);
                 p += ",\r\n\t\"Damage\": 8,\r\n\t\"Instability\": 4,";
-                p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1";
+                p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 2";
                 p += ",\r\n\t\"ClusteringModifier\": 10";
                 p += ",\r\n\t\"Custom\": {\r\n";
                 p += WeaponForwardingPattern.BuildClustering(size == 3 ? "clusterModThree" : "clusterMod", null, 0.0f, CustomClustering.ClusterStepType.LRM, null, null, null );

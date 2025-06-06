@@ -21,7 +21,7 @@
 	"FireDelayMultiplier": 1,
 	"HitGenerator": "Cluster",
 	"AMSHitChance": 0.0,
-	"MissileHealth": 1,
+	"MissileHealth": 2,
 	"ClusteringModifier": 10,
 	"Custom": {
 		"Clustering": {

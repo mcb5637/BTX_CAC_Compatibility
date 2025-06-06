@@ -21,7 +21,7 @@
 	"FireDelayMultiplier": 1,
 	"HitGenerator": "Individual",
 	"AMSHitChance": 0.0,
-	"MissileHealth": 1,
+	"MissileHealth": 2,
 	"Custom": {
 		"Clustering": {
 			"StepType": "SRM",
