@@ -12,7 +12,7 @@ using HarmonyLib;
 
 namespace BTX_CAC_CompatibilityDll
 {
-    internal enum SelfMovedModifier
+    internal enum SelfMovedModifier : int
     {
         None,
         Vehicle,
@@ -21,14 +21,17 @@ namespace BTX_CAC_CompatibilityDll
         Sprint,
         Jump,
     }
+    [HarmonyPatch]
     internal class MovementRework
     {
+        private const string LastTurnMoveStat = "CAC_C_Last_Turn_Move";
+        private const string LastTurnMoveTypeStat = "CAC_C_Last_Turn_MoveType";
         private static bool IsRunning(float rem, float max)
         {
             return rem < max / 3;
         }
 
-        private static SelfMovedModifier ClassifyMoved(AbstractActor a, Vector3 apos)
+        internal static SelfMovedModifier ClassifyMoved(AbstractActor a, Vector3 apos)
         {
             if (a.StatCollection.GetValue<bool>("IgnoreHeatMovementPenalties"))
                 return SelfMovedModifier.None;
@@ -78,10 +81,10 @@ namespace BTX_CAC_CompatibilityDll
             return SelfMovedModifier.None;
         }
 
-        internal static float MovedSelf_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
+        private static float MovedSelfModifier(AbstractActor attacker, SelfMovedModifier mod)
         {
             float r = 0;
-            switch (ClassifyMoved(attacker, apos))
+            switch (mod)
             {
                 case SelfMovedModifier.None:
                     break;
@@ -92,7 +95,7 @@ namespace BTX_CAC_CompatibilityDll
                     r = attacker.Combat.Constants.ToHit.ToHitSelfSprinted;
                     goto case SelfMovedModifier.Walk;
                 case SelfMovedModifier.Run:
-                    r = 2;
+                    r = AEPStatic.GetCESettings().RunningToHitCumulativePenalty;
                     goto case SelfMovedModifier.Walk;
                 case SelfMovedModifier.Walk:
                     switch (((Mech)attacker).weightClass)
@@ -112,7 +115,7 @@ namespace BTX_CAC_CompatibilityDll
                     }
                     break;
                 case SelfMovedModifier.Jump:
-                    r = 3;
+                    r = AEPStatic.GetCESettings().ToHitSelfJumped;
                     break;
             }
             if (r >= 1f && attacker.StatCollection.GetValue<bool>("CanUseFocusedBalance"))
@@ -124,20 +127,61 @@ namespace BTX_CAC_CompatibilityDll
             return r;
         }
 
+        internal static bool MovedSelfUseThisTurn(AbstractActor attacker, Vector3 apos)
+        {
+            if (attacker.CanMoveAfterShooting)
+                return attacker.HasMovedThisRound || (attacker.CurrentPosition - apos).magnitude > 0.001f;
+            else
+                return true;
+        }
+
+        internal static float MovedSelfModifier_Fallback(AbstractActor attacker, Vector3 apos)
+        {
+            if (MovedSelfUseThisTurn(attacker, apos))
+                return MovedSelfModifier(attacker, ClassifyMoved(attacker, apos));
+            else
+                return attacker.StatCollection.GetStatistic(LastTurnMoveStat)?.CurrentValue?.Value<float>() ?? 0.0f;
+        }
+
+        internal static float MovedSelf_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
+        {
+            return MovedSelfModifier_Fallback(attacker, apos);
+        }
+
         internal static string MovedSelf_EffectName(ToHit h, AbstractActor a, Weapon w, ICombatant t, Vector3 ap, Vector3 tp, LineOfFireLevel lof, MeleeAttackType mt, bool cs)
         {
-            switch (ClassifyMoved(a, ap))
+            if (MovedSelfUseThisTurn(a, ap))
             {
-                case SelfMovedModifier.Walk:
-                    return "WALKED";
-                case SelfMovedModifier.Run:
-                    return "RAN";
-                case SelfMovedModifier.Sprint:
-                    return "SPRINTED";
-                case SelfMovedModifier.Jump:
-                    return "JUMPED";
-                default:
-                    return "MOVED";
+                switch (ClassifyMoved(a, ap))
+                {
+                    case SelfMovedModifier.Walk:
+                        return "WALKED";
+                    case SelfMovedModifier.Run:
+                        return "RAN";
+                    case SelfMovedModifier.Sprint:
+                        return "SPRINTED";
+                    case SelfMovedModifier.Jump:
+                        return "JUMPED";
+                    default:
+                        return "MOVED";
+                }
+            }
+            else
+            {
+                SelfMovedModifier m = (SelfMovedModifier)(a.StatCollection.GetStatistic(LastTurnMoveTypeStat)?.CurrentValue?.Value<int>() ?? (int)SelfMovedModifier.None);
+                switch (m)
+                {
+                    case SelfMovedModifier.Walk:
+                        return "WALKED (LT)";
+                    case SelfMovedModifier.Run:
+                        return "RAN (LT)";
+                    case SelfMovedModifier.Sprint:
+                        return "SPRINTED (LT)";
+                    case SelfMovedModifier.Jump:
+                        return "JUMPED (LT)";
+                    default:
+                        return "MOVED (LT)";
+                }
             }
         }
 
@@ -149,12 +193,11 @@ namespace BTX_CAC_CompatibilityDll
             }
             return prev;
         }
-    }
 
-    [HarmonyPatch(typeof(Mech), nameof(Mech.CanSprint), MethodType.Getter)]
-    public static class Mech_CanSprint
-    {
-        public static void Postfix(Mech __instance, ref bool __result)
+
+        [HarmonyPatch(typeof(Mech), nameof(Mech.CanSprint), MethodType.Getter)]
+        [HarmonyPostfix]
+        public static void Mech_CanSprint(Mech __instance, ref bool __result)
         {
             if (__instance is CustomUnits.FakeVehicleMech)
             {
@@ -165,6 +208,16 @@ namespace BTX_CAC_CompatibilityDll
             {
                 __result &= BTComponents.MechTTRuleInfo.MechTTStatStore[__instance.uid].HipCrits == 0;
             }
+        }
+
+        [HarmonyPatch(typeof(Mech), nameof(Mech.OnActivationEnd))]
+        [HarmonyPostfix]
+        public static void Mech_OnActivationEnd(Mech __instance)
+        {
+            SelfMovedModifier mt = ClassifyMoved(__instance, __instance.CurrentPosition);
+            float m = MovedSelfModifier(__instance, mt);
+            __instance.StatCollection.GetOrCreateStatisic(LastTurnMoveTypeStat, 0).SetValue((int)mt);
+            __instance.StatCollection.GetOrCreateStatisic(LastTurnMoveStat, 0.0f).SetValue(m);
         }
     }
 }

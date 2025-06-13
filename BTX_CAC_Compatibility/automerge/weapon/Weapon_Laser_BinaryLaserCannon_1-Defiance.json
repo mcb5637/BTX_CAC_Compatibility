@@ -6,7 +6,7 @@
 		300,
 		450
 	],
-	"HeatGenerated": 33,
+	"HeatGenerated": 45,
 	"Damage": 61,
 	"Instability": 0,
 	"RefireModifier": 0,
@@ -30,8 +30,8 @@
 			"Name": "Low Power Mode",
 			"Description": "Using less Energy to create the Laser reduces heat generation at the cost of Damage.",
 			"isBaseMode": false,
-			"DamagePerShot": -25,
-			"HeatGenerated": -15
+			"DamagePerShot": -30,
+			"HeatGenerated": -18
 		}
 	]
 }

@@ -46,28 +46,35 @@ namespace BTX_CAC_CompatibilityDll
                 return false;
             if (wep.Unguided())
                 return false;
-            if (CustomClustering.IsArtemisMode(wep))
-                return false;
             return t.StatCollection.GetValue<float>(IsClan(wep) ? "TAGCountClan" : "TAGCount") > 0.0f;
         }
         private static float GetTAGBonus(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
             if (!DoesTAGApply(wep, target))
                 return 0.0f;
-            return -ToHitModifiersHelper.GetIndirectModifier(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot) - ToHitModifiersHelper.GetTargetSpeedModifier(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot);
+            float ind = ToHitModifiersHelper.GetIndirectModifier(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot);
+            if (CustomClustering.IsArtemisMode(wep))
+                return ind > 0.0f ? 1.0f : 0.0f;
+            return -ind - ToHitModifiersHelper.GetTargetSpeedModifier(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot);
         }
-        private static float GetNARCBonus(Weapon wep, ICombatant target)
+        private static float GetNARCBonus(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
-            return DoesNARCApply(wep, target) ? -4.0f : 0.0f;
+            if (!DoesNARCApply(wep, target))
+                return 0.0f;
+            float m = -4.0f;
+            if (DoesTAGApply(wep, target) && ToHitModifiersHelper.GetIndirectModifier(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot) > 0)
+                m -= 1.0f;
+            return m;
         }
         internal static float NARC_TAG_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
         {
-            return Mathf.Min(GetNARCBonus(wep, target), GetTAGBonus(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot));
+            return Mathf.Min(GetNARCBonus(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot), GetTAGBonus(tohit, attacker, wep, target, apos, tpos, lof, mat, calledshot));
         }
         internal static string NARC_TAG_EffectName(ToHit h, AbstractActor a, Weapon w, ICombatant t, Vector3 ap, Vector3 tp, LineOfFireLevel lof, MeleeAttackType mt, bool cs)
         {
-            if (GetNARCBonus(w, t) <= GetTAGBonus(h, a, w, t, ap, tp, lof, mt, cs))
-                return "NARC";
+            float nb = GetNARCBonus(h, a, w, t, ap, tp, lof, mt, cs);
+            if (nb <= GetTAGBonus(h, a, w, t, ap, tp, lof, mt, cs))
+                return nb > 0.4f ? "NARC+TAG" : "NARC";
             else
                 return "TAG";
         }

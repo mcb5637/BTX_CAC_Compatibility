@@ -21,22 +21,13 @@
 	"FireDelayMultiplier": 1,
 	"HitGenerator": "Individual",
 	"AMSHitChance": 0.0,
-	"MissileHealth": 1,
-	"Custom" : {
+	"MissileHealth": 2,
+	"Custom": {
 		"Clustering": {
-			"Base": 0.6597222,
+			"StepType": "SRM",
 			"DeadfireBase": 0.568287,
 			"ArtemisBase": 0.7962963,
-			"Steps": [
-				{
-					"GunnerySkill": 6,
-					"Mod": 0.03
-				},
-				{
-					"GunnerySkill": 10,
-					"Mod": 0.03
-				}
-			]
+			"Base": 0.6597222
 		}
 	},
 	"Modes": [

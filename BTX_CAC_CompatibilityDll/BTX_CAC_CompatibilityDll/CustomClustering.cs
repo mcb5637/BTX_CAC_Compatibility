@@ -1,6 +1,8 @@
 ﻿using BattleTech;
 using CustAmmoCategories;
 using CustomComponents;
+using HarmonyLib;
+using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +15,18 @@ namespace BTX_CAC_CompatibilityDll
     [CustomComponent("Clustering")]
     public class CustomClustering : SimpleCustomComponent
     {
-        public class Modifier
+        public enum ClusterStepType
         {
-            public float Mod = 1.0f;
-            public int GunnerySkill = 0;
+            None,
+            Json,
+            SRM,
+            LRM,
+            UAC,
+        }
+        public struct Modifier
+        {
+            public float Mod;
+            public int GunnerySkill;
         }
         public class UACBase
         {
@@ -25,10 +35,37 @@ namespace BTX_CAC_CompatibilityDll
         }
 
         public Modifier[] Steps = null;
+        public ClusterStepType StepType = ClusterStepType.Json;
         public float Base = -1.0f;
         public float DeadfireBase = -1.0f;
         public float ArtemisBase = -1.0f;
         public UACBase[] UAC = null;
+
+        private IEnumerable<Modifier> StepsToUse()
+        {
+            IEnumerable<int> l = null;
+            float m = 0.0f;
+            switch (StepType)
+            {
+                case ClusterStepType.SRM:
+                    l = AEPStatic.GetCESettings().TTSRMBonusSteps;
+                    m = AEPStatic.GetCESettings().TTSRMStepSize;
+                    break;
+                case ClusterStepType.LRM:
+                    l = AEPStatic.GetCESettings().TTLRMBonusSteps;
+                    m = AEPStatic.GetCESettings().TTLRMStepSize;
+                    break;
+                case ClusterStepType.UAC:
+                    l = AEPStatic.GetCESettings().TTRFBonusSteps;
+                    m = AEPStatic.GetCESettings().TTRFStepSize;
+                    break;
+                case ClusterStepType.None:
+                    return null;
+                default:
+                    return Steps;
+            }
+            return l.Select(x => new Modifier() { GunnerySkill = x, Mod = m / 100.0f });
+        }
 
         private enum ModifierType
         {
@@ -100,15 +137,15 @@ namespace BTX_CAC_CompatibilityDll
             if (clust == null)
                 return 1.0f;
             float f = clust.GetBaseModifier(w, target);
-            Modifier[] steps = clust.Steps;
+            IEnumerable<Modifier> steps = clust.StepsToUse();
             if (f <= 0.0f)
                 return 1.0f;
-            if (steps == null || steps.Length == 0)
+            if (steps == null)
                 return f;
             foreach (Modifier mo in steps)
             {
-                if (mo.GunnerySkill <= gunnery && f < mo.Mod)
-                    f = mo.Mod;
+                if (mo.GunnerySkill <= gunnery)
+                    f += mo.Mod;
             }
             return f;
         }

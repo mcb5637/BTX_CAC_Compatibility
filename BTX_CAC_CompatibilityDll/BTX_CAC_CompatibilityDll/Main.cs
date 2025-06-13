@@ -8,6 +8,7 @@ using CustAmmoCategoriesPatches;
 using CustomActivatableEquipment;
 using CustomUnits;
 using Extended_CE;
+using Extended_CE.Functionality;
 using HarmonyLib;
 using HBS.Logging;
 using InControl;
@@ -25,7 +26,7 @@ using System.Threading.Tasks;
 using UIWidgets;
 using UnityEngine;
 
-[assembly: AssemblyVersion("2.0.1.3")]
+[assembly: AssemblyVersion("2.0.1.6")]
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -107,6 +108,7 @@ namespace BTX_CAC_CompatibilityDll
                 // cluster
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetToHitChance)), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetAllModifiers)), "BEX.BattleTech.Extended_CE");
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(ToHit), nameof(ToHit.GetAllMeleeModifiers)), "BEX.BattleTech.Extended_CE");
 
                 // movement
                 Unpatch(harmony, AccessTools.DeclaredPropertyGetter(typeof(Mech), nameof(Mech.CanSprint)), "BEX.BattleTech.Extended_CE");
@@ -155,6 +157,7 @@ namespace BTX_CAC_CompatibilityDll
             ToHitModifiersHelper.registerModifier("TRACER", "TRACER", true, false, LightWeatherEffects.Tracer_Effect, null);
             ToHitModifiersHelper.registerModifier("MOVED SELF", "MOVED SELF", false, false, MovementRework.MovedSelf_Effect, MovementRework.MovedSelf_EffectName);
             ToHitModifiersHelper.registerModifier("TAGNARC", "TAGNARC", true, false, ElectronicWarfare.NARC_TAG_Effect, ElectronicWarfare.NARC_TAG_EffectName);
+            ToHitModifiersHelper.registerModifier("ROLE", "ROLE", true, false, UnitRoles.Role_Effect, UnitRoles.Role_EffectName);
             ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, CustomClustering.Cluster_EffectName, null);
             ToHitModifiersHelper.modifiers.Remove("SPRINTED");
             CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());

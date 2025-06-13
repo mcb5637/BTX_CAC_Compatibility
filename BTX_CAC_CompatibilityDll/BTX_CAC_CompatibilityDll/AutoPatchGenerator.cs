@@ -1,6 +1,7 @@
 ﻿using BattleTech;
 using BattleTech.Data;
 using BTRandomMechComponentUpgrader;
+using Extended_CE;
 using HarmonyLib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using static UnityEngine.RectTransform;
@@ -1768,6 +1770,57 @@ namespace BTX_CAC_CompatibilityDll
                 d = Regex.Replace(d, "\n\nRequired Hardpoint: <b><color=#([\\da-fA-F]+)>\\w+</color></b>", "");
                 return JsonConvert.ToString(d);
             }
+
+            public static string BuildClustering(string basefld, IEnumerable<int> steps, float stepin, CustomClustering.ClusterStepType stepty, string deadfirefld, string artfld, IEnumerable<(int, string)> uac)
+            {
+                float ba = Get(basefld);
+                string r = "\t\t\"Clustering\": {\r\n";
+                r += $"\t\t\t\"StepType\": \"{stepty}\",\r\n";
+                if (steps != null)
+                {
+                    float step = stepin / 100.0f;
+                    r += "\t\t\t\"Steps\": [\r\n";
+                    bool f = true;
+                    foreach (int i in steps)
+                    {
+                        if (!f)
+                            r += ",\r\n";
+                        f = false;
+                        r += $"\t\t\t\t{{\r\n\t\t\t\t\t\"GunnerySkill\": {i},\r\n\t\t\t\t\t\"Mod\": {step}\r\n\t\t\t\t}}";
+                    }
+                    r += "\r\n\t\t\t],\r\n";
+                }
+                if (deadfirefld != null)
+                {
+                    r += $"\t\t\t\"DeadfireBase\": {Get(deadfirefld)},\r\n";
+                }
+                if (artfld != null)
+                {
+                    r += $"\t\t\t\"ArtemisBase\": {Get(artfld)},\r\n";
+                }
+                if (uac != null)
+                {
+                    r += "\t\t\t\"UAC\": [\r\n";
+                    bool f = true;
+                    foreach ((int l, string fi) in uac)
+                    {
+                        if (!f)
+                            r += ",\r\n";
+                        f = false;
+                        r += $"\t\t\t\t{{\r\n\t\t\t\t\t\"Shots\": {l},\r\n\t\t\t\t\t\"Base\": {Get(fi)}\r\n\t\t\t\t}}";
+                    }
+                    r += "\r\n\t\t\t],\r\n";
+                }
+                r += $"\t\t\t\"Base\": {ba}\r\n\t\t}}\r\n";
+
+                return r;
+
+                float Get(string field)
+                {
+                    FieldInfo f = typeof(ModSettings).Assembly.GetType("Extended_CE.Functionality.TTWeaponRanges").GetField(field, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+                    return (float)f.GetValue(null);
+                }
+            }
         }
         private class WeaponACPattern : Pattern<WeaponDef>
         {
@@ -1843,22 +1896,31 @@ namespace BTX_CAC_CompatibilityDll
                     if (int.TryParse(tag.Substring(7), out int r))
                         shotSelection = r;
                 }
-                int uacrapidfireacc = 3; //TODO read from settings
+                int uacrapidfireacc = (int)AEPStatic.GetCESettings().UACRapidFireAccuracyLoss;
                 string size = m.Groups["size"].Value;
                 string ur = m.Groups["ur"].Value;
                 string wdesc = Desc(ur, data);
                 string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, (_) => wdesc);
                 p += $",\r\n\t\"PrefabIdentifier\": \"UAC{size}\",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
                 p += $"\t\"RestrictedAmmo\": [\r\n\t\t\"Ammunition_LB{size}X\"\r\n\t],\r\n";
-                p += "\t\"Custom\": {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 7,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t],\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"UAC\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 2,\r\n\t\t\t\t\t\"Base\": 0.7083333\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 3,\r\n\t\t\t\t\t\"Base\": 0.6666667\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Shots\": 4,\r\n\t\t\t\t\t\"Base\": 0.6597222\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
-                p += "\t\"Modes\": [\n";
+                p += "\t\"Custom\": {\r\n";
+                p += WeaponForwardingPattern.BuildClustering("clusterMod", null, 0.0f, CustomClustering.ClusterStepType.UAC, null, null, new[]
+                    {
+                        (2, "clusterModTwo"),
+                        (3, "clusterModThree"),
+                        (4, "clusterModFour"),
+                    });
+                p += "\t},\r\n\t\"Modes\": [\n";
                 for (int mi = 1; mi <= shotSelection; mi++)
                 {
                     int acc = 0;
-                    if (mi > 3)
-                        acc = uacrapidfireacc + 1;
-                    else if (mi > 1)
-                        acc = uacrapidfireacc;
+                    if (!AEPStatic.GetCESettings().TabletopWeapons)
+                    {
+                        if (mi > 3)
+                            acc = uacrapidfireacc + 1;
+                        else if (mi > 1)
+                            acc = uacrapidfireacc;
+                    }
                     bool basemode = data.ShotsWhenFired == mi;
                     int sfired = mi - data.ShotsWhenFired;
                     int heatmod = heat * mi - data.HeatGenerated;
@@ -1892,7 +1954,7 @@ namespace BTX_CAC_CompatibilityDll
                         jam = "\t\t\t\"FlatJammingChance\": 0.1,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.01";
                     else
                         jam = "\t\t\t\"FlatJammingChance\": 0.2,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.02";
-                    p += $"\t\t{{\r\n\t\t\t\"Id\": \"UACMode_{mi}\",\r\n\t\t\t\"UIName\": \"x{mi}\",\r\n\t\t\t\"Name\": \"{name}\",\r\n\t\t\t\"Description\": \"{desc}\",\r\n\t\t\t\"isBaseMode\": {basemode.ToString().ToLower()},\r\n\t\t\t\"ShotsWhenFired\": {sfired},\r\n\t\t\t\"AccuracyModifier\": {acc},\r\n\t\t\t\"HeatGenerated\": {heatmod},{jam}\r\n\t\t}}";
+                    p += $"\t\t{{\r\n\t\t\t\"Id\": \"UACMode_{mi}\",\r\n\t\t\t\"UIName\": \"x{mi}\",\r\n\t\t\t\"Name\": \"{name}\",\r\n\t\t\t\"Description\": \"{desc}\",\r\n\t\t\t\"isBaseMode\": {basemode.ToString().ToLower()},\r\n\t\t\t\"ShotsWhenFired\": {sfired},\r\n\t\t\t\"AccuracyModifier\": {acc},\r\n\t\t\t\"HeatGenerated\": {heatmod},\r\n{jam}\r\n\t\t}}";
                     if (mi < shotSelection)
                         p += ",";
                     p += "\n";
@@ -1948,7 +2010,12 @@ namespace BTX_CAC_CompatibilityDll
                     throw new InvalidDataException("lbx size missmatch " + id);
                 string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 p += $",\r\n\t\"PrefabIdentifier\": \"LBX{clustersize}\",\t\n\t\"ShotsWhenFired\": {data.ShotsWhenFired},\r\n\t\"VolleyDivisor\": 1,\r\n\t\"ImprovedBallistic\": false,\r\n\t\"BallisticDamagePerPallet\": false,\r\n\t\"HasShells\": false,\r\n\t\"DisableClustering\": true,\r\n\t\"FireDelayMultiplier\": 1,\r\n";
-                p += $"\t\"Custom\": {{\r\n\t\t\"Clustering\": {{\r\n\t\t\t\"Base\": {(clustersize <= 2 ? 0.7083333f : 0.6333333f)}\r\n\t\t}}\r\n\t}},\r\n";
+                if (AEPStatic.GetCESettings().TTWpnRangeLBXClusterModifier)
+                {
+                    p += "\t\"Custom\": {\r\n";
+                    p += WeaponForwardingPattern.BuildClustering(clustersize <= 2 ? "clusterModTwo" : "clusterMod", null, 0.0f, CustomClustering.ClusterStepType.Json, null, null, null);
+                    p += "\t},\r\n";
+                }
                 p += "\t\"Modes\": [\r\n";
                 float dmg = data.Damage * clustersize - data.Damage;
                 float stab = data.Instability * clustersize - data.Instability;
@@ -1996,7 +2063,7 @@ namespace BTX_CAC_CompatibilityDll
                 p += ExtraData;
                 p += ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LMode_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Laser operates normally.\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t},";
                 int torem = Math.Min((int)data.Damage / 5 / 2, data.HeatGenerated / 3 / 2);
-                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"LMode_LowPower\",\r\n\t\t\t\"UIName\": \"LP\",\r\n\t\t\t\"Name\": \"Low Power Mode\",\r\n\t\t\t\"Description\": \"Using less Energy to create the Laser reduces heat generation at the cost of Damage.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamagePerShot\": -{torem*5},\r\n\t\t\t\"HeatGenerated\": -{torem*3}\r\n\t\t}}\r\n\t]\r\n}}\r\n";
+                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"LMode_LowPower\",\r\n\t\t\t\"UIName\": \"LP\",\r\n\t\t\t\"Name\": \"Low Power Mode\",\r\n\t\t\t\"Description\": \"Using less Energy to create the Laser reduces heat generation at the cost of Damage.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamagePerShot\": -{torem * 5},\r\n\t\t\t\"HeatGenerated\": -{torem * 3}\r\n\t\t}}\r\n\t]\r\n}}\r\n";
                 WriteTo(targetFolder, id, p);
                 if (AddToList != null)
                     AddToList(c)?.Add(id);
@@ -2022,7 +2089,7 @@ namespace BTX_CAC_CompatibilityDll
 
                 float fl_targetdmg = (data.Damage - 15) * 5 + 50;
                 float fl_targetstab = (data.Instability - 5) * 5 + 20;
-                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"DamagePerShot\": {fl_targetdmg-data.Damage},\r\n\t\t\t\"Instability\": {fl_targetstab-data.Instability},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}}";
+                p += $"\r\n\t\t{{\r\n\t\t\t\"Id\": \"SPPC_STD\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"Snub PPC fires normally.\",\r\n\t\t\t\"isBaseMode\": true,\r\n\t\t\t\"ShotsWhenFired\": -4,\r\n\t\t\t\"DamagePerShot\": {fl_targetdmg - data.Damage},\r\n\t\t\t\"Instability\": {fl_targetstab - data.Instability},\r\n\t\t\t\"WeaponEffectID\": \"WeaponEffect-Weapon_PPC\"\r\n\t\t}}";
                 p += ",\r\n\t\t{\r\n\t\t\t\"Id\": \"SPPC_FLO\",\r\n\t\t\t\"UIName\": \"FLO\",\r\n\t\t\t\"Name\": \"No Focusing Lens\",\r\n\t\t\t\"Description\": \"Disabled focusing lens leads to more overall damage, spread all over the target.\",\r\n\t\t\t\"isBaseMode\": false\r\n\t\t}";
                 p += "\r\n\t]\r\n}";
 
@@ -2046,8 +2113,9 @@ namespace BTX_CAC_CompatibilityDll
                 int size = data.ShotsWhenFired;
                 string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n\t\"UnsafeJamChance\": 0.1";
-                p += ",\r\n\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"DeadfireBase\": 0.54320985,\r\n\t\t\t\"ArtemisBase\": 0.76666665,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}";
-                p += ",\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}";
+                p += ",\r\n\t\"Custom\": {\r\n";
+                p += WeaponForwardingPattern.BuildClustering("clusterMod", null, 0.0f, CustomClustering.ClusterStepType.LRM, "clusterModDeadFire", "clusterMod_PlusTwo", null);
+                p += "\t},\r\n\t\"Modes\": [\r\n\t\t{\r\n\t\t\t\"Id\": \"LRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}";
                 if (minr > 0)
                 {
                     p += $",\r\n\t\t{{\r\n\t\t\t\"Id\": \"LRM_HotLoad\",\r\n\t\t\t\"UIName\": \"HL\",\r\n\t\t\t\"Name\": \"Hot Load\",\r\n\t\t\t\"Description\": \"Missiles are armed inside the launcher instead of after launching, removing minimum range but having a chance to jam.\",\r\n\t\t\t\"isBaseMode\": false,\r\n\t\t\t\"DamageOnJamming\": true,\r\n\t\t\t\"AccuracyModifier\": 1.0,\r\n\t\t\t\"FlatJammingChance\": 0.25,\r\n\t\t\t\"GunneryJammingBase\": 10,\r\n\t\t\t\"GunneryJammingMult\": 0.025,\r\n\t\t\t\"MinRange\": {-minr}\r\n\t\t}}";
@@ -2137,7 +2205,7 @@ namespace BTX_CAC_CompatibilityDll
                 string r = d.Description.Details;
                 if (E)
                 {
-                    r = Regex.Replace(r, "Extended LRMs missile modifier is twice as detrimental when within minimum range and cannot benefit from a Narc Missile Beacon or TAG", "Extended LRMs use an additional booster rocket to increase the weapons range, at the cost of decreased accuracy while in minimum range.\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated");
+                    r = Regex.Replace(r, "Extended LRMs missile modifier is twice as detrimental when within minimum range and cannot benefit from a Narc Missile Beacon", "Extended LRMs use an additional booster rocket to increase the weapons range, at the cost of decreased accuracy while in minimum range.\nMissile weapons have a negative accuracy modifier that is percentage based and applied after the standard To Hit chance is calculated");
                 }
                 else
                 {
@@ -2164,19 +2232,28 @@ namespace BTX_CAC_CompatibilityDll
             {
                 int size = data.ShotsWhenFired;
                 string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
-                p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"{(Streak ? "Streak" : "Individual")}\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1,\r\n";
+                p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"{(Streak ? "Streak" : "Individual")}\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 2,\r\n";
                 if (Streak)
                 {
                     p += "\t\"RestrictedAmmo\": [\r\n\t\t\"Ammunition_SRMInferno\",\r\n\t\t\"Ammunition_SRM_DF\"\r\n\t],\r\n";
                 }
                 else
                 {
+                    p += "\t\"Custom\": {\r\n";
                     if (data.ShotsWhenFired >= 6)
-                        p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6333333,\r\n\t\t\t\"DeadfireBase\": 0.54320985,\r\n\t\t\t\"ArtemisBase\": 0.76666665,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                    {
+                        p += WeaponForwardingPattern.BuildClustering("clusterMod", null, 0.0f, CustomClustering.ClusterStepType.SRM, "clusterModDeadFire", "clusterMod_PlusTwo", null);
+                    }
                     else if (data.ShotsWhenFired >= 4)
-                        p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.6597222,\r\n\t\t\t\"DeadfireBase\": 0.568287,\r\n\t\t\t\"ArtemisBase\": 0.7962963,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                    {
+                        p += WeaponForwardingPattern.BuildClustering("clusterModFour", null, 0.0f, CustomClustering.ClusterStepType.SRM, "clusterModFourDeadFire", "clusterModThree_PlusTwo", null);
+                    }
                     else
-                        p += "\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.7083333,\r\n\t\t\t\"DeadfireBase\": 0.599537,\r\n\t\t\t\"ArtemisBase\": 0.8611111,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t},\r\n";
+                    {
+                        p += WeaponForwardingPattern.BuildClustering("clusterModTwo", null, 0.0f, CustomClustering.ClusterStepType.SRM, "clusterModTwoDeadFire", "clusterModTwo_PlusTwo", null);
+                    }
+
+                    p += "\t},\r\n";
                 }
                 p += $"\t\"Modes\": [\r\n\t\t{{\r\n\t\t\t\"Id\": \"SRM_Std\",\r\n\t\t\t\"UIName\": \"STD\",\r\n\t\t\t\"Name\": \"Standard\",\r\n\t\t\t\"Description\": \"\",\r\n\t\t\t\"isBaseMode\": true\r\n\t\t}}\r\n\t]{(Streak ? ",\r\n\t\"Streak\": true" : "")}\r\n}}\r\n";
                 WriteTo(targetFolder, id, p);
@@ -2285,7 +2362,9 @@ namespace BTX_CAC_CompatibilityDll
                 string p = WeaponForwardingPattern.Forward(data, true, false, true, false, true, Desc);
                 int size = data.ShotsWhenFired;
                 p += $",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Individual\",\r\n\t\"AMSHitChance\": 0.5,\r\n\t\"MissileHealth\": 2,\r\n\t\"Unguided\": true";
-                p += ",\r\n\t\"Custom\" : {\r\n\t\t\"Clustering\": {\r\n\t\t\t\"Base\": 0.54320985,\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}\r\n\t}\r\n}\r\n";
+                p += ",\r\n\t\"Custom\": {\r\n";
+                p += WeaponForwardingPattern.BuildClustering("clusterModDeadFire", null, 0.0f, CustomClustering.ClusterStepType.LRM, null, null, null);
+                p += "\r\n\t}\r\n}\r\n";
                 WriteTo(targetFolder, id, p);
                 string s = m.Groups["size"].Value;
                 ComponentOrder o = ComponentOrder.Invalid;
@@ -2328,13 +2407,11 @@ namespace BTX_CAC_CompatibilityDll
                 int size = data.ShotsWhenFired;
                 string p = WeaponForwardingPattern.Forward(data, true, false, false, false, true, Desc);
                 p += ",\r\n\t\"Damage\": 8,\r\n\t\"Instability\": 4,";
-                p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 1";
-                p += ",\r\n\t\"ClusteringModifier\": 10,\r\n\t\"DirectFireModifier\": -4";
-                string clu = "0.6333333";
-                if (size == 3)
-                    clu = "0.6666667";
-                p += $",\r\n\t\"Custom\" : {{\r\n\t\t\"Clustering\": {{\r\n\t\t\t\"Base\": {clu},\r\n\t\t\t\"Steps\": [\r\n\t\t\t\t{{\r\n\t\t\t\t\t\"GunnerySkill\": 6,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}},\r\n\t\t\t\t{{\r\n\t\t\t\t\t\"GunnerySkill\": 10,\r\n\t\t\t\t\t\"Mod\": 0.03\r\n\t\t\t\t}}\r\n\t\t\t]\r\n\t\t}}\r\n\t}}";
-                p += "\r\n}\r\n";
+                p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 2";
+                p += ",\r\n\t\"ClusteringModifier\": 10";
+                p += ",\r\n\t\"Custom\": {\r\n";
+                p += WeaponForwardingPattern.BuildClustering(size == 3 ? "clusterModThree" : "clusterMod", null, 0.0f, CustomClustering.ClusterStepType.LRM, null, null, null );
+                p += "\r\n\t}\r\n}\r\n";
                 WriteTo(targetFolder, id, p);
                 string s = m.Groups["size"].Value;
                 ComponentOrder o = ComponentOrder.Invalid;
@@ -2349,6 +2426,7 @@ namespace BTX_CAC_CompatibilityDll
                 c.AddOrder(o, id);
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
                     c.AddSubList($"ATM{s}", id, Array.Empty<string>(), new string[] { "Ammo_AmmunitionBox_Generic_ATM", "Ammo_AmmunitionBox_Generic_ATM_ER", "Ammo_AmmunitionBox_Generic_ATM_HE" }, lvl);
+                c.AddMissleTTS.Add(id);
             }
 
             private string Desc(WeaponDef s)

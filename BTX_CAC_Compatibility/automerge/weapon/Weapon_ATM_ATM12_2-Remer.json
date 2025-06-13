@@ -21,22 +21,13 @@
 	"FireDelayMultiplier": 1,
 	"HitGenerator": "Cluster",
 	"AMSHitChance": 0.0,
-	"MissileHealth": 1,
+	"MissileHealth": 2,
 	"ClusteringModifier": 10,
-	"DirectFireModifier": -4,
-	"Custom" : {
+	"Custom": {
 		"Clustering": {
-			"Base": 0.6333333,
-			"Steps": [
-				{
-					"GunnerySkill": 6,
-					"Mod": 0.03
-				},
-				{
-					"GunnerySkill": 10,
-					"Mod": 0.03
-				}
-			]
+			"StepType": "LRM",
+			"Base": 0.6333333
 		}
+
 	}
 }

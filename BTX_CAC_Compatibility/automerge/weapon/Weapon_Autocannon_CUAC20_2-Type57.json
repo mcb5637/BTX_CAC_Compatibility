@@ -25,13 +25,7 @@
 	],
 	"Custom": {
 		"Clustering": {
-			"Steps": [
-				{
-					"GunnerySkill": 7,
-					"Mod": 0.03
-				}
-			],
-			"Base": 0.6333333,
+			"StepType": "UAC",
 			"UAC": [
 				{
 					"Shots": 2,
@@ -45,7 +39,8 @@
 					"Shots": 4,
 					"Base": 0.6597222
 				}
-			]
+			],
+			"Base": 0.6333333
 		}
 	},
 	"Modes": [
@@ -57,7 +52,8 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -1,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -21,			"FlatJammingChance": 0.1,
+			"HeatGenerated": -21,
+			"FlatJammingChance": 0.1,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.01
 		},
@@ -68,8 +64,9 @@
 			"Description": "UAC Mode fires 2 projectiles.",
 			"isBaseMode": true,
 			"ShotsWhenFired": 0,
-			"AccuracyModifier": 3,
-			"HeatGenerated": 0,			"FlatJammingChance": 0.2,
+			"AccuracyModifier": 0,
+			"HeatGenerated": 0,
+			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		}

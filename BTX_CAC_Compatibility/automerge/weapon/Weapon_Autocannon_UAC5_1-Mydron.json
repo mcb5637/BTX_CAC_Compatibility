@@ -1,15 +1,15 @@
 {
 	"MinRange": 60,
-	"MaxRange": 600,
+	"MaxRange": 630,
 	"RangeSplit": [
-		180,
-		390,
-		600
+		210,
+		420,
+		630
 	],
 	"HeatGenerated": 6,
 	"Damage": 40,
 	"Instability": 10,
-	"RefireModifier": 2,
+	"RefireModifier": 1,
 	"AccuracyModifier": 0,
 	"Description": {
 		"Details": "Retaining the perfomance niche of the standard model, Ultra AC/5s are a serious force to be reckoned with. Like all Ultra Autocannon weaponry, UAC/5s can use both Rapid Fire or Single Fire modes. Rapid Fire modes suffer from accuracy loss and consume two ammo per attack. UAC weapons are able to fire Standard, AP, Precision and Tracer rounds, although AP, Precision and Tracer rounds have a chance to Jam the weapon."
@@ -25,13 +25,7 @@
 	],
 	"Custom": {
 		"Clustering": {
-			"Steps": [
-				{
-					"GunnerySkill": 7,
-					"Mod": 0.03
-				}
-			],
-			"Base": 0.6333333,
+			"StepType": "UAC",
 			"UAC": [
 				{
 					"Shots": 2,
@@ -45,7 +39,8 @@
 					"Shots": 4,
 					"Base": 0.6597222
 				}
-			]
+			],
+			"Base": 0.6333333
 		}
 	},
 	"Modes": [
@@ -57,7 +52,8 @@
 			"isBaseMode": false,
 			"ShotsWhenFired": -1,
 			"AccuracyModifier": 0,
-			"HeatGenerated": -3,			"FlatJammingChance": 0.1,
+			"HeatGenerated": -3,
+			"FlatJammingChance": 0.1,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.01
 		},
@@ -68,8 +64,9 @@
 			"Description": "UAC Mode fires 2 projectiles.",
 			"isBaseMode": true,
 			"ShotsWhenFired": 0,
-			"AccuracyModifier": 3,
-			"HeatGenerated": 0,			"FlatJammingChance": 0.2,
+			"AccuracyModifier": 0,
+			"HeatGenerated": 0,
+			"FlatJammingChance": 0.2,
 			"GunneryJammingBase": 10,
 			"GunneryJammingMult": 0.02
 		}

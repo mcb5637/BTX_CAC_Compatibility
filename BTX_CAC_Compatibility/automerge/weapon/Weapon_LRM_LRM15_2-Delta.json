@@ -23,21 +23,12 @@
 	"AMSHitChance": 0.0,
 	"MissileHealth": 1,
 	"UnsafeJamChance": 0.1,
-	"Custom" : {
+	"Custom": {
 		"Clustering": {
-			"Base": 0.6333333,
-			"DeadfireBase": 0.54320985,
-			"ArtemisBase": 0.76666665,
-			"Steps": [
-				{
-					"GunnerySkill": 6,
-					"Mod": 0.03
-				},
-				{
-					"GunnerySkill": 10,
-					"Mod": 0.03
-				}
-			]
+			"StepType": "LRM",
+			"DeadfireBase": 0.5432099,
+			"ArtemisBase": 0.7666667,
+			"Base": 0.6333333
 		}
 	},
 	"Modes": [
