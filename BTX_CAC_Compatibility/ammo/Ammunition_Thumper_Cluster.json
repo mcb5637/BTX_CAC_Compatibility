@@ -1,0 +1,30 @@
+{
+	"Description": {
+		"Id": "Ammunition_Thumper_Cluster",
+		"Name": "Thumper Cluster Artillery Ammo",
+		"Details": "High calibre artillery shell.",
+		"Icon": null,
+		"Cost": 0,
+		"Rarity": 0,
+		"Purchasable": false,
+		"UIName": "CL"
+	},
+	"HideIfOnlyVariant": true,
+	"ammunitionTypeID": "Normal",
+	"Category": "Thumper",
+	"HeatGenerated": 0,
+	"HeatGeneratedModifier": 1,
+	"ArmorDamageModifier": 1,
+	"ISDamageModifier": 1,
+	"CriticalDamageModifier": 1,
+	"AOECapable": true,
+	"AOERange": 85,
+	"AOEDamage": 50,
+	"IsArtillery": true,
+	"ArtilleryReticleRadius": 85,
+	"ArtilleryReticleColor": {
+		"C": "#FF0000",
+		"I": 1.5
+	},
+	"ArtilleryReticleText": "Thumper CL Artillery"
+}

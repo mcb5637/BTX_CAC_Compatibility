@@ -18,7 +18,7 @@
 	"AmmoCategory": "SniperArti",
 	"StartingAmmoCapacity": 0,
 	"HeatGenerated": 50,
-	"Damage": 0,
+	"Damage": 100,
 	"OverheatedDamageMultiplier": 0,
 	"EvasiveDamageMultiplier": 0,
 	"EvasivePipsIgnored": 0,
@@ -54,8 +54,8 @@
 		"Details": "The Sniper Cannon is an medium artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect. Requires mounting an external Artillery Loader in the same or adjacent location.",
 		"Icon": "uixSvgIcon_weapon_Ballistic"
 	},
-	"BonusValueA": "100 AoE Dmg.",
-	"BonusValueB": "90m AoE Range",
+	"BonusValueA": "90m AoE Range",
+	"BonusValueB": "",
 	"ComponentType": "Weapon",
 	"ComponentSubType": "Weapon",
 	"PrefabIdentifier": "artillery",
@@ -71,7 +71,8 @@
 			"Name": "Base",
 			"Description": "",
 			"isBaseMode": true,
-			"ShotsWhenFired": -2
+			"ShotsWhenFired": -2,
+			"DamagePerShot": -100
 		}
 	],
 	"statusEffects": [],
@@ -98,5 +99,5 @@
 		"I": 1.5
 	},
 	"ArtilleryReticleRadius": 90,
-	"ArtilleryReticleText": "Sniper Artillery"
+	"ArtilleryReticleText": "Sniper HE Artillery"
 }

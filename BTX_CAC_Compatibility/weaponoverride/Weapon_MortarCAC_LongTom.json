@@ -18,7 +18,7 @@
 	"AmmoCategory": "LongTom",
 	"StartingAmmoCapacity": 0,
 	"HeatGenerated": 60,
-	"Damage": 0,
+	"Damage": 125,
 	"OverheatedDamageMultiplier": 0,
 	"EvasiveDamageMultiplier": 0,
 	"EvasivePipsIgnored": 0,
@@ -54,8 +54,8 @@
 		"Details": "The Long Tom Cannon is a heavy artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect.\nThere is no known Mech mountable Artillery Loader that can handle a Long Tom.",
 		"Icon": "uixSvgIcon_weapon_Ballistic"
 	},
-	"BonusValueA": "125 AoE Dmg.",
-	"BonusValueB": "105m AoE Range",
+	"BonusValueA": "105m AoE Range",
+	"BonusValueB": "",
 	"ComponentType": "Weapon",
 	"ComponentSubType": "Weapon",
 	"PrefabIdentifier": "artillery",
@@ -72,7 +72,8 @@
 			"Name": "Base",
 			"Description": "",
 			"isBaseMode": true,
-			"ShotsWhenFired": -2
+			"ShotsWhenFired": -2,
+			"DamagePerShot": -125
 		}
 	],
 	"ComponentTags": {
@@ -98,5 +99,5 @@
 		"I": 1.5
 	},
 	"ArtilleryReticleRadius": 105,
-	"ArtilleryReticleText": "Long Tom Artillery"
+	"ArtilleryReticleText": "Long Tom HE Artillery"
 }

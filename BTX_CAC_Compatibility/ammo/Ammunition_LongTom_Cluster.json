@@ -1,0 +1,30 @@
+{
+	"Description": {
+		"Id": "Ammunition_LongTom_Cluster",
+		"Name": "Long Tom Artillery Ammo",
+		"Details": "High calibre artillery shell.",
+		"Icon": null,
+		"Cost": 0,
+		"Rarity": 0,
+		"Purchasable": false,
+		"UIName": "ST"
+	},
+	"HideIfOnlyVariant": true,
+	"ammunitionTypeID": "Normal",
+	"Category": "LongTom",
+	"HeatGenerated": 0,
+	"HeatGeneratedModifier": 1,
+	"ArmorDamageModifier": 1,
+	"ISDamageModifier": 1,
+	"CriticalDamageModifier": 1,
+	"AOECapable": true,
+	"AOERange": 115,
+	"AOEDamage": 100,
+	"IsArtillery": true,
+	"ArtilleryReticleRadius": 115,
+	"ArtilleryReticleColor": {
+		"C": "#FF0000",
+		"I": 1.5
+	},
+	"ArtilleryReticleText": "Long Tom CL Artillery"
+}

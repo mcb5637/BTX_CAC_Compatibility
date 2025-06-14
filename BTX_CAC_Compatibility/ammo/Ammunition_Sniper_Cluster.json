@@ -1,0 +1,30 @@
+{
+	"Description": {
+		"Id": "Ammunition_Sniper_Cluster",
+		"Name": "Sniper Artillery Ammo",
+		"Details": "High calibre artillery shell.",
+		"Icon": null,
+		"Cost": 0,
+		"Rarity": 0,
+		"Purchasable": false,
+		"UIName": "ST"
+	},
+	"HideIfOnlyVariant": true,
+	"ammunitionTypeID": "Normal",
+	"Category": "SniperArti",
+	"HeatGenerated": 0,
+	"HeatGeneratedModifier": 1,
+	"ArmorDamageModifier": 1,
+	"ISDamageModifier": 1,
+	"CriticalDamageModifier": 1,
+	"AOECapable": true,
+	"AOERange": 100,
+	"AOEDamage": 75,
+	"IsArtillery": true,
+	"ArtilleryReticleRadius": 100,
+	"ArtilleryReticleColor": {
+		"C": "#FF0000",
+		"I": 1.5
+	},
+	"ArtilleryReticleText": "Sniper CL Artillery"
+}
