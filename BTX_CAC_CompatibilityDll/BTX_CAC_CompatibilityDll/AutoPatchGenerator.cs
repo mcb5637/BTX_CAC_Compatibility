@@ -149,6 +149,7 @@ namespace BTX_CAC_CompatibilityDll
             ERMiLaser,
 
             AmmoArt = 150,
+            AmmoArtCL,
 
             AmmoHGauss,
             AmmoGauss,
@@ -1189,20 +1190,35 @@ namespace BTX_CAC_CompatibilityDll
 
             new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_Thumper$"),
-                Order = (m) => ComponentOrder.AmmoArt,
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_Thumper(?<t>_Cluster|)$"),
+                Order = (m) =>
+                {
+                    if (m.Groups["t"].Value == "_Cluster")
+                        return ComponentOrder.AmmoArtCL;
+                    return ComponentOrder.AmmoArt;
+                },
                 Half = true,
             },
             new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_Sniper$"),
-                Order = (m) => ComponentOrder.AmmoArt,
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_Sniper(?<t>_Cluster|)$"),
+                Order = (m) =>
+                {
+                    if (m.Groups["t"].Value == "_Cluster")
+                        return ComponentOrder.AmmoArtCL;
+                    return ComponentOrder.AmmoArt;
+                },
                 Double = true,
             },
             new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_(?:Arrow4|LongTom)$"),
-                Order = (m) => ComponentOrder.AmmoArt,
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_(?:Arrow4|LongTom)(?<t>_Cluster|)$"),
+                Order = (m) =>
+                {
+                    if (m.Groups["t"].Value == "_Cluster")
+                        return ComponentOrder.AmmoArtCL;
+                    return ComponentOrder.AmmoArt;
+                },
                 Double = true,
                 Triple = true,
             },
@@ -2410,7 +2426,7 @@ namespace BTX_CAC_CompatibilityDll
                 p += $"\r\n\t\"ImprovedBallistic\": true,\r\n\t\"MissileVolleySize\": {size},\r\n\t\"MissileFiringIntervalMultiplier\": 1,\r\n\t\"MissileVolleyIntervalMultiplier\": 1,\r\n\t\"FireDelayMultiplier\": 1,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"AMSHitChance\": 0.0,\r\n\t\"MissileHealth\": 2";
                 p += ",\r\n\t\"ClusteringModifier\": 10";
                 p += ",\r\n\t\"Custom\": {\r\n";
-                p += WeaponForwardingPattern.BuildClustering(size == 3 ? "clusterModThree" : "clusterMod", null, 0.0f, CustomClustering.ClusterStepType.LRM, null, null, null );
+                p += WeaponForwardingPattern.BuildClustering(size == 3 ? "clusterModThree" : "clusterMod", null, 0.0f, CustomClustering.ClusterStepType.LRM, null, null, null);
                 p += "\r\n\t}\r\n}\r\n";
                 WriteTo(targetFolder, id, p);
                 string s = m.Groups["size"].Value;

@@ -1,5 +1,5 @@
 {
-  "AmmoID": "Ammunition_Thumper",
+  "AmmoID": "Ammunition_Thumper_Cluster",
   "Capacity": 10,
   "Description": {
     "Cost": 4500,
@@ -7,14 +7,14 @@
     "Purchasable": true,
     "Manufacturer": "Generic",
     "Model": "Thumper",
-    "UIName": "Thumper Ammo (Half)",
-    "Id": "Ammo_AmmunitionBox_Generic_Thumper_Half",
-    "Name": "Thumper Ammo",
-    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nThumper Ammo (Half) Bins each contain 10 rounds and may feed multiple weapons.",
+    "UIName": "Thumper Cluster Ammo (Half)",
+    "Id": "Ammo_AmmunitionBox_Generic_Thumper_Cluster_Half",
+    "Name": "Thumper Cluster Ammo",
+    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nThumper Cluster Ammo (Half) Bins each contain 10 rounds and may feed multiple weapons.",
     "Icon": "uixSvgIcon_ammoBox_Ballistic"
   },
-  "BonusValueA": "",
-  "BonusValueB": "",
+  "BonusValueA": "+ 10m AoE Range",
+  "BonusValueB": "- 25 Dmg.",
   "ComponentType": "AmmunitionBox",
   "ComponentSubType": "Ammunition",
   "PrefabIdentifier": "",

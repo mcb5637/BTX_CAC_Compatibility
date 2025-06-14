@@ -1,0 +1,22 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_LongTom_Cluster",
+		"Ammo_AmmunitionBox_Generic_LongTom_Cluster_Double",
+		"Ammo_AmmunitionBox_Generic_LongTom_Cluster_Triple",
+		"Ammo_AmmunitionBox_Generic_Sniper_Cluster",
+		"Ammo_AmmunitionBox_Generic_Sniper_Cluster_Double",
+		"Ammo_AmmunitionBox_Generic_Thumper_Cluster",
+		"Ammo_AmmunitionBox_Generic_Thumper_Cluster_Half"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 151
+				}
+			}
+		}
+	]
+}

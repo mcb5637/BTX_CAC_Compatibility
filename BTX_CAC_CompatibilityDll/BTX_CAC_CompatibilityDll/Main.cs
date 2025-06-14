@@ -295,5 +295,30 @@ namespace BTX_CAC_CompatibilityDll
             if (f > 0.0f)
                 __result -= f;
         }
+
+        private static void AttackComplete(EffectManager mng, ICombatant tar, string sourceId)
+        {
+            var sour = tar.Combat.FindActorByGUID(sourceId);
+            if (sour != null && ReferenceEquals(sour, tar))
+                return;
+            mng.OnAttackComplete(tar);
+        }
+
+        [HarmonyPatch(typeof(Mech), nameof(Mech.ResolveAttackSequence))]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> Mech_ResolveAttackSequence(IEnumerable<CodeInstruction> inst)
+        {
+            var orig = AccessTools.Method(typeof(EffectManager), nameof(EffectManager.OnAttackComplete));
+            var rep = AccessTools.Method(typeof(RandomPatches), nameof(AttackComplete));
+            foreach (var c in inst)
+            {
+                if ((c.opcode == OpCodes.Call || c.opcode == OpCodes.Callvirt) && c.operand as MethodInfo == orig)
+                {
+                    yield return new CodeInstruction(OpCodes.Ldarg_1);
+                    c.operand = rep;
+                }
+                yield return c;
+            }
+        }
     }
 }
