@@ -1,7 +1,7 @@
 {
 	"Description": {
 		"Id": "Ammunition_Thumper_Cluster",
-		"Name": "Thumper Cluster Artillery Ammo",
+		"Name": "Thumper Cluster Ammo",
 		"Details": "High calibre artillery shell.",
 		"Icon": null,
 		"Cost": 0,
@@ -26,5 +26,5 @@
 		"C": "#FF0000",
 		"I": 1.5
 	},
-	"ArtilleryReticleText": "Thumper CL Artillery"
+	"ArtilleryReticleText": "Thumper CL"
 }

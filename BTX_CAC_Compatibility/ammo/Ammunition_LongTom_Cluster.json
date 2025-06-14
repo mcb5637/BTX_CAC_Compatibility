@@ -1,13 +1,13 @@
 {
 	"Description": {
 		"Id": "Ammunition_LongTom_Cluster",
-		"Name": "Long Tom Artillery Ammo",
+		"Name": "Long Tom Cluster Ammo",
 		"Details": "High calibre artillery shell.",
 		"Icon": null,
 		"Cost": 0,
 		"Rarity": 0,
 		"Purchasable": false,
-		"UIName": "ST"
+		"UIName": "CL"
 	},
 	"HideIfOnlyVariant": true,
 	"ammunitionTypeID": "Normal",
@@ -26,5 +26,5 @@
 		"C": "#FF0000",
 		"I": 1.5
 	},
-	"ArtilleryReticleText": "Long Tom CL Artillery"
+	"ArtilleryReticleText": "Long Tom CL"
 }

@@ -7,9 +7,9 @@
 		"Purchasable": true,
 		"Manufacturer": "Generic",
 		"Model": "Long Tom",
-		"UIName": "Long Tom Artillery Ammo",
+		"UIName": "Long Tom Ammo",
 		"Id": "Ammo_AmmunitionBox_Generic_LongTom",
-		"Name": "LongTom Artillery Ammo",
+		"Name": "LongTom Ammo",
 		"Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nLong Tom Ammo Bins each contain 5 rounds and may feed multiple weapons.",
 		"Icon": "uixSvgIcon_ammoBox_Ballistic"
 	},

@@ -7,9 +7,9 @@
 		"Purchasable": true,
 		"Manufacturer": "Generic",
 		"Model": "Sniper",
-		"UIName": "Sniper Artillery Ammo",
+		"UIName": "Sniper Ammo",
 		"Id": "Ammo_AmmunitionBox_Generic_Sniper",
-		"Name": "Sniper Artillery Ammo",
+		"Name": "Sniper Ammo",
 		"Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nSniper Ammo Bins each contain 10 rounds and may feed multiple weapons.",
 		"Icon": "uixSvgIcon_ammoBox_Ballistic"
 	},

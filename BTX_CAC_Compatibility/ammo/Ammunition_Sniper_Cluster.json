@@ -1,13 +1,13 @@
 {
 	"Description": {
 		"Id": "Ammunition_Sniper_Cluster",
-		"Name": "Sniper Artillery Ammo",
+		"Name": "Sniper Cluster Ammo",
 		"Details": "High calibre artillery shell.",
 		"Icon": null,
 		"Cost": 0,
 		"Rarity": 0,
 		"Purchasable": false,
-		"UIName": "ST"
+		"UIName": "CL"
 	},
 	"HideIfOnlyVariant": true,
 	"ammunitionTypeID": "Normal",
@@ -26,5 +26,5 @@
 		"C": "#FF0000",
 		"I": 1.5
 	},
-	"ArtilleryReticleText": "Sniper CL Artillery"
+	"ArtilleryReticleText": "Sniper CL"
 }
