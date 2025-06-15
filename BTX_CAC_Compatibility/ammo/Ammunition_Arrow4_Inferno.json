@@ -1,13 +1,13 @@
 {
 	"Description": {
-		"Id": "Ammunition_Arrow4",
+		"Id": "Ammunition_Arrow4_Inferno",
 		"Name": "Arrow IV Ammo",
 		"Details": "High calibre artillery missile.",
 		"Icon": null,
 		"Cost": 0,
 		"Rarity": 0,
 		"Purchasable": false,
-		"UIName": "ST"
+		"UIName": "Inf"
 	},
 	"HideIfOnlyVariant": true,
 	"ammunitionTypeID": "Normal",
@@ -19,8 +19,8 @@
 	"CriticalDamageModifier": 1,
 	"AOECapable": true,
 	"AOERange": 75,
-	"AOEDamage": 100,
-	"AOEHeatDamage": 0,
+	"AOEDamage": 10,
+	"AOEHeatDamage": 30,
 	"AOEInstability": 100,
 	"IsArtillery": true,
 	"ArtilleryReticleRadius": 85,
@@ -28,5 +28,10 @@
 		"C": "#FF0000",
 		"I": 1.5
 	},
-	"ArtilleryReticleText": "Arrow IV HE"
+	"ArtilleryReticleText": "Arrow IV Inf",
+	"FireTerrainChance": 1,
+	"FireDurationWithoutForest": 5,
+	"FireTerrainStrength": 5,
+	"FireOnSuccessHit": true,
+	"FireTerrainCellRadius": 6
 }

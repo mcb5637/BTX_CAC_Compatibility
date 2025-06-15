@@ -1,13 +1,13 @@
 {
 	"Description": {
-		"Id": "Ammunition_Arrow4",
+		"Id": "Ammunition_Arrow4_Homing",
 		"Name": "Arrow IV Ammo",
 		"Details": "High calibre artillery missile.",
 		"Icon": null,
 		"Cost": 0,
 		"Rarity": 0,
 		"Purchasable": false,
-		"UIName": "ST"
+		"UIName": "HM"
 	},
 	"HideIfOnlyVariant": true,
 	"ammunitionTypeID": "Normal",
@@ -17,16 +17,6 @@
 	"ArmorDamageModifier": 1,
 	"ISDamageModifier": 1,
 	"CriticalDamageModifier": 1,
-	"AOECapable": true,
-	"AOERange": 75,
-	"AOEDamage": 100,
-	"AOEHeatDamage": 0,
-	"AOEInstability": 100,
-	"IsArtillery": true,
-	"ArtilleryReticleRadius": 85,
-	"ArtilleryReticleColor": {
-		"C": "#FF0000",
-		"I": 1.5
-	},
-	"ArtilleryReticleText": "Arrow IV HE"
+	"DamagePerShot": 100,
+	"ShotsWhenFired": -1
 }

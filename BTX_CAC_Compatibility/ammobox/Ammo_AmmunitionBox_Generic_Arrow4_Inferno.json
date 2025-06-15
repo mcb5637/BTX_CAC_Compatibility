@@ -1,5 +1,5 @@
 {
-    "AmmoID": "Ammunition_Arrow4",
+    "AmmoID": "Ammunition_Arrow4_Inferno",
     "Capacity": 5,
     "Description": {
         "Cost": 10000,
@@ -7,14 +7,14 @@
         "Purchasable": true,
         "Manufacturer": "Generic",
         "Model": "Arrow IV",
-        "UIName": "Arrow IV Ammo",
-        "Id": "Ammo_AmmunitionBox_Generic_Arrow4",
-        "Name": "Arrow IV Ammo",
+        "UIName": "Arrow IV Inferno Ammo",
+        "Id": "Ammo_AmmunitionBox_Generic_Arrow4_Inferno",
+        "Name": "Arrow IV Inferno Ammo",
         "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nArrow IV Ammo Bins each contain 5 rounds and may feed multiple weapons.",
         "Icon": "uixSvgIcon_ammoBox_Ballistic"
     },
-    "BonusValueA": "",
-    "BonusValueB": "",
+    "BonusValueA": "- 90 Dmg.",
+    "BonusValueB": "+ 30 Dmg. (H)",
     "ComponentType": "AmmunitionBox",
     "ComponentSubType": "Ammunition",
     "PrefabIdentifier": "",

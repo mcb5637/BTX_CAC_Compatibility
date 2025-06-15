@@ -157,12 +157,23 @@ namespace BTX_CAC_CompatibilityDll
             ToHitModifiersHelper.registerModifier("TRACER", "TRACER", true, false, LightWeatherEffects.Tracer_Effect, null);
             ToHitModifiersHelper.registerModifier("MOVED SELF", "MOVED SELF", false, false, MovementRework.MovedSelf_Effect, MovementRework.MovedSelf_EffectName);
             ToHitModifiersHelper.registerModifier("TAGNARC", "TAGNARC", true, false, ElectronicWarfare.NARC_TAG_Effect, ElectronicWarfare.NARC_TAG_EffectName);
+            ToHitModifiersHelper.registerModifier("A4 TAG", "NO TAG", true, false, A4_Tag_Effect, null);
             ToHitModifiersHelper.registerModifier("ROLE", "ROLE", true, false, UnitRoles.Role_Effect, UnitRoles.Role_EffectName);
             ToHitModifiersHelper.multipliers["CLUSTER"] = new ToHitModifier("CLUSTER", "CLUSTER", true, false, CustomClustering.Cluster_Multiplier, CustomClustering.Cluster_EffectName, null);
             ToHitModifiersHelper.modifiers.Remove("SPRINTED");
             CustomComponents.Registry.RegisterSimpleCustomComponents(Assembly.GetExecutingAssembly());
             CustomComponents.Validator.RegisterMechValidator(TTS.MechValidator, TTS.MechValidatorFieldable);
             MoveStatusPreview_DisplayPreviewStatus.MoveTypeDisplayOverride = MovementRework.MoveTypeDisplayOverride;
+        }
+
+        internal static float A4_Tag_Effect(ToHit tohit, AbstractActor attacker, Weapon wep, ICombatant target, Vector3 apos, Vector3 tpos, LineOfFireLevel lof, MeleeAttackType mat, bool calledshot)
+        {
+            if (wep.ammo().Id == "Ammunition_Arrow4_Homing")
+            {
+                if (target.StatCollection.GetValue<float>("TAGCount") + target.StatCollection.GetValue<float>("TAGCountClan") <= 0.0f)
+                    return 100.0f;
+            }
+            return 0.0f;
         }
 
         private static void Unpatch(Harmony harmony, MethodBase b, string id, bool pre = true, bool post = true, bool trans = true, string onlyUnpatch = null)

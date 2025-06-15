@@ -18,7 +18,7 @@
 	"ammoCategoryID": "Arrow4",
 	"StartingAmmoCapacity": 0,
 	"HeatGenerated": 20,
-	"Damage": 60,
+	"Damage": 100,
 	"OverheatedDamageMultiplier": 0,
 	"EvasiveDamageMultiplier": 0,
 	"EvasivePipsIgnored": 0,
@@ -26,14 +26,9 @@
 	"HeatDamage": 0,
 	"AccuracyModifier": 0,
 	"CriticalChanceMultiplier": 1,
-	"AOECapable": true,
-	"AOERange": 75,
-	"AOEDamage": 100,
-	"AOEHeatDamage": 0,
-	"AOEInstability": 100,
 	"IndirectFireCapable": true,
 	"RefireModifier": 0,
-	"ShotsWhenFired": 1,
+	"ShotsWhenFired": 2,
 	"ProjectilesPerShot": 1,
 	"AttackRecoil": 1,
 	"Instability": 100,
@@ -69,7 +64,8 @@
 			"Name": "Base",
 			"Description": "",
 			"isBaseMode": true,
-			"ShotsWhenFired": -1
+			"ShotsWhenFired": -2,
+			"DamagePerShot": -100
 		}
 	],
 	"ComponentTags": {

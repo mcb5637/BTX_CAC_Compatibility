@@ -15,55 +15,11 @@
 	"Instability": -4,
 	"FireTerrainChance": 0.8,
 	"FireDurationWithoutForest": 1,
-	"FireTerrainStrength": 0,
+	"FireTerrainStrength": 1,
 	"FireOnSuccessHit": true,
 	"FireTerrainCellRadius": 1,
 	"WeaponEffectID": "WeaponEffect-Weapon_SRMInferno",
 	"statusEffects": [
-		{
-			"durationData": {
-				"duration": 1,
-				"ticksOnActivations": true,
-				"useActivationsOfTarget": true,
-				"ticksOnEndOfRound": false,
-				"ticksOnMovements": false,
-				"stackLimit": -1,
-				"clearedWhenAttacked": false
-			},
-			"targetingData": {
-				"effectTriggerType": "OnHit",
-				"triggerLimit": 0,
-				"extendDurationOnTrigger": 0,
-				"specialRules": "NotSet",
-				"effectTargetType": "NotSet",
-				"range": 0,
-				"forcePathRebuild": false,
-				"forceVisRebuild": false,
-				"showInTargetPreview": false,
-				"showInStatusPanel": false
-			},
-			"effectType": "StatisticEffect",
-			"Description": {
-				"Id": "StatusEffectHeatDamageReduction",
-				"Name": "Inferno VFX",
-				"Details": "reduce inc heat by 0.02, stacks",
-				"Icon": "uixSvgIcon_statusOnFire"
-			},
-			"nature": "Buff",
-			"statisticData": {
-				"appliesEachTick": false,
-				"statName": "CACIncomingHeatMult",
-				"operation": "Float_Multiply",
-				"modValue": "0.98",
-				"modType": "System.Single"
-			},
-			"tagData": null,
-			"floatieData": null,
-			"actorBurningData": null,
-			"vfxData": null,
-			"instantModData": null,
-			"poorlyMaintainedEffectData": null
-		},
 		{
 			"durationData": {
 				"duration": 1,
