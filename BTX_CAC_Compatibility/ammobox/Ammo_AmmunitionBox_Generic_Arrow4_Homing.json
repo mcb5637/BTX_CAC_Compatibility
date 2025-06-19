@@ -10,7 +10,7 @@
         "UIName": "Arrow IV Homing Ammo",
         "Id": "Ammo_AmmunitionBox_Generic_Arrow4_Homing",
         "Name": "Arrow IV Homing Ammo",
-        "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nArrow IV Ammo Bins each contain 5 rounds and may feed multiple weapons.",
+        "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nHoming Arrow IV missiles will home in onto one target, specified by a friendly TAG. If no target can be found, it is designed to self-destruct before impact. Due to the targeting happeing in flight, homing missiles will be fired immediately.\n\nArrow IV Homing Ammo Bins each contain 5 rounds and may feed multiple weapons.",
         "Icon": "uixSvgIcon_ammoBox_Ballistic"
     },
     "BonusValueA": "No AoE",

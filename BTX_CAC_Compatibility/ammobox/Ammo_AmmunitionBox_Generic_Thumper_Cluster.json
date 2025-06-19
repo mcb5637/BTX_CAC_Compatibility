@@ -10,7 +10,7 @@
         "UIName": "Thumper Cluster Ammo",
         "Id": "Ammo_AmmunitionBox_Generic_Thumper_Cluster",
         "Name": "Thumper Cluster Ammo",
-        "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nThumper Cluster Ammo Bins each contain 20 rounds and may feed multiple weapons.",
+        "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nCluster ammunition splits into mutliple sub-munitions before impact, covering a bigger area, but with less concentrated explosives.\n\nThumper Cluster Ammo Bins each contain 20 rounds and may feed multiple weapons.",
         "Icon": "uixSvgIcon_ammoBox_Ballistic"
     },
     "BonusValueA": "+ 10m AoE Range",

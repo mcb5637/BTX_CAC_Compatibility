@@ -1,0 +1,18 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_Arrow4_Inferno",
+		"Ammo_AmmunitionBox_Generic_Arrow4_Inferno_Double",
+		"Ammo_AmmunitionBox_Generic_Arrow4_Inferno_Triple"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 153
+				}
+			}
+		}
+	]
+}

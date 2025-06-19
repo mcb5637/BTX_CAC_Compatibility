@@ -42,7 +42,7 @@
 		"UIName": "Arrow IV",
 		"Id": "Weapon_MortarCAC_Arrow4",
 		"Name": "Arrow IV",
-		"Details": "The Arrow IV Launcher is a medium artillery piece. As all artillery types, it has extreme range, fires always indirect and deals damage in the area of impact. A direct hit of ballistic artillery deals high stability damage in addition to its area effect. Requires mounting an external Artillery Loader in the same or adjacent location.",
+		"Details": "The Arrow IV Launcher is a medium artillery piece. All artillery types work in 2 stages, Aiming and Firing, each taking one round. They make up for that weakness with devastating damage to anything near the impact. Requires mounting an external Artillery Loader in the same or adjacent location.",
 		"Icon": "uixSvgIcon_weapon_Missile"
 	},
 	"BonusValueA": "100 AoE Dmg.",

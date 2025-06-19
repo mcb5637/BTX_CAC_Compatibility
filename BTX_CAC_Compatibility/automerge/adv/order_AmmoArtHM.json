@@ -1,0 +1,18 @@
+{
+	"TargetIDs": [
+		"Ammo_AmmunitionBox_Generic_Arrow4_Homing",
+		"Ammo_AmmunitionBox_Generic_Arrow4_Homing_Double",
+		"Ammo_AmmunitionBox_Generic_Arrow4_Homing_Triple"
+	],
+	"Instructions": [
+		{
+			"JSONPath": "$",
+			"Action": "ObjectMerge",
+			"Value": {
+				"Custom": {
+					"Sorter": 152
+				}
+			}
+		}
+	]
+}

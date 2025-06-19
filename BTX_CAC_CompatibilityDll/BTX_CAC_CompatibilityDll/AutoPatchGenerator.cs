@@ -150,6 +150,8 @@ namespace BTX_CAC_CompatibilityDll
 
             AmmoArt = 150,
             AmmoArtCL,
+            AmmoArtHM,
+            AmmoArtInf,
 
             AmmoHGauss,
             AmmoGauss,
@@ -1212,11 +1214,15 @@ namespace BTX_CAC_CompatibilityDll
             },
             new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_(?:Arrow4|LongTom)(?<t>_Cluster|)$"),
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_(?:Arrow4|LongTom)(?<t>_Cluster|_Homing|_Inferno|)$"),
                 Order = (m) =>
                 {
                     if (m.Groups["t"].Value == "_Cluster")
                         return ComponentOrder.AmmoArtCL;
+                    if (m.Groups["t"].Value == "_Homing")
+                        return ComponentOrder.AmmoArtHM;
+                    if (m.Groups["t"].Value == "_Inferno")
+                        return ComponentOrder.AmmoArtInf;
                     return ComponentOrder.AmmoArt;
                 },
                 Double = true,
