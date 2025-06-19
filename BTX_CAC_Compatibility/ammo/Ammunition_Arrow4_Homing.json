@@ -1,7 +1,7 @@
 {
 	"Description": {
 		"Id": "Ammunition_Arrow4_Homing",
-		"Name": "Arrow IV Ammo",
+		"Name": "Arrow IV Homing Ammo",
 		"Details": "High calibre artillery missile.",
 		"Icon": null,
 		"Cost": 0,
