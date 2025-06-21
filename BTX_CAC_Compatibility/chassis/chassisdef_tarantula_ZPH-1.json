@@ -211,7 +211,7 @@
     "ArmsCountedAsLegs": true,
     "CustomParts": []
   },
-  "StockRole": "Light Scout",
+  "StockRole": "Scout",
   "YangsThoughts": "The Tarantula is lightly armed but incredibly nimble.  Our pilots won't be taking down Clan 'Mechs in this thing, but they can help spot them cheaply and with so much speed that it will probably keep them alive.",
   "FixedEquipment": [
     {
