@@ -1,0 +1,44 @@
+{
+	"Custom": {
+		"AddonReference": {
+			"installedLocationOnly": true,
+			"autoTarget": true,
+			"WeaponAddonIds": [
+				"weaponupgrade_artillery_loader_NGA"
+			]
+		}
+	},
+	"StatName": null,
+	"RelativeModifier": 0,
+	"AbsoluteModifier": 0,
+	"Description": {
+		"Cost": 2000000,
+		"Rarity": 99,
+		"Purchasable": false,
+		"Manufacturer": "Clans",
+		"Model": "Naga",
+		"UIName": "Integrated Artillery Mount",
+		"Id": "Gear_Addon_Artillery_Loader_NGA",
+		"Name": "Integrated Artillery Mount",
+		"Details": "The Naga is designed to carry an Arrow IV artillery system in each arm. The Loader is fitted directly into the chassis, with its components doubling as structural elements.",
+		"Icon": "uixSvgIcon_special_Equipment"
+	},
+	"BonusValueA": "",
+	"BonusValueB": "",
+	"ComponentType": "Upgrade",
+	"ComponentSubType": "NotSet",
+	"PrefabIdentifier": "",
+	"BattleValue": 0,
+	"InventorySize": 3,
+	"Tonnage": 2,
+	"AllowedLocations": "All",
+	"DisallowedLocations": "All",
+	"CriticalComponent": false,
+	"ComponentTags": {
+		"items": [
+			"BLACKLISTED",
+			"CAC_C_ArtilleryLoader"
+		],
+		"tagSetSourceFile": ""
+	}
+}

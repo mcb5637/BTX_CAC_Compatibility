@@ -3,7 +3,8 @@
   "affinityType": "Chassis",
   "affinityData": {
     "chassisNames": [
-      "chrprfmech_helepolisbase-001_75"
+      "chrprfmech_helepolisbase-001_75",
+      "chrprfmech_ionnagabase-001_80"
     ],
     "idType": "AssemblyVariant",
     "altMaps": [],

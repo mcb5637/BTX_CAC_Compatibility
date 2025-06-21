@@ -1,0 +1,190 @@
+{
+  "MechTags": {
+    "items": [
+      "unit_mech",
+      "unit_assault",
+      "unit_role_sniper",
+      "unit_lance_support",
+      "unit_range_long",
+      "unit_indirectFire",
+      "unit_armor_low",
+      "unit_speed_high",
+      "unit_hot",
+      "unit_release",
+      "unit_clan"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "ChassisID": "chassisdef_naga-A",
+  "HeraldryID": null,
+  "Description": {
+    "Cost": 26740000,
+    "Rarity": 4,
+    "Purchasable": true,
+    "Manufacturer": null,
+    "Model": null,
+    "UIName": "Naga A",
+    "Id": "mechdef_naga-A",
+    "Name": "Naga",
+    "Details": "The Naga is a unique fire-support OmniMech succeeding the Woodsman. It is named after mythical serpent-like beings and stands out for its twin fixed Arrow IV artillery systems. Despite being an artillery platform, it's surprisingly fast but poorly armored, making it difficult for pilots to use in close quarters. Initially a Clan Wolf design, its success at the Battle of Tukayyid led to its adoption by other Clans.",
+    "Icon": "uixTxrIcon_naga"
+  },
+  "simGameMechPartCost": 2670000,
+  "Version": 1,
+  "Locations": [
+    {
+      "DamageLevel": "Functional",
+      "Location": "Head",
+      "CurrentArmor": 45,
+      "CurrentRearArmor": -1,
+      "CurrentInternalStructure": 16,
+      "AssignedArmor": 45,
+      "AssignedRearArmor": -1
+    },
+    {
+      "DamageLevel": "Functional",
+      "Location": "LeftArm",
+      "CurrentArmor": 70,
+      "CurrentRearArmor": -1,
+      "CurrentInternalStructure": 65,
+      "AssignedArmor": 70,
+      "AssignedRearArmor": -1
+    },
+    {
+      "DamageLevel": "Functional",
+      "Location": "LeftTorso",
+      "CurrentArmor": 75,
+      "CurrentRearArmor": 45,
+      "CurrentInternalStructure": 85,
+      "AssignedArmor": 75,
+      "AssignedRearArmor": 45
+    },
+    {
+      "DamageLevel": "Functional",
+      "Location": "CenterTorso",
+      "CurrentArmor": 85,
+      "CurrentRearArmor": 50,
+      "CurrentInternalStructure": 125,
+      "AssignedArmor": 85,
+      "AssignedRearArmor": 50
+    },
+    {
+      "DamageLevel": "Functional",
+      "Location": "RightTorso",
+      "CurrentArmor": 75,
+      "CurrentRearArmor": 45,
+      "CurrentInternalStructure": 85,
+      "AssignedArmor": 75,
+      "AssignedRearArmor": 45
+    },
+    {
+      "DamageLevel": "Functional",
+      "Location": "RightArm",
+      "CurrentArmor": 70,
+      "CurrentRearArmor": -1,
+      "CurrentInternalStructure": 65,
+      "AssignedArmor": 70,
+      "AssignedRearArmor": -1
+    },
+    {
+      "DamageLevel": "Functional",
+      "Location": "LeftLeg",
+      "CurrentArmor": 80,
+      "CurrentRearArmor": -1,
+      "CurrentInternalStructure": 85,
+      "AssignedArmor": 80,
+      "AssignedRearArmor": -1
+    },
+    {
+      "DamageLevel": "Functional",
+      "Location": "RightLeg",
+      "CurrentArmor": 80,
+      "CurrentRearArmor": -1,
+      "CurrentInternalStructure": 85,
+      "AssignedArmor": 80,
+      "AssignedRearArmor": -1
+    }
+  ],
+  "inventory": [
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Weapon_Laser_CSmallLaserER_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_Arrow4",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_Arrow4",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_Arrow4",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "CenterTorso",
+      "ComponentDefID": "Weapon_Laser_CMediumLaserER_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Weapon_Laser_CMediumLaserER_0-STOCK",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_Arrow4",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Ammo_AmmunitionBox_Generic_Arrow4",
+      "ComponentDefType": "AmmunitionBox",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftLeg",
+      "ComponentDefID": "Gear_HeatSink_Clan_Double",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightLeg",
+      "ComponentDefID": "Gear_HeatSink_Clan_Double",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    }
+  ]
+}

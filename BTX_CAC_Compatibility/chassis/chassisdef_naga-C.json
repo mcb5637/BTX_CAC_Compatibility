@@ -1,0 +1,274 @@
+{
+  "Description": {
+    "Cost": 26630000,
+    "Rarity": 4,
+    "Purchasable": true,
+    "Manufacturer": "",
+    "Model": "",
+    "UIName": "Naga",
+    "Id": "chassisdef_naga-C",
+    "Name": "Naga",
+    "Details": "The Naga is a unique fire-support OmniMech succeeding the Woodsman. It is named after mythical serpent-like beings and stands out for its twin fixed Arrow IV artillery systems. Despite being an artillery platform, it's surprisingly fast but poorly armored, making it difficult for pilots to use in close quarters. Initially a Clan Wolf design, its success at the Battle of Tukayyid led to its adoption by other Clans.",
+    "Icon": "uixTxrIcon_naga"
+  },
+  "MovementCapDefID": "movedef_mech_assault_5",
+  "PathingCapDefID": "pathingdef_assault",
+  "HardpointDataDefID": "hardpointdatadef_ionnaga",
+  "PrefabIdentifier": "chrprfmech_ionnagabase-001",
+  "PrefabBase": "ionnaga",
+  "Tonnage": 80,
+  "InitialTonnage": 37.5,
+  "weightClass": "ASSAULT",
+  "BattleValue": 9025000,
+  "Heatsinks": 10,
+  "TopSpeed": 86.4,
+  "TurnRadius": 90,
+  "MaxJumpjets": 0,
+  "Stability": 200,
+  "StabilityDefenses": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "SpotterDistanceMultiplier": 1,
+  "VisibilityMultiplier": 1,
+  "SensorRangeMultiplier": 1,
+  "Signature": 0,
+  "Radius": 8,
+  "PunchesWithLeftArm": false,
+  "MeleeDamage": 70,
+  "MeleeInstability": 80,
+  "MeleeToHitModifier": 0,
+  "DFADamage": 100,
+  "DFAToHitModifier": 0,
+  "DFASelfDamage": 100,
+  "DFAInstability": 100,
+  "Locations": [
+    {
+      "Location": "Head",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 1,
+      "MaxArmor": 45,
+      "MaxRearArmor": -1,
+      "InternalStructure": 16
+    },
+    {
+      "Location": "LeftArm",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 130,
+      "MaxRearArmor": -1,
+      "InternalStructure": 65
+    },
+    {
+      "Location": "LeftTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 170,
+      "MaxRearArmor": 85,
+      "InternalStructure": 85
+    },
+    {
+      "Location": "CenterTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 250,
+      "MaxRearArmor": 125,
+      "InternalStructure": 125
+    },
+    {
+      "Location": "RightTorso",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Energy",
+          "Omni": false
+        },
+        {
+          "WeaponMount": "AntiPersonnel",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 10,
+      "MaxArmor": 170,
+      "MaxRearArmor": 85,
+      "InternalStructure": 85
+    },
+    {
+      "Location": "RightArm",
+      "Hardpoints": [
+        {
+          "WeaponMount": "Missile",
+          "Omni": false
+        }
+      ],
+      "Tonnage": 0,
+      "InventorySlots": 8,
+      "MaxArmor": 130,
+      "MaxRearArmor": -1,
+      "InternalStructure": 65
+    },
+    {
+      "Location": "LeftLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 170,
+      "MaxRearArmor": -1,
+      "InternalStructure": 85
+    },
+    {
+      "Location": "RightLeg",
+      "Hardpoints": [],
+      "Tonnage": 0,
+      "InventorySlots": 4,
+      "MaxArmor": 170,
+      "MaxRearArmor": -1,
+      "InternalStructure": 85
+    }
+  ],
+  "LOSSourcePositions": [
+    {
+      "x": 0,
+      "y": 14,
+      "z": 0
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": -1
+    },
+    {
+      "x": -4,
+      "y": 15,
+      "z": -1
+    }
+  ],
+  "LOSTargetPositions": [
+    {
+      "x": 0,
+      "y": 14,
+      "z": 0
+    },
+    {
+      "x": 4,
+      "y": 15,
+      "z": -1
+    },
+    {
+      "x": -4,
+      "y": 15,
+      "z": -1
+    },
+    {
+      "x": 3.5,
+      "y": 5.5,
+      "z": 1
+    },
+    {
+      "x": -3.5,
+      "y": 5.5,
+      "z": 1
+    }
+  ],
+  "VariantName": "NGA-C",
+  "ChassisTags": {
+    "items": [
+      "chassis_omni",
+      "chassis_DHS",
+      "chassis_endo",
+      "chassis_clan",
+      "mech_quirk_extendedtorsotwist",
+      "mech_quirk_nominimalarms",
+      "mech_quirk_largeengine",
+      "CAC_C_LoadActuators",
+      "CAC_C_LoadActuators_No_LeftArmLower",
+      "CAC_C_LoadActuators_No_RightArmLower"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "StockRole": "Missile Boat",
+  "YangsThoughts": "The Naga serves as the Clans' long-range artillery support, using twin Arrow IV launchers to effectively rain down enemy fire from afar. The C variant is interesting, introducing an SRM-6. It's a clear 'get-off-me' weapon, offering a sudden burst of damage if something manages to breach your screen. It's a desperate last resort, but it's there if you're truly cornered.",
+  "FixedEquipment": [
+    {
+      "MountedLocation": "LeftTorso",
+      "ComponentDefID": "Gear_XL_Engine_Clan",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "RightTorso",
+      "ComponentDefID": "Gear_XL_Engine_Clan",
+      "ComponentDefType": "HeatSink",
+      "HardpointSlot": -1,
+      "IsFixed": true,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false
+    },
+    {
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Weapon_MortarCAC_Arrow4",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false,
+      "LocalGUID": "arty0"
+    },
+    {
+      "MountedLocation": "LeftArm",
+      "ComponentDefID": "Gear_Addon_Artillery_Loader_NGA",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false,
+      "TargetComponentGUID": "arty0"
+    },
+    {
+      "MountedLocation": "RightArm",
+      "ComponentDefID": "Weapon_MortarCAC_Arrow4",
+      "ComponentDefType": "Weapon",
+      "HardpointSlot": 0,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false,
+      "LocalGUID": "arty1"
+    },
+    {
+      "MountedLocation": "RightArm",
+      "ComponentDefID": "Gear_Addon_Artillery_Loader_NGA",
+      "ComponentDefType": "Upgrade",
+      "HardpointSlot": -1,
+      "DamageLevel": "Functional",
+      "hasPrefabName": false,
+      "TargetComponentGUID": "arty1"
+    }
+  ]
+}
