@@ -56,10 +56,12 @@ Component list (Clan & SLDF ones included):
 			- Explosive Pod: damage
 			- Haywire Pod: -3 accuracy for 3 rounds
 	- Artillery:
-		- Thumper: light artillery (replaces HM mortar / Bull Shark)
-		- Sniper: medium artillery (found in mining shops) (tag compatible)
-		- Long Tom: heavy artillery (found in mining shops, only mountable in Bull Shark)
-		- Arrow IV: medium artillery (lostech / FP reward / Liao shops after 3049)
+		- all artillery takes 2 turns to fire: target selection and firing. future target will be visible on the map.
+		- Thumper: light artillery, he+cluster ammo (replaces HM mortar / Bull Shark)
+		- Sniper: medium artillery, he+cluster ammo (found in mining shops) (tag compatible)
+		- Long Tom: heavy artillery, he+cluster ammo (found in mining shops, only mountable in Bull Shark)
+		- Arrow IV: medium artillery, he+inferno+homing ammo (lostech / FP reward / Liao shops after 3049)
+			- homing ammo: no aoe, 1 turn firing, requires target to be affected by TAG
 		- Artillery Loader: every artillery needs a Loader attached in the same or adjacent location (found in mining shops)
 - Electronics:
 	- ECM:
@@ -103,6 +105,8 @@ Component list (Clan & SLDF ones included):
 	- Helepolis:
 		- HEP-1H (sniper arty, SLDF) (very low chance Liao)
 		- HEP-3H (sniper arty, SLDF) (ComStar/Snords)
+	- Naga:
+		- NGA-(PRIME,A-D) (Arrow IV x2) (Clans, mostly Wolf)
 	- Phoenix Hawk LAM:
 		- PHX-HK1 (SLDF Royal LAM) (ComStar)
 		- PHX-HK1R (SLDF Royal LAM) (WoB)
