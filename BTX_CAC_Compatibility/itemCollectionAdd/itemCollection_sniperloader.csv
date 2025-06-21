@@ -3,3 +3,5 @@ Weapon_MortarCAC_Sniper,Weapon,1,1
 Gear_Addon_Artillery_Loader,Upgrade,1,1
 Ammo_AmmunitionBox_Generic_Sniper,AmmunitionBox,2,10
 Ammo_AmmunitionBox_Generic_Sniper_Double,AmmunitionBox,2,10
+Ammo_AmmunitionBox_Generic_Sniper_Cluster,AmmunitionBox,2,10
+Ammo_AmmunitionBox_Generic_Sniper_Cluster_Double,AmmunitionBox,2,10

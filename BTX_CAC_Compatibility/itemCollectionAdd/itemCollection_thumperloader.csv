@@ -3,3 +3,5 @@ Weapon_MortarCAC_ThumperFree,Weapon,1,1
 Gear_Addon_Artillery_Loader,Upgrade,1,1
 Ammo_AmmunitionBox_Generic_Thumper,AmmunitionBox,1,10
 Ammo_AmmunitionBox_Generic_Thumper_Half,AmmunitionBox,1,10
+Ammo_AmmunitionBox_Generic_Thumper_Cluster,AmmunitionBox,1,10
+Ammo_AmmunitionBox_Generic_Thumper_Cluster_Half,AmmunitionBox,1,10

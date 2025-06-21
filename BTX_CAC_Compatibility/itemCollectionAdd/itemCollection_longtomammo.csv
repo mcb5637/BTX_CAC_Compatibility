@@ -3,3 +3,6 @@ Weapon_MortarCAC_LongTom,Weapon,1,1
 Ammo_AmmunitionBox_Generic_LongTom,AmmunitionBox,2,10
 Ammo_AmmunitionBox_Generic_LongTom_Double,AmmunitionBox,2,10
 Ammo_AmmunitionBox_Generic_LongTom_Triple,AmmunitionBox,2,10
+Ammo_AmmunitionBox_Generic_LongTom_Cluster,AmmunitionBox,2,10
+Ammo_AmmunitionBox_Generic_LongTom_Cluster_Double,AmmunitionBox,2,10
+Ammo_AmmunitionBox_Generic_LongTom_Cluster_Triple,AmmunitionBox,2,10
