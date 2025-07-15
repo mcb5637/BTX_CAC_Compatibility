@@ -1,0 +1,10 @@
+{
+	"TargetID": "pilot_testDummy",
+	"Instructions": [
+		{
+			"JSONPath": "$.abilityDefNames",
+			"Action": "Replace",
+			"Value": []
+		}
+	]
+}
