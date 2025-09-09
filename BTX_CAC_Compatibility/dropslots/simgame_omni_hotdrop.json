@@ -1,0 +1,19 @@
+{
+	"Description": {
+		"Id": "simgame_omni_hotdrop",
+		"Name": "HOTDROP SLOT",
+		"Details": "This type of drop slots can be used for rapid deployment during mission.",
+		"Icon": ""
+	},
+	"Tags": [
+		"can_drop_generic_mech",
+		"can_drop_generic_vehicle"
+	],
+	"Decorations": [
+		"decoration_slot_hotdrop"
+	],
+	"Order": 102,
+	"StatName": "BiggerDrops_HotDropMechSlots",
+	"HotDrop": true,
+	"UseMaxUnits": true
+}

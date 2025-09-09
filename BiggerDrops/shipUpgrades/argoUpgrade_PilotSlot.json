@@ -1,0 +1,42 @@
+{
+  "Description": {
+    "Cost": 0,
+    "Rarity": 0,
+    "Purchasable": true,
+    "UIName": "",
+    "Id": "argoUpgrade_PilotSlot",
+    "Name": "Drop Pod Launch Systems",
+    "Details": "<b><color=#F79232>Enables to Hot Drop 1 additional Mech.</color></b>\n\nCommander, while my techs were rebuilding the bays on the new Leopard, we found the remnants of the standard Drop Pod launch systems. Most Leopards are supposed to have them, but these are shot to hell. The primary launch actuators are missing, and the pod's data and power connectors are corroded beyond repair. I can get the team to custom-machine the parts to make it operational again. It'll let us perform a single, by-the-book hot drop, just as the manual intended.",
+    "Icon": "uixSvgIcon_shipUpgrade_automation"
+  },
+  "Illustration": "uixTxrSpot_YangWorking",
+  "Location": "UNKNOWN",
+  "shipUpgradeCategoryID": "BDMechControl",
+  "AssignedCastDefId": "castDef_YangDefault",
+  "AssignedCastDescription": "This will let us insert a 'Mech from high altitude without having to land the Leopard first. A true hot drop, right into the thick of battle.",
+  "RequiredModules": {
+    "items": [
+      "argoUpgrade_JunkyardLeopard",
+      "argoUpgrade_DropSlot"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "Requirements": [],
+  "TechCost": 6,
+  "PurchaseCost": 180000,
+  "AdditionalCost": 3500,
+  "Tags": {
+    "items": [
+      "JunkyardLeopard_Pilotslot"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "Stats": [
+    {
+      "typeString": "System.Int32",
+      "name": "BiggerDrops_HotDropMechSlots",
+      "value": 1,
+      "valueConstant": ""
+    }
+  ]
+}
