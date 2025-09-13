@@ -33,31 +33,4 @@ namespace BTX_CAC_CompatibilityDll
         private static bool IsContractLimitedTo4Units(ContractOverride contractOverride) =>
             Main.Sett.Use4LimitOnContractIds.Contains(contractOverride.ID);
     }
-
-    [HarmonyPatch(typeof(LanceConfiguratorPanel), "LoadLanceConfiguration")]
-    public static class LanceConfiguratorPanel_LoadLanceConfiguration
-    {
-        [HarmonyPrepare]
-        public static bool Prepare() => Main.Sett.EnforceContractLimits;
-
-        [HarmonyPostfix]
-        [HarmonyPriority(Priority.Last)]
-        public static void Postfix(LanceConfiguratorPanel __instance)
-        {
-            var loadoutSlotsField = typeof(LanceConfiguratorPanel).GetField("loadoutSlots", BindingFlags.Instance | BindingFlags.NonPublic);
-            if (loadoutSlotsField == null) return;
-
-            var loadoutSlots = (LanceLoadoutSlot[])loadoutSlotsField.GetValue(__instance);
-            if (loadoutSlots != null)
-            {
-                for (int i = 0; i < loadoutSlots.Length; i++)
-                {
-                    bool locked = i >= __instance.activeContract.Override.maxNumberOfPlayerUnits;
-                    loadoutSlots[i].SetLockState(locked ?
-                        LanceLoadoutSlot.LockState.Full :
-                        LanceLoadoutSlot.LockState.Unlocked);
-                }
-            }
-        }
-    }
 }

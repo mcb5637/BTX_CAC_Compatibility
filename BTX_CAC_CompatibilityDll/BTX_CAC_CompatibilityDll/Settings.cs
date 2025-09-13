@@ -10,7 +10,6 @@ namespace BTX_CAC_CompatibilityDll
     class Settings
     {
         public bool LogLevelLog = true;
-        public bool EnforceContractLimits = true;
         public bool Use4LimitOnAllStoryMissions = false;
         public string[] Use4LimitOnContractIds = new string[] { };
         public bool MECompat = false;
