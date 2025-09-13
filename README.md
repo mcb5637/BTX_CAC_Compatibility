@@ -2,6 +2,8 @@
 
 Modifies BEX (and BTXMinusWeapons, if present) for CAC.
 
+Download the latest release here: https://github.com/mcb5637/BTX_CAC_Compatibility/releases/latest/download/BTX_CAC_Compatibility.zip
+
 Installation/Update: (requires working BEX installation)
 - Update the CAB
 - Remove BTMLColorLOSMod, IRBTModUtils, MechResizer, Retrainer, and StabilePiloting mod folders
@@ -167,6 +169,7 @@ Known bugs:
 
 Optional:
 - If you want Urban vehicles to leave blood on destruction, look at CACs settings and change "DrawBloodChance" to 0.3
+- If you do not want to control convoy vehicles, delete `Mods\BTX_CAC_Compatibility\advancedMerge\player_controlled_convoy.json`
 
 Manual setup:
 - clone git repo, including submodules

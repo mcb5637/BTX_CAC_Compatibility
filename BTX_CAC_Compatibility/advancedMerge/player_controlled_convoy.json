@@ -1,0 +1,58 @@
+{
+  "TargetIDs": [
+    "CaptureEscort_AbortedColony",
+    "CaptureEscort_AmmoConvoy",
+    "CaptureEscort_Appearances",
+    "CaptureEscort_BlownOperation",
+    "CaptureEscort_BlownOperation_Alt",
+    "CaptureEscort_CivilianExtraction",
+    "CaptureEscort_GrandTheftAuto",
+    "CaptureEscort_GrandTheftAuto_Alt",
+    "CaptureEscort_HostageRescue",
+    "CaptureEscort_HostileAcquisition",
+    "CaptureEscort_HostileAcquisition_Hard",
+    "CaptureEscort_Humanitarians",
+    "CaptureEscort_InsurrectionProtection",
+    "CaptureEscort_ManOfThePeople",
+    "CaptureEscort_MedEvac",
+    "CaptureEscort_PenitentJustice",
+    "CaptureEscort_Pirate_KeyPersonnel",
+    "CaptureEscort_Pirate_UnexpectedGuests",
+    "CaptureEscort_PriceOfDiscretion",
+    "CaptureEscort_ProfessionalLifestyle",
+    "CaptureEscort_ProofOfGuilt",
+    "CaptureEscort_Redirection",
+    "CaptureEscort_SaveThePrototype",
+    "CaptureEscort_SaveThePrototype_Hard",
+    "CaptureEscort_ShowOfForce",
+    "CaptureEscort_SupplyConvoy",
+    "CaptureEscort_ThePrisoner",
+    
+    "c_fp_allianceLiao_a2_captureEscort",
+    "c_fp_allianceLiao_b2_captureEscort",
+    "c_fp_allianceSteiner_b2_captureEscort",
+    "c_fp_extraActivities_b1_captureEscort",
+    "c_fp_falconsFury_2_AmmoConvoy",
+    "c_fp_flattenedEarth_b2_captureEscort",
+    "c_fp_longRoad_a1_captureEscort",
+    "c_fp_longRoad_b1_captureEscort",
+    "c_fp_morganKell_2_captureEscort",
+    "c_fp_rTTJ_2_captureEscort",
+    "c_fp_scoundrel_1_captureEscort",
+    "c_fp_scoundrel_b1_captureEscort",
+    "c_fp_theBigDeal_4B_CaptureEscort",
+    "c_fp_theBigDeal_5A_CaptureEscort",
+    "c_fp_wildWedding_2B_CaptureEscort",
+    "c_special_sAV_3_captureEscort",
+    "fp_CaptureConvoy_w39_04"
+  ],
+  "Instructions": [
+    {
+      "JSONPath": "$.employerTeam.lanceOverrideList[0].spawnEffectTags.items",
+      "Action": "Replace",
+      "Value": [
+        "convoy_player_control"
+      ]
+    }
+  ]
+}
