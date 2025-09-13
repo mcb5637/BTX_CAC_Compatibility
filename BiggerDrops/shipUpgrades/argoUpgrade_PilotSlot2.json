@@ -1,0 +1,44 @@
+{
+  "Description": {
+    "Cost": 0,
+    "Rarity": 0,
+    "Purchasable": true,
+    "UIName": "",
+    "Id": "argoUpgrade_PilotSlot2",
+    "Name": "Drop Pod Launch Systems",
+    "Details": "<b><color=#F79232>Enables to Hot Drop 1 additional Mech.</color></b>\n\nFixing the hardware is one thing, Boss, but the Leopard's original targeting computer is fried. Right now, we're dropping 'dumb'—the pod gets the BattleMechto the ground safely, but the landing zone is a guess at best. We'll need to install a modern guidance system to give our hot drops some much-needed precision. That'll let us bring the third launcher online and start dropping our 'Mechs exactly where you want them.",
+    "Icon": "uixSvgIcon_shipUpgrade_automation"
+  },
+  "Illustration": "uixTxrSpot_YangWorking",
+  "Location": "UNKNOWN",
+  "shipUpgradeCategoryID": "BDMechControl",
+  "AssignedCastDefId": "castDef_SumireDefault",
+  "AssignedCastDescription": "Knowing our pilots can land on a precise, chosen location instead of dropping blind… That makes all the difference, Commander.",
+  "RequiredModules": {
+    "items": [
+      "argoUpgrade_JunkyardLeopard",
+      "argoUpgrade_DropSlot2",
+      "argoUpgrade_PilotSlot1",
+      "argoUpgrade_pod2"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "Requirements": [],
+  "TechCost": 8,
+  "PurchaseCost": 240000,
+  "AdditionalCost": 4000,
+  "Tags": {
+    "items": [
+      "JunkyardLeopard_Pilotslot2"
+    ],
+    "tagSetSourceFile": ""
+  },
+  "Stats": [
+    {
+      "typeString": "System.Int32",
+      "name": "BiggerDrops_HotDropMechSlots",
+      "value": 1,
+      "valueConstant": ""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+    "Description": {
+        "Id": "SimGameStatDesc_BiggerDrops_HotDropMechSlots",
+        "Name": "BiggerDrops_HotDropMechSlots",
+        "Details": "",
+        "Icon": null
+    },
+    "setResult": "Increases Size of Hot Drop Lance {RES_VALUE.ToString}%",
+    "positiveResult": "Increases Size of Hot Drop Lance {RES_VALUE.ToString}%",
+    "negativeResult": "Decreases Size of Hot Drop Lance {RES_VALUE.ToString}%",
+    "temporalSetResult": "",
+    "temporalPositiveResult": "",
+    "temporalNegativeResult": "",
+    "infinitiveSetResult": "Size of Hot Drop Lance {RES_VALUE.ToString}%",
+    "infinitivePositiveResult": "Increases Size of Hot Drop Lance {RES_VALUE.ToString}%",
+    "infinitiveNegativeResult": "Decreases Size of Hot Drop Lance {RES_VALUE.ToString}%",
+    "hidden": true
+}

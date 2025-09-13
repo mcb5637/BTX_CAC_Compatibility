@@ -32,23 +32,41 @@ namespace BTX_CAC_CompatibilityDll
 
         public static void Postfix(SimGameState __instance)
         {
-            bool update = false;
+            int updated = 0;
             if (__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots") != 4)
             {
                 __instance.CompanyStats.RemoveStatistic("BiggerDrops_BaseMechSlots");
                 __instance.CompanyStats.AddStatistic("BiggerDrops_BaseMechSlots", 4);
-                update = true;
+                updated++;
             }
             int u = GetUpgradeStat(__instance, "BiggerDrops_AdditionalMechSlots");
             if (__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots") != u)
             {
                 __instance.CompanyStats.RemoveStatistic("BiggerDrops_AdditionalMechSlots");
                 __instance.CompanyStats.AddStatistic("BiggerDrops_AdditionalMechSlots", u);
-                update = true;
+                updated++;
             }
-            if (update)
-                DropManager.UpdateCULances();
-            Main.Log.Log($"dropslot stats: BiggerDrops_BaseMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots")}, BiggerDrops_AdditionalMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots")}, Upgrades: {u}");
+            int u2 = GetUpgradeStat(__instance, "BiggerDrops_HotDropMechSlots");
+            if (__instance.CompanyStats.GetValue<int>("BiggerDrops_HotDropMechSlots") != u2)
+            {
+                __instance.CompanyStats.RemoveStatistic("BiggerDrops_HotDropMechSlots");
+                __instance.CompanyStats.AddStatistic("BiggerDrops_HotDropMechSlots", u2);
+                updated++;
+            }
+            int u3 = BiggerDrops.BiggerDrops.settings.defaultMaxTonnage + GetUpgradeStat(__instance, "BiggerDrops_MaxTonnage");
+            if (__instance.CompanyStats.GetValue<int>("BiggerDrops_MaxTonnage") != u3)
+            {
+                __instance.CompanyStats.RemoveStatistic("BiggerDrops_MaxTonnage");
+                __instance.CompanyStats.AddStatistic("BiggerDrops_MaxTonnage", u3);
+                updated++;
+            }
+            if (updated >=1) DropManager.UpdateCULances();
+            Main.Log.Log($"Dropslot stats: " +
+                $"BiggerDrops_BaseMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots")}, " +
+                $"BiggerDrops_AdditionalMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots")}, " +
+                $"BiggerDrops_HotDropMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_HotDropMechSlots")}, " +
+                $"BiggerDrops_MaxTonnage: {__instance.CompanyStats.GetValue<int>("BiggerDrops_MaxTonnage")}"
+            );
         }
 
         public static void Patch(Harmony h)

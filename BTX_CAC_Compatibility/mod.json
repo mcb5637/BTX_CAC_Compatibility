@@ -30,6 +30,8 @@
 	"DLL": "BTX_CAC_CompatibilityDll.dll",
 	"Settings": {
 		"FixDropslotsInOldSaves": true,
+		"EnforceContractLimits": true,
+		"Use4LimitOnAllStoryMissions": false,
 		"Use4LimitOnContractIds": [
 			"uw1_4_destroyBase",
 			"tournament_1_3wayBattle",
