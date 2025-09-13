@@ -15,6 +15,7 @@ namespace BTX_CAC_CompatibilityDll
         public bool MECompat = false;
         public bool FixDropslotsInOldSaves = true;
         public bool LogBlockerErrors = false;
+        public int MaxNumberOfPlayerUnitsOverride = 12;
     }
 
     class ItemCollectionReplace

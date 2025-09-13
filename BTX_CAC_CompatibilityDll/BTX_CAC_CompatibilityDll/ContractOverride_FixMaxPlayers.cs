@@ -12,25 +12,27 @@ using BattleTech.UI;
 
 namespace BTX_CAC_CompatibilityDll
 {
-    [HarmonyPatch(typeof(ContractOverride), "FromJSONFull")]
-    [HarmonyPatch(typeof(ContractOverride), "FullRehydrate")]
-    public class ContractOverride_FixMaxPlayers
+    [HarmonyPatch]
+    public static class ContractOverride_FixMaxPlayers
     {
+        [HarmonyPatch(typeof(ContractOverride), "FromJSONFull")]
+        [HarmonyPatch(typeof(ContractOverride), "FullRehydrate")]
+        [HarmonyPostfix]
         public static void Postfix(ContractOverride __instance)
         {
-            if (Main.Sett.Use4LimitOnAllStoryMissions && IsAnyStoryContract(__instance))
+            if (Main.Sett.Use4LimitOnAllStoryMissions && __instance.IsAnyStoryContract())
                 return;
 
-            if (__instance.maxNumberOfPlayerUnits == 4 && !IsContractLimitedTo4Units(__instance))
+            if (__instance.maxNumberOfPlayerUnits == 4 && !__instance.IsContractLimitedTo4Units())
             {
-                __instance.maxNumberOfPlayerUnits = 12;
+                __instance.maxNumberOfPlayerUnits = Main.Sett.MaxNumberOfPlayerUnitsOverride;
             }
         }
 
-        private static bool IsAnyStoryContract(ContractOverride contractOverride) =>
-            contractOverride.contractDisplayStyle is ContractDisplayStyle.BaseCampaignStory or ContractDisplayStyle.BaseCampaignRestoration;
+        private static bool IsAnyStoryContract(this ContractOverride contractOverride) =>
+            contractOverride.contractDisplayStyle == ContractDisplayStyle.BaseCampaignStory || contractOverride.contractDisplayStyle == ContractDisplayStyle.BaseCampaignRestoration;
 
-        private static bool IsContractLimitedTo4Units(ContractOverride contractOverride) =>
+        private static bool IsContractLimitedTo4Units(this ContractOverride contractOverride) =>
             Main.Sett.Use4LimitOnContractIds.Contains(contractOverride.ID);
     }
 }

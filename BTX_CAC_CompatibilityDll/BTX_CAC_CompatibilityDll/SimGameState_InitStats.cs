@@ -32,35 +32,36 @@ namespace BTX_CAC_CompatibilityDll
 
         public static void Postfix(SimGameState __instance)
         {
-            int updated = 0;
+            bool updated = false;
             if (__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots") != 4)
             {
                 __instance.CompanyStats.RemoveStatistic("BiggerDrops_BaseMechSlots");
                 __instance.CompanyStats.AddStatistic("BiggerDrops_BaseMechSlots", 4);
-                updated++;
+                updated = true;
             }
             int u = GetUpgradeStat(__instance, "BiggerDrops_AdditionalMechSlots");
             if (__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots") != u)
             {
                 __instance.CompanyStats.RemoveStatistic("BiggerDrops_AdditionalMechSlots");
                 __instance.CompanyStats.AddStatistic("BiggerDrops_AdditionalMechSlots", u);
-                updated++;
+                updated = true;
             }
             int u2 = GetUpgradeStat(__instance, "BiggerDrops_HotDropMechSlots");
             if (__instance.CompanyStats.GetValue<int>("BiggerDrops_HotDropMechSlots") != u2)
             {
                 __instance.CompanyStats.RemoveStatistic("BiggerDrops_HotDropMechSlots");
                 __instance.CompanyStats.AddStatistic("BiggerDrops_HotDropMechSlots", u2);
-                updated++;
+                updated = true;
             }
             int u3 = BiggerDrops.BiggerDrops.settings.defaultMaxTonnage + GetUpgradeStat(__instance, "BiggerDrops_MaxTonnage");
             if (__instance.CompanyStats.GetValue<int>("BiggerDrops_MaxTonnage") != u3)
             {
                 __instance.CompanyStats.RemoveStatistic("BiggerDrops_MaxTonnage");
                 __instance.CompanyStats.AddStatistic("BiggerDrops_MaxTonnage", u3);
-                updated++;
+                updated = true;
             }
-            if (updated >=1) DropManager.UpdateCULances();
+            if (updated)
+                DropManager.UpdateCULances();
             Main.Log.Log($"Dropslot stats: " +
                 $"BiggerDrops_BaseMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_BaseMechSlots")}, " +
                 $"BiggerDrops_AdditionalMechSlots: {__instance.CompanyStats.GetValue<int>("BiggerDrops_AdditionalMechSlots")}, " +
