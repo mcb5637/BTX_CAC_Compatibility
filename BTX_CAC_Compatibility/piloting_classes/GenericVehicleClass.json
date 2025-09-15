@@ -1,12 +1,16 @@
 {
-  "Description": {
-    "Id": "GenericVehicleClass",
-    "Name": "__/PILOTING.VEHICLE/__",
-    "Details": "Vehicles"
-  },
-	"UnitTags":["unit_piloting_type_generic_vehicle"],
-	"PilotTags":["can_pilot_generic_vehicle"],
-	"ExcludeClasses":[],
+	"Description": {
+		"Id": "GenericVehicleClass",
+		"Name": "__/PILOTING.VEHICLE/__",
+		"Details": "Vehicles"
+	},
+	"UnitTags": [
+		"unit_piloting_type_generic_vehicle"
+	],
+	"PilotTags": [
+		"can_pilot_generic_vehicle"
+	],
+	"ExcludeClasses": [],
 	"expertiseGenerationChance": 0,
-	"expertiseGenerationMinCount": 1	
+	"expertiseGenerationMinCount": 1
 }
