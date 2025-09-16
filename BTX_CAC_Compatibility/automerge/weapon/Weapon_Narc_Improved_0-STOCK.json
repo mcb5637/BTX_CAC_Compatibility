@@ -12,5 +12,6 @@
 	},
 	"AccuracyModifier": 0,
 	"BonusValueA": "",
-	"BonusValueB": ""
+	"BonusValueB": "",
+	"statusEffects": []
 }

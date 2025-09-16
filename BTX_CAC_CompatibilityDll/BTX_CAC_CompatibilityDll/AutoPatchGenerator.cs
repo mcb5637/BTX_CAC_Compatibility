@@ -2474,6 +2474,7 @@ namespace BTX_CAC_CompatibilityDll
                     p += $",\r\n\t\"BonusValueA\": \"\"";
                 }
                 p += $",\r\n\t\"BonusValueB\": \"\"";
+                p += ",\r\n\t\"statusEffects\": []";
                 p += "\r\n}";
                 WriteTo(targetFolder, id, p);
                 string s = m.Groups["sic"].Value;
