@@ -127,6 +127,8 @@ namespace BTX_CAC_CompatibilityDll
 
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechValidationRules), "ValidatePrototypeEquipment"), "BEX.BattleTech.Extended_CE");
                 Unpatch(harmony, AccessTools.DeclaredMethod(typeof(MechValidationRules), "ValidateMechDef"), "BEX.BattleTech.Extended_CE");
+
+                Unpatch(harmony, AccessTools.DeclaredMethod(typeof(Mech), "InitStats"), "BattleTech.Haree.BEXTimeline");
             }
             catch (Exception e)
             {
