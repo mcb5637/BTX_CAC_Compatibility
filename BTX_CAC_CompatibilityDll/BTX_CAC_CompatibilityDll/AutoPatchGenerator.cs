@@ -391,53 +391,53 @@ namespace BTX_CAC_CompatibilityDll
 
         private static void AddLinks(IdCollector c)
         {
-            c.AddSubList("AC2", "Weapon_Autocannon_UAC2_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("AC2", "Weapon_Autocannon_UAC2_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("AC2", "Weapon_Autocannon_RAC2_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, RCDate, true);
-            c.AddSubList("AC2", "Weapon_Autocannon_LAC2_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, RCDate, true);
-            c.AddSubList("AC2", "Weapon_Autocannon_LB2X_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("AC2", "Weapon_Autocannon_LB2X_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
+            c.AddSubList("AC2", "Weapon_Autocannon_UAC2_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "AC2", null, true);
+            c.AddSubList("AC2", "Weapon_Autocannon_UAC2_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC2", HCDate, true);
+            c.AddSubList("AC2", "Weapon_Autocannon_RAC2_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC2", RCDate, true);
+            c.AddSubList("AC2", "Weapon_Autocannon_LAC2_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC2", RCDate, true);
+            c.AddSubList("AC2", "Weapon_Autocannon_LB2X_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "AC2", null, true);
+            c.AddSubList("AC2", "Weapon_Autocannon_LB2X_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC2", HCDate, true);
 
-            c.AddSubList("AC5", "Weapon_Autocannon_UAC5_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("AC5", "Weapon_Autocannon_UAC5_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("AC5", "Weapon_Autocannon_RAC5_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, RCDate, true);
-            c.AddSubList("AC5", "Weapon_Autocannon_LAC5_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, RCDate, true);
-            c.AddSubList("AC5", "Weapon_Autocannon_LB5X_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("AC5", "Weapon_Autocannon_LB5X_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
+            c.AddSubList("AC5", "Weapon_Autocannon_UAC5_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "AC5", null, true);
+            c.AddSubList("AC5", "Weapon_Autocannon_UAC5_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC5", HCDate, true);
+            c.AddSubList("AC5", "Weapon_Autocannon_RAC5_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC5", RCDate, true);
+            c.AddSubList("AC5", "Weapon_Autocannon_LAC5_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC5", RCDate, true);
+            c.AddSubList("AC5", "Weapon_Autocannon_LB5X_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "AC5", null, true);
+            c.AddSubList("AC5", "Weapon_Autocannon_LB5X_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC5", HCDate, true);
 
-            c.AddSubList("AC10", "Weapon_Autocannon_UAC10_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("AC10", "Weapon_Autocannon_UAC10_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("AC10", "Weapon_Autocannon_LB10X_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("AC10", "Weapon_Autocannon_LB10X_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
+            c.AddSubList("AC10", "Weapon_Autocannon_UAC10_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "AC10", null, true);
+            c.AddSubList("AC10", "Weapon_Autocannon_UAC10_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC10", HCDate, true);
+            c.AddSubList("AC10", "Weapon_Autocannon_LB10X_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "AC10", null, true);
+            c.AddSubList("AC10", "Weapon_Autocannon_LB10X_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC10", HCDate, true);
 
-            c.AddSubList("AC20", "Weapon_Autocannon_UAC20_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("AC20", "Weapon_Autocannon_UAC20_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("AC20", "Weapon_Autocannon_LB20X_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("AC20", "Weapon_Autocannon_LB20X_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
+            c.AddSubList("AC20", "Weapon_Autocannon_UAC20_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "AC20", null, true);
+            c.AddSubList("AC20", "Weapon_Autocannon_UAC20_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC20", HCDate, true);
+            c.AddSubList("AC20", "Weapon_Autocannon_LB20X_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "AC20", null, true);
+            c.AddSubList("AC20", "Weapon_Autocannon_LB20X_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "AC20", HCDate, true);
 
 
-            c.AddSubList("LargeLaser", "Weapon_Laser_BinaryLaserCannon_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, null, true);
-            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserER_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserER_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserPulse_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserXPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, RCDate, true);
+            c.AddSubList("LargeLaser", "Weapon_Laser_BinaryLaserCannon_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", null, true);
+            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserER_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "", null, true);
+            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserER_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", HCDate, true);
+            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "", null, true);
+            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserPulse_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", HCDate, true);
+            c.AddSubList("LargeLaser", "Weapon_Laser_LargeLaserXPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", RCDate, true);
 
-            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserER_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserER_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserPulse_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserXPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, RCDate, true);
+            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserER_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "", null, true);
+            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserER_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", HCDate, true);
+            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "", null, true);
+            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserPulse_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", HCDate, true);
+            c.AddSubList("MediumLaser", "Weapon_Laser_MediumLaserXPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", RCDate, true);
 
-            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserER_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserER_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserPulse_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserXPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, RCDate, true);
+            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserER_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "", null, true);
+            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserER_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", HCDate, true);
+            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "", null, true);
+            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserPulse_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", HCDate, true);
+            c.AddSubList("SmallLaser", "Weapon_Laser_SmallLaserXPulse_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", RCDate, true);
 
-            c.AddSubList("PPC", "Weapon_PPC_PPCER_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, null, true);
-            c.AddSubList("PPC", "Weapon_PPC_PPCER_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, HCDate, true);
-            c.AddSubList("PPC", "Weapon_PPC_PPCSnub_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, RCDate, true);
+            c.AddSubList("PPC", "Weapon_PPC_PPCER_0-STOCK", Array.Empty<UpgradeEntry>(), null, 5, "", null, true);
+            c.AddSubList("PPC", "Weapon_PPC_PPCER_NU_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", HCDate, true);
+            c.AddSubList("PPC", "Weapon_PPC_PPCSnub_0-STOCK", Array.Empty<UpgradeEntry>(), null, 4, "", RCDate, true);
         }
 
         private static void AddSublists(IdCollector c)
@@ -609,7 +609,7 @@ namespace BTX_CAC_CompatibilityDll
                     if ((mag == "" || mag == "_Sa") && hl == "")
                         list = "SLDF" + list;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList(list, id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
+                        c.AddSubList(list, id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl, d.AmmoCategoryToAmmoBoxId);
                     c.AddBallisticTTS.Add(id);
                 },
             },
@@ -623,7 +623,7 @@ namespace BTX_CAC_CompatibilityDll
                 SubList = (d, id, m, c) =>
                 {
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList("GaussSB", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
+                        c.AddSubList("GaussSB", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl, "GaussSB");
                     c.AddBallisticTTS.Add(id);
                 },
             },
@@ -656,7 +656,7 @@ namespace BTX_CAC_CompatibilityDll
                     string si = m.Groups["size"].Value;
                     string cl = m.Groups["cl"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"{sl}{cl}{si}PLaser", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"{sl}{cl}{si}PLaser", id, Array.Empty<string>(), new string[] { }, lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
             },
@@ -677,7 +677,7 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     string si = m.Groups["size"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"{si}XPLaser", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"{si}XPLaser", id, Array.Empty<string>(), new string[] { }, lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
             },
@@ -702,7 +702,7 @@ namespace BTX_CAC_CompatibilityDll
                     string si = m.Groups["size"].Value;
                     string cl = m.Groups["c"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"{sl}{cl}{si}ERLaser", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"{sl}{cl}{si}ERLaser", id, Array.Empty<string>(), new string[] { }, lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
             },
@@ -723,7 +723,7 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     string si = m.Groups["size"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"{si}Laser", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"{si}Laser", id, Array.Empty<string>(), new string[] { }, lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
             },
@@ -744,7 +744,7 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     string si = m.Groups["size"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"C{si}LaserHeavy", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"C{si}LaserHeavy", id, Array.Empty<string>(), new string[] { }, lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
             },
@@ -773,7 +773,7 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     string si = m.Groups["size"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"BLaser", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"BLaser", id, Array.Empty<string>(), new string[] { }, lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
             },
@@ -787,7 +787,7 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     string si = m.Groups["size"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"PPC", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"PPC", id, Array.Empty<string>(), new string[] { }, lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
                 Details = true,
@@ -810,7 +810,7 @@ namespace BTX_CAC_CompatibilityDll
                     string sl = eh == "ER" ? WeaponForwardingPattern.GetSLDFPrefix(m) : "";
                     string cl = m.Groups["c"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"{sl}{cl}PPC{eh}", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"{sl}{cl}PPC{eh}", id, Array.Empty<string>(), new string[] { }, lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
             },
@@ -838,7 +838,7 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     string cl = m.Groups["c"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"{cl}Flamer", id, Array.Empty<string>(), new string[] { }, lvl);
+                        c.AddSubList($"{cl}Flamer", id, Array.Empty<string>(), new string[] { }, lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
                 DetailsMap = (d) => Regex.Replace(d.Description.Details, "cause the targeted unit to shut down from overheating", "cause the targeted unit to shut down from overheating. Usage may lead to dangerous forest fires, if used in the wrong conditions"),
@@ -861,7 +861,7 @@ namespace BTX_CAC_CompatibilityDll
                     string cl = m.Groups["c"].Value;
                     string hl = m.Groups["hl"].Value;
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"{cl}MG{hl}", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
+                        c.AddSubList($"{cl}MG{hl}", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl, d.AmmoCategoryToAmmoBoxId);
                     c.AddBallisticTTS.Add(id);
                 },
             },
@@ -897,7 +897,7 @@ namespace BTX_CAC_CompatibilityDll
                 SubList = (d, id, m, c) =>
                 {
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"Thunderbolt{m.Groups["size"].Value}", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
+                        c.AddSubList($"Thunderbolt{m.Groups["size"].Value}", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl, d.AmmoCategoryToAmmoBoxId);
                     c.AddMissleTTS.Add(id);
                 },
             },
@@ -971,7 +971,7 @@ namespace BTX_CAC_CompatibilityDll
                 SubList = (d, id, m, c) =>
                 {
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"TAG{m.Groups["ty"].Value}", id, Array.Empty<string>(), Array.Empty<string>(), lvl);
+                        c.AddSubList($"TAG{m.Groups["ty"].Value}", id, Array.Empty<string>(), Array.Empty<string>(), lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
             },
@@ -985,7 +985,7 @@ namespace BTX_CAC_CompatibilityDll
                 SubList = (d, id, m, c) =>
                 {
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"TAG{m.Groups["ty"].Value}", id, Array.Empty<string>(), Array.Empty<string>(), lvl);
+                        c.AddSubList($"TAG{m.Groups["ty"].Value}", id, Array.Empty<string>(), Array.Empty<string>(), lvl, "");
                     c.AddEnergyTTS.Add(id);
                 },
             },
@@ -1010,7 +1010,7 @@ namespace BTX_CAC_CompatibilityDll
                 SubList = (d, id, m, c) =>
                 {
                     if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"AMS", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl);
+                        c.AddSubList($"AMS", id, Array.Empty<string>(), new string[] { d.AmmoCategoryToAmmoBoxId }, lvl, d.AmmoCategoryToAmmoBoxId);
                     c.AddBallisticTTS.Add(id);
                 },
             },
@@ -1417,6 +1417,12 @@ namespace BTX_CAC_CompatibilityDll
         }
 
         private static readonly Pattern<MechComponentDef>[] OtherPatterns = new Pattern<MechComponentDef>[] {
+
+            new IgnorePattern<MechComponentDef>()
+            {
+                Check = new Regex("Gear_Actuator_DigKing_MiningDrill_TBD|Gear_Actuator_DigKing_RockCutter_TBD|Gear_Cockpit_CommandConsole_with_B2000_Damaged|Gear_General_Rangefinder_Suite_RF2-A|Gear_General_Rangefinder_Suite_RFL-2N|Gear_General_Special_Command_Module|Gear_General_TAC_YH|Gear_SensorCAC_Chameleon_main|Gear_SensorCAC_Chameleon_secondary|Gear_SensorCAC_NullSig_main|Gear_SensorCAC_NullSig_secondary|Weapon_MortarCAC_LongTom_Turret")
+            },
+
             new OrderOnlyPattern<MechComponentDef>()
             {
                 Check = new Regex("^Gear_Actuator_Axman_Hatchet|Gear_Actuator_Berserker_Hatchet|Gear_Actuator_BlackKnight_Sword|Gear_Actuator_Firestarter_Sword|Gear_Actuator_LifterClamp|Gear_Actuator_LiftHoist|Gear_Actuator_Prototype_Hatchet|Gear_Actuator_Vindicator_Sword$"),
@@ -1479,7 +1485,7 @@ namespace BTX_CAC_CompatibilityDll
                 {
                     string ty = m.Groups["ty"].Value;
                     int lvl = d.Description.UIName.Count(x => x == '+');
-                    c.AddSubList($"Cockpit{ty}", id, Array.Empty<string>(), Array.Empty<string>(), lvl);
+                    c.AddSubList($"Cockpit{ty}", id, Array.Empty<string>(), Array.Empty<string>(), lvl, "");
                 },
             },
 
@@ -1503,7 +1509,7 @@ namespace BTX_CAC_CompatibilityDll
                     if (ty == "Hermes")
                         ty = "Rawlings";
                     int lvl = d.Description.UIName.Count(x => x == '+');
-                    c.AddSubList($"Gyro{ty}", id, Array.Empty<string>(), Array.Empty<string>(), lvl);
+                    c.AddSubList($"Gyro{ty}", id, Array.Empty<string>(), Array.Empty<string>(), lvl, "");
                 },
             },
 
@@ -1513,8 +1519,8 @@ namespace BTX_CAC_CompatibilityDll
                 Order = (m) => ComponentOrder.HSink,
                 SubList = (d, id, m, c) =>
                 {
-                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 0);
-                    c.AddSubList("HSC", id, Array.Empty<string>(), Array.Empty<string>(), 0);
+                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 0, "");
+                    c.AddSubList("HSC", id, Array.Empty<string>(), Array.Empty<string>(), 0, "");
                 },
             },
             new OrderOnlyPattern<MechComponentDef>()
@@ -1523,8 +1529,8 @@ namespace BTX_CAC_CompatibilityDll
                 Order = (m) => ComponentOrder.HSinkD,
                 SubList = (d, id, m, c) =>
                 {
-                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 4, HCDate);
-                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 5);
+                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 4, "", HCDate);
+                    c.AddSubList("HS", id, Array.Empty<string>(), Array.Empty<string>(), 5, "");
                 },
             },
             new OrderOnlyPattern<MechComponentDef>()
@@ -1533,7 +1539,7 @@ namespace BTX_CAC_CompatibilityDll
                 Order = (m) => ComponentOrder.HSinkD,
                 SubList = (d, id, m, c) =>
                 {
-                    c.AddSubList("HSC", id, Array.Empty<string>(), Array.Empty<string>(), 3);
+                    c.AddSubList("HSC", id, Array.Empty<string>(), Array.Empty<string>(), 3, "");
                 },
             },
             new OrderOnlyPattern<MechComponentDef>()
@@ -1624,7 +1630,7 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 l.Add(id);
             }
-            public void AddSubList(string listname, string id, UpgradeEntry[] addons, string[] ammo, int lvl, DateTime? md = null, bool ll = false)
+            public void AddSubList(string listname, string id, UpgradeEntry[] addons, string[] ammo, int lvl, string ammoGroup, DateTime? md = null, bool ll = false, int ammoWeight = 1)
             {
                 UpgradeEntry e = new UpgradeEntry
                 {
@@ -1644,13 +1650,14 @@ namespace BTX_CAC_CompatibilityDll
                     {
                         MainUpgradePath = new UpgradeEntry[] { e },
                         Addons = addons,
-                        AmmoTypes = ammo.Select((x) => new UpgradeEntry { ID = x, ListLink = false, Weight = 0 }).ToArray(),
+                        AmmoTypes = ammo.Select((x) => new UpgradeEntry { ID = x, ListLink = false, Weight = 0, AmmoWeight = ammoWeight }).ToArray(),
+                        AmmoGroup = ammoGroup,
                     });
                 }
             }
-            public void AddSubList(string listname, string id, string[] addons, string[] ammo, int lvl, DateTime? md = null, bool ll = false)
+            public void AddSubList(string listname, string id, string[] addons, string[] ammo, int lvl, string ammoGroup, DateTime? md = null, bool ll = false, int ammoWeight = 1)
             {
-                AddSubList(listname, id, addons.Select((x) => new UpgradeEntry { ID = x, ListLink = false, Weight = 0 }).ToArray(), ammo, lvl, md, ll);
+                AddSubList(listname, id, addons.Select((x) => new UpgradeEntry { ID = x, ListLink = false, Weight = 0 }).ToArray(), ammo, lvl, ammoGroup, md, ll, ammoWeight);
             }
         }
 
@@ -1869,7 +1876,7 @@ namespace BTX_CAC_CompatibilityDll
                     o = ComponentOrder.AC2;
                 c.AddOrder(o, id);
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                    c.AddSubList($"{li}AC{s}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{s}", $"Ammo_AmmunitionBox_Generic_AC{s}AP", $"Ammo_AmmunitionBox_Generic_AC{s}Precision", $"Ammo_AmmunitionBox_Generic_AC{s}Tracer" }, lvl);
+                    c.AddSubList($"{li}AC{s}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{s}", $"Ammo_AmmunitionBox_Generic_AC{s}AP", $"Ammo_AmmunitionBox_Generic_AC{s}Precision", $"Ammo_AmmunitionBox_Generic_AC{s}Tracer" }, lvl, $"AC{s}");
                 c.AddBallisticTTS.Add(id);
             }
             private static string Desc(WeaponDef d)
@@ -1895,7 +1902,7 @@ namespace BTX_CAC_CompatibilityDll
                 c.AddOrder(ComponentOrder.GaussHeavy, id);
 
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                    c.AddSubList($"GaussHeavy", id, Array.Empty<string>(), new string[] { data.AmmoCategoryToAmmoBoxId }, lvl);
+                    c.AddSubList($"GaussHeavy", id, Array.Empty<string>(), new string[] { data.AmmoCategoryToAmmoBoxId }, lvl, "HGauss");
             }
 
             private static string Desc(WeaponDef d)
@@ -2004,7 +2011,7 @@ namespace BTX_CAC_CompatibilityDll
                     sl = "";
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
                 {
-                    c.AddSubList($"{sl}{ur}AC{size}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{size}", $"Ammo_AmmunitionBox_Generic_AC{size}AP", $"Ammo_AmmunitionBox_Generic_AC{size}Precision", $"Ammo_AmmunitionBox_Generic_AC{size}Tracer" }, lvl);
+                    c.AddSubList($"{sl}{ur}AC{size}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{size}", $"Ammo_AmmunitionBox_Generic_AC{size}AP", $"Ammo_AmmunitionBox_Generic_AC{size}Precision", $"Ammo_AmmunitionBox_Generic_AC{size}Tracer" }, lvl, $"AC{size}", null, false, shotSelection);
                 }
                 c.AddBallisticTTS.Add(id);
             }
@@ -2057,7 +2064,7 @@ namespace BTX_CAC_CompatibilityDll
                 string sl = WeaponForwardingPattern.GetSLDFPrefix(m);
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
                 {
-                    c.AddSubList($"{sl}{m.Groups["c"].Value}LBX{clustersize}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{clustersize}", $"Ammo_AmmunitionBox_Generic_AC{clustersize}AP", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Precision", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Tracer", $"Ammo_AmmunitionBox_Generic_LB{clustersize}X" }, lvl);
+                    c.AddSubList($"{sl}{m.Groups["c"].Value}LBX{clustersize}", id, Array.Empty<string>(), new string[] { $"Ammo_AmmunitionBox_Generic_AC{clustersize}", $"Ammo_AmmunitionBox_Generic_AC{clustersize}AP", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Precision", $"Ammo_AmmunitionBox_Generic_AC{clustersize}Tracer", $"Ammo_AmmunitionBox_Generic_LB{clustersize}X" }, lvl, $"AC{clustersize}");
                 }
                 c.AddBallisticTTS.Add(id);
             }
@@ -2122,7 +2129,7 @@ namespace BTX_CAC_CompatibilityDll
                 c.AddOrder(ComponentOrder.SPPC, id);
 
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                    c.AddSubList($"SnubPPC", id, Array.Empty<string>(), new string[] { }, lvl);
+                    c.AddSubList($"SnubPPC", id, Array.Empty<string>(), new string[] { }, lvl, "");
             }
         }
 
@@ -2206,6 +2213,7 @@ namespace BTX_CAC_CompatibilityDll
                                     ListLink = false,
                                     MinDate = HCDate,
                                     Weight = 4,
+                                    AmmoLockoutByAddon = new string[] { "Ammo_AmmunitionBox_Generic_LRM_DF" },
                                 },
                                 new UpgradeEntry
                                 {
@@ -2214,11 +2222,12 @@ namespace BTX_CAC_CompatibilityDll
                                     ListLink = false,
                                     MinDate = DateTime.MinValue,
                                     Weight = 5,
+                                    AmmoLockoutByAddon = new string[] { "Ammo_AmmunitionBox_Generic_LRM_DF" },
                                 },
                             };
                     else
                         ad = Array.Empty<UpgradeEntry>();
-                    c.AddSubList($"{m.Groups["c"].Value}{n}{(E ? "E" : "")}LRM{size}", id, ad, new string[] { $"Ammo_AmmunitionBox_Generic_LRM", $"Ammo_AmmunitionBox_Generic_LRM_DF" }, lvl);
+                    c.AddSubList($"{m.Groups["c"].Value}{n}{(E ? "E" : "")}LRM{size}", id, ad, new string[] { $"Ammo_AmmunitionBox_Generic_LRM", $"Ammo_AmmunitionBox_Generic_LRM_DF" }, lvl, "LRM");
                 }
             }
 
@@ -2326,6 +2335,7 @@ namespace BTX_CAC_CompatibilityDll
                                 ListLink = false,
                                 MinDate = HCDate,
                                 Weight = 4,
+                                AmmoLockoutByAddon = new string[] { "Ammo_AmmunitionBox_Generic_SRMInferno", "Ammo_AmmunitionBox_Generic_SRM_DF" },
                             },
                             new UpgradeEntry
                             {
@@ -2334,6 +2344,7 @@ namespace BTX_CAC_CompatibilityDll
                                 ListLink = false,
                                 MinDate = DateTime.MinValue,
                                 Weight = 5,
+                                AmmoLockoutByAddon = new string[] { "Ammo_AmmunitionBox_Generic_SRMInferno", "Ammo_AmmunitionBox_Generic_SRM_DF" },
                             },
                         };
                     }
@@ -2350,7 +2361,7 @@ namespace BTX_CAC_CompatibilityDll
                     {
                         abox = new string[] { "Ammo_AmmunitionBox_Generic_SRM" };
                     }
-                    c.AddSubList($"{m.Groups["c"].Value}{(Streak ? "S" : "")}SRM{s}", id, ad, abox, lvl);
+                    c.AddSubList($"{m.Groups["c"].Value}{(Streak ? "S" : "")}SRM{s}", id, ad, abox, lvl, "SRM");
                 }
             }
 
@@ -2412,7 +2423,7 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 c.AddOrder(o, id);
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                    c.AddSubList($"{mr}{s}", id, Array.Empty<string>(), mr == "MRM" ? new string[] { data.AmmoCategoryToAmmoBoxId } : Array.Empty<string>(), lvl);
+                    c.AddSubList($"{mr}{s}", id, Array.Empty<string>(), mr == "MRM" ? new string[] { data.AmmoCategoryToAmmoBoxId } : Array.Empty<string>(), lvl, data.AmmoCategoryToAmmoBoxId);
                 c.AddMissleTTS.Add(id);
             }
 
@@ -2447,7 +2458,7 @@ namespace BTX_CAC_CompatibilityDll
                     o = ComponentOrder.ATM3;
                 c.AddOrder(o, id);
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                    c.AddSubList($"ATM{s}", id, Array.Empty<string>(), new string[] { "Ammo_AmmunitionBox_Generic_ATM", "Ammo_AmmunitionBox_Generic_ATM_ER", "Ammo_AmmunitionBox_Generic_ATM_HE" }, lvl);
+                    c.AddSubList($"ATM{s}", id, Array.Empty<string>(), new string[] { "Ammo_AmmunitionBox_Generic_ATM", "Ammo_AmmunitionBox_Generic_ATM_ER", "Ammo_AmmunitionBox_Generic_ATM_HE" }, lvl, "ATM");
                 c.AddMissleTTS.Add(id);
             }
 
@@ -2493,7 +2504,7 @@ namespace BTX_CAC_CompatibilityDll
                         am = new string[] { "Ammo_AmmunitionBox_Generic_iNarc", "Ammo_AmmunitionBox_Generic_iNarc_Explosive", "Ammo_AmmunitionBox_Generic_iNarc_Haywire" };
                     else
                         am = new string[] { "Ammo_AmmunitionBox_Generic_Narc", "Ammo_AmmunitionBox_Generic_Narc_Explosive" };
-                    c.AddSubList($"NARC{s}", id, Array.Empty<string>(), am, lvl);
+                    c.AddSubList($"NARC{s}", id, Array.Empty<string>(), am, lvl, "NARC");
                 }
                 c.AddMissleTTS.Add(id);
             }

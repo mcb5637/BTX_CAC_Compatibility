@@ -6,7 +6,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": true
+      "AllowDowngrade": true,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Laser_CSmallLaserER_1-Series1",
@@ -14,7 +16,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Laser_CSmallLaserER_1-Series1g",
@@ -22,7 +26,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Laser_CSmallLaserER_1-Series1NC",
@@ -30,7 +36,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Laser_CSmallLaserER_1-SeriesAE1",
@@ -38,7 +46,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Laser_CSmallLaserER_2-Series1",
@@ -46,7 +56,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Laser_CSmallLaserER_2-Series1g",
@@ -54,7 +66,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Laser_CSmallLaserER_2-Series1NC",
@@ -62,7 +76,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Laser_CSmallLaserER_2-SeriesAE1",
@@ -70,9 +86,12 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     }
   ],
   "AmmoTypes": [],
-  "Addons": []
+  "Addons": [],
+  "AmmoGroup": ""
 }

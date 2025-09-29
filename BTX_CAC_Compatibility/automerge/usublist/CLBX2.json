@@ -6,7 +6,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": true
+      "AllowDowngrade": true,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_CLB2X_1-TypeF",
@@ -14,7 +16,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_CLB2X_1-TypeG",
@@ -22,7 +26,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_CLB2X_1-TypeOVR-V",
@@ -30,7 +36,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_CLB2X_1-TypeRS",
@@ -38,7 +46,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_CLB2X_2-TypeF",
@@ -46,7 +56,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_CLB2X_2-TypeG",
@@ -54,7 +66,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_CLB2X_2-TypeOVR-V",
@@ -62,7 +76,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_CLB2X_2-TypeRS",
@@ -70,7 +86,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     }
   ],
   "AmmoTypes": [
@@ -80,7 +98,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC2AP",
@@ -88,7 +108,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC2Precision",
@@ -96,7 +118,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC2Tracer",
@@ -104,7 +128,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_LB2X",
@@ -112,8 +138,11 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     }
   ],
-  "Addons": []
+  "Addons": [],
+  "AmmoGroup": "AC2"
 }

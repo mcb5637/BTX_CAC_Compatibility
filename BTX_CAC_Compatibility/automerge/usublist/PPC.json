@@ -6,7 +6,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPC_0-STOCK",
@@ -14,7 +16,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": true
+      "AllowDowngrade": true,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPC_1-Ceres_Arms",
@@ -22,7 +26,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPC_1-Donal",
@@ -30,7 +36,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPC_1-Tiegart",
@@ -38,7 +46,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPC_2-Ceres_Arms",
@@ -46,7 +56,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPC_2-Donal",
@@ -54,7 +66,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPC_2-Tiegart",
@@ -62,7 +76,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPCER_NU_0-STOCK",
@@ -70,7 +86,9 @@
       "RandomLimit": 0.0,
       "MinDate": "3050-01-01T00:00:00",
       "ListLink": true,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPCSnub_0-STOCK",
@@ -78,7 +96,9 @@
       "RandomLimit": 0.0,
       "MinDate": "3065-01-01T00:00:00",
       "ListLink": true,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_PPC_PPCER_0-STOCK",
@@ -86,9 +106,12 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": true,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     }
   ],
   "AmmoTypes": [],
-  "Addons": []
+  "Addons": [],
+  "AmmoGroup": ""
 }

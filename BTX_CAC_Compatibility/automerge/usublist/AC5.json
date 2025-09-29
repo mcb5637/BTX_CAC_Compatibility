@@ -6,7 +6,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": true
+      "AllowDowngrade": true,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_1-Defiance",
@@ -14,7 +16,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_1-Federated",
@@ -22,7 +26,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_1-Imperator",
@@ -30,7 +36,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_1-Kali_Yama",
@@ -38,7 +46,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_2-Defiance",
@@ -46,7 +56,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_2-Federated",
@@ -54,7 +66,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_2-Imperator",
@@ -62,7 +76,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_2-Kali_Yama",
@@ -70,7 +86,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_2-Mydron",
@@ -78,7 +96,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_AC5_3-Mydron",
@@ -86,7 +106,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_LAC5_0-STOCK",
@@ -94,7 +116,9 @@
       "RandomLimit": 0.0,
       "MinDate": "3065-01-01T00:00:00",
       "ListLink": true,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_LB5X_NU_0-STOCK",
@@ -102,7 +126,9 @@
       "RandomLimit": 0.0,
       "MinDate": "3050-01-01T00:00:00",
       "ListLink": true,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_RAC5_0-STOCK",
@@ -110,7 +136,9 @@
       "RandomLimit": 0.0,
       "MinDate": "3065-01-01T00:00:00",
       "ListLink": true,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_UAC5_NU_0-STOCK",
@@ -118,7 +146,9 @@
       "RandomLimit": 0.0,
       "MinDate": "3050-01-01T00:00:00",
       "ListLink": true,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_LB5X_0-STOCK",
@@ -126,7 +156,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": true,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Weapon_Autocannon_UAC5_0-STOCK",
@@ -134,7 +166,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": true,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     }
   ],
   "AmmoTypes": [
@@ -144,7 +178,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC5AP",
@@ -152,7 +188,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC5Precision",
@@ -160,7 +198,9 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     },
     {
       "ID": "Ammo_AmmunitionBox_Generic_AC5Tracer",
@@ -168,8 +208,11 @@
       "RandomLimit": 0.0,
       "MinDate": "0001-01-01T00:00:00",
       "ListLink": false,
-      "AllowDowngrade": false
+      "AllowDowngrade": false,
+      "AmmoLockoutByAddon": [],
+      "AmmoWeight": 1
     }
   ],
-  "Addons": []
+  "Addons": [],
+  "AmmoGroup": "AC5"
 }
