@@ -129,5 +129,11 @@ namespace BTX_CAC_CompatibilityDll
         {
             return null;
         }
+        [FieldGet(typeof(BEXTimeline.Core), "Settings")]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static BEXTimeline.ModSettings GetTimelineSettings()
+        {
+            return null;
+        }
     }
 }

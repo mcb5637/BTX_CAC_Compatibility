@@ -134,7 +134,7 @@
       "ID": "Weapon_Laser_LargeLaserXPulse_0-STOCK",
       "Weight": 5,
       "RandomLimit": 0.0,
-      "MinDate": "3065-01-01T00:00:00",
+      "MinDate": "3082-01-01T00:00:00",
       "ListLink": true,
       "AllowDowngrade": false,
       "AmmoLockoutByAddon": [],
