@@ -575,6 +575,10 @@ namespace BTX_CAC_CompatibilityDll
         }
 
         private static readonly Pattern<WeaponDef>[] WeaponPatterns = new Pattern<WeaponDef>[] {
+            new IgnorePattern<WeaponDef>()
+            {
+                Check = new Regex("^Weapon_MortarCAC_LongTom_Turret$"),
+            },
             new WeaponACPattern()
             {
                 Check = new Regex("^Weapon_Autocannon_(?<li>L?)AC(?<size>\\d+)_(?<plus>\\d+|SPECIAL)-.+$"),
@@ -2353,7 +2357,7 @@ namespace BTX_CAC_CompatibilityDll
                         ad = Array.Empty<UpgradeEntry>();
                     }
                     string[] abox;
-                    if (Streak)
+                    if (!Streak)
                     {
                         abox = new string[] { "Ammo_AmmunitionBox_Generic_SRM", "Ammo_AmmunitionBox_Generic_SRMInferno", "Ammo_AmmunitionBox_Generic_SRM_DF" };
                     }
