@@ -97,7 +97,7 @@ namespace BTX_CAC_CompatibilityDll
                         ideal[df.ID] = 1;
                         Main.Log.Log("add DF");
                     }
-                    kv.Value.CalculateIdealBoxes();
+                    kv.Value.RollForIdealBoxes(l, rand, s.CurrentDate);
                 }
                 else if (kv.Key.StartsWith("AC"))
                 {
@@ -106,21 +106,20 @@ namespace BTX_CAC_CompatibilityDll
                     var tracer = ammos.FirstOrDefault(x => x.ID.EndsWith("Tracer") && !kv.Value.AmmoLockout.Contains(x.ID));
                     var prec = ammos.FirstOrDefault(x => x.ID.EndsWith("Precision") && !kv.Value.AmmoLockout.Contains(x.ID));
                     var ap = ammos.FirstOrDefault(x => x.ID.EndsWith("AP") && !kv.Value.AmmoLockout.Contains(x.ID));
+                    var lbx = ammos.FirstOrDefault(x => x.ID.EndsWith("X") && !kv.Value.AmmoLockout.Contains(x.ID));
 
                     if (!ideal.TryGetValue(std.ID, out var stdcount))
                         stdcount = 0;
                     if (tracer == null || !ideal.TryGetValue(tracer.ID, out var tracercount))
                         tracercount = 0;
+                    if (lbx == null || !ideal.TryGetValue(tracer.ID, out var lbxcount))
+                        lbxcount = 0;
                     if (stdcount > tracercount)
                     {
                         Main.Log.Log("has uacs, no special ammo");
-                        if (tracer != null)
-                            ideal[tracer.ID] = 0;
-                        if (prec != null)
-                            ideal[prec.ID] = 0;
-                        if (ap != null)
-                            ideal[ap.ID] = 0;
-                        continue;
+                        tracer = null;
+                        prec = null;
+                        ap = null;
                     }
 
                     if (mood == null || !(mood.Contains("Night") || mood.Contains("Sunset") || mood.Contains("Twilight")))
@@ -130,23 +129,25 @@ namespace BTX_CAC_CompatibilityDll
                     if (ap != null && ap.MinDate > s.CurrentDate)
                         ap = null;
                     ideal.Clear();
-                    ideal[std.ID] = 1;
+                    ideal[std.ID] = stdcount * 100;
+                    if (lbx != null)
+                        ideal[lbx.ID] = lbxcount * 100;
                     if (tracer != null)
                     {
                         Main.Log.Log("add tracer");
-                        ideal[tracer.ID] = 2;
+                        ideal[tracer.ID] = stdcount * 300;
                     }
                     if (davion && prec != null)
                     {
                         Main.Log.Log("add precision");
-                        ideal[prec.ID] = 1;
+                        ideal[prec.ID] = stdcount * 25;
                     }
                     if (davion && ap != null)
                     {
                         Main.Log.Log("add ap");
-                        ideal[ap.ID] = 1;
+                        ideal[ap.ID] = stdcount * 25;
                     }
-                    kv.Value.CalculateIdealBoxes();
+                    kv.Value.RollForIdealBoxes(l, rand, s.CurrentDate);
                 }
                 else if (kv.Key == "LRM")
                 {
@@ -162,7 +163,7 @@ namespace BTX_CAC_CompatibilityDll
                         ideal[df.ID] = 1;
                         Main.Log.Log("add DF");
                     }
-                    kv.Value.CalculateIdealBoxes();
+                    kv.Value.RollForIdealBoxes(l, rand, s.CurrentDate);
                 }
             }
         }
