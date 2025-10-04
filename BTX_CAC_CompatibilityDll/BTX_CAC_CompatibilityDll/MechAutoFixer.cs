@@ -24,7 +24,7 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 catch (Exception e)
                 {
-                    FileLog.Log($"except mech {mech.Description.Id} {e}");
+                    Main.Log.Log($"except mech {mech.Description.Id} {e}");
                 }
             }
         }
@@ -143,7 +143,7 @@ namespace BTX_CAC_CompatibilityDll
                     x.RefreshComponentDef();
                 if (x.Def == null)
                 {
-                    FileLog.Log($"found null comp {x.ComponentDefID} {x.ComponentDefType} in {m.Description.Id}");
+                    Main.Log.Log($"found null comp {x.ComponentDefID} {x.ComponentDefType} in {m.Description.Id}");
                     return 0;
                 }
                 return x.Def.InventorySize;

@@ -89,6 +89,12 @@ namespace BTX_CAC_CompatibilityDll
         {
         }
 
+        [PropertySet(typeof(ChassisDef), nameof(ChassisDef.MeleeDamage))]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static void SetMeleeDamage(this ChassisDef d, float f)
+        {
+        }
+
         [FieldGet(typeof(Core), "CurrentLight")]
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static LightValue GetExtendedCE_Core_CurrentLight()

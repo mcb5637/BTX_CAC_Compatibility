@@ -25,6 +25,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UIWidgets;
 using UnityEngine;
+using static Extended_CE.BTComponents;
 
 [assembly: AssemblyVersion("2.0.2.0")]
 
@@ -332,6 +333,76 @@ namespace BTX_CAC_CompatibilityDll
                 }
                 yield return c;
             }
+        }
+
+        [HarmonyPatch(typeof(Contract), "ResetStateForRestart")]
+        [HarmonyPostfix]
+        public static void Contract_ResetStateForRestart()
+        {
+            foreach (KeyValuePair<string, TTRuleInfo> entry in MechTTRuleInfo.MechTTStatStore)
+            {
+                entry.Value.HipCrits = 0;
+                entry.Value.EngineCrits = 0;
+                entry.Value.EngineCenterCrits = 0;
+                entry.Value.EngineLeftCrits = 0;
+                entry.Value.EngineRightCrits = 0;
+                entry.Value.GyroDestroyed = false;
+                entry.Value.LifeSupportCrit = false;
+            }
+        }
+
+        [HarmonyPatch(typeof(Contract), "CompleteContract")]
+        [HarmonyPrefix]
+        public static void Contract_CompleteContract(Contract __instance)
+        {
+            if (__instance.State != Contract.ContractState.InProgress) return;
+            __instance.BattleTechGame.Combat.AllActors.OfType<Mech>().Where(mech => FakeDatabase.IsVehicle(mech.MechDef)).ToList()
+                .ForEach(vehicle => { vehicle.allComponents.RemoveAll(comp => comp.defId == "Gear_BEX_MotiveSystem"); vehicle.miscComponents.RemoveAll(comp => comp.defId == "Gear_BEX_MotiveSystem"); });
+        }
+
+        [HarmonyPatch(typeof(ChassisDef), "FromJSON")]
+        [HarmonyPostfix]
+        [HarmonyPriority(Priority.Last)]
+        public static void ChassisDef_FromJSON(ChassisDef __instance)
+        {
+            if (FakeDatabase.IsVehicle(__instance))
+            {
+                __instance.SetMeleeDamage(0);
+            }
+        }
+
+        private static Mech MechNullIfVehicle(Mech m)
+        {
+            if (m != null && m.FakeVehicle())
+                return null;
+            return m;
+        }
+        [HarmonyPatch(typeof(AttackEvaluator), "MakeAttackOrderForTarget")]
+        [HarmonyTranspiler]
+        //[HarmonyEmitIL]
+        public static IEnumerable<CodeInstruction> AttackEvaluator_MakeAttackOrderForTarget(IEnumerable<CodeInstruction> instructions, ILGenerator il)
+        {
+            var cm = new CodeMatcher(instructions, il);
+            cm.MatchForward(false,
+                new CodeMatch(OpCodes.Ldloc_3),
+                new CodeMatch(x => x.opcode == OpCodes.Brtrue_S || x.opcode == OpCodes.Brtrue),
+
+                new CodeMatch(x => x.opcode == OpCodes.Ldloc || x.opcode == OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldc_I4_1),
+                new CodeMatch(x => x.opcode == OpCodes.Beq_S || x.opcode == OpCodes.Beq),
+
+                new CodeMatch(x => x.opcode == OpCodes.Ldloc || x.opcode == OpCodes.Ldloc_S),
+                new CodeMatch(OpCodes.Ldc_I4_2),
+                new CodeMatch(x => x.opcode == OpCodes.Bne_Un_S || x.opcode == OpCodes.Bne_Un),
+
+                new CodeMatch(OpCodes.Ldarg_0),
+                new CodeMatch(x => x.opcode == OpCodes.Ldstr && ((string)x.operand == "this unit can't melee or dfa"))
+            );
+            cm.ThrowIfInvalid("failed to find if statement");
+
+            cm.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(RandomPatches), nameof(MechNullIfVehicle))));
+            
+            return cm.InstructionEnumeration();
         }
     }
 }
