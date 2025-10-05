@@ -3,6 +3,7 @@ using BattleTech;
 using BattleTech.Save;
 using BattleTech.StringInterpolation;
 using BattleTech.UI;
+using BiggerDrops.Features;
 using CustAmmoCategories;
 using CustAmmoCategoriesPatches;
 using CustomActivatableEquipment;
@@ -317,7 +318,6 @@ namespace BTX_CAC_CompatibilityDll
                 return;
             mng.OnAttackComplete(tar);
         }
-
         [HarmonyPatch(typeof(Mech), nameof(Mech.ResolveAttackSequence))]
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> Mech_ResolveAttackSequence(IEnumerable<CodeInstruction> inst)
@@ -403,6 +403,24 @@ namespace BTX_CAC_CompatibilityDll
             cm.Advance(1).InsertAndAdvance(new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(RandomPatches), nameof(MechNullIfVehicle))));
             
             return cm.InstructionEnumeration();
+        }
+
+        private static bool ComponentsAndNotVehicle(Mech mech) => Extended_CE.Core.UsingComponents() && !mech.FakeVehicle();
+        [HarmonyPatch(typeof(BTComponents.Mech_InitStats), "Postfix")]
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> Mech_InitStats_Postfix(IEnumerable<CodeInstruction> inst)
+        {
+            var orig = AccessTools.Method(typeof(Extended_CE.Core), nameof(Extended_CE.Core.UsingComponents));
+            var rep = AccessTools.Method(typeof(RandomPatches), nameof(ComponentsAndNotVehicle));
+            foreach (var c in inst)
+            {
+                if ((c.opcode == OpCodes.Call || c.opcode == OpCodes.Callvirt) && c.operand as MethodInfo == orig)
+                {
+                    yield return new CodeInstruction(OpCodes.Ldarg_0);
+                    c.operand = rep;
+                }
+                yield return c;
+            }
         }
     }
 }
