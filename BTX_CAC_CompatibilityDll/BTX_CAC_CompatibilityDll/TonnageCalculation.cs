@@ -1,6 +1,7 @@
 ﻿using BattleTech;
 using BattleTech.UI;
 using BattleTech.UI.TMProWrapper;
+using CustomUnits;
 using HarmonyLib;
 using Localize;
 using System;
@@ -71,7 +72,7 @@ namespace BTX_CAC_CompatibilityDll
         public static void Postfix(MechDef mechDef, ref float currentValue, ref float maxValue)
         {
             maxValue = mechDef.Chassis.Tonnage;
-            currentValue = mechDef.CalculateWeightKG() / 1000.0f;
+            currentValue = mechDef.IsVehicle() ? mechDef.Chassis.Tonnage : mechDef.CalculateWeightKG() / 1000.0f;
         }
     }
     [HarmonyPatch(typeof(MechLabMechInfoWidget), "CalculateTonnage")]
@@ -82,22 +83,32 @@ namespace BTX_CAC_CompatibilityDll
         {
             if (___mechLab.activeMechDef != null)
             {
-                int kg = ___mechLab.CalculateWeightKG();
-                int chassiskg = (int)(___mechLab.activeMechDef.Chassis.Tonnage * 1000.0f);
-                int remaining = chassiskg - kg;
-                __instance.currentTonnage = kg / 1000.0f;
-                ___totalTonnage.SetText("{0:0.##} / {1}", __instance.currentTonnage, ___mechLab.activeMechDef.Chassis.Tonnage);
-                ___totalTonnageColor.SetUIColor(remaining < 0 ? UIColor.Red : UIColor.WhiteHalf);
-                if (remaining < 0)
+                if (___mechLab.activeMechDef.IsVehicle())
                 {
-                    float t = -remaining / 1000.0f;
-                    ___remainingTonnage.SetText("{0:0.##} ton{1} overweight", t, remaining == -1000 ? "" : "s");
+                    ___totalTonnage.SetText("{0:0.##}", ___mechLab.activeMechDef.Chassis.Tonnage);
+                    ___totalTonnageColor.SetUIColor(UIColor.White);
+                    ___remainingTonnage.SetText("");
+                    ___remainingTonnageColor.SetUIColor(UIColor.White);
                 }
                 else
                 {
-                    ___remainingTonnage.SetText("{0:0.##} ton{1} remaining", remaining / 1000.0f, remaining == 1000 ? "" : "s");
+                    int kg = ___mechLab.CalculateWeightKG();
+                    int chassiskg = (int)(___mechLab.activeMechDef.Chassis.Tonnage * 1000.0f);
+                    int remaining = chassiskg - kg;
+                    __instance.currentTonnage = kg / 1000.0f;
+                    ___totalTonnage.SetText("{0:0.##} / {1}", __instance.currentTonnage, ___mechLab.activeMechDef.Chassis.Tonnage);
+                    ___totalTonnageColor.SetUIColor(remaining < 0 ? UIColor.Red : UIColor.WhiteHalf);
+                    if (remaining < 0)
+                    {
+                        float t = -remaining / 1000.0f;
+                        ___remainingTonnage.SetText("{0:0.##} ton{1} overweight", t, remaining == -1000 ? "" : "s");
+                    }
+                    else
+                    {
+                        ___remainingTonnage.SetText("{0:0.##} ton{1} remaining", remaining / 1000.0f, remaining == 1000 ? "" : "s");
+                    }
+                    ___remainingTonnageColor.SetUIColor(remaining < 0 ? UIColor.Red : (remaining <= 500 ? UIColor.Gold : UIColor.White));
                 }
-                ___remainingTonnageColor.SetUIColor(remaining < 0 ? UIColor.Red : (remaining<=500 ? UIColor.Gold : UIColor.White));
             }
         }
     }

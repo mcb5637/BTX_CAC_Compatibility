@@ -15,7 +15,7 @@ namespace BTX_CAC_CompatibilityDll
         {
             foreach (AdvWeaponResolveInfo ri in __instance.resolveInfo.Values)
             {
-                ri.floatieMessages = ri.floatieMessages.Where((s) => !s.StartsWith("Inferno VFX")).ToList();
+                ri.floatieMessages = ri.floatieMessages.Where((s) => !s.EndsWith("VFX")).ToList();
             }
         }
     }
