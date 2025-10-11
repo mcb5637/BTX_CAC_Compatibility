@@ -21,11 +21,12 @@
 			"durationData": {
 				"duration": 1,
 				"ticksOnActivations": false,
-				"useActivationsOfTarget": true,
-				"ticksOnEndOfRound": false,
-				"ticksOnMovements": true,
-				"stackLimit": 1,
-				"clearedWhenAttacked": false
+				"useActivationsOfTarget": false,
+				"ticksOnEndOfRound": true,
+				"ticksOnMovements": false,
+				"stackLimit": -1,
+				"clearedWhenAttacked": false,
+				"activeTrackedEffect": true
 			},
 			"targetingData": {
 				"effectTriggerType": "OnHit",
@@ -54,7 +55,11 @@
 				"modValue": "1",
 				"modType": "System.Single"
 			},
-			"tagData": null,
+			"tagData": {
+				"tagList": [
+					"450"
+				]
+			},
 			"floatieData": null,
 			"actorBurningData": null,
 			"vfxData": null,
@@ -65,11 +70,12 @@
 			"durationData": {
 				"duration": 1,
 				"ticksOnActivations": false,
-				"useActivationsOfTarget": true,
-				"ticksOnEndOfRound": false,
-				"ticksOnMovements": true,
-				"stackLimit": 1,
-				"clearedWhenAttacked": false
+				"useActivationsOfTarget": false,
+				"ticksOnEndOfRound": true,
+				"ticksOnMovements": false,
+				"stackLimit": -1,
+				"clearedWhenAttacked": false,
+				"activeTrackedEffect": true
 			},
 			"targetingData": {
 				"effectTriggerType": "OnHit",
@@ -92,6 +98,11 @@
 				"Icon": "uixSvgIcon_status_sensorsImpaired"
 			},
 			"nature": "Debuff",
+			"tagData": {
+				"tagList": [
+					"450"
+				]
+			},
 			"vfxData": {
 				"vfxName": "vfxPrfPrtl_TAGmarker_loop",
 				"attachToImpactPoint": true,

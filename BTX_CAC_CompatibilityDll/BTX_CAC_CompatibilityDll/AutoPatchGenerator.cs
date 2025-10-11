@@ -1,5 +1,6 @@
 ﻿using BattleTech;
 using BattleTech.Data;
+using BattleTech.Serialization;
 using BTRandomMechComponentUpgrader;
 using Extended_CE;
 using HarmonyLib;
@@ -976,33 +977,15 @@ namespace BTX_CAC_CompatibilityDll
             {
                 Check = new Regex("^Weapon_ATM_ATM(?<size>\\d+)_(?<plus>\\d+)-.+$"),
             },
-            new WeaponForwardingPattern()
+            new WeaponTAGPattern()
             {
                 Check = new Regex("^Weapon_TAG_(?<ty>Standard|C3)(?:_(?<plus>\\d+))?-.+$"),
-                Details = true,
-                Boni = true,
-                ExtraData = ",\r\n\t\"statusEffects\": [\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": true,\r\n\t\t\t\t\"showInStatusPanel\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"StatisticEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IncomingAttBonus\",\r\n\t\t\t\t\"Name\": \"TAG MARKED\",\r\n\t\t\t\t\"Details\": \"If targeted by non Clan LRMs/NLRMs this unit does not have an indirect fire modifier and all evasion is ignored. These effects do not stack with Artemis IV or a Narc Missile Beacon.\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_statusMarked\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"statisticData\": {\r\n\t\t\t\t\"appliesEachTick\": false,\r\n\t\t\t\t\"statName\": \"TAGCount\",\r\n\t\t\t\t\"operation\": \"Float_Add\",\r\n\t\t\t\t\"modValue\": \"1\",\r\n\t\t\t\t\"modType\": \"System.Single\"\r\n\t\t\t},\r\n\t\t\t\"tagData\": null,\r\n\t\t\t\"floatieData\": null,\r\n\t\t\t\"actorBurningData\": null,\r\n\t\t\t\"vfxData\": null,\r\n\t\t\t\"instantModData\": null,\r\n\t\t\t\"poorlyMaintainedEffectData\": null\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": false,\r\n\t\t\t\t\"showInStatusPanel\": false,\r\n\t\t\t\t\"hideApplicationFloatie\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"VFXEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IndicatorVFX\",\r\n\t\t\t\t\"Name\": \"Inferno VFX\",\r\n\t\t\t\t\"Details\": \"Visual indicator of the TAG effect\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_status_sensorsImpaired\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"vfxData\": {\r\n\t\t\t\t\"vfxName\": \"vfxPrfPrtl_TAGmarker_loop\",\r\n\t\t\t\t\"attachToImpactPoint\": true,\r\n\t\t\t\t\"location\": -1,\r\n\t\t\t\t\"isAttached\": true,\r\n\t\t\t\t\"facesAttacker\": false,\r\n\t\t\t\t\"isOneShot\": false,\r\n\t\t\t\t\"duration\": -1.0\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}",
-                Order = (m) => ComponentOrder.TAG,
-                SubList = (d, id, m, c) =>
-                {
-                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"TAG{m.Groups["ty"].Value}", id, Array.Empty<string>(), Array.Empty<string>(), lvl, "");
-                    c.AddEnergyTTS.Add(id);
-                },
+                Clan = false,
             },
-            new WeaponForwardingPattern()
+            new WeaponTAGPattern()
             {
                 Check = new Regex("^Weapon_TAG_(?<ty>Light_Clan|Clan)_(?<plus>\\d+)-.+$"),
-                Details = true,
-                Boni = true,
-                ExtraData = ",\r\n\t\"statusEffects\": [\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": true,\r\n\t\t\t\t\"showInStatusPanel\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"StatisticEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IncomingAttBonus\",\r\n\t\t\t\t\"Name\": \"TAG MARKED\",\r\n\t\t\t\t\"Details\": \"If targeted by non Clan LRMs/NLRMs this unit does not have an indirect fire modifier and all evasion is ignored. These effects do not stack with Artemis IV or a Narc Missile Beacon.\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_statusMarked\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"statisticData\": {\r\n\t\t\t\t\"appliesEachTick\": false,\r\n\t\t\t\t\"statName\": \"TAGCountClan\",\r\n\t\t\t\t\"operation\": \"Float_Add\",\r\n\t\t\t\t\"modValue\": \"1\",\r\n\t\t\t\t\"modType\": \"System.Single\"\r\n\t\t\t},\r\n\t\t\t\"tagData\": null,\r\n\t\t\t\"floatieData\": null,\r\n\t\t\t\"actorBurningData\": null,\r\n\t\t\t\"vfxData\": null,\r\n\t\t\t\"instantModData\": null,\r\n\t\t\t\"poorlyMaintainedEffectData\": null\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"durationData\": {\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": true,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": true,\r\n\t\t\t\t\"stackLimit\": 1,\r\n\t\t\t\t\"clearedWhenAttacked\": false\r\n\t\t\t},\r\n\t\t\t\"targetingData\": {\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": false,\r\n\t\t\t\t\"showInStatusPanel\": false,\r\n\t\t\t\t\"hideApplicationFloatie\": true\r\n\t\t\t},\r\n\t\t\t\"effectType\": \"VFXEffect\",\r\n\t\t\t\"Description\": {\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IndicatorVFX\",\r\n\t\t\t\t\"Name\": \"Inferno VFX\",\r\n\t\t\t\t\"Details\": \"Visual indicator of the TAG effect\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_status_sensorsImpaired\"\r\n\t\t\t},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"vfxData\": {\r\n\t\t\t\t\"vfxName\": \"vfxPrfPrtl_TAGmarker_loop\",\r\n\t\t\t\t\"attachToImpactPoint\": true,\r\n\t\t\t\t\"location\": -1,\r\n\t\t\t\t\"isAttached\": true,\r\n\t\t\t\t\"facesAttacker\": false,\r\n\t\t\t\t\"isOneShot\": false,\r\n\t\t\t\t\"duration\": -1.0\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}",
-                Order = (m) => ComponentOrder.TAG,
-                SubList = (d, id, m, c) =>
-                {
-                    if (int.TryParse(m.Groups["plus"].Value, out int lvl))
-                        c.AddSubList($"TAG{m.Groups["ty"].Value}", id, Array.Empty<string>(), Array.Empty<string>(), lvl, "");
-                    c.AddEnergyTTS.Add(id);
-                },
+                Clan = true,
             },
             new WeaponNarcPattern()
             {
@@ -2584,6 +2567,24 @@ namespace BTX_CAC_CompatibilityDll
             {
                 return s.Description.Details.Replace("ATM Missiles are able to switch between 3 different missile types during combat using the middle mouse button, each with their own range and damage profile", "ATM Launchers are able to switch between 3 different missile types during combat, each with their own range and damage profile").
                     Replace("ATM weapons accuracy modifier is positively affected by an integrated Artemis IV, and negatively affected by a target's Anti Missile Systems. ATM systems cannot benefit from a Narc Missile Beacon.", "ATM weapons accuracy modifier is positively affected by an integrated Artemis IV. ATM systems cannot benefit from a Narc Missile Beacon.");
+            }
+        }
+        private class WeaponTAGPattern : Pattern<WeaponDef>
+        {
+            public bool Clan = false;
+            public override void Generate(WeaponDef data, Match m, string targetFolder, string id, IdCollector c)
+            {
+                string p = WeaponForwardingPattern.Forward(data, true, false, true, true, true);
+                p += ",\r\n\t\"statusEffects\": [\r\n\t\t";
+                string tagdata = $"\t\t\t\"tagData\": {{\r\n\t\t\t\t\"tagList\": [\r\n\t\t\t\t\t\"{data.MaxRange}\"\r\n\t\t\t\t]\r\n\t\t\t}},\r\n";
+                string stat = Clan ? "TAGCountClan" : "TAGCount";
+                p += $"{{\r\n\t\t\t\"durationData\": {{\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": false,\r\n\t\t\t\t\"ticksOnEndOfRound\": true,\r\n\t\t\t\t\"ticksOnMovements\": false,\r\n\t\t\t\t\"stackLimit\": -1,\r\n\t\t\t\t\"clearedWhenAttacked\": false,\r\n\t\t\t\t\"activeTrackedEffect\": true\r\n\t\t\t}},\r\n\t\t\t\"targetingData\": {{\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": true,\r\n\t\t\t\t\"showInStatusPanel\": true\r\n\t\t\t}},\r\n\t\t\t\"effectType\": \"StatisticEffect\",\r\n\t\t\t\"Description\": {{\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IncomingAttBonus\",\r\n\t\t\t\t\"Name\": \"TAG MARKED\",\r\n\t\t\t\t\"Details\": \"If targeted by non Clan LRMs/NLRMs this unit does not have an indirect fire modifier and all evasion is ignored. These effects do not stack with Artemis IV or a Narc Missile Beacon.\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_statusMarked\"\r\n\t\t\t}},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"statisticData\": {{\r\n\t\t\t\t\"appliesEachTick\": false,\r\n\t\t\t\t\"statName\": \"{stat}\",\r\n\t\t\t\t\"operation\": \"Float_Add\",\r\n\t\t\t\t\"modValue\": \"1\",\r\n\t\t\t\t\"modType\": \"System.Single\"\r\n\t\t\t}},\r\n{tagdata}\t\t\t\"floatieData\": null,\r\n\t\t\t\"actorBurningData\": null,\r\n\t\t\t\"vfxData\": null,\r\n\t\t\t\"instantModData\": null,\r\n\t\t\t\"poorlyMaintainedEffectData\": null\r\n\t\t}},\r\n";
+                p += $"\t\t{{\r\n\t\t\t\"durationData\": {{\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": false,\r\n\t\t\t\t\"ticksOnEndOfRound\": true,\r\n\t\t\t\t\"ticksOnMovements\": false,\r\n\t\t\t\t\"stackLimit\": -1,\r\n\t\t\t\t\"clearedWhenAttacked\": false,\r\n\t\t\t\t\"activeTrackedEffect\": true\r\n\t\t\t}},\r\n\t\t\t\"targetingData\": {{\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": false,\r\n\t\t\t\t\"showInStatusPanel\": false,\r\n\t\t\t\t\"hideApplicationFloatie\": true\r\n\t\t\t}},\r\n\t\t\t\"effectType\": \"VFXEffect\",\r\n\t\t\t\"Description\": {{\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IndicatorVFX\",\r\n\t\t\t\t\"Name\": \"Inferno VFX\",\r\n\t\t\t\t\"Details\": \"Visual indicator of the TAG effect\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_status_sensorsImpaired\"\r\n\t\t\t}},\r\n\t\t\t\"nature\": \"Debuff\",\r\n{tagdata}\t\t\t\"vfxData\": {{\r\n\t\t\t\t\"vfxName\": \"vfxPrfPrtl_TAGmarker_loop\",\r\n\t\t\t\t\"attachToImpactPoint\": true,\r\n\t\t\t\t\"location\": -1,\r\n\t\t\t\t\"isAttached\": true,\r\n\t\t\t\t\"facesAttacker\": false,\r\n\t\t\t\t\"isOneShot\": false,\r\n\t\t\t\t\"duration\": -1.0\r\n\t\t\t}}\r\n\t\t}}\r\n\t]\r\n}}";
+                WriteTo(targetFolder, id, p);
+                c.AddOrder(ComponentOrder.TAG, id);
+                if (int.TryParse(m.Groups["plus"].Value, out int lvl))
+                    c.AddSubList($"TAG{m.Groups["ty"].Value}", id, Array.Empty<string>(), Array.Empty<string>(), lvl, "");
+                c.AddEnergyTTS.Add(id);
             }
         }
         private class WeaponNarcPattern : Pattern<WeaponDef>

@@ -13,7 +13,8 @@
 				"ticksOnEndOfRound": true,
 				"ticksOnMovements": false,
 				"stackLimit": 1,
-				"clearedWhenAttacked": false
+				"clearedWhenAttacked": false,
+				"activeTrackedEffect": true
 			},
 			"targetingData": {
 				"effectTriggerType": "OnHit",

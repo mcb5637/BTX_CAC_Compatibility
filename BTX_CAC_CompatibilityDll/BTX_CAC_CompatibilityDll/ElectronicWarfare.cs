@@ -114,5 +114,35 @@ namespace BTX_CAC_CompatibilityDll
             if (target is AbstractActor a && a.HasIndirectFireImmunity && __instance.GetVisibilityToTargetWithPositionsAndRotations(source, sourcePosition, a) != VisibilityLevel.LOSFull)
                 __result = LineOfFireLevel.LOFBlocked;
         }
+
+        [HarmonyPatch(typeof(EffectManager), nameof(EffectManager.NotifyEndOfMovement))]
+        [HarmonyPrefix]
+        public static void EffectManager_NotifyEndOfMovement(List<Effect> ___effects, string targetGUID)
+        {
+            foreach (var eff in ___effects)
+            {
+                if (eff.targetID == targetGUID && eff.EffectData.tagData != null)
+                {
+
+                    var data = eff.EffectData.tagData;
+                    if (data == null || data.tagList.Length == 0)
+                        continue;
+                    var tar = eff.combat.FindActorByGUID(eff.targetID);
+                    var tagger = eff.combat.FindActorByGUID(eff.creatorID);
+                    if (tar == null || tagger == null)
+                        continue;
+                    if (!float.TryParse(data.tagList[0], out float r))
+                        continue;
+                    if (tagger.HasLOFToTargetUnit(tar, r, false))
+                        continue;
+                    // set up effect, so the original func cancels it
+                    eff.Duration.activationActorGUID = targetGUID;
+                    eff.Duration.numMovementsRemaining = 1;
+                    eff.Duration.numActivationsRemaining = 0;
+                    eff.Duration.numPhasesRemaining = 0;
+                    eff.Duration.numRoundsRemaining = 0;
+                }
+            }
+        }
     }
 }
