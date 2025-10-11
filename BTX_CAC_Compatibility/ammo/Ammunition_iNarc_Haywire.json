@@ -22,9 +22,9 @@
 		{
 			"durationData": {
 				"duration": 3,
-				"ticksOnActivations": false,
-				"useActivationsOfTarget": false,
-				"ticksOnEndOfRound": true,
+				"ticksOnActivations": true,
+				"useActivationsOfTarget": true,
+				"ticksOnEndOfRound": false,
 				"ticksOnMovements": false,
 				"stackLimit": 1,
 				"clearedWhenAttacked": false
@@ -66,11 +66,11 @@
 		{
 			"durationData": {
 				"duration": 3,
-				"ticksOnActivations": false,
-				"useActivationsOfTarget": false,
-				"ticksOnEndOfRound": true,
+				"ticksOnActivations": true,
+				"useActivationsOfTarget": true,
+				"ticksOnEndOfRound": false,
 				"ticksOnMovements": false,
-				"stackLimit": 1,
+				"stackLimit": -1,
 				"clearedWhenAttacked": false
 			},
 			"targetingData": {

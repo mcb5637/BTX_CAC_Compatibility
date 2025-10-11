@@ -8,12 +8,13 @@
 		{
 			"durationData": {
 				"duration": 3,
-				"ticksOnActivations": false,
+				"ticksOnActivations": true,
 				"useActivationsOfTarget": false,
-				"ticksOnEndOfRound": true,
+				"ticksOnEndOfRound": false,
 				"ticksOnMovements": false,
-				"stackLimit": 1,
-				"clearedWhenAttacked": false
+				"stackLimit": -1,
+				"clearedWhenAttacked": false,
+				"activeTrackedEffect": true
 			},
 			"targetingData": {
 				"effectTriggerType": "OnHit",
@@ -52,12 +53,13 @@
 		{
 			"durationData": {
 				"duration": 3,
-				"ticksOnActivations": false,
+				"ticksOnActivations": true,
 				"useActivationsOfTarget": false,
-				"ticksOnEndOfRound": true,
+				"ticksOnEndOfRound": false,
 				"ticksOnMovements": false,
-				"stackLimit": 1,
-				"clearedWhenAttacked": false
+				"stackLimit": -1,
+				"clearedWhenAttacked": false,
+				"activeTrackedEffect": true
 			},
 			"targetingData": {
 				"effectTriggerType": "OnHit",

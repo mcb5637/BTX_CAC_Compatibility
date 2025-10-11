@@ -38,7 +38,10 @@ Component list (Clan & SLDF ones included):
 		- Binary Laser: added low power mode, fixed animation
 		- Pulse Laser: added low power mode, fixed animation
 		- X-Pulse Laser: changed to single projectile
-		- Tag: attacking a tagged unit ignores evasion+indirect penalities, tag gets removed when unit moves, upgraded tags have a bonus to its own hit chance
+		- Tag: attacking a tagged unit ignores evasion+indirect penalities, upgraded tags have a bonus to its own hit chance. removed ony any of:
+			- attacker takes its next turn
+			- attacker dies
+			- target moves out of LoF (range, obstruction, firing arcs)
 		- Flamer: added forestfires
 	- Missile:
 		- LRM: added hotload mode, added Deadfire ammo (narc, tag or artemis compatible)
@@ -47,14 +50,16 @@ Component list (Clan & SLDF ones included):
 		- Artemis IV SRM: turned into a Weapon Addon for SRMs (deprecated)
 		- Streak SRM: fixed streak effect
 		- NARC: multiple pods
-			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
+			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, ecm blocks narc acc bonus, removed on any of:
+				- 3 turns
+				- attacker dies
 			- Explosive Pod: damage (kurita shops after 3059)
 		- ATM: 3 ammo types, trading damage for range, added clustering
 		- Infernos: Broken, use SRM inferno ammo instead
 		- MRM: individual hit generator, unguided flag
 		- RL: individual hit generator, unguided flag
 		- iNarc: multiple pods
-			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, narc pod gets removed after 3 rounds, ecm blocks narc acc bonus
+			- Homing Pod: attacking a narced unit has an +4 accuracy boost, better clustering, ecm blocks narc acc bonus, removal: see NARC
 			- Explosive Pod: damage
 			- Haywire Pod: -3 accuracy for 3 rounds
 	- Artillery:
@@ -162,7 +167,6 @@ TODO List:
 - Flamers & Inferno ammo balance
 - ECM tohit balance
 - weather acc modifiers?
-- component upgrader ammo/addon
 
 Known bugs:
 - CustomLoc patchig strings
