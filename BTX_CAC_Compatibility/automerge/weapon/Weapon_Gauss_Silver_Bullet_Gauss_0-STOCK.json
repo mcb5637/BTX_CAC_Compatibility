@@ -17,6 +17,7 @@
 	"ProjectilesPerShot": 12,
 	"Damage": 108,
 	"Instability": 60,
+	"VolleyDivisor": 1,
 	"ProjectileScale": {
 		"x": 0.2,
 		"y": 0.2,

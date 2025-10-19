@@ -632,7 +632,7 @@ namespace BTX_CAC_CompatibilityDll
             new WeaponForwardingPattern()
             {
                 Check = new Regex("^Weapon_Gauss_Silver_Bullet_Gauss_(?<plus>\\d+)-.+$"),
-                ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"FireDelayMultiplier\": 0,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"BallisticDamagePerPallet\": true,\r\n\t\"ShotsWhenFired\": 1,\r\n\t\"ProjectilesPerShot\": 12,\r\n\t\"Damage\": 108,\r\n\t\"Instability\": 60,\r\n\t\"ProjectileScale\": {\r\n\t\t\"x\": 0.2,\r\n\t\t\"y\": 0.2,\r\n\t\t\"z\": 0.2\r\n\t}\r\n}",
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": true,\r\n\t\"FireDelayMultiplier\": 0,\r\n\t\"HitGenerator\": \"Cluster\",\r\n\t\"BallisticDamagePerPallet\": true,\r\n\t\"ShotsWhenFired\": 1,\r\n\t\"ProjectilesPerShot\": 12,\r\n\t\"Damage\": 108,\r\n\t\"Instability\": 60,\r\n\t\"VolleyDivisor\": 1,\r\n\t\"ProjectileScale\": {\r\n\t\t\"x\": 0.2,\r\n\t\t\"y\": 0.2,\r\n\t\t\"z\": 0.2\r\n\t}\r\n}",
                 Details = false,
                 Damage = false,
                 Order = (m) => ComponentOrder.GaussSB,
@@ -1085,6 +1085,7 @@ namespace BTX_CAC_CompatibilityDll
                         return ComponentOrder.AmmoAC10Tr;
                     return ComponentOrder.AmmoAC10;
                 },
+                Half = true,
                 Double = true,
                 Triple = true,
                 ItemColAmount = 3,
@@ -1104,6 +1105,7 @@ namespace BTX_CAC_CompatibilityDll
                 },
                 Half = true,
                 Double = true,
+                Triple = true,
                 ItemColAmount = 2,
             },
             new AmmoBoxGenPattern()
@@ -1125,33 +1127,37 @@ namespace BTX_CAC_CompatibilityDll
             },
             new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_LB(?<t>5|2)X?$"),
-                Order = (m) =>
-                {
-                    if (m.Groups["t"].Value == "5")
-                        return ComponentOrder.AmmoAC5LB;
-                    if (m.Groups["t"].Value == "2")
-                        return ComponentOrder.AmmoAC2LB;
-                    return ComponentOrder.Invalid;
-                },
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_LB2X?$"),
+                Order = (m) => ComponentOrder.AmmoAC2LB,
                 Half = true,
                 Double = true,
+                ItemColAmount = 1,
+            },
+            new AmmoBoxGenPattern()
+            {
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_LB5X?$"),
+                Order = (m) => ComponentOrder.AmmoAC5LB,
+                Half = true,
+                Double = true,
+                Triple = true,
                 ItemColAmount = 2,
             },
             new AmmoBoxGenPattern()
             {
-                Check = new Regex("^Ammo_AmmunitionBox_Generic_LB(?<t>20|10)X?$"),
-                Order = (m) =>
-                {
-                    if (m.Groups["t"].Value == "20")
-                        return ComponentOrder.AmmoAC20LB;
-                    if (m.Groups["t"].Value == "10")
-                        return ComponentOrder.AmmoAC10LB;
-                    return ComponentOrder.Invalid;
-                },
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_LB10X?$"),
+                Order = (m) => ComponentOrder.AmmoAC10LB,
+                Half = true,
                 Double = true,
                 Triple = true,
                 ItemColAmount = 3,
+            },
+            new AmmoBoxGenPattern()
+            {
+                Check = new Regex("^Ammo_AmmunitionBox_Generic_LB20X?$"),
+                Order = (m) => ComponentOrder.AmmoAC20LB,
+                Double = true,
+                Triple = true,
+                ItemColAmount = 4,
             },
             new AmmoBoxGenPattern()
             {
@@ -2578,8 +2584,8 @@ namespace BTX_CAC_CompatibilityDll
                 p += ",\r\n\t\"statusEffects\": [\r\n\t\t";
                 string tagdata = $"\t\t\t\"tagData\": {{\r\n\t\t\t\t\"tagList\": [\r\n\t\t\t\t\t\"{data.MaxRange}\"\r\n\t\t\t\t]\r\n\t\t\t}},\r\n";
                 string stat = Clan ? "TAGCountClan" : "TAGCount";
-                p += $"{{\r\n\t\t\t\"durationData\": {{\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": false,\r\n\t\t\t\t\"ticksOnEndOfRound\": true,\r\n\t\t\t\t\"ticksOnMovements\": false,\r\n\t\t\t\t\"stackLimit\": -1,\r\n\t\t\t\t\"clearedWhenAttacked\": false,\r\n\t\t\t\t\"activeTrackedEffect\": true\r\n\t\t\t}},\r\n\t\t\t\"targetingData\": {{\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": true,\r\n\t\t\t\t\"showInStatusPanel\": true\r\n\t\t\t}},\r\n\t\t\t\"effectType\": \"StatisticEffect\",\r\n\t\t\t\"Description\": {{\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IncomingAttBonus\",\r\n\t\t\t\t\"Name\": \"TAG MARKED\",\r\n\t\t\t\t\"Details\": \"If targeted by non Clan LRMs/NLRMs this unit does not have an indirect fire modifier and all evasion is ignored. These effects do not stack with Artemis IV or a Narc Missile Beacon.\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_statusMarked\"\r\n\t\t\t}},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"statisticData\": {{\r\n\t\t\t\t\"appliesEachTick\": false,\r\n\t\t\t\t\"statName\": \"{stat}\",\r\n\t\t\t\t\"operation\": \"Float_Add\",\r\n\t\t\t\t\"modValue\": \"1\",\r\n\t\t\t\t\"modType\": \"System.Single\"\r\n\t\t\t}},\r\n{tagdata}\t\t\t\"floatieData\": null,\r\n\t\t\t\"actorBurningData\": null,\r\n\t\t\t\"vfxData\": null,\r\n\t\t\t\"instantModData\": null,\r\n\t\t\t\"poorlyMaintainedEffectData\": null\r\n\t\t}},\r\n";
-                p += $"\t\t{{\r\n\t\t\t\"durationData\": {{\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": false,\r\n\t\t\t\t\"useActivationsOfTarget\": false,\r\n\t\t\t\t\"ticksOnEndOfRound\": true,\r\n\t\t\t\t\"ticksOnMovements\": false,\r\n\t\t\t\t\"stackLimit\": -1,\r\n\t\t\t\t\"clearedWhenAttacked\": false,\r\n\t\t\t\t\"activeTrackedEffect\": true\r\n\t\t\t}},\r\n\t\t\t\"targetingData\": {{\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": false,\r\n\t\t\t\t\"showInStatusPanel\": false,\r\n\t\t\t\t\"hideApplicationFloatie\": true\r\n\t\t\t}},\r\n\t\t\t\"effectType\": \"VFXEffect\",\r\n\t\t\t\"Description\": {{\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IndicatorVFX\",\r\n\t\t\t\t\"Name\": \"Inferno VFX\",\r\n\t\t\t\t\"Details\": \"Visual indicator of the TAG effect\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_status_sensorsImpaired\"\r\n\t\t\t}},\r\n\t\t\t\"nature\": \"Debuff\",\r\n{tagdata}\t\t\t\"vfxData\": {{\r\n\t\t\t\t\"vfxName\": \"vfxPrfPrtl_TAGmarker_loop\",\r\n\t\t\t\t\"attachToImpactPoint\": true,\r\n\t\t\t\t\"location\": -1,\r\n\t\t\t\t\"isAttached\": true,\r\n\t\t\t\t\"facesAttacker\": false,\r\n\t\t\t\t\"isOneShot\": false,\r\n\t\t\t\t\"duration\": -1.0\r\n\t\t\t}}\r\n\t\t}}\r\n\t]\r\n}}";
+                p += $"{{\r\n\t\t\t\"durationData\": {{\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": true,\r\n\t\t\t\t\"useActivationsOfTarget\": false,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": false,\r\n\t\t\t\t\"stackLimit\": -1,\r\n\t\t\t\t\"clearedWhenAttacked\": false,\r\n\t\t\t\t\"activeTrackedEffect\": true\r\n\t\t\t}},\r\n\t\t\t\"targetingData\": {{\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": true,\r\n\t\t\t\t\"showInStatusPanel\": true\r\n\t\t\t}},\r\n\t\t\t\"effectType\": \"StatisticEffect\",\r\n\t\t\t\"Description\": {{\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IncomingAttBonus\",\r\n\t\t\t\t\"Name\": \"TAG MARKED\",\r\n\t\t\t\t\"Details\": \"If targeted by non Clan LRMs/NLRMs this unit does not have an indirect fire modifier and all evasion is ignored. These effects do not stack with Artemis IV or a Narc Missile Beacon.\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_statusMarked\"\r\n\t\t\t}},\r\n\t\t\t\"nature\": \"Debuff\",\r\n\t\t\t\"statisticData\": {{\r\n\t\t\t\t\"appliesEachTick\": false,\r\n\t\t\t\t\"statName\": \"{stat}\",\r\n\t\t\t\t\"operation\": \"Float_Add\",\r\n\t\t\t\t\"modValue\": \"1\",\r\n\t\t\t\t\"modType\": \"System.Single\"\r\n\t\t\t}},\r\n{tagdata}\t\t\t\"floatieData\": null,\r\n\t\t\t\"actorBurningData\": null,\r\n\t\t\t\"vfxData\": null,\r\n\t\t\t\"instantModData\": null,\r\n\t\t\t\"poorlyMaintainedEffectData\": null\r\n\t\t}},\r\n";
+                p += $"\t\t{{\r\n\t\t\t\"durationData\": {{\r\n\t\t\t\t\"duration\": 1,\r\n\t\t\t\t\"ticksOnActivations\": true,\r\n\t\t\t\t\"useActivationsOfTarget\": false,\r\n\t\t\t\t\"ticksOnEndOfRound\": false,\r\n\t\t\t\t\"ticksOnMovements\": false,\r\n\t\t\t\t\"stackLimit\": -1,\r\n\t\t\t\t\"clearedWhenAttacked\": false,\r\n\t\t\t\t\"activeTrackedEffect\": true\r\n\t\t\t}},\r\n\t\t\t\"targetingData\": {{\r\n\t\t\t\t\"effectTriggerType\": \"OnHit\",\r\n\t\t\t\t\"triggerLimit\": 0,\r\n\t\t\t\t\"extendDurationOnTrigger\": 0,\r\n\t\t\t\t\"specialRules\": \"NotSet\",\r\n\t\t\t\t\"effectTargetType\": \"NotSet\",\r\n\t\t\t\t\"range\": 0,\r\n\t\t\t\t\"forcePathRebuild\": false,\r\n\t\t\t\t\"forceVisRebuild\": false,\r\n\t\t\t\t\"showInTargetPreview\": false,\r\n\t\t\t\t\"showInStatusPanel\": false,\r\n\t\t\t\t\"hideApplicationFloatie\": true\r\n\t\t\t}},\r\n\t\t\t\"effectType\": \"VFXEffect\",\r\n\t\t\t\"Description\": {{\r\n\t\t\t\t\"Id\": \"StatusEffect-TAG-IndicatorVFX\",\r\n\t\t\t\t\"Name\": \"Inferno VFX\",\r\n\t\t\t\t\"Details\": \"Visual indicator of the TAG effect\",\r\n\t\t\t\t\"Icon\": \"uixSvgIcon_status_sensorsImpaired\"\r\n\t\t\t}},\r\n\t\t\t\"nature\": \"Debuff\",\r\n{tagdata}\t\t\t\"vfxData\": {{\r\n\t\t\t\t\"vfxName\": \"vfxPrfPrtl_TAGmarker_loop\",\r\n\t\t\t\t\"attachToImpactPoint\": true,\r\n\t\t\t\t\"location\": -1,\r\n\t\t\t\t\"isAttached\": true,\r\n\t\t\t\t\"facesAttacker\": false,\r\n\t\t\t\t\"isOneShot\": false,\r\n\t\t\t\t\"duration\": -1.0\r\n\t\t\t}}\r\n\t\t}}\r\n\t]\r\n}}";
                 WriteTo(targetFolder, id, p);
                 c.AddOrder(ComponentOrder.TAG, id);
                 if (int.TryParse(m.Groups["plus"].Value, out int lvl))

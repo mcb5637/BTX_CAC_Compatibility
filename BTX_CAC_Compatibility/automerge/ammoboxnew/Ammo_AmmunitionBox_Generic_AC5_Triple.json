@@ -1,0 +1,35 @@
+{
+  "AmmoID": "Ammunition_AC5",
+  "Capacity": 80,
+  "Description": {
+    "Cost": 20000,
+    "Rarity": 0,
+    "Purchasable": true,
+    "Manufacturer": "Generic",
+    "Model": "AC5",
+    "UIName": "AC/5 Ammo (Triple)",
+    "Id": "Ammo_AmmunitionBox_Generic_AC5_Triple",
+    "Name": "AC/5 Ammo",
+    "Details": "Ammo Bins contain the rounds needed for projectile-based weaponry, with at least one bin required per weapon type. Ammo Bins will explode and destroy their installed location when they receive a Critical Hit.\n\nAC/5 Ammo (Triple) Bins each contain 80 rounds and may feed multiple weapons.",
+    "Icon": "uixSvgIcon_ammoBox_Ballistic"
+  },
+  "BonusValueA": "",
+  "BonusValueB": "",
+  "ComponentType": "AmmunitionBox",
+  "ComponentSubType": "Ammunition",
+  "PrefabIdentifier": "",
+  "BattleValue": 0,
+  "InventorySize": 3,
+  "Tonnage": 3.0,
+  "CanExplode": true,
+  "AllowedLocations": "All",
+  "DisallowedLocations": "All",
+  "CriticalComponent": false,
+  "statusEffects": [],
+  "ComponentTags": {
+    "items": [
+      "component_type_stock"
+    ],
+    "tagSetSourceFile": ""
+  }
+}

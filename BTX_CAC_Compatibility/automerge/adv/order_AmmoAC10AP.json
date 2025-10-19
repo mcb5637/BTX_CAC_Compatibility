@@ -2,6 +2,7 @@
 	"TargetIDs": [
 		"Ammo_AmmunitionBox_Generic_AC10AP",
 		"Ammo_AmmunitionBox_Generic_AC10AP_Double",
+		"Ammo_AmmunitionBox_Generic_AC10AP_Half",
 		"Ammo_AmmunitionBox_Generic_AC10AP_Triple"
 	],
 	"Instructions": [
