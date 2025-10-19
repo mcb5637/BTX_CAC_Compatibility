@@ -28,7 +28,7 @@ using UIWidgets;
 using UnityEngine;
 using static Extended_CE.BTComponents;
 
-[assembly: AssemblyVersion("2.0.3.0")]
+[assembly: AssemblyVersion("2.0.3.1")]
 
 namespace BTX_CAC_CompatibilityDll
 {

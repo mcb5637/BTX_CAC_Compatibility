@@ -5,10 +5,9 @@ Having a Beagle Active Probe lets you use Sensor Lock and Active Probe Ping for 
 Different auras have different colors: blue -> ECM   brown -> Active Probe range   green -> Improved Comms   red -> AMS   white -> manual detection
 Improved Comms Mech Quirk now allows to spot targets covered by ECM (which usually prevents this) for indirect fire.
 You can mount an Active Probe and an ECM in any mech, if you have the parts for it.
-Missing new shiny fixed equipment on your Mech? Store it, then ready it again. This refreshes fixed equipment.
 AMS shoots at enemy missles in range (Red aura). This in turn means that it tries to shoot down an indirect LRM a lot more often than a SRM fired one hex away.
 Need to keep your mech hot to activate TSM? With Ctrl+klick on brace you can change how many heatsinks you use.
-The effect of a TAG gets removed when the tagged unit moves.
+The effect of a TAG gets removed when the tagged unit moves out of LoF.
 NARC Pods get blocked as long as they are inside of an ECM field.
 Found an Exterminator EXT-4D and its stealth systems prevent you from shooting it? Get closer, standing near it reduces its stealth.
-Be carefull with artillery, it does damage to anything cought in its blast, regardless if it is allied or not.
+Be carefull with artillery, it does damage to anything in its blast area, regardless if it is allied or not.
