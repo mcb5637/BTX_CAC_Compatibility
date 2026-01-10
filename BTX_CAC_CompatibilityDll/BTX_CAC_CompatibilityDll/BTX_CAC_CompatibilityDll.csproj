@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <FrameworkPathOverride>/usr/lib/mono/4.7.2-api</FrameworkPathOverride>
+        <EnableFrameworkPathOverride>true</EnableFrameworkPathOverride>
+    </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -41,75 +45,75 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>C:\goggames\BATTLETECH\mods\ModTek\Harmony12X\0Harmony.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/ModTek/lib/0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>C:\goggames\BATTLETECH\mods\.modtek\AssembliesInjected\Assembly-CSharp.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/.modtek/AssembliesInjected/Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BEXTimeline">
-      <HintPath>C:\goggames\BATTLETECH\mods_bex_actual\BT_Extended_Timeline\BEXTimeline.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/BT_Extended_Timeline/BEXTimeline.dll</HintPath>
     </Reference>
     <Reference Include="BiggerDrops">
-      <HintPath>C:\goggames\BATTLETECH\mods\BiggerDrops\BiggerDrops.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/BiggerDrops/BiggerDrops.dll</HintPath>
     </Reference>
     <Reference Include="BTRandomMechComponentUpgrader">
-      <HintPath>C:\goggames\BATTLETECH\mods_bex_actual\BTRandomMechComponentUpgrader\BTRandomMechComponentUpgrader.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/BTRandomMechComponentUpgrader/BTRandomMechComponentUpgrader.dll</HintPath>
     </Reference>
     <Reference Include="CustomActivatableEquipment">
-      <HintPath>C:\goggames\BATTLETECH\mods\CustomActivatableEquipment\CustomActivatableEquipment.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/CustomActivatableEquipment/CustomActivatableEquipment.dll</HintPath>
     </Reference>
     <Reference Include="CustomAmmoCategories">
-      <HintPath>C:\goggames\BATTLETECH\Mods\CustomAmmoCategories\CustomAmmoCategories.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/CustomAmmoCategories/CustomAmmoCategories.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="CustomComponents">
-      <HintPath>C:\goggames\BATTLETECH\mods\CustomComponents\CustomComponents.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/CustomComponents/CustomComponents.dll</HintPath>
     </Reference>
     <Reference Include="CustomUnits">
-      <HintPath>C:\goggames\BATTLETECH\Mods\CustomUnits\CustomUnits.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/CustomUnits/CustomUnits.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Extended_CE">
-      <HintPath>C:\goggames\BATTLETECH\mods\BT_Extended_CE\Extended_CE.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/BT_Extended_CE/Extended_CE.dll</HintPath>
     </Reference>
     <Reference Include="FullXotlTables">
-      <HintPath>C:\goggames\BATTLETECH\mods_bex_actual\FullXotlTables\FullXotlTables.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/Mods/FullXotlTables/FullXotlTables.dll</HintPath>
     </Reference>
     <Reference Include="InControl">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\InControl.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/BattleTech_Data/Managed/InControl.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/BattleTech_Data/Managed/Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/BattleTech_Data/Managed/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/BattleTech_Data/Managed/UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/BattleTech_Data/Managed/UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\goggames\BATTLETECH\BattleTech_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>/home/mcb/GOG Games/BATTLETECH/game/BattleTech_Data/Managed/UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractActor_InitStats.cs" />
-    <Compile Include="AccessExtensionPatcher\AccessExtensionPatcher.cs" />
-    <Compile Include="AccessExtensionPatcher\AEPData.cs" />
-    <Compile Include="AccessExtensionPatcher\ConstructorCall.cs" />
-    <Compile Include="AccessExtensionPatcher\FieldGet.cs" />
-    <Compile Include="AccessExtensionPatcher\FieldSet.cs" />
-    <Compile Include="AccessExtensionPatcher\MethodCall.cs" />
-    <Compile Include="AccessExtensionPatcher\PropertyGet.cs" />
-    <Compile Include="AccessExtensionPatcher\PropertySet.cs" />
+    <Compile Include="AccessExtensionPatcher/AccessExtensionPatcher.cs" />
+    <Compile Include="AccessExtensionPatcher/AEPData.cs" />
+    <Compile Include="AccessExtensionPatcher/ConstructorCall.cs" />
+    <Compile Include="AccessExtensionPatcher/FieldGet.cs" />
+    <Compile Include="AccessExtensionPatcher/FieldSet.cs" />
+    <Compile Include="AccessExtensionPatcher/MethodCall.cs" />
+    <Compile Include="AccessExtensionPatcher/PropertyGet.cs" />
+    <Compile Include="AccessExtensionPatcher/PropertySet.cs" />
     <Compile Include="AutoPatchGenerator.cs" />
     <Compile Include="ComponentUpgrader.cs" />
     <Compile Include="DebuggingHelpers.cs" />
@@ -141,6 +145,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetPath)" "$(SolutionDir)..\BTX_CAC_Compatibility\$(TargetName).dll"</PostBuildEvent>
+    <PostBuildEvent>cp "$(TargetPath)" "$(SolutionDir)..\BTX_CAC_Compatibility\$(TargetName).dll"</PostBuildEvent>
   </PropertyGroup>
 </Project>
