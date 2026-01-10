@@ -14,6 +14,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using static UnityEngine.RectTransform;
+// ReSharper disable InconsistentNaming
 
 namespace BTX_CAC_CompatibilityDll
 {
@@ -679,7 +680,7 @@ namespace BTX_CAC_CompatibilityDll
             new WeaponLaserPattern()
             {
                 Check = new Regex("^Weapon_Laser_(?<size>Large|Medium|Small)LaserXPulse_(?:\\d+)-.+$"),
-                ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1",
+                ExtraData = ",\r\n\t\"ImprovedBallistic\": false,\r\n\t\"ProjectilesPerShot\": 1,\r\n\t\"ShotsWhenFired\": 3",
                 Details = true,
                 Order = (m) =>
                 {

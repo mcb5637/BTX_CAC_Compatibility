@@ -75,7 +75,8 @@
 			"component_type_lostech",
 			"BLACKLISTED",
 			"component_usestag",
-			"artillery_loader_attachable"
+			"artillery_loader_attachable",
+			"artillery_loader_attachable_NGA"
 		],
 		"tagSetSourceFile": ""
 	},

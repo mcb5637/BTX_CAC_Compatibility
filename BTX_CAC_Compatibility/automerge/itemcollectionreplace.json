@@ -494,6 +494,11 @@
     "Type": "Upgrade",
     "Amount": -1
   },
+  "Weapon_LRM_CALRM20_2-TypeXb": {
+    "ID": "Gear_Addon_Artemis4",
+    "Type": "Upgrade",
+    "Amount": -1
+  },
   "Weapon_LRM_CALRM20_2-TypeXXb": {
     "ID": "Gear_Addon_Artemis4",
     "Type": "Upgrade",
@@ -504,12 +509,12 @@
     "Type": "Upgrade",
     "Amount": -1
   },
-  "Weapon_LRM_CALRM20_2-TypeXb": {
+  "Weapon_LRM_CALRM20_2-SeriesVII": {
     "ID": "Gear_Addon_Artemis4",
     "Type": "Upgrade",
     "Amount": -1
   },
-  "Weapon_LRM_CALRM20_2-SeriesVII": {
+  "Weapon_LRM_CALRM20_1-TypeXb": {
     "ID": "Gear_Addon_Artemis4",
     "Type": "Upgrade",
     "Amount": -1
@@ -524,11 +529,6 @@
     "Type": "Upgrade",
     "Amount": -1
   },
-  "Weapon_LRM_CALRM20_1-TypeXb": {
-    "ID": "Gear_Addon_Artemis4",
-    "Type": "Upgrade",
-    "Amount": -1
-  },
   "Weapon_LRM_CALRM20_1-SeriesVII": {
     "ID": "Gear_Addon_Artemis4",
     "Type": "Upgrade",
@@ -539,12 +539,12 @@
     "Type": "Upgrade",
     "Amount": -1
   },
-  "Weapon_LRM_CALRM15_2-TypeXVI": {
+  "Weapon_LRM_CALRM15_2-TypeXVb": {
     "ID": "Gear_Addon_Artemis4",
     "Type": "Upgrade",
     "Amount": -1
   },
-  "Weapon_LRM_CALRM15_2-TypeXVb": {
+  "Weapon_LRM_CALRM15_2-TypeXVI": {
     "ID": "Gear_Addon_Artemis4",
     "Type": "Upgrade",
     "Amount": -1
@@ -559,12 +559,12 @@
     "Type": "Upgrade",
     "Amount": -1
   },
-  "Weapon_LRM_CALRM15_1-TypeXVI": {
+  "Weapon_LRM_CALRM15_1-TypeXVb": {
     "ID": "Gear_Addon_Artemis4",
     "Type": "Upgrade",
     "Amount": -1
   },
-  "Weapon_LRM_CALRM15_1-TypeXVb": {
+  "Weapon_LRM_CALRM15_1-TypeXVI": {
     "ID": "Gear_Addon_Artemis4",
     "Type": "Upgrade",
     "Amount": -1

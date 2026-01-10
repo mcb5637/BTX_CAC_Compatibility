@@ -890,6 +890,15 @@
     "NotSameLocationRequired": false,
     "AddSupportHardpoint": false
   },
+  "Weapon_LRM_CALRM20_2-TypeXb": {
+    "WeaponId": "Weapon_LRM_CLRM20_2-TypeXb",
+    "AddonId": "Gear_Addon_Artemis4",
+    "AddonType": 5,
+    "WeaponType": 1,
+    "Link": true,
+    "NotSameLocationRequired": false,
+    "AddSupportHardpoint": false
+  },
   "Weapon_LRM_CALRM20_2-TypeXXb": {
     "WeaponId": "Weapon_LRM_CLRM20_2-TypeXXb",
     "AddonId": "Gear_Addon_Artemis4",
@@ -908,8 +917,8 @@
     "NotSameLocationRequired": false,
     "AddSupportHardpoint": false
   },
-  "Weapon_LRM_CALRM20_2-TypeXb": {
-    "WeaponId": "Weapon_LRM_CLRM20_2-TypeXb",
+  "Weapon_LRM_CALRM20_2-SeriesVII": {
+    "WeaponId": "Weapon_LRM_CLRM20_2-SeriesVII",
     "AddonId": "Gear_Addon_Artemis4",
     "AddonType": 5,
     "WeaponType": 1,
@@ -917,8 +926,8 @@
     "NotSameLocationRequired": false,
     "AddSupportHardpoint": false
   },
-  "Weapon_LRM_CALRM20_2-SeriesVII": {
-    "WeaponId": "Weapon_LRM_CLRM20_2-SeriesVII",
+  "Weapon_LRM_CALRM20_1-TypeXb": {
+    "WeaponId": "Weapon_LRM_CLRM20_1-TypeXb",
     "AddonId": "Gear_Addon_Artemis4",
     "AddonType": 5,
     "WeaponType": 1,
@@ -944,15 +953,6 @@
     "NotSameLocationRequired": false,
     "AddSupportHardpoint": false
   },
-  "Weapon_LRM_CALRM20_1-TypeXb": {
-    "WeaponId": "Weapon_LRM_CLRM20_1-TypeXb",
-    "AddonId": "Gear_Addon_Artemis4",
-    "AddonType": 5,
-    "WeaponType": 1,
-    "Link": true,
-    "NotSameLocationRequired": false,
-    "AddSupportHardpoint": false
-  },
   "Weapon_LRM_CALRM20_1-SeriesVII": {
     "WeaponId": "Weapon_LRM_CLRM20_1-SeriesVII",
     "AddonId": "Gear_Addon_Artemis4",
@@ -971,8 +971,8 @@
     "NotSameLocationRequired": false,
     "AddSupportHardpoint": false
   },
-  "Weapon_LRM_CALRM15_2-TypeXVI": {
-    "WeaponId": "Weapon_LRM_CLRM15_2-TypeXVI",
+  "Weapon_LRM_CALRM15_2-TypeXVb": {
+    "WeaponId": "Weapon_LRM_CLRM15_2-TypeXVb",
     "AddonId": "Gear_Addon_Artemis4",
     "AddonType": 5,
     "WeaponType": 1,
@@ -980,8 +980,8 @@
     "NotSameLocationRequired": false,
     "AddSupportHardpoint": false
   },
-  "Weapon_LRM_CALRM15_2-TypeXVb": {
-    "WeaponId": "Weapon_LRM_CLRM15_2-TypeXVb",
+  "Weapon_LRM_CALRM15_2-TypeXVI": {
+    "WeaponId": "Weapon_LRM_CLRM15_2-TypeXVI",
     "AddonId": "Gear_Addon_Artemis4",
     "AddonType": 5,
     "WeaponType": 1,
@@ -1007,8 +1007,8 @@
     "NotSameLocationRequired": false,
     "AddSupportHardpoint": false
   },
-  "Weapon_LRM_CALRM15_1-TypeXVI": {
-    "WeaponId": "Weapon_LRM_CLRM15_1-TypeXVI",
+  "Weapon_LRM_CALRM15_1-TypeXVb": {
+    "WeaponId": "Weapon_LRM_CLRM15_1-TypeXVb",
     "AddonId": "Gear_Addon_Artemis4",
     "AddonType": 5,
     "WeaponType": 1,
@@ -1016,8 +1016,8 @@
     "NotSameLocationRequired": false,
     "AddSupportHardpoint": false
   },
-  "Weapon_LRM_CALRM15_1-TypeXVb": {
-    "WeaponId": "Weapon_LRM_CLRM15_1-TypeXVb",
+  "Weapon_LRM_CALRM15_1-TypeXVI": {
+    "WeaponId": "Weapon_LRM_CLRM15_1-TypeXVI",
     "AddonId": "Gear_Addon_Artemis4",
     "AddonType": 5,
     "WeaponType": 1,

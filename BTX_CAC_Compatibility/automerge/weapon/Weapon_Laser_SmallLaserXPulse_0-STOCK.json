@@ -16,6 +16,7 @@
 	},
 	"ImprovedBallistic": false,
 	"ProjectilesPerShot": 1,
+	"ShotsWhenFired": 3,
 	"Modes": [
 		{
 			"Id": "LMode_Std",
