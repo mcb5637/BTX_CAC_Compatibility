@@ -308,59 +308,6 @@
       "Description": {
         "Id": "StatusEffect_ESensorDecrease",
         "Name": "Detectability decreased",
-        "Details": "Decreases sensor detectability distance by 20%.",
-        "Icon": "uixSvgIcon_status_ECM-missileDef"
-      },
-      "nature": "Buff",
-      "statisticData": {
-        "appliesEachTick": false,
-        "effectsPersistAfterDestruction": false,
-        "statName": "SensorSignatureModifier",
-        "operation": "Float_Multiply",
-        "modValue": "-0.2",
-        "modType": "System.Single",
-        "additionalRules": "NotSet",
-        "targetCollection": "NotSet",
-        "targetWeaponCategory": "NotSet",
-        "targetWeaponType": "NotSet",
-        "targetAmmoCategory": "NotSet",
-        "targetWeaponSubType": "NotSet"
-      },
-      "tagData": null,
-      "floatieData": null,
-      "actorBurningData": null,
-      "vfxData": null,
-      "instantModData": null,
-      "poorlyMaintainedEffectData": null
-    }
-  ],
-  "statusEffects": [
-    {
-      "durationData": {
-        "duration": -1,
-        "ticksOnActivations": false,
-        "useActivationsOfTarget": false,
-        "ticksOnEndOfRound": false,
-        "ticksOnMovements": false,
-        "stackLimit": -1,
-        "clearedWhenAttacked": false
-      },
-      "targetingData": {
-        "effectTriggerType": "Passive",
-        "triggerLimit": 0,
-        "extendDurationOnTrigger": 0,
-        "specialRules": "NotSet",
-        "effectTargetType": "Creator",
-        "range": 0,
-        "forcePathRebuild": false,
-        "forceVisRebuild": false,
-        "showInTargetPreview": false,
-        "showInStatusPanel": true
-      },
-      "effectType": "StatisticEffect",
-      "Description": {
-        "Id": "StatusEffect_ESensorDecrease",
-        "Name": "Detectability decreased",
         "Details": "Decreases sensor detectability distance by 10%.",
         "Icon": "uixSvgIcon_status_ECM-missileDef"
       },
@@ -389,8 +336,7 @@
   ],
   "RequiredToSpawnCompanyTags" : {
     "items" : [
-      "flashpoint_uw1_complete",
-      "cae_ai_defence"
+      "flashpoint_uw1_complete"
     ],
     "tagSetSourceFile": ""
   },
